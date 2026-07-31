@@ -1,0 +1,276 @@
+{
+  "Navbar": {
+    "brand": "PAA SOLAR",
+    "nav": {
+      "whySolar": "Why Solar",
+      "howItWorks": "How It Works",
+      "solutions": "Solutions",
+      "projects": "Projects",
+      "impact": "Impact",
+      "testimonials": "Testimonials"
+    },
+    "getQuote": "Get a Quote",
+    "themeToggle": "Toggle theme",
+    "language": "Language"
+  },
+  "Hero": {
+    "badge": "Next-Gen Clean Energy Architecture",
+    "headlineMain": "Harness the Infinity of the Sun.",
+    "headlineSub": "Engineering Quiet Luxury & Uncompromising Energy Autonomy for Modern Life.",
+    "description": "Paa Solar crafts ultra-efficient, aesthetically integrated solar ecosystems that empower homes and enterprises with sovereign, clean power.",
+    "primaryCta": "Design Your System",
+    "secondaryCta": "Explore Impact",
+    "scrollCue": "Scroll to Discover"
+  },
+  "ImpactStats": {
+    "title": "Clean Energy at Scale",
+    "subtitle": "Quantifiable environmental transformation across the nation.",
+    "stat1": {
+      "value": 520,
+      "unit": "GWh",
+      "label": "Clean Energy Generated"
+    },
+    "stat2": {
+      "value": 420,
+      "unit": "k Tons",
+      "label": "CO₂ Offset Annually"
+    },
+    "stat3": {
+      "value": 18500,
+      "unit": "+",
+      "label": "Architectural Installations"
+    },
+    "stat4": {
+      "value": 24,
+      "unit": "States",
+      "label": "Active Power Footprint"
+    }
+  },
+  "WhySolar": {
+    "tag": "The Energy Imperative",
+    "title": "Why Transition to Solar Today?",
+    "subtitle": "The legacy grid is fragile, costly, and carbon-heavy. Paa Solar provides continuous, independent power.",
+    "cards": [
+      {
+        "num": "01",
+        "title": "Escalating Grid Costs",
+        "desc": "Utility rates rise by 7-12% annually. Solar locks in your energy rate forever, insulating your assets from inflation.",
+        "highlight": "+12% annual rate hikes"
+      },
+      {
+        "num": "02",
+        "title": "Fragile Power Grids",
+        "desc": "Extreme weather events and aging infrastructure cause frequent outages. Our smart storage keeps your lights on seamlessy.",
+        "highlight": "Zero blackout vulnerability"
+      },
+      {
+        "num": "03",
+        "title": "Carbon Imperative",
+        "desc": "Traditional electricity generation is the single largest industrial source of greenhouse gases. Direct solar eliminates your reliance on fossil fuels.",
+        "highlight": "100% Zero direct emissions"
+      },
+      {
+        "num": "04",
+        "title": "Architectural Harmony",
+        "desc": "Paa Solar replaces ugly roof clutter with sleek, low-profile, high-efficiency solar glass tailored to modern luxury aesthetics.",
+        "highlight": "Bespoke clean design"
+      }
+    ]
+  },
+  "HowItWorks": {
+    "tag": "Seamless Execution",
+    "title": "From Sunlight to Sovereign Power",
+    "subtitle": "A four-stage precision workflow designed for absolute peace of mind.",
+    "steps": [
+      {
+        "step": "01",
+        "name": "Architectural Audit & Assessment",
+        "desc": "We map your roof's micro-climate using LiDAR, satellite irradiation, and thermal imaging to calculate exact energy potential."
+      },
+      {
+        "step": "02",
+        "name": "Bespoke System Engineering",
+        "desc": "Custom electrical topologies, battery chemistry selection, and architectural integration engineered by master energy specialists."
+      },
+      {
+        "step": "03",
+        "name": "Rapid Precision Deployment",
+        "desc": "Clean, non-intrusive installation executed by certified master technicians with zero structural damage guarantees."
+      },
+      {
+        "step": "04",
+        "name": "24/7 Grid Intelligence & Care",
+        "desc": "AI-driven real-time power routing, proactive maintenance telemetry, and lifetime performance optimization."
+      }
+    ]
+  },
+  "Products": {
+    "tag": "Ecosystem Solutions",
+    "title": "Engineered for Every Scale",
+    "subtitle": "Explore our portfolio of integrated solar architecture and smart storage technology.",
+    "items": [
+      {
+        "id": "residential",
+        "title": "Luxury Residential Solar",
+        "category": "Private Estates & Villas",
+        "desc": "Seamless high-efficiency solar tiles and ultra-black panels engineered for luxury architectural standards.",
+        "specs": ["Up to 24kW Output", "Invisible Conduit Routing", "Integrated Tile Roof Systems"]
+      },
+      {
+        "id": "commercial",
+        "title": "Commercial & Corporate Microgrids",
+        "category": "Office Parks & Headquarters",
+        "desc": "Scale energy independence across corporate campuses to slash operational expenditure and fulfill ESG commitments.",
+        "specs": ["100kW - 5MW Capacities", "Demand Charge Mitigation", "Real-Time Enterprise Telemetry"]
+      },
+      {
+        "id": "industrial",
+        "title": "Industrial High-Demand Solar",
+        "category": "Manufacturing & Logistics",
+        "desc": "Heavy-duty solar installations built for continuous industrial loads, automated tracking, and high resilience.",
+        "specs": ["Multi-Megawatt Arrays", "Bi-facial N-Type Cells", "Grid Feed-In Revenue Routing"]
+      },
+      {
+        "id": "storage",
+        "title": "Paa Vault Battery Ecosystems",
+        "category": "Smart Energy Storage",
+        "desc": "Lithium Iron Phosphate (LFP) energy storage systems providing sub-millisecond islanding power during grid dropouts.",
+        "specs": ["5kWh to 1MWh Scalable", "Sub-10ms Switching Speed", "15-Year Cell Warranty"]
+      }
+    ]
+  },
+  "CaseStudies": {
+    "tag": "Portfolio of Excellence",
+    "title": "Featured Installations",
+    "subtitle": "Discover how Paa Solar transforms prestige residences and industrial hubs into self-sustaining power stations.",
+    "filters": {
+      "all": "All Projects",
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "industrial": "Industrial"
+    },
+    "projects": [
+      {
+        "id": "project-1",
+        "title": "The Glass Horizon Estate",
+        "category": "residential",
+        "location": "Alibaug, Maharashtra",
+        "capacity": "45 kW Solar + 80 kWh Vault",
+        "offset": "98% Grid Offload",
+        "desc": "A seaside architectural villa operating entirely off-grid during monsoon storm cycles."
+      },
+      {
+        "id": "project-2",
+        "title": "Apex Logistics Hub",
+        "category": "industrial",
+        "location": "Bhiwandi, Maharashtra",
+        "capacity": "1.2 MW Rooftop Array",
+        "offset": "1,450 Tons CO₂ / Year",
+        "desc": "Deploying 3,000 bi-facial panels to power 24/7 cold storage facility operations."
+      },
+      {
+        "id": "project-3",
+        "title": "Verdant Campus Towers",
+        "category": "commercial",
+        "location": "Gurugram, Haryana",
+        "capacity": "650 kW Architectural Facade",
+        "offset": "74% Energy Cost Reduction",
+        "desc": "Vertical solar glass integration providing clean power and shading for 12 floors of prime office space."
+      },
+      {
+        "id": "project-4",
+        "title": "The Himalayan Eco-Resort",
+        "category": "residential",
+        "location": "Manali, Himachal Pradesh",
+        "capacity": "90 kW Microgrid + Thermal",
+        "offset": "100% Clean Autonomy",
+        "desc": "High-altitude winterized solar installation keeping a mountain resort warm and fully powered."
+      }
+    ]
+  },
+  "Dashboard": {
+    "tag": "Telemetry & Intelligence",
+    "title": "Real-Time Energy Command Center",
+    "subtitle": "Monitor production, consumption, and storage status in a intuitive live dashboard.",
+    "liveStatus": "Live Grid Telemetry",
+    "solarProduction": "Solar Yield",
+    "batteryState": "Storage Reserve",
+    "carbonSaved": "CO₂ Prevented",
+    "gridIndependence": "Autonomy Level",
+    "chartTitle": "24-Hour Energy Generation & Flow",
+    "solarCurve": "Solar Generation",
+    "loadCurve": "Household Demand",
+    "batteryCurve": "Battery Charge %"
+  },
+  "Testimonials": {
+    "tag": "Client Stories",
+    "title": "Trusted by Visionaries",
+    "subtitle": "Hear from leaders, estate owners, and facility directors who chose Paa Solar.",
+    "items": [
+      {
+        "quote": "Paa Solar delivered an architectural masterpiece. Our estate has zero power outages and zero energy bills.",
+        "author": "Rajesh Singhania",
+        "role": "Founder, Singhania Estates"
+      },
+      {
+        "quote": "The ROI on our 1.2MW facility was achieved in 2.8 years. The telemetry platform gives us complete visibility.",
+        "author": "Ananya Sharma",
+        "role": "COO, Apex Logistics"
+      },
+      {
+        "quote": "Incredible attention to detail. The panels blend seamlessly into our slate roof design without any visible wiring.",
+        "author": "Vikramaditya Rao",
+        "role": "Principal Architect, Atelier Studio"
+      },
+      {
+        "quote": "Their team managed permitting, installation, and grid synchronization seamlessly. Paa Solar is in a class of its own.",
+        "author": "Priya Nair",
+        "role": "Sustainability Director, Zenith Group"
+      }
+    ]
+  },
+  "LeadForm": {
+    "tag": "Get Started Today",
+    "title": "Calculate Your Solar Autonomy",
+    "subtitle": "Get a customized energy audit and system configuration in less than 2 minutes.",
+    "step1": {
+      "title": "Property Details",
+      "propertyType": "Property Type",
+      "residential": "Residential Estate",
+      "commercial": "Commercial Facility",
+      "industrial": "Industrial Campus",
+      "address": "Installation Address / Pin Code",
+      "next": "Continue to Energy Usage"
+    },
+    "step2": {
+      "title": "Energy Consumption",
+      "monthlyBill": "Average Monthly Electricity Bill",
+      "billLow": "₹5,000 - ₹15,000",
+      "billMed": "₹15,000 - ₹50,000",
+      "billHigh": "₹50,000 - ₹200,000+",
+      "backup": "Battery Backup Required?",
+      "yes": "Yes, Full Backup",
+      "no": "Solar Only",
+      "next": "Continue to Contact"
+    },
+    "step3": {
+      "title": "Your Custom Audit",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "submit": "Request Design & Quote",
+      "submittedTitle": "Proposal Request Received!",
+      "submittedMessage": "Our senior solar architects will analyze your site coordinates and send a tailored proposal within 24 hours."
+    }
+  },
+  "Footer": {
+    "brandTagline": "Pioneering the Sun's Infinity for Next-Generation Architecture.",
+    "sitemap": "Navigation",
+    "solutions": "Solutions",
+    "legal": "Legal & Privacy",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Preferences",
+    "copyright": "© 2026 Paa Solar Systems Pvt. Ltd. All rights reserved."
+  }
+}
