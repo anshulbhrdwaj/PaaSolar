@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { ArrowRight, CheckCircle2, Building, Home, Factory, ShieldAlert } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Building, Home, Factory } from 'lucide-react';
 
 export function GetAQuoteCTA() {
   const t = useTranslations('LeadForm');

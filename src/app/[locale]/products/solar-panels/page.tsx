@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
-import { SunMedium, CheckCircle2, ShieldCheck, Zap, Layers, Cpu, Award } from 'lucide-react';
+import { SunMedium, CheckCircle2 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 export default function SolarPanelsPage() {

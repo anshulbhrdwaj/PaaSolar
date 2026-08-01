@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
-import { Globe2, CheckCircle2, Award, ShieldCheck, Ship, ArrowRight } from 'lucide-react';
+import { Globe2, CheckCircle2, Award, ShieldCheck, Ship } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 export default function ExportPage() {

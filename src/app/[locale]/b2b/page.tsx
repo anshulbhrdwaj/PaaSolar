@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
-import { Building2, CheckCircle2, TrendingDown, DollarSign, ShieldCheck, Zap, Layers, Award, FileText } from 'lucide-react';
+import { Building2, CheckCircle2, DollarSign, ShieldCheck, Zap, Layers } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 export default function B2BPage() {

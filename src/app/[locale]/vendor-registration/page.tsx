@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
-import { UserPlus, CheckCircle2, Building, Mail, Phone, FileText, Award } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 export default function VendorRegistrationPage() {
   const t = useTranslations('CorporatePages.vendor');

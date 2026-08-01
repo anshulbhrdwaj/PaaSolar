@@ -62,7 +62,7 @@ export function TestimonialsMarquee() {
               <div>
                 <Quote className="w-8 h-8 text-accent-solar/40 mb-4" />
                 <p className="text-text-primary text-base font-serif italic leading-relaxed mb-6">
-                  "{item.quote}"
+                  &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
 

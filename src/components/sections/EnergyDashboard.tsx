@@ -12,7 +12,7 @@ export function EnergyDashboard() {
   // Live simulation tick
   useEffect(() => {
     const interval = setInterval(() => {
-      setSolarKw((prev) => parseFloat((14.0 + Math.random() * 0.8).toFixed(1)));
+      setSolarKw(parseFloat((14.0 + Math.random() * 0.8).toFixed(1)));
       setBatteryPct((prev) => Math.min(100, Math.max(90, prev + (Math.random() > 0.5 ? 1 : -1))));
     }, 3000);
     return () => clearInterval(interval);

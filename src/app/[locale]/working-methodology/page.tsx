@@ -5,8 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
-import { Wrench, CheckCircle2, Cpu, ShieldCheck, Activity, Layers, Compass } from 'lucide-react';
-import { Link } from '@/i18n/routing';
+import { Wrench, Cpu, Activity, Layers, Compass } from 'lucide-react';
 
 export default function WorkingMethodologyPage() {
   const t = useTranslations('CorporatePages.methodology');

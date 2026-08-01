@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useSyncExternalStore } from 'react';
 import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { useTranslations, useLocale } from 'next-intl';
@@ -21,10 +21,6 @@ import {
   Building2,
   Sprout,
   Factory,
-  Wrench,
-  UserPlus,
-  Briefcase,
-  Globe2,
   Check,
 } from 'lucide-react';
 import gsap from 'gsap';
@@ -47,6 +43,10 @@ const LANGUAGES = [
   { code: 'de', name: 'German', native: 'Deutsch', flag: '🇩🇪' },
 ];
 
+const subscribe = () => () => {};
+const getSnapshot = () => true;
+const getServerSnapshot = () => false;
+
 export function Navbar() {
   const t = useTranslations('Navbar');
   const locale = useLocale();
@@ -54,7 +54,7 @@ export function Navbar() {
   const router = useRouter();
   const { theme, setTheme, resolvedTheme } = useTheme();
 
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
   const isDark = mounted ? (resolvedTheme || theme) === 'dark' : false;
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -65,8 +65,6 @@ export function Navbar() {
   const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
-
     const trigger = ScrollTrigger.create({
       start: 'top -50px',
       onUpdate: (self) => {

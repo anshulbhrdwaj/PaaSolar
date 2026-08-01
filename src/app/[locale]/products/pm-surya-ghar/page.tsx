@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
-import { Home, CheckCircle2, IndianRupee, Zap, ShieldCheck, ArrowRight, Award, FileText } from 'lucide-react';
+import { Home, CheckCircle2, Award } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 export default function PMSuryaGharPage() {

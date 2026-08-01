@@ -4,8 +4,7 @@ import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
-import { Briefcase, CheckCircle2, Award, ArrowUpRight, Send } from 'lucide-react';
-import { Link } from '@/i18n/routing';
+import { CheckCircle2 } from 'lucide-react';
 
 export default function CareersPage() {
   const t = useTranslations('CorporatePages.careers');

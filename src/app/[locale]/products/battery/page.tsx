@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
-import { BatteryCharging, CheckCircle2, ShieldCheck, Zap, Flame, RefreshCw } from 'lucide-react';
+import { BatteryCharging, CheckCircle2 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 export default function BatteryPage() {

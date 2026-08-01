@@ -4,10 +4,21 @@ import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { MapPin, Zap, ArrowUpRight, X } from 'lucide-react';
 
+interface ProjectItem {
+  id: string;
+  title: string;
+  category: string;
+  location: string;
+  capacity: string;
+  offset: string;
+  desc: string;
+  bgGradient: string;
+}
+
 export function CaseStudies() {
   const t = useTranslations('CaseStudies');
   const [filter, setFilter] = useState('all');
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
   const projects = [
     {
