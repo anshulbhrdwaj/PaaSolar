@@ -21,6 +21,10 @@ import {
   Sprout,
   Factory,
   Check,
+  ClipboardList,
+  Workflow,
+  Globe2,
+  Briefcase,
 } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -60,6 +64,7 @@ export function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
 
@@ -91,6 +96,7 @@ export function Navbar() {
 
   const isProductActive = pathname.startsWith('/products');
   const isProjectActive = pathname.startsWith('/projects');
+  const isCompanyActive = pathname === '/vendor-registration' || pathname === '/working-methodology' || pathname === '/export' || pathname === '/careers';
 
   return (
     <header
@@ -130,10 +136,10 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-text-secondary">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-medium text-text-secondary whitespace-nowrap">
           <Link
             href="/why-solar"
-            className={`hover:text-accent-solar transition-colors duration-200 ${
+            className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 ${
               pathname === '/why-solar' ? 'text-accent-solar font-semibold' : ''
             }`}
           >
@@ -141,7 +147,7 @@ export function Navbar() {
           </Link>
           <Link
             href="/about-us"
-            className={`hover:text-accent-solar transition-colors duration-200 ${
+            className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 ${
               pathname === '/about-us' ? 'text-accent-solar font-semibold' : ''
             }`}
           >
@@ -155,7 +161,7 @@ export function Navbar() {
             onMouseLeave={() => setDropdownOpen(false)}
           >
             <button
-              className={`flex items-center gap-1.5 hover:text-accent-solar transition-colors duration-200 py-2 ${
+              className={`flex items-center gap-1.5 whitespace-nowrap hover:text-accent-solar transition-colors duration-200 py-2 ${
                 isProductActive ? 'text-accent-solar font-semibold' : ''
               }`}
             >
@@ -237,7 +243,7 @@ export function Navbar() {
             onMouseLeave={() => setProjectsDropdownOpen(false)}
           >
             <button
-              className={`flex items-center gap-1.5 hover:text-accent-solar transition-colors duration-200 py-2 ${
+              className={`flex items-center gap-1.5 whitespace-nowrap hover:text-accent-solar transition-colors duration-200 py-2 ${
                 isProjectActive ? 'text-accent-solar font-semibold' : ''
               }`}
             >
@@ -314,28 +320,99 @@ export function Navbar() {
 
           <Link
             href="/b2b"
-            className={`hover:text-accent-solar transition-colors duration-200 ${
+            className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 ${
               pathname === '/b2b' ? 'text-accent-solar font-semibold' : ''
             }`}
           >
             {t('nav.b2b')}
           </Link>
-          <Link
-            href="/working-methodology"
-            className={`hover:text-accent-solar transition-colors duration-200 ${
-              pathname === '/working-methodology' ? 'text-accent-solar font-semibold' : ''
-            }`}
+
+          {/* Interactive Company Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setCompanyDropdownOpen(true)}
+            onMouseLeave={() => setCompanyDropdownOpen(false)}
           >
-            Methodology
-          </Link>
-          <Link
-            href="/export"
-            className={`hover:text-accent-solar transition-colors duration-200 ${
-              pathname === '/export' ? 'text-accent-solar font-semibold' : ''
-            }`}
-          >
-            Export
-          </Link>
+            <button
+              className={`flex items-center gap-1.5 whitespace-nowrap hover:text-accent-solar transition-colors duration-200 py-2 ${
+                isCompanyActive ? 'text-accent-solar font-semibold' : ''
+              }`}
+            >
+              <span>Company</span>
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-300 ${
+                  companyDropdownOpen ? 'rotate-180 text-accent-solar' : ''
+                }`}
+              />
+            </button>
+
+            {/* Dropdown Card Menu */}
+            {companyDropdownOpen && (
+              <div className="absolute top-full -left-4 w-72 pt-2 animate-fade-in z-50">
+                <div className="p-3 rounded-2xl bg-bg-primary/95 backdrop-blur-xl border border-line shadow-2xl flex flex-col gap-1.5">
+                  <Link
+                    href="/vendor-registration"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-accent-solar/10 text-accent-solar group-hover:scale-110 transition-transform">
+                      <ClipboardList className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        Vendor Registration
+                      </p>
+                      <p className="text-[10px] text-text-secondary">Supplier & Vendor Onboarding</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/working-methodology"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-accent-sky/10 text-accent-sky group-hover:scale-110 transition-transform">
+                      <Workflow className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        Methodology
+                      </p>
+                      <p className="text-[10px] text-text-secondary">EPC Standard Protocols</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/export"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform">
+                      <Globe2 className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        Export & Overseas
+                      </p>
+                      <p className="text-[10px] text-text-secondary">Global Energy Projects</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/careers"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-accent-gold/10 text-accent-gold group-hover:scale-110 transition-transform">
+                      <Briefcase className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        Careers
+                      </p>
+                      <p className="text-[10px] text-text-secondary">Join Paa Solar Team</p>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
         </nav>
 
         {/* Right Utility Buttons */}
