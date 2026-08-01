@@ -68,7 +68,6 @@ export function Navbar() {
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
   const [mobileCompanyOpen, setMobileCompanyOpen] = useState(false);
-  const [mobileLangOpen, setMobileLangOpen] = useState(false);
 
   useEffect(() => {
     const trigger = ScrollTrigger.create({
@@ -692,7 +691,7 @@ export function Navbar() {
           {/* Mobile Accordion Company */}
           <div
             style={{ animationDelay: '200ms' }}
-            className="flex flex-col gap-2 border-b border-line/60 pb-3 animate-mobile-item"
+            className="flex flex-col gap-2 pb-1 animate-mobile-item"
           >
             <button
               onClick={() => setMobileCompanyOpen(!mobileCompanyOpen)}
@@ -744,59 +743,41 @@ export function Navbar() {
             )}
           </div>
 
-          {/* Mobile Interactive Language Accordion */}
+          {/* Mobile Language Selector */}
           <div
             style={{ animationDelay: '240ms' }}
-            className="pt-3 border-t border-line animate-mobile-item"
+            className="pt-4 border-t border-line space-y-2.5 animate-mobile-item"
           >
-            <button
-              onClick={() => setMobileLangOpen(!mobileLangOpen)}
-              className="flex items-center justify-between w-full p-3 rounded-2xl bg-bg-secondary/60 border border-line hover:border-accent-solar/50 transition-all group"
-            >
-              <div className="flex items-center gap-2.5">
-                <Globe className="w-4 h-4 text-accent-solar group-hover:rotate-45 transition-transform duration-300" />
-                <span className="text-xs font-mono uppercase tracking-wider text-text-secondary font-semibold">
-                  Language:
-                </span>
-                <span className="text-xs font-bold text-text-primary flex items-center gap-1.5">
-                  <span>{currentLang.flag}</span>
-                  <span>{currentLang.native}</span>
-                </span>
+            <div className="flex items-center justify-between text-xs font-mono uppercase tracking-wider text-text-secondary font-semibold">
+              <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-accent-solar" />
+                <span>Select Language</span>
               </div>
-              <ChevronDown
-                className={`w-4 h-4 text-text-secondary transition-transform duration-300 ${
-                  mobileLangOpen ? 'rotate-180 text-accent-solar' : ''
-                }`}
-              />
-            </button>
+              <span className="text-[10px] text-accent-solar font-bold bg-accent-solar/10 px-2 py-0.5 rounded-full">
+                {currentLang.native} {currentLang.flag}
+              </span>
+            </div>
 
-            {mobileLangOpen && (
-              <div className="grid grid-cols-2 gap-2 pt-3 animate-accordion">
-                {LANGUAGES.map((lang) => {
-                  const active = lang.code === locale;
-                  return (
-                    <button
-                      key={lang.code}
-                      onClick={() => {
-                        changeLanguage(lang.code);
-                        setMobileLangOpen(false);
-                      }}
-                      className={`flex items-center justify-between p-2.5 rounded-xl border text-xs font-medium transition-all ${
-                        active
-                          ? 'border-accent-solar bg-accent-solar/15 text-accent-solar font-bold shadow-sm'
-                          : 'border-line bg-bg-secondary/40 text-text-primary hover:border-accent-solar/40 hover:bg-bg-secondary/80'
-                      }`}
-                    >
-                      <div className="flex items-center gap-2">
-                        <span className="text-base">{lang.flag}</span>
-                        <span>{lang.native}</span>
-                      </div>
-                      {active && <Check className="w-3.5 h-3.5 text-accent-solar" />}
-                    </button>
-                  );
-                })}
-              </div>
-            )}
+            {/* Scrollable Language Chips */}
+            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 -mx-6 px-6 scroll-smooth">
+              {LANGUAGES.map((lang) => {
+                const active = lang.code === locale;
+                return (
+                  <button
+                    key={lang.code}
+                    onClick={() => changeLanguage(lang.code)}
+                    className={`flex items-center gap-2 px-3.5 py-2 rounded-xl border text-xs font-medium whitespace-nowrap transition-all flex-shrink-0 ${
+                      active
+                        ? 'border-accent-solar bg-accent-solar text-white font-bold shadow-md shadow-accent-solar/20 scale-[1.02]'
+                        : 'border-line bg-bg-secondary/60 text-text-primary hover:border-accent-solar/50 hover:bg-bg-secondary'
+                    }`}
+                  >
+                    <span className="text-sm">{lang.flag}</span>
+                    <span>{lang.native}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
 
           <div
