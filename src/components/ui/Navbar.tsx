@@ -67,6 +67,8 @@ export function Navbar() {
   const [companyDropdownOpen, setCompanyDropdownOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
+  const [mobileCompanyOpen, setMobileCompanyOpen] = useState(false);
+  const [mobileLangOpen, setMobileLangOpen] = useState(false);
 
   useEffect(() => {
     const trigger = ScrollTrigger.create({
@@ -80,6 +82,17 @@ export function Navbar() {
       trigger.kill();
     };
   }, []);
+
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileOpen]);
 
   const changeLanguage = (nextLocale: string) => {
     setLangDropdownOpen(false);
@@ -532,7 +545,7 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-full bg-bg-primary/98 backdrop-blur-2xl border-b border-line p-6 flex flex-col gap-4 shadow-2xl animate-mobile-drawer max-h-[calc(100vh-4.5rem)] overflow-y-auto overscroll-contain pb-16">
+        <div className="lg:hidden fixed inset-x-0 top-full bg-bg-primary/98 backdrop-blur-2xl border-b border-line p-6 flex flex-col gap-4 shadow-2xl animate-mobile-drawer max-h-[calc(100dvh-4.5rem)] overflow-y-auto overscroll-contain pb-32 z-50">
           <Link
             href="/why-solar"
             onClick={() => setMobileOpen(false)}
@@ -676,69 +689,114 @@ export function Navbar() {
           >
             {t('nav.b2b')}
           </Link>
-          <Link
-            href="/working-methodology"
-            onClick={() => setMobileOpen(false)}
-            style={{ animationDelay: '200ms' }}
-            className="text-lg font-medium text-text-primary hover:text-accent-solar animate-mobile-item transition-colors"
-          >
-            Methodology
-          </Link>
-          <Link
-            href="/export"
-            onClick={() => setMobileOpen(false)}
-            style={{ animationDelay: '240ms' }}
-            className="text-lg font-medium text-text-primary hover:text-accent-solar animate-mobile-item transition-colors"
-          >
-            Export
-          </Link>
-          <Link
-            href="/vendor-registration"
-            onClick={() => setMobileOpen(false)}
-            style={{ animationDelay: '280ms' }}
-            className="text-lg font-medium text-text-primary hover:text-accent-solar animate-mobile-item transition-colors"
-          >
-            Vendor Registration
-          </Link>
-          <Link
-            href="/careers"
-            onClick={() => setMobileOpen(false)}
-            style={{ animationDelay: '320ms' }}
-            className="text-lg font-medium text-text-primary hover:text-accent-solar animate-mobile-item transition-colors"
-          >
-            Careers
-          </Link>
-
-          {/* Mobile Language Selector Grid */}
+          {/* Mobile Accordion Company */}
           <div
-            style={{ animationDelay: '360ms' }}
-            className="pt-4 border-t border-line space-y-3 animate-mobile-item"
+            style={{ animationDelay: '200ms' }}
+            className="flex flex-col gap-2 border-b border-line/60 pb-3 animate-mobile-item"
           >
-            <span className="text-xs font-mono uppercase tracking-widest text-text-secondary font-bold block">
-              Select Language ({currentLang.native})
-            </span>
-            <div className="grid grid-cols-2 gap-2">
-              {LANGUAGES.map((lang) => {
-                const active = lang.code === locale;
-                return (
-                  <button
-                    key={lang.code}
-                    onClick={() => changeLanguage(lang.code)}
-                    className={`flex items-center justify-between p-2.5 rounded-xl border text-xs font-medium transition-all ${
-                      active
-                        ? 'border-accent-solar bg-accent-solar/15 text-accent-solar font-bold'
-                        : 'border-line bg-bg-secondary/40 text-text-primary hover:border-accent-solar/40'
-                    }`}
-                  >
-                    <div className="flex items-center gap-2">
-                      <span>{lang.flag}</span>
-                      <span>{lang.native}</span>
-                    </div>
-                    {active && <Check className="w-3.5 h-3.5 text-accent-solar" />}
-                  </button>
-                );
-              })}
-            </div>
+            <button
+              onClick={() => setMobileCompanyOpen(!mobileCompanyOpen)}
+              className="flex items-center justify-between text-lg font-medium text-text-primary hover:text-accent-solar w-full transition-colors"
+            >
+              <span>{t('nav.company')}</span>
+              <ChevronDown
+                className={`w-5 h-5 transition-transform duration-300 ${
+                  mobileCompanyOpen ? 'rotate-180 text-accent-solar' : ''
+                }`}
+              />
+            </button>
+
+            {mobileCompanyOpen && (
+              <div className="flex flex-col gap-3 pl-4 pt-2 text-sm text-text-secondary animate-accordion overflow-hidden">
+                <Link
+                  href="/vendor-registration"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
+                >
+                  <ClipboardList className="w-4 h-4 text-accent-solar" />
+                  <span>{t('companyDropdown.vendorRegistration')}</span>
+                </Link>
+                <Link
+                  href="/working-methodology"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
+                >
+                  <Workflow className="w-4 h-4 text-accent-sky" />
+                  <span>{t('companyDropdown.methodology')}</span>
+                </Link>
+                <Link
+                  href="/export"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
+                >
+                  <Globe2 className="w-4 h-4 text-emerald-500" />
+                  <span>{t('companyDropdown.export')}</span>
+                </Link>
+                <Link
+                  href="/careers"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
+                >
+                  <Briefcase className="w-4 h-4 text-accent-gold" />
+                  <span>{t('companyDropdown.careers')}</span>
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Mobile Interactive Language Accordion */}
+          <div
+            style={{ animationDelay: '240ms' }}
+            className="pt-3 border-t border-line animate-mobile-item"
+          >
+            <button
+              onClick={() => setMobileLangOpen(!mobileLangOpen)}
+              className="flex items-center justify-between w-full p-3 rounded-2xl bg-bg-secondary/60 border border-line hover:border-accent-solar/50 transition-all group"
+            >
+              <div className="flex items-center gap-2.5">
+                <Globe className="w-4 h-4 text-accent-solar group-hover:rotate-45 transition-transform duration-300" />
+                <span className="text-xs font-mono uppercase tracking-wider text-text-secondary font-semibold">
+                  Language:
+                </span>
+                <span className="text-xs font-bold text-text-primary flex items-center gap-1.5">
+                  <span>{currentLang.flag}</span>
+                  <span>{currentLang.native}</span>
+                </span>
+              </div>
+              <ChevronDown
+                className={`w-4 h-4 text-text-secondary transition-transform duration-300 ${
+                  mobileLangOpen ? 'rotate-180 text-accent-solar' : ''
+                }`}
+              />
+            </button>
+
+            {mobileLangOpen && (
+              <div className="grid grid-cols-2 gap-2 pt-3 animate-accordion">
+                {LANGUAGES.map((lang) => {
+                  const active = lang.code === locale;
+                  return (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        changeLanguage(lang.code);
+                        setMobileLangOpen(false);
+                      }}
+                      className={`flex items-center justify-between p-2.5 rounded-xl border text-xs font-medium transition-all ${
+                        active
+                          ? 'border-accent-solar bg-accent-solar/15 text-accent-solar font-bold shadow-sm'
+                          : 'border-line bg-bg-secondary/40 text-text-primary hover:border-accent-solar/40 hover:bg-bg-secondary/80'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="text-base">{lang.flag}</span>
+                        <span>{lang.native}</span>
+                      </div>
+                      {active && <Check className="w-3.5 h-3.5 text-accent-solar" />}
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           <div
