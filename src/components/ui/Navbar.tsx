@@ -52,9 +52,10 @@ export function Navbar() {
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
   const [mounted, setMounted] = useState(false);
+  const isDark = mounted ? (resolvedTheme || theme) === 'dark' : false;
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -87,7 +88,8 @@ export function Navbar() {
   const currentLang = LANGUAGES.find((l) => l.code === locale) || LANGUAGES[0];
 
   const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
+    const current = resolvedTheme || theme;
+    setTheme(current === 'dark' ? 'light' : 'dark');
   };
 
   const isProductActive = pathname.startsWith('/products');
@@ -111,7 +113,9 @@ export function Navbar() {
               alt="Paa Solar Logo"
               width={150}
               height={42}
-              className="h-9 w-auto object-contain block dark:hidden group-hover:scale-105 transition-transform duration-300"
+              className={`h-9 w-auto object-contain group-hover:scale-105 transition-transform duration-300 ${
+                mounted ? (isDark ? 'hidden' : 'block') : 'block dark:hidden'
+              }`}
               priority
             />
             {/* Dark mode logo */}
@@ -120,7 +124,9 @@ export function Navbar() {
               alt="Paa Solar Logo"
               width={150}
               height={42}
-              className="h-9 w-auto object-contain hidden dark:block group-hover:scale-105 transition-transform duration-300"
+              className={`h-9 w-auto object-contain group-hover:scale-105 transition-transform duration-300 ${
+                mounted ? (isDark ? 'block' : 'hidden') : 'hidden dark:block'
+              }`}
               priority
             />
           </div>
@@ -409,7 +415,7 @@ export function Navbar() {
               className="p-2 rounded-full border border-line hover:border-accent-solar/40 bg-bg-secondary/50 text-text-primary hover:text-accent-solar transition-all duration-300 relative overflow-hidden"
             >
               <div className="transition-transform duration-500 rotate-0 dark:rotate-180">
-                {theme === 'dark' ? (
+                {isDark ? (
                   <Sun className="w-4 h-4 text-accent-gold" />
                 ) : (
                   <Moon className="w-4 h-4 text-accent-sky" />
@@ -435,9 +441,10 @@ export function Navbar() {
           {mounted && (
             <button
               onClick={toggleTheme}
+              aria-label="Toggle Theme"
               className="p-2 rounded-full border border-line bg-bg-secondary/50"
             >
-              {theme === 'dark' ? (
+              {isDark ? (
                 <Sun className="w-4 h-4 text-accent-gold" />
               ) : (
                 <Moon className="w-4 h-4 text-accent-sky" />
@@ -446,20 +453,24 @@ export function Navbar() {
           )}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="p-2 rounded-full border border-line bg-bg-secondary/50 text-text-primary"
+            aria-label="Toggle Mobile Menu"
+            className="p-2 rounded-full border border-line bg-bg-secondary/50 text-text-primary transition-all duration-300 hover:scale-105 active:scale-95"
           >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            <div className="transition-transform duration-300 transform">
+              {mobileOpen ? <X className="w-5 h-5 rotate-90 scale-110" /> : <Menu className="w-5 h-5 rotate-0" />}
+            </div>
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-full bg-bg-primary/95 backdrop-blur-lg border-b border-line p-6 flex flex-col gap-4 shadow-2xl animate-fade-in max-h-[85vh] overflow-y-auto">
+        <div className="lg:hidden fixed inset-x-0 top-full bg-bg-primary/95 backdrop-blur-xl border-b border-line p-6 flex flex-col gap-4 shadow-2xl animate-mobile-drawer max-h-[85vh] overflow-y-auto">
           <Link
             href="/why-solar"
             onClick={() => setMobileOpen(false)}
-            className={`text-lg font-medium ${
+            style={{ animationDelay: '40ms' }}
+            className={`text-lg font-medium animate-mobile-item transition-colors ${
               pathname === '/why-solar'
                 ? 'text-accent-solar font-semibold'
                 : 'text-text-primary hover:text-accent-solar'
@@ -469,10 +480,13 @@ export function Navbar() {
           </Link>
 
           {/* Mobile Accordion Products */}
-          <div className="flex flex-col gap-2 border-y border-line/60 py-3">
+          <div
+            style={{ animationDelay: '80ms' }}
+            className="flex flex-col gap-2 border-y border-line/60 py-3 animate-mobile-item"
+          >
             <button
               onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-              className="flex items-center justify-between text-lg font-medium text-text-primary hover:text-accent-solar w-full"
+              className="flex items-center justify-between text-lg font-medium text-text-primary hover:text-accent-solar w-full transition-colors"
             >
               <span>{t('nav.products')}</span>
               <ChevronDown
@@ -483,11 +497,11 @@ export function Navbar() {
             </button>
 
             {mobileProductsOpen && (
-              <div className="flex flex-col gap-3 pl-4 pt-2 text-sm text-text-secondary">
+              <div className="flex flex-col gap-3 pl-4 pt-2 text-sm text-text-secondary animate-accordion overflow-hidden">
                 <Link
                   href="/products/pm-surya-ghar"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 hover:text-accent-solar"
+                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
                 >
                   <Home className="w-4 h-4 text-emerald-500" />
                   <span>{t('productsDropdown.pmSuryaGhar')}</span>
@@ -495,7 +509,7 @@ export function Navbar() {
                 <Link
                   href="/products/solar-panels"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 hover:text-accent-solar"
+                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
                 >
                   <SunMedium className="w-4 h-4 text-accent-solar" />
                   <span>{t('productsDropdown.solarPanels')}</span>
@@ -503,7 +517,7 @@ export function Navbar() {
                 <Link
                   href="/products/inverters"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 hover:text-accent-solar"
+                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
                 >
                   <Zap className="w-4 h-4 text-accent-sky" />
                   <span>{t('productsDropdown.inverters')}</span>
@@ -511,7 +525,7 @@ export function Navbar() {
                 <Link
                   href="/products/battery"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 hover:text-accent-solar"
+                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
                 >
                   <BatteryCharging className="w-4 h-4 text-accent-gold" />
                   <span>{t('productsDropdown.battery')}</span>
@@ -519,7 +533,7 @@ export function Navbar() {
                 <Link
                   href="/products"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 text-accent-solar font-semibold pt-1"
+                  className="flex items-center gap-2 text-accent-solar font-semibold pt-1 transition-colors"
                 >
                   <Layers className="w-4 h-4" />
                   <span>{t('productsDropdown.allProducts')}</span>
@@ -529,10 +543,13 @@ export function Navbar() {
           </div>
 
           {/* Mobile Accordion Projects */}
-          <div className="flex flex-col gap-2 border-b border-line/60 pb-3">
+          <div
+            style={{ animationDelay: '120ms' }}
+            className="flex flex-col gap-2 border-b border-line/60 pb-3 animate-mobile-item"
+          >
             <button
               onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
-              className="flex items-center justify-between text-lg font-medium text-text-primary hover:text-accent-solar w-full"
+              className="flex items-center justify-between text-lg font-medium text-text-primary hover:text-accent-solar w-full transition-colors"
             >
               <span>{t('nav.projects')}</span>
               <ChevronDown
@@ -543,11 +560,11 @@ export function Navbar() {
             </button>
 
             {mobileProjectsOpen && (
-              <div className="flex flex-col gap-3 pl-4 pt-2 text-sm text-text-secondary">
+              <div className="flex flex-col gap-3 pl-4 pt-2 text-sm text-text-secondary animate-accordion overflow-hidden">
                 <Link
                   href="/projects/ci"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 hover:text-accent-solar"
+                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
                 >
                   <Building2 className="w-4 h-4 text-accent-sky" />
                   <span>{t('projectsDropdown.ci')}</span>
@@ -555,7 +572,7 @@ export function Navbar() {
                 <Link
                   href="/projects/pm-kusum"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 hover:text-accent-solar"
+                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
                 >
                   <Sprout className="w-4 h-4 text-emerald-500" />
                   <span>{t('projectsDropdown.pmKusum')}</span>
@@ -563,7 +580,7 @@ export function Navbar() {
                 <Link
                   href="/projects/ipp"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 hover:text-accent-solar"
+                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
                 >
                   <Factory className="w-4 h-4 text-accent-gold" />
                   <span>{t('projectsDropdown.ipp')}</span>
@@ -571,7 +588,7 @@ export function Navbar() {
                 <Link
                   href="/projects"
                   onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 text-accent-solar font-semibold pt-1"
+                  className="flex items-center gap-2 text-accent-solar font-semibold pt-1 transition-colors"
                 >
                   <Layers className="w-4 h-4" />
                   <span>{t('projectsDropdown.allProjects')}</span>
@@ -583,41 +600,49 @@ export function Navbar() {
           <Link
             href="/b2b"
             onClick={() => setMobileOpen(false)}
-            className="text-lg font-medium text-text-primary hover:text-accent-solar"
+            style={{ animationDelay: '160ms' }}
+            className="text-lg font-medium text-text-primary hover:text-accent-solar animate-mobile-item transition-colors"
           >
             {t('nav.b2b')}
           </Link>
           <Link
             href="/working-methodology"
             onClick={() => setMobileOpen(false)}
-            className="text-lg font-medium text-text-primary hover:text-accent-solar"
+            style={{ animationDelay: '200ms' }}
+            className="text-lg font-medium text-text-primary hover:text-accent-solar animate-mobile-item transition-colors"
           >
             Methodology
           </Link>
           <Link
             href="/export"
             onClick={() => setMobileOpen(false)}
-            className="text-lg font-medium text-text-primary hover:text-accent-solar"
+            style={{ animationDelay: '240ms' }}
+            className="text-lg font-medium text-text-primary hover:text-accent-solar animate-mobile-item transition-colors"
           >
             Export
           </Link>
           <Link
             href="/vendor-registration"
             onClick={() => setMobileOpen(false)}
-            className="text-lg font-medium text-text-primary hover:text-accent-solar"
+            style={{ animationDelay: '280ms' }}
+            className="text-lg font-medium text-text-primary hover:text-accent-solar animate-mobile-item transition-colors"
           >
             Vendor Registration
           </Link>
           <Link
             href="/careers"
             onClick={() => setMobileOpen(false)}
-            className="text-lg font-medium text-text-primary hover:text-accent-solar"
+            style={{ animationDelay: '320ms' }}
+            className="text-lg font-medium text-text-primary hover:text-accent-solar animate-mobile-item transition-colors"
           >
             Careers
           </Link>
 
           {/* Mobile Language Selector Grid */}
-          <div className="pt-4 border-t border-line space-y-3">
+          <div
+            style={{ animationDelay: '360ms' }}
+            className="pt-4 border-t border-line space-y-3 animate-mobile-item"
+          >
             <span className="text-xs font-mono uppercase tracking-widest text-text-secondary font-bold block">
               Select Language ({currentLang.native})
             </span>
@@ -631,7 +656,7 @@ export function Navbar() {
                     className={`flex items-center justify-between p-2.5 rounded-xl border text-xs font-medium transition-all ${
                       active
                         ? 'border-accent-solar bg-accent-solar/15 text-accent-solar font-bold'
-                        : 'border-line bg-bg-secondary/40 text-text-primary'
+                        : 'border-line bg-bg-secondary/40 text-text-primary hover:border-accent-solar/40'
                     }`}
                   >
                     <div className="flex items-center gap-2">
@@ -645,11 +670,14 @@ export function Navbar() {
             </div>
           </div>
 
-          <div className="pt-2">
+          <div
+            style={{ animationDelay: '400ms' }}
+            className="pt-2 animate-mobile-item"
+          >
             <Link
               href="/get-a-quote"
               onClick={() => setMobileOpen(false)}
-              className="w-full py-3 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider block text-center shadow-lg"
+              className="w-full py-3 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider block text-center shadow-lg hover:bg-accent-solar/90 active:scale-[0.99] transition-all"
             >
               {t('getQuote')}
             </Link>
