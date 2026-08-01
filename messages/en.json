@@ -11,7 +11,8 @@
       "b2b": "Serving B2B",
       "vendorRegister": "Vendor Register",
       "impact": "Impact",
-      "testimonials": "Testimonials"
+      "testimonials": "Testimonials",
+      "company": "Company"
     },
     "productsDropdown": {
       "pmSuryaGhar": "PM Surya Ghar Yojana",
@@ -28,7 +29,17 @@
     },
     "getQuote": "Get a Quote",
     "themeToggle": "Toggle theme",
-    "language": "Language"
+    "language": "Language",
+    "companyDropdown": {
+      "vendorRegistration": "Vendor Registration",
+      "vendorRegistrationSub": "Supplier & Vendor Onboarding",
+      "methodology": "Methodology",
+      "methodologySub": "EPC Standard Protocols",
+      "export": "Export & Overseas",
+      "exportSub": "Global Energy Projects",
+      "careers": "Careers",
+      "careersSub": "Join Paa Solar Team"
+    }
   },
   "Hero": {
     "badge": "Blessing from this generation to next generation",
@@ -131,28 +142,44 @@
         "title": "Luxury Residential Solar",
         "category": "Private Estates & Villas",
         "desc": "Seamless high-efficiency solar tiles and ultra-black panels engineered for luxury architectural standards.",
-        "specs": ["Up to 24kW Output", "Invisible Conduit Routing", "Integrated Tile Roof Systems"]
+        "specs": [
+          "Up to 24kW Output",
+          "Invisible Conduit Routing",
+          "Integrated Tile Roof Systems"
+        ]
       },
       {
         "id": "commercial",
         "title": "Commercial & Corporate Microgrids",
         "category": "Office Parks & Headquarters",
         "desc": "Scale energy independence across corporate campuses to slash operational expenditure and fulfill ESG commitments.",
-        "specs": ["100kW - 5MW Capacities", "Demand Charge Mitigation", "Real-Time Enterprise Telemetry"]
+        "specs": [
+          "100kW - 5MW Capacities",
+          "Demand Charge Mitigation",
+          "Real-Time Enterprise Telemetry"
+        ]
       },
       {
         "id": "industrial",
         "title": "Industrial High-Demand Solar",
         "category": "Manufacturing & Logistics",
         "desc": "Heavy-duty solar installations built for continuous industrial loads, automated tracking, and high resilience.",
-        "specs": ["Multi-Megawatt Arrays", "Bi-facial N-Type Cells", "Grid Feed-In Revenue Routing"]
+        "specs": [
+          "Multi-Megawatt Arrays",
+          "Bi-facial N-Type Cells",
+          "Grid Feed-In Revenue Routing"
+        ]
       },
       {
         "id": "storage",
         "title": "Paa Vault Battery Ecosystems",
         "category": "Smart Energy Storage",
         "desc": "Lithium Iron Phosphate (LFP) energy storage systems providing sub-millisecond islanding power during grid dropouts.",
-        "specs": ["5kWh to 1MWh Scalable", "Sub-10ms Switching Speed", "15-Year Cell Warranty"]
+        "specs": [
+          "5kWh to 1MWh Scalable",
+          "Sub-10ms Switching Speed",
+          "15-Year Cell Warranty"
+        ]
       }
     ]
   },

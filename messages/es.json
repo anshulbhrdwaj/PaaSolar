@@ -9,7 +9,10 @@
       "projects": "Proyectos",
       "b2b": "Soluciones B2B",
       "impact": "Impacto",
-      "testimonials": "Testimonios"
+      "testimonials": "Testimonios",
+      "aboutUs": "Sobre Nosotros",
+      "vendorRegister": "Registro de Proveedores",
+      "company": "Empresa"
     },
     "productsDropdown": {
       "pmSuryaGhar": "Plan Solar Residencial",
@@ -22,11 +25,21 @@
       "ci": "Comercial e Industrial (C&I)",
       "pmKusum": "Solar Agrícola",
       "ipp": "Parques Solares a Gran Escala (IPP)",
-      "allProjects": "Portafolio Completo"
+      "allProjects": "Portafolio Completo de Proyectos"
     },
     "getQuote": "Solicitar Cotización",
     "themeToggle": "Cambiar Tema",
-    "language": "Idioma"
+    "language": "Idioma",
+    "companyDropdown": {
+      "vendorRegistration": "Registro de Proveedores",
+      "vendorRegistrationSub": "Incorporación de Proveedores",
+      "methodology": "Metodología",
+      "methodologySub": "Protocolos Estándar EPC",
+      "export": "Exportación y Proyectos Internacionales",
+      "exportSub": "Proyectos Energéticos Globales",
+      "careers": "Carreras",
+      "careersSub": "Únase al Equipo Paa Solar"
+    }
   },
   "Hero": {
     "badge": "Una bendición de esta generación para la próxima generación",
@@ -40,20 +53,56 @@
   "ImpactStats": {
     "title": "Energía Limpia a Gran Escala",
     "subtitle": "Transformación ambiental medible a nivel global.",
-    "stat1": { "value": 520, "unit": "GWh", "label": "Energía Limpia Generada" },
-    "stat2": { "value": 420, "unit": "k Toneladas", "label": "Reducción Anual de CO₂" },
-    "stat3": { "value": 18500, "unit": "+", "label": "Instalaciones Solares" },
-    "stat4": { "value": 24, "unit": "Regiones", "label": "Red Activa" }
+    "stat1": {
+      "value": 520,
+      "unit": "GWh",
+      "label": "Energía Limpia Generada"
+    },
+    "stat2": {
+      "value": 420,
+      "unit": "k Toneladas",
+      "label": "Reducción Anual de CO₂"
+    },
+    "stat3": {
+      "value": 18500,
+      "unit": "+",
+      "label": "Instalaciones Solares"
+    },
+    "stat4": {
+      "value": 24,
+      "unit": "Regiones",
+      "label": "Red Activa"
+    }
   },
   "WhySolar": {
     "tag": "Necesidad Energética",
     "title": "¿Por qué cambiar a energía solar hoy?",
     "subtitle": "La red eléctrica tradicional es costosa. Paa Solar ofrece energía limpia e independiente.",
     "cards": [
-      { "num": "01", "title": "Tarifas Eléctricas En Aumento", "desc": "Las tarifas aumentan anualmente. La energía solar congela sus costos energéticos para siempre.", "highlight": "+12% incremento anual" },
-      { "num": "02", "title": "Sin Cortes de Energía", "desc": "Proteja sus operaciones comerciales contra apagones.", "highlight": "<10ms respaldo" },
-      { "num": "03", "title": "Cero Emisiones de Carbono", "desc": "Adopte energía renovable para un futuro sostenible.", "highlight": "100% Energía Limpia" },
-      { "num": "04", "title": "Garantía de 25 Años", "desc": "Garantía total de rendimiento a largo plazo.", "highlight": "25 Años Garantía" }
+      {
+        "num": "01",
+        "title": "Tarifas Eléctricas En Aumento",
+        "desc": "Las tarifas aumentan anualmente. La energía solar congela sus costos energéticos para siempre.",
+        "highlight": "+12% incremento anual"
+      },
+      {
+        "num": "02",
+        "title": "Sin Cortes de Energía",
+        "desc": "Proteja sus operaciones comerciales contra apagones.",
+        "highlight": "<10ms respaldo"
+      },
+      {
+        "num": "03",
+        "title": "Cero Emisiones de Carbono",
+        "desc": "Adopte energía renovable para un futuro sostenible.",
+        "highlight": "100% Energía Limpia"
+      },
+      {
+        "num": "04",
+        "title": "Garantía de 25 Años",
+        "desc": "Garantía total de rendimiento a largo plazo.",
+        "highlight": "25 Años Garantía"
+      }
     ]
   },
   "Products": {
@@ -61,22 +110,87 @@
     "title": "Soluciones Solares Integrales",
     "subtitle": "Tecnología avanzada para hogares e industrias.",
     "items": [
-      { "title": "Plan Solar Residencial", "category": "Subsidio Gubernamental", "desc": "Hasta 300 unidades de electricidad gratuita y subvenciones oficiales.", "specs": ["Subsidio Directo", "300 Unidades Gratis", "Medición Neta"] },
-      { "title": "Paneles Solares", "category": "N-Type TOPCon", "desc": "Paneles bifaciales con 22.8% de ultra alta eficiencia.", "specs": ["22.8% Eficiencia", "580W-650W", "Garantía 30 Años"] },
-      { "title": "Inversores Inteligentes", "category": "Inversor Híbrido", "desc": "Conmutación de respaldo automática en menos de 10ms.", "specs": ["99.2% MPPT", "<10ms Respaldo", "IP65 Resistente al Agua"] },
-      { "title": "Batería Paa Vault", "category": "Almacenamiento LFP", "desc": "Batería segura de LiFePO4 con más de 10,000 ciclos de vida.", "specs": ["10,000+ Ciclos", "100% DoD", "Escalable 5-50kWh"] }
+      {
+        "title": "Plan Solar Residencial",
+        "category": "Subsidio Gubernamental",
+        "desc": "Hasta 300 unidades de electricidad gratuita y subvenciones oficiales.",
+        "specs": [
+          "Subsidio Directo",
+          "300 Unidades Gratis",
+          "Medición Neta"
+        ]
+      },
+      {
+        "title": "Paneles Solares",
+        "category": "N-Type TOPCon",
+        "desc": "Paneles bifaciales con 22.8% de ultra alta eficiencia.",
+        "specs": [
+          "22.8% Eficiencia",
+          "580W-650W",
+          "Garantía 30 Años"
+        ]
+      },
+      {
+        "title": "Inversores Inteligentes",
+        "category": "Inversor Híbrido",
+        "desc": "Conmutación de respaldo automática en menos de 10ms.",
+        "specs": [
+          "99.2% MPPT",
+          "<10ms Respaldo",
+          "IP65 Resistente al Agua"
+        ]
+      },
+      {
+        "title": "Batería Paa Vault",
+        "category": "Almacenamiento LFP",
+        "desc": "Batería segura de LiFePO4 con más de 10,000 ciclos de vida.",
+        "specs": [
+          "10,000+ Ciclos",
+          "100% DoD",
+          "Escalable 5-50kWh"
+        ]
+      }
     ]
   },
   "CaseStudies": {
     "tag": "Proyectos Destacados",
     "title": "Nuestras Obras Emblemáticas",
     "subtitle": "Proyectos solares exitosos en diversos sectores.",
-    "filters": { "all": "Todos", "commercial": "Comercial", "industrial": "Industrial", "utility": "Escala de Servicios" },
+    "filters": {
+      "all": "Todos",
+      "commercial": "Comercial",
+      "industrial": "Industrial",
+      "utility": "Escala de Servicios"
+    },
     "projects": [
-      { "title": "Villa Solaris", "location": "Mumbai", "capacity": "25 kW", "offset": "100% Autonomía", "desc": "Instalación solar arquitectónica de lujo." },
-      { "title": "Microred Tech Park", "location": "Bengaluru", "capacity": "1.2 MW", "offset": "75% Ahorro", "desc": "Energía solar para complejo tecnológico." },
-      { "title": "Planta Textil Sostenible", "location": "Ahmedabad", "capacity": "3.5 MW", "offset": "85% Reducción", "desc": "Sistema solar para industria textil." },
-      { "title": "Sistema Paa Vault Estate", "location": "Pune", "capacity": "40 kW", "offset": "100% Independiente", "desc": "Almacenamiento con batería inteligente." }
+      {
+        "title": "Villa Solaris",
+        "location": "Mumbai",
+        "capacity": "25 kW",
+        "offset": "100% Autonomía",
+        "desc": "Instalación solar arquitectónica de lujo."
+      },
+      {
+        "title": "Microred Tech Park",
+        "location": "Bengaluru",
+        "capacity": "1.2 MW",
+        "offset": "75% Ahorro",
+        "desc": "Energía solar para complejo tecnológico."
+      },
+      {
+        "title": "Planta Textil Sostenible",
+        "location": "Ahmedabad",
+        "capacity": "3.5 MW",
+        "offset": "85% Reducción",
+        "desc": "Sistema solar para industria textil."
+      },
+      {
+        "title": "Sistema Paa Vault Estate",
+        "location": "Pune",
+        "capacity": "40 kW",
+        "offset": "100% Independiente",
+        "desc": "Almacenamiento con batería inteligente."
+      }
     ]
   },
   "Dashboard": {
@@ -90,20 +204,56 @@
     "gridIndependence": "Independencia",
     "chartTitle": "Gráfico de Generación",
     "solarCurve": "Energía Solar",
-    "loadCurve": "Consumo"
+    "loadCurve": "Consumo",
+    "batteryCurve": "Curva de Descarga Microred Paa Vault"
   },
   "Testimonials": {
-    "tag": "Testimonios de Clientes",
-    "title": "Socio de Confianza",
-    "subtitle": "Lo que dicen nuestros clientes."
+    "tag": "Testimonios",
+    "title": "Confianza de Líderes Industriales",
+    "subtitle": "Historias reales de éxito de nuestros clientes comerciales e industriales.",
+    "items": [
+      {
+        "quote": "El sistema solar de 1.2 MW instalado por Paa Solar redujo los costos eléctricos de nuestra fábrica en un 72%.",
+        "author": "Rajesh Sharma",
+        "role": "Director Ejecutivo",
+        "company": "Parque Logístico Apex",
+        "rating": 5
+      }
+    ]
   },
   "LeadForm": {
     "tag": "Empiece Hoy",
     "title": "Calcule su Ahorro Solar",
     "subtitle": "Obtenga un presupuesto gratuito en 2 minutos.",
-    "step1": { "title": "Detalles de Propiedad", "propertyType": "Tipo de Propiedad", "residential": "Residencial", "commercial": "Comercial", "industrial": "Industrial", "address": "Dirección / Código Postal", "next": "Continuar" },
-    "step2": { "title": "Consumo Eléctrico", "monthlyBill": "Factura Mensual Promedio", "billLow": "$50 - $150", "billMed": "$150 - $500", "billHigh": "$500+", "backup": "¿Requiere respaldo de batería?", "yes": "Sí", "no": "No", "next": "Continuar" },
-    "step3": { "title": "Información de Contacto", "name": "Nombre Completo", "email": "Correo Electrónico", "phone": "Teléfono", "submit": "Solicitar Presupuesto", "submittedTitle": "¡Solicitud Enviada!", "submittedMessage": "Nuestro equipo se pondrá en contacto en 24 horas." }
+    "step1": {
+      "title": "Detalles de Propiedad",
+      "propertyType": "Tipo de Propiedad",
+      "residential": "Residencial",
+      "commercial": "Comercial",
+      "industrial": "Industrial",
+      "address": "Dirección / Código Postal",
+      "next": "Continuar"
+    },
+    "step2": {
+      "title": "Consumo Eléctrico",
+      "monthlyBill": "Factura Mensual Promedio",
+      "billLow": "$50 - $150",
+      "billMed": "$150 - $500",
+      "billHigh": "$500+",
+      "backup": "¿Requiere respaldo de batería?",
+      "yes": "Sí",
+      "no": "No",
+      "next": "Continuar"
+    },
+    "step3": {
+      "title": "Información de Contacto",
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "submit": "Solicitar Presupuesto",
+      "submittedTitle": "¡Solicitud Enviada!",
+      "submittedMessage": "Nuestro equipo se pondrá en contacto en 24 horas."
+    }
   },
   "Footer": {
     "brandTagline": "Impulsando un futuro sostenible a través de la energía limpia.",
@@ -116,21 +266,203 @@
     "copyright": "© 2026 Paa Solar Systems Pvt Ltd. Todos los derechos reservados."
   },
   "ProductDetails": {
-    "pmSuryaGhar": { "tag": "Programa Oficial", "title": "Plan Solar Residencial", "subtitle": "Subsidios gubernamentales directos y 300 kWh gratuitos mensuales.", "subsidy1": "Subsidio Nivel 1", "subsidy2": "Subsidio Nivel 2", "subsidy3": "Subsidio Máximo", "featuresTitle": "Características", "feature1": "300 kWh Gratuitos", "feature2": "Depósito Bancario Directo", "feature3": "Trámite de Medición Neta", "feature4": "25 Años de Garantía" },
-    "solarPanels": { "tag": "Tecnología TOPCon", "title": "Paneles Solares Monocristalinos", "subtitle": "Paneles bifaciales con 22.8% de eficiencia.", "spec1": "22.8% Eficiencia", "spec2": "580W-650W", "spec3": "30 Años Garantía", "feature1": "Captura Bifacial", "feature2": "Resistencia Térmica", "feature3": "Resistente a la Intemperie", "feature4": "Diseño Negro Elegante" },
-    "inverters": { "tag": "Inversor Inteligente", "title": "Inversores Híbridos", "subtitle": "Tecnología inteligente para suministro ininterrumpido.", "spec1": "99.2% MPPT", "spec2": "<10ms Respaldo", "spec3": "IP65 Resistente", "feature1": "Seguimiento Inteligente", "feature2": "Monitoreo en App Móvil", "feature3": "Inyección Cero a Red", "feature4": "10 Años de Garantía" },
-    "battery": { "tag": "Almacenamiento LFP", "title": "Batería Paa Vault", "subtitle": "Batería LiFePO4 segura con más de 10,000 ciclos.", "spec1": "10,000+ Ciclos", "spec2": "100% DoD", "spec3": "Escalable 5-50kWh", "feature1": "Química Segura", "feature2": "Balanceo por IA", "feature3": "Montaje en Pared", "feature4": "Respaldo Continuo" }
+    "pmSuryaGhar": {
+      "tag": "Programa Oficial",
+      "title": "Plan Solar Residencial",
+      "subtitle": "Subsidios gubernamentales directos y 300 kWh gratuitos mensuales.",
+      "subsidy1": "Subsidio Nivel 1",
+      "subsidy2": "Subsidio Nivel 2",
+      "subsidy3": "Subsidio Máximo",
+      "featuresTitle": "Características",
+      "feature1": "300 kWh Gratuitos",
+      "feature2": "Depósito Bancario Directo",
+      "feature3": "Trámite de Medición Neta",
+      "feature4": "25 Años de Garantía"
+    },
+    "solarPanels": {
+      "tag": "Tecnología TOPCon",
+      "title": "Paneles Solares Monocristalinos",
+      "subtitle": "Paneles bifaciales con 22.8% de eficiencia.",
+      "spec1": "22.8% Eficiencia",
+      "spec2": "580W-650W",
+      "spec3": "30 Años Garantía",
+      "feature1": "Captura Bifacial",
+      "feature2": "Resistencia Térmica",
+      "feature3": "Resistente a la Intemperie",
+      "feature4": "Diseño Negro Elegante"
+    },
+    "inverters": {
+      "tag": "Inversor Inteligente",
+      "title": "Inversores Híbridos",
+      "subtitle": "Tecnología inteligente para suministro ininterrumpido.",
+      "spec1": "99.2% MPPT",
+      "spec2": "<10ms Respaldo",
+      "spec3": "IP65 Resistente",
+      "feature1": "Seguimiento Inteligente",
+      "feature2": "Monitoreo en App Móvil",
+      "feature3": "Inyección Cero a Red",
+      "feature4": "10 Años de Garantía"
+    },
+    "battery": {
+      "tag": "Almacenamiento LFP",
+      "title": "Batería Paa Vault",
+      "subtitle": "Batería LiFePO4 segura con más de 10,000 ciclos.",
+      "spec1": "10,000+ Ciclos",
+      "spec2": "100% DoD",
+      "spec3": "Escalable 5-50kWh",
+      "feature1": "Química Segura",
+      "feature2": "Balanceo por IA",
+      "feature3": "Montaje en Pared",
+      "feature4": "Respaldo Continuo"
+    }
   },
   "ProjectSectors": {
-    "ci": { "tag": "Solar Industrial", "title": "Sistemas Solares C&I", "subtitle": "Ahorre hasta un 75% en facturas eléctricas comerciales.", "stat1": "75% Ahorro", "stat2": "Retorno en 3-4 Años", "stat3": "Modelos OPEX/CAPEX", "feature1": "Contratos PPA", "feature2": "Alta Eficiencia", "feature3": "Limpieza Robótica", "feature4": "Beneficios Fiscales" },
-    "pmKusum": { "tag": "Solar Agrícola", "title": "Programa Solar Agrícola", "subtitle": "Bombas solares y plantas para agricultores.", "stat1": "90% Subvención", "stat2": "Componentes A, B, C", "stat3": "Energía Diurna", "feature1": "Plantas Solares Terrestres", "feature2": "Bombas Aisladas", "feature3": "Solarización de Alimentadores", "feature4": "Ingreso Mensual" },
-    "ipp": { "tag": "Parques Solares", "title": "Parques Solares IPP", "subtitle": "Instalaciones solares a escala de megavatios.", "stat1": "Red 500+ MW", "stat2": "PPA a 25 Años", "stat3": "Alta Tensión", "feature1": "Llave en Mano EPC", "feature2": "Sincronización a Red", "feature3": "Telemetría 24/7", "feature4": "Créditos de Carbono" }
+    "ci": {
+      "tag": "Solar Industrial",
+      "title": "Sistemas Solares C&I",
+      "subtitle": "Ahorre hasta un 75% en facturas eléctricas comerciales.",
+      "stat1": "75% Ahorro",
+      "stat2": "Retorno en 3-4 Años",
+      "stat3": "Modelos OPEX/CAPEX",
+      "feature1": "Contratos PPA",
+      "feature2": "Alta Eficiencia",
+      "feature3": "Limpieza Robótica",
+      "feature4": "Beneficios Fiscales"
+    },
+    "pmKusum": {
+      "tag": "Solar Agrícola",
+      "title": "Programa Solar Agrícola",
+      "subtitle": "Bombas solares y plantas para agricultores.",
+      "stat1": "90% Subvención",
+      "stat2": "Componentes A, B, C",
+      "stat3": "Energía Diurna",
+      "feature1": "Plantas Solares Terrestres",
+      "feature2": "Bombas Aisladas",
+      "feature3": "Solarización de Alimentadores",
+      "feature4": "Ingreso Mensual"
+    },
+    "ipp": {
+      "tag": "Parques Solares",
+      "title": "Parques Solares IPP",
+      "subtitle": "Instalaciones solares a escala de megavatios.",
+      "stat1": "Red 500+ MW",
+      "stat2": "PPA a 25 Años",
+      "stat3": "Alta Tensión",
+      "feature1": "Llave en Mano EPC",
+      "feature2": "Sincronización a Red",
+      "feature3": "Telemetría 24/7",
+      "feature4": "Créditos de Carbono"
+    }
   },
   "CorporatePages": {
-    "methodology": { "tag": "Metodología", "title": "Metodología de 5 Etapas", "subtitle": "Ejecución precisa y garantizada.", "step1Title": "1. Auditoría de Sitio", "step1Desc": "Modelado 3D y análisis.", "step2Title": "2. Diseño de Ingeniería", "step2Desc": "Diseño eléctrico y estructural.", "step3Title": "3. Adquisición", "step3Desc": "Componentes de máxima calidad.", "step4Title": "4. Instalación", "step4Desc": "Montaje certificado.", "step5Title": "5. Monitoreo 24/7", "step5Desc": "Supervisión remota continua." },
-    "vendor": { "tag": "Red de Socios", "title": "Registro de Proveedores", "subtitle": "Únase a nuestra red global de suministro.", "formTitle": "Formulario de Registro", "companyName": "Nombre de la Empresa", "category": "Categoría", "categorySupplier": "Proveedor", "categoryEPC": "Socio EPC", "categoryCivil": "Contratista Civil", "email": "Correo Electrónico", "phone": "Teléfono", "gst": "ID Fiscal / Tax ID", "experience": "Experiencia (Años)", "submit": "Enviar Registro", "successMsg": "¡Registro completado!" },
-    "careers": { "tag": "Carreras", "title": "Únase a Paa Solar", "subtitle": "Construya el futuro de la energía limpia.", "cultureTitle": "Nuestra Cultura", "benefit1": "Tecnología de Vanguardia", "benefit2": "Compensación Competitiva", "benefit3": "Trabajo Híbrido", "openingsTitle": "Vacantes Disponibles", "job1": "Ingeniero de Diseño Solar", "job2": "Gerente de Proyecto", "job3": "Especialista Regulatorio", "job4": "Ingeniero de BMS", "applyNow": "Postularse" },
-    "export": { "tag": "Exportación Global", "title": "Exportación Internacional", "subtitle": "Exportación de equipos solares a mercados globales.", "cert1": "Certificado IEC", "cert2": "Cumplimiento CE", "cert3": "Seguridad UL", "stat1": "15+ Países", "stat2": "200+ MW Exportados", "stat3": "Logística Global", "feature1": "Fabricación OEM", "feature2": "Resistencia Térmica", "feature3": "Sistemas en Contenedor", "feature4": "Soporte Logístico" }
+    "methodology": {
+      "tag": "Metodología",
+      "title": "Metodología de 5 Etapas",
+      "subtitle": "Ejecución precisa y garantizada.",
+      "step1Title": "1. Auditoría de Sitio",
+      "step1Desc": "Modelado 3D y análisis.",
+      "step2Title": "2. Diseño de Ingeniería",
+      "step2Desc": "Diseño eléctrico y estructural.",
+      "step3Title": "3. Adquisición",
+      "step3Desc": "Componentes de máxima calidad.",
+      "step4Title": "4. Instalación",
+      "step4Desc": "Montaje certificado.",
+      "step5Title": "5. Monitoreo 24/7",
+      "step5Desc": "Supervisión remota continua."
+    },
+    "vendor": {
+      "tag": "Red de Socios",
+      "title": "Registro de Proveedores",
+      "subtitle": "Únase a nuestra red global de suministro.",
+      "formTitle": "Formulario de Registro",
+      "companyName": "Nombre de la Empresa",
+      "category": "Categoría",
+      "categorySupplier": "Proveedor",
+      "categoryEPC": "Socio EPC",
+      "categoryCivil": "Contratista Civil",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "gst": "ID Fiscal / Tax ID",
+      "experience": "Experiencia (Años)",
+      "submit": "Enviar Registro",
+      "successMsg": "¡Registro completado!"
+    },
+    "careers": {
+      "tag": "Carreras",
+      "title": "Únase a Paa Solar",
+      "subtitle": "Construya el futuro de la energía limpia.",
+      "cultureTitle": "Nuestra Cultura",
+      "benefit1": "Tecnología de Vanguardia",
+      "benefit2": "Compensación Competitiva",
+      "benefit3": "Trabajo Híbrido",
+      "openingsTitle": "Vacantes Disponibles",
+      "job1": "Ingeniero de Diseño Solar",
+      "job2": "Gerente de Proyecto",
+      "job3": "Especialista Regulatorio",
+      "job4": "Ingeniero de BMS",
+      "applyNow": "Postularse"
+    },
+    "export": {
+      "tag": "Exportación Global",
+      "title": "Exportación Internacional",
+      "subtitle": "Exportación de equipos solares a mercados globales.",
+      "cert1": "Certificado IEC",
+      "cert2": "Cumplimiento CE",
+      "cert3": "Seguridad UL",
+      "stat1": "15+ Países",
+      "stat2": "200+ MW Exportados",
+      "stat3": "Logística Global",
+      "feature1": "Fabricación OEM",
+      "feature2": "Resistencia Térmica",
+      "feature3": "Sistemas en Contenedor",
+      "feature4": "Soporte Logístico"
+    }
   },
-  "B2BSolutions": { "tag": "Soluciones B2B", "title": "Soluciones Solares Empresariales", "subtitle": "Ahorro energético garantizado para empresas.", "model1Title": "Modelo PPA", "model1Desc": "Energía solar con cero inversión inicial.", "model2Title": "Acceso Abierto Group Captive", "model2Desc": "Energía solar remota para grandes industrias.", "model3Title": "Modelo RESCO", "model3Desc": "Planta solar gestionada integralmente.", "model4Title": "Almacenamiento Industrial", "model4Desc": "Baterías de alta capacidad para empresas.", "stat1": "Cero CAPEX", "stat2": "Hasta 75% Ahorro", "stat3": "100% Alineado con RE100", "feature1": "Tarifas Reducidas", "feature2": "Cumplimiento ESG", "feature3": "Monitoreo de Portafolio", "feature4": "Garantía de 25 Años" }
+  "B2BSolutions": {
+    "tag": "Soluciones B2B",
+    "title": "Soluciones Solares Empresariales",
+    "subtitle": "Ahorro energético garantizado para empresas.",
+    "model1Title": "Modelo PPA",
+    "model1Desc": "Energía solar con cero inversión inicial.",
+    "model2Title": "Acceso Abierto Group Captive",
+    "model2Desc": "Energía solar remota para grandes industrias.",
+    "model3Title": "Modelo RESCO",
+    "model3Desc": "Planta solar gestionada integralmente.",
+    "model4Title": "Almacenamiento Industrial",
+    "model4Desc": "Baterías de alta capacidad para empresas.",
+    "stat1": "Cero CAPEX",
+    "stat2": "Hasta 75% Ahorro",
+    "stat3": "100% Alineado con RE100",
+    "feature1": "Tarifas Reducidas",
+    "feature2": "Cumplimiento ESG",
+    "feature3": "Monitoreo de Portafolio",
+    "feature4": "Garantía de 25 Años"
+  },
+  "HowItWorks": {
+    "tag": "Metodología de Ingeniería",
+    "title": "Del Sol al Enchufe en 4 Fases de Precisión",
+    "subtitle": "Ejecutamos proyectos solares integrales con excelencia EPC llave en mano y máximos estándares de calidad.",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Auditoría e Inspección 3D",
+        "desc": "Mapeo de cubierta por LiDAR 3D y modelado de irradiancia solar."
+      },
+      {
+        "number": "02",
+        "title": "Ingeniería EPC de Precisión",
+        "desc": "Diagramas unifilares, sincronización a red y componentes Tier-1."
+      },
+      {
+        "number": "03",
+        "title": "Instalación Rápida en Campo",
+        "desc": "Estándares de seguridad certificados e inversores inteligentes."
+      },
+      {
+        "number": "04",
+        "title": "Telemetría en Vivo y Mantenimiento",
+        "desc": "Monitoreo continuo 24/7 por IoT y tiempo de actividad garantizado."
+      }
+    ]
+  }
 }

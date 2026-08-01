@@ -338,7 +338,7 @@ export function Navbar() {
                 isCompanyActive ? 'text-accent-solar font-semibold' : ''
               }`}
             >
-              <span>Company</span>
+              <span>{t('nav.company')}</span>
               <ChevronDown
                 className={`w-4 h-4 transition-transform duration-300 ${
                   companyDropdownOpen ? 'rotate-180 text-accent-solar' : ''
@@ -359,9 +359,9 @@ export function Navbar() {
                     </div>
                     <div>
                       <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
-                        Vendor Registration
+                        {t('companyDropdown.vendorRegistration')}
                       </p>
-                      <p className="text-[10px] text-text-secondary">Supplier & Vendor Onboarding</p>
+                      <p className="text-[10px] text-text-secondary">{t('companyDropdown.vendorRegistrationSub')}</p>
                     </div>
                   </Link>
 
@@ -374,9 +374,9 @@ export function Navbar() {
                     </div>
                     <div>
                       <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
-                        Methodology
+                        {t('companyDropdown.methodology')}
                       </p>
-                      <p className="text-[10px] text-text-secondary">EPC Standard Protocols</p>
+                      <p className="text-[10px] text-text-secondary">{t('companyDropdown.methodologySub')}</p>
                     </div>
                   </Link>
 
@@ -389,9 +389,9 @@ export function Navbar() {
                     </div>
                     <div>
                       <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
-                        Export & Overseas
+                        {t('companyDropdown.export')}
                       </p>
-                      <p className="text-[10px] text-text-secondary">Global Energy Projects</p>
+                      <p className="text-[10px] text-text-secondary">{t('companyDropdown.exportSub')}</p>
                     </div>
                   </Link>
 
@@ -404,9 +404,9 @@ export function Navbar() {
                     </div>
                     <div>
                       <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
-                        Careers
+                        {t('companyDropdown.careers')}
                       </p>
-                      <p className="text-[10px] text-text-secondary">Join Paa Solar Team</p>
+                      <p className="text-[10px] text-text-secondary">{t('companyDropdown.careersSub')}</p>
                     </div>
                   </Link>
                 </div>
