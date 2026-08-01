@@ -96,9 +96,9 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-        scrolled
+        scrolled || mobileOpen
           ? 'bg-bg-primary/80 backdrop-blur-md border-b border-line py-4 shadow-sm'
-          : 'bg-transparent py-6'
+          : 'bg-bg-primary/80 backdrop-blur-md border-b border-line py-4 shadow-sm lg:bg-transparent lg:border-b-0 lg:py-6 lg:shadow-none'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
