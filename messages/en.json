@@ -158,12 +158,12 @@
   "CaseStudies": {
     "tag": "Portfolio of Excellence",
     "title": "Featured Installations",
-    "subtitle": "Discover how Paa Solar transforms prestige residences and industrial hubs into self-sustaining power stations.",
+    "subtitle": "Discover how Paa Solar transforms commercial complexes, manufacturing plants, and utility infrastructure into self-sustaining clean power stations.",
     "filters": {
       "all": "All Projects",
-      "residential": "Residential",
       "commercial": "Commercial",
-      "industrial": "Industrial"
+      "industrial": "Industrial",
+      "utility": "Utility Scale"
     },
     "projects": [
       {

@@ -71,7 +71,7 @@
     "tag": "Referenzprojekte",
     "title": "Unsere Leuchtturmprojekte",
     "subtitle": "Erfolgreiche Solarprojekte in verschiedenen Branchen.",
-    "filters": { "all": "Alle", "residential": "Wohnbau", "commercial": "Gewerbe", "industrial": "Industrie" },
+    "filters": { "all": "Alle", "commercial": "Gewerbe", "industrial": "Industrie", "utility": "Großanlagen" },
     "projects": [
       { "title": "Villa Solaris", "location": "Mumbai", "capacity": "25 kW", "offset": "100% Autarkie", "desc": "Architektonische Luxus-Solarinstallation." },
       { "title": "Tech Park Microgrid", "location": "Bengaluru", "capacity": "1.2 MW", "offset": "75% Ersparnis", "desc": "Solarstrom für IT-Komplex." },

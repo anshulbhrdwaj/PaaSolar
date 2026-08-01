@@ -71,7 +71,7 @@
     "tag": "Proyectos Destacados",
     "title": "Nuestras Obras Emblemáticas",
     "subtitle": "Proyectos solares exitosos en diversos sectores.",
-    "filters": { "all": "Todos", "residential": "Residencial", "commercial": "Comercial", "industrial": "Industrial" },
+    "filters": { "all": "Todos", "commercial": "Comercial", "industrial": "Industrial", "utility": "Escala de Servicios" },
     "projects": [
       { "title": "Villa Solaris", "location": "Mumbai", "capacity": "25 kW", "offset": "100% Autonomía", "desc": "Instalación solar arquitectónica de lujo." },
       { "title": "Microred Tech Park", "location": "Bengaluru", "capacity": "1.2 MW", "offset": "75% Ahorro", "desc": "Energía solar para complejo tecnológico." },
