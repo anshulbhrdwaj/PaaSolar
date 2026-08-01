@@ -19,20 +19,20 @@ export function Footer() {
               <div className="w-9 h-9 relative">
                 <SunArcAnimation progress={100} animated={true} />
               </div>
-              <div className="relative h-10 w-auto flex items-center">
+              <div className="relative h-14 w-auto flex items-center">
                 <Image
                   src="/Paa.png"
                   alt="Paa Solar Logo"
-                  width={150}
-                  height={42}
-                  className="h-10 w-auto object-contain block dark:hidden"
+                  width={260}
+                  height={72}
+                  className="h-14 w-auto object-contain block dark:hidden"
                 />
                 <Image
                   src="/Paa-dark.png"
                   alt="Paa Solar Logo"
-                  width={150}
-                  height={42}
-                  className="h-10 w-auto object-contain hidden dark:block"
+                  width={260}
+                  height={72}
+                  className="h-14 w-auto object-contain hidden dark:block"
                 />
               </div>
             </div>
