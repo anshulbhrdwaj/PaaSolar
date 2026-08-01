@@ -21,13 +21,13 @@ const BANNERS = [
   },
   {
     id: 3,
-    url: '/solar-bess-banner.png',
+    url: 'https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=2000&auto=format&fit=crop',
     title: 'Paa Vault BESS Energy Storage',
     caption: 'Sub-10ms Automated Backup & Peak Shaving Microgrids',
   },
   {
     id: 4,
-    url: '/solar-topcon-banner.png',
+    url: 'https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?q=80&w=2000&auto=format&fit=crop',
     title: 'N-Type TOPCon Module Tech',
     caption: '22.8% Ultra-High Efficiency Bifacial Solar Hardware',
   },
