@@ -455,7 +455,7 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-full bg-bg-primary/95 backdrop-blur-xl border-b border-line p-6 flex flex-col gap-4 shadow-2xl animate-mobile-drawer max-h-[85vh] overflow-y-auto">
+        <div className="lg:hidden fixed inset-x-0 top-full bg-bg-primary/98 backdrop-blur-2xl border-b border-line p-6 flex flex-col gap-4 shadow-2xl animate-mobile-drawer max-h-[calc(100vh-4.5rem)] overflow-y-auto overscroll-contain pb-16">
           <Link
             href="/why-solar"
             onClick={() => setMobileOpen(false)}
