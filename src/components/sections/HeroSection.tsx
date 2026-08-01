@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { ArrowDown, Sparkles, ShieldCheck, Zap, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import gsap from 'gsap';
 
@@ -150,19 +151,19 @@ export function HeroSection() {
 
           {/* CTAs */}
           <div className="hero-fade flex flex-wrap items-center gap-4 pt-4">
-            <a
-              href="#get-a-quote"
+            <Link
+              href="/get-a-quote"
               data-cursor="explore"
               className="px-8 py-4 rounded-full bg-accent-solar text-white text-sm font-bold tracking-wider uppercase shadow-xl hover:shadow-accent-solar/30 hover:bg-accent-solar/90 transition-all duration-300 transform hover:-translate-y-0.5"
             >
               {t('primaryCta')}
-            </a>
-            <a
-              href="#telemetry"
+            </Link>
+            <Link
+              href="/telemetry"
               className="px-8 py-4 rounded-full border border-white/20 hover:border-accent-solar/50 bg-black/40 backdrop-blur-md text-white text-sm font-bold tracking-wider uppercase transition-all duration-300"
             >
               {t('secondaryCta')}
-            </a>
+            </Link>
           </div>
 
           {/* Trust Highlights */}
