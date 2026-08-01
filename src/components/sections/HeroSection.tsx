@@ -119,9 +119,9 @@ export function HeroSection() {
           </div>
         ))}
 
-        {/* Soft Lower-Opacity Gradient Fade Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/80 via-bg-primary/30 to-transparent z-20 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/50 via-bg-primary/20 to-transparent z-20 pointer-events-none" />
+        {/* Soft Theme-Aware Gradient Fade Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/40 dark:from-bg-primary/80 via-bg-primary/15 dark:via-bg-primary/30 to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/25 dark:from-bg-primary/50 via-bg-primary/10 dark:via-bg-primary/20 to-transparent z-20 pointer-events-none" />
       </div>
 
       {/* Subtle Low-Opacity Grid Pattern Overlay */}
