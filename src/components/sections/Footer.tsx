@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import { SunArcAnimation } from '../ui/SunArcAnimation';
 
 export function Footer() {
@@ -47,40 +48,53 @@ export function Footer() {
           </div>
 
           {/* Navigation Sitemap Columns */}
-          <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-6">
             <div>
               <h4 className="font-mono text-xs uppercase tracking-wider text-text-primary font-bold mb-4">
                 {t('sitemap')}
               </h4>
               <ul className="flex flex-col gap-3 text-xs text-text-secondary">
-                <li><a href="#why-solar" className="hover:text-accent-solar transition-colors">Why Solar</a></li>
-                <li><a href="#how-it-works" className="hover:text-accent-solar transition-colors">How It Works</a></li>
-                <li><a href="#solutions" className="hover:text-accent-solar transition-colors">Ecosystem Solutions</a></li>
-                <li><a href="#projects" className="hover:text-accent-solar transition-colors">Featured Projects</a></li>
-                <li><a href="#telemetry" className="hover:text-accent-solar transition-colors">Live Telemetry</a></li>
+                <li><Link href="/why-solar" className="hover:text-accent-solar transition-colors">Why Solar</Link></li>
+                <li><Link href="/projects" className="hover:text-accent-solar transition-colors">Projects</Link></li>
+                <li><Link href="/telemetry" className="hover:text-accent-solar transition-colors">Live Telemetry</Link></li>
+                <li><Link href="/get-a-quote" className="hover:text-accent-solar transition-colors">Get a Quote</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-mono text-xs uppercase tracking-wider text-text-primary font-bold mb-4">
-                {t('solutions')}
+                Products
               </h4>
               <ul className="flex flex-col gap-3 text-xs text-text-secondary">
-                <li><a href="#solutions" className="hover:text-accent-solar transition-colors">Residential Tiles</a></li>
-                <li><a href="#solutions" className="hover:text-accent-solar transition-colors">Commercial Microgrids</a></li>
-                <li><a href="#solutions" className="hover:text-accent-solar transition-colors">Industrial Power</a></li>
-                <li><a href="#solutions" className="hover:text-accent-solar transition-colors">Paa Vault Storage</a></li>
+                <li><Link href="/products/pm-surya-ghar" className="hover:text-accent-solar transition-colors">PM Surya Ghar</Link></li>
+                <li><Link href="/products/solar-panels" className="hover:text-accent-solar transition-colors">Solar Panels</Link></li>
+                <li><Link href="/products/inverters" className="hover:text-accent-solar transition-colors">Smart Inverters</Link></li>
+                <li><Link href="/products/battery" className="hover:text-accent-solar transition-colors">Battery Storage</Link></li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-mono text-xs uppercase tracking-wider text-text-primary font-bold mb-4">
-                {t('legal')}
+                Sectors & Ops
               </h4>
               <ul className="flex flex-col gap-3 text-xs text-text-secondary">
+                <li><Link href="/projects/ci" className="hover:text-accent-solar transition-colors">C&I Solar</Link></li>
+                <li><Link href="/projects/pm-kusum" className="hover:text-accent-solar transition-colors">PM KUSUM</Link></li>
+                <li><Link href="/projects/ipp" className="hover:text-accent-solar transition-colors">IPP Megawatt</Link></li>
+                <li><Link href="/working-methodology" className="hover:text-accent-solar transition-colors">Methodology</Link></li>
+                <li><Link href="/export" className="hover:text-accent-solar transition-colors">Export</Link></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="font-mono text-xs uppercase tracking-wider text-text-primary font-bold mb-4">
+                Company
+              </h4>
+              <ul className="flex flex-col gap-3 text-xs text-text-secondary">
+                <li><Link href="/vendor-registration" className="hover:text-accent-solar transition-colors">Vendor Register</Link></li>
+                <li><Link href="/careers" className="hover:text-accent-solar transition-colors">Careers</Link></li>
                 <li><a href="#" className="hover:text-accent-solar transition-colors">{t('privacy')}</a></li>
                 <li><a href="#" className="hover:text-accent-solar transition-colors">{t('terms')}</a></li>
-                <li><a href="#" className="hover:text-accent-solar transition-colors">{t('cookies')}</a></li>
               </ul>
             </div>
           </div>

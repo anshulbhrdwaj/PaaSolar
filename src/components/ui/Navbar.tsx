@@ -5,7 +5,27 @@ import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
-import { Sun, Moon, Globe, Menu, X, ArrowUpRight } from 'lucide-react';
+import {
+  Sun,
+  Moon,
+  Globe,
+  Menu,
+  X,
+  ArrowUpRight,
+  ChevronDown,
+  Home,
+  SunMedium,
+  Zap,
+  BatteryCharging,
+  Layers,
+  Building2,
+  Sprout,
+  Factory,
+  Wrench,
+  UserPlus,
+  Briefcase,
+  Globe2,
+} from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -19,10 +39,14 @@ export function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const { theme, setTheme } = useTheme();
-  
+
   const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -47,6 +71,9 @@ export function Navbar() {
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
   };
+
+  const isProductActive = pathname.startsWith('/products');
+  const isProjectActive = pathname.startsWith('/projects');
 
   return (
     <header
@@ -83,24 +110,210 @@ export function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-text-secondary">
-          <a href="#why-solar" className="hover:text-accent-solar transition-colors duration-200">
+          <Link
+            href="/why-solar"
+            className={`hover:text-accent-solar transition-colors duration-200 ${
+              pathname === '/why-solar' ? 'text-accent-solar font-semibold' : ''
+            }`}
+          >
             {t('nav.whySolar')}
-          </a>
-          <a href="#how-it-works" className="hover:text-accent-solar transition-colors duration-200">
-            {t('nav.howItWorks')}
-          </a>
-          <a href="#solutions" className="hover:text-accent-solar transition-colors duration-200">
-            {t('nav.solutions')}
-          </a>
-          <a href="#projects" className="hover:text-accent-solar transition-colors duration-200">
-            {t('nav.projects')}
-          </a>
-          <a href="#telemetry" className="hover:text-accent-solar transition-colors duration-200">
-            {t('nav.impact')}
-          </a>
-          <a href="#testimonials" className="hover:text-accent-solar transition-colors duration-200">
-            {t('nav.testimonials')}
-          </a>
+          </Link>
+
+          {/* Interactive Products Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setDropdownOpen(true)}
+            onMouseLeave={() => setDropdownOpen(false)}
+          >
+            <button
+              className={`flex items-center gap-1.5 hover:text-accent-solar transition-colors duration-200 py-2 ${
+                isProductActive ? 'text-accent-solar font-semibold' : ''
+              }`}
+            >
+              <span>{t('nav.products')}</span>
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-300 ${
+                  dropdownOpen ? 'rotate-180 text-accent-solar' : ''
+                }`}
+              />
+            </button>
+
+            {/* Dropdown Card Menu */}
+            {dropdownOpen && (
+              <div className="absolute top-full -left-4 w-72 pt-2 animate-fade-in z-50">
+                <div className="p-3 rounded-2xl bg-bg-primary/95 backdrop-blur-xl border border-line shadow-2xl flex flex-col gap-1.5">
+                  <Link
+                    href="/products/pm-surya-ghar"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform">
+                      <Home className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        {t('productsDropdown.pmSuryaGhar')}
+                      </p>
+                      <p className="text-[10px] text-text-secondary">Govt. Free Electricity Scheme</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/products/solar-panels"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-accent-solar/10 text-accent-solar group-hover:scale-110 transition-transform">
+                      <SunMedium className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        {t('productsDropdown.solarPanels')}
+                      </p>
+                      <p className="text-[10px] text-text-secondary">TOPCon Mono Panels</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/products/inverters"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-accent-sky/10 text-accent-sky group-hover:scale-110 transition-transform">
+                      <Zap className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        {t('productsDropdown.inverters')}
+                      </p>
+                      <p className="text-[10px] text-text-secondary">Smart Hybrid Inverters</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/products/battery"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-accent-gold/10 text-accent-gold group-hover:scale-110 transition-transform">
+                      <BatteryCharging className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        {t('productsDropdown.battery')}
+                      </p>
+                      <p className="text-[10px] text-text-secondary">Paa Vault LFP Storage</p>
+                    </div>
+                  </Link>
+
+                  <div className="border-t border-line/60 pt-1 mt-1">
+                    <Link
+                      href="/products"
+                      className="flex items-center gap-2 px-2.5 py-2 rounded-lg text-xs font-semibold text-accent-solar hover:bg-accent-solar/10 transition-colors"
+                    >
+                      <Layers className="w-3.5 h-3.5" />
+                      <span>{t('productsDropdown.allProducts')}</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Interactive Projects Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setProjectsDropdownOpen(true)}
+            onMouseLeave={() => setProjectsDropdownOpen(false)}
+          >
+            <button
+              className={`flex items-center gap-1.5 hover:text-accent-solar transition-colors duration-200 py-2 ${
+                isProjectActive ? 'text-accent-solar font-semibold' : ''
+              }`}
+            >
+              <span>{t('nav.projects')}</span>
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-300 ${
+                  projectsDropdownOpen ? 'rotate-180 text-accent-solar' : ''
+                }`}
+              />
+            </button>
+
+            {/* Dropdown Card Menu */}
+            {projectsDropdownOpen && (
+              <div className="absolute top-full -left-4 w-72 pt-2 animate-fade-in z-50">
+                <div className="p-3 rounded-2xl bg-bg-primary/95 backdrop-blur-xl border border-line shadow-2xl flex flex-col gap-1.5">
+                  <Link
+                    href="/projects/ci"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-accent-sky/10 text-accent-sky group-hover:scale-110 transition-transform">
+                      <Building2 className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        {t('projectsDropdown.ci')}
+                      </p>
+                      <p className="text-[10px] text-text-secondary">Commercial & Industrial Rooftop</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/projects/pm-kusum"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform">
+                      <Sprout className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        {t('projectsDropdown.pmKusum')}
+                      </p>
+                      <p className="text-[10px] text-text-secondary">Agricultural Solarization</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/projects/ipp"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-accent-gold/10 text-accent-gold group-hover:scale-110 transition-transform">
+                      <Factory className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        {t('projectsDropdown.ipp')}
+                      </p>
+                      <p className="text-[10px] text-text-secondary">Utility Megawatt Solar Parks</p>
+                    </div>
+                  </Link>
+
+                  <div className="border-t border-line/60 pt-1 mt-1">
+                    <Link
+                      href="/projects"
+                      className="flex items-center gap-2 px-2.5 py-2 rounded-lg text-xs font-semibold text-accent-solar hover:bg-accent-solar/10 transition-colors"
+                    >
+                      <Layers className="w-3.5 h-3.5" />
+                      <span>{t('projectsDropdown.allProjects')}</span>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <Link
+            href="/working-methodology"
+            className={`hover:text-accent-solar transition-colors duration-200 ${
+              pathname === '/working-methodology' ? 'text-accent-solar font-semibold' : ''
+            }`}
+          >
+            Methodology
+          </Link>
+          <Link
+            href="/export"
+            className={`hover:text-accent-solar transition-colors duration-200 ${
+              pathname === '/export' ? 'text-accent-solar font-semibold' : ''
+            }`}
+          >
+            Export
+          </Link>
         </nav>
 
         {/* Right Utility Buttons */}
@@ -135,15 +348,15 @@ export function Navbar() {
           )}
 
           {/* Primary CTA */}
-          <a
-            href="#get-a-quote"
+          <Link
+            href="/get-a-quote"
             data-cursor="explore"
             className="relative group overflow-hidden px-5 py-2.5 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-md hover:shadow-lg transition-all duration-300"
           >
             <span className="relative z-10">{t('getQuote')}</span>
             <ArrowUpRight className="w-4 h-4 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             <div className="absolute inset-0 bg-accent-sky translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -171,42 +384,159 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-full bg-bg-primary/95 backdrop-blur-lg border-b border-line p-6 flex flex-col gap-5 shadow-2xl animate-fade-in">
-          <a
-            href="#why-solar"
+        <div className="lg:hidden fixed inset-x-0 top-full bg-bg-primary/95 backdrop-blur-lg border-b border-line p-6 flex flex-col gap-4 shadow-2xl animate-fade-in max-h-[85vh] overflow-y-auto">
+          <Link
+            href="/why-solar"
             onClick={() => setMobileOpen(false)}
-            className="text-lg font-medium text-text-primary hover:text-accent-solar"
+            className={`text-lg font-medium ${
+              pathname === '/why-solar'
+                ? 'text-accent-solar font-semibold'
+                : 'text-text-primary hover:text-accent-solar'
+            }`}
           >
             {t('nav.whySolar')}
-          </a>
-          <a
-            href="#how-it-works"
+          </Link>
+
+          {/* Mobile Accordion Products */}
+          <div className="flex flex-col gap-2 border-y border-line/60 py-3">
+            <button
+              onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+              className="flex items-center justify-between text-lg font-medium text-text-primary hover:text-accent-solar w-full"
+            >
+              <span>{t('nav.products')}</span>
+              <ChevronDown
+                className={`w-5 h-5 transition-transform duration-300 ${
+                  mobileProductsOpen ? 'rotate-180 text-accent-solar' : ''
+                }`}
+              />
+            </button>
+
+            {mobileProductsOpen && (
+              <div className="flex flex-col gap-3 pl-4 pt-2 text-sm text-text-secondary">
+                <Link
+                  href="/products/pm-surya-ghar"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-accent-solar"
+                >
+                  <Home className="w-4 h-4 text-emerald-500" />
+                  <span>{t('productsDropdown.pmSuryaGhar')}</span>
+                </Link>
+                <Link
+                  href="/products/solar-panels"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-accent-solar"
+                >
+                  <SunMedium className="w-4 h-4 text-accent-solar" />
+                  <span>{t('productsDropdown.solarPanels')}</span>
+                </Link>
+                <Link
+                  href="/products/inverters"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-accent-solar"
+                >
+                  <Zap className="w-4 h-4 text-accent-sky" />
+                  <span>{t('productsDropdown.inverters')}</span>
+                </Link>
+                <Link
+                  href="/products/battery"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-accent-solar"
+                >
+                  <BatteryCharging className="w-4 h-4 text-accent-gold" />
+                  <span>{t('productsDropdown.battery')}</span>
+                </Link>
+                <Link
+                  href="/products"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 text-accent-solar font-semibold pt-1"
+                >
+                  <Layers className="w-4 h-4" />
+                  <span>{t('productsDropdown.allProducts')}</span>
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Mobile Accordion Projects */}
+          <div className="flex flex-col gap-2 border-b border-line/60 pb-3">
+            <button
+              onClick={() => setMobileProjectsOpen(!mobileProjectsOpen)}
+              className="flex items-center justify-between text-lg font-medium text-text-primary hover:text-accent-solar w-full"
+            >
+              <span>{t('nav.projects')}</span>
+              <ChevronDown
+                className={`w-5 h-5 transition-transform duration-300 ${
+                  mobileProjectsOpen ? 'rotate-180 text-accent-solar' : ''
+                }`}
+              />
+            </button>
+
+            {mobileProjectsOpen && (
+              <div className="flex flex-col gap-3 pl-4 pt-2 text-sm text-text-secondary">
+                <Link
+                  href="/projects/ci"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-accent-solar"
+                >
+                  <Building2 className="w-4 h-4 text-accent-sky" />
+                  <span>{t('projectsDropdown.ci')}</span>
+                </Link>
+                <Link
+                  href="/projects/pm-kusum"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-accent-solar"
+                >
+                  <Sprout className="w-4 h-4 text-emerald-500" />
+                  <span>{t('projectsDropdown.pmKusum')}</span>
+                </Link>
+                <Link
+                  href="/projects/ipp"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-accent-solar"
+                >
+                  <Factory className="w-4 h-4 text-accent-gold" />
+                  <span>{t('projectsDropdown.ipp')}</span>
+                </Link>
+                <Link
+                  href="/projects"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 text-accent-solar font-semibold pt-1"
+                >
+                  <Layers className="w-4 h-4" />
+                  <span>{t('projectsDropdown.allProjects')}</span>
+                </Link>
+              </div>
+            )}
+          </div>
+
+          <Link
+            href="/working-methodology"
             onClick={() => setMobileOpen(false)}
             className="text-lg font-medium text-text-primary hover:text-accent-solar"
           >
-            {t('nav.howItWorks')}
-          </a>
-          <a
-            href="#solutions"
+            Methodology
+          </Link>
+          <Link
+            href="/export"
             onClick={() => setMobileOpen(false)}
             className="text-lg font-medium text-text-primary hover:text-accent-solar"
           >
-            {t('nav.solutions')}
-          </a>
-          <a
-            href="#projects"
+            Export
+          </Link>
+          <Link
+            href="/vendor-registration"
             onClick={() => setMobileOpen(false)}
             className="text-lg font-medium text-text-primary hover:text-accent-solar"
           >
-            {t('nav.projects')}
-          </a>
-          <a
-            href="#telemetry"
+            Vendor Registration
+          </Link>
+          <Link
+            href="/careers"
             onClick={() => setMobileOpen(false)}
             className="text-lg font-medium text-text-primary hover:text-accent-solar"
           >
-            {t('nav.impact')}
-          </a>
+            Careers
+          </Link>
 
           <div className="flex items-center justify-between pt-4 border-t border-line">
             <button
@@ -216,13 +546,13 @@ export function Navbar() {
               <Globe className="w-4 h-4" />
               <span>Switch to {locale === 'en' ? 'हिंदी (HI)' : 'English (EN)'}</span>
             </button>
-            <a
-              href="#get-a-quote"
+            <Link
+              href="/get-a-quote"
               onClick={() => setMobileOpen(false)}
               className="px-4 py-2 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider"
             >
               {t('getQuote')}
-            </a>
+            </Link>
           </div>
         </div>
       )}

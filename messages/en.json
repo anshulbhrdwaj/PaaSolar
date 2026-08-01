@@ -5,9 +5,23 @@
       "whySolar": "Why Solar",
       "howItWorks": "How It Works",
       "solutions": "Solutions",
+      "products": "Products",
       "projects": "Projects",
       "impact": "Impact",
       "testimonials": "Testimonials"
+    },
+    "productsDropdown": {
+      "pmSuryaGhar": "PM Surya Ghar Yojana",
+      "solarPanels": "Solar Panels",
+      "inverters": "Smart Inverters",
+      "battery": "Battery Storage",
+      "allProducts": "All Products Catalogue"
+    },
+    "projectsDropdown": {
+      "ci": "Commercial & Industrial (C&I)",
+      "pmKusum": "PM KUSUM Scheme",
+      "ipp": "IPP Utility Scale",
+      "allProjects": "All Projects Portfolio"
     },
     "getQuote": "Get a Quote",
     "themeToggle": "Toggle theme",
@@ -272,5 +286,158 @@
     "terms": "Terms of Service",
     "cookies": "Cookie Preferences",
     "copyright": "© 2026 Paa Solar Systems Pvt. Ltd. All rights reserved."
+  },
+  "ProductDetails": {
+    "pmSuryaGhar": {
+      "tag": "Government Scheme & Subsidy",
+      "title": "PM Surya Ghar: Muft Bijli Yojana",
+      "subtitle": "Harness up to ₹78,000 direct central government subsidy and achieve zero electricity bills for up to 300 free units monthly.",
+      "subsidy1": "₹30,000 Subsidy for 1 kW Rooftop System",
+      "subsidy2": "₹60,000 Subsidy for 2 kW Rooftop System",
+      "subsidy3": "₹78,000 Max Subsidy for 3 kW+ Systems",
+      "featuresTitle": "Why Install PM Surya Ghar with Paa Solar",
+      "feature1": "300 Units Monthly Free Power Generation",
+      "feature2": "Direct Central Financial Assistance (CFA) Bank Deposit",
+      "feature3": "Seamless Net-Metering DISCOM Approval Handled by Us",
+      "feature4": "25-Year Performance Guarantee & Low EMI Financing"
+    },
+    "solarPanels": {
+      "tag": "N-Type TOPCon Technology",
+      "title": "Ultra-Efficiency Monocrystalline Solar Panels",
+      "subtitle": "Engineering 22.8% peak cell efficiency with dual-glass anti-reflective protection and zero PID degradation.",
+      "spec1": "22.8% Module Efficiency",
+      "spec2": "580W - 650W Wattage Output",
+      "spec3": "30-Year Performance Warranty",
+      "feature1": "Bifacial Glass-Glass Architecture for Rear Light Capture",
+      "feature2": "Low Temp Coefficient (-0.29%/°C) for Extreme Summer Heat",
+      "feature3": "Heavy Snow & Hurricane Wind Load Resistance (5400Pa)",
+      "feature4": "Sleek Full-Black Aesthetic Option for Luxury Homes"
+    },
+    "inverters": {
+      "tag": "Sub-10ms Islanding Power",
+      "title": "Smart Hybrid Inverters & Microinverters",
+      "subtitle": "Uninterrupted energy conversion with sub-10ms automatic grid-to-battery transfer and AI load management.",
+      "spec1": "99.2% MPPT Efficiency",
+      "spec2": "<10ms Switchover Time",
+      "spec3": "IP65 Weatherproof Sealed",
+      "feature1": "Dual & Quad MPPT Trackers for Complex Roof Angles",
+      "feature2": "Real-Time Mobile App Cloud Monitoring & Telemetry",
+      "feature3": "Grid-Interactive Smart Export & Zero-Feed-In Capability",
+      "feature4": "10-Year Extended Warranty & Active Cooling Fanless Design"
+    },
+    "battery": {
+      "tag": "LFP Energy Storage",
+      "title": "Paa Vault Smart Battery Storage",
+      "subtitle": "Ultra-safe Lithium Iron Phosphate (LiFePO4) storage engineered for 10,000+ deep discharge cycles and 24/7 power independence.",
+      "spec1": "10,000+ Cycle Lifespan",
+      "spec2": "100% Depth of Discharge",
+      "spec3": "5 kWh - 50 kWh Modular Scale",
+      "feature1": "LiFePO4 Chemistry — 0% Thermal Runaway / Fire Hazard",
+      "feature2": "AI Active Cell Balancing for Extended Battery Longevity",
+      "feature3": "Compact Stackable Wall-Mount & Floor-Stand Enclosures",
+      "feature4": "Sub-10ms Uninterrupted Islanding Backup in Outages"
+    }
+  },
+  "ProjectSectors": {
+    "ci": {
+      "tag": "Enterprise Clean Energy",
+      "title": "Commercial & Industrial (C&I) Solar Systems",
+      "subtitle": "Slashing operational electricity expenses by up to 75% for manufacturing plants, warehouses, IT parks, and corporate campuses.",
+      "stat1": "75% Electricity Bill Cut",
+      "stat2": "3 to 4 Year Payback Period",
+      "stat3": "OPEX & CAPEX Financing",
+      "feature1": "PPA (Power Purchase Agreement) Zero-UPFRONT-CAPEX Model",
+      "feature2": "High-Efficiency Roof & Carport BIPV Solar Architecture",
+      "feature3": "Automated Robotic Panel Cleaning Systems",
+      "feature4": "Tax Benefits Under Accelerated Depreciation (40%)"
+    },
+    "pmKusum": {
+      "tag": "Agricultural Solarization",
+      "title": "PM KUSUM Scheme Solutions",
+      "subtitle": "Empowering farmers and DISCOM feeders with subsidized solar pumps, decentralized ground power plants, and feeder-level solarization.",
+      "stat1": "Up to 90% Pump Subsidy",
+      "stat2": "Components A, B & C",
+      "stat3": "Daytime Uninterrupted Power",
+      "feature1": "Component A: Decentralized 500kW to 2MW Ground Solar Plants",
+      "feature2": "Component B: Standalone Off-Grid Solar Agricultural Pumps",
+      "feature3": "Component C: Feeder Level Solarization of Agricultural Pumps",
+      "feature4": "Guaranteed Monthly Revenue Selling Excess Power to DISCOM"
+    },
+    "ipp": {
+      "tag": "Utility-Scale Energy Parks",
+      "title": "Independent Power Producer (IPP) Megawatt Parks",
+      "subtitle": "Engineering multi-megawatt ground-mounted solar parks and high-voltage grid-interconnected utility power infrastructure.",
+      "stat1": "500+ MW Utility Footprint",
+      "stat2": "25-Year PPA Bankability",
+      "stat3": "Substation & HT Transmission",
+      "feature1": "Turnkey EPC & Land Acquisition for MW Scale Solar Parks",
+      "feature2": "BESS Integrated High-Voltage Grid Synchronization",
+      "feature3": "24/7 SCADA Telemetry & AI Predictive Operations",
+      "feature4": "ESG Compliant Carbon Offset Certificate Generation"
+    }
+  },
+  "CorporatePages": {
+    "methodology": {
+      "tag": "Engineering Precision Roadmap",
+      "title": "Our 5-Stage EPC Working Methodology",
+      "subtitle": "How Paa Solar delivers zero-defect, highly reliable clean energy infrastructure from initial GIS audit to 25-year commissioning.",
+      "step1Title": "1. LiDAR & Solar GIS Site Audit",
+      "step1Desc": "3D digital twin modeling of roof structure, shading patterns, and irradiance metrics.",
+      "step2Title": "2. Custom Electrical & Structural Design",
+      "step2Desc": "CAD structural wind-load simulation and single-line electrical schematics.",
+      "step3Title": "3. Tier-1 Hardware Procurement & Supply",
+      "step3Desc": "ALMM-listed N-Type TOPCon panels, smart hybrid inverters, and LFP storage.",
+      "step4Title": "4. Precision EPC Installation & DISCOM Testing",
+      "step4Desc": "Certified electrical installation, flash testing, and net-meter synchronization.",
+      "step5Title": "5. 24/7 AI Cloud Telemetry & Operations",
+      "step5Desc": "Real-time remote monitoring, automatic thermal alerts, and lifetime maintenance."
+    },
+    "vendor": {
+      "tag": "Supply Chain & Partner Ecosystem",
+      "title": "Vendor & EPC Partner Registration Portal",
+      "subtitle": "Join Paa Solar's elite network of certified component suppliers, installation partners, and civil contractors.",
+      "formTitle": "Partner Application Form",
+      "companyName": "Company / Firm Name",
+      "category": "Vendor Category",
+      "categorySupplier": "Hardware / Component Supplier",
+      "categoryEPC": "EPC & Installation Partner",
+      "categoryCivil": "Civil & Structural Contractor",
+      "email": "Official Email Address",
+      "phone": "Phone Number",
+      "gst": "GST / Registration Number",
+      "experience": "Years of Solar Experience",
+      "submit": "Submit Vendor Registration",
+      "successMsg": "Registration Submitted Successfully! Our Procurement Team will review your credentials within 48 hours."
+    },
+    "careers": {
+      "tag": "Join the Clean Energy Revolution",
+      "title": "Build the Future of Clean Energy Architecture",
+      "subtitle": "We are hiring passionate engineers, architects, project managers, and sustainability pioneers to build sovereign power independence.",
+      "cultureTitle": "Why Work at Paa Solar",
+      "benefit1": "Cutting-edge hardware R&D in solar architecture & battery storage",
+      "benefit2": "Competitive equity incentives & performance bonuses",
+      "benefit3": "Hybrid work options & nationwide project mobility",
+      "openingsTitle": "Current Open Positions",
+      "job1": "Senior Solar Design Engineer (PVSyst / CAD)",
+      "job2": "Project Execution Manager (C&I / MW Solar)",
+      "job3": "DISCOM Liaison & Regulatory Specialist",
+      "job4": "R&D Battery Management Systems (BMS) Engineer",
+      "applyNow": "Apply For Position"
+    },
+    "export": {
+      "tag": "Global Footprint & Distribution",
+      "title": "International Solar Hardware Exports",
+      "subtitle": "Exporting high-efficiency TOPCon solar modules, smart inverters, and Paa Vault battery systems to international markets across Africa, Middle East, SE Asia, and Europe.",
+      "cert1": "IEC 61215 / 61730 Certified",
+      "cert2": "CE & TUV Rheinland Compliant",
+      "cert3": "UL 1973 & UN38.3 Battery Safety",
+      "stat1": "15+ Export Nations",
+      "stat2": "200+ MW Export Volume",
+      "stat3": "Global Logistics Network",
+      "feature1": "Custom OEM & Private Label Module Manufacturing",
+      "feature2": "Tropicalized Thermal Tolerant Solar Inverter Architecture",
+      "feature3": "Containerized Plug-and-Play Solar BESS Microgrid Systems",
+      "feature4": "Full Export Documentation, Customs Clearance & Port Logistics Support"
+    }
   }
 }
