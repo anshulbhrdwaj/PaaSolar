@@ -78,6 +78,7 @@ export function Footer() {
                 Sectors & Ops
               </h4>
               <ul className="flex flex-col gap-3 text-xs text-text-secondary">
+                <li><Link href="/b2b" className="hover:text-accent-solar transition-colors">Serving B2B</Link></li>
                 <li><Link href="/projects/ci" className="hover:text-accent-solar transition-colors">C&I Solar</Link></li>
                 <li><Link href="/projects/pm-kusum" className="hover:text-accent-solar transition-colors">PM KUSUM</Link></li>
                 <li><Link href="/projects/ipp" className="hover:text-accent-solar transition-colors">IPP Megawatt</Link></li>

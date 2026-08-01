@@ -299,6 +299,14 @@ export function Navbar() {
           </div>
 
           <Link
+            href="/b2b"
+            className={`hover:text-accent-solar transition-colors duration-200 ${
+              pathname === '/b2b' ? 'text-accent-solar font-semibold' : ''
+            }`}
+          >
+            {t('nav.b2b')}
+          </Link>
+          <Link
             href="/working-methodology"
             className={`hover:text-accent-solar transition-colors duration-200 ${
               pathname === '/working-methodology' ? 'text-accent-solar font-semibold' : ''
@@ -509,6 +517,13 @@ export function Navbar() {
             )}
           </div>
 
+          <Link
+            href="/b2b"
+            onClick={() => setMobileOpen(false)}
+            className="text-lg font-medium text-text-primary hover:text-accent-solar"
+          >
+            {t('nav.b2b')}
+          </Link>
           <Link
             href="/working-methodology"
             onClick={() => setMobileOpen(false)}

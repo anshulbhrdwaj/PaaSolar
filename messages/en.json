@@ -7,6 +7,7 @@
       "solutions": "Solutions",
       "products": "Products",
       "projects": "Projects",
+      "b2b": "Serving B2B",
       "impact": "Impact",
       "testimonials": "Testimonials"
     },
@@ -439,5 +440,25 @@
       "feature3": "Containerized Plug-and-Play Solar BESS Microgrid Systems",
       "feature4": "Full Export Documentation, Customs Clearance & Port Logistics Support"
     }
+  },
+  "B2BSolutions": {
+    "tag": "Corporate Clean Energy Sovereignty",
+    "title": "Serving B2B & Enterprise Infrastructure",
+    "subtitle": "Decarbonizing industrial manufacturing, commercial real estate, data centers, and multi-facility enterprises with guaranteed energy savings.",
+    "model1Title": "Power Purchase Agreement (PPA)",
+    "model1Desc": "Zero-CAPEX off-take model where Paa Solar funds, builds, and maintains the solar system while you pay a discounted per-kWh electricity rate.",
+    "model2Title": "Group Captive Open Access",
+    "model2Desc": "Off-site MW-scale solar energy wheeling through state power grids to power multiple corporate facilities with 100% renewable energy.",
+    "model3Title": "RESCO & BOOT Frameworks",
+    "model3Desc": "Build-Own-Operate-Transfer models providing predictable cash-flow, guaranteed performance ratios, and smooth asset handover.",
+    "model4Title": "Industrial Battery Storage (BESS)",
+    "model4Desc": "High-capacity LFP energy storage for peak demand shaving, power quality stabilization, and critical manufacturing backup.",
+    "stat1": "Zero CAPEX Models",
+    "stat2": "Up to 75% Energy Cost Cut",
+    "stat3": "100% RE100 / ESG Aligned",
+    "feature1": "Custom PPA Tariffs 30–40% Below DISCOM Commercial Rates",
+    "feature2": "Full Compliance with BRSR, GHG Protocol Scope 2 & ISO 50001",
+    "feature3": "Multi-Facility Portfolio Energy Dashboard & Real-Time Telemetry",
+    "feature4": "25-Year Guaranteed Performance Ratio (PR) & Preventive Maintenance"
   }
 }
