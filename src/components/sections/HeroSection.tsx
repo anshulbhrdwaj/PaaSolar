@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { ArrowDown, Sparkles, ShieldCheck, Zap, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
+import { Sparkles, ShieldCheck, Zap, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import gsap from 'gsap';
 
 const BANNERS = [
@@ -99,7 +99,7 @@ export function HeroSection() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen pt-36 pb-20 flex flex-col justify-between overflow-hidden bg-black text-white"
+      className="relative min-h-screen pt-36 pb-20 flex flex-col justify-between overflow-hidden bg-bg-primary text-text-primary"
     >
       {/* Background Image Carousel Slider */}
       <div className="absolute inset-0 z-0">
@@ -108,7 +108,7 @@ export function HeroSection() {
             key={banner.id}
             className={`absolute inset-0 transition-all duration-1000 ease-in-out transform ${
               index === currentSlide
-                ? 'opacity-100 scale-100 z-10'
+                ? 'opacity-90 dark:opacity-90 scale-100 z-10'
                 : 'opacity-0 scale-105 z-0 pointer-events-none'
             }`}
           >
@@ -119,19 +119,19 @@ export function HeroSection() {
           </div>
         ))}
 
-        {/* Multi-Layer Dark Overlay Gradient for High Contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/80 to-black/70 z-20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/90 via-bg-primary/60 to-transparent z-20" />
+        {/* Multi-Layer Theme-Aware Overlay Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/65 to-bg-primary/20 z-20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/80 via-bg-primary/40 to-transparent z-20" />
       </div>
 
       {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30 z-20 pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--line)_1px,transparent_1px),linear-gradient(to_bottom,var(--line)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-25 z-20 pointer-events-none" />
 
       {/* Main Content Area */}
       <div className="relative z-30 max-w-7xl mx-auto px-6 w-full my-auto">
         <div className="max-w-4xl flex flex-col items-start gap-6">
           {/* Badge */}
-          <div className="hero-fade inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-accent-solar/40 bg-accent-solar/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
+          <div className="hero-fade inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-accent-solar/30 bg-accent-solar/10 text-accent-solar text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5" />
             <span>{t('badge')}</span>
           </div>
@@ -139,7 +139,7 @@ export function HeroSection() {
           {/* Large Kinetic Title */}
           <h1
             ref={titleRef}
-            className="font-serif text-5xl md:text-7xl xl:text-8xl font-bold tracking-tight text-white leading-[1.05]"
+            className="font-serif text-5xl md:text-7xl xl:text-8xl font-bold tracking-tight text-text-primary leading-[1.05]"
           >
             <span className="block hero-line">{t('headlineMain')}</span>
           </h1>
@@ -160,16 +160,16 @@ export function HeroSection() {
             </Link>
             <Link
               href="/telemetry"
-              className="px-8 py-4 rounded-full border border-white/20 hover:border-accent-solar/50 bg-black/40 backdrop-blur-md text-white text-sm font-bold tracking-wider uppercase transition-all duration-300"
+              className="px-8 py-4 rounded-full border border-line hover:border-accent-solar/50 bg-bg-secondary/70 backdrop-blur-md text-text-primary text-sm font-bold tracking-wider uppercase transition-all duration-300"
             >
               {t('secondaryCta')}
             </Link>
           </div>
 
           {/* Trust Highlights */}
-          <div className="hero-fade flex flex-wrap items-center gap-6 pt-6 text-xs text-text-secondary border-t border-line/60 w-full max-w-lg">
+          <div className="hero-fade flex flex-wrap items-center gap-6 pt-6 text-xs text-text-secondary border-t border-line/80 w-full max-w-lg">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <ShieldCheck className="w-4 h-4 text-accent-solar" />
               <span>25-Year Guaranteed Performance</span>
             </div>
             <div className="flex items-center gap-2">
@@ -181,14 +181,14 @@ export function HeroSection() {
       </div>
 
       {/* Carousel Controls Bar & Scroll Cue */}
-      <div className="relative z-30 max-w-7xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-6 pt-8 text-xs font-medium border-t border-white/10">
+      <div className="relative z-30 max-w-7xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-6 pt-8 text-xs font-medium border-t border-line">
         {/* Active Banner Caption */}
         <div className="flex items-center gap-3">
           <span className="font-mono text-accent-solar font-bold text-sm">
             0{currentSlide + 1} / 0{BANNERS.length}
           </span>
-          <span className="hidden sm:inline text-white/40">|</span>
-          <span className="text-white/80 font-semibold text-xs tracking-wide">
+          <span className="hidden sm:inline text-text-secondary/50">|</span>
+          <span className="text-text-primary font-semibold text-xs tracking-wide">
             {BANNERS[currentSlide].title}: <span className="text-text-secondary font-normal">{BANNERS[currentSlide].caption}</span>
           </span>
         </div>
@@ -202,31 +202,31 @@ export function HeroSection() {
                 onClick={() => setCurrentSlide(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
                 className={`h-2 rounded-full transition-all duration-300 ${
-                  idx === currentSlide ? 'w-8 bg-accent-solar' : 'w-2 bg-white/30 hover:bg-white/60'
+                  idx === currentSlide ? 'w-8 bg-accent-solar' : 'w-2 bg-text-secondary/30 hover:bg-text-secondary/60'
                 }`}
               />
             ))}
           </div>
 
-          <div className="flex items-center gap-2 border-l border-white/20 pl-4">
+          <div className="flex items-center gap-2 border-l border-line pl-4">
             <button
               onClick={() => setIsPlaying(!isPlaying)}
               aria-label={isPlaying ? 'Pause banner slideshow' : 'Play banner slideshow'}
-              className="p-2 rounded-full border border-white/20 hover:border-accent-solar text-white hover:text-accent-solar bg-black/40 transition-colors"
+              className="p-2 rounded-full border border-line hover:border-accent-solar text-text-primary hover:text-accent-solar bg-bg-secondary/70 backdrop-blur-md transition-colors"
             >
               {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
             </button>
             <button
               onClick={prevSlide}
               aria-label="Previous Banner"
-              className="p-2 rounded-full border border-white/20 hover:border-accent-solar text-white hover:text-accent-solar bg-black/40 transition-colors"
+              className="p-2 rounded-full border border-line hover:border-accent-solar text-text-primary hover:text-accent-solar bg-bg-secondary/70 backdrop-blur-md transition-colors"
             >
               <ChevronLeft className="w-3.5 h-3.5" />
             </button>
             <button
               onClick={nextSlide}
               aria-label="Next Banner"
-              className="p-2 rounded-full border border-white/20 hover:border-accent-solar text-white hover:text-accent-solar bg-black/40 transition-colors"
+              className="p-2 rounded-full border border-line hover:border-accent-solar text-text-primary hover:text-accent-solar bg-bg-secondary/70 backdrop-blur-md transition-colors"
             >
               <ChevronRight className="w-3.5 h-3.5" />
             </button>
