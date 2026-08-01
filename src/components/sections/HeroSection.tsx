@@ -2,24 +2,57 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { ArrowDown, Sparkles, ShieldCheck, Zap } from 'lucide-react';
+import { ArrowDown, Sparkles, ShieldCheck, Zap, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
+const BANNERS = [
+  {
+    id: 1,
+    url: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2000&auto=format&fit=crop',
+    title: 'Utility-Scale Solar Parks',
+    caption: '500+ MW Grid Connected Power Plants Across India',
+  },
+  {
+    id: 2,
+    url: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2000&auto=format&fit=crop',
+    title: 'Commercial & Industrial Rooftops',
+    caption: '75% Energy Cost Reduction for Manufacturing Plants',
+  },
+  {
+    id: 3,
+    url: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2000&auto=format&fit=crop',
+    title: 'Paa Vault BESS Energy Storage',
+    caption: 'Sub-10ms Automated Backup & Peak Shaving Microgrids',
+  },
+  {
+    id: 4,
+    url: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=2000&auto=format&fit=crop',
+    title: 'N-Type TOPCon Module Tech',
+    caption: '22.8% Ultra-High Efficiency Bifacial Solar Hardware',
+  },
+];
 
 export function HeroSection() {
   const t = useTranslations('Hero');
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const panelRef = useRef<HTMLDivElement>(null);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true);
 
+  // Auto-play timer for background carousel
+  useEffect(() => {
+    if (!isPlaying) return;
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % BANNERS.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isPlaying]);
+
+  // Initial Entrance Animation
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Split title lines animation
       const lines = titleRef.current?.querySelectorAll('.hero-line');
       if (lines) {
         gsap.fromTo(
@@ -37,7 +70,6 @@ export function HeroSection() {
         );
       }
 
-      // Fade in subelements
       gsap.fromTo(
         '.hero-fade',
         { y: 30, opacity: 0 },
@@ -50,57 +82,55 @@ export function HeroSection() {
           delay: 0.6,
         }
       );
-
-      // Parallax panel scroll effect
-      if (panelRef.current) {
-        gsap.to(panelRef.current, {
-          yPercent: 15,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: heroRef.current,
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true,
-          },
-        });
-      }
     }, heroRef);
 
     return () => ctx.revert();
   }, []);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!heroRef.current) return;
-    const rect = heroRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    setMousePos({ x, y });
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % BANNERS.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + BANNERS.length) % BANNERS.length);
   };
 
   return (
     <section
       ref={heroRef}
-      onMouseMove={handleMouseMove}
-      className="relative min-h-screen pt-32 pb-20 flex flex-col justify-between overflow-hidden bg-bg-primary"
+      className="relative min-h-screen pt-36 pb-20 flex flex-col justify-between overflow-hidden bg-black text-white"
     >
-      {/* Background Sunrise Radial Glow Fingerprint */}
-      <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] pointer-events-none rounded-full blur-3xl opacity-60 dark:opacity-40 transition-transform duration-700 ease-out"
-        style={{
-          background:
-            'radial-gradient(circle at 50% 30%, var(--accent-solar) 0%, var(--accent-gold) 35%, transparent 70%)',
-          transform: `translate3d(calc(-50% + ${mousePos.x * 40}px), ${mousePos.y * 40}px, 0)`,
-        }}
-      />
+      {/* Background Image Carousel Slider */}
+      <div className="absolute inset-0 z-0">
+        {BANNERS.map((banner, index) => (
+          <div
+            key={banner.id}
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out transform ${
+              index === currentSlide
+                ? 'opacity-100 scale-100 z-10'
+                : 'opacity-0 scale-105 z-0 pointer-events-none'
+            }`}
+          >
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: `url(${banner.url})` }}
+            />
+          </div>
+        ))}
+
+        {/* Multi-Layer Dark Overlay Gradient for High Contrast */}
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/80 to-black/70 z-20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/90 via-bg-primary/60 to-transparent z-20" />
+      </div>
 
       {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--line)_1px,transparent_1px),linear-gradient(to_bottom,var(--line)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-30 z-20 pointer-events-none" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto">
-        {/* Left Headline Column */}
-        <div className="lg:col-span-7 flex flex-col items-start gap-6">
+      {/* Main Content Area */}
+      <div className="relative z-30 max-w-7xl mx-auto px-6 w-full my-auto">
+        <div className="max-w-4xl flex flex-col items-start gap-6">
           {/* Badge */}
-          <div className="hero-fade inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-accent-solar/30 bg-accent-solar/10 text-accent-solar text-xs font-semibold uppercase tracking-wider">
+          <div className="hero-fade inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-accent-solar/40 bg-accent-solar/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5" />
             <span>{t('badge')}</span>
           </div>
@@ -108,13 +138,13 @@ export function HeroSection() {
           {/* Large Kinetic Title */}
           <h1
             ref={titleRef}
-            className="font-serif text-5xl md:text-7xl xl:text-8xl font-bold tracking-tight text-text-primary leading-[1.05]"
+            className="font-serif text-5xl md:text-7xl xl:text-8xl font-bold tracking-tight text-white leading-[1.05]"
           >
             <span className="block hero-line">{t('headlineMain')}</span>
           </h1>
 
           {/* Subheading / Description */}
-          <p className="hero-fade text-lg md:text-xl text-text-secondary max-w-2xl font-normal leading-relaxed">
+          <p className="hero-fade text-lg md:text-2xl text-text-secondary max-w-2xl font-normal leading-relaxed">
             {t('description')}
           </p>
 
@@ -129,86 +159,77 @@ export function HeroSection() {
             </a>
             <a
               href="#telemetry"
-              className="px-8 py-4 rounded-full border border-line hover:border-accent-solar/40 bg-bg-secondary/40 text-text-primary text-sm font-bold tracking-wider uppercase transition-all duration-300"
+              className="px-8 py-4 rounded-full border border-white/20 hover:border-accent-solar/50 bg-black/40 backdrop-blur-md text-white text-sm font-bold tracking-wider uppercase transition-all duration-300"
             >
               {t('secondaryCta')}
             </a>
           </div>
 
           {/* Trust Highlights */}
-          <div className="hero-fade flex items-center gap-6 pt-6 text-xs text-text-secondary border-t border-line/60 w-full max-w-lg">
+          <div className="hero-fade flex flex-wrap items-center gap-6 pt-6 text-xs text-text-secondary border-t border-line/60 w-full max-w-lg">
             <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-accent-solar" />
-              <span>25-Year Warranty</span>
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <span>25-Year Guaranteed Performance</span>
             </div>
             <div className="flex items-center gap-2">
               <Zap className="w-4 h-4 text-accent-gold" />
-              <span>Sub-10ms Battery Switch</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Right 3D Interactive Solar Panel Graphic Column */}
-        <div
-          ref={panelRef}
-          className="lg:col-span-5 relative flex justify-center items-center"
-          style={{
-            transform: `perspective(1000px) rotateY(${mousePos.x * 12}deg) rotateX(${-mousePos.y * 12}deg)`,
-            transition: 'transform 0.15s ease-out',
-          }}
-        >
-          {/* Glassmorphic Panel Wrapper */}
-          <div className="relative w-full max-w-md aspect-square rounded-3xl p-8 bg-gradient-to-br from-bg-secondary/80 to-bg-primary/90 border border-line shadow-2xl backdrop-blur-xl flex flex-col justify-between overflow-hidden group">
-            {/* Ambient Corner Flare */}
-            <div className="absolute -top-12 -right-12 w-44 h-44 rounded-full bg-accent-solar/20 blur-2xl group-hover:scale-150 transition-transform duration-700" />
-
-            {/* Top Bar Status */}
-            <div className="flex items-center justify-between text-xs font-mono tracking-widest text-text-secondary z-10">
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                GRID SYNCHRONIZED
-              </span>
-              <span className="text-accent-solar font-bold">99.8% EFFICIENCY</span>
-            </div>
-
-            {/* Center Solar Cell Array Art */}
-            <div className="my-auto py-6 grid grid-cols-3 gap-3 z-10">
-              {[...Array(9)].map((_, i) => (
-                <div
-                  key={i}
-                  className="aspect-square rounded-xl bg-gradient-to-br from-accent-sky/20 via-accent-solar/10 to-bg-primary border border-line/80 flex items-center justify-center p-3 relative overflow-hidden group-hover:border-accent-solar/50 transition-colors duration-500"
-                >
-                  <div className="w-full h-full rounded-lg border border-accent-solar/20 bg-accent-solar/5 flex items-center justify-center">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent-gold" />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Bottom Panel Specs */}
-            <div className="flex items-center justify-between z-10 pt-4 border-t border-line/60">
-              <div>
-                <p className="text-[10px] uppercase font-mono tracking-wider text-text-secondary">
-                  Peak Output
-                </p>
-                <p className="text-2xl font-serif font-bold text-text-primary">14.8 kW</p>
-              </div>
-              <div className="text-right">
-                <p className="text-[10px] uppercase font-mono tracking-wider text-text-secondary">
-                  Carbon Reduction
-                </p>
-                <p className="text-lg font-serif font-semibold text-accent-solar">12.4 Tons/Yr</p>
-              </div>
+              <span>Sub-10ms Battery Backup</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom Scroll Cue */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full flex items-center justify-between pt-8 text-xs font-medium text-text-secondary border-t border-line/40">
-        <span className="tracking-widest uppercase text-[11px]">{t('scrollCue')}</span>
-        <div className="flex items-center gap-2 animate-bounce">
-          <ArrowDown className="w-4 h-4 text-accent-solar" />
+      {/* Carousel Controls Bar & Scroll Cue */}
+      <div className="relative z-30 max-w-7xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-6 pt-8 text-xs font-medium border-t border-white/10">
+        {/* Active Banner Caption */}
+        <div className="flex items-center gap-3">
+          <span className="font-mono text-accent-solar font-bold text-sm">
+            0{currentSlide + 1} / 0{BANNERS.length}
+          </span>
+          <span className="hidden sm:inline text-white/40">|</span>
+          <span className="text-white/80 font-semibold text-xs tracking-wide">
+            {BANNERS[currentSlide].title}: <span className="text-text-secondary font-normal">{BANNERS[currentSlide].caption}</span>
+          </span>
+        </div>
+
+        {/* Carousel Slide Controls */}
+        <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1.5">
+            {BANNERS.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  idx === currentSlide ? 'w-8 bg-accent-solar' : 'w-2 bg-white/30 hover:bg-white/60'
+                }`}
+              />
+            ))}
+          </div>
+
+          <div className="flex items-center gap-2 border-l border-white/20 pl-4">
+            <button
+              onClick={() => setIsPlaying(!isPlaying)}
+              aria-label={isPlaying ? 'Pause banner slideshow' : 'Play banner slideshow'}
+              className="p-2 rounded-full border border-white/20 hover:border-accent-solar text-white hover:text-accent-solar bg-black/40 transition-colors"
+            >
+              {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+            </button>
+            <button
+              onClick={prevSlide}
+              aria-label="Previous Banner"
+              className="p-2 rounded-full border border-white/20 hover:border-accent-solar text-white hover:text-accent-solar bg-black/40 transition-colors"
+            >
+              <ChevronLeft className="w-3.5 h-3.5" />
+            </button>
+            <button
+              onClick={nextSlide}
+              aria-label="Next Banner"
+              className="p-2 rounded-full border border-white/20 hover:border-accent-solar text-white hover:text-accent-solar bg-black/40 transition-colors"
+            >
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
         </div>
       </div>
     </section>
