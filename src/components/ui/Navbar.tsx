@@ -25,6 +25,7 @@ import {
   UserPlus,
   Briefcase,
   Globe2,
+  Check,
 } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -32,6 +33,19 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
 }
+
+const LANGUAGES = [
+  { code: 'en', name: 'English', native: 'English', flag: '🇬🇧' },
+  { code: 'hi', name: 'Hindi', native: 'हिंदी', flag: '🇮🇳' },
+  { code: 'mr', name: 'Marathi', native: 'मराठी', flag: '🇮🇳' },
+  { code: 'gu', name: 'Gujarati', native: 'ગુજરાતી', flag: '🇮🇳' },
+  { code: 'ta', name: 'Tamil', native: 'தமிழ்', flag: '🇮🇳' },
+  { code: 'te', name: 'Telugu', native: 'తెలుగు', flag: '🇮🇳' },
+  { code: 'kn', name: 'Kannada', native: 'ಕನ್ನಡ', flag: '🇮🇳' },
+  { code: 'bn', name: 'Bengali', native: 'বাংলা', flag: '🇮🇳' },
+  { code: 'es', name: 'Spanish', native: 'Español', flag: '🇪🇸' },
+  { code: 'de', name: 'German', native: 'Deutsch', flag: '🇩🇪' },
+];
 
 export function Navbar() {
   const t = useTranslations('Navbar');
@@ -45,6 +59,7 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
   const [mobileProjectsOpen, setMobileProjectsOpen] = useState(false);
 
@@ -63,10 +78,13 @@ export function Navbar() {
     };
   }, []);
 
-  const toggleLanguage = () => {
-    const nextLocale = locale === 'en' ? 'hi' : 'en';
+  const changeLanguage = (nextLocale: string) => {
+    setLangDropdownOpen(false);
+    setMobileOpen(false);
     router.replace(pathname, { locale: nextLocale });
   };
+
+  const currentLang = LANGUAGES.find((l) => l.code === locale) || LANGUAGES[0];
 
   const toggleTheme = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
@@ -326,16 +344,61 @@ export function Navbar() {
 
         {/* Right Utility Buttons */}
         <div className="hidden lg:flex items-center gap-4">
-          {/* Language Selector */}
-          <button
-            onClick={toggleLanguage}
-            data-cursor="pointer"
-            className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-line hover:border-accent-solar/40 bg-bg-secondary/50 text-xs font-semibold text-text-primary transition-all duration-300"
-            aria-label="Switch Language"
+          {/* Multi-Language Selector Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setLangDropdownOpen(true)}
+            onMouseLeave={() => setLangDropdownOpen(false)}
           >
-            <Globe className="w-3.5 h-3.5 text-accent-solar" />
-            <span className="uppercase tracking-wider">{locale === 'en' ? 'HI' : 'EN'}</span>
-          </button>
+            <button
+              onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+              data-cursor="pointer"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-line hover:border-accent-solar/40 bg-bg-secondary/50 text-xs font-semibold text-text-primary transition-all duration-300"
+              aria-label="Select Language"
+            >
+              <Globe className="w-3.5 h-3.5 text-accent-solar" />
+              <span className="uppercase tracking-wider font-bold">{currentLang.code}</span>
+              <span className="text-[10px] text-text-secondary">({currentLang.native})</span>
+              <ChevronDown
+                className={`w-3 h-3 text-text-secondary transition-transform duration-300 ${
+                  langDropdownOpen ? 'rotate-180 text-accent-solar' : ''
+                }`}
+              />
+            </button>
+
+            {langDropdownOpen && (
+              <div className="absolute right-0 top-full pt-2 w-56 z-50 animate-fade-in">
+                <div className="rounded-2xl p-2 bg-bg-primary/95 backdrop-blur-xl border border-line shadow-2xl space-y-1 max-h-80 overflow-y-auto">
+                  <div className="px-3 py-1.5 border-b border-line/60">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-text-secondary font-bold">
+                      Select Language
+                    </span>
+                  </div>
+                  {LANGUAGES.map((lang) => {
+                    const active = lang.code === locale;
+                    return (
+                      <button
+                        key={lang.code}
+                        onClick={() => changeLanguage(lang.code)}
+                        className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-all ${
+                          active
+                            ? 'bg-accent-solar/15 text-accent-solar font-bold'
+                            : 'text-text-primary hover:bg-bg-secondary'
+                        }`}
+                      >
+                        <div className="flex items-center gap-2.5">
+                          <span>{lang.flag}</span>
+                          <span className="font-semibold">{lang.native}</span>
+                          <span className="text-[10px] text-text-secondary uppercase">({lang.code})</span>
+                        </div>
+                        {active && <Check className="w-4 h-4 text-accent-solar" />}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Theme Toggle */}
           {mounted && (
@@ -553,18 +616,40 @@ export function Navbar() {
             Careers
           </Link>
 
-          <div className="flex items-center justify-between pt-4 border-t border-line">
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center gap-2 text-sm font-semibold text-accent-solar"
-            >
-              <Globe className="w-4 h-4" />
-              <span>Switch to {locale === 'en' ? 'हिंदी (HI)' : 'English (EN)'}</span>
-            </button>
+          {/* Mobile Language Selector Grid */}
+          <div className="pt-4 border-t border-line space-y-3">
+            <span className="text-xs font-mono uppercase tracking-widest text-text-secondary font-bold block">
+              Select Language ({currentLang.native})
+            </span>
+            <div className="grid grid-cols-2 gap-2">
+              {LANGUAGES.map((lang) => {
+                const active = lang.code === locale;
+                return (
+                  <button
+                    key={lang.code}
+                    onClick={() => changeLanguage(lang.code)}
+                    className={`flex items-center justify-between p-2.5 rounded-xl border text-xs font-medium transition-all ${
+                      active
+                        ? 'border-accent-solar bg-accent-solar/15 text-accent-solar font-bold'
+                        : 'border-line bg-bg-secondary/40 text-text-primary'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2">
+                      <span>{lang.flag}</span>
+                      <span>{lang.native}</span>
+                    </div>
+                    {active && <Check className="w-3.5 h-3.5 text-accent-solar" />}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="pt-2">
             <Link
               href="/get-a-quote"
               onClick={() => setMobileOpen(false)}
-              className="px-4 py-2 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider"
+              className="w-full py-3 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider block text-center shadow-lg"
             >
               {t('getQuote')}
             </Link>
