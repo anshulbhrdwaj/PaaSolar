@@ -50,7 +50,7 @@ export function Footer() {
             {/* Social Media & WhatsApp Quick Links */}
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://wa.me/919876543210?text=Hello%20Paa%20Solar"
+                href="https://wa.me/919311922134?text=Hello%20Paa%20Solar"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contact on WhatsApp"
