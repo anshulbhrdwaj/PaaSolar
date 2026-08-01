@@ -6,21 +6,21 @@ import { Link } from '@/i18n/routing';
 import { Navbar } from '@/components/ui/Navbar';
 import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
-import { Home, SunMedium, Zap, BatteryCharging, ArrowRight, ShieldCheck } from 'lucide-react';
+import { SunMedium, Zap, BatteryCharging, ArrowRight, ShieldCheck, Building2 } from 'lucide-react';
 
 export default function ProductsPage() {
   const t = useTranslations('ProductDetails');
 
   const productsList = [
     {
-      id: 'pm-surya-ghar',
-      href: '/products/pm-surya-ghar',
-      title: t('pmSuryaGhar.title'),
-      tag: t('pmSuryaGhar.tag'),
-      subtitle: t('pmSuryaGhar.subtitle'),
-      icon: <Home className="w-8 h-8 text-emerald-500" />,
-      badge: 'Up to ₹78,000 Direct Subsidy',
-      specs: [t('pmSuryaGhar.subsidy1'), t('pmSuryaGhar.subsidy2'), t('pmSuryaGhar.subsidy3')],
+      id: 'ci-solar',
+      href: '/projects/ci',
+      title: 'Commercial & Industrial Solar Systems',
+      tag: 'Turnkey C&I EPC',
+      subtitle: '75% Energy Cost Reduction for Factories, Warehouses & Commercial Buildings.',
+      icon: <Building2 className="w-8 h-8 text-emerald-500" />,
+      badge: 'Accelerated 40% Depreciation Benefit',
+      specs: ['Custom Roof Engineering', 'Zero CapEx OPEX Model Option', 'Grid Synchronized Auto-Switch'],
     },
     {
       id: 'solar-panels',

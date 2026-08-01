@@ -10,7 +10,7 @@ export function GetAQuoteCTA() {
   const [submitted, setSubmitted] = useState(false);
 
   const [formData, setFormData] = useState({
-    propertyType: 'residential',
+    propertyType: 'commercial',
     address: '',
     monthlyBill: 'billMed',
     batteryBackup: 'yes',
@@ -116,9 +116,9 @@ export function GetAQuoteCTA() {
                     </label>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                       {[
-                        { id: 'residential', label: t('step1.residential'), icon: <Home className="w-5 h-5" /> },
-                        { id: 'commercial', label: t('step1.commercial'), icon: <Building className="w-5 h-5" /> },
-                        { id: 'industrial', label: t('step1.industrial'), icon: <Factory className="w-5 h-5" /> },
+                        { id: 'commercial', label: 'Commercial Rooftop', icon: <Building className="w-5 h-5" /> },
+                        { id: 'industrial', label: 'Manufacturing Plant', icon: <Factory className="w-5 h-5" /> },
+                        { id: 'utility', label: 'Utility Megawatt Park', icon: <Home className="w-5 h-5" /> },
                       ].map((item) => (
                         <button
                           type="button"

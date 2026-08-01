@@ -2,19 +2,19 @@
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
-import { Home, Building2, Factory, BatteryCharging, Check } from 'lucide-react';
+import { Building2, Factory, BatteryCharging, Check } from 'lucide-react';
 
 export function ProductsGrid() {
   const t = useTranslations('Products');
 
   const products = [
     {
-      id: 'residential',
-      title: t('items.0.title'),
-      category: t('items.0.category'),
-      desc: t('items.0.desc'),
-      specs: [t('items.0.specs.0'), t('items.0.specs.1'), t('items.0.specs.2')],
-      icon: <Home className="w-6 h-6 text-accent-solar" />,
+      id: 'hardware',
+      title: 'N-Type TOPCon Solar Modules',
+      category: 'Hardware & Module Tech',
+      desc: '22.8% Ultra-High Efficiency Bifacial N-Type Modules engineered for maximum multi-decade energy yield.',
+      specs: ['22.8% Module Efficiency', 'Zero Light-Induced Degradation (LID)', '25-Year Linear Performance Warranty'],
+      icon: <Building2 className="w-6 h-6 text-accent-solar" />,
       gradient: 'from-accent-solar/20 via-accent-gold/10 to-transparent',
     },
     {

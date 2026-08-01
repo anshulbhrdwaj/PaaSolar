@@ -27,7 +27,7 @@ const BANNERS = [
   },
   {
     id: 4,
-    url: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?q=80&w=2000&auto=format&fit=crop',
+    url: 'https://images.unsplash.com/photo-1548337138-e87d889cc369?q=80&w=2000&auto=format&fit=crop',
     title: 'N-Type TOPCon Module Tech',
     caption: '22.8% Ultra-High Efficiency Bifacial Solar Hardware',
   },
@@ -108,7 +108,7 @@ export function HeroSection() {
             key={banner.id}
             className={`absolute inset-0 transition-all duration-1000 ease-in-out transform ${
               index === currentSlide
-                ? 'opacity-95 dark:opacity-95 scale-100 z-10'
+                ? 'opacity-100 scale-100 z-10'
                 : 'opacity-0 scale-105 z-0 pointer-events-none'
             }`}
           >
@@ -119,13 +119,13 @@ export function HeroSection() {
           </div>
         ))}
 
-        {/* Multi-Layer Theme-Aware Overlay Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/65 to-bg-primary/20 z-20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/80 via-bg-primary/40 to-transparent z-20" />
+        {/* Soft Lower-Opacity Gradient Fade Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/80 via-bg-primary/30 to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/50 via-bg-primary/20 to-transparent z-20 pointer-events-none" />
       </div>
 
-      {/* Grid Pattern Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--line)_1px,transparent_1px),linear-gradient(to_bottom,var(--line)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-25 z-20 pointer-events-none" />
+      {/* Subtle Low-Opacity Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--line)_1px,transparent_1px),linear-gradient(to_bottom,var(--line)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10 z-20 pointer-events-none" />
 
       {/* Main Content Area */}
       <div className="relative z-30 max-w-7xl mx-auto px-6 w-full my-auto">

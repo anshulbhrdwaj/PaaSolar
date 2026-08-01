@@ -36,6 +36,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
+
 export default async function LocaleLayout({
   children,
   params,
@@ -62,6 +64,7 @@ export default async function LocaleLayout({
           <ThemeProvider>
             <SmoothScrollProvider>
               <CustomCursor />
+              <WhatsAppButton />
               {children}
             </SmoothScrollProvider>
           </ThemeProvider>

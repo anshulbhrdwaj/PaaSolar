@@ -23,12 +23,12 @@ export function CaseStudies() {
   const projects = [
     {
       id: 'project-1',
-      title: t('projects.0.title'),
-      category: 'residential',
-      location: t('projects.0.location'),
-      capacity: t('projects.0.capacity'),
-      offset: t('projects.0.offset'),
-      desc: t('projects.0.desc'),
+      title: '50 MW Grid Utility Solar Park',
+      category: 'utility',
+      location: 'Bhadla, Rajasthan',
+      capacity: '50 MWp DC',
+      offset: '75,000 Tons CO2/yr',
+      desc: 'High-voltage grid interconnected utility solar plant supplying clean power to state electricity discom.',
       bgGradient: 'from-amber-500/20 via-rose-500/10 to-bg-secondary',
     },
     {
@@ -53,12 +53,12 @@ export function CaseStudies() {
     },
     {
       id: 'project-4',
-      title: t('projects.3.title'),
-      category: 'residential',
-      location: t('projects.3.location'),
-      capacity: t('projects.3.capacity'),
-      offset: t('projects.3.offset'),
-      desc: t('projects.3.desc'),
+      title: 'PM KUSUM Agricultural Solarization',
+      category: 'utility',
+      location: 'Nashik, Maharashtra',
+      capacity: '12 MW Solar Pumps',
+      offset: '18,200 Tons CO2/yr',
+      desc: 'Dedicated solar feeder project powering agricultural water pump microgrids across rural farming clusters.',
       bgGradient: 'from-accent-solar/20 via-accent-gold/10 to-bg-secondary',
     },
   ];
@@ -87,7 +87,7 @@ export function CaseStudies() {
 
           {/* Sector Filters */}
           <div className="flex items-center gap-2 p-1.5 rounded-full bg-bg-primary border border-line overflow-x-auto">
-            {['all', 'residential', 'commercial', 'industrial'].map((cat) => (
+            {['all', 'commercial', 'industrial', 'utility'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}

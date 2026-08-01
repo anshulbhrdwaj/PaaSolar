@@ -13,7 +13,6 @@ import {
   X,
   ArrowUpRight,
   ChevronDown,
-  Home,
   SunMedium,
   Zap,
   BatteryCharging,
@@ -140,6 +139,14 @@ export function Navbar() {
           >
             {t('nav.whySolar')}
           </Link>
+          <Link
+            href="/about-us"
+            className={`hover:text-accent-solar transition-colors duration-200 ${
+              pathname === '/about-us' ? 'text-accent-solar font-semibold' : ''
+            }`}
+          >
+            {t('nav.aboutUs')}
+          </Link>
 
           {/* Interactive Products Dropdown */}
           <div
@@ -164,21 +171,6 @@ export function Navbar() {
             {dropdownOpen && (
               <div className="absolute top-full -left-4 w-72 pt-2 animate-fade-in z-50">
                 <div className="p-3 rounded-2xl bg-bg-primary/95 backdrop-blur-xl border border-line shadow-2xl flex flex-col gap-1.5">
-                  <Link
-                    href="/products/pm-surya-ghar"
-                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
-                  >
-                    <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform">
-                      <Home className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
-                        {t('productsDropdown.pmSuryaGhar')}
-                      </p>
-                      <p className="text-[10px] text-text-secondary">Govt. Free Electricity Scheme</p>
-                    </div>
-                  </Link>
-
                   <Link
                     href="/products/solar-panels"
                     className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
@@ -476,6 +468,18 @@ export function Navbar() {
           >
             {t('nav.whySolar')}
           </Link>
+          <Link
+            href="/about-us"
+            onClick={() => setMobileOpen(false)}
+            style={{ animationDelay: '60ms' }}
+            className={`text-lg font-medium animate-mobile-item transition-colors ${
+              pathname === '/about-us'
+                ? 'text-accent-solar font-semibold'
+                : 'text-text-primary hover:text-accent-solar'
+            }`}
+          >
+            {t('nav.aboutUs')}
+          </Link>
 
           {/* Mobile Accordion Products */}
           <div
@@ -496,14 +500,6 @@ export function Navbar() {
 
             {mobileProductsOpen && (
               <div className="flex flex-col gap-3 pl-4 pt-2 text-sm text-text-secondary animate-accordion overflow-hidden">
-                <Link
-                  href="/products/pm-surya-ghar"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
-                >
-                  <Home className="w-4 h-4 text-emerald-500" />
-                  <span>{t('productsDropdown.pmSuryaGhar')}</span>
-                </Link>
                 <Link
                   href="/products/solar-panels"
                   onClick={() => setMobileOpen(false)}
