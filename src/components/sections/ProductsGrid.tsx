@@ -63,7 +63,7 @@ export function ProductsGrid() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {products.map((item) => (
             <div
               key={item.id}
@@ -110,6 +110,23 @@ export function ProductsGrid() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* PDF Operating Guidelines Banner */}
+        <div className="p-8 rounded-3xl border border-accent-solar/30 bg-gradient-to-r from-accent-solar/10 via-bg-secondary to-bg-primary shadow-xl space-y-4">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-accent-solar font-bold">
+                Project Execution & Distribution Policy
+              </span>
+              <h4 className="text-xl font-serif font-bold text-text-primary">
+                Turnkey Execution for 50 kW+ | Complete Kits (3 kW - 10 kW) for Distribution Partners
+              </h4>
+            </div>
+          </div>
+          <p className="text-xs md:text-sm text-text-secondary leading-relaxed">
+            PAA SOLAR directly executes turnkey EPC projects for installations <strong>above 50 kW</strong> (Commercial, Industrial, PM-KUSUM, PM-SSY, and IPP Utility Solar Parks). For systems <strong>below 50 kW</strong>, we provide Complete Kits (3 kW, 5 kW, 8 kW, 10 kW Ongrid & Hybrid) featuring 24%+ TOPCon DCR Panels, Smart Inverters, LiFePO4 Storage, Mounting Structures, ACDB/DCDB, Net Meters, and Protection Accessories directly to our distribution partners for easy transport and one-stop fulfillment.
+          </p>
         </div>
       </div>
     </section>

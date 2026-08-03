@@ -87,6 +87,37 @@ export default function ExportPage() {
           </div>
         </div>
 
+        {/* 8 Global Export Markets Section from PAA Solar PDF */}
+        <div className="mb-16 space-y-8">
+          <div className="text-center max-w-2xl mx-auto space-y-3">
+            <h3 className="font-serif text-3xl md:text-4xl font-bold text-text-primary">
+              Our 8 International Export Destinations
+            </h3>
+            <p className="text-text-secondary text-sm">
+              PAA SOLAR exports high-efficiency TOPCon solar modules, smart inverters, and LFP storage kits through EKCHAKRA International Pvt. Ltd. to 8 global markets.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {[
+              { name: 'Singapore', flag: '🇸🇬', region: 'Southeast Asia' },
+              { name: 'Oman', flag: '🇴🇲', region: 'Middle East' },
+              { name: 'South Africa', flag: '🇿🇦', region: 'Southern Africa' },
+              { name: 'Morocco', flag: '🇲🇦', region: 'North Africa' },
+              { name: 'Brazil', flag: '🇧🇷', region: 'South America' },
+              { name: 'New Zealand', flag: '🇳🇿', region: 'Oceania' },
+              { name: 'Nepal', flag: '🇳🇵', region: 'South Asia' },
+              { name: 'Bangladesh', flag: '🇧🇩', region: 'South Asia' },
+            ].map((country, idx) => (
+              <div key={idx} className="p-5 rounded-2xl bg-bg-secondary/70 border border-line flex flex-col items-center text-center gap-2 hover:border-accent-solar/50 hover:bg-bg-secondary transition-all">
+                <span className="text-3xl">{country.flag}</span>
+                <h4 className="font-bold text-sm text-text-primary">{country.name}</h4>
+                <span className="text-[10px] font-mono text-text-secondary">{country.region}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="p-8 rounded-3xl bg-bg-secondary/50 border border-line space-y-6">
           <h3 className="font-serif text-3xl font-bold text-text-primary mb-4">Export Hardware Capabilities</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-medium text-text-secondary">
