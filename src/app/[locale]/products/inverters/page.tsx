@@ -12,6 +12,7 @@ export default function InvertersPage() {
   const t = useTranslations('ProductDetails.inverters');
 
   const specs = [
+    { label: 'Inverter Topology', val: 'On-Grid, Hybrid & Off-Grid' },
     { label: 'MPPT Efficiency', val: '99.2%' },
     { label: 'Islanding Transfer', val: '< 10 Milliseconds' },
     { label: 'Protection Rating', val: 'IP65 Weatherproof' },

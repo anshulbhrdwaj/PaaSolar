@@ -12,7 +12,7 @@ export default function SolarPanelsPage() {
   const t = useTranslations('ProductDetails.solarPanels');
 
   const specs = [
-    { label: 'Cell Technology', val: 'N-Type TOPCon Bifacial' },
+    { label: 'Cell Technology', val: 'Mono Bifacial, TOPCon & HJT Cells' },
     { label: 'Module Efficiency', val: '22.8% Peak' },
     { label: 'Power Rating Range', val: '580W – 650W' },
     { label: 'Glass Type', val: '2.0mm Dual Tempered Anti-Reflective' },

@@ -251,6 +251,56 @@ export default function AboutUsPage() {
         </div>
       </section>
 
+      {/* Corporate Social Responsibility (CSR) Section from PDF */}
+      <section className="py-20 md:py-24 border-b border-line bg-gradient-to-b from-emerald-500/5 via-bg-secondary/40 to-bg-primary">
+        <div className="max-w-7xl mx-auto px-6 space-y-12">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 text-xs font-mono font-bold uppercase tracking-wider">
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>Corporate Social Responsibility (CSR)</span>
+            </div>
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-text-primary">
+              Empowering Communities & Preserving Nature
+            </h2>
+            <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+              At PAA SOLAR, our commitment extends beyond technology. We view every kilowatt of solar energy installed as a direct gift and blessing to the next generation—protecting forests, reducing carbon smoke, and empowering rural farming communities.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="p-8 rounded-3xl border border-line bg-bg-primary space-y-4 shadow-lg hover:border-emerald-500/50 transition-all">
+              <div className="p-3 rounded-2xl bg-emerald-500/10 text-emerald-500 w-fit">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-text-primary">Saving Trees & Smoke-Free Air</h3>
+              <p className="text-text-secondary text-xs md:text-sm leading-relaxed">
+                By replacing thermal power dependency with clean solar electricity, PAA SOLAR installations eliminate megatons of carbon emissions annually, preserving thousands of trees and ensuring cleaner air for future generations.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-3xl border border-line bg-bg-primary space-y-4 shadow-lg hover:border-accent-solar/50 transition-all">
+              <div className="p-3 rounded-2xl bg-accent-solar/10 text-accent-solar w-fit">
+                <Target className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-text-primary">PM-KUSUM Rural Electrification</h3>
+              <p className="text-text-secondary text-xs md:text-sm leading-relaxed">
+                We actively participate in PM-KUSUM and PM-SSY agricultural schemes, providing off-grid & hybrid solar pump systems and BESS storage that grant Indian farmers 24/7 reliable irrigation and energy autonomy.
+              </p>
+            </div>
+
+            <div className="p-8 rounded-3xl border border-line bg-bg-primary space-y-4 shadow-lg hover:border-accent-sky/50 transition-all">
+              <div className="p-3 rounded-2xl bg-accent-sky/10 text-accent-sky w-fit">
+                <Lightbulb className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-text-primary">30-40 Year Livelihood Support</h3>
+              <p className="text-text-secondary text-xs md:text-sm leading-relaxed">
+                We design energy assets engineered to deliver 30 to 40 years of continuous performance, backing every project with dedicated technical training, local maintenance jobs, and long-term community support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Milestones Timeline */}
       <section className="py-20 border-b border-line bg-bg-secondary/20">
         <div className="max-w-7xl mx-auto px-6">
