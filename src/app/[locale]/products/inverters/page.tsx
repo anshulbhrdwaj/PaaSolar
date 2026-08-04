@@ -1,12 +1,22 @@
-'use client';
-
 import React from 'react';
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
 import { Zap, CheckCircle2 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+
+export const metadata: Metadata = {
+  title: 'On-Grid, Hybrid & Off-Grid Smart Solar Inverters | PAA SOLAR',
+  description:
+    '99.2% MPPT efficiency smart solar inverters with sub-10ms islanding transfer, IP65 weatherproof rating & real-time IoT cloud monitoring.',
+  openGraph: {
+    title: 'On-Grid, Hybrid & Off-Grid Smart Solar Inverters | PAA SOLAR',
+    description:
+      'High-efficiency solar inverter solutions for commercial, industrial, and agricultural installations.',
+  },
+};
 
 export default function InvertersPage() {
   const t = useTranslations('ProductDetails.inverters');

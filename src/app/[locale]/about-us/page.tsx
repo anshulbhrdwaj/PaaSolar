@@ -1,10 +1,20 @@
-'use client';
-
 import React from 'react';
+import type { Metadata } from 'next';
 import { Navbar } from '@/components/ui/Navbar';
 import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
 import { ShieldCheck, Sparkles, Building2, Users, Target, Lightbulb } from 'lucide-react';
+
+export const metadata: Metadata = {
+  title: 'About PAA SOLAR | EKCHAKRA GROUP | Leadership & CSR Vision',
+  description:
+    'Discover PAA SOLAR (EKCHAKRA GROUP), India’s premier solar EPC developer with a 30-40 year clean energy vision. Meet our executive management team led by MR. Pandey, Dinesh Kumar, Priyanka & Akansha.',
+  openGraph: {
+    title: 'About PAA SOLAR | EKCHAKRA GROUP | Leadership & CSR Vision',
+    description:
+      'Fast-growing solar company delivering sustainable energy solutions across C&I, PM-KUSUM, PM-SSY, and 8 international export destinations.',
+  },
+};
 
 export default function AboutUsPage() {
 

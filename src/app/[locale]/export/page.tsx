@@ -1,12 +1,22 @@
-'use client';
-
 import React from 'react';
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
 import { Globe2, CheckCircle2, Award, ShieldCheck, Ship } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+
+export const metadata: Metadata = {
+  title: 'Global Solar Exports | 8 International Markets | PAA SOLAR',
+  description:
+    'PAA SOLAR exports high-efficiency TOPCon solar modules, smart inverters & LiFePO4 battery storage through EKCHAKRA International Pvt. Ltd. to Singapore, Oman, South Africa, Morocco, Brazil, New Zealand, Nepal & Bangladesh.',
+  openGraph: {
+    title: 'Global Solar Exports | 8 International Markets | PAA SOLAR',
+    description:
+      'Turnkey solar hardware shipping and international EPC distribution to 8 countries across 5 continents.',
+  },
+};
 
 export default function ExportPage() {
   const t = useTranslations('CorporatePages.export');

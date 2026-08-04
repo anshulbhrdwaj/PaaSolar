@@ -1,12 +1,22 @@
-'use client';
-
 import React from 'react';
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
 import { SunMedium, CheckCircle2 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+
+export const metadata: Metadata = {
+  title: 'TOPCon, HJT & Mono Bifacial Solar Panels | PAA SOLAR',
+  description:
+    '24%+ ultra-high efficiency N-Type TOPCon, Heterojunction (HJT), and Mono Bifacial solar modules. Engineered for maximum multi-decade energy yield and zero light-induced degradation.',
+  openGraph: {
+    title: 'TOPCon, HJT & Mono Bifacial Solar Panels | PAA SOLAR',
+    description:
+      'Tier-1 24%+ Solar Panels with 30-Year Performance Warranty from PAA SOLAR (EKCHAKRA GROUP).',
+  },
+};
 
 export default function SolarPanelsPage() {
   const t = useTranslations('ProductDetails.solarPanels');

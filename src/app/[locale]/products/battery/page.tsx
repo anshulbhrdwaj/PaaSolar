@@ -1,12 +1,22 @@
-'use client';
-
 import React from 'react';
+import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
 import { BatteryCharging, CheckCircle2 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+
+export const metadata: Metadata = {
+  title: 'LiFePO4 Energy Storage Systems & BESS | PAA SOLAR',
+  description:
+    '10,000+ cycle Lithium Iron Phosphate (LiFePO4) solar battery storage systems. Modular scalability from 5kWh to 1MWh+ with sub-10ms automatic blackout transfer.',
+  openGraph: {
+    title: 'LiFePO4 Energy Storage Systems & BESS | PAA SOLAR',
+    description:
+      'Long-life LFP battery storage ecosystems for residential kits, C&I microgrids, and PM-KUSUM BESS.',
+  },
+};
 
 export default function BatteryPage() {
   const t = useTranslations('ProductDetails.battery');
