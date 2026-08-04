@@ -106,6 +106,15 @@ export async function generateMetadata({
         'max-snippet': -1,
       },
     },
+    icons: {
+      icon: [
+        { url: '/Paa.png', type: 'image/png' },
+      ],
+      shortcut: ['/Paa.png'],
+      apple: [
+        { url: '/Paa.png', sizes: '180x180', type: 'image/png' },
+      ],
+    },
   };
 }
 
