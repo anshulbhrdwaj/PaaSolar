@@ -180,7 +180,7 @@ export default function ContactPage() {
           </div>
 
           <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-text-primary mt-2">
-            Contact Paa Solar Systems
+            Contact Paa Solar
           </h1>
 
           <p className="text-text-primary/80 text-lg sm:text-xl font-medium max-w-2xl mx-auto mt-4 leading-relaxed">
@@ -218,7 +218,7 @@ export default function ContactPage() {
                     Inquiry Submitted Successfully!
                   </h3>
                   <p className="text-text-primary/80 text-base max-w-md mt-2 leading-relaxed">
-                    Thank you for reaching out to Paa Solar Systems. Our engineering team is evaluating your details and will call you shortly.
+                    Thank you for reaching out to Paa Solar. Our engineering team is evaluating your details and will call you shortly.
                   </p>
                   <button
                     onClick={() => {
