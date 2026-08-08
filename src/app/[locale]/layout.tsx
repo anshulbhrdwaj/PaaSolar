@@ -140,7 +140,10 @@ export default async function LocaleLayout({
       suppressHydrationWarning
       className={`${instrumentSerif.variable} ${plusJakarta.variable}`}
     >
-      <body className="antialiased selection:bg-accent-solar selection:text-white">
+      <body
+        suppressHydrationWarning
+        className="antialiased selection:bg-accent-solar selection:text-white"
+      >
         <JsonLd />
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
