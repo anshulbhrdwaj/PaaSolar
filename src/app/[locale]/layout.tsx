@@ -108,11 +108,12 @@ export async function generateMetadata({
     },
     icons: {
       icon: [
+        { url: '/favicon.svg', type: 'image/svg+xml' },
         { url: '/Paa.png', type: 'image/png' },
       ],
-      shortcut: ['/Paa.png'],
+      shortcut: ['/favicon.svg'],
       apple: [
-        { url: '/Paa.png', sizes: '180x180', type: 'image/png' },
+        { url: '/favicon.svg', type: 'image/svg+xml' },
       ],
     },
   };
