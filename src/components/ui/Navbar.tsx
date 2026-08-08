@@ -25,6 +25,7 @@ import {
   Workflow,
   Globe2,
   Briefcase,
+  Phone,
 } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -108,7 +109,7 @@ export function Navbar() {
 
   const isProductActive = pathname.startsWith('/products');
   const isProjectActive = pathname.startsWith('/projects');
-  const isCompanyActive = pathname === '/vendor-registration' || pathname === '/working-methodology' || pathname === '/export' || pathname === '/careers';
+  const isCompanyActive = pathname === '/vendor-registration' || pathname === '/working-methodology' || pathname === '/export' || pathname === '/careers' || pathname === '/contact';
 
   return (
     <header
@@ -401,6 +402,21 @@ export function Navbar() {
                         {t('companyDropdown.careers')}
                       </p>
                       <p className="text-[10px] text-text-secondary">{t('companyDropdown.careersSub')}</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/contact"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        {t('nav.contact')}
+                      </p>
+                      <p className="text-[10px] text-text-secondary">Get in touch with EPC experts</p>
                     </div>
                   </Link>
                 </div>

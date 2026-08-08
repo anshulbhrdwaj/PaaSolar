@@ -12,7 +12,8 @@
       "testimonials": "ટેસ્ટિમોનિયલ્સ",
       "aboutUs": "અમારા વિશે",
       "vendorRegister": "વેન્ડર રજીસ્ટ્રેશન",
-      "company": "કંપની"
+      "company": "કંપની",
+      "contact": "સંપર્ક કરો"
     },
     "productsDropdown": {
       "pmSuryaGhar": "પીએમ સૂર્ય ઘર યોજના",
@@ -289,7 +290,7 @@
     "privacy": "પ્રાઇવસી પોલિસી",
     "terms": "સેવાની શરતો",
     "cookies": "કુકીઝ",
-    "copyright": "© 2026 પા સોલર સિસ્ટમ્સ પ્રાઇવેટ લિમિટેડ. સર્વાધિકાર સુરક્ષિત."
+    "copyright": "© 2026 પા સોલર સિસ્ટમ્સ. સર્વાધિકાર સુરક્ષિત."
   },
   "ProductDetails": {
     "pmSuryaGhar": {

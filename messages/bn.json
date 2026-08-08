@@ -12,7 +12,8 @@
       "testimonials": "মতামত",
       "aboutUs": "আমাদের সম্পর্কে",
       "vendorRegister": "ভেন্ডর রেজিস্ট্রেশন",
-      "company": "কোম্পানি"
+      "company": "কোম্পানি",
+      "contact": "যোগাযোগ করুন"
     },
     "productsDropdown": {
       "pmSuryaGhar": "পিএম সূর্য ঘর যোজনা",
@@ -289,7 +290,7 @@
     "privacy": "গোপনীয়তা নীতি",
     "terms": "সেবার শর্তাবলী",
     "cookies": "কুকিজ",
-    "copyright": "© 2026 পা সোলার সিস্টেমস প্রাইভেট লিমিটেড। সর্বস্বত্ব সংরক্ষিত।"
+    "copyright": "© 2026 পা সোলার সিস্টেমস। সর্বস্বত্ব সংরক্ষিত।"
   },
   "ProductDetails": {
     "pmSuryaGhar": {

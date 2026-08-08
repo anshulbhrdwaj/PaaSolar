@@ -12,7 +12,8 @@
       "testimonials": "प्रशंसापत्र",
       "aboutUs": "हमारे बारे में",
       "vendorRegister": "विक्रेता पंजीकरण",
-      "company": "कंपनी"
+      "company": "कंपनी",
+      "contact": "संपर्क करें"
     },
     "productsDropdown": {
       "pmSuryaGhar": "पीएम सूर्य घर योजना",
@@ -335,7 +336,7 @@
     "privacy": "गोपनीयता नीति",
     "terms": "सेवा की शर्तें",
     "cookies": "कुकी प्राथमिकताएं",
-    "copyright": "© 2026 पा सोलर सिस्टम्स प्राइवेट लिमिटेड। सर्वाधिकार सुरक्षित।"
+    "copyright": "© 2026 पा सोलर सिस्टम्स। सर्वाधिकार सुरक्षित।"
   },
   "ProductDetails": {
     "pmSuryaGhar": {

@@ -12,7 +12,8 @@
       "testimonials": "Referenzen",
       "aboutUs": "Über Uns",
       "vendorRegister": "Lieferantenregistrierung",
-      "company": "Unternehmen"
+      "company": "Unternehmen",
+      "contact": "Kontakt"
     },
     "productsDropdown": {
       "pmSuryaGhar": "Förderprogramm Solar",
@@ -289,7 +290,7 @@
     "privacy": "Datenschutz",
     "terms": "AGB",
     "cookies": "Cookies",
-    "copyright": "© 2026 Paa Solar Systems Pvt Ltd. Alle Rechte vorbehalten."
+    "copyright": "© 2026 Paa Solar Systems. Alle Rechte vorbehalten."
   },
   "ProductDetails": {
     "pmSuryaGhar": {

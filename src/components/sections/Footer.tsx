@@ -25,13 +25,9 @@ export function Footer() {
               </Link>
             </div>
 
-            <p className="text-text-primary text-base font-semibold max-w-sm leading-relaxed">
-              {t('brandTagline')}
-            </p>
-
             <div className="flex items-center gap-3 text-xs md:text-sm font-bold text-text-primary">
               <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
-              <span>HEADQUARTERS: MUMBAI • BENGALURU • GURUGRAM</span>
+              <span>HEADQUARTERS: JAIPUR</span>
             </div>
 
             {/* Social Media & WhatsApp Quick Links */}
@@ -44,6 +40,17 @@ export function Footer() {
                 className="p-2.5 rounded-full border border-line bg-bg-primary hover:border-emerald-500 text-[#25D366] hover:scale-110 transition-all duration-300 shadow-sm"
               >
                 <MessageCircle className="w-4 h-4 fill-[#25D366] stroke-none" />
+              </a>
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+                className="p-2.5 rounded-full border border-line bg-bg-primary hover:border-[#1877F2] text-[#1877F2] hover:scale-110 transition-all duration-300 shadow-sm"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
               </a>
               <a
                 href="https://linkedin.com"
@@ -140,6 +147,7 @@ export function Footer() {
               </h4>
               <ul className="flex flex-col gap-3 text-sm font-semibold text-text-primary">
                 <li><Link href="/about-us" className="hover:text-accent-solar transition-colors">About Us</Link></li>
+                <li><Link href="/contact" className="hover:text-accent-solar transition-colors">Contact Us</Link></li>
                 <li><Link href="/vendor-registration" className="hover:text-accent-solar transition-colors">Vendor Register</Link></li>
                 <li><Link href="/careers" className="hover:text-accent-solar transition-colors">Careers</Link></li>
                 <li><a href="#" className="hover:text-accent-solar transition-colors">{t('privacy')}</a></li>
@@ -152,12 +160,17 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs md:text-sm font-semibold text-text-primary">
           <p>{t('copyright')}</p>
-          <div className="flex items-center gap-6">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-solar transition-colors">LinkedIn</a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-solar transition-colors">Twitter / X</a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-solar transition-colors">Instagram</a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-solar transition-colors">YouTube</a>
-          </div>
+          <a
+            href="https://auralytics-f6zh-git-main-anshulbhrdwajs-projects.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-emerald-500 transition-colors flex items-center gap-1.5"
+          >
+            <span>Designed with</span>
+            <span className="text-red-500">❤️</span>
+            <span>by</span>
+            <span className="font-bold text-emerald-500 hover:underline underline-offset-4">Auralytics</span>
+          </a>
         </div>
       </div>
     </footer>
