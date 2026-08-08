@@ -157,7 +157,7 @@ export function HowItWorks() {
                 className={`step-card rounded-3xl p-8 transition-all duration-500 border ${
                   activeStep === index
                     ? 'bg-bg-primary border-accent-solar shadow-lg scale-[1.02]'
-                    : 'bg-bg-primary/50 border-line opacity-60 hover:opacity-100'
+                    : 'bg-bg-primary border-line hover:border-accent-solar/50'
                 }`}
               >
                 <div className="flex items-center justify-between mb-4">
@@ -169,11 +169,11 @@ export function HowItWorks() {
                   </div>
                 </div>
 
-                <h3 className="font-serif text-2xl font-bold text-text-primary mb-3">
+                <h3 className="font-serif text-2xl md:text-3xl font-bold text-text-primary mb-3">
                   {step.name}
                 </h3>
 
-                <p className="text-text-secondary text-base leading-relaxed mb-6">
+                <p className="text-text-primary text-base md:text-lg font-medium leading-relaxed mb-6">
                   {step.desc}
                 </p>
 

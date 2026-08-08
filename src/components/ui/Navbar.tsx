@@ -112,23 +112,21 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-        scrolled || mobileOpen
-          ? 'bg-bg-primary/80 backdrop-blur-md border-b border-line py-4 shadow-sm'
-          : 'bg-bg-primary/80 backdrop-blur-md border-b border-line py-4 shadow-sm lg:bg-transparent lg:border-b-0 lg:py-6 lg:shadow-none'
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 bg-bg-primary/90 dark:bg-bg-primary/95 backdrop-blur-md border-b border-line shadow-sm ${
+        scrolled || mobileOpen ? 'py-3.5' : 'py-4 lg:py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative h-14 md:h-16 w-auto flex items-center">
+          <div className="relative h-16 md:h-20 w-auto flex items-center">
             {/* Light mode logo */}
             <Image
               src="/Paa.png"
               alt="Paa Solar Logo"
-              width={260}
-              height={72}
-              className={`h-14 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300 ${
+              width={320}
+              height={90}
+              className={`h-16 md:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm ${
                 mounted ? (isDark ? 'hidden' : 'block') : 'block dark:hidden'
               }`}
               priority
@@ -137,9 +135,9 @@ export function Navbar() {
             <Image
               src="/Paa-dark.png"
               alt="Paa Solar Logo"
-              width={260}
-              height={72}
-              className={`h-14 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform duration-300 ${
+              width={320}
+              height={90}
+              className={`h-16 md:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm ${
                 mounted ? (isDark ? 'block' : 'hidden') : 'hidden dark:block'
               }`}
               priority
@@ -148,19 +146,19 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-medium text-text-secondary whitespace-nowrap">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm md:text-base font-bold text-text-primary whitespace-nowrap">
           <Link
             href="/why-solar"
-            className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 ${
-              pathname === '/why-solar' ? 'text-accent-solar font-semibold' : ''
+            className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 font-bold ${
+              pathname === '/why-solar' ? 'text-accent-solar' : 'text-text-primary'
             }`}
           >
             {t('nav.whySolar')}
           </Link>
           <Link
             href="/about-us"
-            className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 ${
-              pathname === '/about-us' ? 'text-accent-solar font-semibold' : ''
+            className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 font-bold ${
+              pathname === '/about-us' ? 'text-accent-solar' : 'text-text-primary'
             }`}
           >
             {t('nav.aboutUs')}
@@ -173,8 +171,8 @@ export function Navbar() {
             onMouseLeave={() => setDropdownOpen(false)}
           >
             <button
-              className={`flex items-center gap-1.5 whitespace-nowrap hover:text-accent-solar transition-colors duration-200 py-2 ${
-                isProductActive ? 'text-accent-solar font-semibold' : ''
+              className={`flex items-center gap-1.5 whitespace-nowrap hover:text-accent-solar transition-colors duration-200 py-2 font-bold ${
+                isProductActive ? 'text-accent-solar' : 'text-text-primary'
               }`}
             >
               <span>{t('nav.products')}</span>
@@ -255,8 +253,8 @@ export function Navbar() {
             onMouseLeave={() => setProjectsDropdownOpen(false)}
           >
             <button
-              className={`flex items-center gap-1.5 whitespace-nowrap hover:text-accent-solar transition-colors duration-200 py-2 ${
-                isProjectActive ? 'text-accent-solar font-semibold' : ''
+              className={`flex items-center gap-1.5 whitespace-nowrap hover:text-accent-solar transition-colors duration-200 py-2 font-bold ${
+                isProjectActive ? 'text-accent-solar' : 'text-text-primary'
               }`}
             >
               <span>{t('nav.projects')}</span>
@@ -332,8 +330,8 @@ export function Navbar() {
 
           <Link
             href="/b2b"
-            className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 ${
-              pathname === '/b2b' ? 'text-accent-solar font-semibold' : ''
+            className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 font-bold ${
+              pathname === '/b2b' ? 'text-accent-solar' : 'text-text-primary'
             }`}
           >
             {t('nav.b2b')}
@@ -346,8 +344,8 @@ export function Navbar() {
             onMouseLeave={() => setCompanyDropdownOpen(false)}
           >
             <button
-              className={`flex items-center gap-1.5 whitespace-nowrap hover:text-accent-solar transition-colors duration-200 py-2 ${
-                isCompanyActive ? 'text-accent-solar font-semibold' : ''
+              className={`flex items-center gap-1.5 whitespace-nowrap hover:text-accent-solar transition-colors duration-200 py-2 font-bold ${
+                isCompanyActive ? 'text-accent-solar' : 'text-text-primary'
               }`}
             >
               <span>{t('nav.company')}</span>
@@ -438,7 +436,7 @@ export function Navbar() {
             <button
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
               data-cursor="pointer"
-              className="flex items-center gap-2 px-3 py-1.5 rounded-full border border-line hover:border-accent-solar/40 bg-bg-secondary/50 text-xs font-semibold text-text-primary transition-all duration-300"
+              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-line hover:border-accent-solar bg-bg-secondary text-xs font-bold text-text-primary transition-all duration-300 shadow-sm"
               aria-label="Select Language"
             >
               <Globe className="w-3.5 h-3.5 text-accent-solar" />
@@ -491,7 +489,7 @@ export function Navbar() {
               onClick={toggleTheme}
               data-cursor="pointer"
               aria-label={t('themeToggle')}
-              className="p-2 rounded-full border border-line hover:border-accent-solar/40 bg-bg-secondary/50 text-text-primary hover:text-accent-solar transition-all duration-300 relative overflow-hidden"
+              className="p-2.5 rounded-full border border-line hover:border-accent-solar bg-bg-secondary text-text-primary hover:text-accent-solar transition-all duration-300 relative overflow-hidden shadow-sm"
             >
               <div className="transition-transform duration-500 rotate-0 dark:rotate-180">
                 {isDark ? (
@@ -549,9 +547,9 @@ export function Navbar() {
             href="/why-solar"
             onClick={() => setMobileOpen(false)}
             style={{ animationDelay: '40ms' }}
-            className={`text-lg font-medium animate-mobile-item transition-colors ${
+            className={`text-xl font-bold animate-mobile-item transition-colors ${
               pathname === '/why-solar'
-                ? 'text-accent-solar font-semibold'
+                ? 'text-accent-solar'
                 : 'text-text-primary hover:text-accent-solar'
             }`}
           >
@@ -561,9 +559,9 @@ export function Navbar() {
             href="/about-us"
             onClick={() => setMobileOpen(false)}
             style={{ animationDelay: '60ms' }}
-            className={`text-lg font-medium animate-mobile-item transition-colors ${
+            className={`text-xl font-bold animate-mobile-item transition-colors ${
               pathname === '/about-us'
-                ? 'text-accent-solar font-semibold'
+                ? 'text-accent-solar'
                 : 'text-text-primary hover:text-accent-solar'
             }`}
           >
@@ -577,7 +575,7 @@ export function Navbar() {
           >
             <button
               onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-              className="flex items-center justify-between text-lg font-medium text-text-primary hover:text-accent-solar w-full transition-colors"
+              className="flex items-center justify-between text-xl font-bold text-text-primary hover:text-accent-solar w-full transition-colors"
             >
               <span>{t('nav.products')}</span>
               <ChevronDown

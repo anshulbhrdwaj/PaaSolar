@@ -89,20 +89,20 @@ export function ProductsGrid() {
                   {item.title}
                 </h3>
 
-                <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                <p className="text-text-primary text-base font-medium leading-relaxed mb-6">
                   {item.desc}
                 </p>
               </div>
 
               {/* Technical Specs List */}
               <div className="relative z-10 pt-6 border-t border-line/60">
-                <p className="text-[11px] uppercase font-mono tracking-wider text-text-secondary mb-3">
+                <p className="text-xs uppercase font-mono tracking-wider text-text-primary font-bold mb-3">
                   Core Engineering Specifications:
                 </p>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2.5">
                   {item.specs.map((spec, sIdx) => (
-                    <div key={sIdx} className="flex items-center gap-2 text-xs font-medium text-text-primary">
-                      <Check className="w-3.5 h-3.5 text-accent-solar flex-shrink-0" />
+                    <div key={sIdx} className="flex items-center gap-2.5 text-sm font-semibold text-text-primary">
+                      <Check className="w-4 h-4 text-accent-solar flex-shrink-0" />
                       <span>{spec}</span>
                     </div>
                   ))}
@@ -113,18 +113,18 @@ export function ProductsGrid() {
         </div>
 
         {/* PDF Operating Guidelines Banner */}
-        <div className="p-8 rounded-3xl border border-accent-solar/30 bg-gradient-to-r from-accent-solar/10 via-bg-secondary to-bg-primary shadow-xl space-y-4">
+        <div className="p-8 md:p-10 rounded-3xl border border-accent-solar/40 bg-gradient-to-r from-accent-solar/15 via-bg-secondary to-bg-primary shadow-xl space-y-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="space-y-1">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-accent-solar font-bold">
+            <div className="space-y-1.5">
+              <span className="text-xs font-mono uppercase tracking-widest text-accent-solar font-bold">
                 Project Execution & Distribution Policy
               </span>
-              <h4 className="text-xl font-serif font-bold text-text-primary">
+              <h4 className="text-2xl md:text-3xl font-serif font-bold text-text-primary">
                 Turnkey Execution for 50 kW+ | Complete Kits (3 kW - 10 kW) for Distribution Partners
               </h4>
             </div>
           </div>
-          <p className="text-xs md:text-sm text-text-secondary leading-relaxed">
+          <p className="text-base md:text-lg text-text-primary/90 font-medium leading-relaxed">
             PAA SOLAR directly executes turnkey EPC projects for installations <strong>above 50 kW</strong> (Commercial, Industrial, PM-KUSUM, PM-SSY, and IPP Utility Solar Parks). For systems <strong>below 50 kW</strong>, we provide Complete Kits (3 kW, 5 kW, 8 kW, 10 kW Ongrid & Hybrid) featuring 24%+ TOPCon DCR Panels, Smart Inverters, LiFePO4 Storage, Mounting Structures, ACDB/DCDB, Net Meters, and Protection Accessories directly to our distribution partners for easy transport and one-stop fulfillment.
           </p>
         </div>

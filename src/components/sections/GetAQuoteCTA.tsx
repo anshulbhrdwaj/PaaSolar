@@ -111,7 +111,7 @@ export function GetAQuoteCTA() {
               {step === 1 && (
                 <div className="flex flex-col gap-6 animate-fade-in">
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-text-secondary mb-3">
+                    <label className="block text-sm font-mono uppercase tracking-wider text-text-primary font-bold mb-3">
                       {t('step1.propertyType')}
                     </label>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -124,10 +124,10 @@ export function GetAQuoteCTA() {
                           type="button"
                           key={item.id}
                           onClick={() => setFormData({ ...formData, propertyType: item.id })}
-                          className={`p-4 rounded-2xl border flex flex-col items-center gap-3 text-xs font-semibold transition-all duration-300 ${
+                          className={`p-4 rounded-2xl border flex flex-col items-center gap-3 text-sm font-bold transition-all duration-300 ${
                             formData.propertyType === item.id
-                              ? 'bg-accent-solar/10 border-accent-solar text-accent-solar shadow-md'
-                              : 'bg-bg-primary border-line text-text-secondary hover:border-accent-solar/40'
+                              ? 'bg-accent-solar/15 border-accent-solar text-accent-solar shadow-md'
+                              : 'bg-bg-primary border-line text-text-primary hover:border-accent-solar/60'
                           }`}
                         >
                           {item.icon}
@@ -138,7 +138,7 @@ export function GetAQuoteCTA() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-text-secondary mb-2">
+                    <label className="block text-sm font-mono uppercase tracking-wider text-text-primary font-bold mb-2">
                       {t('step1.address')}
                     </label>
                     <input
@@ -147,7 +147,7 @@ export function GetAQuoteCTA() {
                       placeholder="e.g. Bandra West, Mumbai - 400050"
                       value={formData.address}
                       onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                      className="w-full px-5 py-4 rounded-2xl bg-bg-primary border border-line focus:border-accent-solar focus:outline-none text-text-primary text-sm transition-colors"
+                      className="w-full px-5 py-4 rounded-2xl bg-bg-primary border border-line focus:border-accent-solar focus:outline-none text-text-primary text-base font-semibold transition-colors"
                     />
                   </div>
                 </div>
@@ -157,7 +157,7 @@ export function GetAQuoteCTA() {
               {step === 2 && (
                 <div className="flex flex-col gap-6 animate-fade-in">
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-text-secondary mb-3">
+                    <label className="block text-sm font-mono uppercase tracking-wider text-text-primary font-bold mb-3">
                       {t('step2.monthlyBill')}
                     </label>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -170,10 +170,10 @@ export function GetAQuoteCTA() {
                           type="button"
                           key={item.id}
                           onClick={() => setFormData({ ...formData, monthlyBill: item.id })}
-                          className={`p-4 rounded-2xl border text-xs font-semibold transition-all duration-300 ${
+                          className={`p-4 rounded-2xl border text-sm font-bold transition-all duration-300 ${
                             formData.monthlyBill === item.id
-                              ? 'bg-accent-solar/10 border-accent-solar text-accent-solar shadow-md'
-                              : 'bg-bg-primary border-line text-text-secondary hover:border-accent-solar/40'
+                              ? 'bg-accent-solar/15 border-accent-solar text-accent-solar shadow-md'
+                              : 'bg-bg-primary border-line text-text-primary hover:border-accent-solar/60'
                           }`}
                         >
                           {item.label}
@@ -183,7 +183,7 @@ export function GetAQuoteCTA() {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-text-secondary mb-3">
+                    <label className="block text-sm font-mono uppercase tracking-wider text-text-primary font-bold mb-3">
                       {t('step2.backup')}
                     </label>
                     <div className="grid grid-cols-2 gap-4">
@@ -195,10 +195,10 @@ export function GetAQuoteCTA() {
                           type="button"
                           key={item.id}
                           onClick={() => setFormData({ ...formData, batteryBackup: item.id })}
-                          className={`p-4 rounded-2xl border text-xs font-semibold transition-all duration-300 ${
+                          className={`p-4 rounded-2xl border text-sm font-bold transition-all duration-300 ${
                             formData.batteryBackup === item.id
-                              ? 'bg-accent-solar/10 border-accent-solar text-accent-solar shadow-md'
-                              : 'bg-bg-primary border-line text-text-secondary hover:border-accent-solar/40'
+                              ? 'bg-accent-solar/15 border-accent-solar text-accent-solar shadow-md'
+                              : 'bg-bg-primary border-line text-text-primary hover:border-accent-solar/60'
                           }`}
                         >
                           {item.label}
@@ -213,7 +213,7 @@ export function GetAQuoteCTA() {
               {step === 3 && (
                 <div className="flex flex-col gap-6 animate-fade-in">
                   <div>
-                    <label className="block text-xs font-mono uppercase tracking-wider text-text-secondary mb-2">
+                    <label className="block text-sm font-mono uppercase tracking-wider text-text-primary font-bold mb-2">
                       {t('step3.name')}
                     </label>
                     <input
@@ -222,13 +222,13 @@ export function GetAQuoteCTA() {
                       placeholder="e.g. Vikramaditya Singhania"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-5 py-4 rounded-2xl bg-bg-primary border border-line focus:border-accent-solar focus:outline-none text-text-primary text-sm transition-colors"
+                      className="w-full px-5 py-4 rounded-2xl bg-bg-primary border border-line focus:border-accent-solar focus:outline-none text-text-primary text-base font-semibold transition-colors"
                     />
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-text-secondary mb-2">
+                      <label className="block text-sm font-mono uppercase tracking-wider text-text-primary font-bold mb-2">
                         {t('step3.email')}
                       </label>
                       <input
@@ -237,11 +237,11 @@ export function GetAQuoteCTA() {
                         placeholder="vikram@estates.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-5 py-4 rounded-2xl bg-bg-primary border border-line focus:border-accent-solar focus:outline-none text-text-primary text-sm transition-colors"
+                        className="w-full px-5 py-4 rounded-2xl bg-bg-primary border border-line focus:border-accent-solar focus:outline-none text-text-primary text-base font-semibold transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-mono uppercase tracking-wider text-text-secondary mb-2">
+                      <label className="block text-sm font-mono uppercase tracking-wider text-text-primary font-bold mb-2">
                         {t('step3.phone')}
                       </label>
                       <input
@@ -250,7 +250,7 @@ export function GetAQuoteCTA() {
                         placeholder="+91 98765 43210"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-5 py-4 rounded-2xl bg-bg-primary border border-line focus:border-accent-solar focus:outline-none text-text-primary text-sm transition-colors"
+                        className="w-full px-5 py-4 rounded-2xl bg-bg-primary border border-line focus:border-accent-solar focus:outline-none text-text-primary text-base font-semibold transition-colors"
                       />
                     </div>
                   </div>

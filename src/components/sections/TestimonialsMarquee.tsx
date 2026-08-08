@@ -60,15 +60,15 @@ export function TestimonialsMarquee() {
               className="w-[360px] md:w-[420px] shrink-0 rounded-3xl p-8 bg-bg-primary border border-line hover:border-accent-solar/50 transition-all duration-300 shadow-xl flex flex-col justify-between"
             >
               <div>
-                <Quote className="w-8 h-8 text-accent-solar/40 mb-4" />
-                <p className="text-text-primary text-base font-serif italic leading-relaxed mb-6">
+                <Quote className="w-8 h-8 text-accent-solar/60 mb-4" />
+                <p className="text-text-primary text-lg md:text-xl font-serif italic leading-relaxed mb-6">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
 
               <div className="pt-4 border-t border-line/60">
-                <p className="font-semibold text-text-primary text-sm">{item.author}</p>
-                <p className="text-xs font-mono text-text-secondary mt-0.5">{item.role}</p>
+                <p className="font-bold text-text-primary text-base">{item.author}</p>
+                <p className="text-xs md:text-sm font-bold text-text-primary/80 mt-0.5">{item.role}</p>
               </div>
             </div>
           ))}

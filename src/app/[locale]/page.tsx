@@ -28,7 +28,7 @@ export default function HomePage() {
       <HowItWorks />
       <ProductsGrid />
       <CaseStudies />
-      <EnergyDashboard />
+      {/* <EnergyDashboard /> */}
       <TestimonialsMarquee />
       <GetAQuoteCTA />
       <Footer />

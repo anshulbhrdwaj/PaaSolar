@@ -58,7 +58,7 @@ export function ImpactStats() {
   return (
     <section
       ref={sectionRef}
-      className="py-20 bg-bg-secondary/60 border-y border-line relative overflow-hidden"
+      className="py-20 bg-bg-secondary border-y border-line relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
@@ -74,45 +74,45 @@ export function ImpactStats() {
         {/* Stats Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Stat 1 */}
-          <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-bg-primary/50 border border-line/60 hover:border-accent-solar/40 transition-colors duration-300">
+          <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-bg-primary border border-line/60 hover:border-accent-solar/40 transition-colors duration-300 shadow-sm">
             <span className="font-serif text-4xl md:text-6xl font-bold text-text-primary tracking-tight">
               {counts.stat1}
               <span className="text-2xl md:text-3xl text-accent-solar ml-1">{t('stat1.unit')}</span>
             </span>
-            <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary mt-3">
+            <p className="text-sm font-bold uppercase tracking-wider text-text-primary mt-3">
               {t('stat1.label')}
             </p>
           </div>
 
           {/* Stat 2 */}
-          <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-bg-primary/50 border border-line/60 hover:border-accent-solar/40 transition-colors duration-300">
+          <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-bg-primary border border-line/60 hover:border-accent-solar/40 transition-colors duration-300 shadow-sm">
             <span className="font-serif text-4xl md:text-6xl font-bold text-text-primary tracking-tight">
               {counts.stat2}
               <span className="text-2xl md:text-3xl text-accent-gold ml-1">{t('stat2.unit')}</span>
             </span>
-            <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary mt-3">
+            <p className="text-sm font-bold uppercase tracking-wider text-text-primary mt-3">
               {t('stat2.label')}
             </p>
           </div>
 
           {/* Stat 3 */}
-          <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-bg-primary/50 border border-line/60 hover:border-accent-solar/40 transition-colors duration-300">
+          <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-bg-primary border border-line/60 hover:border-accent-solar/40 transition-colors duration-300 shadow-sm">
             <span className="font-serif text-4xl md:text-6xl font-bold text-text-primary tracking-tight">
               {counts.stat3.toLocaleString()}
               <span className="text-2xl md:text-3xl text-accent-solar ml-1">{t('stat3.unit')}</span>
             </span>
-            <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary mt-3">
+            <p className="text-sm font-bold uppercase tracking-wider text-text-primary mt-3">
               {t('stat3.label')}
             </p>
           </div>
 
           {/* Stat 4 */}
-          <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-bg-primary/50 border border-line/60 hover:border-accent-solar/40 transition-colors duration-300">
+          <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-bg-primary border border-line/60 hover:border-accent-solar/40 transition-colors duration-300 shadow-sm">
             <span className="font-serif text-4xl md:text-6xl font-bold text-text-primary tracking-tight">
               {counts.stat4}
               <span className="text-2xl md:text-3xl text-accent-sky ml-1">{t('stat4.unit')}</span>
             </span>
-            <p className="text-xs font-semibold uppercase tracking-wider text-text-secondary mt-3">
+            <p className="text-sm font-bold uppercase tracking-wider text-text-primary mt-3">
               {t('stat4.label')}
             </p>
           </div>

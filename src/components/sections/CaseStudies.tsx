@@ -127,8 +127,8 @@ export function CaseStudies() {
               </div>
 
               <div className="relative z-10">
-                <div className="flex items-center gap-2 text-xs text-text-secondary mb-2">
-                  <MapPin className="w-3.5 h-3.5 text-accent-solar" />
+                <div className="flex items-center gap-2 text-sm font-semibold text-text-primary mb-2">
+                  <MapPin className="w-4 h-4 text-accent-solar" />
                   <span>{project.location}</span>
                 </div>
 
@@ -136,12 +136,12 @@ export function CaseStudies() {
                   {project.title}
                 </h3>
 
-                <div className="flex items-center gap-4 text-xs font-semibold pt-4 border-t border-line/60">
-                  <div className="flex items-center gap-1 text-accent-solar">
+                <div className="flex items-center gap-4 text-sm font-bold pt-4 border-t border-line/60">
+                  <div className="flex items-center gap-1.5 text-accent-solar">
                     <Zap className="w-4 h-4" />
                     <span>{project.capacity}</span>
                   </div>
-                  <span className="text-text-secondary">{project.offset}</span>
+                  <span className="text-text-primary/90">{project.offset}</span>
                 </div>
               </div>
             </div>

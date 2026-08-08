@@ -20,30 +20,30 @@ export function Footer() {
               <div className="w-9 h-9 relative">
                 <SunArcAnimation progress={100} animated={true} />
               </div>
-              <div className="relative h-14 w-auto flex items-center">
+              <div className="relative h-18 w-auto flex items-center">
                 <Image
                   src="/Paa.png"
                   alt="Paa Solar Logo"
-                  width={260}
-                  height={72}
-                  className="h-14 w-auto object-contain block dark:hidden"
+                  width={320}
+                  height={90}
+                  className="h-18 w-auto object-contain block dark:hidden drop-shadow-sm"
                 />
                 <Image
                   src="/Paa-dark.png"
                   alt="Paa Solar Logo"
-                  width={260}
-                  height={72}
-                  className="h-14 w-auto object-contain hidden dark:block"
+                  width={320}
+                  height={90}
+                  className="h-18 w-auto object-contain hidden dark:block drop-shadow-sm"
                 />
               </div>
             </div>
 
-            <p className="text-text-secondary text-sm max-w-sm leading-relaxed">
+            <p className="text-text-primary text-base font-semibold max-w-sm leading-relaxed">
               {t('brandTagline')}
             </p>
 
-            <div className="flex items-center gap-3 text-xs font-mono text-text-secondary">
-              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+            <div className="flex items-center gap-3 text-xs md:text-sm font-bold text-text-primary">
+              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
               <span>HEADQUARTERS: MUMBAI • BENGALURU • GURUGRAM</span>
             </div>
 
@@ -108,10 +108,10 @@ export function Footer() {
           {/* Navigation Sitemap Columns */}
           <div className="md:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-6">
             <div>
-              <h4 className="font-mono text-xs uppercase tracking-wider text-text-primary font-bold mb-4">
+              <h4 className="font-mono text-xs md:text-sm uppercase tracking-wider text-text-primary font-bold mb-4">
                 {t('sitemap')}
               </h4>
-              <ul className="flex flex-col gap-3 text-xs text-text-secondary">
+              <ul className="flex flex-col gap-3 text-sm font-semibold text-text-primary">
                 <li><Link href="/why-solar" className="hover:text-accent-solar transition-colors">Why Solar</Link></li>
                 <li><Link href="/about-us" className="hover:text-accent-solar transition-colors">About Us</Link></li>
                 <li><Link href="/projects" className="hover:text-accent-solar transition-colors">Projects</Link></li>
@@ -121,10 +121,10 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="font-mono text-xs uppercase tracking-wider text-text-primary font-bold mb-4">
+              <h4 className="font-mono text-xs md:text-sm uppercase tracking-wider text-text-primary font-bold mb-4">
                 Products
               </h4>
-              <ul className="flex flex-col gap-3 text-xs text-text-secondary">
+              <ul className="flex flex-col gap-3 text-sm font-semibold text-text-primary">
                 <li><Link href="/products/solar-panels" className="hover:text-accent-solar transition-colors">TOPCon Modules</Link></li>
                 <li><Link href="/products/inverters" className="hover:text-accent-solar transition-colors">Smart Inverters</Link></li>
                 <li><Link href="/products/battery" className="hover:text-accent-solar transition-colors">Paa Vault BESS</Link></li>
@@ -133,10 +133,10 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="font-mono text-xs uppercase tracking-wider text-text-primary font-bold mb-4">
+              <h4 className="font-mono text-xs md:text-sm uppercase tracking-wider text-text-primary font-bold mb-4">
                 Sectors & Ops
               </h4>
-              <ul className="flex flex-col gap-3 text-xs text-text-secondary">
+              <ul className="flex flex-col gap-3 text-sm font-semibold text-text-primary">
                 <li><Link href="/b2b" className="hover:text-accent-solar transition-colors">Serving B2B</Link></li>
                 <li><Link href="/projects/ci" className="hover:text-accent-solar transition-colors">C&I Solar</Link></li>
                 <li><Link href="/projects/pm-kusum" className="hover:text-accent-solar transition-colors">PM KUSUM</Link></li>
@@ -147,10 +147,10 @@ export function Footer() {
             </div>
 
             <div>
-              <h4 className="font-mono text-xs uppercase tracking-wider text-text-primary font-bold mb-4">
+              <h4 className="font-mono text-xs md:text-sm uppercase tracking-wider text-text-primary font-bold mb-4">
                 Company
               </h4>
-              <ul className="flex flex-col gap-3 text-xs text-text-secondary">
+              <ul className="flex flex-col gap-3 text-sm font-semibold text-text-primary">
                 <li><Link href="/about-us" className="hover:text-accent-solar transition-colors">About Us</Link></li>
                 <li><Link href="/vendor-registration" className="hover:text-accent-solar transition-colors">Vendor Register</Link></li>
                 <li><Link href="/careers" className="hover:text-accent-solar transition-colors">Careers</Link></li>
@@ -162,7 +162,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-text-secondary">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs md:text-sm font-semibold text-text-primary">
           <p>{t('copyright')}</p>
           <div className="flex items-center gap-6">
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-accent-solar transition-colors">LinkedIn</a>

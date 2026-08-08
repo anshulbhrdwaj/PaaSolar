@@ -119,9 +119,9 @@ export function HeroSection() {
           </div>
         ))}
 
-        {/* Soft Theme-Aware Gradient Fade Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/40 dark:from-bg-primary/80 via-bg-primary/15 dark:via-bg-primary/30 to-transparent z-20 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/25 dark:from-bg-primary/50 via-bg-primary/10 dark:via-bg-primary/20 to-transparent z-20 pointer-events-none" />
+        {/* Strong Theme-Aware Gradient Fade Overlay for Text Legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/90 dark:from-bg-primary/95 via-bg-primary/60 dark:via-bg-primary/70 to-bg-primary/25 dark:to-bg-primary/40 z-20 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg-primary/70 dark:from-bg-primary/80 via-bg-primary/40 dark:via-bg-primary/50 to-transparent z-20 pointer-events-none" />
       </div>
 
       {/* Subtle Low-Opacity Grid Pattern Overlay */}
@@ -139,13 +139,13 @@ export function HeroSection() {
           {/* Large Kinetic Title */}
           <h1
             ref={titleRef}
-            className="font-serif text-5xl md:text-7xl xl:text-8xl font-bold tracking-tight text-text-primary leading-[1.05]"
+            className="font-serif text-5xl md:text-7xl xl:text-8xl font-bold tracking-tight text-text-primary leading-[1.05] drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"
           >
             <span className="block hero-line">{t('headlineMain')}</span>
           </h1>
 
           {/* Subheading / Description */}
-          <p className="hero-fade text-lg md:text-2xl text-text-secondary max-w-2xl font-normal leading-relaxed">
+          <p className="hero-fade text-xl md:text-2xl text-text-primary font-medium max-w-2xl leading-relaxed drop-shadow-[0_1px_2px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_1px_3px_rgba(0,0,0,0.4)]">
             {t('description')}
           </p>
 
@@ -167,13 +167,13 @@ export function HeroSection() {
           </div>
 
           {/* Trust Highlights */}
-          <div className="hero-fade flex flex-wrap items-center gap-6 pt-6 text-xs text-text-secondary border-t border-line/80 w-full max-w-lg">
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-accent-solar" />
+          <div className="hero-fade flex flex-wrap items-center gap-6 pt-6 text-sm md:text-base font-semibold text-text-primary border-t border-line/80 w-full max-w-xl">
+            <div className="flex items-center gap-2.5">
+              <ShieldCheck className="w-5 h-5 text-accent-solar shrink-0" />
               <span>25-Year Guaranteed Performance</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Zap className="w-4 h-4 text-accent-gold" />
+            <div className="flex items-center gap-2.5">
+              <Zap className="w-5 h-5 text-accent-gold shrink-0" />
               <span>Sub-10ms Battery Backup</span>
             </div>
           </div>
@@ -181,15 +181,15 @@ export function HeroSection() {
       </div>
 
       {/* Carousel Controls Bar & Scroll Cue */}
-      <div className="relative z-30 max-w-7xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-6 pt-8 text-xs font-medium border-t border-line">
+      <div className="relative z-30 max-w-7xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-6 pt-8 text-xs font-medium border-t border-line/80">
         {/* Active Banner Caption */}
-        <div className="flex items-center gap-3">
-          <span className="font-mono text-accent-solar font-bold text-sm">
+        <div className="flex items-center gap-4">
+          <span className="font-mono text-accent-solar font-bold text-base md:text-lg">
             0{currentSlide + 1} / 0{BANNERS.length}
           </span>
-          <span className="hidden sm:inline text-text-secondary/50">|</span>
-          <span className="text-text-primary font-semibold text-xs tracking-wide">
-            {BANNERS[currentSlide].title}: <span className="text-text-secondary font-normal">{BANNERS[currentSlide].caption}</span>
+          <span className="hidden sm:inline text-text-primary/40 font-bold">|</span>
+          <span className="text-text-primary font-bold text-sm md:text-base tracking-wide">
+            {BANNERS[currentSlide].title}: <span className="text-text-primary/80 font-medium">{BANNERS[currentSlide].caption}</span>
           </span>
         </div>
 

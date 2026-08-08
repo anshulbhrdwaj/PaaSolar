@@ -114,7 +114,7 @@ export function WhySolar() {
           >
             <div>
               <div className="flex items-center justify-between mb-8">
-                <span className="font-mono text-3xl font-bold text-text-secondary/50">
+                <span className="font-mono text-3xl md:text-4xl font-bold text-text-primary">
                   {card.num}
                 </span>
                 <div className="p-3 rounded-2xl bg-bg-primary border border-line">
@@ -122,11 +122,11 @@ export function WhySolar() {
                 </div>
               </div>
 
-              <h3 className="font-serif text-2xl font-bold text-text-primary mb-4">
+              <h3 className="font-serif text-2xl md:text-3xl font-bold text-text-primary mb-4">
                 {card.title}
               </h3>
 
-              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+              <p className="text-text-primary text-base font-medium leading-relaxed mb-6">
                 {card.desc}
               </p>
             </div>
