@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useEffect, useState, useSyncExternalStore } from 'react';
-import Image from 'next/image';
 import { useTheme } from 'next-themes';
 import { useTranslations, useLocale } from 'next-intl';
 import { Link, usePathname, useRouter } from '@/i18n/routing';
+import { PaaSolarLogo } from '@/components/ui/PaaSolarLogo';
 import {
   Sun,
   Moon,
@@ -118,31 +118,8 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative h-16 md:h-20 w-auto flex items-center">
-            {/* Light mode logo */}
-            <Image
-              src="/Paa.png"
-              alt="Paa Solar Logo"
-              width={320}
-              height={90}
-              className={`h-16 md:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm ${
-                mounted ? (isDark ? 'hidden' : 'block') : 'block dark:hidden'
-              }`}
-              priority
-            />
-            {/* Dark mode logo */}
-            <Image
-              src="/Paa-dark.png"
-              alt="Paa Solar Logo"
-              width={320}
-              height={90}
-              className={`h-16 md:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-300 drop-shadow-sm ${
-                mounted ? (isDark ? 'block' : 'hidden') : 'hidden dark:block'
-              }`}
-              priority
-            />
-          </div>
+        <Link href="/" className="flex items-center gap-3 group hover:scale-105 transition-transform duration-300">
+          <PaaSolarLogo size="md" />
         </Link>
 
         {/* Desktop Navigation Links */}

@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { SunArcAnimation } from '../ui/SunArcAnimation';
+import { PaaSolarLogo } from '../ui/PaaSolarLogo';
 import { MessageCircle } from 'lucide-react';
 
 export function Footer() {
@@ -17,25 +17,12 @@ export function Footer() {
           {/* Brand & Sun Arc Bookend Motif */}
           <div className="md:col-span-5 flex flex-col items-start gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-9 h-9 relative">
+              <div className="w-10 h-10 relative">
                 <SunArcAnimation progress={100} animated={true} />
               </div>
-              <div className="relative h-18 w-auto flex items-center">
-                <Image
-                  src="/Paa.png"
-                  alt="Paa Solar Logo"
-                  width={320}
-                  height={90}
-                  className="h-18 w-auto object-contain block dark:hidden drop-shadow-sm"
-                />
-                <Image
-                  src="/Paa-dark.png"
-                  alt="Paa Solar Logo"
-                  width={320}
-                  height={90}
-                  className="h-18 w-auto object-contain hidden dark:block drop-shadow-sm"
-                />
-              </div>
+              <Link href="/" className="hover:scale-105 transition-transform duration-300">
+                <PaaSolarLogo size="lg" />
+              </Link>
             </div>
 
             <p className="text-text-primary text-base font-semibold max-w-sm leading-relaxed">
