@@ -26,7 +26,7 @@ export default function FranchiseSgyPage() {
             </h1>
 
             <p className="text-text-secondary text-lg leading-relaxed max-w-2xl">
-              Become an official PAA SOLAR Franchisee or District Distributor for PM Surya Ghar Yojana solar kits. Complete turnkey supply of 24%+ TOPCon DCR modules, smart inverters, mounting structures, and DISCOM subsidy portal support.
+              Become an official PAA SOLAR Franchisee or District Distributor for PM Surya Ghar Yojana solar kits. We provide and distribute many brands and Complete Solar Kits featuring 22.8%+ TOPCon DCR modules, smart inverters, mounting structures, and DISCOM subsidy portal support.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-4">
@@ -48,7 +48,7 @@ export default function FranchiseSgyPage() {
               </div>
               <div className="flex items-center justify-between border-b border-line pb-4">
                 <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">MODULE TYPE</span>
-                <span className="font-serif text-2xl font-bold text-accent-solar">DCR TOPCon 24%+</span>
+                <span className="font-serif text-2xl font-bold text-accent-solar">DCR TOPCon 22.8%+</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">SUBSIDY PORTAL</span>
