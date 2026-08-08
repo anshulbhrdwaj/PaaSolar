@@ -19,77 +19,15 @@ import {
   Globe2,
   ChevronDown,
   Search,
+  Loader2,
 } from 'lucide-react';
-
-const COUNTRIES = [
-  { name: 'India', flag: '🇮🇳', code: '+91' },
-  { name: 'United Arab Emirates', flag: '🇦🇪', code: '+971' },
-  { name: 'Saudi Arabia', flag: '🇸🇦', code: '+966' },
-  { name: 'United States', flag: '🇺🇸', code: '+1' },
-  { name: 'United Kingdom', flag: '🇬🇧', code: '+44' },
-  { name: 'Germany', flag: '🇩🇪', code: '+49' },
-  { name: 'Spain', flag: '🇪🇸', code: '+34' },
-  { name: 'Kenya', flag: '🇰🇪', code: '+254' },
-  { name: 'South Africa', flag: '🇿🇦', code: '+27' },
-  { name: 'Australia', flag: '🇦🇺', code: '+61' },
-  { name: 'Canada', flag: '🇨🇦', code: '+1' },
-  { name: 'Singapore', flag: '🇸🇬', code: '+65' },
-  { name: 'Japan', flag: '🇯🇵', code: '+81' },
-  { name: 'Oman', flag: '🇴🇲', code: '+968' },
-  { name: 'Qatar', flag: '🇶🇦', code: '+974' },
-  { name: 'Kuwait', flag: '🇰🇼', code: '+965' },
-  { name: 'Bahrain', flag: '🇧🇭', code: '+973' },
-  { name: 'Nigeria', flag: '🇳🇬', code: '+234' },
-  { name: 'Egypt', flag: '🇪🇬', code: '+20' },
-  { name: 'Vietnam', flag: '🇻🇳', code: '+84' },
-  { name: 'Indonesia', flag: '🇮🇩', code: '+62' },
-  { name: 'Malaysia', flag: '🇲🇾', code: '+60' },
-];
-
-const CITIES_BY_COUNTRY: Record<string, string[]> = {
-  India: [
-    'Jaipur',
-    'Mumbai',
-    'Bengaluru',
-    'New Delhi',
-    'Gurugram',
-    'Noida',
-    'Ahmedabad',
-    'Surat',
-    'Pune',
-    'Hyderabad',
-    'Chennai',
-    'Kolkata',
-    'Indore',
-    'Lucknow',
-    'Chandigarh',
-    'Jodhpur',
-    'Udaipur',
-    'Kota',
-    'Bhopal',
-    'Vadodara',
-    'Nagpur',
-    'Visakhapatnam',
-    'Kochi',
-    'Coimbatore',
-  ],
-  'United Arab Emirates': ['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Ras Al Khaimah'],
-  'Saudi Arabia': ['Riyadh', 'Jeddah', 'Dammam', 'Khobar', 'Mecca', 'Medina'],
-  'United States': ['Houston', 'Dallas', 'Los Angeles', 'San Francisco', 'Chicago', 'New York', 'Phoenix'],
-  'United Kingdom': ['London', 'Birmingham', 'Manchester', 'Glasgow', 'Leeds'],
-  Germany: ['Frankfurt', 'Munich', 'Berlin', 'Hamburg', 'Cologne', 'Stuttgart'],
-  Spain: ['Madrid', 'Barcelona', 'Valencia', 'Seville', 'Bilbao'],
-  Kenya: ['Nairobi', 'Mombasa', 'Kisumu', 'Nakuru'],
-  'South Africa': ['Johannesburg', 'Cape Town', 'Durban', 'Pretoria'],
-  Australia: ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide'],
-  Canada: ['Toronto', 'Vancouver', 'Montreal', 'Calgary', 'Ottawa'],
-  Singapore: ['Singapore'],
-  Japan: ['Tokyo', 'Osaka', 'Yokohama', 'Nagoya'],
-  Oman: ['Muscat', 'Salalah', 'Sohar'],
-  Qatar: ['Doha', 'Al Rayyan', 'Al Wakrah'],
-};
+import { ALL_COUNTRIES, ALL_CITIES_BY_COUNTRY, CountryItem } from '@/data/countriesAndCities';
 
 export default function ContactPage() {
+  const [countriesList, setCountriesList] = useState<CountryItem[]>(ALL_COUNTRIES);
+  const [apiCitiesMap, setApiCitiesMap] = useState<Record<string, string[]>>(ALL_CITIES_BY_COUNTRY);
+  const [loadingCities, setLoadingCities] = useState(false);
+
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -112,6 +50,63 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  // Fetch live countries from REST Countries API on mount
+  useEffect(() => {
+    async function fetchLiveCountries() {
+      try {
+        const res = await fetch('https://restcountries.com/v3.1/all?fields=name,flag,idd');
+        if (res.ok) {
+          const data = await res.json();
+          const parsed: CountryItem[] = data
+            .map((item: any) => {
+              const root = item.idd?.root || '';
+              const suffix = item.idd?.suffixes?.[0] || '';
+              return {
+                name: item.name?.common || '',
+                flag: item.flag || '🌐',
+                code: `${root}${suffix}`,
+              };
+            })
+            .filter((c: CountryItem) => c.name)
+            .sort((a: CountryItem, b: CountryItem) => a.name.localeCompare(b.name));
+
+          if (parsed.length > 50) {
+            setCountriesList(parsed);
+          }
+        }
+      } catch (err) {
+        console.warn('REST Countries API offline/throttled, using comprehensive fallback dataset', err);
+      }
+    }
+    fetchLiveCountries();
+  }, []);
+
+  // Fetch live cities from CountriesNow API when country changes
+  const fetchCitiesForCountry = async (countryName: string) => {
+    if (apiCitiesMap[countryName] && apiCitiesMap[countryName].length > 0) {
+      return;
+    }
+    setLoadingCities(true);
+    try {
+      const res = await fetch('https://countriesnow.space/api/v0.1/countries/cities', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ country: countryName }),
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.data && Array.isArray(data.data) && data.data.length > 0) {
+          setApiCitiesMap((prev) => ({ ...prev, [countryName]: data.data }));
+          setFormData((prev) => ({ ...prev, city: data.data[0] }));
+        }
+      }
+    } catch (err) {
+      console.warn('CountriesNow Cities API error, fallback to local dataset', err);
+    } finally {
+      setLoadingCities(false);
+    }
+  };
+
   // Close dropdowns on click outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -127,9 +122,12 @@ export default function ContactPage() {
   }, []);
 
   const selectedCountryName = formData.country.split(' ')[0];
-  const availableCities = CITIES_BY_COUNTRY[selectedCountryName] || ['Capital / Major Hub', 'Other City'];
+  const availableCities =
+    apiCitiesMap[selectedCountryName] ||
+    ALL_CITIES_BY_COUNTRY[selectedCountryName] ||
+    ['Capital / Major Hub', 'Other City'];
 
-  const filteredCountries = COUNTRIES.filter((c) =>
+  const filteredCountries = countriesList.filter((c) =>
     c.name.toLowerCase().includes(countrySearch.toLowerCase())
   );
 
@@ -309,9 +307,10 @@ export default function ContactPage() {
                                   key={c.name}
                                   type="button"
                                   onClick={() => {
-                                    setFormData({ ...formData, country: `${c.name} ${c.flag}`, city: CITIES_BY_COUNTRY[c.name]?.[0] || '' });
+                                    setFormData({ ...formData, country: `${c.name} ${c.flag}`, city: (apiCitiesMap[c.name] || ALL_CITIES_BY_COUNTRY[c.name])?.[0] || '' });
                                     setCountryOpen(false);
                                     setCountrySearch('');
+                                    fetchCitiesForCountry(c.name);
                                   }}
                                   className="w-full px-3 py-2 rounded-lg text-left text-xs font-semibold hover:bg-emerald-500/10 hover:text-emerald-500 transition-colors flex items-center justify-between"
                                 >
@@ -337,7 +336,10 @@ export default function ContactPage() {
                         onClick={() => setCityOpen(!cityOpen)}
                         className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-line focus:border-emerald-500 text-left text-text-primary flex items-center justify-between font-medium"
                       >
-                        <span className="truncate">{formData.city || 'Select / Type City'}</span>
+                        <span className="truncate flex items-center gap-2">
+                          {loadingCities ? <Loader2 className="w-3.5 h-3.5 animate-spin text-emerald-500" /> : null}
+                          <span>{formData.city || 'Select / Type City'}</span>
+                        </span>
                         <ChevronDown className={`w-4 h-4 transition-transform duration-300 text-emerald-500 ${cityOpen ? 'rotate-180' : ''}`} />
                       </button>
 
