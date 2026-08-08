@@ -74,27 +74,27 @@ export function CaseStudies() {
         {/* Header & Filter Bar */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
           <div>
-            <span className="text-xs uppercase font-mono tracking-widest text-accent-solar font-semibold">
+            <span className="text-xs uppercase font-mono tracking-widest text-accent-solar font-bold">
               {t('tag')}
             </span>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-text-primary mt-2">
               {t('title')}
             </h2>
-            <p className="text-text-secondary text-base max-w-lg mt-3">
+            <p className="text-text-primary text-base font-semibold max-w-lg mt-3">
               {t('subtitle')}
             </p>
           </div>
 
           {/* Sector Filters */}
-          <div className="flex items-center gap-2 p-1.5 rounded-full bg-bg-primary border border-line overflow-x-auto">
+          <div className="flex items-center gap-2 p-2 rounded-full bg-bg-primary border border-line overflow-x-auto shadow-sm">
             {['all', 'commercial', 'industrial', 'utility'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+                className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                   filter === cat
-                    ? 'bg-accent-solar text-white shadow-md'
-                    : 'text-text-secondary hover:text-text-primary'
+                    ? 'bg-emerald-500 text-white shadow-[0_4px_14px_rgba(16,185,129,0.4)] scale-105'
+                    : 'text-text-primary hover:bg-bg-secondary'
                 }`}
               >
                 {t(`filters.${cat}`)}
@@ -110,7 +110,7 @@ export function CaseStudies() {
               key={project.id}
               onClick={() => setSelectedProject(project)}
               data-cursor="view"
-              className="group cursor-pointer rounded-3xl p-8 bg-bg-primary border border-line hover:border-accent-solar/60 transition-all duration-500 relative overflow-hidden flex flex-col justify-between aspect-[4/3] shadow-xl"
+              className="group cursor-pointer rounded-3xl p-8 bg-bg-primary border border-line hover:border-emerald-500 hover:ring-2 hover:ring-emerald-500/20 transition-all duration-500 relative overflow-hidden flex flex-col justify-between aspect-[4/3] shadow-xl"
             >
               {/* Decorative Gradient Pattern */}
               <div
@@ -118,17 +118,17 @@ export function CaseStudies() {
               />
 
               <div className="relative z-10 flex items-center justify-between">
-                <span className="text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full bg-bg-secondary border border-line text-accent-solar">
+                <span className="text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full bg-bg-secondary border border-line text-emerald-500 font-bold">
                   {project.category}
                 </span>
-                <div className="w-10 h-10 rounded-full bg-bg-secondary border border-line flex items-center justify-center group-hover:scale-110 group-hover:bg-accent-solar group-hover:text-white transition-all duration-300">
+                <div className="w-10 h-10 rounded-full bg-bg-secondary border border-line flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
                   <ArrowUpRight className="w-5 h-5" />
                 </div>
               </div>
 
               <div className="relative z-10">
                 <div className="flex items-center gap-2 text-sm font-semibold text-text-primary mb-2">
-                  <MapPin className="w-4 h-4 text-accent-solar" />
+                  <MapPin className="w-4 h-4 text-emerald-500" />
                   <span>{project.location}</span>
                 </div>
 
@@ -137,7 +137,7 @@ export function CaseStudies() {
                 </h3>
 
                 <div className="flex items-center gap-4 text-sm font-bold pt-4 border-t border-line/60">
-                  <div className="flex items-center gap-1.5 text-accent-solar">
+                  <div className="flex items-center gap-1.5 text-emerald-500">
                     <Zap className="w-4 h-4" />
                     <span>{project.capacity}</span>
                   </div>

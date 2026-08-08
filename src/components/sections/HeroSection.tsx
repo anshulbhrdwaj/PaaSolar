@@ -180,55 +180,73 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Carousel Controls Bar & Scroll Cue */}
-      <div className="relative z-30 max-w-7xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-6 pt-8 text-xs font-medium border-t border-line/80">
-        {/* Active Banner Caption */}
-        <div className="flex items-center gap-4">
-          <span className="font-mono text-accent-solar font-bold text-base md:text-lg">
-            0{currentSlide + 1} / 0{BANNERS.length}
-          </span>
-          <span className="hidden sm:inline text-text-primary/40 font-bold">|</span>
-          <span className="text-text-primary font-bold text-sm md:text-base tracking-wide">
-            {BANNERS[currentSlide].title}: <span className="text-text-primary/80 font-medium">{BANNERS[currentSlide].caption}</span>
-          </span>
+      {/* Carousel Controls Bar & Interactive Slider Dock */}
+      <div className="relative z-30 max-w-7xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-line/80">
+        {/* Active Banner Caption & Progress Bar */}
+        <div className="flex flex-col gap-2.5 w-full md:w-auto">
+          <div className="flex items-center gap-4">
+            <span className="font-mono text-emerald-500 dark:text-emerald-400 font-bold text-base md:text-lg">
+              0{currentSlide + 1} / 0{BANNERS.length}
+            </span>
+            <span className="hidden sm:inline text-text-primary/40 font-bold">|</span>
+            <span className="text-text-primary font-bold text-sm md:text-base tracking-wide">
+              {BANNERS[currentSlide].title}:{' '}
+              <span className="text-text-primary/80 font-medium">{BANNERS[currentSlide].caption}</span>
+            </span>
+          </div>
+
+          {/* Glowing Green Animated Slide Progress Bar */}
+          <div className="w-full md:w-80 h-1.5 bg-line/80 rounded-full overflow-hidden p-0.5 border border-emerald-500/20">
+            <div
+              key={currentSlide}
+              className="h-full bg-emerald-500 dark:bg-emerald-400 rounded-full transition-all duration-[5000ms] ease-linear shadow-[0_0_12px_rgba(16,185,129,0.6)]"
+              style={{ width: isPlaying ? '100%' : '0%' }}
+            />
+          </div>
         </div>
 
-        {/* Carousel Slide Controls */}
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-1.5">
-            {BANNERS.map((_, idx) => (
+        {/* Emerald Thumbnail Cards Slider Control */}
+        <div className="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
+          <div className="hidden lg:flex items-center gap-2.5">
+            {BANNERS.map((banner, idx) => (
               <button
-                key={idx}
+                key={banner.id}
                 onClick={() => setCurrentSlide(idx)}
-                aria-label={`Go to slide ${idx + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  idx === currentSlide ? 'w-8 bg-accent-solar' : 'w-2 bg-text-secondary/30 hover:bg-text-secondary/60'
+                aria-label={`Switch to banner ${banner.title}`}
+                className={`relative px-3.5 py-2 rounded-xl border text-xs font-bold transition-all duration-300 flex items-center gap-2 ${
+                  idx === currentSlide
+                    ? 'border-emerald-500 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 ring-2 ring-emerald-500/30 shadow-[0_0_15px_rgba(16,185,129,0.2)] scale-105'
+                    : 'border-line bg-bg-secondary/70 text-text-primary hover:border-emerald-500/50 hover:bg-bg-primary'
                 }`}
-              />
+              >
+                <span className="font-mono text-[10px] text-emerald-500">0{idx + 1}</span>
+                <span className="truncate max-w-[110px]">{banner.title.split(' ')[0]}</span>
+              </button>
             ))}
           </div>
 
+          {/* Green Arrow Navigation & Play/Pause */}
           <div className="flex items-center gap-2 border-l border-line pl-4">
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              aria-label={isPlaying ? 'Pause banner slideshow' : 'Play banner slideshow'}
-              className="p-2 rounded-full border border-line hover:border-accent-solar text-text-primary hover:text-accent-solar bg-bg-secondary/70 backdrop-blur-md transition-colors"
+              aria-label={isPlaying ? 'Pause slideshow' : 'Play slideshow'}
+              className="p-2.5 rounded-full border border-emerald-500/40 text-emerald-500 hover:bg-emerald-500 hover:text-white bg-bg-primary backdrop-blur-md shadow-[0_0_12px_rgba(16,185,129,0.15)] transition-all hover:scale-110 active:scale-95"
             >
-              {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+              {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
             </button>
             <button
               onClick={prevSlide}
               aria-label="Previous Banner"
-              className="p-2 rounded-full border border-line hover:border-accent-solar text-text-primary hover:text-accent-solar bg-bg-secondary/70 backdrop-blur-md transition-colors"
+              className="p-2.5 rounded-full border border-emerald-500/40 text-emerald-500 hover:bg-emerald-500 hover:text-white bg-bg-primary backdrop-blur-md shadow-[0_0_12px_rgba(16,185,129,0.15)] transition-all hover:scale-110 active:scale-95"
             >
-              <ChevronLeft className="w-3.5 h-3.5" />
+              <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={nextSlide}
               aria-label="Next Banner"
-              className="p-2 rounded-full border border-line hover:border-accent-solar text-text-primary hover:text-accent-solar bg-bg-secondary/70 backdrop-blur-md transition-colors"
+              className="p-2.5 rounded-full border border-emerald-500/40 text-emerald-500 hover:bg-emerald-500 hover:text-white bg-bg-primary backdrop-blur-md shadow-[0_0_12px_rgba(16,185,129,0.15)] transition-all hover:scale-110 active:scale-95"
             >
-              <ChevronRight className="w-3.5 h-3.5" />
+              <ChevronRight className="w-4 h-4" />
             </button>
           </div>
         </div>

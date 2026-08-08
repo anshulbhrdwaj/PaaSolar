@@ -119,19 +119,11 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="/" className="flex items-center gap-3 group hover:scale-105 transition-transform duration-300">
-          <PaaSolarLogo size="md" />
+          <PaaSolarLogo size="md" showTagline={false} />
         </Link>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm md:text-base font-bold text-text-primary whitespace-nowrap">
-          <Link
-            href="/why-solar"
-            className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 font-bold ${
-              pathname === '/why-solar' ? 'text-accent-solar' : 'text-text-primary'
-            }`}
-          >
-            {t('nav.whySolar')}
-          </Link>
           <Link
             href="/about-us"
             className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 font-bold ${
@@ -521,21 +513,9 @@ export function Navbar() {
       {mobileOpen && (
         <div className="lg:hidden fixed inset-x-0 top-full bg-bg-primary/98 backdrop-blur-2xl border-b border-line p-6 flex flex-col gap-4 shadow-2xl animate-mobile-drawer max-h-[calc(100dvh-4.5rem)] overflow-y-auto overscroll-contain pb-32 z-50">
           <Link
-            href="/why-solar"
-            onClick={() => setMobileOpen(false)}
-            style={{ animationDelay: '40ms' }}
-            className={`text-xl font-bold animate-mobile-item transition-colors ${
-              pathname === '/why-solar'
-                ? 'text-accent-solar'
-                : 'text-text-primary hover:text-accent-solar'
-            }`}
-          >
-            {t('nav.whySolar')}
-          </Link>
-          <Link
             href="/about-us"
             onClick={() => setMobileOpen(false)}
-            style={{ animationDelay: '60ms' }}
+            style={{ animationDelay: '40ms' }}
             className={`text-xl font-bold animate-mobile-item transition-colors ${
               pathname === '/about-us'
                 ? 'text-accent-solar'

@@ -1,12 +1,14 @@
 'use client';
 
 import React from 'react';
+import { useTranslations } from 'next-intl';
 
 interface PaaSolarLogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'hero';
   showTagline?: boolean;
   align?: 'left' | 'center';
+  customTagline?: string;
 }
 
 export function PaaSolarLogo({
@@ -14,7 +16,21 @@ export function PaaSolarLogo({
   size = 'md',
   showTagline = true,
   align = 'left',
+  customTagline,
 }: PaaSolarLogoProps) {
+  let taglineText = customTagline;
+  
+  try {
+    const t = useTranslations('Navbar');
+    if (!taglineText) {
+      taglineText = t('tagline');
+    }
+  } catch {
+    if (!taglineText) {
+      taglineText = 'Blessing from this generation to next generation';
+    }
+  }
+
   // Dimensions based on size prop
   const titleSizeClass =
     size === 'sm'
@@ -61,12 +77,12 @@ export function PaaSolarLogo({
         PAA SOLAR
       </span>
 
-      {/* Tagline */}
+      {/* Localized Tagline */}
       {showTagline && (
         <span
           className={`font-semibold uppercase tracking-[0.2em] text-accent-solar mt-1 ${taglineSizeClass}`}
         >
-          Serving Two Generations
+          {taglineText}
         </span>
       )}
     </div>

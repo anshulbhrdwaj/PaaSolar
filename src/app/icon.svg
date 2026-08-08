@@ -36,10 +36,10 @@
     <text font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="110" fill="url(#solarGrad)" stroke="#FFFFFF" stroke-width="2.5" stroke-opacity="0.5" letter-spacing="-3" x="0" y="145">SOLAR</text>
     
     <!-- Gold Line Separator -->
-    <line x1="-120" y1="180" x2="120" y2="180" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
+    <line x1="-140" y1="180" x2="140" y2="180" stroke="#F59E0B" stroke-width="3" stroke-linecap="round"/>
 
-    <!-- Serving Two Generations Tagline -->
-    <text font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="800" font-size="28" fill="#F59E0B" letter-spacing="4" x="0" y="220">SERVING TWO GENERATIONS</text>
+    <!-- Blessing from this generation to next generation Tagline -->
+    <text font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="800" font-size="20" fill="#F59E0B" letter-spacing="2" x="0" y="215">BLESSING FROM THIS GENERATION TO NEXT GENERATION</text>
   </g>
 
   <!-- Outer Border Outline -->
