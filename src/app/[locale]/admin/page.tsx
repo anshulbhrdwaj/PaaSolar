@@ -27,6 +27,8 @@ import {
   Lock,
   LogOut,
   KeyRound,
+  ShieldCheck,
+  MessageCircle,
 } from 'lucide-react';
 
 interface Inquiry {

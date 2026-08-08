@@ -229,6 +229,8 @@ export default function ContactPage() {
                         fullName: '',
                         email: '',
                         phone: '',
+                        country: 'India 🇮🇳',
+                        city: 'Jaipur',
                         category: 'C&I Commercial Rooftop',
                         capacity: '',
                         message: '',
@@ -521,39 +523,6 @@ export default function ContactPage() {
                   </a>
                 </div>
               </div>
-
-              {/* Regional Offices */}
-              <div className="bg-bg-secondary/70 rounded-3xl p-8 border border-line shadow-xl space-y-4">
-                <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-emerald-500">
-                  REGIONAL OPERATIONAL HUBS
-                </h4>
-
-                <div className="space-y-3 pt-2 text-xs font-semibold text-text-primary">
-                  <div className="p-3 rounded-2xl bg-bg-primary border border-line flex items-center justify-between">
-                    <div>
-                      <p className="font-bold text-sm text-text-primary">Mumbai Operations Hub</p>
-                      <p className="text-text-primary/70 text-[11px]">C&I Commercial & Industrial EPC Desk</p>
-                    </div>
-                    <span className="text-emerald-500 font-mono">MH</span>
-                  </div>
-
-                  <div className="p-3 rounded-2xl bg-bg-primary border border-line flex items-center justify-between">
-                    <div>
-                      <p className="font-bold text-sm text-text-primary">Bengaluru R&D Hub</p>
-                      <p className="text-text-primary/70 text-[11px]">BESS Battery Storage & Microgrid R&D</p>
-                    </div>
-                    <span className="text-emerald-500 font-mono">KA</span>
-                  </div>
-
-                  <div className="p-3 rounded-2xl bg-bg-primary border border-line flex items-center justify-between">
-                    <div>
-                      <p className="font-bold text-sm text-text-primary">Gurugram Office</p>
-                      <p className="text-text-primary/70 text-[11px]">North India Solar Utility & Regulatory Desk</p>
-                    </div>
-                    <span className="text-emerald-500 font-mono">HR</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -562,15 +531,6 @@ export default function ContactPage() {
       {/* Interactive Map Visual Section */}
       <section className="pb-24 border-t border-line/60 pt-16">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs uppercase font-mono tracking-widest text-emerald-500 font-bold">
-              HEADQUARTERS LOCATION
-            </span>
-            <h3 className="font-serif text-3xl font-bold text-text-primary mt-1">
-              Visit Paa Solar Systems in Jaipur
-            </h3>
-          </div>
-
           <div className="rounded-3xl border border-line overflow-hidden shadow-2xl h-96 relative bg-bg-secondary flex items-center justify-center">
             <iframe
               title="Paa Solar Headquarters Jaipur Location"
