@@ -169,11 +169,11 @@ export default function ContactPage() {
                         className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-line focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 text-text-primary outline-none transition-all"
                       >
                         <option value="C&I Commercial Rooftop">C&I Commercial Rooftop</option>
-                        <option value="PM-KUSUM (A, B & C)">PM-KUSUM Feeder Solarization</option>
-                        <option value="PM-SSY Scheme">PM-SSY Residential Scheme</option>
-                        <option value="Paa Vault BESS">Paa Vault BESS Battery</option>
+                        <option value="PM-KUSUM (A&C)">PM-KUSUM (A&C)</option>
+                        <option value="PM Kusum With BESS Battery">PM Kusum With BESS Battery</option>
+                        <option value="PM-SSY Floating Solar Project">PM-SSY Floating Solar Project</option>
                         <option value="Utility IPP Solar Park">Utility IPP Solar Park</option>
-                        <option value="Floating Solar Project">Floating Solar Project</option>
+                        <option value="Franchise & Distribution for PM SGY">Franchise & Distribution for Solar Product into PM SGY</option>
                       </select>
                     </div>
                   </div>
