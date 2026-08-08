@@ -414,148 +414,197 @@ export function SolarCalculator() {
             </form>
           </div>
 
-          {/* RIGHT COLUMN: Live Calculation Output Dashboard (5 cols) */}
+          {/* RIGHT COLUMN: Calculation Output Dashboard (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
             
-            {/* Primary Recommended Capacity Card */}
-            <div className="p-8 rounded-3xl bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary border-2 border-accent-solar/60 shadow-2xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-6 text-accent-solar/10 pointer-events-none">
-                <Sun className="w-32 h-32" />
-              </div>
+            {!submitted ? (
+              /* BEFORE SUBMISSION PREVIEW PLACEHOLDER CARD */
+              <div className="p-8 sm:p-10 rounded-3xl bg-bg-primary border border-line shadow-2xl space-y-6 text-center flex flex-col items-center justify-center min-h-[500px] relative overflow-hidden">
+                <div className="absolute top-0 right-0 -mt-6 -mr-6 w-40 h-40 bg-accent-solar/10 rounded-full blur-2xl pointer-events-none" />
 
-              <div className="relative z-10 space-y-4">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-solar/15 border border-accent-solar/30 text-accent-solar text-xs font-mono font-bold uppercase">
-                  <Zap className="w-3.5 h-3.5" />
-                  <span>RECOMMENDED SOLAR PLANT CAPACITY</span>
+                <div className="p-4 rounded-full bg-accent-solar/15 text-accent-solar shadow-inner border border-accent-solar/30">
+                  <Calculator className="w-10 h-10 animate-bounce" />
                 </div>
 
-                <div className="flex items-baseline gap-3">
-                  <span className="font-serif text-5xl sm:text-6xl font-bold text-text-primary">
-                    {calc.finalSystemKw}
+                <div className="space-y-2">
+                  <span className="text-xs font-mono font-bold text-accent-solar uppercase tracking-wider px-3 py-1 rounded-full bg-accent-solar/10 border border-accent-solar/20">
+                    TURNKEY CALCULATOR READY
                   </span>
-                  <span className="font-serif text-2xl font-bold text-accent-solar">kW Solar</span>
+                  <h4 className="font-serif text-2xl sm:text-3xl font-bold text-text-primary">
+                    Calculate Your Solar Savings
+                  </h4>
+                  <p className="text-text-secondary text-sm leading-relaxed max-w-sm">
+                    Fill in your electricity bill, connection load, space parameters, and location to reveal your complete engineering report & PM SGY subsidy breakdown.
+                  </p>
                 </div>
 
-                <p className="text-text-secondary text-sm font-medium">
-                  Generates ~<strong className="text-text-primary">{calc.monthlyGenerationUnits.toLocaleString('en-IN')} units</strong>/month using 22.8%+ N-Type TOPCon bifacial modules.
-                </p>
-
-                {/* Feasibility Badges */}
-                <div className="pt-4 border-t border-line/60 space-y-2">
-                  <div className="flex items-center justify-between text-xs font-semibold text-text-primary">
-                    <span className="text-text-secondary">Space Required:</span>
-                    <span className="font-mono text-accent-solar font-bold">{calc.requiredAreaSqFt} Sq. Ft.</span>
+                {/* Realtime Live Teaser Badges */}
+                <div className="w-full pt-4 border-t border-line/60 grid grid-cols-2 gap-3 text-left">
+                  <div className="p-3.5 rounded-2xl bg-bg-secondary border border-line">
+                    <span className="text-[10px] font-mono text-text-secondary uppercase font-bold block">Est. System Size</span>
+                    <span className="font-serif text-lg font-bold text-text-primary">~{calc.finalSystemKw} kW Solar</span>
                   </div>
-                  <div className="flex items-center justify-between text-xs font-semibold text-text-primary">
-                    <span className="text-text-secondary font-semibold">Connection Load Match:</span>
-                    <span className={`font-mono font-bold ${calc.loadExceeded ? 'text-amber-500' : 'text-emerald-500'}`}>
-                      {connectionKw} kW Connection {calc.loadExceeded ? '(Load Expansion Advised)' : '(Sufficient Load)'}
+                  <div className="p-3.5 rounded-2xl bg-bg-secondary border border-line">
+                    <span className="text-[10px] font-mono text-text-secondary uppercase font-bold block">Est. Monthly Savings</span>
+                    <span className="font-serif text-lg font-bold text-emerald-500">~₹{calc.monthlySavings.toLocaleString('en-IN')}</span>
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-accent-solar/10 border border-accent-solar/30 text-xs text-text-primary font-medium flex items-center gap-2 text-left w-full">
+                  <Info className="w-4 h-4 text-accent-solar shrink-0" />
+                  <span>Click <strong>"Calculate & Reveal Engineering Report"</strong> on the left to unlock full report.</span>
+                </div>
+              </div>
+            ) : (
+              /* AFTER SUBMISSION DETAILED RESULTS DASHBOARD */
+              <div className="space-y-6 animate-fade-in">
+                {/* Submission Success Confirmation Badge */}
+                <div className="p-5 rounded-2xl bg-emerald-500/15 border-2 border-emerald-500 text-emerald-500 space-y-1 shadow-lg">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-2 font-serif text-lg font-bold text-text-primary">
+                      <CheckCircle2 className="w-5 h-5 text-emerald-500" />
+                      <span>Official Calculation Report Generated</span>
+                    </div>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="text-xs font-mono text-text-secondary hover:text-accent-solar underline"
+                    >
+                      Edit Inputs
+                    </button>
+                  </div>
+                  <p className="text-xs text-text-primary/90 font-medium">
+                    Report prepared for <strong>{name || 'Valued Customer'}</strong> ({city || 'Location'}, {district || 'District'}).
+                  </p>
+                </div>
+
+                {/* Primary Recommended Capacity Card */}
+                <div className="p-8 rounded-3xl bg-gradient-to-br from-bg-primary via-bg-secondary to-bg-primary border-2 border-accent-solar/60 shadow-2xl relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-6 text-accent-solar/10 pointer-events-none">
+                    <Sun className="w-32 h-32" />
+                  </div>
+
+                  <div className="relative z-10 space-y-4">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-solar/15 border border-accent-solar/30 text-accent-solar text-xs font-mono font-bold uppercase">
+                      <Zap className="w-3.5 h-3.5" />
+                      <span>RECOMMENDED SOLAR PLANT CAPACITY</span>
+                    </div>
+
+                    <div className="flex items-baseline gap-3">
+                      <span className="font-serif text-5xl sm:text-6xl font-bold text-text-primary">
+                        {calc.finalSystemKw}
+                      </span>
+                      <span className="font-serif text-2xl font-bold text-accent-solar">kW Solar</span>
+                    </div>
+
+                    <p className="text-text-secondary text-sm font-medium">
+                      Generates ~<strong className="text-text-primary">{calc.monthlyGenerationUnits.toLocaleString('en-IN')} units</strong>/month using 22.8%+ N-Type TOPCon bifacial modules.
+                    </p>
+
+                    {/* Feasibility Badges */}
+                    <div className="pt-4 border-t border-line/60 space-y-2">
+                      <div className="flex items-center justify-between text-xs font-semibold text-text-primary">
+                        <span className="text-text-secondary">Space Required:</span>
+                        <span className="font-mono text-accent-solar font-bold">{calc.requiredAreaSqFt} Sq. Ft.</span>
+                      </div>
+                      <div className="flex items-center justify-between text-xs font-semibold text-text-primary">
+                        <span className="text-text-secondary font-semibold">Connection Load Match:</span>
+                        <span className={`font-mono font-bold ${calc.loadExceeded ? 'text-amber-500' : 'text-emerald-500'}`}>
+                          {connectionKw} kW Connection {calc.loadExceeded ? '(Load Expansion Advised)' : '(Sufficient Load)'}
+                        </span>
+                      </div>
+                      {calc.spaceShortage && (
+                        <div className="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-medium flex items-center gap-2">
+                          <Info className="w-4 h-4 shrink-0" />
+                          <span>Capacity adjusted to match {roofSpace} sq. ft. available space.</span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Financial Savings & Investment Grid */}
+                <div className="p-6 sm:p-8 rounded-3xl bg-bg-primary border border-line shadow-xl space-y-6">
+                  <h4 className="font-serif text-xl font-bold text-text-primary flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-emerald-500" />
+                    <span>Financial Returns & Govt Subsidy</span>
+                  </h4>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    {/* Monthly Savings */}
+                    <div className="p-4 rounded-2xl bg-bg-secondary border border-line">
+                      <span className="text-[10px] font-mono font-bold text-text-secondary uppercase">Est. Monthly Savings</span>
+                      <p className="font-serif text-2xl font-bold text-emerald-500 mt-1">
+                        ₹{calc.monthlySavings.toLocaleString('en-IN')}
+                      </p>
+                      <span className="text-[11px] text-text-secondary font-medium">Up to 90% bill reduction</span>
+                    </div>
+
+                    {/* Annual Savings */}
+                    <div className="p-4 rounded-2xl bg-bg-secondary border border-line">
+                      <span className="text-[10px] font-mono font-bold text-text-secondary uppercase">Annual Bill Savings</span>
+                      <p className="font-serif text-2xl font-bold text-accent-solar mt-1">
+                        ₹{calc.annualSavings.toLocaleString('en-IN')}
+                      </p>
+                      <span className="text-[11px] text-text-secondary font-medium">Every 12 months</span>
+                    </div>
+                  </div>
+
+                  {/* Cost & PM SGY Subsidy Summary */}
+                  <div className="p-4 rounded-2xl bg-bg-secondary/70 border border-line space-y-3">
+                    <div className="flex items-center justify-between text-xs font-semibold">
+                      <span className="text-text-secondary">Turnkey Project Cost:</span>
+                      <span className="font-mono text-text-primary font-bold">₹{calc.grossProjectCost.toLocaleString('en-IN')}</span>
+                    </div>
+
+                    <div className="flex items-center justify-between text-xs font-semibold">
+                      <span className="text-emerald-500 font-bold flex items-center gap-1">
+                        <Award className="w-3.5 h-3.5" />
+                        Govt PM SGY Subsidy:
+                      </span>
+                      <span className="font-mono text-emerald-500 font-bold">- ₹{calc.pmSgySubsidy.toLocaleString('en-IN')}</span>
+                    </div>
+
+                    <div className="pt-2 border-t border-line/60 flex items-center justify-between text-sm font-bold">
+                      <span className="text-text-primary">Net Out-of-Pocket Cost:</span>
+                      <span className="font-mono text-accent-solar text-base">₹{calc.netInvestmentCost.toLocaleString('en-IN')}</span>
+                    </div>
+                  </div>
+
+                  {/* Payback & 25-Yr Returns */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="p-4 rounded-2xl bg-accent-gold/10 border border-accent-gold/30">
+                      <span className="text-[10px] font-mono font-bold text-accent-gold uppercase">Payback Period</span>
+                      <p className="font-serif text-2xl font-bold text-text-primary mt-1">
+                        ~{calc.paybackYears} Years
+                      </p>
+                      <span className="text-[10px] text-text-secondary font-semibold">Full ROI recovery</span>
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30">
+                      <span className="text-[10px] font-mono font-bold text-emerald-500 uppercase">25-Yr Lifetime Savings</span>
+                      <p className="font-serif text-2xl font-bold text-emerald-500 mt-1 truncate">
+                        ₹{(calc.lifetimeSavings25Yrs / 100000).toFixed(1)} Lakhs
+                      </p>
+                      <span className="text-[10px] text-text-secondary font-semibold">With grid inflation</span>
+                    </div>
+                  </div>
+
+                  {/* CO2 Impact Banner */}
+                  <div className="p-4 rounded-2xl bg-bg-secondary border border-line flex items-center justify-between gap-4 text-xs font-semibold">
+                    <div className="flex items-center gap-2.5">
+                      <div className="p-2 rounded-xl bg-emerald-500/15 text-emerald-500">
+                        <ShieldCheck className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <span className="text-text-primary font-bold block">Clean Energy Impact</span>
+                        <span className="text-text-secondary">{calc.annualCo2OffsetTons} Tons CO2 / Year</span>
+                      </div>
+                    </div>
+                    <span className="text-xs font-mono font-bold text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+                      ≈ {calc.equivalentTreesPlanted} Trees
                     </span>
                   </div>
-                  {calc.spaceShortage && (
-                    <div className="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-medium flex items-center gap-2">
-                      <Info className="w-4 h-4 shrink-0" />
-                      <span>Capacity adjusted to match {roofSpace} sq. ft. available space.</span>
-                    </div>
-                  )}
                 </div>
-              </div>
-            </div>
-
-            {/* Financial Savings & Investment Grid */}
-            <div className="p-6 sm:p-8 rounded-3xl bg-bg-primary border border-line shadow-xl space-y-6">
-              <h4 className="font-serif text-xl font-bold text-text-primary flex items-center gap-2">
-                <TrendingUp className="w-5 h-5 text-emerald-500" />
-                <span>Financial Returns & Govt Subsidy</span>
-              </h4>
-
-              <div className="grid grid-cols-2 gap-4">
-                {/* Monthly Savings */}
-                <div className="p-4 rounded-2xl bg-bg-secondary border border-line">
-                  <span className="text-[10px] font-mono font-bold text-text-secondary uppercase">Est. Monthly Savings</span>
-                  <p className="font-serif text-2xl font-bold text-emerald-500 mt-1">
-                    ₹{calc.monthlySavings.toLocaleString('en-IN')}
-                  </p>
-                  <span className="text-[11px] text-text-secondary font-medium">Up to 90% bill reduction</span>
-                </div>
-
-                {/* Annual Savings */}
-                <div className="p-4 rounded-2xl bg-bg-secondary border border-line">
-                  <span className="text-[10px] font-mono font-bold text-text-secondary uppercase">Annual Bill Savings</span>
-                  <p className="font-serif text-2xl font-bold text-accent-solar mt-1">
-                    ₹{calc.annualSavings.toLocaleString('en-IN')}
-                  </p>
-                  <span className="text-[11px] text-text-secondary font-medium">Every 12 months</span>
-                </div>
-              </div>
-
-              {/* Cost & PM SGY Subsidy Summary */}
-              <div className="p-4 rounded-2xl bg-bg-secondary/70 border border-line space-y-3">
-                <div className="flex items-center justify-between text-xs font-semibold">
-                  <span className="text-text-secondary">Turnkey Turnkey Project Cost:</span>
-                  <span className="font-mono text-text-primary font-bold">₹{calc.grossProjectCost.toLocaleString('en-IN')}</span>
-                </div>
-
-                <div className="flex items-center justify-between text-xs font-semibold">
-                  <span className="text-emerald-500 font-bold flex items-center gap-1">
-                    <Award className="w-3.5 h-3.5" />
-                    Govt PM SGY Subsidy:
-                  </span>
-                  <span className="font-mono text-emerald-500 font-bold">- ₹{calc.pmSgySubsidy.toLocaleString('en-IN')}</span>
-                </div>
-
-                <div className="pt-2 border-t border-line/60 flex items-center justify-between text-sm font-bold">
-                  <span className="text-text-primary">Net Out-of-Pocket Cost:</span>
-                  <span className="font-mono text-accent-solar text-base">₹{calc.netInvestmentCost.toLocaleString('en-IN')}</span>
-                </div>
-              </div>
-
-              {/* Payback & 25-Yr Returns */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 rounded-2xl bg-accent-gold/10 border border-accent-gold/30">
-                  <span className="text-[10px] font-mono font-bold text-accent-gold uppercase">Payback Period</span>
-                  <p className="font-serif text-2xl font-bold text-text-primary mt-1">
-                    ~{calc.paybackYears} Years
-                  </p>
-                  <span className="text-[10px] text-text-secondary font-semibold">Full ROI recovery</span>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30">
-                  <span className="text-[10px] font-mono font-bold text-emerald-500 uppercase">25-Yr Lifetime Savings</span>
-                  <p className="font-serif text-2xl font-bold text-emerald-500 mt-1 truncate">
-                    ₹{(calc.lifetimeSavings25Yrs / 100000).toFixed(1)} Lakhs
-                  </p>
-                  <span className="text-[10px] text-text-secondary font-semibold">With grid inflation</span>
-                </div>
-              </div>
-
-              {/* CO2 Impact Banner */}
-              <div className="p-4 rounded-2xl bg-bg-secondary border border-line flex items-center justify-between gap-4 text-xs font-semibold">
-                <div className="flex items-center gap-2.5">
-                  <div className="p-2 rounded-xl bg-emerald-500/15 text-emerald-500">
-                    <ShieldCheck className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-text-primary font-bold block">Clean Energy Impact</span>
-                    <span className="text-text-secondary">{calc.annualCo2OffsetTons} Tons CO2 / Year</span>
-                  </div>
-                </div>
-                <span className="text-xs font-mono font-bold text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-                  ≈ {calc.equivalentTreesPlanted} Trees
-                </span>
-              </div>
-            </div>
-
-            {/* Submission Confirmation Popup */}
-            {submitted && (
-              <div className="p-6 rounded-3xl bg-emerald-500/15 border-2 border-emerald-500 text-emerald-500 space-y-2 animate-fade-in shadow-xl">
-                <div className="flex items-center gap-2 font-serif text-xl font-bold text-text-primary">
-                  <CheckCircle2 className="w-6 h-6 text-emerald-500" />
-                  <span>Proposal Request Received!</span>
-                </div>
-                <p className="text-xs font-medium text-text-primary/90 leading-relaxed">
-                  Thank you, <strong>{name || 'Valued Customer'}</strong>! Our solar engineering team is reviewing your details for <strong>{city || 'your location'}</strong> ({calc.finalSystemKw} kW proposal) and will contact you at <strong>{phone || email || 'your contact'}</strong> with exact discom net-metering blueprints.
-                </p>
               </div>
             )}
           </div>
