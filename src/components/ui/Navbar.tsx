@@ -265,7 +265,7 @@ export function Navbar() {
                       <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
                         {t('projectsDropdown.pmKusum')}
                       </p>
-                      <p className="text-[10px] text-text-secondary">Agricultural Solarization</p>
+                      <p className="text-[10px] text-text-secondary">Agricultural Solarization & BESS Storage</p>
                     </div>
                   </Link>
 

@@ -24,7 +24,7 @@
     },
     "projectsDropdown": {
       "ci": "Commercial & Industrial (C&I)",
-      "pmKusum": "PM KUSUM Scheme",
+      "pmKusum": "PM KUSUM With BESS",
       "ipp": "IPP Utility Scale",
       "allProjects": "All Projects Portfolio",
       "pmSsy": "PM-SSY Scheme"
