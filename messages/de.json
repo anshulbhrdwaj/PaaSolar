@@ -20,7 +20,8 @@
       "solarPanels": "Solarmodule",
       "inverters": "Smart-Wechselrichter",
       "battery": "Batteriespeicher",
-      "allProducts": "Gesamtkatalog"
+      "allProducts": "Gesamtkatalog",
+      "franchiseSgy": "Franchise & Vertrieb für PM SGY"
     },
     "projectsDropdown": {
       "ci": "Gewerbe & Industrie (C&I)",

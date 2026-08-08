@@ -198,7 +198,22 @@ export function Navbar() {
                       <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
                         {t('productsDropdown.battery')}
                       </p>
-                      <p className="text-[10px] text-text-secondary">Paa Vault LFP Storage</p>
+                      <p className="text-[10px] text-text-secondary">PM Kusum LFP BESS Storage</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/products/franchise-sgy"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform">
+                      <Building2 className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        {t('productsDropdown.franchiseSgy')}
+                      </p>
+                      <p className="text-[10px] text-text-secondary">PM SGY Kit Distribution & Dealership</p>
                     </div>
                   </Link>
 
@@ -270,7 +285,7 @@ export function Navbar() {
                   </Link>
 
                   <Link
-                    href="/projects/pm-kusum"
+                    href="/projects/pm-kusum-bess"
                     className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
                   >
                     <div className="p-2 rounded-lg bg-teal-500/10 text-teal-500 group-hover:scale-110 transition-transform">

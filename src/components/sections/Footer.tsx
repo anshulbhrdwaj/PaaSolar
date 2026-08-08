@@ -121,7 +121,8 @@ export function Footer() {
               <ul className="flex flex-col gap-3 text-sm font-semibold text-text-primary">
                 <li><Link href="/products/solar-panels" className="hover:text-accent-solar transition-colors">TOPCon Modules</Link></li>
                 <li><Link href="/products/inverters" className="hover:text-accent-solar transition-colors">Smart Inverters</Link></li>
-                <li><Link href="/products/battery" className="hover:text-accent-solar transition-colors">Paa Vault BESS</Link></li>
+                <li><Link href="/products/battery" className="hover:text-accent-solar transition-colors">PM Kusum with BESS</Link></li>
+                <li><Link href="/products/franchise-sgy" className="hover:text-accent-solar transition-colors">Franchise & Distribution for PM SGY</Link></li>
                 <li><Link href="/products" className="hover:text-accent-solar transition-colors">All Products</Link></li>
               </ul>
             </div>
@@ -134,7 +135,7 @@ export function Footer() {
                 <li><Link href="/b2b" className="hover:text-accent-solar transition-colors">Serving B2B</Link></li>
                 <li><Link href="/projects/ci" className="hover:text-accent-solar transition-colors">C&I Solar</Link></li>
                 <li><Link href="/projects/pm-kusum" className="hover:text-accent-solar transition-colors">PM KUSUM (A&C)</Link></li>
-                <li><Link href="/projects/pm-kusum" className="hover:text-accent-solar transition-colors">PM KUSUM with BESS</Link></li>
+                <li><Link href="/projects/pm-kusum-bess" className="hover:text-accent-solar transition-colors">PM KUSUM with BESS</Link></li>
                 <li><Link href="/projects/pm-ssy" className="hover:text-accent-solar transition-colors">PM-SSY Scheme</Link></li>
                 <li><Link href="/projects/ipp" className="hover:text-accent-solar transition-colors">IPP Megawatt</Link></li>
                 <li><Link href="/working-methodology" className="hover:text-accent-solar transition-colors">Methodology</Link></li>
