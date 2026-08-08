@@ -21,6 +21,10 @@ import {
   Info,
   Layers,
   Award,
+  Upload,
+  FileText,
+  Paperclip,
+  X,
 } from 'lucide-react';
 import { EmiCalculator } from '@/components/sections/EmiCalculator';
 
@@ -34,12 +38,13 @@ export function SolarCalculator() {
   const [roofSpace, setRoofSpace] = useState<number>(1500);
   const [roofType, setRoofType] = useState<'rooftop' | 'ground' | 'tin-shed'>('rooftop');
   
-  // User Contact Details
+  // User Contact & File Attachment
   const [city, setCity] = useState<string>('');
   const [district, setDistrict] = useState<string>('');
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [phone, setPhone] = useState<string>('');
+  const [billFile, setBillFile] = useState<File | null>(null);
   
   const [submitted, setSubmitted] = useState<boolean>(false);
 
@@ -402,6 +407,56 @@ export function SolarCalculator() {
                     />
                   </div>
                 </div>
+
+                {/* File Attachment: Electricity Bill Upload */}
+                <div className="space-y-2 pt-2">
+                  <label className="block text-xs font-mono uppercase tracking-wider text-text-primary font-bold flex items-center justify-between">
+                    <span className="flex items-center gap-1.5">
+                      <Paperclip className="w-3.5 h-3.5 text-accent-solar" />
+                      Attach Electricity Bill (Optional / Recommended)
+                    </span>
+                    <span className="text-[10px] text-text-secondary font-normal font-mono">PDF, PNG, JPG (Max 10MB)</span>
+                  </label>
+
+                  {!billFile ? (
+                    <label className="border-2 border-dashed border-line hover:border-accent-solar/60 bg-bg-secondary/60 hover:bg-bg-secondary rounded-2xl p-4 flex flex-col items-center justify-center gap-2 cursor-pointer transition-all text-center group">
+                      <div className="p-2.5 rounded-full bg-accent-solar/10 text-accent-solar group-hover:scale-110 transition-transform">
+                        <Upload className="w-5 h-5" />
+                      </div>
+                      <div className="space-y-0.5">
+                        <p className="text-xs font-bold text-text-primary">Click or drag bill copy here</p>
+                        <p className="text-[11px] text-text-secondary font-medium">Upload your latest DISCOM bill for exact tariff & net metering analysis</p>
+                      </div>
+                      <input
+                        type="file"
+                        accept="image/*,application/pdf"
+                        onChange={(e) => {
+                          if (e.target.files && e.target.files[0]) {
+                            setBillFile(e.target.files[0]);
+                          }
+                        }}
+                        className="hidden"
+                      />
+                    </label>
+                  ) : (
+                    <div className="p-3.5 rounded-2xl bg-accent-solar/10 border border-accent-solar/30 flex items-center justify-between gap-3 text-xs font-semibold text-text-primary">
+                      <div className="flex items-center gap-2.5 truncate">
+                        <FileText className="w-5 h-5 text-accent-solar shrink-0" />
+                        <div className="truncate">
+                          <p className="font-bold truncate">{billFile.name}</p>
+                          <p className="text-[10px] text-text-secondary font-mono">{(billFile.size / 1024).toFixed(1)} KB • Attached</p>
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setBillFile(null)}
+                        className="p-1.5 rounded-lg border border-line bg-bg-primary hover:bg-rose-500 hover:text-white transition-colors"
+                      >
+                        <X className="w-4 h-4" />
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
 
               <button
@@ -473,7 +528,8 @@ export function SolarCalculator() {
                     </button>
                   </div>
                   <p className="text-xs text-text-primary/90 font-medium">
-                    Report prepared for <strong>{name || 'Valued Customer'}</strong> ({city || 'Location'}, {district || 'District'}).
+                    Report prepared for <strong>{name || 'Valued Customer'}</strong> ({city || 'Location'}, {district || 'District'})
+                    {billFile && <span className="block mt-1 text-[11px] text-emerald-500 font-bold">📄 Bill Copy Attached: {billFile.name}</span>}.
                   </p>
                 </div>
 
