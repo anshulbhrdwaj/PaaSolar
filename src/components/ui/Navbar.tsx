@@ -269,6 +269,21 @@ export function Navbar() {
                   </Link>
 
                   <Link
+                    href="/projects/pm-ssy"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-amber-500/10 text-amber-500 group-hover:scale-110 transition-transform">
+                      <Sun className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        {t('projectsDropdown.pmSsy')}
+                      </p>
+                      <p className="text-[10px] text-text-secondary">Solar Rooftop & State Subsidy</p>
+                    </div>
+                  </Link>
+
+                  <Link
                     href="/projects/ipp"
                     className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
                   >
@@ -614,6 +629,14 @@ export function Navbar() {
                 >
                   <Sprout className="w-4 h-4 text-emerald-500" />
                   <span>{t('projectsDropdown.pmKusum')}</span>
+                </Link>
+                <Link
+                  href="/projects/pm-ssy"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
+                >
+                  <Sun className="w-4 h-4 text-amber-500" />
+                  <span>{t('projectsDropdown.pmSsy')}</span>
                 </Link>
                 <Link
                   href="/projects/ipp"

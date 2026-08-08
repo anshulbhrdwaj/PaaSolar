@@ -10,26 +10,26 @@ const BANNERS = [
   {
     id: 1,
     url: '/hero-banners/banner-1.webp',
-    title: 'Utility-Scale Solar Parks',
-    caption: '500+ MW Grid Connected Power Plants Across India',
+    title: 'PM Kusum (A&C)',
+    caption: 'Decentralized Ground Plants & Feeder Level Solarization',
   },
   {
     id: 2,
     url: '/hero-banners/banner-2.webp',
-    title: 'Paa Vault BESS Energy Storage',
+    title: 'Bess Energy',
     caption: 'Sub-10ms Automated Backup & High-Scale Microgrids',
   },
   {
     id: 3,
     url: '/hero-banners/banner-3.webp',
-    title: 'PM KUSUM Agricultural Solarization',
-    caption: 'Decentralized Feeder Solarization & Solar Pumps',
+    title: 'Floating Based Solar Project',
+    caption: 'Innovative Water-Surface Solar Energy Installations',
   },
   {
     id: 4,
     url: '/hero-banners/banner-4.webp',
     title: 'Commercial & Industrial Rooftops',
-    caption: '75% Energy Cost Reduction for Manufacturing Plants',
+    caption: '70% to 90% Energy Cost Reduction for Manufacturing Plants',
   },
 ];
 
@@ -39,6 +39,21 @@ export function HeroSection() {
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPlaying, setIsPlaying] = useState(true);
+
+  // Dynamic localized banners
+  let bannersData = BANNERS;
+  try {
+    const rawBanners = t.raw('banners') as Array<{ title: string; caption: string }>;
+    if (Array.isArray(rawBanners) && rawBanners.length === BANNERS.length) {
+      bannersData = BANNERS.map((b, i) => ({
+        ...b,
+        title: rawBanners[i]?.title || b.title,
+        caption: rawBanners[i]?.caption || b.caption,
+      }));
+    }
+  } catch {
+    bannersData = BANNERS;
+  }
 
   // Auto-play timer for background carousel
   useEffect(() => {
@@ -186,12 +201,12 @@ export function HeroSection() {
         <div className="flex flex-col gap-2.5 w-full md:w-auto">
           <div className="flex items-center gap-4">
             <span className="font-mono text-emerald-500 dark:text-emerald-400 font-bold text-base md:text-lg">
-              0{currentSlide + 1} / 0{BANNERS.length}
+              0{currentSlide + 1} / 0{bannersData.length}
             </span>
             <span className="hidden sm:inline text-text-primary/40 font-bold">|</span>
             <span className="text-text-primary font-bold text-sm md:text-base tracking-wide">
-              {BANNERS[currentSlide].title}:{' '}
-              <span className="text-text-primary/80 font-medium">{BANNERS[currentSlide].caption}</span>
+              {bannersData[currentSlide].title}:{' '}
+              <span className="text-text-primary/80 font-medium">{bannersData[currentSlide].caption}</span>
             </span>
           </div>
 
@@ -208,7 +223,7 @@ export function HeroSection() {
         {/* Emerald Thumbnail Cards Slider Control */}
         <div className="flex items-center gap-4 w-full md:w-auto justify-between md:justify-end">
           <div className="hidden lg:flex items-center gap-2.5">
-            {BANNERS.map((banner, idx) => (
+            {bannersData.map((banner, idx) => (
               <button
                 key={banner.id}
                 onClick={() => setCurrentSlide(idx)}
@@ -220,7 +235,11 @@ export function HeroSection() {
                 }`}
               >
                 <span className="font-mono text-[10px] text-emerald-500">0{idx + 1}</span>
-                <span className="truncate max-w-[110px]">{banner.title.split(' ')[0]}</span>
+                <span className="truncate max-w-[110px]">
+                  {banner.title.toLowerCase().includes('commercial') || banner.title.toLowerCase().includes('वाणिज्यिक')
+                    ? 'C&I'
+                    : banner.title.split(' ')[0]}
+                </span>
               </button>
             ))}
           </div>

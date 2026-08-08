@@ -25,7 +25,8 @@
       "ci": "Gewerbe & Industrie (C&I)",
       "pmKusum": "Agrar-Photovoltaik",
       "ipp": "Solarparks (IPP)",
-      "allProjects": "Gesamtes Projektportfolio"
+      "allProjects": "Gesamtes Projektportfolio",
+      "pmSsy": "PM-SSY Schema"
     },
     "getQuote": "Angebot anfordern",
     "themeToggle": "Design wechseln",
@@ -51,7 +52,25 @@
     "secondaryCta": "Wirkung ansehen",
     "scrollCue": "Scrollen zum Entdecken",
     "trustHighlight1": "30 Jahre Garantie",
-    "trustHighlight2": "5 Jahre EPC Garantie"
+    "trustHighlight2": "5 Jahre EPC Garantie",
+    "banners": [
+      {
+        "title": "PM Kusum (A&C)",
+        "caption": "Dezentrale Freiflächenanlagen & Einspeise-Solarisierung"
+      },
+      {
+        "title": "Bess Energy",
+        "caption": "Automatische Backup-Speicherung <10ms & Microgrids"
+      },
+      {
+        "title": "Schwimmendes Solarprojekt",
+        "caption": "Innovative Solaranlagen auf Wasserflächen"
+      },
+      {
+        "title": "Gewerbe- & Industrie-Dachanlagen",
+        "caption": "70% bis 90% Energiekostenreduzierung für Fertigungsbetriebe"
+      }
+    ]
   },
   "ImpactStats": {
     "title": "Grüne Energie im großen Maßstab",
@@ -355,6 +374,18 @@
       "feature2": "Netzsynchronisation",
       "feature3": "24/7 Telemetrie",
       "feature4": "CO₂-Zertifikate"
+    },
+    "pmSsy": {
+      "tag": "Solar-Dachanlagen & Staatliche Förderung",
+      "title": "PM-SSY (PM Saurya Yojana)",
+      "subtitle": "Förderung von Haushalten, Institutionen und staatlichen Einrichtungen durch dezentrale Solar-Dachanlagen.",
+      "stat1": "Bis zu 60% Förderung",
+      "stat2": "EVU / DISCOM Zertifiziert",
+      "stat3": "Null-Anzahlung Finanzierung",
+      "feature1": "Geförderte Solar-Dachanlagen für Wohn- und Gewerbegebäude",
+      "feature2": "Net-Metering Einspeiseverträge & Behördliche Genehmigungen",
+      "feature3": "Hocheffiziente N-Typ TOPCon Module & Smart Hybrid-Wechselrichter",
+      "feature4": "25 Jahre Leistungsgarantie & Schlüsselfertige Wartung"
     }
   },
   "CorporatePages": {

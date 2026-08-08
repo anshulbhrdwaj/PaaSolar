@@ -25,7 +25,8 @@
       "ci": "Comercial e Industrial (C&I)",
       "pmKusum": "Solar Agrícola",
       "ipp": "Parques Solares a Gran Escala (IPP)",
-      "allProjects": "Portafolio Completo de Proyectos"
+      "allProjects": "Portafolio Completo de Proyectos",
+      "pmSsy": "Esquema PM-SSY"
     },
     "getQuote": "Solicitar Cotización",
     "themeToggle": "Cambiar Tema",
@@ -51,7 +52,25 @@
     "secondaryCta": "Ver Impacto",
     "scrollCue": "Desplace para descubrir",
     "trustHighlight1": "30 Años de Garantía",
-    "trustHighlight2": "5 Años de Garantía EPC"
+    "trustHighlight2": "5 Años de Garantía EPC",
+    "banners": [
+      {
+        "title": "PM Kusum (A&C)",
+        "caption": "Plantas Terrestres Descentralizadas y Solarización de Alimentadores"
+      },
+      {
+        "title": "Bess Energy",
+        "caption": "Respaldo Automatizado <10ms y Microredes a Gran Escala"
+      },
+      {
+        "title": "Proyecto Solar Flotante",
+        "caption": "Instalaciones Innovadoras de Energía Solar Sobre Agua"
+      },
+      {
+        "title": "Cubiertas Comerciales e Industriales",
+        "caption": "Reducción del 70% al 90% en Costos de Energía para Plantas"
+      }
+    ]
   },
   "ImpactStats": {
     "title": "Energía Limpia a Gran Escala",
@@ -355,6 +374,18 @@
       "feature2": "Sincronización a Red",
       "feature3": "Telemetría 24/7",
       "feature4": "Créditos de Carbono"
+    },
+    "pmSsy": {
+      "tag": "Solar en Techos y Subsidios Estatales",
+      "title": "PM-SSY (PM Saurya Yojana)",
+      "subtitle": "Impulsando hogares, instituciones y edificios públicos con instalaciones solares descentralizadas y apoyo financiero.",
+      "stat1": "Hasta 60% de Subsidio",
+      "stat2": "Aprobado por DISCOM",
+      "stat3": "Financiamiento Sin Enganche",
+      "feature1": "Instalaciones Solares Subvencionadas para Sectores Residenciales e Institucionales",
+      "feature2": "Conexión de Medición Neta y Permisos de Agencias Estatales",
+      "feature3": "Paneles N-Type TOPCon de Alta Eficiencia e Inversores Híbridos Inteligentes",
+      "feature4": "Garantía de Rendimiento de 25 Años y Mantenimiento Llave en Mano"
     }
   },
   "CorporatePages": {

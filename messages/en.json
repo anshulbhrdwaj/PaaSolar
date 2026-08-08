@@ -25,7 +25,8 @@
       "ci": "Commercial & Industrial (C&I)",
       "pmKusum": "PM KUSUM Scheme",
       "ipp": "IPP Utility Scale",
-      "allProjects": "All Projects Portfolio"
+      "allProjects": "All Projects Portfolio",
+      "pmSsy": "PM-SSY Scheme"
     },
     "getQuote": "Get a Quote",
     "themeToggle": "Toggle theme",
@@ -51,7 +52,25 @@
     "secondaryCta": "Explore Impact",
     "scrollCue": "Scroll to Discover",
     "trustHighlight1": "30 Year Warranty",
-    "trustHighlight2": "5 Year EPC Warranty"
+    "trustHighlight2": "5 Year EPC Warranty",
+    "banners": [
+      {
+        "title": "PM Kusum (A&C)",
+        "caption": "Decentralized Ground Plants & Feeder Level Solarization"
+      },
+      {
+        "title": "Bess Energy",
+        "caption": "Sub-10ms Automated Backup & High-Scale Microgrids"
+      },
+      {
+        "title": "Floating Based Solar Project",
+        "caption": "Innovative Water-Surface Solar Energy Installations"
+      },
+      {
+        "title": "Commercial & Industrial Rooftops",
+        "caption": "70% to 90% Energy Cost Reduction for Manufacturing Plants"
+      }
+    ]
   },
   "ImpactStats": {
     "title": "Clean Energy at Scale",
@@ -407,6 +426,18 @@
       "feature2": "BESS Integrated High-Voltage Grid Synchronization",
       "feature3": "24/7 SCADA Telemetry & AI Predictive Operations",
       "feature4": "ESG Compliant Carbon Offset Certificate Generation"
+    },
+    "pmSsy": {
+      "tag": "Solar Rooftop & State Subsidy",
+      "title": "PM-SSY (PM Saurya Yojana)",
+      "subtitle": "Empowering homes, institutions, and state facilities with decentralized rooftop solar installations and financial assistance.",
+      "stat1": "Up to 60% Subsidy",
+      "stat2": "State DISCOM Approved",
+      "stat3": "Zero Down-Payment EMI",
+      "feature1": "Subsidized Rooftop Solar Installation for Residential & Institutional Consumers",
+      "feature2": "Net-Metering DISCOM Connection & State Nodal Agency Approvals",
+      "feature3": "High-Efficiency N-Type TOPCon Panels & Tier-1 Smart Hybrid Inverters",
+      "feature4": "25-Year Performance Guarantee & Turnkey Maintenance Infrastructure"
     }
   },
   "CorporatePages": {
