@@ -50,12 +50,12 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  // Fetch live countries from REST Countries API on mount
+  // Fetch live countries from REST Countries API on mount with silent local fallback
   useEffect(() => {
     async function fetchLiveCountries() {
       try {
-        const res = await fetch('https://restcountries.com/v3.1/all?fields=name,flag,idd');
-        if (res.ok) {
+        const res = await fetch('https://restcountries.com/v3.1/all?fields=name,flag,idd').catch(() => null);
+        if (res && res.ok) {
           const data = await res.json();
           const parsed: CountryItem[] = data
             .map((item: any) => {
@@ -75,7 +75,7 @@ export default function ContactPage() {
           }
         }
       } catch (err) {
-        console.warn('REST Countries API offline/throttled, using comprehensive fallback dataset', err);
+        // Silent fallback to ALL_COUNTRIES dataset
       }
     }
     fetchLiveCountries();
@@ -92,8 +92,8 @@ export default function ContactPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ country: countryName }),
-      });
-      if (res.ok) {
+      }).catch(() => null);
+      if (res && res.ok) {
         const data = await res.json();
         if (data.data && Array.isArray(data.data) && data.data.length > 0) {
           setApiCitiesMap((prev) => ({ ...prev, [countryName]: data.data }));
@@ -101,7 +101,7 @@ export default function ContactPage() {
         }
       }
     } catch (err) {
-      console.warn('CountriesNow Cities API error, fallback to local dataset', err);
+      // Silent fallback to ALL_CITIES_BY_COUNTRY dataset
     } finally {
       setLoadingCities(false);
     }
