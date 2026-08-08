@@ -24,10 +24,11 @@
     },
     "projectsDropdown": {
       "ci": "Commercial & Industrial (C&I)",
-      "pmKusum": "PM KUSUM With BESS",
+      "pmKusum": "PM KUSUM (A&C)",
       "ipp": "IPP Utility Scale",
       "allProjects": "All Projects Portfolio",
-      "pmSsy": "PM-SSY Scheme"
+      "pmSsy": "PM-SSY Scheme",
+      "pmKusumBess": "PM KUSUM with BESS"
     },
     "getQuote": "Get a Quote",
     "themeToggle": "Toggle theme",

@@ -24,10 +24,11 @@
     },
     "projectsDropdown": {
       "ci": "Gewerbe & Industrie (C&I)",
-      "pmKusum": "PM KUSUM Mit BESS",
+      "pmKusum": "PM KUSUM (A&C)",
       "ipp": "Solarparks (IPP)",
       "allProjects": "Gesamtes Projektportfolio",
-      "pmSsy": "PM-SSY Schema"
+      "pmSsy": "PM-SSY Schema",
+      "pmKusumBess": "PM KUSUM mit BESS"
     },
     "getQuote": "Angebot anfordern",
     "themeToggle": "Design wechseln",

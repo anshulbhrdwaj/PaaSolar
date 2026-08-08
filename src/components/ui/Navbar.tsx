@@ -265,7 +265,22 @@ export function Navbar() {
                       <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
                         {t('projectsDropdown.pmKusum')}
                       </p>
-                      <p className="text-[10px] text-text-secondary">Agricultural Solarization & BESS Storage</p>
+                      <p className="text-[10px] text-text-secondary">Decentralized Ground & Feeder Plants</p>
+                    </div>
+                  </Link>
+
+                  <Link
+                    href="/projects/pm-kusum"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-teal-500/10 text-teal-500 group-hover:scale-110 transition-transform">
+                      <BatteryCharging className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        {t('projectsDropdown.pmKusumBess')}
+                      </p>
+                      <p className="text-[10px] text-text-secondary">Solar Energy Storage & Microgrids</p>
                     </div>
                   </Link>
 

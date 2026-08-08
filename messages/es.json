@@ -24,10 +24,11 @@
     },
     "projectsDropdown": {
       "ci": "Comercial e Industrial (C&I)",
-      "pmKusum": "PM KUSUM Con BESS",
+      "pmKusum": "PM KUSUM (A&C)",
       "ipp": "Parques Solares a Gran Escala (IPP)",
       "allProjects": "Portafolio Completo de Proyectos",
-      "pmSsy": "Esquema PM-SSY"
+      "pmSsy": "Esquema PM-SSY",
+      "pmKusumBess": "PM KUSUM con BESS"
     },
     "getQuote": "Solicitar Cotización",
     "themeToggle": "Cambiar Tema",

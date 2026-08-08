@@ -24,10 +24,11 @@
     },
     "projectsDropdown": {
       "ci": "व्यावसायिक आणि औद्योगिक (C&I)",
-      "pmKusum": "पीएम कुसुम BESS सह",
+      "pmKusum": "पीएम कुसुम (A&C)",
       "ipp": "IPP युटिलिटी स्केल",
       "allProjects": "सर्व प्रकल्प दालन",
-      "pmSsy": "पीएम-एसएसवाय योजना"
+      "pmSsy": "पीएम-एसएसवाय योजना",
+      "pmKusumBess": "पीएम कुसुम BESS सह"
     },
     "getQuote": "कोट मिळवा",
     "themeToggle": "थीम बदला",
