@@ -148,6 +148,7 @@ export function Footer() {
               <ul className="flex flex-col gap-3 text-sm font-semibold text-text-primary">
                 <li><Link href="/about-us" className="hover:text-accent-solar transition-colors">About Us</Link></li>
                 <li><Link href="/contact" className="hover:text-accent-solar transition-colors">Contact Us</Link></li>
+                <li><Link href="/admin" className="hover:text-accent-solar transition-colors">Admin Panel</Link></li>
                 <li><Link href="/vendor-registration" className="hover:text-accent-solar transition-colors">Vendor Register</Link></li>
                 <li><Link href="/careers" className="hover:text-accent-solar transition-colors">Careers</Link></li>
                 <li><a href="#" className="hover:text-accent-solar transition-colors">{t('privacy')}</a></li>

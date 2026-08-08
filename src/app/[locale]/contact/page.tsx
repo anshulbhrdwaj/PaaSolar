@@ -140,6 +140,28 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+
+    const newQuery = {
+      id: `PQ-${Math.floor(1000 + Math.random() * 9000)}`,
+      fullName: formData.fullName,
+      email: formData.email,
+      phone: formData.phone,
+      country: formData.country,
+      city: formData.city || 'Jaipur',
+      category: formData.category,
+      capacity: formData.capacity || 'Not Specified',
+      message: formData.message || 'Direct contact inquiry submission.',
+      date: new Date().toISOString().slice(0, 16).replace('T', ' '),
+      status: 'New' as const,
+    };
+
+    try {
+      const existing = JSON.parse(localStorage.getItem('paa_solar_admin_queries') || '[]');
+      localStorage.setItem('paa_solar_admin_queries', JSON.stringify([newQuery, ...existing]));
+    } catch (err) {
+      console.error('Error saving query to local storage', err);
+    }
+
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
