@@ -49,7 +49,9 @@
     "description": "Paa Solar diseña sistemas de energía solar ultraeficientes y estéticamente integrados que brindan a hogares y empresas energía soberana, limpia y gratuita.",
     "primaryCta": "Diseñar Sistema",
     "secondaryCta": "Ver Impacto",
-    "scrollCue": "Desplace para descubrir"
+    "scrollCue": "Desplace para descubrir",
+    "trustHighlight1": "30 Años de Garantía",
+    "trustHighlight2": "5 Años de Garantía EPC"
   },
   "ImpactStats": {
     "title": "Energía Limpia a Gran Escala",

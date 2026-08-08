@@ -49,7 +49,9 @@
     "description": "Paa Solar entwickelt hocheffiziente, ästhetisch integrierte Solarenergiesysteme, die Häuser und Unternehmen mit unabhängiger, sauberer und kostenloser Energie versorgen.",
     "primaryCta": "System planen",
     "secondaryCta": "Wirkung ansehen",
-    "scrollCue": "Scrollen zum Entdecken"
+    "scrollCue": "Scrollen zum Entdecken",
+    "trustHighlight1": "30 Jahre Garantie",
+    "trustHighlight2": "5 Jahre EPC Garantie"
   },
   "ImpactStats": {
     "title": "Grüne Energie im großen Maßstab",

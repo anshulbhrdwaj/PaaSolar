@@ -9,27 +9,27 @@ import gsap from 'gsap';
 const BANNERS = [
   {
     id: 1,
-    url: 'https://sunlithenergy.com/wp-content/uploads/2025/10/advantages-of-battery-energy-storage-system-bess.png',
-    title: 'Paa Vault BESS Energy Storage',
-    caption: 'Sub-10ms Automated Backup & High-Scale Microgrids',
-  },
-  {
-    id: 2,
-    url: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2000&auto=format&fit=crop',
+    url: '/hero-banners/banner-1.webp',
     title: 'Utility-Scale Solar Parks',
     caption: '500+ MW Grid Connected Power Plants Across India',
   },
   {
+    id: 2,
+    url: '/hero-banners/banner-2.webp',
+    title: 'Paa Vault BESS Energy Storage',
+    caption: 'Sub-10ms Automated Backup & High-Scale Microgrids',
+  },
+  {
     id: 3,
-    url: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2000&auto=format&fit=crop',
-    title: 'Commercial & Industrial Rooftops',
-    caption: '75% Energy Cost Reduction for Manufacturing Plants',
+    url: '/hero-banners/banner-3.webp',
+    title: 'PM KUSUM Agricultural Solarization',
+    caption: 'Decentralized Feeder Solarization & Solar Pumps',
   },
   {
     id: 4,
-    url: 'https://images.unsplash.com/photo-1521618755572-156ae0cdd74d?q=80&w=2000&auto=format&fit=crop',
-    title: 'N-Type TOPCon Module Tech',
-    caption: '22.8% Ultra-High Efficiency Bifacial Solar Hardware',
+    url: '/hero-banners/banner-4.webp',
+    title: 'Commercial & Industrial Rooftops',
+    caption: '75% Energy Cost Reduction for Manufacturing Plants',
   },
 ];
 
@@ -169,12 +169,12 @@ export function HeroSection() {
           {/* Trust Highlights */}
           <div className="hero-fade flex flex-wrap items-center gap-6 pt-6 text-sm md:text-base font-semibold text-text-primary border-t border-line/80 w-full max-w-xl">
             <div className="flex items-center gap-2.5">
-              <ShieldCheck className="w-5 h-5 text-accent-solar shrink-0" />
-              <span>25-Year Guaranteed Performance</span>
+              <ShieldCheck className="w-5 h-5 text-emerald-500 shrink-0" />
+              <span>{t('trustHighlight1')}</span>
             </div>
             <div className="flex items-center gap-2.5">
-              <Zap className="w-5 h-5 text-accent-gold shrink-0" />
-              <span>Sub-10ms Battery Backup</span>
+              <Zap className="w-5 h-5 text-emerald-500 shrink-0" />
+              <span>{t('trustHighlight2')}</span>
             </div>
           </div>
         </div>

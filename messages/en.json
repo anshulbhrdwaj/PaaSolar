@@ -49,7 +49,9 @@
     "description": "Paa Solar crafts ultra-efficient, aesthetically integrated solar energy systems that empower homes and enterprises with sovereign, clean, and free energy.",
     "primaryCta": "Design Your System",
     "secondaryCta": "Explore Impact",
-    "scrollCue": "Scroll to Discover"
+    "scrollCue": "Scroll to Discover",
+    "trustHighlight1": "30 Year Warranty",
+    "trustHighlight2": "5 Year EPC Warranty"
   },
   "ImpactStats": {
     "title": "Clean Energy at Scale",
