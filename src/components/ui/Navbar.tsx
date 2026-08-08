@@ -405,20 +405,6 @@ export function Navbar() {
                     </div>
                   </Link>
 
-                  <Link
-                    href="/export"
-                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
-                  >
-                    <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform">
-                      <Globe2 className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
-                        {t('companyDropdown.export')}
-                      </p>
-                      <p className="text-[10px] text-text-secondary">{t('companyDropdown.exportSub')}</p>
-                    </div>
-                  </Link>
 
                   <Link
                     href="/careers"
@@ -746,14 +732,6 @@ export function Navbar() {
                 >
                   <Workflow className="w-4 h-4 text-accent-sky" />
                   <span>{t('companyDropdown.methodology')}</span>
-                </Link>
-                <Link
-                  href="/export"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
-                >
-                  <Globe2 className="w-4 h-4 text-emerald-500" />
-                  <span>{t('companyDropdown.export')}</span>
                 </Link>
                 <Link
                   href="/careers"
