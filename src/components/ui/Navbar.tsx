@@ -344,12 +344,12 @@ export function Navbar() {
           </div>
 
           <Link
-            href="/b2b"
+            href="/export"
             className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 font-bold ${
-              pathname === '/b2b' ? 'text-accent-solar' : 'text-text-primary'
+              pathname === '/export' ? 'text-accent-solar' : 'text-text-primary'
             }`}
           >
-            {t('nav.b2b')}
+            {t('nav.export')}
           </Link>
 
           {/* Interactive Company Dropdown */}
@@ -705,12 +705,12 @@ export function Navbar() {
           </div>
 
           <Link
-            href="/b2b"
+            href="/export"
             onClick={() => setMobileOpen(false)}
             style={{ animationDelay: '160ms' }}
             className="text-lg font-medium text-text-primary hover:text-accent-solar animate-mobile-item transition-colors"
           >
-            {t('nav.b2b')}
+            {t('nav.export')}
           </Link>
           {/* Mobile Accordion Company */}
           <div

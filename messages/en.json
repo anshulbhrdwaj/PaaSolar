@@ -8,12 +8,13 @@
       "solutions": "Solutions",
       "products": "Products",
       "projects": "Projects",
-      "b2b": "Serving B2B",
+      "b2b": "Exports & Overseas",
       "vendorRegister": "Vendor Register",
       "impact": "Impact",
       "testimonials": "Testimonials",
       "company": "Company",
-      "contact": "Contact Us"
+      "contact": "Contact Us",
+      "export": "Exports & Overseas"
     },
     "productsDropdown": {
       "pmSuryaGhar": "PM Surya Ghar Yojana",

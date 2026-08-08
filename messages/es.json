@@ -7,13 +7,14 @@
       "solutions": "Soluciones",
       "products": "Productos",
       "projects": "Proyectos",
-      "b2b": "Soluciones B2B",
+      "b2b": "Exportaciones y Ultramar",
       "impact": "Impacto",
       "testimonials": "Testimonios",
       "aboutUs": "Sobre Nosotros",
       "vendorRegister": "Registro de Proveedores",
       "company": "Empresa",
-      "contact": "Contacto"
+      "contact": "Contacto",
+      "export": "Exportaciones y Ultramar"
     },
     "productsDropdown": {
       "pmSuryaGhar": "Plan Solar Residencial",

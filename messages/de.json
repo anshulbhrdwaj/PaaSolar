@@ -7,13 +7,14 @@
       "solutions": "Lösungen",
       "products": "Produkte",
       "projects": "Projekte",
-      "b2b": "B2B-Lösungen",
+      "b2b": "Export & Übersee",
       "impact": "Wirkung",
       "testimonials": "Referenzen",
       "aboutUs": "Über Uns",
       "vendorRegister": "Lieferantenregistrierung",
       "company": "Unternehmen",
-      "contact": "Kontakt"
+      "contact": "Kontakt",
+      "export": "Export & Übersee"
     },
     "productsDropdown": {
       "pmSuryaGhar": "Förderprogramm Solar",
