@@ -8,6 +8,7 @@ import { ImpactStats } from '@/components/sections/ImpactStats';
 import { WhySolar } from '@/components/sections/WhySolar';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { ProductsGrid } from '@/components/sections/ProductsGrid';
+import { WhyUsSection } from '@/components/sections/WhyUsSection';
 import { CaseStudies } from '@/components/sections/CaseStudies';
 import { EnergyDashboard } from '@/components/sections/EnergyDashboard';
 import { TestimonialsMarquee } from '@/components/sections/TestimonialsMarquee';
@@ -25,6 +26,7 @@ export default function HomePage() {
       <HeroSection />
       <ImpactStats />
       <WhySolar />
+      <WhyUsSection />
       <HowItWorks />
       <ProductsGrid />
       <CaseStudies />
