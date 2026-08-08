@@ -11,6 +11,7 @@ import { ProductsGrid } from '@/components/sections/ProductsGrid';
 import { WhyUsSection } from '@/components/sections/WhyUsSection';
 import { CaseStudies } from '@/components/sections/CaseStudies';
 import { EnergyDashboard } from '@/components/sections/EnergyDashboard';
+import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { TestimonialsMarquee } from '@/components/sections/TestimonialsMarquee';
 import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
@@ -30,7 +31,7 @@ export default function HomePage() {
       <HowItWorks />
       <ProductsGrid />
       <CaseStudies />
-      {/* <EnergyDashboard /> */}
+      <SolarCalculator />
       <TestimonialsMarquee />
       <GetAQuoteCTA />
       <Footer />

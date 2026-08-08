@@ -34,7 +34,7 @@ export function CaseStudies() {
     {
       id: 'project-2',
       title: t('projects.1.title'),
-      category: 'industrial',
+      category: 'ci',
       location: t('projects.1.location'),
       capacity: t('projects.1.capacity'),
       offset: t('projects.1.offset'),
@@ -44,7 +44,7 @@ export function CaseStudies() {
     {
       id: 'project-3',
       title: t('projects.2.title'),
-      category: 'commercial',
+      category: 'ci',
       location: t('projects.2.location'),
       capacity: t('projects.2.capacity'),
       offset: t('projects.2.offset'),
@@ -54,7 +54,7 @@ export function CaseStudies() {
     {
       id: 'project-4',
       title: 'PM KUSUM Agricultural Solarization',
-      category: 'utility',
+      category: 'pmKusum',
       location: 'Nashik, Maharashtra',
       capacity: '12 MW Solar Pumps',
       offset: '18,200 Tons CO2/yr',
@@ -87,7 +87,7 @@ export function CaseStudies() {
 
           {/* Sector Filters */}
           <div className="flex items-center gap-2 p-2 rounded-full bg-bg-primary border border-line overflow-x-auto shadow-sm">
-            {['all', 'commercial', 'industrial', 'utility'].map((cat) => (
+            {['all', 'ci', 'pmKusum', 'utility'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
@@ -119,7 +119,7 @@ export function CaseStudies() {
 
               <div className="relative z-10 flex items-center justify-between">
                 <span className="text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full bg-bg-secondary border border-line text-emerald-500 font-bold">
-                  {project.category}
+                  {t(`filters.${project.category}`) || project.category}
                 </span>
                 <div className="w-10 h-10 rounded-full bg-bg-secondary border border-line flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
                   <ArrowUpRight className="w-5 h-5" />

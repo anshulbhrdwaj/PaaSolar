@@ -219,8 +219,8 @@
     "subtitle": "Discover how Paa Solar transforms commercial complexes, manufacturing plants, and utility infrastructure into self-sustaining clean power stations.",
     "filters": {
       "all": "All Projects",
-      "commercial": "Commercial",
-      "industrial": "Industrial",
+      "ci": "C&I",
+      "pmKusum": "PM Kusum",
       "utility": "Utility Scale"
     },
     "projects": [

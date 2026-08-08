@@ -344,6 +344,15 @@ export function Navbar() {
           </div>
 
           <Link
+            href="/calculator"
+            className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 font-bold ${
+              pathname === '/calculator' ? 'text-accent-solar' : 'text-text-primary'
+            }`}
+          >
+            Solar Calculator
+          </Link>
+
+          <Link
             href="/export"
             className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 font-bold ${
               pathname === '/export' ? 'text-accent-solar' : 'text-text-primary'
