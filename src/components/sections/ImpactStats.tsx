@@ -34,10 +34,10 @@ export function ImpactStats() {
 
         const targets = { s1: 0, s2: 0, s3: 0, s4: 0 };
         gsap.to(targets, {
-          s1: 520,
-          s2: 420,
-          s3: 18500,
-          s4: 24,
+          s1: 30,
+          s2: 160,
+          s3: 500,
+          s4: 2,
           duration: 2.2,
           ease: 'power2.out',
           onUpdate: () => {

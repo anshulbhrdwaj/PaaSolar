@@ -77,27 +77,27 @@
     ]
   },
   "ImpactStats": {
-    "title": "Grüne Energie im großen Maßstab",
-    "subtitle": "Messbarer Umweltwandel weltweit.",
+    "title": "PROJEKTAUSFÜHRUNGSBILANZ",
+    "subtitle": "Erfolgreich realisierte Solarprojekte in ganz Indien",
     "stat1": {
-      "value": 520,
-      "unit": "GWh",
-      "label": "Erzeugte Öko-Energie"
+      "value": 30,
+      "unit": "+",
+      "label": "PM-KUSUM Projekte"
     },
     "stat2": {
-      "value": 420,
-      "unit": "k Tonnen",
-      "label": "Jährliche CO₂-Reduktion"
+      "value": 160,
+      "unit": "+",
+      "label": "Gewerbe & Fabrik-Solar"
     },
     "stat3": {
-      "value": 18500,
+      "value": 500,
       "unit": "+",
-      "label": "Solarinstallationen"
+      "label": "PM-SSY & Solar-Kits"
     },
     "stat4": {
-      "value": 24,
-      "unit": "Regionen",
-      "label": "Aktives Netzwerk"
+      "value": 2,
+      "unit": "+",
+      "label": "Utility IPP Solarparks"
     }
   },
   "WhySolar": {

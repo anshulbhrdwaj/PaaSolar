@@ -1,13 +1,13 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import { Quote, Star, ChevronLeft, ChevronRight } from 'lucide-react';
 
 export function TestimonialsMarquee() {
   const t = useTranslations('Testimonials');
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const testimonials = [
     {
@@ -40,18 +40,45 @@ export function TestimonialsMarquee() {
     },
   ];
 
+  // Tripled list for seamless endless looping
+  const endlessTestimonials = [...testimonials, ...testimonials, ...testimonials];
+
+  // Endless auto-scroll timer
+  useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      if (scrollRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+        const cardWidth = 360;
+
+        // If near end of scroll track, reset to beginning without smooth jump
+        if (scrollLeft + clientWidth >= scrollWidth - 50) {
+          scrollRef.current.scrollTo({ left: 0, behavior: 'instant' as ScrollBehavior });
+        } else {
+          scrollRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        }
+      }
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
   const handlePrev = () => {
     if (scrollRef.current) {
       scrollRef.current.scrollBy({ left: -360, behavior: 'smooth' });
     }
-    setActiveIndex((prev) => (prev > 0 ? prev - 1 : testimonials.length - 1));
   };
 
   const handleNext = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 360, behavior: 'smooth' });
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      if (scrollLeft + clientWidth >= scrollWidth - 50) {
+        scrollRef.current.scrollTo({ left: 0, behavior: 'instant' as ScrollBehavior });
+      } else {
+        scrollRef.current.scrollBy({ left: 360, behavior: 'smooth' });
+      }
     }
-    setActiveIndex((prev) => (prev < testimonials.length - 1 ? prev + 1 : 0));
   };
 
   return (
@@ -93,12 +120,16 @@ export function TestimonialsMarquee() {
           </div>
         </div>
 
-        {/* Testimonials Slider Track */}
+        {/* Testimonials Auto-Scrolling Track */}
         <div
           ref={scrollRef}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+          onTouchStart={() => setIsPaused(true)}
+          onTouchEnd={() => setIsPaused(false)}
           className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth py-2 px-1 snap-x snap-mandatory"
         >
-          {testimonials.map((item, index) => (
+          {endlessTestimonials.map((item, index) => (
             <div
               key={index}
               className="w-[300px] sm:w-[380px] md:w-[420px] shrink-0 snap-start rounded-3xl p-6 sm:p-8 bg-bg-primary border border-line hover:border-emerald-500 hover:ring-2 hover:ring-emerald-500/20 transition-all duration-300 shadow-lg hover:shadow-xl flex flex-col justify-between group"

@@ -77,27 +77,27 @@
     ]
   },
   "ImpactStats": {
-    "title": "Energía Limpia a Gran Escala",
-    "subtitle": "Transformación ambiental medible a nivel global.",
+    "title": "HISTORIAL DE EJECUCIÓN DE PROYECTOS",
+    "subtitle": "Proyectos Solares Ejecutados con Éxito en Toda la India",
     "stat1": {
-      "value": 520,
-      "unit": "GWh",
-      "label": "Energía Limpia Generada"
+      "value": 30,
+      "unit": "+",
+      "label": "Proyectos PM-KUSUM"
     },
     "stat2": {
-      "value": 420,
-      "unit": "k Toneladas",
-      "label": "Reducción Anual de CO₂"
+      "value": 160,
+      "unit": "+",
+      "label": "Solar C&I y Fábricas"
     },
     "stat3": {
-      "value": 18500,
+      "value": 500,
       "unit": "+",
-      "label": "Instalaciones Solares"
+      "label": "Kits PM-SSY y Residenciales"
     },
     "stat4": {
-      "value": 24,
-      "unit": "Regiones",
-      "label": "Red Activa"
+      "value": 2,
+      "unit": "+",
+      "label": "Parques Solares IPP"
     }
   },
   "WhySolar": {

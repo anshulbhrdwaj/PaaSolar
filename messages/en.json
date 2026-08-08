@@ -77,27 +77,27 @@
     ]
   },
   "ImpactStats": {
-    "title": "Clean Energy at Scale",
-    "subtitle": "Quantifiable environmental transformation across the nation.",
+    "title": "PROJECT EXECUTION TRACK RECORD",
+    "subtitle": "Turnkey Solar Installations Executed Across India",
     "stat1": {
-      "value": 520,
-      "unit": "GWh",
-      "label": "Clean Energy Generated"
+      "value": 30,
+      "unit": "+",
+      "label": "PM-KUSUM Projects"
     },
     "stat2": {
-      "value": 420,
-      "unit": "k Tons",
-      "label": "CO₂ Offset Annually"
+      "value": 160,
+      "unit": "+",
+      "label": "C&I & Factory Solar"
     },
     "stat3": {
-      "value": 18500,
+      "value": 500,
       "unit": "+",
-      "label": "Architectural Installations"
+      "label": "PM-SSY & Rooftop Kits"
     },
     "stat4": {
-      "value": 24,
-      "unit": "States",
-      "label": "Active Power Footprint"
+      "value": 2,
+      "unit": "+",
+      "label": "Utility IPP Solar Parks"
     }
   },
   "WhySolar": {
