@@ -9,21 +9,21 @@ import gsap from 'gsap';
 const BANNERS = [
   {
     id: 1,
+    url: 'https://sunlithenergy.com/wp-content/uploads/2025/10/advantages-of-battery-energy-storage-system-bess.png',
+    title: 'Paa Vault BESS Energy Storage',
+    caption: 'Sub-10ms Automated Backup & High-Scale Microgrids',
+  },
+  {
+    id: 2,
     url: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=2000&auto=format&fit=crop',
     title: 'Utility-Scale Solar Parks',
     caption: '500+ MW Grid Connected Power Plants Across India',
   },
   {
-    id: 2,
+    id: 3,
     url: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?q=80&w=2000&auto=format&fit=crop',
     title: 'Commercial & Industrial Rooftops',
     caption: '75% Energy Cost Reduction for Manufacturing Plants',
-  },
-  {
-    id: 3,
-    url: 'https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=2000&auto=format&fit=crop',
-    title: 'Paa Vault BESS Energy Storage',
-    caption: 'Sub-10ms Automated Backup & Peak Shaving Microgrids',
   },
   {
     id: 4,
