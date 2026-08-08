@@ -113,18 +113,18 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 bg-bg-primary/90 dark:bg-bg-primary/95 backdrop-blur-md border-b border-line shadow-sm ${
-        scrolled || mobileOpen ? 'py-3.5' : 'py-4 lg:py-5'
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 bg-bg-primary/95 dark:bg-bg-primary/95 backdrop-blur-md border-b border-line shadow-sm ${
+        scrolled || mobileOpen ? 'py-2.5 sm:py-3' : 'py-3 lg:py-3.5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-3 group hover:scale-105 transition-transform duration-300">
+        <Link href="/" className="flex items-center gap-2 shrink-0 group hover:scale-105 transition-transform duration-300">
           <PaaSolarLogo size="md" showTagline={false} />
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm md:text-base font-bold text-text-primary whitespace-nowrap">
+        <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6 text-xs xl:text-sm font-bold text-text-primary whitespace-nowrap">
           <Link
             href="/about-us"
             className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 font-bold ${
@@ -349,7 +349,7 @@ export function Navbar() {
               pathname === '/calculator' ? 'text-accent-solar' : 'text-text-primary'
             }`}
           >
-            Solar Calculator
+            Calculator
           </Link>
 
           <Link
@@ -451,7 +451,7 @@ export function Navbar() {
         </nav>
 
         {/* Right Utility Buttons */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-2.5 xl:gap-3.5 shrink-0">
           {/* Multi-Language Selector Dropdown */}
           <div
             className="relative"
@@ -461,7 +461,7 @@ export function Navbar() {
             <button
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
               data-cursor="pointer"
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-line hover:border-accent-solar bg-bg-secondary text-xs font-bold text-text-primary transition-all duration-300 shadow-sm"
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-line hover:border-accent-solar bg-bg-secondary text-xs font-bold text-text-primary transition-all duration-300 shadow-sm"
               aria-label="Select Language"
             >
               <Globe className="w-3.5 h-3.5 text-accent-solar" />
@@ -514,7 +514,7 @@ export function Navbar() {
               onClick={toggleTheme}
               data-cursor="pointer"
               aria-label={t('themeToggle')}
-              className="p-2.5 rounded-full border border-line hover:border-accent-solar bg-bg-secondary text-text-primary hover:text-accent-solar transition-all duration-300 relative overflow-hidden shadow-sm"
+              className="p-2 rounded-full border border-line hover:border-accent-solar bg-bg-secondary text-text-primary hover:text-accent-solar transition-all duration-300 relative overflow-hidden shadow-sm"
             >
               <div className="transition-transform duration-500 rotate-0 dark:rotate-180">
                 {isDark ? (
@@ -530,10 +530,10 @@ export function Navbar() {
           <Link
             href="/get-a-quote"
             data-cursor="explore"
-            className="relative group overflow-hidden px-5 py-2.5 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-md hover:shadow-lg transition-all duration-300"
+            className="relative group overflow-hidden px-4 xl:px-5 py-2 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-md hover:shadow-lg transition-all duration-300 shrink-0"
           >
             <span className="relative z-10">{t('getQuote')}</span>
-            <ArrowUpRight className="w-4 h-4 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            <ArrowUpRight className="w-3.5 h-3.5 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             <div className="absolute inset-0 bg-accent-sky translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
           </Link>
         </div>
@@ -698,6 +698,15 @@ export function Navbar() {
               </div>
             )}
           </div>
+
+          <Link
+            href="/calculator"
+            onClick={() => setMobileOpen(false)}
+            style={{ animationDelay: '150ms' }}
+            className="text-lg font-medium text-text-primary hover:text-accent-solar animate-mobile-item transition-colors"
+          >
+            Calculator
+          </Link>
 
           <Link
             href="/export"

@@ -114,9 +114,6 @@ export function WhyUsSection() {
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-text-primary mt-2">
             Why Choose Paa Solar?
           </h2>
-          <p className="text-text-secondary text-base sm:text-lg mt-3 leading-relaxed font-medium">
-            India’s trusted turnkey solar EPC & distribution partner delivering high-yield TOPCon technology, 30+ year asset durability, and complete PM SGY kit fulfillment.
-          </p>
         </div>
 
         {/* Circular Visual Representation Container */}
