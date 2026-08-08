@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import {
@@ -17,20 +17,125 @@ import {
   Sun,
   ArrowRight,
   Globe2,
+  ChevronDown,
+  Search,
 } from 'lucide-react';
+
+const COUNTRIES = [
+  { name: 'India', flag: '🇮🇳', code: '+91' },
+  { name: 'United Arab Emirates', flag: '🇦🇪', code: '+971' },
+  { name: 'Saudi Arabia', flag: '🇸🇦', code: '+966' },
+  { name: 'United States', flag: '🇺🇸', code: '+1' },
+  { name: 'United Kingdom', flag: '🇬🇧', code: '+44' },
+  { name: 'Germany', flag: '🇩🇪', code: '+49' },
+  { name: 'Spain', flag: '🇪🇸', code: '+34' },
+  { name: 'Kenya', flag: '🇰🇪', code: '+254' },
+  { name: 'South Africa', flag: '🇿🇦', code: '+27' },
+  { name: 'Australia', flag: '🇦🇺', code: '+61' },
+  { name: 'Canada', flag: '🇨🇦', code: '+1' },
+  { name: 'Singapore', flag: '🇸🇬', code: '+65' },
+  { name: 'Japan', flag: '🇯🇵', code: '+81' },
+  { name: 'Oman', flag: '🇴🇲', code: '+968' },
+  { name: 'Qatar', flag: '🇶🇦', code: '+974' },
+  { name: 'Kuwait', flag: '🇰🇼', code: '+965' },
+  { name: 'Bahrain', flag: '🇧🇭', code: '+973' },
+  { name: 'Nigeria', flag: '🇳🇬', code: '+234' },
+  { name: 'Egypt', flag: '🇪🇬', code: '+20' },
+  { name: 'Vietnam', flag: '🇻🇳', code: '+84' },
+  { name: 'Indonesia', flag: '🇮🇩', code: '+62' },
+  { name: 'Malaysia', flag: '🇲🇾', code: '+60' },
+];
+
+const CITIES_BY_COUNTRY: Record<string, string[]> = {
+  India: [
+    'Jaipur',
+    'Mumbai',
+    'Bengaluru',
+    'New Delhi',
+    'Gurugram',
+    'Noida',
+    'Ahmedabad',
+    'Surat',
+    'Pune',
+    'Hyderabad',
+    'Chennai',
+    'Kolkata',
+    'Indore',
+    'Lucknow',
+    'Chandigarh',
+    'Jodhpur',
+    'Udaipur',
+    'Kota',
+    'Bhopal',
+    'Vadodara',
+    'Nagpur',
+    'Visakhapatnam',
+    'Kochi',
+    'Coimbatore',
+  ],
+  'United Arab Emirates': ['Dubai', 'Abu Dhabi', 'Sharjah', 'Ajman', 'Ras Al Khaimah'],
+  'Saudi Arabia': ['Riyadh', 'Jeddah', 'Dammam', 'Khobar', 'Mecca', 'Medina'],
+  'United States': ['Houston', 'Dallas', 'Los Angeles', 'San Francisco', 'Chicago', 'New York', 'Phoenix'],
+  'United Kingdom': ['London', 'Birmingham', 'Manchester', 'Glasgow', 'Leeds'],
+  Germany: ['Frankfurt', 'Munich', 'Berlin', 'Hamburg', 'Cologne', 'Stuttgart'],
+  Spain: ['Madrid', 'Barcelona', 'Valencia', 'Seville', 'Bilbao'],
+  Kenya: ['Nairobi', 'Mombasa', 'Kisumu', 'Nakuru'],
+  'South Africa': ['Johannesburg', 'Cape Town', 'Durban', 'Pretoria'],
+  Australia: ['Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide'],
+  Canada: ['Toronto', 'Vancouver', 'Montreal', 'Calgary', 'Ottawa'],
+  Singapore: ['Singapore'],
+  Japan: ['Tokyo', 'Osaka', 'Yokohama', 'Nagoya'],
+  Oman: ['Muscat', 'Salalah', 'Sohar'],
+  Qatar: ['Doha', 'Al Rayyan', 'Al Wakrah'],
+};
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
     phone: '',
+    country: 'India 🇮🇳',
+    city: 'Jaipur',
     category: 'C&I Commercial Rooftop',
     capacity: '',
     message: '',
   });
 
+  const [countryOpen, setCountryOpen] = useState(false);
+  const [countrySearch, setCountrySearch] = useState('');
+  const [cityOpen, setCityOpen] = useState(false);
+  const [citySearch, setCitySearch] = useState('');
+
+  const countryDropdownRef = useRef<HTMLDivElement>(null);
+  const cityDropdownRef = useRef<HTMLDivElement>(null);
+
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  // Close dropdowns on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (countryDropdownRef.current && !countryDropdownRef.current.contains(e.target as Node)) {
+        setCountryOpen(false);
+      }
+      if (cityDropdownRef.current && !cityDropdownRef.current.contains(e.target as Node)) {
+        setCityOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const selectedCountryName = formData.country.split(' ')[0];
+  const availableCities = CITIES_BY_COUNTRY[selectedCountryName] || ['Capital / Major Hub', 'Other City'];
+
+  const filteredCountries = COUNTRIES.filter((c) =>
+    c.name.toLowerCase().includes(countrySearch.toLowerCase())
+  );
+
+  const filteredCities = availableCities.filter((city) =>
+    city.toLowerCase().includes(citySearch.toLowerCase())
+  );
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -141,6 +246,115 @@ export default function ContactPage() {
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-line focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 text-text-primary outline-none transition-all"
                       />
+                    </div>
+                  </div>
+
+                  {/* Country & City Searchable Dropdowns */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    {/* Searchable Country Dropdown */}
+                    <div className="relative" ref={countryDropdownRef}>
+                      <label className="block text-xs font-mono font-bold uppercase tracking-wider text-text-primary mb-2">
+                        Country *
+                      </label>
+                      <button
+                        type="button"
+                        onClick={() => setCountryOpen(!countryOpen)}
+                        className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-line focus:border-emerald-500 text-left text-text-primary flex items-center justify-between font-medium"
+                      >
+                        <span className="truncate">{formData.country}</span>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 text-emerald-500 ${countryOpen ? 'rotate-180' : ''}`} />
+                      </button>
+
+                      {countryOpen && (
+                        <div className="absolute top-full left-0 right-0 mt-2 p-3 rounded-2xl bg-bg-primary border border-line shadow-2xl z-50 animate-fade-in max-h-64 overflow-y-auto">
+                          <div className="relative mb-2">
+                            <Search className="w-4 h-4 absolute left-3 top-3 text-text-secondary" />
+                            <input
+                              type="text"
+                              placeholder="Search country..."
+                              value={countrySearch}
+                              onChange={(e) => setCountrySearch(e.target.value)}
+                              className="w-full pl-9 pr-3 py-2 rounded-lg bg-bg-secondary border border-line text-xs text-text-primary outline-none focus:border-emerald-500"
+                            />
+                          </div>
+
+                          <div className="space-y-1">
+                            {filteredCountries.length > 0 ? (
+                              filteredCountries.map((c) => (
+                                <button
+                                  key={c.name}
+                                  type="button"
+                                  onClick={() => {
+                                    setFormData({ ...formData, country: `${c.name} ${c.flag}`, city: CITIES_BY_COUNTRY[c.name]?.[0] || '' });
+                                    setCountryOpen(false);
+                                    setCountrySearch('');
+                                  }}
+                                  className="w-full px-3 py-2 rounded-lg text-left text-xs font-semibold hover:bg-emerald-500/10 hover:text-emerald-500 transition-colors flex items-center justify-between"
+                                >
+                                  <span>{c.name} {c.flag}</span>
+                                  <span className="text-[10px] text-text-secondary font-mono">{c.code}</span>
+                                </button>
+                              ))
+                            ) : (
+                              <p className="text-xs text-text-secondary p-2 text-center">No countries match search</p>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Searchable City Dropdown */}
+                    <div className="relative" ref={cityDropdownRef}>
+                      <label className="block text-xs font-mono font-bold uppercase tracking-wider text-text-primary mb-2">
+                        City *
+                      </label>
+                      <button
+                        type="button"
+                        onClick={() => setCityOpen(!cityOpen)}
+                        className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-line focus:border-emerald-500 text-left text-text-primary flex items-center justify-between font-medium"
+                      >
+                        <span className="truncate">{formData.city || 'Select / Type City'}</span>
+                        <ChevronDown className={`w-4 h-4 transition-transform duration-300 text-emerald-500 ${cityOpen ? 'rotate-180' : ''}`} />
+                      </button>
+
+                      {cityOpen && (
+                        <div className="absolute top-full left-0 right-0 mt-2 p-3 rounded-2xl bg-bg-primary border border-line shadow-2xl z-50 animate-fade-in max-h-64 overflow-y-auto">
+                          <div className="relative mb-2">
+                            <Search className="w-4 h-4 absolute left-3 top-3 text-text-secondary" />
+                            <input
+                              type="text"
+                              placeholder="Search or type city..."
+                              value={citySearch}
+                              onChange={(e) => {
+                                setCitySearch(e.target.value);
+                                setFormData({ ...formData, city: e.target.value });
+                              }}
+                              className="w-full pl-9 pr-3 py-2 rounded-lg bg-bg-secondary border border-line text-xs text-text-primary outline-none focus:border-emerald-500"
+                            />
+                          </div>
+
+                          <div className="space-y-1">
+                            {filteredCities.length > 0 ? (
+                              filteredCities.map((city) => (
+                                <button
+                                  key={city}
+                                  type="button"
+                                  onClick={() => {
+                                    setFormData({ ...formData, city });
+                                    setCityOpen(false);
+                                    setCitySearch('');
+                                  }}
+                                  className="w-full px-3 py-2 rounded-lg text-left text-xs font-semibold hover:bg-emerald-500/10 hover:text-emerald-500 transition-colors"
+                                >
+                                  {city}
+                                </button>
+                              ))
+                            ) : (
+                              <p className="text-xs text-text-secondary p-2 text-center">Press Enter or keep typing custom city</p>
+                            )}
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
 
