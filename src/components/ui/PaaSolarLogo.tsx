@@ -64,7 +64,7 @@ export function PaaSolarLogo({
           backgroundImage: `
             linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
             linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px),
-            linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #0ea5e9 100%)
+            linear-gradient(135deg, #047857 0%, #10b981 50%, #34d399 100%)
           `,
           backgroundSize: '12px 24px, 12px 24px, 100% 100%',
           color: 'transparent',
