@@ -42,100 +42,92 @@ export function TestimonialsMarquee() {
 
   const handlePrev = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+      scrollRef.current.scrollBy({ left: -360, behavior: 'smooth' });
     }
     setActiveIndex((prev) => (prev > 0 ? prev - 1 : testimonials.length - 1));
   };
 
   const handleNext = () => {
     if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+      scrollRef.current.scrollBy({ left: 360, behavior: 'smooth' });
     }
     setActiveIndex((prev) => (prev < testimonials.length - 1 ? prev + 1 : 0));
   };
 
-  const duplicated = [...testimonials, ...testimonials];
-
   return (
-    <section id="testimonials" className="py-24 bg-bg-secondary/40 border-t border-line overflow-hidden">
-      {/* Header & Slider Nav Controls */}
-      <div className="max-w-7xl mx-auto px-6 mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <div>
-          <span className="text-xs uppercase font-mono tracking-widest text-emerald-500 font-bold">
-            {t('tag')}
-          </span>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-text-primary mt-2">
-            {t('title')}
-          </h2>
-        </div>
+    <section id="testimonials" className="py-20 md:py-24 bg-bg-secondary/40 border-t border-line overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header & Controls */}
+        <div className="mb-12 md:mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <span className="text-xs uppercase font-mono tracking-widest text-emerald-500 font-bold">
+              {t('tag')}
+            </span>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mt-2">
+              {t('title')}
+            </h2>
+          </div>
 
-        <div className="flex items-center gap-4">
-          <p className="text-text-primary text-base font-semibold max-w-sm hidden sm:block">
-            {t('subtitle')}
-          </p>
+          <div className="flex items-center gap-6 justify-between md:justify-end">
+            <p className="text-text-primary/90 text-sm sm:text-base font-medium max-w-sm hidden lg:block">
+              {t('subtitle')}
+            </p>
 
-          {/* Prev / Next Green Controls */}
-          <div className="flex items-center gap-2 border-l border-line/80 pl-4">
-            <button
-              onClick={handlePrev}
-              aria-label="Previous testimonial"
-              className="p-3 rounded-full border border-emerald-500/40 text-emerald-500 hover:bg-emerald-500 hover:text-white bg-bg-primary shadow-[0_0_12px_rgba(16,185,129,0.15)] transition-all hover:scale-110 active:scale-95"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-            <button
-              onClick={handleNext}
-              aria-label="Next testimonial"
-              className="p-3 rounded-full border border-emerald-500/40 text-emerald-500 hover:bg-emerald-500 hover:text-white bg-bg-primary shadow-[0_0_12px_rgba(16,185,129,0.15)] transition-all hover:scale-110 active:scale-95"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
+            {/* Prev / Next Green Controls */}
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handlePrev}
+                aria-label="Previous testimonial"
+                className="p-3 rounded-full border border-emerald-500/40 text-emerald-500 hover:bg-emerald-500 hover:text-white bg-bg-primary shadow-[0_0_12px_rgba(16,185,129,0.15)] transition-all hover:scale-110 active:scale-95"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={handleNext}
+                aria-label="Next testimonial"
+                className="p-3 rounded-full border border-emerald-500/40 text-emerald-500 hover:bg-emerald-500 hover:text-white bg-bg-primary shadow-[0_0_12px_rgba(16,185,129,0.15)] transition-all hover:scale-110 active:scale-95"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Infinite Marquee + Manual Scroll Container */}
-      <div className="relative w-full overflow-hidden flex items-center">
-        {/* Left/Right Fade Masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-bg-primary to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-bg-primary to-transparent z-10 pointer-events-none" />
-
-        {/* Slider Track */}
+        {/* Testimonials Slider Track */}
         <div
           ref={scrollRef}
-          className="flex gap-6 animate-marquee hover:[animation-play-state:paused] py-4 overflow-x-auto no-scrollbar scroll-smooth"
+          className="flex gap-6 overflow-x-auto no-scrollbar scroll-smooth py-2 px-1 snap-x snap-mandatory"
         >
-          {duplicated.map((item, index) => (
+          {testimonials.map((item, index) => (
             <div
               key={index}
-              className="w-[380px] md:w-[440px] shrink-0 rounded-3xl p-8 bg-bg-primary border border-line hover:border-emerald-500 hover:ring-2 hover:ring-emerald-500/20 transition-all duration-300 shadow-xl flex flex-col justify-between group"
+              className="w-[300px] sm:w-[380px] md:w-[420px] shrink-0 snap-start rounded-3xl p-6 sm:p-8 bg-bg-primary border border-line hover:border-emerald-500 hover:ring-2 hover:ring-emerald-500/20 transition-all duration-300 shadow-lg hover:shadow-xl flex flex-col justify-between group"
             >
               <div>
-                {/* Header Rating & Quote */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1 text-amber-500">
+                {/* Header Rating & Quote Icon */}
+                <div className="flex items-center justify-between mb-5">
+                  <div className="flex items-center gap-1">
                     {[...Array(item.rating)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-amber-400 stroke-amber-500" />
                     ))}
                   </div>
-                  <Quote className="w-8 h-8 text-emerald-500/40 group-hover:text-emerald-500 transition-colors" />
+                  <Quote className="w-7 h-7 text-emerald-500/40 group-hover:text-emerald-500 transition-colors" />
                 </div>
 
-                <p className="text-text-primary text-lg md:text-xl font-serif italic leading-relaxed mb-6">
+                <p className="text-text-primary text-base sm:text-lg md:text-xl font-serif italic leading-relaxed mb-6">
                   &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
 
               {/* Author Info */}
-              <div className="pt-4 border-t border-line/60 flex items-center gap-4">
-                {/* Avatar Badge */}
+              <div className="pt-4 border-t border-line/60 flex items-center gap-3.5 mt-auto">
                 <div className="w-11 h-11 rounded-full bg-emerald-500/15 border border-emerald-500 text-emerald-500 font-mono text-sm font-bold flex items-center justify-center shrink-0 shadow-sm">
                   {item.author.charAt(0)}
                 </div>
 
-                <div>
-                  <p className="font-bold text-text-primary text-base leading-tight">{item.author}</p>
-                  <p className="text-xs font-semibold text-text-primary/80 mt-0.5">{item.role}</p>
+                <div className="min-w-0">
+                  <p className="font-bold text-text-primary text-base leading-tight truncate">{item.author}</p>
+                  <p className="text-xs font-semibold text-text-primary/80 truncate mt-0.5">{item.role}</p>
                 </div>
               </div>
             </div>
