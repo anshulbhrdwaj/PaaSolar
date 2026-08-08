@@ -56,19 +56,23 @@
     "banners": [
       {
         "title": "PM Kusum (A&C)",
-        "caption": "Plantas Terrestres Descentralizadas y Solarización de Alimentadores"
+        "caption": "Plantas Terrestres Descentralizadas y Solarización de Alimentadores",
+        "shortTitle": "PM Kusum"
       },
       {
         "title": "Bess Energy",
-        "caption": "Respaldo Automatizado <10ms y Microredes a Gran Escala"
+        "caption": "Respaldo Automatizado <10ms y Microredes a Gran Escala",
+        "shortTitle": "Bess"
       },
       {
         "title": "Proyecto Solar Flotante",
-        "caption": "Instalaciones Innovadoras de Energía Solar Sobre Agua"
+        "caption": "Instalaciones Innovadoras de Energía Solar Sobre Agua",
+        "shortTitle": "Flotante"
       },
       {
         "title": "Cubiertas Comerciales e Industriales",
-        "caption": "Reducción del 70% al 90% en Costos de Energía para Plantas"
+        "caption": "Reducción del 70% al 90% en Costos de Energía para Plantas",
+        "shortTitle": "C&I"
       }
     ]
   },

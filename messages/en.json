@@ -56,19 +56,23 @@
     "banners": [
       {
         "title": "PM Kusum (A&C)",
-        "caption": "Decentralized Ground Plants & Feeder Level Solarization"
+        "caption": "Decentralized Ground Plants & Feeder Level Solarization",
+        "shortTitle": "PM Kusum"
       },
       {
         "title": "Bess Energy",
-        "caption": "Sub-10ms Automated Backup & High-Scale Microgrids"
+        "caption": "Sub-10ms Automated Backup & High-Scale Microgrids",
+        "shortTitle": "Bess"
       },
       {
         "title": "Floating Based Solar Project",
-        "caption": "Innovative Water-Surface Solar Energy Installations"
+        "caption": "Innovative Water-Surface Solar Energy Installations",
+        "shortTitle": "Floating"
       },
       {
         "title": "Commercial & Industrial Rooftops",
-        "caption": "70% to 90% Energy Cost Reduction for Manufacturing Plants"
+        "caption": "70% to 90% Energy Cost Reduction for Manufacturing Plants",
+        "shortTitle": "C&I"
       }
     ]
   },

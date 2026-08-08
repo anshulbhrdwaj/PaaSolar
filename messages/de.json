@@ -56,19 +56,23 @@
     "banners": [
       {
         "title": "PM Kusum (A&C)",
-        "caption": "Dezentrale Freiflächenanlagen & Einspeise-Solarisierung"
+        "caption": "Dezentrale Freiflächenanlagen & Einspeise-Solarisierung",
+        "shortTitle": "PM Kusum"
       },
       {
         "title": "Bess Energy",
-        "caption": "Automatische Backup-Speicherung <10ms & Microgrids"
+        "caption": "Automatische Backup-Speicherung <10ms & Microgrids",
+        "shortTitle": "Bess"
       },
       {
         "title": "Schwimmendes Solarprojekt",
-        "caption": "Innovative Solaranlagen auf Wasserflächen"
+        "caption": "Innovative Solaranlagen auf Wasserflächen",
+        "shortTitle": "Schwimmend"
       },
       {
         "title": "Gewerbe- & Industrie-Dachanlagen",
-        "caption": "70% bis 90% Energiekostenreduzierung für Fertigungsbetriebe"
+        "caption": "70% bis 90% Energiekostenreduzierung für Fertigungsbetriebe",
+        "shortTitle": "C&I"
       }
     ]
   },

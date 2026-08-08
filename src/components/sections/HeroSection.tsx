@@ -11,24 +11,28 @@ const BANNERS = [
     id: 1,
     url: '/hero-banners/banner-1.webp',
     title: 'PM Kusum (A&C)',
+    shortTitle: 'PM Kusum',
     caption: 'Decentralized Ground Plants & Feeder Level Solarization',
   },
   {
     id: 2,
     url: '/hero-banners/banner-2.webp',
     title: 'Bess Energy',
+    shortTitle: 'Bess',
     caption: 'Sub-10ms Automated Backup & High-Scale Microgrids',
   },
   {
     id: 3,
     url: '/hero-banners/banner-3.webp',
     title: 'Floating Based Solar Project',
+    shortTitle: 'Floating',
     caption: 'Innovative Water-Surface Solar Energy Installations',
   },
   {
     id: 4,
     url: '/hero-banners/banner-4.webp',
     title: 'Commercial & Industrial Rooftops',
+    shortTitle: 'C&I',
     caption: '70% to 90% Energy Cost Reduction for Manufacturing Plants',
   },
 ];
@@ -43,11 +47,12 @@ export function HeroSection() {
   // Dynamic localized banners
   let bannersData = BANNERS;
   try {
-    const rawBanners = t.raw('banners') as Array<{ title: string; caption: string }>;
+    const rawBanners = t.raw('banners') as Array<{ title: string; shortTitle?: string; caption: string }>;
     if (Array.isArray(rawBanners) && rawBanners.length === BANNERS.length) {
       bannersData = BANNERS.map((b, i) => ({
         ...b,
         title: rawBanners[i]?.title || b.title,
+        shortTitle: rawBanners[i]?.shortTitle || b.shortTitle,
         caption: rawBanners[i]?.caption || b.caption,
       }));
     }
@@ -236,9 +241,7 @@ export function HeroSection() {
               >
                 <span className="font-mono text-[10px] text-emerald-500">0{idx + 1}</span>
                 <span className="truncate max-w-[110px]">
-                  {banner.title.toLowerCase().includes('commercial') || banner.title.toLowerCase().includes('वाणिज्यिक')
-                    ? 'C&I'
-                    : banner.title.split(' ')[0]}
+                  {banner.shortTitle || banner.title.split(' ')[0]}
                 </span>
               </button>
             ))}
