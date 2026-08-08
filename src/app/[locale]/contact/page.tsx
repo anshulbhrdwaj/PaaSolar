@@ -458,13 +458,13 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
                     <span>
-                      Paa Solar Towers, Tonk Road / EPIP Industrial Zone, Jaipur, Rajasthan 302022, India
+                      Mangalam City, Kalwar Road, Jaipur, Rajasthan 302012, India
                     </span>
                   </div>
 
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-emerald-500 shrink-0" />
-                    <span>+91 93119 22134 / +91 98290 XXXXX</span>
+                    <span>+91 98290 XXXXX</span>
                   </div>
 
                   <div className="flex items-center gap-3">
@@ -474,14 +474,14 @@ export default function ContactPage() {
 
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-emerald-500 shrink-0" />
-                    <span>Mon - Sat: 9:00 AM - 7:00 PM IST</span>
+                    <span>Mon - Fri: 9:00 AM - 5:00 PM IST</span>
                   </div>
                 </div>
 
                 {/* Quick Action Buttons */}
                 <div className="mt-8 pt-6 border-t border-line/60 grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <a
-                    href="https://wa.me/919311922134?text=Hello%20Paa%20Solar%20Team"
+                    href="https://wa.me/?text=Hello%20Paa%20Solar%20Team"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-3 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#25D366] hover:text-white transition-all shadow-sm"
@@ -491,11 +491,11 @@ export default function ContactPage() {
                   </a>
 
                   <a
-                    href="tel:+919311922134"
+                    href="mailto:info@paasolar.com"
                     className="p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-emerald-500 hover:text-white transition-all shadow-sm"
                   >
-                    <Phone className="w-4 h-4" />
-                    <span>Call Directly</span>
+                    <Mail className="w-4 h-4" />
+                    <span>Email Directly</span>
                   </a>
                 </div>
               </div>
