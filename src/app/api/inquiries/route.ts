@@ -65,47 +65,19 @@ export async function POST(request: NextRequest) {
     const netInvestment = parseInt(formData.get('netInvestment') as string, 10) || 0;
     const paybackYears = parseFloat(formData.get('paybackYears') as string) || 0;
 
-    // Handle file upload to R2
-    let billFileUrl: string | null = null;
-    let billFileName: string | null = null;
+    // Extract attached electricity bill file
     const billFile = formData.get('billFile') as File | null;
+    const attachments: Array<{ filename: string; content: Buffer }> = [];
 
-    if (billFile && billFile.size > 0 && isR2Configured()) {
+    if (billFile && billFile.size > 0) {
       const buffer = Buffer.from(await billFile.arrayBuffer());
-      const key = await uploadToR2(buffer, billFile.name, billFile.type);
-      billFileUrl = key;
-      billFileName = billFile.name;
-    } else if (billFile && billFile.size > 0) {
-      // R2 not configured — store filename only
-      billFileName = billFile.name;
+      attachments.push({
+        filename: billFile.name,
+        content: buffer,
+      });
     }
 
-    const inquiry = await prisma.solarInquiry.create({
-      data: {
-        fullName,
-        email,
-        phone,
-        city,
-        district,
-        avgBill,
-        fixRent,
-        connectionKw,
-        roofSpace,
-        roofType,
-        recommendedKw,
-        monthlySavings,
-        annualSavings,
-        grossCost,
-        subsidy,
-        netInvestment,
-        paybackYears,
-        billFileUrl,
-        billFileName,
-        status: 'New',
-      },
-    });
-
-    // Send instant email notification if Resend is configured
+    // Send direct email notification to info@paasolar.com
     const resendApiKey = process.env.RESEND_API_KEY;
     const notifyEmail = process.env.NOTIFICATION_EMAIL || 'info@paasolar.com';
     const customFromEmail = process.env.RESEND_FROM_EMAIL || 'Paa Solar <notifications@paasolar.com>';
@@ -115,66 +87,68 @@ export async function POST(request: NextRequest) {
         const { Resend } = await import('resend');
         const resend = new Resend(resendApiKey);
 
-        const emailContent = {
+        const emailPayload = {
           subject: `☀️ New Solar Inquiry from ${fullName} (${city})`,
+          attachments: attachments.length > 0 ? attachments : undefined,
           html: `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
               <div style="background-color: #f59e0b; padding: 20px; text-align: center; color: white;">
-                <h1 style="margin: 0; font-size: 22px;">☀️ Paa Solar — New Website Inquiry</h1>
-                <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Turnkey Engineering & PM Surya Ghar Lead</p>
+                <h1 style="margin: 0; font-size: 22px;">☀️ Paa Solar — Customer Inquiry</h1>
+                <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Turnkey Solar Engineering & Subsidy Lead</p>
               </div>
 
               <div style="padding: 24px; color: #1e293b;">
-                <h3 style="color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px;">👤 Customer Details</h3>
+                <h3 style="color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px;">👤 Customer Contact Details</h3>
                 <p><strong>Name:</strong> ${fullName}</p>
                 <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
                 <p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>
                 <p><strong>Location:</strong> ${city}${district ? `, ${district}` : ''}</p>
 
-                <h3 style="color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; margin-top: 24px;">⚡ System Sizing & Financial Estimates</h3>
+                <h3 style="color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; margin-top: 24px;">⚡ System Sizing & Energy Parameters</h3>
                 <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
-                  <tr><td style="padding: 6px 0; color: #64748b;">Recommended Capacity:</td><td style="font-weight: bold; color: #0f172a;">${recommendedKw} kW Solar</td></tr>
-                  <tr><td style="padding: 6px 0; color: #64748b;">Est. Monthly Savings:</td><td style="font-weight: bold; color: #10b981;">₹${monthlySavings.toLocaleString('en-IN')} / mo</td></tr>
-                  <tr><td style="padding: 6px 0; color: #64748b;">Annual Bill Savings:</td><td style="font-weight: bold; color: #f59e0b;">₹${annualSavings.toLocaleString('en-IN')} / yr</td></tr>
+                  <tr><td style="padding: 6px 0; color: #64748b;">Recommended System Capacity:</td><td style="font-weight: bold; color: #0f172a;">${recommendedKw} kW Solar</td></tr>
+                  <tr><td style="padding: 6px 0; color: #64748b;">Monthly Electricity Bill:</td><td style="font-weight: bold; color: #0f172a;">₹${avgBill.toLocaleString('en-IN')} / mo</td></tr>
+                  <tr><td style="padding: 6px 0; color: #64748b;">Estimated Monthly Savings:</td><td style="font-weight: bold; color: #10b981;">₹${monthlySavings.toLocaleString('en-IN')} / mo</td></tr>
+                  <tr><td style="padding: 6px 0; color: #64748b;">Annual Electricity Savings:</td><td style="font-weight: bold; color: #f59e0b;">₹${annualSavings.toLocaleString('en-IN')} / yr</td></tr>
                   <tr><td style="padding: 6px 0; color: #64748b;">PM SGY Govt Subsidy:</td><td style="font-weight: bold; color: #10b981;">₹${subsidy.toLocaleString('en-IN')}</td></tr>
-                  <tr><td style="padding: 6px 0; color: #64748b;">Net System Cost:</td><td style="font-weight: bold; color: #0f172a;">₹${netInvestment.toLocaleString('en-IN')}</td></tr>
-                  <tr><td style="padding: 6px 0; color: #64748b;">Est. Payback Period:</td><td style="font-weight: bold; color: #0f172a;">~${paybackYears} Years</td></tr>
+                  <tr><td style="padding: 6px 0; color: #64748b;">Gross Project Cost:</td><td style="font-weight: bold; color: #0f172a;">₹${grossCost.toLocaleString('en-IN')}</td></tr>
+                  <tr><td style="padding: 6px 0; color: #64748b;">Net System Cost After Subsidy:</td><td style="font-weight: bold; color: #f59e0b;">₹${netInvestment.toLocaleString('en-IN')}</td></tr>
+                  <tr><td style="padding: 6px 0; color: #64748b;">Estimated Payback Period:</td><td style="font-weight: bold; color: #0f172a;">~${paybackYears} Years</td></tr>
+                  <tr><td style="padding: 6px 0; color: #64748b;">Sanctioned Grid Connection:</td><td style="font-weight: bold; color: #0f172a;">${connectionKw} kW</td></tr>
+                  <tr><td style="padding: 6px 0; color: #64748b;">Available Roof Space:</td><td style="font-weight: bold; color: #0f172a;">${roofSpace} Sq. Ft.</td></tr>
+                  <tr><td style="padding: 6px 0; color: #64748b;">Installation Structure:</td><td style="font-weight: bold; color: #0f172a;">${roofType}</td></tr>
                 </table>
 
                 ${
-                  billFileName
+                  billFile
                     ? `<div style="margin-top: 20px; padding: 12px; background-color: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px;">
-                        <p style="margin: 0; font-size: 13px; color: #334155;">📄 <strong>Electricity Bill Attached:</strong> ${billFileName}</p>
+                        <p style="margin: 0; font-size: 13px; color: #334155;">📄 <strong>Attached Electricity Bill:</strong> ${billFile.name} (Attached directly to this email)</p>
                        </div>`
                     : ''
                 }
-
-                <div style="margin-top: 28px; text-align: center;">
-                  <a href="https://paasolar.com/admin" style="background-color: #0f172a; color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px; display: inline-block;">Open Admin Panel</a>
-                </div>
               </div>
 
               <div style="background-color: #f8fafc; padding: 12px; text-align: center; font-size: 11px; color: #94a3b8; border-top: 1px solid #e2e8f0;">
-                Paa Solar System Automation • Lead Inquiry ID: ${inquiry.id}
+                Paa Solar Instant Email Notification System
               </div>
             </div>
           `,
         };
 
-        // Try primary domain sending
+        // Try sending via domain notifications@paasolar.com
         const sendResult = await resend.emails.send({
           from: customFromEmail,
           to: [notifyEmail],
-          ...emailContent,
+          ...emailPayload,
         });
 
-        // If domain is unverified, fallback to test sender
+        // Fallback if domain verification is pending on Resend
         if (sendResult.error) {
-          console.warn('Primary domain send failed, falling back to onboarding sender:', sendResult.error.message);
+          console.warn('Primary domain send failed, falling back to onboarding test sender:', sendResult.error.message);
           await resend.emails.send({
             from: 'Paa Solar Website <onboarding@resend.dev>',
             to: ['lonewolfdev3019@gmail.com', 'admin.ekchakra@gmail.com'],
-            ...emailContent,
+            ...emailPayload,
           });
         }
       } catch (emailErr) {
@@ -183,13 +157,13 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json(
-      { success: true, inquiry },
-      { status: 201 }
+      { success: true, message: 'Inquiry sent directly via email' },
+      { status: 200 }
     );
   } catch (error) {
     console.error('POST /api/inquiries error:', error);
     return NextResponse.json(
-      { error: 'Failed to save inquiry' },
+      { error: 'Failed to send inquiry email' },
       { status: 500 }
     );
   }
