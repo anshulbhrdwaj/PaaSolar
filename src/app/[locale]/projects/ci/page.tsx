@@ -3,6 +3,7 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
+import { CaseStudies } from '@/components/sections/CaseStudies';
 import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
 import { Building2, CheckCircle2 } from 'lucide-react';
@@ -86,6 +87,7 @@ export default function CIPage() {
         </div>
       </section>
 
+      <CaseStudies />
       <SolarCalculator />
       <Footer />
     </main>

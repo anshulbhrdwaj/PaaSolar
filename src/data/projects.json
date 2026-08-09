@@ -1,0 +1,212 @@
+[
+  {
+    "id": "project-1",
+    "title": "2.5 MW DC / 2 MW AC Solar Plant",
+    "category": "utility",
+    "location": "Pahari Mandir, Bhiwani, Haryana",
+    "capacity": "2.5 MWp DC",
+    "offset": "20,000 Tons CO2/yr",
+    "desc": "Ground-mounted solar power plant delivering clean renewable power to state grid infrastructure.",
+    "bgGradient": "from-amber-500/20 via-rose-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-2",
+    "title": "2.5 MW DC / 2 MW AC Solar Plant",
+    "category": "utility",
+    "location": "Digawan, Haryana",
+    "capacity": "2.5 MWp DC",
+    "offset": "20,000 Tons CO2/yr",
+    "desc": "High-efficiency N-Type TOPCon ground solar plant synchronized with regional substation.",
+    "bgGradient": "from-blue-500/20 via-indigo-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-3",
+    "title": "2.5 MW DC / 2 MW AC Solar Plant",
+    "category": "utility",
+    "location": "Loharu, Haryana",
+    "capacity": "2.5 MWp DC",
+    "offset": "20,000 Tons CO2/yr",
+    "desc": "Large-scale grid-tied solar infrastructure generating high-yield clean energy.",
+    "bgGradient": "from-emerald-500/20 via-teal-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-4",
+    "title": "2.5 MW DC / 2 MW AC Solar Project",
+    "category": "utility",
+    "location": "Hemra, Bikaner, Rajasthan",
+    "capacity": "2.5 MWp DC",
+    "offset": "20,000 Tons CO2/yr",
+    "desc": "Desert ground-mounted solar installation with automated SCADA remote monitoring.",
+    "bgGradient": "from-accent-solar/20 via-accent-gold/10 to-bg-secondary"
+  },
+  {
+    "id": "project-5",
+    "title": "2.5 MW DC / 2 MW AC Solar Project",
+    "category": "utility",
+    "location": "Karpoorisar, Hanumangarh, Rajasthan",
+    "capacity": "2.5 MWp DC",
+    "offset": "20,000 Tons CO2/yr",
+    "desc": "Utility-scale ground solar plant with high irradiance optimization.",
+    "bgGradient": "from-purple-500/20 via-indigo-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-6",
+    "title": "1.1 MW DC / 0.9 MW AC Solar Plant",
+    "category": "ci",
+    "location": "Govindgarh, Alwar, Rajasthan",
+    "capacity": "1.1 MWp DC",
+    "offset": "8,000 Tons CO2/yr",
+    "desc": "Commercial solar project empowering regional distribution feeders.",
+    "bgGradient": "from-sky-500/20 via-blue-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-7",
+    "title": "1.3 MW DC / 1 MW AC Solar Plant",
+    "category": "ci",
+    "location": "Reni, Alwar, Rajasthan",
+    "capacity": "1.3 MWp DC",
+    "offset": "10,000 Tons CO2/yr",
+    "desc": "Turnkey industrial solar installation featuring high-efficiency TOPCon modules.",
+    "bgGradient": "from-amber-500/20 via-orange-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-8",
+    "title": "9.16 MW DC / 8 MW AC Mega Project",
+    "category": "ci",
+    "location": "BTM Bhiwani, Haryana",
+    "capacity": "9.16 MWp DC",
+    "offset": "70,000 Tons CO2/yr",
+    "desc": "Flagship industrial ground-mounted mega solar plant delivering enterprise power savings.",
+    "bgGradient": "from-emerald-500/20 via-green-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-9",
+    "title": "500 kW DC Ground Solar Project",
+    "category": "ci",
+    "location": "Bazpur, Uttarakhand",
+    "capacity": "500 kW DC",
+    "offset": "4,000 Tons CO2/yr",
+    "desc": "Ground-mounted solar project for Prem Ganga Infotech with net-metering grid export.",
+    "bgGradient": "from-teal-500/20 via-cyan-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-10",
+    "title": "500 kW DC Ground Solar Project",
+    "category": "ci",
+    "location": "Rudrapur, Uttarakhand",
+    "capacity": "500 kW DC",
+    "offset": "4,000 Tons CO2/yr",
+    "desc": "Ground-mounted solar plant for Maa Bhagwati Stones with DISCOM export synchronization.",
+    "bgGradient": "from-indigo-500/20 via-blue-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-11",
+    "title": "900 kW DC Industrial Tin Shed Solar",
+    "category": "ci",
+    "location": "Sirsa, Haryana",
+    "capacity": "900 kW DC",
+    "offset": "7,000 Tons CO2/yr",
+    "desc": "High-capacity metal tin-shed industrial rooftop solar array with grid export.",
+    "bgGradient": "from-rose-500/20 via-pink-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-12",
+    "title": "350 kW DC Captive Solar Project",
+    "category": "ci",
+    "location": "Khatima, Uttarakhand",
+    "capacity": "350 kW DC",
+    "offset": "2,400 Tons CO2/yr",
+    "desc": "Tin-shed captive rooftop solar plant powering Sukas Breweries & Beverages.",
+    "bgGradient": "from-yellow-500/20 via-amber-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-13",
+    "title": "160 kW DC Industrial Solar Project",
+    "category": "ci",
+    "location": "Nohar, Rajasthan",
+    "capacity": "160 kW DC",
+    "offset": "1,200 Tons CO2/yr",
+    "desc": "Tin-shed rooftop solar installation powering V.G Oil Mill operations.",
+    "bgGradient": "from-emerald-500/20 via-teal-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-14",
+    "title": "50 kW DC Glass Manufacturing Solar",
+    "category": "ci",
+    "location": "Firozabad, Uttar Pradesh",
+    "capacity": "50 kW DC",
+    "offset": "400 Tons CO2/yr",
+    "desc": "Rooftop solar installation powering Tirupati Glass manufacturing facility.",
+    "bgGradient": "from-blue-500/20 via-sky-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-15",
+    "title": "330 kW DC Dairy Industry Solar",
+    "category": "ci",
+    "location": "Jaipur, Rajasthan",
+    "capacity": "330 kW DC",
+    "offset": "2,400 Tons CO2/yr",
+    "desc": "Tin-shed industrial solar installation for Dev Milk Foods Pvt Ltd.",
+    "bgGradient": "from-indigo-500/20 via-purple-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-16",
+    "title": "500 kW DC Stone Crusher Ground Solar",
+    "category": "ci",
+    "location": "Udaipur, Rajasthan",
+    "capacity": "500 kW DC",
+    "offset": "4,400 Tons CO2/yr",
+    "desc": "Heavy-duty ground-mounted solar plant powering New Ekling Nath Crusher.",
+    "bgGradient": "from-amber-500/20 via-orange-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-17",
+    "title": "110 kW DC Agro Industrial Solar",
+    "category": "ci",
+    "location": "Pallu, Rajasthan",
+    "capacity": "110 kW DC",
+    "offset": "800 Tons CO2/yr",
+    "desc": "Tin-shed solar system for Vikas Agro Industries with grid export.",
+    "bgGradient": "from-green-500/20 via-emerald-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-18",
+    "title": "100 kW DC Industrial Solar Project",
+    "category": "ci",
+    "location": "Udaipur, Rajasthan",
+    "capacity": "100 kW DC",
+    "offset": "800 Tons CO2/yr",
+    "desc": "Industrial tin-shed solar installation for Mahendra Singhvi Enterprise.",
+    "bgGradient": "from-cyan-500/20 via-blue-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-19",
+    "title": "1.3 MW DC Distillery Solar Power",
+    "category": "ci",
+    "location": "Beri, Haryana",
+    "capacity": "1.3 MW DC",
+    "offset": "10,300 Tons CO2/yr",
+    "desc": "Dual 500 kW export & 500 kW captive tin-shed solar array for ADS Spirits Pvt Ltd.",
+    "bgGradient": "from-red-500/20 via-rose-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-20",
+    "title": "180 kW DC Resort Hospitality Solar",
+    "category": "ci",
+    "location": "Kaladungi, Nainital, Uttarakhand",
+    "capacity": "180 kW DC",
+    "offset": "1,500 Tons CO2/yr",
+    "desc": "Rooftop solar installation powering Trinantara Resort & Spa.",
+    "bgGradient": "from-teal-500/20 via-emerald-500/10 to-bg-secondary"
+  },
+  {
+    "id": "project-21",
+    "title": "400 kW DC Industrial Glass Solar",
+    "category": "ci",
+    "location": "Dehradun, Uttarakhand",
+    "capacity": "400 kW DC",
+    "offset": "3,200 Tons CO2/yr",
+    "desc": "Rooftop solar system powering Verma Toughened Glass Pvt Ltd.",
+    "bgGradient": "from-indigo-500/20 via-violet-500/10 to-bg-secondary"
+  }
+]

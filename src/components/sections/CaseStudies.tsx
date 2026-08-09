@@ -2,7 +2,9 @@
 
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { MapPin, Zap, ArrowUpRight, X } from 'lucide-react';
+import { MapPin, Zap, ArrowUpRight, X, ChevronDown, ChevronUp } from 'lucide-react';
+
+import projectsData from '@/data/projects.json';
 
 interface ProjectItem {
   id: string;
@@ -18,55 +20,17 @@ interface ProjectItem {
 export function CaseStudies() {
   const t = useTranslations('CaseStudies');
   const [filter, setFilter] = useState('all');
+  const [showAll, setShowAll] = useState(false);
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
-  const projects = [
-    {
-      id: 'project-1',
-      title: '50 MW Grid Utility Solar Park',
-      category: 'utility',
-      location: 'Bhadla, Rajasthan',
-      capacity: '50 MWp DC',
-      offset: '75,000 Tons CO2/yr',
-      desc: 'High-voltage grid interconnected utility solar plant supplying clean power to state electricity discom.',
-      bgGradient: 'from-amber-500/20 via-rose-500/10 to-bg-secondary',
-    },
-    {
-      id: 'project-2',
-      title: t('projects.1.title'),
-      category: 'ci',
-      location: t('projects.1.location'),
-      capacity: t('projects.1.capacity'),
-      offset: t('projects.1.offset'),
-      desc: t('projects.1.desc'),
-      bgGradient: 'from-blue-500/20 via-indigo-500/10 to-bg-secondary',
-    },
-    {
-      id: 'project-3',
-      title: t('projects.2.title'),
-      category: 'ci',
-      location: t('projects.2.location'),
-      capacity: t('projects.2.capacity'),
-      offset: t('projects.2.offset'),
-      desc: t('projects.2.desc'),
-      bgGradient: 'from-emerald-500/20 via-teal-500/10 to-bg-secondary',
-    },
-    {
-      id: 'project-4',
-      title: 'PM KUSUM Agricultural Solarization',
-      category: 'pmKusum',
-      location: 'Nashik, Maharashtra',
-      capacity: '12 MW Solar Pumps',
-      offset: '18,200 Tons CO2/yr',
-      desc: 'Dedicated solar feeder project powering agricultural water pump microgrids across rural farming clusters.',
-      bgGradient: 'from-accent-solar/20 via-accent-gold/10 to-bg-secondary',
-    },
-  ];
+  const projects: ProjectItem[] = projectsData;
 
   const filteredProjects =
     filter === 'all'
       ? projects
       : projects.filter((p) => p.category === filter);
+
+  const visibleProjects = showAll ? filteredProjects : filteredProjects.slice(0, 4);
 
   return (
     <section id="projects" className="py-24 bg-bg-secondary/40 border-t border-line">
@@ -90,7 +54,10 @@ export function CaseStudies() {
             {['all', 'ci', 'pmKusum', 'utility'].map((cat) => (
               <button
                 key={cat}
-                onClick={() => setFilter(cat)}
+                onClick={() => {
+                  setFilter(cat);
+                  setShowAll(false);
+                }}
                 className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 ${
                   filter === cat
                     ? 'bg-emerald-500 text-white shadow-[0_4px_14px_rgba(16,185,129,0.4)] scale-105'
@@ -105,7 +72,7 @@ export function CaseStudies() {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {filteredProjects.map((project) => (
+          {visibleProjects.map((project) => (
             <div
               key={project.id}
               onClick={() => setSelectedProject(project)}
@@ -147,6 +114,27 @@ export function CaseStudies() {
             </div>
           ))}
         </div>
+
+        {/* Show More / Show Less Button */}
+        {filteredProjects.length > 4 && (
+          <div className="mt-12 text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-bg-primary border-2 border-emerald-500/40 text-text-primary font-bold text-xs uppercase tracking-wider shadow-lg hover:border-emerald-500 hover:bg-emerald-500 hover:text-white transition-all duration-300 group"
+            >
+              <span>
+                {showAll
+                  ? 'Show Fewer Projects'
+                  : `Show More Projects (${filteredProjects.length - 4} More Portfolio Projects)`}
+              </span>
+              {showAll ? (
+                <ChevronUp className="w-4 h-4 text-emerald-500 group-hover:text-white transition-colors" />
+              ) : (
+                <ChevronDown className="w-4 h-4 text-emerald-500 group-hover:text-white transition-colors" />
+              )}
+            </button>
+          </div>
+        )}
       </div>
 
       {/* Case Study Detail Modal Overlay */}
