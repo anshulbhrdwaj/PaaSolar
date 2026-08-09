@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { uploadToR2, isR2Configured } from '@/lib/r2';
+import { uploadToR2, getSignedDownloadUrl, isR2Configured } from '@/lib/r2';
 
 // GET /api/inquiries — Fetch all inquiries for admin panel
 export async function GET(request: NextRequest) {
@@ -68,6 +68,8 @@ export async function POST(request: NextRequest) {
     // Extract attached electricity bill file
     const billFile = formData.get('billFile') as File | null;
     const attachments: Array<{ filename: string; content: Buffer }> = [];
+    let publicFileUrl: string | null = null;
+    let isImage = false;
 
     if (billFile && billFile.size > 0) {
       const buffer = Buffer.from(await billFile.arrayBuffer());
@@ -75,6 +77,18 @@ export async function POST(request: NextRequest) {
         filename: billFile.name,
         content: buffer,
       });
+
+      isImage = billFile.type.startsWith('image/') || /\.(png|jpg|jpeg|webp)$/i.test(billFile.name);
+
+      // If R2 is configured, generate direct URL for inline email preview
+      if (isR2Configured()) {
+        try {
+          const key = await uploadToR2(buffer, billFile.name, billFile.type || 'application/octet-stream');
+          publicFileUrl = await getSignedDownloadUrl(key);
+        } catch (r2Err) {
+          console.error('R2 upload error for email preview:', r2Err);
+        }
+      }
     }
 
     // Send direct email notification to info@paasolar.com
@@ -91,7 +105,7 @@ export async function POST(request: NextRequest) {
           subject: `☀️ New Solar Inquiry from ${fullName} (${city})`,
           attachments: attachments.length > 0 ? attachments : undefined,
           html: `
-            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background-color: #ffffff;">
               <div style="background-color: #f59e0b; padding: 20px; text-align: center; color: white;">
                 <h1 style="margin: 0; font-size: 22px;">☀️ Paa Solar — Customer Inquiry</h1>
                 <p style="margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;">Turnkey Solar Engineering & Subsidy Lead</p>
@@ -99,10 +113,10 @@ export async function POST(request: NextRequest) {
 
               <div style="padding: 24px; color: #1e293b;">
                 <h3 style="color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px;">👤 Customer Contact Details</h3>
-                <p><strong>Name:</strong> ${fullName}</p>
-                <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-                <p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>
-                <p><strong>Location:</strong> ${city}${district ? `, ${district}` : ''}</p>
+                <p style="margin: 6px 0;"><strong>Name:</strong> ${fullName}</p>
+                <p style="margin: 6px 0;"><strong>Email:</strong> <a href="mailto:${email}" style="color: #2563eb; text-decoration: none;">${email}</a></p>
+                <p style="margin: 6px 0;"><strong>Phone:</strong> <a href="tel:${phone}" style="color: #2563eb; text-decoration: none;">${phone}</a></p>
+                <p style="margin: 6px 0;"><strong>Location:</strong> ${city}${district ? `, ${district}` : ''}</p>
 
                 <h3 style="color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 8px; margin-top: 24px;">⚡ System Sizing & Energy Parameters</h3>
                 <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
@@ -121,8 +135,19 @@ export async function POST(request: NextRequest) {
 
                 ${
                   billFile
-                    ? `<div style="margin-top: 20px; padding: 12px; background-color: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px;">
-                        <p style="margin: 0; font-size: 13px; color: #334155;">📄 <strong>Attached Electricity Bill:</strong> ${billFile.name} (Attached directly to this email)</p>
+                    ? `<div style="margin-top: 24px; padding: 16px; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px;">
+                        <h4 style="margin: 0 0 8px 0; color: #0f172a; font-size: 14px;">📄 Attached Customer Electricity Bill</h4>
+                        <p style="margin: 0 0 12px 0; font-size: 13px; color: #475569;">Filename: <strong>${billFile.name}</strong> (Attached to this email)</p>
+                        ${
+                          publicFileUrl && isImage
+                            ? `<div style="margin-top: 10px; text-align: center; background-color: #ffffff; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1;">
+                                <img src="${publicFileUrl}" alt="Customer Electricity Bill" style="max-width: 100%; max-height: 400px; border-radius: 6px; display: block; margin: 0 auto;" />
+                                <p style="margin: 8px 0 0 0; font-size: 12px;"><a href="${publicFileUrl}" target="_blank" style="color: #2563eb; font-weight: bold;">🔍 Click to View Full High-Res Image</a></p>
+                               </div>`
+                            : publicFileUrl
+                            ? `<p style="margin: 8px 0 0 0; font-size: 13px;"><a href="${publicFileUrl}" target="_blank" style="color: #2563eb; font-weight: bold; text-decoration: underline;">📥 Download Bill Copy Document</a></p>`
+                            : ''
+                        }
                        </div>`
                     : ''
                 }
