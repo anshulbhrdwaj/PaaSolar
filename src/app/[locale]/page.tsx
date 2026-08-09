@@ -13,7 +13,6 @@ import { CaseStudies } from '@/components/sections/CaseStudies';
 import { EnergyDashboard } from '@/components/sections/EnergyDashboard';
 import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { TestimonialsMarquee } from '@/components/sections/TestimonialsMarquee';
-import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
 import { Footer } from '@/components/sections/Footer';
 
 export default function HomePage() {
@@ -27,13 +26,12 @@ export default function HomePage() {
       <HeroSection />
       <ImpactStats />
       <WhySolar />
-      <WhyUsSection />
       <HowItWorks />
+      <WhyUsSection />
       <ProductsGrid />
       <CaseStudies />
-      <SolarCalculator />
       <TestimonialsMarquee />
-      <GetAQuoteCTA />
+      <SolarCalculator />
       <Footer />
     </main>
   );

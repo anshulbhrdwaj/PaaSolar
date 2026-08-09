@@ -49,10 +49,17 @@ export function EmiCalculator({ initialSystemCost = 250000 }: EmiCalculatorProps
     const totalPayable = emi * totalMonths;
     const totalInterest = Math.max(0, totalPayable - loanPrincipal);
 
-    // Monthly Savings vs. EMI Comparison
+    // Monthly & Annual Savings vs. Total Investment
     const monthlyBillSavings = Math.round(currentMonthlyBill * 0.9); // ~90% bill offset
+    const annualBillSavings = monthlyBillSavings * 12;
     const netMonthlyCashflow = monthlyBillSavings - emi;
     const isCashflowPositive = netMonthlyCashflow >= 0;
+
+    // ROI Calculations
+    const annualRoiPct = totalCost > 0 ? Math.round((annualBillSavings / totalCost) * 1000) / 10 : 31.5;
+    const lifetimeSavings25Yrs = Math.round(annualBillSavings * 25 * 1.35); // 4% grid tariff escalation
+    const lifetimeRoiPct = totalCost > 0 ? Math.round(((lifetimeSavings25Yrs - totalCost) / totalCost) * 100) : 1150;
+    const paybackYears = annualBillSavings > 0 ? Math.round((totalCost / annualBillSavings) * 10) / 10 : 3.2;
 
     return {
       downPaymentAmount,
@@ -62,8 +69,13 @@ export function EmiCalculator({ initialSystemCost = 250000 }: EmiCalculatorProps
       totalInterest,
       totalPayable,
       monthlyBillSavings,
+      annualBillSavings,
       netMonthlyCashflow,
       isCashflowPositive,
+      annualRoiPct,
+      lifetimeSavings25Yrs,
+      lifetimeRoiPct,
+      paybackYears,
     };
   }, [totalCost, downPaymentPct, interestRate, tenureYears, currentMonthlyBill]);
 
@@ -275,6 +287,56 @@ export function EmiCalculator({ initialSystemCost = 250000 }: EmiCalculatorProps
                 <div className="flex justify-between pt-2 border-t border-line/60 text-sm font-bold text-text-primary">
                   <span>Total Amount Paid ({tenureYears} Yrs):</span>
                   <span className="font-mono text-emerald-500">₹{calc.totalPayable.toLocaleString('en-IN')}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* SOLAR ROI & FINANCIAL YIELD CARD */}
+          <div className="p-6 rounded-3xl bg-bg-primary border border-line shadow-xl space-y-4">
+            <h4 className="font-serif text-lg font-bold text-text-primary flex items-center justify-between">
+              <span className="flex items-center gap-2">
+                <Sparkles className="w-4 h-4 text-emerald-500" />
+                Solar Return on Investment (ROI)
+              </span>
+              <span className="text-xs font-mono font-bold text-emerald-500 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                {calc.annualRoiPct}% p.a.
+              </span>
+            </h4>
+
+            <div className="grid grid-cols-2 gap-3">
+              <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/30">
+                <span className="text-[10px] font-mono font-bold text-emerald-500 uppercase">Annualized ROI</span>
+                <p className="font-serif text-2xl font-bold text-emerald-500 mt-0.5">
+                  {calc.annualRoiPct}%
+                </p>
+                <span className="text-[10px] text-text-secondary font-semibold">Per year returns</span>
+              </div>
+
+              <div className="p-3.5 rounded-2xl bg-accent-solar/10 border border-accent-solar/30">
+                <span className="text-[10px] font-mono font-bold text-accent-solar uppercase">25-Yr Cumulative ROI</span>
+                <p className="font-serif text-2xl font-bold text-accent-solar mt-0.5">
+                  +{calc.lifetimeRoiPct}%
+                </p>
+                <span className="text-[10px] text-text-secondary font-semibold">Total net return</span>
+              </div>
+            </div>
+
+            {/* Benchmark Yield Comparison */}
+            <div className="p-3.5 rounded-2xl bg-bg-secondary border border-line space-y-2 text-xs">
+              <span className="text-[10px] font-mono font-bold text-text-secondary uppercase">Annual Return Benchmark Comparison</span>
+              <div className="space-y-1.5 font-semibold">
+                <div className="flex justify-between items-center text-text-secondary">
+                  <span>Bank Fixed Deposit (FD):</span>
+                  <span className="font-mono text-text-primary">~6.5% p.a.</span>
+                </div>
+                <div className="flex justify-between items-center text-text-secondary">
+                  <span>Mutual Funds / Equity:</span>
+                  <span className="font-mono text-text-primary">~12.0% p.a.</span>
+                </div>
+                <div className="flex justify-between items-center text-emerald-500 font-bold pt-1 border-t border-line/60">
+                  <span>Solar Asset Yield (Paa Solar):</span>
+                  <span className="font-mono text-emerald-500 text-sm">~{calc.annualRoiPct}% p.a. 🔥</span>
                 </div>
               </div>
             </div>

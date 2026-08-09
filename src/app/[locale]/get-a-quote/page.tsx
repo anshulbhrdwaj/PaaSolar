@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Navbar } from '@/components/ui/Navbar';
-import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
+import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { TestimonialsMarquee } from '@/components/sections/TestimonialsMarquee';
 import { Footer } from '@/components/sections/Footer';
 
@@ -10,7 +10,7 @@ export default function GetAQuotePage() {
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
       <Navbar />
-      <GetAQuoteCTA />
+      <SolarCalculator />
       <TestimonialsMarquee />
       <Footer />
     </main>
