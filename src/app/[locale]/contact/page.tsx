@@ -135,35 +135,44 @@ export default function ContactPage() {
     city.toLowerCase().includes(citySearch.toLowerCase())
   );
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
-    const newQuery = {
-      id: `PQ-${Math.floor(1000 + Math.random() * 9000)}`,
-      fullName: formData.fullName,
-      email: formData.email,
-      phone: formData.phone,
-      country: formData.country,
-      city: formData.city || 'Jaipur',
-      category: formData.category,
-      capacity: formData.capacity || 'Not Specified',
-      message: formData.message || 'Direct contact inquiry submission.',
-      date: new Date().toISOString().slice(0, 16).replace('T', ' '),
-      status: 'New' as const,
-    };
-
     try {
-      const existing = JSON.parse(localStorage.getItem('paa_solar_admin_queries') || '[]');
-      localStorage.setItem('paa_solar_admin_queries', JSON.stringify([newQuery, ...existing]));
-    } catch (err) {
-      console.error('Error saving query to local storage', err);
-    }
+      const bodyData = new FormData();
+      bodyData.append('fullName', formData.fullName);
+      bodyData.append('email', formData.email);
+      bodyData.append('phone', formData.phone);
+      bodyData.append('city', formData.city || 'Jaipur');
+      bodyData.append('district', formData.country || 'India');
+      bodyData.append('roofType', formData.category || 'Direct Contact');
+      bodyData.append('recommendedKw', '0');
+      bodyData.append('avgBill', '0');
+      bodyData.append('fixRent', '0');
+      bodyData.append('connectionKw', '0');
+      bodyData.append('roofSpace', '0');
+      bodyData.append('monthlySavings', '0');
+      bodyData.append('annualSavings', '0');
+      bodyData.append('grossCost', '0');
+      bodyData.append('subsidy', '0');
+      bodyData.append('netInvestment', '0');
+      bodyData.append('paybackYears', '0');
 
-    setTimeout(() => {
+      const res = await fetch('/api/inquiries', {
+        method: 'POST',
+        body: bodyData,
+      });
+
+      if (!res.ok) {
+        console.error('Failed to submit contact query to database');
+      }
+    } catch (err) {
+      console.error('Error submitting contact query:', err);
+    } finally {
       setLoading(false);
       setSubmitted(true);
-    }, 1000);
+    }
   };
 
   return (
