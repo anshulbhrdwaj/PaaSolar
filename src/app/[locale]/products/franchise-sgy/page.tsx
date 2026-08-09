@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Navbar } from '@/components/ui/Navbar';
-import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
+import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
 import { Building2, CheckCircle2, ShieldCheck, Sun, ArrowRight, Store, Truck, Users, Sparkles } from 'lucide-react';
 import { Link } from '@/i18n/routing';
@@ -123,7 +123,7 @@ export default function FranchiseSgyPage() {
         </div>
       </section>
 
-      <GetAQuoteCTA />
+      <SolarCalculator />
       <Footer />
     </main>
   );

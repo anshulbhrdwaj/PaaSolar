@@ -4,7 +4,7 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Navbar } from '@/components/ui/Navbar';
-import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
+import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
 import { SunMedium, Zap, BatteryCharging, ArrowRight, ShieldCheck, Building2 } from 'lucide-react';
 
@@ -123,7 +123,7 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <GetAQuoteCTA />
+      <SolarCalculator />
       <Footer />
     </main>
   );

@@ -5,7 +5,7 @@ import { Navbar } from '@/components/ui/Navbar';
 import { WhySolar } from '@/components/sections/WhySolar';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { ImpactStats } from '@/components/sections/ImpactStats';
-import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
+import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
 
 export default function WhySolarPage() {
@@ -15,7 +15,7 @@ export default function WhySolarPage() {
       <WhySolar />
       <HowItWorks />
       <ImpactStats />
-      <GetAQuoteCTA />
+      <SolarCalculator />
       <Footer />
     </main>
   );

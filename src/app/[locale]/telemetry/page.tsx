@@ -4,7 +4,7 @@ import React from 'react';
 import { Navbar } from '@/components/ui/Navbar';
 import { EnergyDashboard } from '@/components/sections/EnergyDashboard';
 import { ImpactStats } from '@/components/sections/ImpactStats';
-import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
+import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
 
 export default function TelemetryPage() {
@@ -13,7 +13,7 @@ export default function TelemetryPage() {
       <Navbar />
       <EnergyDashboard />
       <ImpactStats />
-      <GetAQuoteCTA />
+      <SolarCalculator />
       <Footer />
     </main>
   );

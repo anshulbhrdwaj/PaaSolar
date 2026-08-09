@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { Navbar } from '@/components/ui/Navbar';
-import { GetAQuoteCTA } from '@/components/sections/GetAQuoteCTA';
+import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
 import { ShieldCheck, Sparkles, Building2, Users, Target, Lightbulb } from 'lucide-react';
 
@@ -336,7 +336,7 @@ export default function AboutUsPage() {
       </section>
 
       {/* Get a Quote CTA */}
-      <GetAQuoteCTA />
+      <SolarCalculator />
 
       <Footer />
     </main>
