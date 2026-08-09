@@ -301,53 +301,50 @@ export function SolarCalculator() {
                 </div>
               </div>
 
-              {/* 2-Column Sub Inputs: Roof Space & Roof Type */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {/* Field 4: Roof Space */}
-                <div>
-                  <label className="block text-xs font-mono font-bold uppercase text-text-primary tracking-wider mb-2">
-                    {t('roofSpaceLabel')}
-                  </label>
-                  <input
-                    type="number"
-                    min="100"
-                    max="500000"
-                    step="100"
-                    value={roofSpace}
-                    onChange={(e) => setRoofSpace(Number(e.target.value))}
-                    className="w-full px-4 py-3.5 rounded-xl bg-bg-secondary border border-line focus:border-accent-solar focus:outline-none text-text-primary font-mono text-base font-bold"
-                    placeholder="e.g. 1500"
-                  />
-                </div>
+              {/* Field 4: Roof Space */}
+              <div>
+                <label className="block text-xs font-mono font-bold uppercase text-text-primary tracking-wider mb-2">
+                  {t('roofSpaceLabel')}
+                </label>
+                <input
+                  type="number"
+                  min="100"
+                  max="500000"
+                  step="100"
+                  value={roofSpace}
+                  onChange={(e) => setRoofSpace(Number(e.target.value))}
+                  className="w-full px-4 py-3.5 rounded-xl bg-bg-secondary border border-line focus:border-accent-solar focus:outline-none text-text-primary font-mono text-base font-bold"
+                  placeholder="e.g. 1500"
+                />
+              </div>
 
-                {/* Field 5: Roof Type */}
-                <div>
-                  <label className="block text-xs font-mono font-bold uppercase text-text-primary tracking-wider mb-2">
-                    {t('roofTypeLabel')}
-                  </label>
-                  <div className="grid grid-cols-3 gap-2">
+              {/* Field 5: Installation Roof Type */}
+              <div>
+                <label className="block text-xs font-mono font-bold uppercase text-text-primary tracking-wider mb-2">
+                  {t('roofTypeLabel')}
+                </label>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {[
-                      { id: 'rooftop', label: t('rooftopRcc'), icon: <Home className="w-3.5 h-3.5" /> },
-                      { id: 'tin-shed', label: t('tinShed'), icon: <Factory className="w-3.5 h-3.5" /> },
-                      { id: 'ground', label: t('groundPlant'), icon: <Building2 className="w-3.5 h-3.5" /> },
+                      { id: 'rooftop', label: t('rooftopRcc'), icon: <Home className="w-4 h-4 shrink-0" /> },
+                      { id: 'tin-shed', label: t('tinShed'), icon: <Factory className="w-4 h-4 shrink-0" /> },
+                      { id: 'ground', label: t('groundPlant'), icon: <Building2 className="w-4 h-4 shrink-0" /> },
                     ].map((item) => (
                       <button
                         type="button"
                         key={item.id}
                         onClick={() => setRoofType(item.id as any)}
-                        className={`p-2.5 rounded-xl border flex flex-col items-center gap-1.5 text-xs font-bold transition-all ${
+                        className={`p-3.5 rounded-2xl border flex items-center justify-center gap-2 text-xs font-bold transition-all text-center leading-snug min-h-[52px] ${
                           roofType === item.id
-                            ? 'bg-accent-solar text-white border-accent-solar shadow-md'
-                            : 'bg-bg-secondary border-line text-text-primary hover:border-accent-solar/40'
+                            ? 'bg-accent-solar text-white border-accent-solar shadow-md scale-[1.02]'
+                            : 'bg-bg-secondary border-line text-text-primary hover:border-accent-solar/40 hover:bg-bg-secondary/80'
                         }`}
                       >
                         {item.icon}
-                        <span className="truncate">{item.label}</span>
+                        <span className="text-[11px] sm:text-xs font-semibold">{item.label}</span>
                       </button>
                     ))}
                   </div>
                 </div>
-              </div>
 
               {/* USER CONTACT DETAILS SECTION */}
               <div className="pt-6 border-t border-line space-y-4">
