@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model SolarInquiry {
+  id              String   @id @default(cuid())
+  fullName        String
+  email           String
+  phone           String
+  city            String
+  district        String   @default("")
+  avgBill         Int
+  fixRent         Int      @default(0)
+  connectionKw    Float
+  roofSpace       Int
+  roofType        String   @default("rooftop")
+  recommendedKw   Float
+  monthlySavings  Int
+  annualSavings   Int
+  grossCost       Int      @default(0)
+  subsidy         Int      @default(0)
+  netInvestment   Int
+  paybackYears    Float
+  billFileUrl     String?
+  billFileName    String?
+  status          String   @default("New")
+  notes           String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@map("solar_inquiries")
+}

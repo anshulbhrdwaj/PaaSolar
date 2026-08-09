@@ -36,14 +36,30 @@ interface Inquiry {
   fullName: string;
   email: string;
   phone: string;
-  country: string;
+  country?: string;
   city: string;
-  category: string;
-  capacity: string;
-  message: string;
-  date: string;
+  district?: string;
+  category?: string;
+  capacity?: string;
+  message?: string;
+  date?: string;
+  createdAt?: string;
   status: 'New' | 'In Progress' | 'Quoted' | 'Closed';
   notes?: string;
+  avgBill?: number;
+  fixRent?: number;
+  connectionKw?: number;
+  roofSpace?: number;
+  roofType?: string;
+  recommendedKw?: number;
+  monthlySavings?: number;
+  annualSavings?: number;
+  grossCost?: number;
+  subsidy?: number;
+  netInvestment?: number;
+  paybackYears?: number;
+  billFileUrl?: string | null;
+  billFileName?: string | null;
 }
 
 const INITIAL_MOCK_QUERIES: Inquiry[] = [
@@ -102,19 +118,6 @@ const INITIAL_MOCK_QUERIES: Inquiry[] = [
     status: 'Closed',
     notes: 'Distributor agreement signed for Jodhpur & Pali districts.',
   },
-  {
-    id: 'PQ-8805',
-    fullName: 'Dr. Meenakshi Sundaram',
-    email: 'meenakshi@chennai-agro.com',
-    phone: '+91 98400 55667',
-    country: 'India 🇮🇳',
-    city: 'Chennai',
-    category: 'PM-SSY Floating Solar Project',
-    capacity: '3 MW Floating Array',
-    message: 'Feasibility study needed for 3 MW water-surface floating solar project over industrial reservoir.',
-    date: '2026-08-06 09:50',
-    status: 'New',
-  },
 ];
 
 export default function AdminQueriesPage() {
@@ -124,6 +127,7 @@ export default function AdminQueriesPage() {
   const [loginError, setLoginError] = useState('');
 
   const [queries, setQueries] = useState<Inquiry[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedStatus, setSelectedStatus] = useState('All');
@@ -154,49 +158,123 @@ export default function AdminQueriesPage() {
     sessionStorage.removeItem('paa_solar_admin_auth');
   };
 
-  // Load queries from localStorage or load mock queries
-  useEffect(() => {
-    const saved = localStorage.getItem('paa_solar_admin_queries');
-    if (saved) {
-      try {
-        setQueries(JSON.parse(saved));
-      } catch (e) {
+  // Fetch queries from PostgreSQL database via API
+  const fetchDbQueries = async () => {
+    setLoading(true);
+    try {
+      const res = await fetch('/api/inquiries');
+      if (res.ok) {
+        const data = await res.json();
+        if (data.inquiries && data.inquiries.length > 0) {
+          // Format date for UI
+          const formatted = data.inquiries.map((q: any) => ({
+            ...q,
+            id: q.id.slice(-8).toUpperCase(),
+            dbId: q.id,
+            category: q.recommendedKw ? `${q.recommendedKw} kW Solar Proposal` : 'Solar Sizing Query',
+            capacity: q.recommendedKw ? `${q.recommendedKw} kW` : 'Custom',
+            country: 'India 🇮🇳',
+            date: new Date(q.createdAt).toISOString().replace('T', ' ').slice(0, 16),
+            message: `Bill: ₹${q.avgBill?.toLocaleString('en-IN') || 0}/mo, Load: ${q.connectionKw || 0}kW, Space: ${q.roofSpace || 0} sq ft (${q.roofType}). Monthly Savings: ₹${q.monthlySavings?.toLocaleString('en-IN') || 0}, Net Cost: ₹${q.netInvestment?.toLocaleString('en-IN') || 0}.`,
+          }));
+          setQueries(formatted);
+        } else {
+          setQueries(INITIAL_MOCK_QUERIES);
+        }
+      } else {
         setQueries(INITIAL_MOCK_QUERIES);
       }
-    } else {
+    } catch (err) {
+      console.error('Error fetching database queries:', err);
       setQueries(INITIAL_MOCK_QUERIES);
-      localStorage.setItem('paa_solar_admin_queries', JSON.stringify(INITIAL_MOCK_QUERIES));
+    } finally {
+      setLoading(false);
     }
-  }, []);
-
-  const saveQueries = (updated: Inquiry[]) => {
-    setQueries(updated);
-    localStorage.setItem('paa_solar_admin_queries', JSON.stringify(updated));
   };
 
-  const handleStatusChange = (id: string, status: 'New' | 'In Progress' | 'Quoted' | 'Closed') => {
+  useEffect(() => {
+    fetchDbQueries();
+  }, []);
+
+  const handleStatusChange = async (id: string, status: 'New' | 'In Progress' | 'Quoted' | 'Closed') => {
+    const target = queries.find((q) => q.id === id);
+    const dbId = (target as any)?.dbId || id;
+
+    // Optimistic update
     const updated = queries.map((q) => (q.id === id ? { ...q, status } : q));
-    saveQueries(updated);
+    setQueries(updated);
     if (selectedQuery && selectedQuery.id === id) {
       setSelectedQuery({ ...selectedQuery, status });
     }
-  };
 
-  const handleSaveNotes = (id: string) => {
-    const updated = queries.map((q) => (q.id === id ? { ...q, notes: editingNotes } : q));
-    saveQueries(updated);
-    if (selectedQuery && selectedQuery.id === id) {
-      setSelectedQuery({ ...selectedQuery, notes: editingNotes });
+    try {
+      await fetch(`/api/inquiries/${dbId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status }),
+      });
+    } catch (err) {
+      console.error('Failed to update status on server:', err);
     }
   };
 
-  const handleDelete = (id: string) => {
+  const handleSaveNotes = async (id: string) => {
+    const target = queries.find((q) => q.id === id);
+    const dbId = (target as any)?.dbId || id;
+
+    const updated = queries.map((q) => (q.id === id ? { ...q, notes: editingNotes } : q));
+    setQueries(updated);
+    if (selectedQuery && selectedQuery.id === id) {
+      setSelectedQuery({ ...selectedQuery, notes: editingNotes });
+    }
+
+    try {
+      await fetch(`/api/inquiries/${dbId}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ notes: editingNotes }),
+      });
+    } catch (err) {
+      console.error('Failed to update notes on server:', err);
+    }
+  };
+
+  const handleDelete = async (id: string) => {
     if (confirm('Are you sure you want to delete this query?')) {
+      const target = queries.find((q) => q.id === id);
+      const dbId = (target as any)?.dbId || id;
+
       const updated = queries.filter((q) => q.id !== id);
-      saveQueries(updated);
+      setQueries(updated);
       if (selectedQuery && selectedQuery.id === id) {
         setSelectedQuery(null);
       }
+
+      try {
+        await fetch(`/api/inquiries/${dbId}`, {
+          method: 'DELETE',
+        });
+      } catch (err) {
+        console.error('Failed to delete query on server:', err);
+      }
+    }
+  };
+
+  const handleDownloadBill = async (inquiry: Inquiry) => {
+    const dbId = (inquiry as any)?.dbId || inquiry.id;
+    try {
+      const res = await fetch(`/api/inquiries/${dbId}`);
+      if (res.ok) {
+        const data = await res.json();
+        if (data.signedUrl) {
+          window.open(data.signedUrl, '_blank');
+        } else {
+          alert(`File record: ${inquiry.billFileName || 'Bill Attachment'}. (R2 access keys needed in .env.local to generate direct download link).`);
+        }
+      }
+    } catch (err) {
+      console.error('Error getting download URL:', err);
+      alert(`File record: ${inquiry.billFileName || 'Bill Attachment'}`);
     }
   };
 
@@ -204,7 +282,7 @@ export default function AdminQueriesPage() {
     const headers = ['ID,Date,Full Name,Email,Phone,Country,City,Category,Capacity,Status,Message'];
     const rows = queries.map(
       (q) =>
-        `"${q.id}","${q.date}","${q.fullName}","${q.email}","${q.phone}","${q.country}","${q.city}","${q.category}","${q.capacity}","${q.status}","${q.message.replace(/"/g, '""')}"`
+        `"${q.id}","${q.date || ''}","${q.fullName}","${q.email}","${q.phone}","${q.country || 'India'}","${q.city}","${q.category || ''}","${q.capacity || ''}","${q.status}","${(q.message || '').replace(/"/g, '""')}"`
     );
     const blob = new Blob([[headers, ...rows].join('\n')], { type: 'text/csv' });
     const url = window.URL.createObjectURL(blob);
@@ -221,7 +299,7 @@ export default function AdminQueriesPage() {
       q.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
       q.phone.toLowerCase().includes(searchQuery.toLowerCase()) ||
       q.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      q.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (q.category || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
       q.id.toLowerCase().includes(searchQuery.toLowerCase());
 
     const matchesCategory = selectedCategory === 'All' || q.category === selectedCategory;
@@ -568,6 +646,26 @@ export default function AdminQueriesPage() {
                 {selectedQuery.message}
               </p>
             </div>
+
+            {/* Electricity Bill File Attachment */}
+            {(selectedQuery.billFileName || selectedQuery.billFileUrl) && (
+              <div className="mb-6 p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <Download className="w-5 h-5 text-emerald-500 shrink-0" />
+                  <div>
+                    <span className="text-xs font-bold text-text-primary block">Attached Electricity Bill</span>
+                    <span className="text-[11px] text-text-secondary font-mono">{selectedQuery.billFileName || 'DISCOM Bill Copy'}</span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => handleDownloadBill(selectedQuery)}
+                  className="px-4 py-2 rounded-xl bg-emerald-500 text-white font-bold text-xs shadow-md hover:bg-emerald-600 transition-all flex items-center gap-1.5 shrink-0"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>Download Bill</span>
+                </button>
+              </div>
+            )}
 
             {/* Status Update Selector */}
             <div className="mb-6">

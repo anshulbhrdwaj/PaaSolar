@@ -47,6 +47,7 @@ export function SolarCalculator() {
   const [billFile, setBillFile] = useState<File | null>(null);
   
   const [submitted, setSubmitted] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   // Calculation Engine Logic
   const calc = useMemo(() => {
@@ -126,9 +127,48 @@ export function SolarCalculator() {
     };
   }, [avgBill, fixRent, connectionKw, roofSpace, roofType]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const formData = new FormData();
+      formData.append('fullName', name);
+      formData.append('email', email);
+      formData.append('phone', phone);
+      formData.append('city', city);
+      formData.append('district', district);
+      formData.append('avgBill', avgBill.toString());
+      formData.append('fixRent', fixRent.toString());
+      formData.append('connectionKw', connectionKw.toString());
+      formData.append('roofSpace', roofSpace.toString());
+      formData.append('roofType', roofType);
+      formData.append('recommendedKw', calc.finalSystemKw.toString());
+      formData.append('monthlySavings', calc.monthlySavings.toString());
+      formData.append('annualSavings', calc.annualSavings.toString());
+      formData.append('grossCost', calc.grossProjectCost.toString());
+      formData.append('subsidy', calc.pmSgySubsidy.toString());
+      formData.append('netInvestment', calc.netInvestmentCost.toString());
+      formData.append('paybackYears', calc.paybackYears.toString());
+
+      if (billFile) {
+        formData.append('billFile', billFile);
+      }
+
+      const res = await fetch('/api/inquiries', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!res.ok) {
+        console.error('Failed to submit inquiry to database');
+      }
+    } catch (err) {
+      console.error('Error submitting inquiry:', err);
+    } finally {
+      setIsSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -461,10 +501,20 @@ export function SolarCalculator() {
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-2xl bg-accent-solar text-white font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-accent-solar/30 hover:bg-accent-solar/90 transition-all flex items-center justify-center gap-2"
+                disabled={isSubmitting}
+                className="w-full py-4 rounded-2xl bg-accent-solar text-white font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-accent-solar/30 hover:bg-accent-solar/90 transition-all flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
               >
-                <span>Get Detailed Engineering & Subsidy Proposal</span>
-                <ArrowRight className="w-4 h-4" />
+                {isSubmitting ? (
+                  <>
+                    <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <span>Saving Proposal to Database...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Get Detailed Engineering & Subsidy Proposal</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </>
+                )}
               </button>
             </form>
           </div>
