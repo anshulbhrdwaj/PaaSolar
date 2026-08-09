@@ -18,11 +18,13 @@
     },
     "productsDropdown": {
       "pmSuryaGhar": "Plan Solar Residencial",
-      "solarPanels": "Paneles Solares",
+      "solarPanels": "Todos los Paneles Solares",
       "inverters": "Inversores Inteligentes",
       "battery": "Almacenamiento en Batería",
       "allProducts": "Catálogo Completo",
-      "franchiseSgy": "Franquicia y Distribución para PM SGY"
+      "franchiseSgy": "Franquicia y Distribución para PM SGY",
+      "topconPanels": "Paneles TOPCon Tipo-N",
+      "dcrPanels": "Paneles Subsidiados DCR (Hechos en India)"
     },
     "projectsDropdown": {
       "ci": "Comercial e Industrial (C&I)",
@@ -319,7 +321,35 @@
       "feature1": "Captura Bifacial",
       "feature2": "Resistencia Térmica",
       "feature3": "Resistente a la Intemperie",
-      "feature4": "Diseño Negro Elegante"
+      "feature4": "Diseño Negro Elegante",
+      "topcon": {
+        "title": "Paneles Bifaciales TOPCon Tipo N",
+        "subtitle": "Tecnología de Contacto Pasivado de Óxido de Túnel (580W – 650W)",
+        "badge": "ALTO RENDIMIENTO EMBLAMÁTICO",
+        "eff": "Hasta 22.8%+ de Eficiencia",
+        "desc": "Los módulos Paa Solar N-Type TOPCon ofrecen un rendimiento excepcional capturando luz tanto frontal como trasera para entregar entre un +10% y +30% más de energía.",
+        "spec1": "22.8%+ Eficiencia Máxima",
+        "spec2": "Factor de Bifacialidad 80%±5%",
+        "spec3": "Garantía de Rendimiento de 30 Años",
+        "spec4": "Vidrio Doble Sin LID y Anti-PID",
+        "idealLabel": "Aplicación Ideal",
+        "idealVal": "Parques Solares Industriales y Comerciales",
+        "cta": "Calcular ROI TOPCon"
+      },
+      "dcr": {
+        "title": "Paneles Solares DCR (Fabricados en India)",
+        "subtitle": "Módulos Certificados de Requisito de Contenido Doméstico (540W – 590W)",
+        "badge": "APROBADO POR MNRE Y ALMM",
+        "eff": "Elegible PM Surya Ghar",
+        "desc": "Los módulos Paa Solar DCR están fabricados con células 100% autóctonas. Son obligatorios para obtener subsidios gubernamentales directos como el plan PM Surya Ghar.",
+        "spec1": "100% Celda e Oblea India DCR",
+        "spec2": "Subsidio Directo PM Surya Ghar",
+        "spec3": "Certificación ALMM Lista-1",
+        "spec4": "Garantía de Potencia de 25 Años",
+        "idealLabel": "Aplicación Ideal",
+        "idealVal": "Subsidios Residenciales PMSGY y PM-KUSUM",
+        "cta": "Solicitar Subsidio DCR"
+      }
     },
     "inverters": {
       "tag": "Inversor Inteligente",

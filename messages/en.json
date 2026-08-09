@@ -18,11 +18,13 @@
     },
     "productsDropdown": {
       "pmSuryaGhar": "PM Surya Ghar Yojana",
-      "solarPanels": "Solar Panels",
+      "solarPanels": "All Solar Panels",
       "inverters": "Smart Inverters",
       "battery": "Battery Storage",
       "allProducts": "All Products Catalogue",
-      "franchiseSgy": "Franchise & Distribution for PM SGY"
+      "franchiseSgy": "Franchise & Distribution for PM SGY",
+      "topconPanels": "N-Type TOPCon Panels",
+      "dcrPanels": "DCR Subsidy Panels (Made in India)"
     },
     "projectsDropdown": {
       "ci": "Commercial & Industrial (C&I)",
@@ -371,7 +373,35 @@
       "feature1": "Bifacial Glass-Glass Architecture for Rear Light Capture",
       "feature2": "Low Temp Coefficient (-0.29%/°C) for Extreme Summer Heat",
       "feature3": "Heavy Snow & Hurricane Wind Load Resistance (5400Pa)",
-      "feature4": "Sleek Full-Black Aesthetic Option for Luxury Homes"
+      "feature4": "Sleek Full-Black Aesthetic Option for Luxury Homes",
+      "topcon": {
+        "title": "N-Type TOPCon Bifacial Panels",
+        "subtitle": "Tunnel Oxide Passivated Contact Technology (580W – 650W)",
+        "badge": "FLAGSHIP HIGH-YIELD",
+        "eff": "Up to 22.8%+ Efficiency",
+        "desc": "Paa Solar N-Type TOPCon (Tunnel Oxide Passivated Contact) modules represent the pinnacle of photovoltaic efficiency. Featuring ultra-low temperature coefficients (-0.29%/°C), zero Light-Induced Degradation (LID), and dual-glass bifacial architecture, TOPCon panels capture ambient light from both front and rear surfaces to deliver +10% to +30% higher lifetime generation.",
+        "spec1": "22.8%+ Peak Efficiency",
+        "spec2": "80%±5% Bifaciality Factor",
+        "spec3": "30-Year Performance Warranty",
+        "spec4": "Zero LID & Anti-PID Dual Glass",
+        "idealLabel": "Ideal Application",
+        "idealVal": "C&I Industrial & Utility Solar Farms",
+        "cta": "Calculate TOPCon ROI"
+      },
+      "dcr": {
+        "title": "DCR Solar Panels (Made in India)",
+        "subtitle": "Domestic Content Requirement Certified Modules (540W – 590W)",
+        "badge": "MNRE & ALMM APPROVED",
+        "eff": "PM Surya Ghar Eligible",
+        "desc": "Paa Solar DCR (Domestic Content Requirement) modules are manufactured using 100% indigenous Indian solar cells and wafers in strict compliance with MNRE (Ministry of New and Renewable Energy) and ALMM guidelines. These panels are mandatorily required for government subsidy schemes including PM Surya Ghar Muft Bijli Yojana (subsidies up to ₹78,000) and PM-KUSUM Component A & C.",
+        "spec1": "100% Indian Cell & Wafer DCR",
+        "spec2": "Direct PM Surya Ghar Subsidy",
+        "spec3": "ALMM List-1 Certified",
+        "spec4": "25-Year Linear Power Warranty",
+        "idealLabel": "Ideal Application",
+        "idealVal": "Residential PMSGY & PM-KUSUM Grants",
+        "cta": "Claim DCR Subsidy"
+      }
     },
     "inverters": {
       "tag": "Sub-10ms Islanding Power",

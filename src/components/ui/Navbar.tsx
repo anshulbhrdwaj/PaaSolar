@@ -168,9 +168,27 @@ export function Navbar() {
                       <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
                         {t('productsDropdown.solarPanels')}
                       </p>
-                      <p className="text-[10px] text-text-secondary">TOPCon Mono Panels</p>
+                      <p className="text-[10px] text-text-secondary font-medium">TOPCon & DCR Bifacial Modules</p>
                     </div>
                   </Link>
+
+                  {/* Sub-Items: TOPCon and DCR Panels */}
+                  <div className="pl-9 space-y-1 my-0.5">
+                    <Link
+                      href="/products/solar-panels#topcon"
+                      className="block text-[11px] font-semibold text-text-secondary hover:text-accent-solar py-1 px-2.5 rounded-lg hover:bg-accent-solar/10 transition-all flex items-center gap-1.5"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent-solar shrink-0" />
+                      <span>{t('productsDropdown.topconPanels')}</span>
+                    </Link>
+                    <Link
+                      href="/products/solar-panels#dcr"
+                      className="block text-[11px] font-semibold text-text-secondary hover:text-emerald-500 py-1 px-2.5 rounded-lg hover:bg-emerald-500/10 transition-all flex items-center gap-1.5"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+                      <span>{t('productsDropdown.dcrPanels')}</span>
+                    </Link>
+                  </div>
 
                   <Link
                     href="/products/inverters"
@@ -608,6 +626,23 @@ export function Navbar() {
                   <SunMedium className="w-4 h-4 text-accent-solar" />
                   <span>{t('productsDropdown.solarPanels')}</span>
                 </Link>
+
+                <div className="pl-6 flex flex-col gap-2 border-l border-line/60 text-xs">
+                  <Link
+                    href="/products/solar-panels#topcon"
+                    onClick={() => setMobileOpen(false)}
+                    className="hover:text-accent-solar transition-colors"
+                  >
+                    <span>• {t('productsDropdown.topconPanels')}</span>
+                  </Link>
+                  <Link
+                    href="/products/solar-panels#dcr"
+                    onClick={() => setMobileOpen(false)}
+                    className="hover:text-emerald-500 transition-colors"
+                  >
+                    <span>• {t('productsDropdown.dcrPanels')}</span>
+                  </Link>
+                </div>
                 <Link
                   href="/products/inverters"
                   onClick={() => setMobileOpen(false)}

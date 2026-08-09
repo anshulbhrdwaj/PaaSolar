@@ -18,11 +18,13 @@
     },
     "productsDropdown": {
       "pmSuryaGhar": "Förderprogramm Solar",
-      "solarPanels": "Solarmodule",
+      "solarPanels": "Alle Solarmodule",
       "inverters": "Smart-Wechselrichter",
       "battery": "Batteriespeicher",
       "allProducts": "Gesamtkatalog",
-      "franchiseSgy": "Franchise & Vertrieb für PM SGY"
+      "franchiseSgy": "Franchise & Vertrieb für PM SGY",
+      "topconPanels": "N-Typ TOPCon Solarmodule",
+      "dcrPanels": "DCR Geförderte Module (Made in India)"
     },
     "projectsDropdown": {
       "ci": "Gewerbe & Industrie (C&I)",
@@ -319,7 +321,35 @@
       "feature1": "Bifazialer Ertrag",
       "feature2": "Hitzebeständig",
       "feature3": "Wetterfest",
-      "feature4": "Elegantes All-Black Design"
+      "feature4": "Elegantes All-Black Design",
+      "topcon": {
+        "title": "N-Typ TOPCon Bifaziale Solarmodule",
+        "subtitle": "Tunnel Oxide Passivated Contact Technologie (580W – 650W)",
+        "badge": "FLAGGSCHIFF HOCHERTRAG",
+        "eff": "Bis zu 22.8%+ Wirkungsgrad",
+        "desc": "Paa Solar N-Typ TOPCon-Module nutzen Vorder- und Rückseitenlicht für +10% bis +30% höheren Gesamtertrag über die gesamte Lebensdauer.",
+        "spec1": "22.8%+ Spitzenwirkungsgrad",
+        "spec2": "80%±5% Bifazialitätsfaktor",
+        "spec3": "30 Jahre Leistungsgarantie",
+        "spec4": "Kein LID & Anti-PID Doppelglas",
+        "idealLabel": "Ideale Anwendung",
+        "idealVal": "Gewerbe- & Industrie-Solaranlagen",
+        "cta": "TOPCon ROI berechnen"
+      },
+      "dcr": {
+        "title": "DCR Solarmodule (Made in India)",
+        "subtitle": "Domestic Content Requirement Zertifizierte Module (540W – 590W)",
+        "badge": "MNRE & ALMM GENEHMIGT",
+        "eff": "PM Surya Ghar Förderfähig",
+        "desc": "Paa Solar DCR-Module werden zu 100% mit indischen Solarzellen hergestellt. Sie sind Voraussetzung für staatliche Förderprogramme wie PM Surya Ghar.",
+        "spec1": "100% Indische Zelle & Wafer DCR",
+        "spec2": "Direkte PM Surya Ghar Förderung",
+        "spec3": "ALMM Liste-1 Zertifiziert",
+        "spec4": "25 Jahre Leistungsgarantie",
+        "idealLabel": "Ideale Anwendung",
+        "idealVal": "Wohngebäude PMSGY & PM-KUSUM Förderung",
+        "cta": "DCR Förderung Beantragen"
+      }
     },
     "inverters": {
       "tag": "Smart-Wechselrichter",

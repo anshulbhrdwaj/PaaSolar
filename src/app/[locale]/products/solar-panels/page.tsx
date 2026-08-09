@@ -80,6 +80,157 @@ export default function SolarPanelsPage() {
         </div>
       </section>
 
+      {/* Featured Products Showcase: TOPCon & DCR Solar Panels */}
+      <section className="py-24 max-w-7xl mx-auto px-6 border-b border-line">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <span className="text-xs uppercase font-mono tracking-widest text-accent-solar font-bold px-3 py-1 rounded-full bg-accent-solar/10 border border-accent-solar/30">
+            PRODUCT LINEUP
+          </span>
+          <h2 className="font-serif text-4xl sm:text-5xl font-bold text-text-primary mt-4">
+            Next-Gen TOPCon & MNRE DCR Panels
+          </h2>
+          <p className="text-text-secondary text-base sm:text-lg mt-3 font-medium">
+            Explore our flagship N-Type TOPCon bifacial modules for high-yield commercial & utility projects and ALMM-approved DCR modules for PM Surya Ghar subsidy schemes.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          {/* PRODUCT 1: N-Type TOPCon Panels */}
+          <div id="topcon" className="rounded-3xl bg-bg-secondary border-2 border-accent-solar/40 p-8 sm:p-10 shadow-2xl flex flex-col justify-between relative overflow-hidden group hover:border-accent-solar transition-all scroll-mt-28">
+            <div className="absolute top-0 right-0 p-6 text-accent-solar/10 group-hover:text-accent-solar/20 transition-colors pointer-events-none">
+              <SunMedium className="w-32 h-32" />
+            </div>
+
+            <div className="space-y-6 relative z-10">
+              <div className="flex items-center justify-between">
+                <span className="px-3.5 py-1 rounded-full bg-accent-solar/15 border border-accent-solar/30 text-accent-solar text-xs font-mono font-bold uppercase">
+                  {t('topcon.badge')}
+                </span>
+                <span className="text-xs font-mono font-bold text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+                  {t('topcon.eff')}
+                </span>
+              </div>
+
+              <div>
+                <h3 className="font-serif text-3xl font-bold text-text-primary">
+                  {t('topcon.title')}
+                </h3>
+                <p className="text-xs font-mono text-text-secondary mt-1 uppercase tracking-wider">
+                  {t('topcon.subtitle')}
+                </p>
+              </div>
+
+              <p className="text-text-secondary text-sm leading-relaxed font-medium">
+                {t('topcon.desc')}
+              </p>
+
+              {/* TOPCon Key Highlights */}
+              <div className="space-y-2.5 pt-4 border-t border-line/60">
+                <h4 className="text-xs font-mono font-bold uppercase text-text-primary tracking-wider">Key Specifications & Benefits</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-text-primary">
+                  <div className="flex items-center gap-2 p-2.5 rounded-xl bg-bg-primary border border-line">
+                    <CheckCircle2 className="w-4 h-4 text-accent-solar shrink-0" />
+                    <span>{t('topcon.spec1')}</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2.5 rounded-xl bg-bg-primary border border-line">
+                    <CheckCircle2 className="w-4 h-4 text-accent-solar shrink-0" />
+                    <span>{t('topcon.spec2')}</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2.5 rounded-xl bg-bg-primary border border-line">
+                    <CheckCircle2 className="w-4 h-4 text-accent-solar shrink-0" />
+                    <span>{t('topcon.spec3')}</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2.5 rounded-xl bg-bg-primary border border-line">
+                    <CheckCircle2 className="w-4 h-4 text-accent-solar shrink-0" />
+                    <span>{t('topcon.spec4')}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-8 mt-6 border-t border-line/60 flex items-center justify-between gap-4 relative z-10">
+              <div>
+                <span className="text-[10px] font-mono text-text-secondary uppercase block">{t('topcon.idealLabel')}</span>
+                <span className="text-xs font-bold text-text-primary">{t('topcon.idealVal')}</span>
+              </div>
+              <Link
+                href="/calculator"
+                className="px-5 py-2.5 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider shadow-md hover:bg-accent-solar/90 transition-all shrink-0"
+              >
+                {t('topcon.cta')}
+              </Link>
+            </div>
+          </div>
+
+          {/* PRODUCT 2: DCR Solar Panels (Domestic Content Requirement) */}
+          <div id="dcr" className="rounded-3xl bg-bg-secondary border-2 border-emerald-500/40 p-8 sm:p-10 shadow-2xl flex flex-col justify-between relative overflow-hidden group hover:border-emerald-500 transition-all scroll-mt-28">
+            <div className="absolute top-0 right-0 p-6 text-emerald-500/10 group-hover:text-emerald-500/20 transition-colors pointer-events-none">
+              <SunMedium className="w-32 h-32" />
+            </div>
+
+            <div className="space-y-6 relative z-10">
+              <div className="flex items-center justify-between">
+                <span className="px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-500 text-xs font-mono font-bold uppercase">
+                  {t('dcr.badge')}
+                </span>
+                <span className="text-xs font-mono font-bold text-accent-solar bg-accent-solar/10 px-3 py-1 rounded-full border border-accent-solar/20">
+                  {t('dcr.eff')}
+                </span>
+              </div>
+
+              <div>
+                <h3 className="font-serif text-3xl font-bold text-text-primary">
+                  {t('dcr.title')}
+                </h3>
+                <p className="text-xs font-mono text-text-secondary mt-1 uppercase tracking-wider">
+                  {t('dcr.subtitle')}
+                </p>
+              </div>
+
+              <p className="text-text-secondary text-sm leading-relaxed font-medium">
+                {t('dcr.desc')}
+              </p>
+
+              {/* DCR Key Highlights */}
+              <div className="space-y-2.5 pt-4 border-t border-line/60">
+                <h4 className="text-xs font-mono font-bold uppercase text-text-primary tracking-wider">Key Specifications & Compliance</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold text-text-primary">
+                  <div className="flex items-center gap-2 p-2.5 rounded-xl bg-bg-primary border border-line">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <span>{t('dcr.spec1')}</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2.5 rounded-xl bg-bg-primary border border-line">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <span>{t('dcr.spec2')}</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2.5 rounded-xl bg-bg-primary border border-line">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <span>{t('dcr.spec3')}</span>
+                  </div>
+                  <div className="flex items-center gap-2 p-2.5 rounded-xl bg-bg-primary border border-line">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                    <span>{t('dcr.spec4')}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-8 mt-6 border-t border-line/60 flex items-center justify-between gap-4 relative z-10">
+              <div>
+                <span className="text-[10px] font-mono text-text-secondary uppercase block">{t('dcr.idealLabel')}</span>
+                <span className="text-xs font-bold text-text-primary">{t('dcr.idealVal')}</span>
+              </div>
+              <Link
+                href="/calculator"
+                className="px-5 py-2.5 rounded-full bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider shadow-md hover:bg-emerald-600 transition-all shrink-0"
+              >
+                {t('dcr.cta')}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Technical Specifications Grid */}
       <section className="py-24 max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16">
