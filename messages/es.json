@@ -506,5 +506,33 @@
         "desc": "Monitoreo continuo 24/7 por IoT y tiempo de actividad garantizado."
       }
     ]
+  },
+  "FAQ": {
+    "badge": "PREGUNTAS FRECUENTES",
+    "title": "¿Tiene preguntas? Tenemos respuestas.",
+    "subtitle": "Todo lo que necesita saber sobre la instalación solar, rendimiento, mantenimiento y los compromisos de Paa Solar.",
+    "askEngineer": "Preguntar a un Ingeniero Solar",
+    "moreQuestions": "¿Tiene más preguntas?",
+    "moreQuestionsSub": "Nuestros ingenieros solares EPC están listos para ayudarle con dimensionamiento a medida y normativas.",
+    "q1": "¿Cuánto duran los paneles solares?",
+    "a1": "La mayoría de los paneles solares tienen una vida útil de 25 a 30 años con una degradación gradual del rendimiento.",
+    "c1": "Vida Útil y Tecnología",
+    "q2": "¿Qué mantenimiento requieren los sistemas solares?",
+    "a2": "Limpieza regular, inspecciones periódicas y revisiones del inversor garantizan un rendimiento óptimo.",
+    "c2": "Mantenimiento",
+    "q3": "¿Funciona la energía solar en días nublados o con lluvia?",
+    "a3": "Sí, los paneles solares continúan generando electricidad, aunque a una potencia reducida.",
+    "c4": "Instalación",
+    "q4": "¿Cuánto espacio se requiere para la instalación solar?",
+    "a4": "Los requisitos de espacio dependen de la capacidad del sistema, tipo de módulo y diseño.",
+    "c5": "Mantenimiento",
+    "q5": "¿Se requiere mantenimiento constante para los sistemas solares?",
+    "a5": "Los sistemas solares requieren un mantenimiento mínimo: solo limpieza periódica e inspecciones anuales.",
+    "c6": "Rentabilidad y Ahorro",
+    "q6": "¿Es rentable la energía solar?",
+    "a6": "Sí, la energía solar reduce significativamente la factura de electricidad y ofrece excelentes rendimientos a largo plazo.",
+    "c7": "Garantías y Soporte",
+    "q7": "¿Paa Solar ofrece garantías y soporte O&M?",
+    "a7": "Sí, Paa Solar ofrece garantías de producto, garantías de rendimiento y servicios integrales de O&M."
   }
 }

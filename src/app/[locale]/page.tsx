@@ -13,6 +13,7 @@ import { CaseStudies } from '@/components/sections/CaseStudies';
 import { EnergyDashboard } from '@/components/sections/EnergyDashboard';
 import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { TestimonialsMarquee } from '@/components/sections/TestimonialsMarquee';
+import { FaqSection } from '@/components/sections/FaqSection';
 import { Footer } from '@/components/sections/Footer';
 
 export default function HomePage() {
@@ -32,6 +33,7 @@ export default function HomePage() {
       <CaseStudies />
       <TestimonialsMarquee />
       <SolarCalculator />
+      <FaqSection />
       <Footer />
     </main>
   );

@@ -506,5 +506,33 @@
         "desc": "24/7 IoT-Leistungsüberwachung und garantierte Betriebsbereitschaft."
       }
     ]
+  },
+  "FAQ": {
+    "badge": "HÄUFIG GESTELLTE FRAGEN",
+    "title": "Haben Sie Fragen? Wir haben Antworten.",
+    "subtitle": "Alles, was Sie über Solarinstallation, Leistung, Wartung und das langfristige Serviceversprechen von Paa Solar wissen müssen.",
+    "askEngineer": "Solar-Ingenieur fragen",
+    "moreQuestions": "Haben Sie weitere Fragen?",
+    "moreQuestionsSub": "Unsere EPC-Solaringenieure stehen Ihnen bei maßgeschneiderter Dimensionierung und Richtlinien zur Seite.",
+    "q1": "Wie lange halten Solarmodule?",
+    "a1": "Die meisten Solarmodule haben eine Lebensdauer von 25–30 Jahren bei geringem Leistungsverlust.",
+    "c1": "Lebensdauer & Tech",
+    "q2": "Welche Wartung ist für Solaranlagen erforderlich?",
+    "a2": "Regelmäßige Reinigung, tägliche Überwachung und Wechselrichterprüfungen sichern maximale Erträge.",
+    "c2": "Wartung",
+    "q3": "Funktioniert Solar auch an bewölkten oder Regentagen?",
+    "a3": "Ja, Solarmodule erzeugen weiterhin Strom, allerdings mit reduzierter Leistung.",
+    "c4": "Installation",
+    "q4": "Wie viel Platz wird für die Solarinstallation benötigt?",
+    "a4": "Der Platzbedarf hängt von der Anlagenkapazität, dem Modultyp und dem Layout ab.",
+    "c5": "Wartung",
+    "q5": "Ist eine regelmäßige Wartung notwendig?",
+    "a5": "Solaranlagen benötigen nur minimale Wartung – lediglich gelegentliche Reinigung und jährliche Inspektionsprüfungen.",
+    "c6": "Rendite & Ersparnis",
+    "q6": "Ist Solarstrom kosteneffizient?",
+    "a6": "Ja, Solar reduziert Stromkosten erheblich und bietet attraktive langfristige Renditen.",
+    "c7": "Garantie & Support",
+    "q7": "Bietet Paa Solar Garantien und O&M-Support?",
+    "a7": "Ja, Paa Solar bietet Produktgarantien, Leistungsgarantien und umfassende O&M-Dienstleistungen."
   }
 }

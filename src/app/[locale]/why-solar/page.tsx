@@ -6,6 +6,7 @@ import { WhySolar } from '@/components/sections/WhySolar';
 import { HowItWorks } from '@/components/sections/HowItWorks';
 import { ImpactStats } from '@/components/sections/ImpactStats';
 import { SolarCalculator } from '@/components/sections/SolarCalculator';
+import { FaqSection } from '@/components/sections/FaqSection';
 import { Footer } from '@/components/sections/Footer';
 
 export default function WhySolarPage() {
@@ -16,6 +17,7 @@ export default function WhySolarPage() {
       <HowItWorks />
       <ImpactStats />
       <SolarCalculator />
+      <FaqSection />
       <Footer />
     </main>
   );
