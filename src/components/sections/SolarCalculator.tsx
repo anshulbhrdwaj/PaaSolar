@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import { useTranslations } from 'next-intl';
 import {
   Calculator,
   Sun,
@@ -29,6 +30,7 @@ import {
 import { EmiCalculator } from '@/components/sections/EmiCalculator';
 
 export function SolarCalculator() {
+  const t = useTranslations('Calc');
   const [activeTab, setActiveTab] = useState<'sizing' | 'emi'>('sizing');
 
   // Input States
@@ -54,48 +56,32 @@ export function SolarCalculator() {
     // 1. Tariff & Energy Consumption
     const avgTariffPerUnit = 8.5; // Average tariff rate ₹8.5 per kWh in India
     const netEnergyCost = Math.max(0, avgBill - fixRent);
-    const monthlyUnits = netEnergyCost / avgTariffPerUnit; // kWh per month
-    const dailyUnits = monthlyUnits / 30; // kWh per day
-
-    // 2. Solar System Capacity Required (1 kW generates ~4.0 kWh/day in India)
-    const rawRecommendedKw = Math.max(1, Math.ceil((dailyUnits / 4.0) * 10) / 10);
+    const monthlyUnits = netEnergyCost / avgTariffPerUnit;
     
-    // 3. Space Constraint (1 kW solar requires ~90 sq. ft.)
-    const requiredAreaSqFt = Math.ceil(rawRecommendedKw * 90);
-    const maxKwBySpace = roofSpace > 0 ? Math.floor((roofSpace / 90) * 10) / 10 : rawRecommendedKw;
+    // 2. Solar Generation Capability (India Average: 1kW solar yields ~120-135 units/month)
+    const rawRecommendedKw = monthlyUnits / 125;
+    const finalSystemKw = Math.round(rawRecommendedKw * 10) / 10;
     
-    // Optimal System Size considering space limit
-    const finalSystemKw = Math.max(1, Math.min(rawRecommendedKw, maxKwBySpace > 0 ? maxKwBySpace : rawRecommendedKw));
-
-    // 4. Roof Type Efficiency Multiplier
-    const roofMultiplier = roofType === 'ground' ? 1.05 : roofType === 'tin-shed' ? 1.02 : 1.0;
+    // 3. Roof Space Requirement (1 kW requires ~90-100 sq. ft. solar module area)
+    const requiredAreaSqFt = Math.round(finalSystemKw * 95);
     
-    // 5. Expected Monthly & Daily Generation
-    const dailyGenerationUnits = Math.round(finalSystemKw * 4.0 * roofMultiplier * 10) / 10;
-    const monthlyGenerationUnits = Math.round(dailyGenerationUnits * 30);
-
-    // 6. Savings Calculations
-    const monthlySavings = Math.round(Math.min(avgBill, monthlyGenerationUnits * avgTariffPerUnit + fixRent * 0.5));
+    // 4. Monthly & Annual Savings
+    const monthlyGenerationUnits = finalSystemKw * 125;
+    const monthlySavings = Math.round(monthlyGenerationUnits * avgTariffPerUnit);
     const annualSavings = monthlySavings * 12;
-    // 25-Year Cumulative Savings accounting for 4% annual grid electricity price escalation
-    const lifetimeSavings25Yrs = Math.round(annualSavings * 25 * 1.35);
+    const lifetimeSavings25Yrs = annualSavings * 25;
 
-    // 7. Project Cost & Govt PM SGY Subsidy
-    let pricePerKw = 52000;
-    if (finalSystemKw > 10) pricePerKw = 48000;
-    if (finalSystemKw > 50) pricePerKw = 42000;
-    if (finalSystemKw > 100) pricePerKw = 38000;
-
-    const grossProjectCost = Math.round(finalSystemKw * pricePerKw);
-
-    // PM SGY Subsidy: Up to 3 kW = ₹78,000 max subsidy
+    // 5. Turnkey Project Cost & PM Surya Ghar Subsidy
+    let grossProjectCost = Math.round(finalSystemKw * 52000); // ₹52k/kW benchmark EPC cost
+    if (finalSystemKw <= 3) grossProjectCost = Math.round(finalSystemKw * 58000);
+    
     let pmSgySubsidy = 0;
-    if (finalSystemKw <= 3) {
-      pmSgySubsidy = Math.round(finalSystemKw * 26000);
-    } else if (finalSystemKw <= 10) {
-      pmSgySubsidy = 78000;
-    } else {
-      pmSgySubsidy = 78000; // Capped for PM SGY rooftop portion
+    if (finalSystemKw <= 1) {
+      pmSgySubsidy = 30000;
+    } else if (finalSystemKw <= 2) {
+      pmSgySubsidy = 60000;
+    } else if (finalSystemKw >= 3) {
+      pmSgySubsidy = 78000; // Capped max subsidy ₹78,000 under PM Surya Ghar Yojana
     }
 
     const netInvestmentCost = Math.max(0, grossProjectCost - pmSgySubsidy);
@@ -181,13 +167,13 @@ export function SolarCalculator() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-accent-solar/30 bg-accent-solar/10 text-accent-solar text-xs font-mono font-bold uppercase tracking-wider mb-4">
             <Calculator className="w-3.5 h-3.5" />
-            <span>SOLAR ROI & SIZING CALCULATOR</span>
+            <span>{t('badge')}</span>
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-text-primary mt-2">
-            Calculate Your Solar Savings & Capacity
+            {t('title')}
           </h2>
           <p className="text-text-secondary text-base sm:text-lg mt-3 leading-relaxed font-medium">
-            Enter your electricity bill, connection load, and space parameters to get instant turnkey engineering sizing, PM SGY subsidy estimates, and 25-year ROI.
+            {t('subtitle')}
           </p>
         </div>
 
@@ -203,7 +189,7 @@ export function SolarCalculator() {
               }`}
             >
               <Zap className="w-4 h-4" />
-              <span>1. System Sizing & Savings Calculator</span>
+              <span>{t('tabSizing')}</span>
             </button>
             <button
               onClick={() => setActiveTab('emi')}
@@ -214,7 +200,7 @@ export function SolarCalculator() {
               }`}
             >
               <IndianRupee className="w-4 h-4" />
-              <span>2. Solar Loan EMI & Financing</span>
+              <span>{t('tabEmi')}</span>
             </button>
           </div>
         </div>
@@ -230,10 +216,10 @@ export function SolarCalculator() {
             <div className="flex items-center justify-between pb-4 border-b border-line">
               <h3 className="font-serif text-2xl font-bold text-text-primary flex items-center gap-2.5">
                 <Sparkles className="w-5 h-5 text-accent-solar" />
-                <span>System Sizing Inputs</span>
+                <span>{t('inputTitle')}</span>
               </h3>
               <span className="text-xs font-mono font-semibold text-accent-solar px-3 py-1 rounded-full bg-accent-solar/10 border border-accent-solar/20">
-                Live Formula Sync
+                {t('liveSync')}
               </span>
             </div>
 
@@ -243,7 +229,7 @@ export function SolarCalculator() {
                 <div className="flex items-center justify-between mb-2">
                   <label className="text-xs font-mono font-bold uppercase text-text-primary tracking-wider flex items-center gap-1.5">
                     <IndianRupee className="w-3.5 h-3.5 text-accent-solar" />
-                    <span>Average Monthly Electricity Bill (₹)</span>
+                    <span>{t('avgBillLabel')}</span>
                   </label>
                   <span className="font-mono text-base font-bold text-accent-solar">
                     ₹{avgBill.toLocaleString('en-IN')} / mo
@@ -283,7 +269,7 @@ export function SolarCalculator() {
                 {/* Field 2: Fix Rent / Fixed Charge */}
                 <div>
                   <label className="block text-xs font-mono font-bold uppercase text-text-primary tracking-wider mb-2">
-                    Fixed Rent / Monthly Fixed Charges (₹)
+                    {t('fixRentLabel')}
                   </label>
                   <input
                     type="number"
@@ -295,15 +281,12 @@ export function SolarCalculator() {
                     className="w-full px-4 py-3.5 rounded-xl bg-bg-secondary border border-line focus:border-accent-solar focus:outline-none text-text-primary font-mono text-base font-bold"
                     placeholder="e.g. 1200"
                   />
-                  <p className="text-[11px] text-text-secondary mt-1 font-medium">
-                    Fixed meter charge specified on discom bill
-                  </p>
                 </div>
 
                 {/* Field 3: Connection in kW */}
                 <div>
                   <label className="block text-xs font-mono font-bold uppercase text-text-primary tracking-wider mb-2">
-                    Connection Load (kW)
+                    {t('connectionKwLabel')}
                   </label>
                   <input
                     type="number"
@@ -315,9 +298,6 @@ export function SolarCalculator() {
                     className="w-full px-4 py-3.5 rounded-xl bg-bg-secondary border border-line focus:border-accent-solar focus:outline-none text-text-primary font-mono text-base font-bold"
                     placeholder="e.g. 15"
                   />
-                  <p className="text-[11px] text-text-secondary mt-1 font-medium">
-                    Sanctioned load on your electricity connection
-                  </p>
                 </div>
               </div>
 
@@ -326,7 +306,7 @@ export function SolarCalculator() {
                 {/* Field 4: Roof Space */}
                 <div>
                   <label className="block text-xs font-mono font-bold uppercase text-text-primary tracking-wider mb-2">
-                    Available Roof / Land Space (Sq. Ft.)
+                    {t('roofSpaceLabel')}
                   </label>
                   <input
                     type="number"
@@ -338,21 +318,18 @@ export function SolarCalculator() {
                     className="w-full px-4 py-3.5 rounded-xl bg-bg-secondary border border-line focus:border-accent-solar focus:outline-none text-text-primary font-mono text-base font-bold"
                     placeholder="e.g. 1500"
                   />
-                  <p className="text-[11px] text-text-secondary mt-1 font-medium">
-                    ~90 sq. ft. required per 1 kW solar
-                  </p>
                 </div>
 
                 {/* Field 5: Roof Type */}
                 <div>
                   <label className="block text-xs font-mono font-bold uppercase text-text-primary tracking-wider mb-2">
-                    Installation Roof Type
+                    {t('roofTypeLabel')}
                   </label>
                   <div className="grid grid-cols-3 gap-2">
                     {[
-                      { id: 'rooftop', label: 'Rooftop', icon: <Home className="w-3.5 h-3.5" /> },
-                      { id: 'tin-shed', label: 'Tin Shed', icon: <Factory className="w-3.5 h-3.5" /> },
-                      { id: 'ground', label: 'Ground', icon: <Building2 className="w-3.5 h-3.5" /> },
+                      { id: 'rooftop', label: t('rooftopRcc'), icon: <Home className="w-3.5 h-3.5" /> },
+                      { id: 'tin-shed', label: t('tinShed'), icon: <Factory className="w-3.5 h-3.5" /> },
+                      { id: 'ground', label: t('groundPlant'), icon: <Building2 className="w-3.5 h-3.5" /> },
                     ].map((item) => (
                       <button
                         type="button"
@@ -376,13 +353,13 @@ export function SolarCalculator() {
               <div className="pt-6 border-t border-line space-y-4">
                 <h4 className="font-serif text-lg font-bold text-text-primary flex items-center gap-2">
                   <User className="w-4 h-4 text-accent-solar" />
-                  <span>Your Location & Contact Info</span>
+                  <span>{t('contactTitle')}</span>
                 </h4>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* City */}
                   <div>
-                    <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">City</label>
+                    <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">{t('cityLabel')}</label>
                     <input
                       type="text"
                       required
@@ -395,7 +372,7 @@ export function SolarCalculator() {
 
                   {/* District */}
                   <div>
-                    <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">District</label>
+                    <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">{t('districtLabel')}</label>
                     <input
                       type="text"
                       required
@@ -410,7 +387,7 @@ export function SolarCalculator() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   {/* Name */}
                   <div>
-                    <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">Full Name</label>
+                    <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">{t('nameLabel')}</label>
                     <input
                       type="text"
                       required
@@ -423,7 +400,7 @@ export function SolarCalculator() {
 
                   {/* Email ID */}
                   <div>
-                    <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">Email ID</label>
+                    <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">{t('emailLabel')}</label>
                     <input
                       type="email"
                       required
@@ -436,7 +413,7 @@ export function SolarCalculator() {
 
                   {/* Phone */}
                   <div>
-                    <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">Phone Number</label>
+                    <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">{t('phoneLabel')}</label>
                     <input
                       type="tel"
                       required
@@ -453,9 +430,9 @@ export function SolarCalculator() {
                   <label className="block text-xs font-mono uppercase tracking-wider text-text-primary font-bold flex items-center justify-between">
                     <span className="flex items-center gap-1.5">
                       <Paperclip className="w-3.5 h-3.5 text-accent-solar" />
-                      Attach Electricity Bill (Optional / Recommended)
+                      {t('billAttachLabel')}
                     </span>
-                    <span className="text-[10px] text-text-secondary font-normal font-mono">PDF, PNG, JPG (Max 10MB)</span>
+                    <span className="text-[10px] text-text-secondary font-normal font-mono">{t('billNotice')}</span>
                   </label>
 
                   {!billFile ? (
@@ -479,13 +456,11 @@ export function SolarCalculator() {
                       />
                     </label>
                   ) : (
-                    <div className="p-3.5 rounded-2xl bg-accent-solar/10 border border-accent-solar/30 flex items-center justify-between gap-3 text-xs font-semibold text-text-primary">
-                      <div className="flex items-center gap-2.5 truncate">
-                        <FileText className="w-5 h-5 text-accent-solar shrink-0" />
-                        <div className="truncate">
-                          <p className="font-bold truncate">{billFile.name}</p>
-                          <p className="text-[10px] text-text-secondary font-mono">{(billFile.size / 1024).toFixed(1)} KB • Attached</p>
-                        </div>
+                    <div className="p-3.5 rounded-xl bg-accent-solar/10 border border-accent-solar/30 flex items-center justify-between text-xs">
+                      <div className="flex items-center gap-2.5 text-accent-solar font-semibold truncate">
+                        <Paperclip className="w-4 h-4 shrink-0" />
+                        <span className="truncate">{billFile.name}</span>
+                        <span className="text-[10px] font-mono text-text-secondary">({(billFile.size / (1024 * 1024)).toFixed(2)} MB)</span>
                       </div>
                       <button
                         type="button"
@@ -507,11 +482,11 @@ export function SolarCalculator() {
                 {isSubmitting ? (
                   <>
                     <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span>Saving Proposal to Database...</span>
+                    <span>{t('submittingBtn')}</span>
                   </>
                 ) : (
                   <>
-                    <span>Get Detailed Engineering & Subsidy Proposal</span>
+                    <span>{t('submitBtn')}</span>
                     <ArrowRight className="w-4 h-4" />
                   </>
                 )}
@@ -533,31 +508,26 @@ export function SolarCalculator() {
 
                 <div className="space-y-2">
                   <span className="text-xs font-mono font-bold text-accent-solar uppercase tracking-wider px-3 py-1 rounded-full bg-accent-solar/10 border border-accent-solar/20">
-                    TURNKEY CALCULATOR READY
+                    {t('liveSync')}
                   </span>
                   <h4 className="font-serif text-2xl sm:text-3xl font-bold text-text-primary">
-                    Calculate Your Solar Savings
+                    {t('resultsTitle')}
                   </h4>
                   <p className="text-text-secondary text-sm leading-relaxed max-w-sm">
-                    Fill in your electricity bill, connection load, space parameters, and location to reveal your complete engineering report & PM SGY subsidy breakdown.
+                    {t('resultsSubtitle')}
                   </p>
                 </div>
 
                 {/* Realtime Live Teaser Badges */}
                 <div className="w-full pt-4 border-t border-line/60 grid grid-cols-2 gap-3 text-left">
                   <div className="p-3.5 rounded-2xl bg-bg-secondary border border-line">
-                    <span className="text-[10px] font-mono text-text-secondary uppercase font-bold block">Est. System Size</span>
+                    <span className="text-[10px] font-mono text-text-secondary uppercase font-bold block">{t('recommendedKw')}</span>
                     <span className="font-serif text-lg font-bold text-text-primary">~{calc.finalSystemKw} kW Solar</span>
                   </div>
                   <div className="p-3.5 rounded-2xl bg-bg-secondary border border-line">
-                    <span className="text-[10px] font-mono text-text-secondary uppercase font-bold block">Est. Monthly Savings</span>
+                    <span className="text-[10px] font-mono text-text-secondary uppercase font-bold block">{t('monthlySavings')}</span>
                     <span className="font-serif text-lg font-bold text-emerald-500">~₹{calc.monthlySavings.toLocaleString('en-IN')}</span>
                   </div>
-                </div>
-
-                <div className="p-4 rounded-2xl bg-accent-solar/10 border border-accent-solar/30 text-xs text-text-primary font-medium flex items-center gap-2 text-left w-full">
-                  <Info className="w-4 h-4 text-accent-solar shrink-0" />
-                  <span>Click <strong>"Calculate & Reveal Engineering Report"</strong> on the left to unlock full report.</span>
                 </div>
               </div>
             ) : (
@@ -568,18 +538,17 @@ export function SolarCalculator() {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2 font-serif text-lg font-bold text-text-primary">
                       <CheckCircle2 className="w-5 h-5 text-emerald-500" />
-                      <span>Official Calculation Report Generated</span>
+                      <span>{t('resultsTitle')}</span>
                     </div>
                     <button
                       onClick={() => setSubmitted(false)}
                       className="text-xs font-mono text-text-secondary hover:text-accent-solar underline"
                     >
-                      Edit Inputs
+                      Edit
                     </button>
                   </div>
                   <p className="text-xs text-text-primary/90 font-medium">
-                    Report prepared for <strong>{name || 'Valued Customer'}</strong> ({city || 'Location'}, {district || 'District'})
-                    {billFile && <span className="block mt-1 text-[11px] text-emerald-500 font-bold">📄 Bill Copy Attached: {billFile.name}</span>}.
+                    {t('resultsSubtitle')}
                   </p>
                 </div>
 
@@ -592,7 +561,7 @@ export function SolarCalculator() {
                   <div className="relative z-10 space-y-4">
                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-solar/15 border border-accent-solar/30 text-accent-solar text-xs font-mono font-bold uppercase">
                       <Zap className="w-3.5 h-3.5" />
-                      <span>RECOMMENDED SOLAR PLANT CAPACITY</span>
+                      <span>{t('recommendedKw')}</span>
                     </div>
 
                     <div className="flex items-baseline gap-3">
@@ -603,27 +572,15 @@ export function SolarCalculator() {
                     </div>
 
                     <p className="text-text-secondary text-sm font-medium">
-                      Generates ~<strong className="text-text-primary">{calc.monthlyGenerationUnits.toLocaleString('en-IN')} units</strong>/month using 22.8%+ N-Type TOPCon bifacial modules.
+                      Generates ~<strong className="text-text-primary">{calc.monthlyGenerationUnits.toLocaleString('en-IN')} units</strong>/month
                     </p>
 
                     {/* Feasibility Badges */}
                     <div className="pt-4 border-t border-line/60 space-y-2">
                       <div className="flex items-center justify-between text-xs font-semibold text-text-primary">
-                        <span className="text-text-secondary">Space Required:</span>
+                        <span className="text-text-secondary">Space:</span>
                         <span className="font-mono text-accent-solar font-bold">{calc.requiredAreaSqFt} Sq. Ft.</span>
                       </div>
-                      <div className="flex items-center justify-between text-xs font-semibold text-text-primary">
-                        <span className="text-text-secondary font-semibold">Connection Load Match:</span>
-                        <span className={`font-mono font-bold ${calc.loadExceeded ? 'text-amber-500' : 'text-emerald-500'}`}>
-                          {connectionKw} kW Connection {calc.loadExceeded ? '(Load Expansion Advised)' : '(Sufficient Load)'}
-                        </span>
-                      </div>
-                      {calc.spaceShortage && (
-                        <div className="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-500 text-xs font-medium flex items-center gap-2">
-                          <Info className="w-4 h-4 shrink-0" />
-                          <span>Capacity adjusted to match {roofSpace} sq. ft. available space.</span>
-                        </div>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -632,83 +589,55 @@ export function SolarCalculator() {
                 <div className="p-6 sm:p-8 rounded-3xl bg-bg-primary border border-line shadow-xl space-y-6">
                   <h4 className="font-serif text-xl font-bold text-text-primary flex items-center gap-2">
                     <TrendingUp className="w-5 h-5 text-emerald-500" />
-                    <span>Financial Returns & Govt Subsidy</span>
+                    <span>{t('resultsTitle')}</span>
                   </h4>
 
                   <div className="grid grid-cols-2 gap-4">
                     {/* Monthly Savings */}
                     <div className="p-4 rounded-2xl bg-bg-secondary border border-line">
-                      <span className="text-[10px] font-mono font-bold text-text-secondary uppercase">Est. Monthly Savings</span>
+                      <span className="text-[10px] font-mono font-bold text-text-secondary uppercase">{t('monthlySavings')}</span>
                       <p className="font-serif text-2xl font-bold text-emerald-500 mt-1">
                         ₹{calc.monthlySavings.toLocaleString('en-IN')}
                       </p>
-                      <span className="text-[11px] text-text-secondary font-medium">Up to 90% bill reduction</span>
                     </div>
 
                     {/* Annual Savings */}
                     <div className="p-4 rounded-2xl bg-bg-secondary border border-line">
-                      <span className="text-[10px] font-mono font-bold text-text-secondary uppercase">Annual Bill Savings</span>
+                      <span className="text-[10px] font-mono font-bold text-text-secondary uppercase">{t('subsidyAmt')}</span>
                       <p className="font-serif text-2xl font-bold text-accent-solar mt-1">
-                        ₹{calc.annualSavings.toLocaleString('en-IN')}
+                        ₹{calc.pmSgySubsidy.toLocaleString('en-IN')}
                       </p>
-                      <span className="text-[11px] text-text-secondary font-medium">Every 12 months</span>
                     </div>
                   </div>
 
                   {/* Cost & PM SGY Subsidy Summary */}
                   <div className="p-4 rounded-2xl bg-bg-secondary/70 border border-line space-y-3">
                     <div className="flex items-center justify-between text-xs font-semibold">
-                      <span className="text-text-secondary">Turnkey Project Cost:</span>
-                      <span className="font-mono text-text-primary font-bold">₹{calc.grossProjectCost.toLocaleString('en-IN')}</span>
-                    </div>
-
-                    <div className="flex items-center justify-between text-xs font-semibold">
-                      <span className="text-emerald-500 font-bold flex items-center gap-1">
-                        <Award className="w-3.5 h-3.5" />
-                        Govt PM SGY Subsidy:
-                      </span>
-                      <span className="font-mono text-emerald-500 font-bold">- ₹{calc.pmSgySubsidy.toLocaleString('en-IN')}</span>
+                      <span className="text-text-secondary">{t('subsidyAmt')}:</span>
+                      <span className="font-mono text-emerald-500 font-bold">₹{calc.pmSgySubsidy.toLocaleString('en-IN')}</span>
                     </div>
 
                     <div className="pt-2 border-t border-line/60 flex items-center justify-between text-sm font-bold">
-                      <span className="text-text-primary">Net Out-of-Pocket Cost:</span>
+                      <span className="text-text-primary">{t('netCost')}:</span>
                       <span className="font-mono text-accent-solar text-base">₹{calc.netInvestmentCost.toLocaleString('en-IN')}</span>
                     </div>
                   </div>
 
-                  {/* Payback & 25-Yr Returns */}
+                  {/* Payback & CO2 Impact */}
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-4 rounded-2xl bg-accent-gold/10 border border-accent-gold/30">
-                      <span className="text-[10px] font-mono font-bold text-accent-gold uppercase">Payback Period</span>
+                      <span className="text-[10px] font-mono font-bold text-accent-gold uppercase">{t('paybackYears')}</span>
                       <p className="font-serif text-2xl font-bold text-text-primary mt-1">
-                        ~{calc.paybackYears} Years
+                        ~{calc.paybackYears} {t('years')}
                       </p>
-                      <span className="text-[10px] text-text-secondary font-semibold">Full ROI recovery</span>
                     </div>
 
                     <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30">
-                      <span className="text-[10px] font-mono font-bold text-emerald-500 uppercase">25-Yr Lifetime Savings</span>
+                      <span className="text-[10px] font-mono font-bold text-emerald-500 uppercase">{t('co2Offset')}</span>
                       <p className="font-serif text-2xl font-bold text-emerald-500 mt-1 truncate">
-                        ₹{(calc.lifetimeSavings25Yrs / 100000).toFixed(1)} Lakhs
+                        {calc.annualCo2OffsetTons} {t('tons')}
                       </p>
-                      <span className="text-[10px] text-text-secondary font-semibold">With grid inflation</span>
                     </div>
-                  </div>
-
-                  {/* CO2 Impact Banner */}
-                  <div className="p-4 rounded-2xl bg-bg-secondary border border-line flex items-center justify-between gap-4 text-xs font-semibold">
-                    <div className="flex items-center gap-2.5">
-                      <div className="p-2 rounded-xl bg-emerald-500/15 text-emerald-500">
-                        <ShieldCheck className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <span className="text-text-primary font-bold block">Clean Energy Impact</span>
-                        <span className="text-text-secondary">{calc.annualCo2OffsetTons} Tons CO2 / Year</span>
-                      </div>
-                    </div>
-                    <span className="text-xs font-mono font-bold text-emerald-500 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
-                      ≈ {calc.equivalentTreesPlanted} Trees
-                    </span>
                   </div>
                 </div>
               </div>
