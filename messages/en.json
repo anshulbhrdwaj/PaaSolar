@@ -18,13 +18,21 @@
     },
     "productsDropdown": {
       "pmSuryaGhar": "PM Surya Ghar Yojana",
-      "solarPanels": "All Solar Panels",
+      "solarPanels": "Solar Panels (TOPCon & DCR)",
       "inverters": "Smart Inverters",
-      "battery": "Battery Storage",
+      "battery": "Lithium Battery",
       "allProducts": "All Products Catalogue",
       "franchiseSgy": "Franchise & Distribution for PM SGY",
-      "topconPanels": "N-Type TOPCon Panels",
-      "dcrPanels": "DCR Subsidy Panels (Made in India)"
+      "topconPanels": "TOPCon Panels",
+      "dcrPanels": "DCR Subsidy Panels",
+      "onGridInverters": "On-Grid Inverters",
+      "offGridInverters": "Off-Grid Inverters",
+      "hybridInverters": "Hybrid Inverters",
+      "lithiumIonBattery": "Lithium Battery Storage",
+      "bessStorage": "Containerized BESS Storage",
+      "bess": "BESS Storage",
+      "ess3532": "ESS 3532 Container System",
+      "liUps1250": "Li UPS 1250 Backup System"
     },
     "projectsDropdown": {
       "ci": "Commercial & Industrial (C&I)",

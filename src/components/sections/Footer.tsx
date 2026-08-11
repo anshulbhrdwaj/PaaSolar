@@ -119,11 +119,11 @@ export function Footer() {
                 Products
               </h4>
               <ul className="flex flex-col gap-3 text-sm font-semibold text-text-primary">
-                <li><Link href="/products/solar-panels" className="hover:text-accent-solar transition-colors">TOPCon Modules</Link></li>
-                <li><Link href="/products/inverters" className="hover:text-accent-solar transition-colors">Smart Inverters</Link></li>
-                <li><Link href="/products/battery" className="hover:text-accent-solar transition-colors">PM Kusum with BESS</Link></li>
-                <li><Link href="/products/franchise-sgy" className="hover:text-accent-solar transition-colors">Franchise & Distribution for PM SGY</Link></li>
-                <li><Link href="/products" className="hover:text-accent-solar transition-colors">All Products</Link></li>
+                <li><Link href="/products/solar-panels" className="hover:text-accent-solar transition-colors">Solar Panels (TOPCon & DCR)</Link></li>
+                <li><Link href="/products/inverters" className="hover:text-accent-solar transition-colors">Inverters (On-Grid, Off-Grid, Hybrid)</Link></li>
+                <li><Link href="/products/battery" className="hover:text-accent-solar transition-colors">Lithium Battery</Link></li>
+                <li><Link href="/products/bess" className="hover:text-accent-solar transition-colors">BESS (ESS 3532, Li UPS 1250)</Link></li>
+                <li><Link href="/products" className="hover:text-accent-solar transition-colors">All Products Catalogue</Link></li>
               </ul>
             </div>
 

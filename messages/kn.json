@@ -18,13 +18,21 @@
     },
     "productsDropdown": {
       "pmSuryaGhar": "ಪಿಎಂ ಸೂರ್ಯ ಘರ್ ಯೋಜನೆ",
-      "solarPanels": "ಎಲ್ಲಾ ಸೌರ ಫಲಕಗಳು",
-      "inverters": "ಸ್ಮಾರ್ಟ್ ಇನ್ವರ್ಟರ್",
-      "battery": "ಬ್ಯಾಟರಿ ಸ್ಟೋರೇಜ್",
+      "solarPanels": "ಸೋಲಾರ್ ಪ್ಯಾನಲ್‌ಗಳು (TOPCon & DCR)",
+      "inverters": "ಸ್ಮಾರ್ಟ್ ಇನ್ವರ್ಟರ್‌ಗಳು",
+      "battery": "ಲಿಥಿಯಂ ಬ್ಯಾಟರಿ",
       "allProducts": "ಎಲ್ಲಾ ಉತ್ಪನ್ನಗಳು",
       "franchiseSgy": "ಪಿಎಂ ಸೂರ್ಯ ಘರ್ ಯೋಜನೆ ಫ್ರಾಂಚೈಸ್ ಮತ್ತು ವಿತರಣೆ",
-      "topconPanels": "N-ಟೈಪ್ TOPCon ಸೌರ ಫಲಕಗಳು",
-      "dcrPanels": "DCR ಸಬ್ಸಿಡಿ ಫಲಕಗಳು (ಮೇಡ್ ಇನ್ ಇಂಡಿಯಾ)"
+      "topconPanels": "TOPCon ಪ್ಯಾನಲ್‌ಗಳು",
+      "dcrPanels": "DCR ಸಬ್ಸಿಡಿ ಪ್ಯಾನಲ್‌ಗಳು",
+      "onGridInverters": "ಆನ್-ಗ್ರಿಡ್ ಇನ್ವರ್ಟರ್‌ಗಳು",
+      "offGridInverters": "ಆಫ್-ಗ್ರಿಡ್ ಇನ್ವರ್ಟರ್‌ಗಳು",
+      "hybridInverters": "ಹೈಬ್ರಿಡ್ ಇನ್ವರ್ಟರ್‌ಗಳು",
+      "lithiumIonBattery": "ಲಿಥಿಯಂ ಬ್ಯಾಟರಿ ಸಂಗ್ರಹಣೆ",
+      "bessStorage": "ಕಂಟೈನರೈಸ್ಡ್ BESS ಸಂಗ್ರಹಣೆ",
+      "bess": "BESS ಸಂಗ್ರಹಣೆ",
+      "ess3532": "ESS 3532 ಕಂಟೈನರ್ ಸಿಸ್ಟಮ್",
+      "liUps1250": "Li UPS 1250 ಬ್ಯಾಕಪ್ ಸಿಸ್ಟಮ್"
     },
     "projectsDropdown": {
       "ci": "ವಾಣಿಜ್ಯ ಮತ್ತು ಕೈಗಾರಿಕಾ (C&I)",

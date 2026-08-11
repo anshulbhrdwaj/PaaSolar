@@ -101,7 +101,94 @@ export default function InvertersPage() {
           ))}
         </div>
 
-        <div className="p-8 rounded-3xl bg-bg-secondary/50 border border-line space-y-4">
+        {/* On-Grid, Off-Grid & Hybrid Category Showcase */}
+        <div className="mt-16 space-y-12">
+          {/* On-Grid Inverters Card */}
+          <div id="ongrid" className="scroll-mt-28 p-8 lg:p-10 rounded-3xl bg-bg-secondary/70 border border-accent-sky/40 shadow-xl space-y-6">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono uppercase tracking-widest text-accent-sky font-bold">GRID-TIED SERIES</span>
+                <h3 className="font-serif text-3xl font-bold text-text-primary mt-1">On-Grid Solar Inverters</h3>
+              </div>
+              <span className="px-4 py-1.5 rounded-full bg-accent-sky/10 border border-accent-sky/30 text-accent-sky text-xs font-mono font-bold">99.2% MPPT Efficiency</span>
+            </div>
+            <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+              High-efficiency grid-tied string inverters engineered for seamless DISCOM net-metering synchronization. Features multi-MPPT trackers for complex roof angles, integrated DC/AC surge protection, and real-time WiFi/4G cloud monitoring for commercial rooftops, PM-KUSUM feeder plants, and utility IPP solar parks.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-line/60 text-xs font-medium text-text-primary">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-accent-sky shrink-0" />
+                <span>DISCOM Net-Metering Certified</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-accent-sky shrink-0" />
+                <span>Multi-MPPT Solar Trackers</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-accent-sky shrink-0" />
+                <span>Anti-Islanding Protection</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Off-Grid Inverters Card */}
+          <div id="offgrid" className="scroll-mt-28 p-8 lg:p-10 rounded-3xl bg-bg-secondary/70 border border-accent-gold/40 shadow-xl space-y-6">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono uppercase tracking-widest text-accent-gold font-bold">STANDALONE POWER</span>
+                <h3 className="font-serif text-3xl font-bold text-text-primary mt-1">Off-Grid Solar Inverters</h3>
+              </div>
+              <span className="px-4 py-1.5 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-xs font-mono font-bold">Integrated MPPT Controller</span>
+            </div>
+            <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+              Heavy-duty standalone inverters designed for remote locations without grid connectivity. Combines high-voltage MPPT solar charger, pure sine wave power conversion, and automatic diesel generator start logic for agricultural solar pumps, off-grid farmhouses, telecommunication towers, and rural electrification.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-line/60 text-xs font-medium text-text-primary">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-accent-gold shrink-0" />
+                <span>Pure Sine Wave Output</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-accent-gold shrink-0" />
+                <span>Auto Generator Trigger</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-accent-gold shrink-0" />
+                <span>High Surge Load Capacity</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Hybrid Inverters Card */}
+          <div id="hybrid" className="scroll-mt-28 p-8 lg:p-10 rounded-3xl bg-bg-secondary/70 border border-emerald-500/40 shadow-xl space-y-6">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono uppercase tracking-widest text-emerald-500 font-bold">INTELLIGENT STORAGE SYNC</span>
+                <h3 className="font-serif text-3xl font-bold text-text-primary mt-1">Hybrid Smart Inverters</h3>
+              </div>
+              <span className="px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-mono font-bold">&lt; 10ms Blackout Transfer</span>
+            </div>
+            <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+              Next-generation hybrid bi-directional inverters that seamlessly balance solar PV generation, grid power, and LiFePO4 battery storage. Features instant uninterruptible backup, peak load shaving, and smart zero-feed-in export control for uninterrupted power security during severe grid outages.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-line/60 text-xs font-medium text-text-primary">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>Sub-10ms Islanding Speed</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>LiFePO4 BESS Battery Sync</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>AI Peak Shaving & Load Export</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-8 rounded-3xl bg-bg-secondary/50 border border-line space-y-4 mt-16">
           <h3 className="font-serif text-2xl font-bold text-text-primary mb-4">Inverter Feature Matrix</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-medium text-text-secondary">
             <div className="flex items-center gap-3">

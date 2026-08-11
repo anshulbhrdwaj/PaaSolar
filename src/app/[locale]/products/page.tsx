@@ -6,51 +6,51 @@ import { Link } from '@/i18n/routing';
 import { Navbar } from '@/components/ui/Navbar';
 import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
-import { SunMedium, Zap, BatteryCharging, ArrowRight, ShieldCheck, Building2 } from 'lucide-react';
+import { SunMedium, Zap, BatteryCharging, Cpu, ArrowRight, ShieldCheck } from 'lucide-react';
 
 export default function ProductsPage() {
   const t = useTranslations('ProductDetails');
 
   const productsList = [
     {
-      id: 'ci-solar',
-      href: '/projects/ci',
-      title: 'Commercial & Industrial Solar Systems',
-      tag: 'Turnkey C&I EPC',
-      subtitle: '75% Energy Cost Reduction for Factories, Warehouses & Commercial Buildings.',
-      icon: <Building2 className="w-8 h-8 text-emerald-500" />,
-      badge: 'Accelerated 40% Depreciation Benefit',
-      specs: ['Custom Roof Engineering', 'Zero CapEx OPEX Model Option', 'Grid Synchronized Auto-Switch'],
-    },
-    {
       id: 'solar-panels',
       href: '/products/solar-panels',
-      title: t('solarPanels.title'),
-      tag: t('solarPanels.tag'),
-      subtitle: t('solarPanels.subtitle'),
+      title: 'Solar Panels (TOPCon & DCR)',
+      tag: 'N-Type TOPCon & DCR Subsidy Modules',
+      subtitle: 'High-density 24%+ efficiency N-Type TOPCon bifacial modules and DCR subsidy panels made in India.',
       icon: <SunMedium className="w-8 h-8 text-accent-solar" />,
-      badge: '22.8% Module Efficiency',
-      specs: [t('solarPanels.spec1'), t('solarPanels.spec2'), t('solarPanels.spec3')],
+      badge: '22.8%+ Module Efficiency',
+      specs: ['N-Type TOPCon Technology', 'DCR Subsidy Compliance', '30-Year Performance Guarantee'],
     },
     {
       id: 'inverters',
       href: '/products/inverters',
-      title: t('inverters.title'),
-      tag: t('inverters.tag'),
-      subtitle: t('inverters.subtitle'),
+      title: 'Smart Inverters (On-Grid, Off-Grid & Hybrid)',
+      tag: 'On-Grid, Off-Grid & Hybrid Inverters',
+      subtitle: 'High-efficiency string inverters with sub-10ms automatic blackout transfer and DISCOM net metering.',
       icon: <Zap className="w-8 h-8 text-accent-sky" />,
-      badge: '< 10ms Islanding Speed',
-      specs: [t('inverters.spec1'), t('inverters.spec2'), t('inverters.spec3')],
+      badge: '99.2% MPPT Efficiency',
+      specs: ['On-Grid Net Metering', 'Off-Grid Generator Sync', 'Hybrid Storage Backup'],
     },
     {
       id: 'battery',
       href: '/products/battery',
-      title: t('battery.title'),
-      tag: t('battery.tag'),
-      subtitle: t('battery.subtitle'),
+      title: 'Lithium Battery Storage',
+      tag: 'Smart Lithium-Ion & LiFePO4 Vault',
+      subtitle: 'Ultra-safe Lithium Iron Phosphate (LiFePO4) & Lithium-Ion battery banks with 10,000+ deep discharge cycles.',
       icon: <BatteryCharging className="w-8 h-8 text-accent-gold" />,
-      badge: '10,000+ Cycle Lifespan',
-      specs: [t('battery.spec1'), t('battery.spec2'), t('battery.spec3')],
+      badge: '10,000+ Deep Cycles',
+      specs: ['LiFePO4 Safe Chemistry', 'AI Active Cell Balancing', '100% Usable DoD Capacity'],
+    },
+    {
+      id: 'bess',
+      href: '/products/bess',
+      title: 'BESS (ESS 3532 & Li UPS 1250)',
+      tag: 'Megawatt Enterprise Storage',
+      subtitle: 'Turnkey IP65 containerized ESS 3532 units and Li UPS 1250 high-discharge backup vaults.',
+      icon: <Cpu className="w-8 h-8 text-emerald-500" />,
+      badge: '3.53 MWh LFP Capacity',
+      specs: ['ESS 3532 Container Unit', 'Li UPS 1250 High Output', 'Sub-10ms Islanding Speed'],
     },
   ];
 

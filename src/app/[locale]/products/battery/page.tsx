@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'LiFePO4 Energy Storage Systems & BESS | PAA SOLAR',
     description:
-      'Long-life LFP battery storage ecosystems for residential kits, C&I microgrids, and PM-KUSUM BESS.',
+      'Long-life LFP battery storage ecosystems for residential kits, C&I microgrids, and BESS - smart lithium battery bank.',
   },
 };
 
@@ -100,7 +100,66 @@ export default function BatteryPage() {
           ))}
         </div>
 
-        <div className="p-8 rounded-3xl bg-bg-secondary/50 border border-line space-y-4">
+        {/* Lithium-Ion & BESS Category Showcase */}
+        <div className="mt-16 space-y-12">
+          {/* Lithium-Ion Battery Card */}
+          <div id="lithium-ion" className="scroll-mt-28 p-8 lg:p-10 rounded-3xl bg-bg-secondary/70 border border-accent-gold/40 shadow-xl space-y-6">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono uppercase tracking-widest text-accent-gold font-bold">SMART ENERGY VAULT</span>
+                <h3 className="font-serif text-3xl font-bold text-text-primary mt-1">Lithium-Ion & LiFePO4 Battery Banks</h3>
+              </div>
+              <span className="px-4 py-1.5 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-xs font-mono font-bold">10,000+ Deep Cycles</span>
+            </div>
+            <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+              Ultra-safe Lithium Iron Phosphate (LiFePO4) & Lithium-Ion battery modules engineered for maximum thermal stability and zero fire risk. Features AI active cell balancing, 100% usable depth of discharge, integrated smart BMS telemetry, and modular stackable wall-mount or floor-stand enclosures for home rooftop, commercial, and hybrid solar setups.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-line/60 text-xs font-medium text-text-primary">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-accent-gold shrink-0" />
+                <span>0% Thermal Runaway Risk</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-accent-gold shrink-0" />
+                <span>AI Active Cell Balancing</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-accent-gold shrink-0" />
+                <span>100% Usable DoD Capacity</span>
+              </div>
+            </div>
+          </div>
+
+          {/* BESS Industrial Storage Card */}
+          <div id="bess" className="scroll-mt-28 p-8 lg:p-10 rounded-3xl bg-bg-secondary/70 border border-emerald-500/40 shadow-xl space-y-6">
+            <div className="flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono uppercase tracking-widest text-emerald-500 font-bold">MEGAWATT SCALE BESS</span>
+                <h3 className="font-serif text-3xl font-bold text-text-primary mt-1">Containerized BESS Energy Storage</h3>
+              </div>
+              <span className="px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-mono font-bold">500 kWh - 10 MWh+ Utility Scale</span>
+            </div>
+            <p className="text-text-secondary text-sm md:text-base leading-relaxed">
+              Turnkey IP65 containerized Battery Energy Storage Systems (BESS) for commercial microgrids, PM-KUSUM agricultural feeders, and utility-scale solar parks. Features liquid-cooled HVAC thermal management, sub-10ms islanding fallback speed, and peak shaving load shifting logic.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-line/60 text-xs font-medium text-text-primary">
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>Sub-10ms Islanding Transfer</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>IP65 Weatherproof Container</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <span>Peak Load Shaving & Grid Sync</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-8 rounded-3xl bg-bg-secondary/50 border border-line space-y-4 mt-16">
           <h3 className="font-serif text-2xl font-bold text-text-primary mb-4">Battery Safety & Performance Benefits</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-medium text-text-secondary">
             <div className="flex items-center gap-3">

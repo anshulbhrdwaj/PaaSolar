@@ -18,13 +18,21 @@
     },
     "productsDropdown": {
       "pmSuryaGhar": "பிரதமர் சூர்ய கர் திட்டம்",
-      "solarPanels": "அனைத்து சோலார் பேனல்கள்",
-      "inverters": "ஸ்மார்ட் இன்வெர்ட்டர்",
-      "battery": "பேட்டரி சேமிப்பு",
+      "solarPanels": "சோலார் பேனல்கள் (TOPCon & DCR)",
+      "inverters": "ஸ்மார்ட் இன்வெர்ட்டர்கள்",
+      "battery": "லித்தியம் பேட்டரி",
       "allProducts": "அனைத்து தயாரிப்புகள்",
       "franchiseSgy": "பிஎம் சூர்யா கர் யோஜனா ஃப்ரான்சைஸ் மற்றும் விநியோகம்",
-      "topconPanels": "N-டைப் TOPCon சோலார் பேனல்கள்",
-      "dcrPanels": "DCR மானிய பேனல்கள் (இந்தியாவில் தயாரிப்பு)"
+      "topconPanels": "TOPCon பேனல்கள்",
+      "dcrPanels": "DCR மானிய பேனல்கள்",
+      "onGridInverters": "ஆன்-கிரிட் இன்வெர்ட்டர்கள்",
+      "offGridInverters": "ஆஃப்-கிரிட் இன்வெர்ட்டர்கள்",
+      "hybridInverters": "ஹைபிரிட் இன்வெர்ட்டர்கள்",
+      "lithiumIonBattery": "லித்தியம் பேட்டரி சேமிப்பு",
+      "bessStorage": "கன்டெய்னரைஸ் செய்யப்பட்ட BESS சேமிப்பு",
+      "bess": "BESS சேமிப்பு",
+      "ess3532": "ESS 3532 கன்டெய்னர் கணினி",
+      "liUps1250": "Li UPS 1250 பேக்கப் கணினி"
     },
     "projectsDropdown": {
       "ci": "வணிக & தொழில் (C&I)",

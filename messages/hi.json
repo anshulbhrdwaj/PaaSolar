@@ -18,13 +18,21 @@
     },
     "productsDropdown": {
       "pmSuryaGhar": "पीएम सूर्य घर योजना",
-      "solarPanels": "सभी सोलर पैनल",
+      "solarPanels": "सोलर पैनल (TOPCon एवं DCR)",
       "inverters": "स्मार्ट इन्वर्टर",
-      "battery": "बैटरी स्टोरेज",
+      "battery": "लिथियम बैटरी",
       "allProducts": "सभी उत्पाद कैटलॉग",
       "franchiseSgy": "पीएम सूर्य घर योजना फ्रैंचाइज़ और वितरण",
-      "topconPanels": "N-टाइप TOPCon सोलर पैनल",
-      "dcrPanels": "DCR सब्सिडी पैनल (मेड इन इंडिया)"
+      "topconPanels": "TOPCon पैनल",
+      "dcrPanels": "DCR सब्सिडी पैनल",
+      "onGridInverters": "ऑन-ग्रिड इन्वर्टर",
+      "offGridInverters": "ऑफ-ग्रिड इन्वर्टर",
+      "hybridInverters": "हाइब्रिड इन्वर्टर",
+      "lithiumIonBattery": "लिथियम बैटरी स्टोरेज",
+      "bessStorage": "कंटेनरीकृत BESS स्टोरेज",
+      "bess": "BESS स्टोरेज",
+      "ess3532": "ESS 3532 कंटेनर सिस्टम",
+      "liUps1250": "Li UPS 1250 बैकअप सिस्टम"
     },
     "projectsDropdown": {
       "ci": "वाणिज्यिक एवं औद्योगिक (C&I)",

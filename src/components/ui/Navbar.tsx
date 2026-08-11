@@ -16,6 +16,7 @@ import {
   SunMedium,
   Zap,
   BatteryCharging,
+  Cpu,
   Layers,
   Building2,
   Sprout,
@@ -201,9 +202,34 @@ export function Navbar() {
                       <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
                         {t('productsDropdown.inverters')}
                       </p>
-                      <p className="text-[10px] text-text-secondary">Smart Hybrid Inverters</p>
+                      <p className="text-[10px] text-text-secondary font-medium">On-Grid, Off-Grid & Hybrid</p>
                     </div>
                   </Link>
+
+                  {/* Sub-Items: On-Grid, Off-Grid, and Hybrid Inverters */}
+                  <div className="pl-9 space-y-1 my-0.5">
+                    <Link
+                      href="/products/inverters#ongrid"
+                      className="block text-[11px] font-semibold text-text-secondary hover:text-accent-sky py-1 px-2.5 rounded-lg hover:bg-accent-sky/10 transition-all flex items-center gap-1.5"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent-sky shrink-0" />
+                      <span>{t('productsDropdown.onGridInverters')}</span>
+                    </Link>
+                    <Link
+                      href="/products/inverters#offgrid"
+                      className="block text-[11px] font-semibold text-text-secondary hover:text-accent-gold py-1 px-2.5 rounded-lg hover:bg-accent-gold/10 transition-all flex items-center gap-1.5"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent-gold shrink-0" />
+                      <span>{t('productsDropdown.offGridInverters')}</span>
+                    </Link>
+                    <Link
+                      href="/products/inverters#hybrid"
+                      className="block text-[11px] font-semibold text-text-secondary hover:text-emerald-500 py-1 px-2.5 rounded-lg hover:bg-emerald-500/10 transition-all flex items-center gap-1.5"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+                      <span>{t('productsDropdown.hybridInverters')}</span>
+                    </Link>
+                  </div>
 
                   <Link
                     href="/products/battery"
@@ -216,24 +242,53 @@ export function Navbar() {
                       <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
                         {t('productsDropdown.battery')}
                       </p>
-                      <p className="text-[10px] text-text-secondary">PM Kusum LFP BESS Storage</p>
+                      <p className="text-[10px] text-text-secondary font-medium">Smart Lithium Battery Storage</p>
                     </div>
                   </Link>
 
+                  {/* Sub-Items: Lithium Battery */}
+                  <div className="pl-9 space-y-1 my-0.5">
+                    <Link
+                      href="/products/battery#lithium-ion"
+                      className="block text-[11px] font-semibold text-text-secondary hover:text-accent-gold py-1 px-2.5 rounded-lg hover:bg-accent-gold/10 transition-all flex items-center gap-1.5"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent-gold shrink-0" />
+                      <span>{t('productsDropdown.lithiumIonBattery')}</span>
+                    </Link>
+                  </div>
+
                   <Link
-                    href="/products/franchise-sgy"
+                    href="/products/bess"
                     className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
                   >
                     <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform">
-                      <Building2 className="w-4 h-4" />
+                      <Cpu className="w-4 h-4" />
                     </div>
                     <div>
                       <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
-                        {t('productsDropdown.franchiseSgy')}
+                        {t('productsDropdown.bess')}
                       </p>
-                      <p className="text-[10px] text-text-secondary">PM SGY Kit Distribution & Dealership</p>
+                      <p className="text-[10px] text-text-secondary font-medium">ESS 3532 & Li UPS 1250</p>
                     </div>
                   </Link>
+
+                  {/* Sub-Items: ESS 3532 & Li UPS 1250 */}
+                  <div className="pl-9 space-y-1 my-0.5">
+                    <Link
+                      href="/products/bess#ess3532"
+                      className="block text-[11px] font-semibold text-text-secondary hover:text-emerald-500 py-1 px-2.5 rounded-lg hover:bg-emerald-500/10 transition-all flex items-center gap-1.5"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+                      <span>{t('productsDropdown.ess3532')}</span>
+                    </Link>
+                    <Link
+                      href="/products/bess#liups1250"
+                      className="block text-[11px] font-semibold text-text-secondary hover:text-accent-gold py-1 px-2.5 rounded-lg hover:bg-accent-gold/10 transition-all flex items-center gap-1.5"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent-gold shrink-0" />
+                      <span>{t('productsDropdown.liUps1250')}</span>
+                    </Link>
+                  </div>
 
                   <div className="border-t border-line/60 pt-1 mt-1">
                     <Link
@@ -651,6 +706,30 @@ export function Navbar() {
                   <Zap className="w-4 h-4 text-accent-sky" />
                   <span>{t('productsDropdown.inverters')}</span>
                 </Link>
+
+                <div className="pl-6 flex flex-col gap-2 border-l border-line/60 text-xs">
+                  <Link
+                    href="/products/inverters#ongrid"
+                    onClick={() => setMobileOpen(false)}
+                    className="hover:text-accent-sky transition-colors"
+                  >
+                    <span>• {t('productsDropdown.onGridInverters')}</span>
+                  </Link>
+                  <Link
+                    href="/products/inverters#offgrid"
+                    onClick={() => setMobileOpen(false)}
+                    className="hover:text-accent-gold transition-colors"
+                  >
+                    <span>• {t('productsDropdown.offGridInverters')}</span>
+                  </Link>
+                  <Link
+                    href="/products/inverters#hybrid"
+                    onClick={() => setMobileOpen(false)}
+                    className="hover:text-emerald-500 transition-colors"
+                  >
+                    <span>• {t('productsDropdown.hybridInverters')}</span>
+                  </Link>
+                </div>
                 <Link
                   href="/products/battery"
                   onClick={() => setMobileOpen(false)}
@@ -659,6 +738,42 @@ export function Navbar() {
                   <BatteryCharging className="w-4 h-4 text-accent-gold" />
                   <span>{t('productsDropdown.battery')}</span>
                 </Link>
+
+                <div className="pl-6 flex flex-col gap-2 border-l border-line/60 text-xs">
+                  <Link
+                    href="/products/battery#lithium-ion"
+                    onClick={() => setMobileOpen(false)}
+                    className="hover:text-accent-gold transition-colors"
+                  >
+                    <span>• {t('productsDropdown.lithiumIonBattery')}</span>
+                  </Link>
+                </div>
+
+                <Link
+                  href="/products/bess"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
+                >
+                  <Cpu className="w-4 h-4 text-emerald-500" />
+                  <span>{t('productsDropdown.bess')}</span>
+                </Link>
+
+                <div className="pl-6 flex flex-col gap-2 border-l border-line/60 text-xs">
+                  <Link
+                    href="/products/bess#ess3532"
+                    onClick={() => setMobileOpen(false)}
+                    className="hover:text-emerald-500 transition-colors"
+                  >
+                    <span>• {t('productsDropdown.ess3532')}</span>
+                  </Link>
+                  <Link
+                    href="/products/bess#liups1250"
+                    onClick={() => setMobileOpen(false)}
+                    className="hover:text-accent-gold transition-colors"
+                  >
+                    <span>• {t('productsDropdown.liUps1250')}</span>
+                  </Link>
+                </div>
                 <Link
                   href="/products"
                   onClick={() => setMobileOpen(false)}

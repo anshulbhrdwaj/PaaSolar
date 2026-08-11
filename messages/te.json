@@ -18,13 +18,21 @@
     },
     "productsDropdown": {
       "pmSuryaGhar": "పీఎం సూర్య ఘర్ పథకం",
-      "solarPanels": "అన్ని సోలార్ ప్యానెల్స్",
+      "solarPanels": "సోలార్ ప్యానెల్స్ (TOPCon & DCR)",
       "inverters": "స్మార్ట్ ఇన్వర్టర్లు",
-      "battery": "బ్యాటరీ స్టోరేజ్",
+      "battery": "లిథియం బ్యాటరీ",
       "allProducts": "అన్ని ఉత్పత్తుల క్యాటలాగ్",
       "franchiseSgy": "పిఎమ్ సూర్య ఘర్ యోజన ఫ్రాంచైజ్ మరియు పంపిణీ",
-      "topconPanels": "N-టైప్ TOPCon సోలార్ ప్యానెల్స్",
-      "dcrPanels": "DCR సబ్సిడీ ప్యానెల్స్ (మేడ్ ఇన్ ఇండియా)"
+      "topconPanels": "TOPCon ప్యానెల్స్",
+      "dcrPanels": "DCR సబ్సిడీ ప్యానెల్స్",
+      "onGridInverters": "ఆన్-గ్రిడ్ ఇన్వర్టర్లు",
+      "offGridInverters": "ఆఫ్-గ్రిడ్ ఇన్వర్టర్లు",
+      "hybridInverters": "హైబ్రిడ్ ఇన్వర్టర్లు",
+      "lithiumIonBattery": "లిథియం బ్యాటరీ స్టోరేజ్",
+      "bessStorage": "కంటైనరైజ్డ్ BESS స్టోరేజ్",
+      "bess": "BESS స్టోరేజ్",
+      "ess3532": "ESS 3532 కంటైనర్ సిస్టమ్",
+      "liUps1250": "Li UPS 1250 బ్యాకప్ సిస్టమ్"
     },
     "projectsDropdown": {
       "ci": "కమర్షియల్ & ఇండస్ట్రియల్ (C&I)",

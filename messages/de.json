@@ -18,13 +18,21 @@
     },
     "productsDropdown": {
       "pmSuryaGhar": "Förderprogramm Solar",
-      "solarPanels": "Alle Solarmodule",
-      "inverters": "Smart-Wechselrichter",
-      "battery": "Batteriespeicher",
+      "solarPanels": "Solar-Module (TOPCon & DCR)",
+      "inverters": "Intelligente Wechselrichter",
+      "battery": "Lithium-Batterie",
       "allProducts": "Gesamtkatalog",
       "franchiseSgy": "Franchise & Vertrieb für PM SGY",
-      "topconPanels": "N-Typ TOPCon Solarmodule",
-      "dcrPanels": "DCR Geförderte Module (Made in India)"
+      "topconPanels": "TOPCon-Module",
+      "dcrPanels": "Geförderte DCR-Module",
+      "onGridInverters": "On-Grid-Wechselrichter",
+      "offGridInverters": "Off-Grid-Wechselrichter",
+      "hybridInverters": "Hybrid-Wechselrichter",
+      "lithiumIonBattery": "Lithium-Batteriespeicher",
+      "bessStorage": "Containerisierter BESS-Speicher",
+      "bess": "BESS-Speichersysteme",
+      "ess3532": "ESS 3532 Containersystem",
+      "liUps1250": "Li UPS 1250 Backup-System"
     },
     "projectsDropdown": {
       "ci": "Gewerbe & Industrie (C&I)",

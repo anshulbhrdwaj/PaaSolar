@@ -18,13 +18,21 @@
     },
     "productsDropdown": {
       "pmSuryaGhar": "পিএম সূর্য ঘর যোজনা",
-      "solarPanels": "সমস্ত সোলার প্যানেল",
+      "solarPanels": "সোলার প্যানেল (TOPCon ও DCR)",
       "inverters": "স্মার্ট ইনভার্টার",
-      "battery": "ব্যাটারি স্টোরেজ",
+      "battery": "লিথিয়াম ব্যাটারি",
       "allProducts": "সমস্ত পণ্য ক্যাটালগ",
       "franchiseSgy": "পিএম সূর্য ঘর যোজনা ফ্র্যাঞ্চাইজ এবং বিতরণ",
-      "topconPanels": "N-টাইপ TOPCon সোলার প্যানেল",
-      "dcrPanels": "DCR ভর্তুকি প্যানেল (মেড ইন ইন্ডিয়া)"
+      "topconPanels": "TOPCon প্যানেল",
+      "dcrPanels": "DCR ভর্তুকি প্যানেল",
+      "onGridInverters": "অন-গ্রিড ইনভার্টার",
+      "offGridInverters": "অফ-গ্রিড ইনভার্টার",
+      "hybridInverters": "হাইব্রিড ইনভার্টার",
+      "lithiumIonBattery": "লিথিয়াম ব্যাটারি স্টোরেজ",
+      "bessStorage": "কন্টেইনারাইজড BESS স্টোরেজ",
+      "bess": "BESS স্টোরেজ",
+      "ess3532": "ESS 3532 কনটেইনার সিস্টেম",
+      "liUps1250": "Li UPS 1250 ব্যাকআপ সিস্টেম"
     },
     "projectsDropdown": {
       "ci": "বাণিজ্যিক ও শিল্প (C&I)",

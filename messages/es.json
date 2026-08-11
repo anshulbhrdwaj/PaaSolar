@@ -18,13 +18,21 @@
     },
     "productsDropdown": {
       "pmSuryaGhar": "Plan Solar Residencial",
-      "solarPanels": "Todos los Paneles Solares",
+      "solarPanels": "Paneles Solares (TOPCon y DCR)",
       "inverters": "Inversores Inteligentes",
-      "battery": "Almacenamiento en Batería",
+      "battery": "Batería de Litio",
       "allProducts": "Catálogo Completo",
       "franchiseSgy": "Franquicia y Distribución para PM SGY",
-      "topconPanels": "Paneles TOPCon Tipo-N",
-      "dcrPanels": "Paneles Subsidiados DCR (Hechos en India)"
+      "topconPanels": "Paneles TOPCon",
+      "dcrPanels": "Paneles DCR Subsidiados",
+      "onGridInverters": "Inversores On-Grid",
+      "offGridInverters": "Inversores Off-Grid",
+      "hybridInverters": "Inversores Híbridos",
+      "lithiumIonBattery": "Almacenamiento en Batería de Litio",
+      "bessStorage": "Almacenamiento BESS Encontenedor",
+      "bess": "Almacenamiento BESS",
+      "ess3532": "Sistema Encontenedor ESS 3532",
+      "liUps1250": "Sistema de Respaldo Li UPS 1250"
     },
     "projectsDropdown": {
       "ci": "Comercial e Industrial (C&I)",
