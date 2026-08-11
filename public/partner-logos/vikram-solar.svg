@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <rect width="300" height="100" rx="16" fill="#FFFFFF"/>
+  <g transform="translate(30, 25)">
+    <path d="M 5 10 L 25 45 L 45 10 L 33 10 L 25 28 L 17 10 Z" fill="#E65100"/>
+    <path d="M 25 10 L 45 45 L 65 10 L 53 10 L 45 28 L 37 10 Z" fill="#1A237E"/>
+    <text x="75" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="24" fill="#1A237E" letter-spacing="1">VIKRAM</text>
+    <text x="75" y="48" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="12" fill="#E65100" letter-spacing="4">SOLAR</text>
+  </g>
+</svg>

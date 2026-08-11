@@ -2,91 +2,82 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Award, CheckCircle2, SunMedium, ShieldCheck, Zap } from 'lucide-react';
+import { Award, CheckCircle2, SunMedium, ShieldCheck } from 'lucide-react';
 
 interface PartnerBrand {
   name: string;
+  logoUrl: string;
   tagline: string;
   badge: string;
   accent: string;
-  logoBg: string;
-  logoText: string;
   description: string;
 }
 
 export const partnerBrands: PartnerBrand[] = [
   {
     name: 'PAA SOLAR',
+    logoUrl: '/Paa.png',
     tagline: 'Flagship Hardware & BESS Storage',
     badge: 'DIRECT DISTRIBUTOR',
     accent: 'border-amber-500/40 text-amber-500 bg-amber-500/10',
-    logoBg: 'bg-gradient-to-br from-amber-500 to-orange-600',
-    logoText: 'PAA',
     description: 'N-Type TOPCon panels, smart string inverters, LiFePO4 battery banks, and containerized BESS 3532 storage.',
   },
   {
     name: 'ADANI SOLAR',
+    logoUrl: '/partner-logos/adani-solar.svg',
     tagline: 'Tier-1 High-Efficiency Modules',
     badge: 'ALMM LIST-1 APPROVED',
     accent: 'border-blue-500/40 text-blue-500 bg-blue-500/10',
-    logoBg: 'bg-gradient-to-br from-blue-600 to-indigo-700',
-    logoText: 'ADANI',
     description: 'Shine Series N-Type TOPCon & Mono PERC solar modules for utility power plants and commercial rooftops.',
   },
   {
     name: 'WAAREE (VARI)',
+    logoUrl: '/partner-logos/waaree-solar.svg',
     tagline: 'India’s Largest Solar Manufacturer',
     badge: 'MNRE COMPLIANT DCR',
     accent: 'border-emerald-500/40 text-emerald-500 bg-emerald-500/10',
-    logoBg: 'bg-gradient-to-br from-emerald-500 to-teal-700',
-    logoText: 'VARI',
     description: 'DCR & Non-DCR solar PV modules engineered for PM Surya Ghar Yojana subsidies and enterprise IPP projects.',
   },
   {
     name: 'VIKRAM SOLAR',
+    logoUrl: '/partner-logos/vikram-solar.svg',
     tagline: 'High-Yield Photovoltaic Modules',
     badge: 'TIER-1 BRAND',
     accent: 'border-purple-500/40 text-purple-500 bg-purple-500/10',
-    logoBg: 'bg-gradient-to-br from-purple-600 to-indigo-800',
-    logoText: 'VIKRAM',
     description: 'Hypersol & Somera bifacial glass-glass solar panels with 30-year linear performance warranty.',
   },
   {
     name: 'LOOM SOLAR',
+    logoUrl: '/partner-logos/loom-solar.svg',
     tagline: 'Premium Residential & Commercial Kits',
     badge: 'INNOVATION LEADER',
     accent: 'border-orange-500/40 text-orange-500 bg-orange-500/10',
-    logoBg: 'bg-gradient-to-br from-orange-500 to-amber-600',
-    logoText: 'LOOM',
     description: 'High-efficiency Shark series bifacial panels and plug-and-play complete solar kit packages.',
   },
   {
     name: 'SAATTVIK SOLAR',
+    logoUrl: '/partner-logos/saattvik-solar.svg',
     tagline: 'High-Wattage Solar PV Modules',
     badge: 'GOVT APPROVED DCR',
     accent: 'border-sky-500/40 text-sky-500 bg-sky-500/10',
-    logoBg: 'bg-gradient-to-br from-sky-500 to-blue-600',
-    logoText: 'SATVIK',
     description: 'Monofacial and bifacial TOPCon modules optimized for high ambient temperature resilience across India.',
   },
   {
     name: 'INA SOLAR',
+    logoUrl: '/partner-logos/ina-solar.svg',
     tagline: 'Insolation Energy Limited',
     badge: 'BSE LISTED MANUFACTURER',
     accent: 'border-rose-500/40 text-rose-500 bg-rose-500/10',
-    logoBg: 'bg-gradient-to-br from-rose-500 to-red-700',
-    logoText: 'INA',
     description: 'BIS & ALMM certified high-output solar modules and solar power conditioning units for PM SGY dealers.',
   },
 ];
 
 export function PartnerLogosSection() {
-  // Duplicate partnerBrands to create seamless infinite auto-scroll loop
   const marqueeList = [...partnerBrands, ...partnerBrands, ...partnerBrands];
 
   return (
     <section className="py-24 bg-gradient-to-b from-bg-secondary/40 via-bg-primary to-bg-secondary/30 border-t border-line relative overflow-hidden">
-      {/* Background Decorative Ambient Glow */}
+      {/* Ambient Radial Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-16">
@@ -153,7 +144,7 @@ export function PartnerLogosSection() {
         <div className="space-y-4 pt-4">
           <div className="flex items-center justify-between px-2">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
-              LIVE AUTHORIZED LOGO TICKER (PAUSE ON HOVER)
+              OFFICIAL PARTNER LOGO TICKER (PAUSE ON HOVER)
             </span>
             <span className="text-[11px] font-mono text-emerald-500 font-semibold flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
@@ -161,27 +152,24 @@ export function PartnerLogosSection() {
             </span>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl bg-bg-secondary/70 border border-line py-5 shadow-inner">
-            {/* Left and Right Fade Gradient Overlay Masks */}
+          <div className="relative overflow-hidden rounded-2xl bg-bg-secondary/70 border border-line py-6 shadow-inner">
+            {/* Fade Gradient Mask Overlays */}
             <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-bg-secondary to-transparent z-20 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-bg-secondary to-transparent z-20 pointer-events-none" />
 
-            <div className="flex items-center gap-6 animate-marquee whitespace-nowrap">
+            <div className="flex items-center gap-8 animate-marquee whitespace-nowrap">
               {marqueeList.map((brand, idx) => (
                 <div
                   key={idx}
-                  className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-bg-primary border border-line hover:border-emerald-500/50 transition-all duration-300 shadow-md group cursor-pointer shrink-0"
+                  className="inline-flex items-center justify-center h-16 px-6 py-3 rounded-2xl bg-white border border-line shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer shrink-0"
                 >
-                  <div className={`w-9 h-9 rounded-xl ${brand.logoBg} flex items-center justify-center text-white font-serif font-bold text-xs tracking-wider shadow-sm group-hover:scale-110 transition-transform`}>
-                    {brand.logoText}
-                  </div>
-                  <div className="text-left">
-                    <span className="font-serif font-bold text-sm text-text-primary group-hover:text-emerald-500 transition-colors block">
-                      {brand.name}
-                    </span>
-                    <span className="text-[10px] font-mono text-text-secondary block">
-                      {brand.badge}
-                    </span>
+                  <div className="relative w-36 h-10 flex items-center justify-center">
+                    <Image
+                      src={brand.logoUrl}
+                      alt={`${brand.name} Official Logo`}
+                      fill
+                      className="object-contain filter group-hover:brightness-105 transition-all"
+                    />
                   </div>
                 </div>
               ))}
@@ -189,7 +177,7 @@ export function PartnerLogosSection() {
           </div>
         </div>
 
-        {/* Partner Logos & Brand Grid Cards */}
+        {/* Partner Brand Cards with Official Logo Banner */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
           {partnerBrands.map((brand, i) => (
             <div
@@ -197,21 +185,27 @@ export function PartnerLogosSection() {
               className="group rounded-3xl p-8 bg-bg-primary border border-line hover:border-emerald-500/60 transition-all duration-500 shadow-xl flex flex-col justify-between hover:-translate-y-1 relative overflow-hidden"
             >
               <div className="space-y-5 relative z-10">
-                <div className="flex items-center justify-between">
-                  {/* Styled Brand Company Emblem Logo Badge */}
-                  <div className="flex items-center gap-3">
-                    <div className={`w-12 h-12 rounded-2xl ${brand.logoBg} flex items-center justify-center text-white font-serif font-bold text-sm tracking-wider shadow-md group-hover:scale-110 transition-transform duration-300`}>
-                      {brand.logoText}
-                    </div>
-                    <div>
-                      <h3 className="font-serif text-xl font-bold text-text-primary group-hover:text-emerald-500 transition-colors">
-                        {brand.name}
-                      </h3>
-                      <p className="text-[11px] font-mono text-accent-solar font-semibold">
-                        {brand.tagline}
-                      </p>
-                    </div>
+                {/* Official Brand Logo Box */}
+                <div className="p-4 rounded-2xl bg-white border border-line flex items-center justify-center h-20 shadow-inner group-hover:scale-105 transition-transform duration-300">
+                  <div className="relative w-44 h-12">
+                    <Image
+                      src={brand.logoUrl}
+                      alt={`${brand.name} Official Brand Logo`}
+                      fill
+                      className="object-contain"
+                    />
                   </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-serif text-2xl font-bold text-text-primary group-hover:text-emerald-500 transition-colors">
+                      {brand.name}
+                    </h3>
+                  </div>
+                  <p className="text-xs font-mono text-accent-solar font-semibold">
+                    {brand.tagline}
+                  </p>
                 </div>
 
                 <div className="inline-block">

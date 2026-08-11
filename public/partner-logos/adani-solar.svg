@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <defs>
+    <linearGradient id="adaniG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0066B2"/>
+      <stop offset="100%" stop-color="#003366"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="100" rx="16" fill="#FFFFFF"/>
+  <path d="M 35 70 L 60 25 L 85 70 L 70 70 L 60 48 L 50 70 Z" fill="url(#adaniG)"/>
+  <circle cx="60" cy="38" r="6" fill="#E53935"/>
+  <text x="100" y="55" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="28" fill="#003366" letter-spacing="1">adani</text>
+  <text x="100" y="75" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="14" fill="#E53935" letter-spacing="3">SOLAR</text>
+</svg>
