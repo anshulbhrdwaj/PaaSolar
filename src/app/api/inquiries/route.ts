@@ -65,6 +65,22 @@ export async function POST(request: NextRequest) {
     const netInvestment = parseInt(formData.get('netInvestment') as string, 10) || 0;
     const paybackYears = parseFloat(formData.get('paybackYears') as string) || 0;
 
+    // Server-side input validation check
+    if (!fullName || fullName.trim().length < 2) {
+      return NextResponse.json({ error: 'Valid full name is required (min 2 chars)' }, { status: 400 });
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email.trim())) {
+      return NextResponse.json({ error: 'Valid email address is required' }, { status: 400 });
+    }
+    const cleanPhone = phone ? phone.replace(/[\s\-\+\(\)]/g, '') : '';
+    if (!phone || cleanPhone.length < 10 || !/^[0-9]+$/.test(cleanPhone)) {
+      return NextResponse.json({ error: 'Valid 10-digit phone number is required' }, { status: 400 });
+    }
+    if (!city || !city.trim()) {
+      return NextResponse.json({ error: 'City is required' }, { status: 400 });
+    }
+
     // Extract attached electricity bill file
     const billFile = formData.get('billFile') as File | null;
     const attachments: Array<{ filename: string; content: Buffer }> = [];

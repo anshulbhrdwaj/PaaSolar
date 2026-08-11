@@ -367,7 +367,7 @@ export function Navbar() {
               pathname === '/calculator' ? 'text-accent-solar' : 'text-text-primary'
             }`}
           >
-            Calculator
+            Get Full Quotation
           </Link>
 
           <Link
@@ -740,7 +740,7 @@ export function Navbar() {
             style={{ animationDelay: '150ms' }}
             className="text-lg font-medium text-text-primary hover:text-accent-solar animate-mobile-item transition-colors"
           >
-            Calculator
+            Get Full Quotation
           </Link>
 
           <Link

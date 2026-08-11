@@ -29,6 +29,18 @@ import {
 } from 'lucide-react';
 import { EmiCalculator } from '@/components/sections/EmiCalculator';
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  phone?: string;
+  city?: string;
+  district?: string;
+  avgBill?: string;
+  connectionKw?: string;
+  roofSpace?: string;
+  billFile?: string;
+}
+
 export function SolarCalculator() {
   const t = useTranslations('Calc');
   const [activeTab, setActiveTab] = useState<'sizing' | 'emi'>('sizing');
@@ -48,6 +60,8 @@ export function SolarCalculator() {
   const [phone, setPhone] = useState<string>('');
   const [billFile, setBillFile] = useState<File | null>(null);
   
+  // Validation & Form Submission State
+  const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
@@ -64,9 +78,9 @@ export function SolarCalculator() {
     
     // 3. Roof Space Requirement (1 kW requires ~90-100 sq. ft. solar module area)
     const requiredAreaSqFt = Math.round(finalSystemKw * 95);
+    const monthlyGenerationUnits = Math.round(finalSystemKw * 125);
     
-    // 4. Monthly & Annual Savings
-    const monthlyGenerationUnits = finalSystemKw * 125;
+    // 4. Energy Bill Savings & Carbon Offset Calculation
     const monthlySavings = Math.round(monthlyGenerationUnits * avgTariffPerUnit);
     const annualSavings = monthlySavings * 12;
     const lifetimeSavings25Yrs = annualSavings * 25;
@@ -113,17 +127,65 @@ export function SolarCalculator() {
     };
   }, [avgBill, fixRent, connectionKw, roofSpace, roofType]);
 
+  // Form Validation Engine
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!name.trim() || name.trim().length < 2) {
+      newErrors.name = 'Please enter your full name (min 2 characters)';
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.trim() || !emailRegex.test(email.trim())) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+
+    const cleanPhone = phone.replace(/[\s\-\+\(\)]/g, '');
+    if (!phone.trim() || cleanPhone.length < 10 || !/^[0-9]+$/.test(cleanPhone)) {
+      newErrors.phone = 'Please enter a valid 10-digit phone number';
+    }
+
+    if (!city.trim()) {
+      newErrors.city = 'Please enter your city';
+    }
+
+    if (!district.trim()) {
+      newErrors.district = 'Please enter your district or state';
+    }
+
+    if (!avgBill || avgBill <= 0) {
+      newErrors.avgBill = 'Monthly bill must be greater than ₹0';
+    }
+
+    if (!connectionKw || connectionKw <= 0) {
+      newErrors.connectionKw = 'Connection load must be greater than 0 kW';
+    }
+
+    if (!roofSpace || roofSpace <= 0) {
+      newErrors.roofSpace = 'Roof space must be greater than 0 sq. ft.';
+    }
+
+    if (billFile && billFile.size > 10 * 1024 * 1024) {
+      newErrors.billFile = 'File size exceeds 10MB limit';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateForm()) return;
+
     setIsSubmitting(true);
 
     try {
       const formData = new FormData();
-      formData.append('fullName', name);
-      formData.append('email', email);
-      formData.append('phone', phone);
-      formData.append('city', city);
-      formData.append('district', district);
+      formData.append('fullName', name.trim());
+      formData.append('email', email.trim());
+      formData.append('phone', phone.trim());
+      formData.append('city', city.trim());
+      formData.append('district', district.trim());
       formData.append('avgBill', avgBill.toString());
       formData.append('fixRent', fixRent.toString());
       formData.append('connectionKw', connectionKw.toString());
@@ -147,7 +209,7 @@ export function SolarCalculator() {
       });
 
       if (!res.ok) {
-        console.error('Failed to submit inquiry to database');
+        console.error('Failed to submit inquiry to server');
       }
     } catch (err) {
       console.error('Error submitting inquiry:', err);
@@ -359,12 +421,19 @@ export function SolarCalculator() {
                     <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">{t('cityLabel')}</label>
                     <input
                       type="text"
-                      required
                       placeholder="e.g. Jaipur"
                       value={city}
-                      onChange={(e) => setCity(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-line focus:border-accent-solar focus:outline-none text-text-primary text-sm font-semibold"
+                      onChange={(e) => {
+                        setCity(e.target.value);
+                        if (errors.city) setErrors((prev) => ({ ...prev, city: undefined }));
+                      }}
+                      className={`w-full px-4 py-2.5 rounded-xl bg-bg-secondary border text-text-primary text-sm font-semibold focus:outline-none transition-all ${
+                        errors.city
+                          ? 'border-rose-500 focus:border-rose-500 ring-1 ring-rose-500/30'
+                          : 'border-line focus:border-accent-solar'
+                      }`}
                     />
+                    {errors.city && <p className="text-xs font-medium text-rose-500 mt-1">{errors.city}</p>}
                   </div>
 
                   {/* District */}
@@ -372,12 +441,19 @@ export function SolarCalculator() {
                     <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">{t('districtLabel')}</label>
                     <input
                       type="text"
-                      required
                       placeholder="e.g. Jaipur District"
                       value={district}
-                      onChange={(e) => setDistrict(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-line focus:border-accent-solar focus:outline-none text-text-primary text-sm font-semibold"
+                      onChange={(e) => {
+                        setDistrict(e.target.value);
+                        if (errors.district) setErrors((prev) => ({ ...prev, district: undefined }));
+                      }}
+                      className={`w-full px-4 py-2.5 rounded-xl bg-bg-secondary border text-text-primary text-sm font-semibold focus:outline-none transition-all ${
+                        errors.district
+                          ? 'border-rose-500 focus:border-rose-500 ring-1 ring-rose-500/30'
+                          : 'border-line focus:border-accent-solar'
+                      }`}
                     />
+                    {errors.district && <p className="text-xs font-medium text-rose-500 mt-1">{errors.district}</p>}
                   </div>
                 </div>
 
@@ -387,12 +463,19 @@ export function SolarCalculator() {
                     <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">{t('nameLabel')}</label>
                     <input
                       type="text"
-                      required
                       placeholder="Your Name"
                       value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-line focus:border-accent-solar focus:outline-none text-text-primary text-sm font-semibold"
+                      onChange={(e) => {
+                        setName(e.target.value);
+                        if (errors.name) setErrors((prev) => ({ ...prev, name: undefined }));
+                      }}
+                      className={`w-full px-4 py-2.5 rounded-xl bg-bg-secondary border text-text-primary text-sm font-semibold focus:outline-none transition-all ${
+                        errors.name
+                          ? 'border-rose-500 focus:border-rose-500 ring-1 ring-rose-500/30'
+                          : 'border-line focus:border-accent-solar'
+                      }`}
                     />
+                    {errors.name && <p className="text-xs font-medium text-rose-500 mt-1">{errors.name}</p>}
                   </div>
 
                   {/* Email ID */}
@@ -400,12 +483,19 @@ export function SolarCalculator() {
                     <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">{t('emailLabel')}</label>
                     <input
                       type="email"
-                      required
                       placeholder="name@company.com"
                       value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-line focus:border-accent-solar focus:outline-none text-text-primary text-sm font-semibold"
+                      onChange={(e) => {
+                        setEmail(e.target.value);
+                        if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
+                      }}
+                      className={`w-full px-4 py-2.5 rounded-xl bg-bg-secondary border text-text-primary text-sm font-semibold focus:outline-none transition-all ${
+                        errors.email
+                          ? 'border-rose-500 focus:border-rose-500 ring-1 ring-rose-500/30'
+                          : 'border-line focus:border-accent-solar'
+                      }`}
                     />
+                    {errors.email && <p className="text-xs font-medium text-rose-500 mt-1">{errors.email}</p>}
                   </div>
 
                   {/* Phone */}
@@ -413,12 +503,19 @@ export function SolarCalculator() {
                     <label className="block text-xs font-mono text-text-secondary uppercase mb-1 font-semibold">{t('phoneLabel')}</label>
                     <input
                       type="tel"
-                      required
                       placeholder="+91 98765 43210"
                       value={phone}
-                      onChange={(e) => setPhone(e.target.value)}
-                      className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-line focus:border-accent-solar focus:outline-none text-text-primary text-sm font-semibold"
+                      onChange={(e) => {
+                        setPhone(e.target.value);
+                        if (errors.phone) setErrors((prev) => ({ ...prev, phone: undefined }));
+                      }}
+                      className={`w-full px-4 py-2.5 rounded-xl bg-bg-secondary border text-text-primary text-sm font-semibold focus:outline-none transition-all ${
+                        errors.phone
+                          ? 'border-rose-500 focus:border-rose-500 ring-1 ring-rose-500/30'
+                          : 'border-line focus:border-accent-solar'
+                      }`}
                     />
+                    {errors.phone && <p className="text-xs font-medium text-rose-500 mt-1">{errors.phone}</p>}
                   </div>
                 </div>
 

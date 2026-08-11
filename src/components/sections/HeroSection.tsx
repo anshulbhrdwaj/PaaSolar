@@ -159,7 +159,7 @@ export function HeroSection() {
           {/* Large Kinetic Title */}
           <h1
             ref={titleRef}
-            className="font-serif text-5xl md:text-7xl xl:text-8xl font-bold tracking-tight text-text-primary leading-[1.05] drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"
+            className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-text-primary leading-[1.15] drop-shadow-[0_2px_4px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_2px_6px_rgba(0,0,0,0.4)]"
           >
             <span className="block hero-line">{t('headlineMain')}</span>
           </h1>

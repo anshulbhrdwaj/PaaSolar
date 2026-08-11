@@ -51,9 +51,9 @@
   },
   "Hero": {
     "badge": "Blessing from this generation to next generation",
-    "headlineMain": "Harness the Infinity of the Sun.",
+    "headlineMain": "India's 1st Solar Company to Give Final Quotation & Drawing Without Physical Meeting.",
     "headlineSub": "Engineering Quiet Luxury & Uncompromising Energy Autonomy for Modern Life.",
-    "description": "Paa Solar crafts ultra-efficient, aesthetically integrated solar energy systems that empower homes and enterprises with sovereign, clean, and free energy.",
+    "description": "We leverage technology so there's no need for physical meetings — virtual meeting is more than enough.",
     "primaryCta": "Design Your System",
     "secondaryCta": "Explore Impact",
     "scrollCue": "Scroll to Discover",
@@ -592,10 +592,10 @@
     "c7": "Warranties & Support"
   },
   "Calc": {
-    "badge": "SOLAR ROI & SIZING CALCULATOR",
-    "title": "Calculate Your Solar Savings & Capacity",
-    "subtitle": "Enter your electricity bill, connection load, and space parameters to get instant turnkey engineering sizing, PM SGY subsidy estimates, and 25-year ROI.",
-    "tabSizing": "1. System Sizing & Savings Calculator",
+    "badge": "INSTANT FULL SOLAR QUOTATION",
+    "title": "Get Your Full Solar Quotation & Engineering Drawing",
+    "subtitle": "Provide your electricity bill and load details to receive an instant, accurate quotation and engineering drawing — 100% online, no physical meeting needed.",
+    "tabSizing": "1. Get Full Solar Quotation",
     "tabEmi": "2. Solar Loan EMI & Financing",
     "inputTitle": "System Sizing Inputs",
     "liveSync": "Live Formula Sync",
