@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
-import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
+import { PartnerLogosSection, inverterPartnerBrands } from '@/components/sections/PartnerLogosSection';
 import { Zap, CheckCircle2, Download } from 'lucide-react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
@@ -288,7 +288,11 @@ export default function InvertersPage() {
       </section>
 
       {/* Authorized Brand & Supply Partners */}
-      <PartnerLogosSection />
+      <PartnerLogosSection
+        brands={inverterPartnerBrands}
+        title="Authorized Inverter Supply Partners & Brands"
+        subtitle="We supply and distribute leading smart on-grid, off-grid, and hybrid string inverter brands with DISCOM net metering approval."
+      />
 
       <Footer />
     </main>

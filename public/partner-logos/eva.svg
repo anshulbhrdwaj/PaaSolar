@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100" width="300" height="100">
+  <rect width="300" height="100" rx="16" fill="#FFFFFF"/>
+  <g transform="translate(30, 22)">
+    <path d="M 12 10 L 26 42 L 40 10 Z" fill="#8E24AA"/>
+    <circle cx="26" cy="18" r="6" fill="#00ACC1"/>
+    <text x="54" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="28" fill="#8E24AA" letter-spacing="2">EVA</text>
+    <text x="54" y="48" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="11" fill="#00ACC1" letter-spacing="3">POWER STORAGE</text>
+  </g>
+</svg>

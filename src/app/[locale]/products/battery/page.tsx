@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
-import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
+import { PartnerLogosSection, batteryPartnerBrands } from '@/components/sections/PartnerLogosSection';
 import { BatteryCharging, CheckCircle2, Download } from 'lucide-react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
@@ -246,7 +246,11 @@ export default function BatteryPage() {
       </section>
 
       {/* Authorized Brand & Supply Partners */}
-      <PartnerLogosSection />
+      <PartnerLogosSection
+        brands={batteryPartnerBrands}
+        title="Authorized Battery Storage Supply Partners & Brands"
+        subtitle="We supply and distribute leading smart LiFePO4, Lithium-Ion, and containerized BESS battery storage brands across India."
+      />
 
       <Footer />
     </main>

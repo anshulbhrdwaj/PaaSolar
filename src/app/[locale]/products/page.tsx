@@ -1,73 +1,100 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
-import { Navbar } from '@/components/ui/Navbar';
-import { Footer } from '@/components/sections/Footer';
-import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
-import { SunMedium, Zap, BatteryCharging, Cpu, ArrowRight, ShieldCheck, Download, Store } from 'lucide-react';
-
-import Image from 'next/image';
+import React from "react";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
+import { Navbar } from "@/components/ui/Navbar";
+import { Footer } from "@/components/sections/Footer";
+import { PartnerLogosSection } from "@/components/sections/PartnerLogosSection";
+import {
+  SunMedium,
+  Zap,
+  BatteryCharging,
+  Cpu,
+  ArrowRight,
+  ShieldCheck,
+  Download,
+  Store,
+} from "lucide-react";
 
 export default function ProductsPage() {
-  const t = useTranslations('ProductDetails');
+  const t = useTranslations("ProductDetails");
 
   const productsList = [
     {
-      id: 'solar-panels',
-      href: '/products/solar-panels',
-      title: 'Solar Panels (TOPCon & DCR)',
-      tag: 'N-Type TOPCon & DCR Subsidy Modules',
-      subtitle: 'High-density 24%+ efficiency N-Type TOPCon bifacial modules and DCR subsidy panels made in India.',
+      id: "solar-panels",
+      href: "/products/solar-panels",
+      title: "Solar Panels (TOPCon & DCR)",
+      tag: "N-Type TOPCon & DCR Subsidy Modules",
+      subtitle:
+        "High-density 24%+ efficiency N-Type TOPCon bifacial modules and DCR subsidy panels made in India.",
       icon: <SunMedium className="w-8 h-8 text-accent-solar" />,
-      badge: '22.8%+ Module Efficiency',
-      image: '/products/panel1.png',
-      specs: ['N-Type TOPCon Technology', 'DCR Subsidy Compliance', '30-Year Performance Guarantee'],
+      badge: "22.8%+ Module Efficiency",
+      specs: [
+        "N-Type TOPCon Technology",
+        "DCR Subsidy Compliance",
+        "30-Year Performance Guarantee",
+      ],
     },
     {
-      id: 'inverters',
-      href: '/products/inverters',
-      title: 'Smart Inverters (On-Grid, Off-Grid & Hybrid)',
-      tag: 'On-Grid, Off-Grid & Hybrid Inverters',
-      subtitle: 'High-efficiency string inverters with sub-10ms automatic blackout transfer and DISCOM net metering.',
+      id: "inverters",
+      href: "/products/inverters",
+      title: "Smart Inverters (On-Grid, Off-Grid & Hybrid)",
+      tag: "On-Grid, Off-Grid & Hybrid Inverters",
+      subtitle:
+        "High-efficiency string inverters with sub-10ms automatic blackout transfer and DISCOM net metering.",
       icon: <Zap className="w-8 h-8 text-accent-sky" />,
-      badge: '99.2% MPPT Efficiency',
-      image: '/products/inverter1.png',
-      specs: ['On-Grid Net Metering', 'Off-Grid Generator Sync', 'Hybrid Storage Backup'],
+      badge: "99.2% MPPT Efficiency",
+      specs: [
+        "On-Grid Net Metering",
+        "Off-Grid Generator Sync",
+        "Hybrid Storage Backup",
+      ],
     },
     {
-      id: 'battery',
-      href: '/products/battery',
-      title: 'Lithium Battery Storage',
-      tag: 'Smart Lithium-Ion & LiFePO4 Vault',
-      subtitle: 'Ultra-safe Lithium Iron Phosphate (LiFePO4) & Lithium-Ion battery banks with 10,000+ deep discharge cycles.',
+      id: "battery",
+      href: "/products/battery",
+      title: "Lithium Battery Storage",
+      tag: "Smart Lithium-Ion & LiFePO4 Vault",
+      subtitle:
+        "Ultra-safe Lithium Iron Phosphate (LiFePO4) & Lithium-Ion battery banks with 10,000+ deep discharge cycles.",
       icon: <BatteryCharging className="w-8 h-8 text-accent-gold" />,
-      badge: '10,000+ Deep Cycles',
-      image: '/products/battery1.png',
-      specs: ['LiFePO4 Safe Chemistry', 'AI Active Cell Balancing', '100% Usable DoD Capacity'],
+      badge: "10,000+ Deep Cycles",
+      specs: [
+        "LiFePO4 Safe Chemistry",
+        "AI Active Cell Balancing",
+        "100% Usable DoD Capacity",
+      ],
     },
     {
-      id: 'bess',
-      href: '/products/bess',
-      title: 'BESS (ESS 3532 & Li UPS 1250)',
-      tag: 'Megawatt Enterprise Storage',
-      subtitle: 'Turnkey IP65 containerized ESS 3532 units and Li UPS 1250 high-discharge backup vaults.',
+      id: "bess",
+      href: "/products/bess",
+      title: "BESS (ESS 3532 & Li UPS 1250)",
+      tag: "Megawatt Enterprise Storage",
+      subtitle:
+        "Turnkey IP65 containerized ESS 3532 units and Li UPS 1250 high-discharge backup vaults.",
       icon: <Cpu className="w-8 h-8 text-emerald-500" />,
-      badge: '3.53 MWh LFP Capacity',
-      image: '/products/bess1.png',
-      specs: ['ESS 3532 Container Unit', 'Li UPS 1250 High Output', 'Sub-10ms Islanding Speed'],
+      badge: "3.53 MWh LFP Capacity",
+      specs: [
+        "ESS 3532 Container Unit",
+        "Li UPS 1250 High Output",
+        "Sub-10ms Islanding Speed",
+      ],
     },
     {
-      id: 'franchise-sgy',
-      href: '/products/franchise-sgy',
-      title: 'Complete Solar Kit & PM SGY Franchise Offer',
-      tag: 'Complete Solar Kits & PM SGY Dealer Network',
-      subtitle: 'Complete turnkey solar kits (1kW to 10kW) featuring TOPCon DCR modules, inverters & official PM Surya Ghar dealer franchise packages.',
+      id: "franchise-sgy",
+      href: "/products/franchise-sgy",
+      title: "Complete Solar Kit & PM SGY Franchise Offer",
+      tag: "Complete Solar Kits & PM SGY Dealer Network",
+      subtitle:
+        "Complete turnkey solar kits (1kW to 10kW) featuring TOPCon DCR modules, inverters & official PM Surya Ghar dealer franchise packages.",
       icon: <Store className="w-8 h-8 text-emerald-400" />,
-      badge: '1 kW to 10 kW Kits & Franchise',
-      image: '/products/panel5.png',
-      specs: ['Complete Ready-to-Install Kits', 'PM Surya Ghar Portal Compliant', 'Exclusive District Dealer Franchise Offer'],
+      badge: "1 kW to 10 kW Kits & Franchise",
+      specs: [
+        "Complete Ready-to-Install Kits",
+        "PM Surya Ghar Portal Compliant",
+        "Exclusive District Dealer Franchise Offer",
+      ],
     },
   ];
 
@@ -85,7 +112,9 @@ export default function ProductsPage() {
             Paa Solar Supply
           </h1>
           <p className="text-text-secondary text-lg leading-relaxed mb-6">
-            From government-subsidized rooftop initiatives to high-density TOPCon bifacial panels, smart hybrid inverters, and sovereign LFP energy storage.
+            From government-subsidized rooftop initiatives to high-density
+            TOPCon bifacial panels, smart hybrid inverters, and sovereign LFP
+            energy storage.
           </p>
 
           <div className="flex items-center justify-center gap-4">
@@ -112,8 +141,8 @@ export default function ProductsPage() {
               href={prod.href}
               className="group relative rounded-3xl p-8 bg-bg-secondary/70 border border-line hover:border-accent-solar/60 transition-all duration-500 overflow-hidden flex flex-col justify-between shadow-xl hover:-translate-y-1"
             >
-              <div className="space-y-5">
-                <div className="flex items-center justify-between">
+              <div>
+                <div className="flex items-center justify-between mb-6">
                   <span className="text-xs font-mono uppercase tracking-widest text-accent-solar font-semibold">
                     {prod.tag}
                   </span>
@@ -122,31 +151,24 @@ export default function ProductsPage() {
                   </div>
                 </div>
 
-                {/* Product Image Frame */}
-                <div className="relative h-52 w-full rounded-2xl overflow-hidden bg-white/50 border border-line p-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500">
-                  <Image
-                    src={prod.image}
-                    alt={prod.title}
-                    fill
-                    className="object-contain p-2"
-                  />
-                </div>
-
-                <div className="inline-block px-3 py-1 rounded-full bg-accent-solar/10 text-accent-solar font-mono text-xs font-bold">
+                <div className="inline-block px-3 py-1 rounded-full bg-accent-solar/10 text-accent-solar font-mono text-xs font-bold mb-3">
                   {prod.badge}
                 </div>
 
-                <h2 className="font-serif text-3xl font-bold text-text-primary group-hover:text-accent-solar transition-colors">
+                <h2 className="font-serif text-3xl font-bold text-text-primary mb-3 group-hover:text-accent-solar transition-colors">
                   {prod.title}
                 </h2>
 
-                <p className="text-text-secondary text-sm leading-relaxed">
+                <p className="text-text-secondary text-sm leading-relaxed mb-6">
                   {prod.subtitle}
                 </p>
 
                 <div className="flex flex-col gap-2 pt-4 border-t border-line/60">
                   {prod.specs.map((sp, idx) => (
-                    <div key={idx} className="flex items-center gap-2 text-xs font-medium text-text-primary">
+                    <div
+                      key={idx}
+                      className="flex items-center gap-2 text-xs font-medium text-text-primary"
+                    >
                       <ShieldCheck className="w-3.5 h-3.5 text-accent-solar" />
                       <span>{sp}</span>
                     </div>

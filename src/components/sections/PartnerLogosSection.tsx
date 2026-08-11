@@ -4,14 +4,14 @@ import React from 'react';
 import Image from 'next/image';
 import { Award } from 'lucide-react';
 
-interface PartnerBrand {
+export interface PartnerBrand {
   name: string;
   logoUrl: string;
   tagline: string;
   badge: string;
 }
 
-export const partnerBrands: PartnerBrand[] = [
+export const defaultPartnerBrands: PartnerBrand[] = [
   {
     name: 'ADANI SOLAR',
     logoUrl: '/partner-logos/adani-solar.svg',
@@ -48,10 +48,122 @@ export const partnerBrands: PartnerBrand[] = [
     tagline: 'Insolation Energy Limited',
     badge: 'BSE LISTED MANUFACTURER',
   },
+  {
+    name: 'GREW SOLAR',
+    logoUrl: '/partner-logos/grew-solar.svg',
+    tagline: 'High-Efficiency TOPCon & DCR Modules',
+    badge: 'ALMM LIST-1 APPROVED',
+  },
+  {
+    name: 'RENEW SOLAR',
+    logoUrl: '/partner-logos/renew-solar.svg',
+    tagline: 'Clean Energy & High-Yield PV Modules',
+    badge: 'TIER-1 RENEWABLE LEADER',
+  },
 ];
 
-export function PartnerLogosSection() {
-  const marqueeList = [...partnerBrands, ...partnerBrands, ...partnerBrands, ...partnerBrands];
+export const inverterPartnerBrands: PartnerBrand[] = [
+  {
+    name: 'SUNGROW',
+    logoUrl: '/partner-logos/sungrow.svg',
+    tagline: 'Global Solar Inverter Leader',
+    badge: '99.2% MPPT EFFICIENCY',
+  },
+  {
+    name: 'WATTPOWER',
+    logoUrl: '/partner-logos/wattpower.svg',
+    tagline: 'Smart String & Utility Inverters',
+    badge: 'TIER-1 INVERTER BRAND',
+  },
+  {
+    name: 'K SOLAR',
+    logoUrl: '/partner-logos/ksolar.svg',
+    tagline: 'High-Performance Solar Inverters',
+    badge: 'DISCOM APPROVED',
+  },
+  {
+    name: 'DAY TRUE POWER',
+    logoUrl: '/partner-logos/daytruepower.svg',
+    tagline: 'Heavy Duty Solar Power Conditioning',
+    badge: 'PURE SINE WAVE',
+  },
+  {
+    name: 'INVERGY',
+    logoUrl: '/partner-logos/invergy.svg',
+    tagline: 'Smart Hybrid & On-Grid Inverters',
+    badge: 'SUB-10MS TRANSFER',
+  },
+  {
+    name: 'LOOM SOLAR',
+    logoUrl: '/partner-logos/loom-solar.svg',
+    tagline: 'Smart Rooftop Solar Inverters',
+    badge: 'HIGH-EFFICIENCY',
+  },
+  {
+    name: 'MICROTEK',
+    logoUrl: '/partner-logos/microtek.svg',
+    tagline: 'Trusted Power & Solar Inverters',
+    badge: 'NATIONWIDE SERVICE',
+  },
+  {
+    name: 'GENUS',
+    logoUrl: '/partner-logos/genus.svg',
+    tagline: 'Smart Grid & Solar Inverter Systems',
+    badge: 'ISO CERTIFIED',
+  },
+];
+
+export const batteryPartnerBrands: PartnerBrand[] = [
+  {
+    name: 'PAA SOLAR',
+    logoUrl: '/Paa.png',
+    tagline: 'Flagship Lithium-Ion & LiFePO4 Vault',
+    badge: 'DIRECT DISTRIBUTOR',
+  },
+  {
+    name: 'TECHFINE',
+    logoUrl: '/partner-logos/techfine.svg',
+    tagline: 'High-Performance Battery Storage',
+    badge: 'SMART LITHIUM BESS',
+  },
+  {
+    name: 'LITION',
+    logoUrl: '/partner-logos/lition.svg',
+    tagline: 'Advanced LiFePO4 Cell Technology',
+    badge: '10,000+ DEEP CYCLES',
+  },
+  {
+    name: 'ARTEK',
+    logoUrl: '/partner-logos/artek.svg',
+    tagline: 'Energy Storage Systems & Pack Manufacturer',
+    badge: 'THERMAL STABILITY',
+  },
+  {
+    name: 'EVA',
+    logoUrl: '/partner-logos/eva.svg',
+    tagline: 'Commercial & High-Discharge Batteries',
+    badge: '100% USABLE DOD',
+  },
+  {
+    name: 'ISHTMAN',
+    logoUrl: '/partner-logos/ishtman.svg',
+    tagline: 'Heavy-Duty Industrial Battery Bank',
+    badge: 'SAFE CHEMISTRY',
+  },
+];
+
+interface PartnerLogosSectionProps {
+  brands?: PartnerBrand[];
+  title?: string;
+  subtitle?: string;
+}
+
+export function PartnerLogosSection({
+  brands = defaultPartnerBrands,
+  title = 'Authorized Supply Partners & Brands',
+  subtitle = 'We partner with and distribute Tier-1 ALMM-approved solar manufacturers, delivering certified N-Type TOPCon panels, smart inverters, and complete PM SGY dealer kits.',
+}: PartnerLogosSectionProps) {
+  const marqueeList = [...brands, ...brands, ...brands, ...brands];
 
   return (
     <section className="py-20 bg-gradient-to-b from-bg-secondary/40 via-bg-primary to-bg-secondary/30 border-t border-line relative overflow-hidden">
@@ -66,10 +178,10 @@ export function PartnerLogosSection() {
             <span>AUTHORISED BRAND & SUPPLY PARTNERS</span>
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-text-primary">
-            Authorized Supply Partners & Brands
+            {title}
           </h2>
           <p className="text-text-secondary text-base sm:text-lg leading-relaxed font-medium">
-            We partner with and distribute Tier-1 ALMM-approved solar manufacturers, delivering certified N-Type TOPCon panels, smart inverters, and complete PM SGY dealer kits.
+            {subtitle}
           </p>
         </div>
 
@@ -81,7 +193,7 @@ export function PartnerLogosSection() {
             </span>
             <span className="text-[11px] font-mono text-emerald-500 font-semibold flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>6 Tier-1 Brand Partners</span>
+              <span>{brands.length} Tier-1 Brand Partners</span>
             </span>
           </div>
 
