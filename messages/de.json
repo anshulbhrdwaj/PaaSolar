@@ -146,8 +146,8 @@
     ]
   },
   "Products": {
-    "tag": "SOLARPRODUKTE & VERTRIEB",
-    "title": "Schlüsselfertige EPC- & Solar-Kit-Verteilung",
+    "tag": "PAA SOLAR SUPPLY",
+    "title": "Paa Solar Supply",
     "subtitle": "Entdecken Sie unsere direkten Projektausführungskapazitäten über 50 kW und den kompletten PM SGY-Kit-Vertrieb für Partner.",
     "items": [
       {
@@ -321,7 +321,7 @@
     },
     "solarPanels": {
       "tag": "TOPCon-Technologie",
-      "title": "Monokristalline Solarmodule",
+      "title": "N-Type TOPCon Solarmodule",
       "subtitle": "Bifaziale Module mit 22.8% Effizienz.",
       "spec1": "22.8% Effizienz",
       "spec2": "580W-650W",
@@ -335,7 +335,7 @@
         "subtitle": "Tunnel Oxide Passivated Contact Technologie (580W – 650W)",
         "badge": "FLAGGSCHIFF HOCHERTRAG",
         "eff": "Bis zu 22.8%+ Wirkungsgrad",
-        "desc": "Paa Solar N-Typ TOPCon-Module nutzen Vorder- und Rückseitenlicht für +10% bis +30% höheren Gesamtertrag über die gesamte Lebensdauer.",
+        "desc": "Paa Solar supply N-Type TOPCon (Tunnel Oxide Passivated Contact) modules represent the pinnacle of photovoltaic efficiency. Featuring ultra-low temperature coefficients (-0.29%/°C), zero Light-Induced Degradation (LID), and dual-glass bifacial architecture, TOPCon panels capture ambient light from both front and rear surfaces to deliver +10% to +30% higher lifetime generation.",
         "spec1": "22.8%+ Spitzenwirkungsgrad",
         "spec2": "80%±5% Bifazialitätsfaktor",
         "spec3": "30 Jahre Leistungsgarantie",
@@ -349,7 +349,7 @@
         "subtitle": "Domestic Content Requirement Zertifizierte Module (540W – 590W)",
         "badge": "MNRE & ALMM GENEHMIGT",
         "eff": "PM Surya Ghar Förderfähig",
-        "desc": "Paa Solar DCR-Module werden zu 100% mit indischen Solarzellen hergestellt. Sie sind Voraussetzung für staatliche Förderprogramme wie PM Surya Ghar.",
+        "desc": "Paa Solar Supply DCR (Domestic Content Requirement) modules feature 100% indigenous Indian solar cells and wafers in strict compliance with MNRE and ALMM guidelines, fully approved for government subsidy schemes.",
         "spec1": "100% Indische Zelle & Wafer DCR",
         "spec2": "Direkte PM Surya Ghar Förderung",
         "spec3": "ALMM Liste-1 Zertifiziert",

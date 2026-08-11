@@ -173,8 +173,8 @@
     ]
   },
   "Products": {
-    "tag": "SOLAR PRODUCTS & DISTRIBUTION",
-    "title": "Turnkey EPC & Solar Kit Distribution",
+    "tag": "PAA SOLAR SUPPLY",
+    "title": "Paa Solar Supply",
     "subtitle": "Explore our direct project execution capabilities above 50 kW and complete PM SGY kit distribution for partners.",
     "items": [
       {
@@ -373,7 +373,7 @@
     },
     "solarPanels": {
       "tag": "N-Type TOPCon Technology",
-      "title": "Ultra-Efficiency Monocrystalline Solar Panels",
+      "title": "N-Type TOPCon Solar Panels",
       "subtitle": "Engineering 22.8% peak cell efficiency with dual-glass anti-reflective protection and zero PID degradation.",
       "spec1": "22.8% Module Efficiency",
       "spec2": "580W - 650W Wattage Output",
@@ -387,7 +387,7 @@
         "subtitle": "Tunnel Oxide Passivated Contact Technology (580W – 650W)",
         "badge": "FLAGSHIP HIGH-YIELD",
         "eff": "Up to 22.8%+ Efficiency",
-        "desc": "Paa Solar N-Type TOPCon (Tunnel Oxide Passivated Contact) modules represent the pinnacle of photovoltaic efficiency. Featuring ultra-low temperature coefficients (-0.29%/°C), zero Light-Induced Degradation (LID), and dual-glass bifacial architecture, TOPCon panels capture ambient light from both front and rear surfaces to deliver +10% to +30% higher lifetime generation.",
+        "desc": "Paa Solar supply N-Type TOPCon (Tunnel Oxide Passivated Contact) modules represent the pinnacle of photovoltaic efficiency. Featuring ultra-low temperature coefficients (-0.29%/°C), zero Light-Induced Degradation (LID), and dual-glass bifacial architecture, TOPCon panels capture ambient light from both front and rear surfaces to deliver +10% to +30% higher lifetime generation.",
         "spec1": "22.8%+ Peak Efficiency",
         "spec2": "80%±5% Bifaciality Factor",
         "spec3": "30-Year Performance Warranty",
@@ -401,7 +401,7 @@
         "subtitle": "Domestic Content Requirement Certified Modules (540W – 590W)",
         "badge": "MNRE & ALMM APPROVED",
         "eff": "PM Surya Ghar Eligible",
-        "desc": "Paa Solar DCR (Domestic Content Requirement) modules are manufactured using 100% indigenous Indian solar cells and wafers in strict compliance with MNRE (Ministry of New and Renewable Energy) and ALMM guidelines. These panels are mandatorily required for government subsidy schemes including PM Surya Ghar Muft Bijli Yojana (subsidies up to ₹78,000) and PM-KUSUM Component A & C.",
+        "desc": "Paa Solar Supply DCR (Domestic Content Requirement) modules feature 100% indigenous Indian solar cells and wafers in strict compliance with MNRE and ALMM guidelines, fully approved for government subsidy schemes.",
         "spec1": "100% Indian Cell & Wafer DCR",
         "spec2": "Direct PM Surya Ghar Subsidy",
         "spec3": "ALMM List-1 Certified",

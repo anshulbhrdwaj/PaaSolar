@@ -146,8 +146,8 @@
     ]
   },
   "Products": {
-    "tag": "সৌর পণ্য এবং বিতরণ",
-    "title": "টার্নকি ইপিসি এবং সোলার কিট বিতরণ",
+    "tag": "PAA SOLAR SUPPLY",
+    "title": "Paa Solar Supply",
     "subtitle": "50 kW-এর ওপরে আমাদের প্রত্যক্ষ প্রকল্প বাস্তবায়ন ক্ষমতা এবং অংশীদারদের জন্য সম্পূর্ণ PM SGY কিট বিতরণ অন্বেষণ করুন।",
     "items": [
       {
@@ -321,7 +321,7 @@
     },
     "solarPanels": {
       "tag": "TOPCon প্রযুক্তি",
-      "title": "মনোক্রিস্টালাইন সোলার প্যানেল",
+      "title": "এন-টাইপ টপকন সোলার প্যানেল",
       "subtitle": "22.8% উচ্চ কার্যক্ষমতাসম্পন্ন প্যানেল।",
       "spec1": "22.8% কার্যক্ষমতা",
       "spec2": "580W-650W",
@@ -335,7 +335,7 @@
         "subtitle": "টানেল অক্সাইড প্যাসিভেটেড কন্টাক্ট প্রযুক্তি (580W – 650W)",
         "badge": "শীর্ষস্থানীয় উচ্চ-উৎপাদন",
         "eff": "22.8%+ পর্যন্ত দক্ষতা",
-        "desc": "পা সোলার N-টাইপ TOPCon মডিউল উভয় দিক থেকে আলো শোষণ করে +10% থেকে +30% অতিরিক্ত বিদ্যুৎ উৎপাদন করে।",
+        "desc": "Paa Solar supply N-Type TOPCon (Tunnel Oxide Passivated Contact) modules represent the pinnacle of photovoltaic efficiency. Featuring ultra-low temperature coefficients (-0.29%/°C), zero Light-Induced Degradation (LID), and dual-glass bifacial architecture, TOPCon panels capture ambient light from both front and rear surfaces to deliver +10% to +30% higher lifetime generation.",
         "spec1": "22.8%+ পিক দক্ষতা",
         "spec2": "80%±5% বায়োফেসিয়ালিটি ফ্যাক্টর",
         "spec3": "30-বছরের পারফরম্যান্স ওয়ারেন্টি",
@@ -349,7 +349,7 @@
         "subtitle": "ডোমেস্টিক কন্টেন্ট রিকোয়ারমেন্ট সার্টিফাইড মডিউল (540W – 590W)",
         "badge": "MNRE এবং ALMM অনুমোদিত",
         "eff": "PM সূর্য ঘর যোগ্য",
-        "desc": "পা সোলার DCR মডিউল ১০০% ভারতীয় সোলার সেল ব্যবহার করে তৈরি। পিএম সূর্য ঘর যোজনা (₹৭৮,০০০ পর্যন্ত ভর্তুকি) এবং পিএম-কুসুম প্রকল্পের জন্য এই প্যানেলগুলি বাধ্যতামূলক।",
+        "desc": "Paa Solar Supply DCR (Domestic Content Requirement) modules feature 100% indigenous Indian solar cells and wafers in strict compliance with MNRE and ALMM guidelines, fully approved for government subsidy schemes.",
         "spec1": "100% ভারতীয় সেল ও ওয়েফার DCR",
         "spec2": "সরাসরি PM সূর্য ঘর ভর্তুকি",
         "spec3": "ALMM লিস্ট-1 সার্টিফাইড",

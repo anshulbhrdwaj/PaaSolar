@@ -173,8 +173,8 @@
     ]
   },
   "Products": {
-    "tag": "सौर उत्पाद और वितरण",
-    "title": "टर्नकी ईपीसी और सोलर किट वितरण",
+    "tag": "PAA SOLAR SUPPLY",
+    "title": "Paa Solar Supply",
     "subtitle": "50 किलोवाट से ऊपर की प्रत्यक्ष परियोजना निष्पादन क्षमताओं और भागीदारों के लिए पूर्ण पीएम एसजीवाई किट वितरण का अन्वेषण करें।",
     "items": [
       {
@@ -367,7 +367,7 @@
     },
     "solarPanels": {
       "tag": "N-टाइप TOPCon तकनीक",
-      "title": "अति-कुशल मोनोक्रिस्टलाइन सोलर पैनल",
+      "title": "एन-टाइप टॉपकॉन सोलर पैनल",
       "subtitle": "डबल-ग्लास एंटी-रिफ्लेक्टिव सुरक्षा और शून्य PID क्षरण के साथ 22.8% सेल दक्षता।",
       "spec1": "22.8% मॉड्यूल दक्षता",
       "spec2": "580W - 650W पॉवर आउटपुट",
@@ -381,7 +381,7 @@
         "subtitle": "टनल ऑक्साइड पैसिवेटेड कांटेक्ट तकनीक (580W - 650W)",
         "badge": "अग्रणी उच्च-उत्पादन",
         "eff": "22.8%+ तक दक्षता",
-        "desc": "पा सोलर N-टाइप TOPCon मॉड्यूल सौर ऊर्जा दक्षता के उच्चतम शिखर का प्रतिनिधित्व करते हैं। अत्यंत कम तापमान गुणांक (-0.29%/°C), शून्य प्रकाश-प्रेरित गिरावट (LID), और डुअल-ग्लास बायोफेशियल संरचना के साथ, TOPCon पैनल दोनों तरफ से प्रकाश कैप्चर करके +10% से +30% अधिक बिजली उत्पन्न करते हैं।",
+        "desc": "Paa Solar supply N-Type TOPCon (Tunnel Oxide Passivated Contact) modules represent the pinnacle of photovoltaic efficiency. Featuring ultra-low temperature coefficients (-0.29%/°C), zero Light-Induced Degradation (LID), and dual-glass bifacial architecture, TOPCon panels capture ambient light from both front and rear surfaces to deliver +10% to +30% higher lifetime generation.",
         "spec1": "22.8%+ उच्चतम दक्षता",
         "spec2": "80%±5% बायोफेशियलिटी फैक्टर",
         "spec3": "30-वर्षीय प्रदर्शन वारंटी",
@@ -395,7 +395,7 @@
         "subtitle": "डोमेस्टिक कंटेंट रिक्वायरमेंट प्रमाणित मॉड्यूल (540W - 590W)",
         "badge": "MNRE और ALMM स्वीकृत",
         "eff": "PM सूर्या घर पात्र",
-        "desc": "पा सोलर DCR मॉड्यूल 100% स्वदेशी भारतीय सोलर सेल और वेफर्स का उपयोग करके निर्मित किए जाते हैं। ये पैनल पीएम सूर्य घर मुफ्त बिजली योजना (₹78,000 तक की सब्सिडी) और पीएम-कुसुम योजनाओं के तहत सरकारी सब्सिडी का दावा करने के लिए अनिवार्य हैं।",
+        "desc": "Paa Solar Supply DCR (Domestic Content Requirement) modules feature 100% indigenous Indian solar cells and wafers in strict compliance with MNRE and ALMM guidelines, fully approved for government subsidy schemes.",
         "spec1": "100% भारतीय सेल और वेफर DCR",
         "spec2": "प्रत्यक्ष पीएम सूर्या घर सब्सिडी",
         "spec3": "ALMM लिस्ट-1 प्रमाणित",

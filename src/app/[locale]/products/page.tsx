@@ -5,7 +5,8 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
-import { SunMedium, Zap, BatteryCharging, Cpu, ArrowRight, ShieldCheck, Download } from 'lucide-react';
+import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
+import { SunMedium, Zap, BatteryCharging, Cpu, ArrowRight, ShieldCheck, Download, Store } from 'lucide-react';
 
 export default function ProductsPage() {
   const t = useTranslations('ProductDetails');
@@ -51,6 +52,16 @@ export default function ProductsPage() {
       badge: '3.53 MWh LFP Capacity',
       specs: ['ESS 3532 Container Unit', 'Li UPS 1250 High Output', 'Sub-10ms Islanding Speed'],
     },
+    {
+      id: 'franchise-sgy',
+      href: '/products/franchise-sgy',
+      title: 'Complete Solar Kit & PM SGY Franchise Offer',
+      tag: 'Complete Solar Kits & PM SGY Dealer Network',
+      subtitle: 'Complete turnkey solar kits (1kW to 10kW) featuring TOPCon DCR modules, inverters & official PM Surya Ghar dealer franchise packages.',
+      icon: <Store className="w-8 h-8 text-emerald-400" />,
+      badge: '1 kW to 10 kW Kits & Franchise',
+      specs: ['Complete Ready-to-Install Kits', 'PM Surya Ghar Portal Compliant', 'Exclusive District Dealer Franchise Offer'],
+    },
   ];
 
   return (
@@ -61,10 +72,10 @@ export default function ProductsPage() {
       <section className="py-20 bg-gradient-to-b from-bg-secondary/60 to-bg-primary border-b border-line">
         <div className="max-w-7xl mx-auto px-6 text-center max-w-3xl">
           <span className="text-xs uppercase font-mono tracking-widest text-accent-solar font-semibold">
-            Paa Solar Hardware & Government Schemes
+            PAA SOLAR SUPPLY
           </span>
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-text-primary mt-3 mb-4">
-            Next-Gen Solar Technology Catalogue
+            Paa Solar Supply
           </h1>
           <p className="text-text-secondary text-lg leading-relaxed mb-6">
             From government-subsidized rooftop initiatives to high-density TOPCon bifacial panels, smart hybrid inverters, and sovereign LFP energy storage.
@@ -134,6 +145,10 @@ export default function ProductsPage() {
           ))}
         </div>
       </section>
+
+      {/* Supply Partners & Authorized Brand Logos Section */}
+      <PartnerLogosSection />
+
       <Footer />
     </main>
   );

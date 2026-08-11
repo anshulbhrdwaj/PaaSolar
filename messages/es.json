@@ -146,8 +146,8 @@
     ]
   },
   "Products": {
-    "tag": "PRODUCTOS SOLARES Y DISTRIBUCIÓN",
-    "title": "EPC llave en mano y distribución de kits solares",
+    "tag": "PAA SOLAR SUPPLY",
+    "title": "Paa Solar Supply",
     "subtitle": "Explore nuestras capacidades de ejecución directa de proyectos por encima de 50 kW y la distribución completa de kits PM SGY para socios.",
     "items": [
       {
@@ -321,7 +321,7 @@
     },
     "solarPanels": {
       "tag": "Tecnología TOPCon",
-      "title": "Paneles Solares Monocristalinos",
+      "title": "Paneles solares N-Type TOPCon",
       "subtitle": "Paneles bifaciales con 22.8% de eficiencia.",
       "spec1": "22.8% Eficiencia",
       "spec2": "580W-650W",
@@ -335,7 +335,7 @@
         "subtitle": "Tecnología de Contacto Pasivado de Óxido de Túnel (580W – 650W)",
         "badge": "ALTO RENDIMIENTO EMBLAMÁTICO",
         "eff": "Hasta 22.8%+ de Eficiencia",
-        "desc": "Los módulos Paa Solar N-Type TOPCon ofrecen un rendimiento excepcional capturando luz tanto frontal como trasera para entregar entre un +10% y +30% más de energía.",
+        "desc": "Paa Solar supply N-Type TOPCon (Tunnel Oxide Passivated Contact) modules represent the pinnacle of photovoltaic efficiency. Featuring ultra-low temperature coefficients (-0.29%/°C), zero Light-Induced Degradation (LID), and dual-glass bifacial architecture, TOPCon panels capture ambient light from both front and rear surfaces to deliver +10% to +30% higher lifetime generation.",
         "spec1": "22.8%+ Eficiencia Máxima",
         "spec2": "Factor de Bifacialidad 80%±5%",
         "spec3": "Garantía de Rendimiento de 30 Años",
@@ -349,7 +349,7 @@
         "subtitle": "Módulos Certificados de Requisito de Contenido Doméstico (540W – 590W)",
         "badge": "APROBADO POR MNRE Y ALMM",
         "eff": "Elegible PM Surya Ghar",
-        "desc": "Los módulos Paa Solar DCR están fabricados con células 100% autóctonas. Son obligatorios para obtener subsidios gubernamentales directos como el plan PM Surya Ghar.",
+        "desc": "Paa Solar Supply DCR (Domestic Content Requirement) modules feature 100% indigenous Indian solar cells and wafers in strict compliance with MNRE and ALMM guidelines, fully approved for government subsidy schemes.",
         "spec1": "100% Celda e Oblea India DCR",
         "spec2": "Subsidio Directo PM Surya Ghar",
         "spec3": "Certificación ALMM Lista-1",

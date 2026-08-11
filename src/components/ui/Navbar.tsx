@@ -28,6 +28,7 @@ import {
   Globe2,
   Briefcase,
   Phone,
+  Store,
 } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -290,6 +291,21 @@ export function Navbar() {
                       <span>{t('productsDropdown.liUps1250')}</span>
                     </Link>
                   </div>
+
+                  <Link
+                    href="/products/franchise-sgy"
+                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
+                  >
+                    <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 group-hover:scale-110 transition-transform">
+                      <Store className="w-4 h-4" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
+                        Solar Kit & PM SGY Franchise
+                      </p>
+                      <p className="text-[10px] text-text-secondary font-medium">1kW to 10kW Kits & District Dealer Offer</p>
+                    </div>
+                  </Link>
 
                   <div className="border-t border-line/60 pt-1.5 mt-1.5 flex flex-col gap-1">
                     <Link
@@ -771,6 +787,15 @@ export function Navbar() {
                     <span>• {t('productsDropdown.liUps1250')}</span>
                   </Link>
                 </div>
+
+                <Link
+                  href="/products/franchise-sgy"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 hover:text-emerald-500 transition-colors font-semibold"
+                >
+                  <Store className="w-4 h-4 text-emerald-500" />
+                  <span>Complete Solar Kit & PM SGY Franchise</span>
+                </Link>
                 <Link
                   href="/products"
                   onClick={() => setMobileOpen(false)}

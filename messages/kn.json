@@ -146,8 +146,8 @@
     ]
   },
   "Products": {
-    "tag": "ಸೌರ ಉತ್ಪನ್ನಗಳು ಮತ್ತು ವಿತರಣೆ",
-    "title": "ಟರ್ನ್‌ಕೀ EPC ಮತ್ತು ಸೋಲಾರ್ ಕಿಟ್ ವಿತರಣೆ",
+    "tag": "PAA SOLAR SUPPLY",
+    "title": "Paa Solar Supply",
     "subtitle": "50 kW ಗಿಂತ ಹೆಚ್ಚಿನ ನಮ್ಮ ನೇರ ಯೋಜನೆ ಜಾರಿ ಸಾಮರ್ಥ್ಯಗಳು ಮತ್ತು ಪಾಲುದಾರರಿಗಾಗಿ ಪೂರ್ಣ PM SGY ಕಿಟ್ ವಿತರಣೆಯನ್ನು ಅನ್ವೇಷಿಸಿ.",
     "items": [
       {
@@ -321,7 +321,7 @@
     },
     "solarPanels": {
       "tag": "TOPCon ತಂತ್ರಜ್ಞಾನ",
-      "title": "ಮೊನೊಕ್ರಿಸ್ಟಲೈನ್ ಸೋಲಾರ್ ಪ್ಯಾನೆಲ್",
+      "title": "ಎನ್-ಟೈಪ್ ಟಾಪ್ಕಾನ್ ಸೋಲಾರ್ ಪ್ಯಾನಲ್ಗಳು",
       "subtitle": "22.8% ಹೆಚ್ಚಿನ ದಕ್ಷತೆಯ ಪ್ಯಾನೆಲ್‌ಗಳು.",
       "spec1": "22.8% ದಕ್ಷತೆ",
       "spec2": "580W-650W",
@@ -335,7 +335,7 @@
         "subtitle": "ಟನಲ್ ಆಕ್ಸೈಡ್ ಪಾಸಿವೇಟೆಡ್ ಕಾಂಟ್ಯಾಕ್ಟ್ ತಂತ್ರಜ್ಞಾನ (580W – 650W)",
         "badge": "ಅತ್ಯುತ್ತಮ ವಿದ್ಯುತ್ ಉತ್ಪಾದನೆ",
         "eff": "22.8%+ ವರೆಗೆ ದಕ್ಷತೆ",
-        "desc": "ಪಾ ಸೌರ N-ಟೈಪ್ TOPCon ಮಾಡ್ಯೂಲ್‌ಗಳು ಎರಡೂ ಬದಿಗಳಿಂದ ಬೆಳಕನ್ನು ಹೀರಿಕೊಂಡು +10% ರಿಂದ +30% ಹೆಚ್ಚು ವಿದ್ಯುತ್ ನೀಡುತ್ತವೆ.",
+        "desc": "Paa Solar supply N-Type TOPCon (Tunnel Oxide Passivated Contact) modules represent the pinnacle of photovoltaic efficiency. Featuring ultra-low temperature coefficients (-0.29%/°C), zero Light-Induced Degradation (LID), and dual-glass bifacial architecture, TOPCon panels capture ambient light from both front and rear surfaces to deliver +10% to +30% higher lifetime generation.",
         "spec1": "22.8%+ ಗರಿಷ್ಠ ದಕ್ಷತೆ",
         "spec2": "80%±5% ಬಯೋಫೇಷಿಯಾಲಿಟಿ ಅಪವರ್ತನ",
         "spec3": "30 ವರ್ಷಗಳ ಕಾರ್ಯಕ್ಷಮತೆ ವಾರಂಟಿ",
@@ -349,7 +349,7 @@
         "subtitle": "ಡೊಮೆಸ್ಟಿಕ್ ಕಂಟೆಂಟ್ ರಿಕ್ವೈರ್ ಮೆಂಟ್ ಪ್ರಮಾಣೀಕೃತ ಮಾಡ್ಯೂಲ್‌ಗಳು (540W – 590W)",
         "badge": "MNRE ಮತ್ತು ALMM ಅನುಮೋದಿತ",
         "eff": "PM ಸೂರ್ಯ ಘರ್ ಅರ್ಹತೆ ಪಡೆದಿದೆ",
-        "desc": "ಪಾ ಸೌರ DCR ಮಾಡ್ಯೂಲ್‌ಗಳನ್ನು 100% ಭಾರತೀಯ ಸೌರ ಕೋಶಗಳನ್ನು ಬಳಸಿ ತಯಾರಿಸಲಾಗುತ್ತದೆ. ಪಿಎಂ ಸೂರ್ಯ ಘರ್ ಯೋಜನೆ (₹78,000 ವರೆಗೆ ಸಬ್ಸಿಡಿ) ಮತ್ತು ಪಿಎಂ-ಕುಸುಮ್ ಯೋಜನೆಗಳಿಗೆ ಇವು ಕಡ್ಡಾಯವಾಗಿವೆ.",
+        "desc": "Paa Solar Supply DCR (Domestic Content Requirement) modules feature 100% indigenous Indian solar cells and wafers in strict compliance with MNRE and ALMM guidelines, fully approved for government subsidy schemes.",
         "spec1": "100% ಭಾರತೀಯ ಸೆಲ್ ಮತ್ತು ವೇಫರ್ DCR",
         "spec2": "ನೇರ PM ಸೂರ್ಯ ಘರ್ ಸಬ್ಸಿಡಿ",
         "spec3": "ALMM ಲಿಸ್ಟ್-1 ಪ್ರಮಾಣೀಕೃತ",

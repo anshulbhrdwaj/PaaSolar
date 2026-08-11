@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
+import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
 import { Zap, CheckCircle2, Download } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
@@ -219,6 +220,10 @@ export default function InvertersPage() {
           </div>
         </div>
       </section>
+
+      {/* Authorized Brand & Supply Partners */}
+      <PartnerLogosSection />
+
       <Footer />
     </main>
   );

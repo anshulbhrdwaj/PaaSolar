@@ -3,6 +3,7 @@
 import React from 'react';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
+import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
 import { Building2, CheckCircle2, ShieldCheck, Sun, ArrowRight, Store, Truck, Users, Sparkles } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
@@ -121,6 +122,10 @@ export default function FranchiseSgyPage() {
           </div>
         </div>
       </section>
+
+      {/* Authorized Brand & Supply Partners */}
+      <PartnerLogosSection />
+
       <Footer />
     </main>
   );

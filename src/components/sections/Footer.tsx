@@ -123,6 +123,7 @@ export function Footer() {
                 <li><Link href="/products/inverters" className="hover:text-accent-solar transition-colors">Inverters (On-Grid, Off-Grid, Hybrid)</Link></li>
                 <li><Link href="/products/battery" className="hover:text-accent-solar transition-colors">Lithium Battery</Link></li>
                 <li><Link href="/products/bess" className="hover:text-accent-solar transition-colors">BESS (ESS 3532, Li UPS 1250)</Link></li>
+                <li><Link href="/products/franchise-sgy" className="hover:text-accent-solar transition-colors">Complete Kit & PM SGY Franchise</Link></li>
                 <li><Link href="/products" className="hover:text-accent-solar transition-colors">All Products Catalogue</Link></li>
                 <li>
                   <a
