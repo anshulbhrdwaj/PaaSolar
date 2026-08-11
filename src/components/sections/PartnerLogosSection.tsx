@@ -2,85 +2,63 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Award, CheckCircle2, SunMedium, ShieldCheck } from 'lucide-react';
+import { Award } from 'lucide-react';
 
 interface PartnerBrand {
   name: string;
   logoUrl: string;
   tagline: string;
   badge: string;
-  accent: string;
-  description: string;
 }
 
 export const partnerBrands: PartnerBrand[] = [
-  {
-    name: 'PAA SOLAR',
-    logoUrl: '/Paa.png',
-    tagline: 'Flagship Hardware & BESS Storage',
-    badge: 'DIRECT DISTRIBUTOR',
-    accent: 'border-amber-500/40 text-amber-500 bg-amber-500/10',
-    description: 'N-Type TOPCon panels, smart string inverters, LiFePO4 battery banks, and containerized BESS 3532 storage.',
-  },
   {
     name: 'ADANI SOLAR',
     logoUrl: '/partner-logos/adani-solar.svg',
     tagline: 'Tier-1 High-Efficiency Modules',
     badge: 'ALMM LIST-1 APPROVED',
-    accent: 'border-blue-500/40 text-blue-500 bg-blue-500/10',
-    description: 'Shine Series N-Type TOPCon & Mono PERC solar modules for utility power plants and commercial rooftops.',
   },
   {
     name: 'WAAREE (VARI)',
     logoUrl: '/partner-logos/waaree-solar.svg',
     tagline: 'India’s Largest Solar Manufacturer',
     badge: 'MNRE COMPLIANT DCR',
-    accent: 'border-emerald-500/40 text-emerald-500 bg-emerald-500/10',
-    description: 'DCR & Non-DCR solar PV modules engineered for PM Surya Ghar Yojana subsidies and enterprise IPP projects.',
   },
   {
     name: 'VIKRAM SOLAR',
     logoUrl: '/partner-logos/vikram-solar.svg',
     tagline: 'High-Yield Photovoltaic Modules',
     badge: 'TIER-1 BRAND',
-    accent: 'border-purple-500/40 text-purple-500 bg-purple-500/10',
-    description: 'Hypersol & Somera bifacial glass-glass solar panels with 30-year linear performance warranty.',
   },
   {
     name: 'LOOM SOLAR',
     logoUrl: '/partner-logos/loom-solar.svg',
     tagline: 'Premium Residential & Commercial Kits',
     badge: 'INNOVATION LEADER',
-    accent: 'border-orange-500/40 text-orange-500 bg-orange-500/10',
-    description: 'High-efficiency Shark series bifacial panels and plug-and-play complete solar kit packages.',
   },
   {
     name: 'SAATTVIK SOLAR',
     logoUrl: '/partner-logos/saattvik-solar.svg',
     tagline: 'High-Wattage Solar PV Modules',
     badge: 'GOVT APPROVED DCR',
-    accent: 'border-sky-500/40 text-sky-500 bg-sky-500/10',
-    description: 'Monofacial and bifacial TOPCon modules optimized for high ambient temperature resilience across India.',
   },
   {
     name: 'INA SOLAR',
     logoUrl: '/partner-logos/ina-solar.svg',
     tagline: 'Insolation Energy Limited',
     badge: 'BSE LISTED MANUFACTURER',
-    accent: 'border-rose-500/40 text-rose-500 bg-rose-500/10',
-    description: 'BIS & ALMM certified high-output solar modules and solar power conditioning units for PM SGY dealers.',
   },
 ];
 
 export function PartnerLogosSection() {
-  const marqueeList = [...partnerBrands, ...partnerBrands, ...partnerBrands];
+  const marqueeList = [...partnerBrands, ...partnerBrands, ...partnerBrands, ...partnerBrands];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-bg-secondary/40 via-bg-primary to-bg-secondary/30 border-t border-line relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-b from-bg-secondary/40 via-bg-primary to-bg-secondary/30 border-t border-line relative overflow-hidden">
       {/* Ambient Radial Glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[550px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[400px] bg-emerald-500/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-16">
+      <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-12">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 text-xs font-mono font-bold uppercase tracking-wider">
@@ -95,75 +73,30 @@ export function PartnerLogosSection() {
           </p>
         </div>
 
-        {/* Featured Solar Panel Hardware Banner Showcase */}
-        <div className="rounded-3xl bg-bg-secondary border border-line p-6 sm:p-8 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative group">
-          <div className="lg:col-span-7 space-y-5">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-solar/10 border border-accent-solar/30 text-accent-solar font-mono text-xs font-bold">
-              <SunMedium className="w-4 h-4" />
-              <span>N-TYPE TOPCON & ALMM DCR MODULES</span>
-            </div>
-            <h3 className="font-serif text-3xl sm:text-4xl font-bold text-text-primary">
-              High-Yield Bifacial Solar Modules & Supply Chain
-            </h3>
-            <p className="text-text-secondary text-sm leading-relaxed font-medium">
-              Equipped with 22.8%+ peak cell efficiency, dual-glass anti-PID degradation shields, and 30-year linear power performance guarantees across all authorized partner brands.
-            </p>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-              <div className="p-3 rounded-2xl bg-bg-primary border border-line text-center">
-                <span className="block font-serif text-xl font-bold text-emerald-500">22.8%+</span>
-                <span className="text-[10px] font-mono text-text-secondary uppercase">Module Yield</span>
-              </div>
-              <div className="p-3 rounded-2xl bg-bg-primary border border-line text-center">
-                <span className="block font-serif text-xl font-bold text-accent-solar">30 Years</span>
-                <span className="text-[10px] font-mono text-text-secondary uppercase">Performance</span>
-              </div>
-              <div className="p-3 rounded-2xl bg-bg-primary border border-line text-center">
-                <span className="block font-serif text-xl font-bold text-sky-500">ALMM List-1</span>
-                <span className="text-[10px] font-mono text-text-secondary uppercase">Govt Approved</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-5 relative h-64 sm:h-72 rounded-2xl overflow-hidden border border-line shadow-lg">
-            <Image
-              src="/solar-topcon-banner.png"
-              alt="Tier-1 High Efficiency TOPCon Solar Panels"
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-5">
-              <div className="flex items-center gap-2 text-white text-xs font-bold font-mono">
-                <ShieldCheck className="w-4 h-4 text-emerald-400" />
-                <span>Certified High-Density PV Module Array</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Animated Auto-Scrolling Partner Logos Ticker */}
-        <div className="space-y-4 pt-4">
+        <div className="space-y-4">
           <div className="flex items-center justify-between px-2">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-text-secondary">
-              OFFICIAL PARTNER LOGO TICKER (PAUSE ON HOVER)
+              OFFICIAL PARTNER LOGOS (PAUSE ON HOVER)
             </span>
             <span className="text-[11px] font-mono text-emerald-500 font-semibold flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>7 National Brand Partners</span>
+              <span>6 Tier-1 Brand Partners</span>
             </span>
           </div>
 
-          <div className="relative overflow-hidden rounded-2xl bg-bg-secondary/70 border border-line py-6 shadow-inner">
+          <div className="relative overflow-hidden rounded-3xl bg-bg-secondary/80 border border-line py-8 shadow-xl">
             {/* Fade Gradient Mask Overlays */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-bg-secondary to-transparent z-20 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-bg-secondary to-transparent z-20 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-bg-secondary to-transparent z-20 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-bg-secondary to-transparent z-20 pointer-events-none" />
 
             <div className="flex items-center gap-8 animate-marquee whitespace-nowrap">
               {marqueeList.map((brand, idx) => (
                 <div
                   key={idx}
-                  className="inline-flex items-center justify-center h-16 px-6 py-3 rounded-2xl bg-white border border-line shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer shrink-0"
+                  className="inline-flex items-center justify-center h-20 px-8 py-4 rounded-2xl bg-white border border-line shadow-md hover:shadow-2xl hover:scale-105 transition-all duration-300 group cursor-pointer shrink-0"
                 >
-                  <div className="relative w-36 h-10 flex items-center justify-center">
+                  <div className="relative w-44 h-12 flex items-center justify-center">
                     <Image
                       src={brand.logoUrl}
                       alt={`${brand.name} Official Logo`}
@@ -175,56 +108,6 @@ export function PartnerLogosSection() {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Partner Brand Cards with Official Logo Banner */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
-          {partnerBrands.map((brand, i) => (
-            <div
-              key={i}
-              className="group rounded-3xl p-8 bg-bg-primary border border-line hover:border-emerald-500/60 transition-all duration-500 shadow-xl flex flex-col justify-between hover:-translate-y-1 relative overflow-hidden"
-            >
-              <div className="space-y-5 relative z-10">
-                {/* Official Brand Logo Box */}
-                <div className="p-4 rounded-2xl bg-white border border-line flex items-center justify-center h-20 shadow-inner group-hover:scale-105 transition-transform duration-300">
-                  <div className="relative w-44 h-12">
-                    <Image
-                      src={brand.logoUrl}
-                      alt={`${brand.name} Official Brand Logo`}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-serif text-2xl font-bold text-text-primary group-hover:text-emerald-500 transition-colors">
-                      {brand.name}
-                    </h3>
-                  </div>
-                  <p className="text-xs font-mono text-accent-solar font-semibold">
-                    {brand.tagline}
-                  </p>
-                </div>
-
-                <div className="inline-block">
-                  <span className={`text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full border ${brand.accent}`}>
-                    {brand.badge}
-                  </span>
-                </div>
-
-                <p className="text-text-secondary text-xs leading-relaxed font-medium">
-                  {brand.description}
-                </p>
-              </div>
-
-              <div className="pt-6 mt-6 border-t border-line/60 flex items-center gap-2 text-xs font-semibold text-text-primary relative z-10">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Authorized Supply & Dealer Network</span>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     </section>
