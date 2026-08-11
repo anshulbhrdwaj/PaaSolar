@@ -5,6 +5,7 @@ import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
 import { Cpu, CheckCircle2, ShieldCheck, Zap, Download } from 'lucide-react';
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 
 export const metadata: Metadata = {
@@ -110,6 +111,16 @@ export default function BessPage() {
               </div>
               <span className="px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-mono font-bold">3.53 MWh LFP Capacity</span>
             </div>
+
+            <div className="relative h-60 sm:h-72 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+              <Image
+                src="/products/bess1.png"
+                alt="ESS 3532 Containerized Battery Energy Storage System"
+                fill
+                className="object-contain p-2"
+              />
+            </div>
+
             <p className="text-text-secondary text-sm md:text-base leading-relaxed">
               The ESS 3532 is PAA SOLAR’s flagship containerized energy storage unit designed for megawatt-scale utility solar parks, PM-KUSUM feeder installations, and commercial microgrids. Engineered with IP65 liquid-cooled thermal management, active cell-to-cell BMS protection, and automatic grid peak shaving capability.
             </p>
@@ -138,6 +149,16 @@ export default function BessPage() {
               </div>
               <span className="px-4 py-1.5 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-xs font-mono font-bold">1250 kW High-Discharge Power</span>
             </div>
+
+            <div className="relative h-60 sm:h-72 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+              <Image
+                src="/products/bess2.png"
+                alt="Li UPS 1250 High Output Backup System"
+                fill
+                className="object-contain p-2"
+              />
+            </div>
+
             <p className="text-text-secondary text-sm md:text-base leading-relaxed">
               The Li UPS 1250 provides instantaneous, zero-interruption power transfer for mission-critical industrial manufacturing plants, data centers, and healthcare facilities. Equipped with high-discharge lithium-ion chemistry, intelligent load management, and multi-cabinet parallel stacking.
             </p>

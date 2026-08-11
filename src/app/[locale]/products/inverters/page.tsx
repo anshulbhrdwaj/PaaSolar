@@ -5,6 +5,7 @@ import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
 import { Zap, CheckCircle2, Download } from 'lucide-react';
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 
 export const metadata: Metadata = {
@@ -122,6 +123,16 @@ export default function InvertersPage() {
               </div>
               <span className="px-4 py-1.5 rounded-full bg-accent-sky/10 border border-accent-sky/30 text-accent-sky text-xs font-mono font-bold">99.2% MPPT Efficiency</span>
             </div>
+
+            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+              <Image
+                src="/products/inverter1.png"
+                alt="On-Grid String Solar Inverter"
+                fill
+                className="object-contain p-2"
+              />
+            </div>
+
             <p className="text-text-secondary text-sm md:text-base leading-relaxed">
               High-efficiency grid-tied string inverters engineered for seamless DISCOM net-metering synchronization. Features multi-MPPT trackers for complex roof angles, integrated DC/AC surge protection, and real-time WiFi/4G cloud monitoring for commercial rooftops, PM-KUSUM feeder plants, and utility IPP solar parks.
             </p>
@@ -150,6 +161,16 @@ export default function InvertersPage() {
               </div>
               <span className="px-4 py-1.5 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-xs font-mono font-bold">Integrated MPPT Controller</span>
             </div>
+
+            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+              <Image
+                src="/products/inverter2.png"
+                alt="Off-Grid Heavy Duty Solar Inverter"
+                fill
+                className="object-contain p-2"
+              />
+            </div>
+
             <p className="text-text-secondary text-sm md:text-base leading-relaxed">
               Heavy-duty standalone inverters designed for remote locations without grid connectivity. Combines high-voltage MPPT solar charger, pure sine wave power conversion, and automatic diesel generator start logic for off-grid farmhouses, telecommunication towers, commercial microgrids, and rural electrification.
             </p>
@@ -178,6 +199,16 @@ export default function InvertersPage() {
               </div>
               <span className="px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-mono font-bold">&lt; 10ms Blackout Transfer</span>
             </div>
+
+            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+              <Image
+                src="/products/inverter3.png"
+                alt="Hybrid Smart Solar Inverter"
+                fill
+                className="object-contain p-2"
+              />
+            </div>
+
             <p className="text-text-secondary text-sm md:text-base leading-relaxed">
               Next-generation hybrid bi-directional inverters that seamlessly balance solar PV generation, grid power, and LiFePO4 battery storage. Features instant uninterruptible backup, peak load shaving, and smart zero-feed-in export control for uninterrupted power security during severe grid outages.
             </p>
@@ -195,6 +226,41 @@ export default function InvertersPage() {
                 <span>AI Peak Shaving & Load Export</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* 7-Inverter Hardware Catalogue Grid */}
+        <div className="mt-16 space-y-6">
+          <div className="text-center max-w-xl mx-auto space-y-2">
+            <span className="text-xs uppercase font-mono tracking-widest text-accent-sky font-bold">FULL HARDWARE LINEUP</span>
+            <h3 className="font-serif text-3xl font-bold text-text-primary">Inverter Models Catalogue</h3>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+            {[
+              { title: 'On-Grid String', img: '/products/inverter1.png', tag: '3kW - 100kW' },
+              { title: 'Off-Grid Heavy', img: '/products/inverter2.png', tag: 'Pure Sine' },
+              { title: 'Hybrid Smart', img: '/products/inverter3.png', tag: 'Sub-10ms' },
+              { title: 'Microinverter', img: '/products/inverter4.png', tag: 'Quad MPPT' },
+              { title: 'Commercial PCU', img: '/products/inverter5.png', tag: '500 kW IPP' },
+              { title: 'High Voltage', img: '/products/inverter6.png', tag: '1500V DC' },
+              { title: 'Modular Inverter', img: '/products/inverter7.png', tag: 'Hot Swap' },
+            ].map((item, idx) => (
+              <div key={idx} className="group rounded-2xl bg-bg-primary border border-line p-3 shadow-md hover:border-accent-sky transition-all flex flex-col justify-between hover:-translate-y-1">
+                <div className="relative h-36 w-full rounded-xl overflow-hidden bg-white/70 border border-line p-2 flex items-center justify-center">
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill
+                    className="object-contain p-1"
+                  />
+                </div>
+                <div className="pt-2 text-center">
+                  <span className="text-[9px] font-mono font-bold text-accent-sky uppercase block">{item.tag}</span>
+                  <h4 className="font-serif text-xs font-bold text-text-primary mt-0.5">{item.title}</h4>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 

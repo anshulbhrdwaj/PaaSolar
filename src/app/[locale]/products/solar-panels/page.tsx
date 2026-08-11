@@ -5,6 +5,7 @@ import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
 import { SunMedium, CheckCircle2, ShieldCheck, Download } from 'lucide-react';
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 
 export const metadata: Metadata = {
@@ -130,6 +131,16 @@ export default function SolarPanelsPage() {
                 </p>
               </div>
 
+              {/* Panel Image Showcase */}
+              <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500 shadow-inner">
+                <Image
+                  src="/products/panel1.png"
+                  alt="N-Type TOPCon Solar Panel"
+                  fill
+                  className="object-contain p-2"
+                />
+              </div>
+
               <p className="text-text-secondary text-sm leading-relaxed font-medium">
                 {t('topcon.desc')}
               </p>
@@ -197,6 +208,16 @@ export default function SolarPanelsPage() {
                 </p>
               </div>
 
+              {/* DCR Panel Image Showcase */}
+              <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500 shadow-inner">
+                <Image
+                  src="/products/panel2.png"
+                  alt="DCR Subsidy Solar Panel Made in India"
+                  fill
+                  className="object-contain p-2"
+                />
+              </div>
+
               <p className="text-text-secondary text-sm leading-relaxed font-medium">
                 {t('dcr.desc')}
               </p>
@@ -237,6 +258,48 @@ export default function SolarPanelsPage() {
                 {t('dcr.cta')}
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solar Panel Hardware Gallery Grid */}
+      <section className="py-16 border-b border-line bg-bg-secondary/30">
+        <div className="max-w-7xl mx-auto px-6 space-y-8">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <span className="text-xs uppercase font-mono tracking-widest text-accent-solar font-bold">
+              MODULE GALLERY & HARDWARE CATALOGUE
+            </span>
+            <h3 className="font-serif text-3xl font-bold text-text-primary">
+              High-Resolution Solar Panel Product Series
+            </h3>
+            <p className="text-text-secondary text-xs sm:text-sm font-medium">
+              Explore N-Type TOPCon bifacial glass-glass modules, ALMM DCR subsidy panels, and full-black aesthetic panels.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              { title: 'TOPCon 650W Bifacial', img: '/products/panel1.png', tag: '22.8%+ Yield' },
+              { title: 'DCR 590W Subsidy', img: '/products/panel2.png', tag: 'MNRE Certified' },
+              { title: 'Mono PERC 550W', img: '/products/panel3.png', tag: 'High-Density Cell' },
+              { title: 'Glass-Glass 580W', img: '/products/panel4.png', tag: 'Dual Tempered' },
+              { title: 'Full Black 540W', img: '/products/panel5.png', tag: 'Luxury Roof' },
+            ].map((p, idx) => (
+              <div key={idx} className="group rounded-2xl bg-bg-primary border border-line p-4 shadow-lg hover:border-accent-solar transition-all flex flex-col justify-between hover:-translate-y-1">
+                <div className="relative h-44 w-full rounded-xl overflow-hidden bg-white/70 border border-line p-2 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                  <Image
+                    src={p.img}
+                    alt={p.title}
+                    fill
+                    className="object-contain p-1"
+                  />
+                </div>
+                <div className="pt-3">
+                  <span className="text-[10px] font-mono font-bold text-accent-solar block uppercase">{p.tag}</span>
+                  <h4 className="font-serif text-sm font-bold text-text-primary mt-0.5">{p.title}</h4>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

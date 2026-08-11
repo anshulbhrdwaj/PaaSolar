@@ -8,6 +8,8 @@ import { Footer } from '@/components/sections/Footer';
 import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
 import { SunMedium, Zap, BatteryCharging, Cpu, ArrowRight, ShieldCheck, Download, Store } from 'lucide-react';
 
+import Image from 'next/image';
+
 export default function ProductsPage() {
   const t = useTranslations('ProductDetails');
 
@@ -20,6 +22,7 @@ export default function ProductsPage() {
       subtitle: 'High-density 24%+ efficiency N-Type TOPCon bifacial modules and DCR subsidy panels made in India.',
       icon: <SunMedium className="w-8 h-8 text-accent-solar" />,
       badge: '22.8%+ Module Efficiency',
+      image: '/products/panel1.png',
       specs: ['N-Type TOPCon Technology', 'DCR Subsidy Compliance', '30-Year Performance Guarantee'],
     },
     {
@@ -30,6 +33,7 @@ export default function ProductsPage() {
       subtitle: 'High-efficiency string inverters with sub-10ms automatic blackout transfer and DISCOM net metering.',
       icon: <Zap className="w-8 h-8 text-accent-sky" />,
       badge: '99.2% MPPT Efficiency',
+      image: '/products/inverter1.png',
       specs: ['On-Grid Net Metering', 'Off-Grid Generator Sync', 'Hybrid Storage Backup'],
     },
     {
@@ -40,6 +44,7 @@ export default function ProductsPage() {
       subtitle: 'Ultra-safe Lithium Iron Phosphate (LiFePO4) & Lithium-Ion battery banks with 10,000+ deep discharge cycles.',
       icon: <BatteryCharging className="w-8 h-8 text-accent-gold" />,
       badge: '10,000+ Deep Cycles',
+      image: '/products/battery1.png',
       specs: ['LiFePO4 Safe Chemistry', 'AI Active Cell Balancing', '100% Usable DoD Capacity'],
     },
     {
@@ -50,6 +55,7 @@ export default function ProductsPage() {
       subtitle: 'Turnkey IP65 containerized ESS 3532 units and Li UPS 1250 high-discharge backup vaults.',
       icon: <Cpu className="w-8 h-8 text-emerald-500" />,
       badge: '3.53 MWh LFP Capacity',
+      image: '/products/bess1.png',
       specs: ['ESS 3532 Container Unit', 'Li UPS 1250 High Output', 'Sub-10ms Islanding Speed'],
     },
     {
@@ -60,6 +66,7 @@ export default function ProductsPage() {
       subtitle: 'Complete turnkey solar kits (1kW to 10kW) featuring TOPCon DCR modules, inverters & official PM Surya Ghar dealer franchise packages.',
       icon: <Store className="w-8 h-8 text-emerald-400" />,
       badge: '1 kW to 10 kW Kits & Franchise',
+      image: '/products/panel5.png',
       specs: ['Complete Ready-to-Install Kits', 'PM Surya Ghar Portal Compliant', 'Exclusive District Dealer Franchise Offer'],
     },
   ];
@@ -105,8 +112,8 @@ export default function ProductsPage() {
               href={prod.href}
               className="group relative rounded-3xl p-8 bg-bg-secondary/70 border border-line hover:border-accent-solar/60 transition-all duration-500 overflow-hidden flex flex-col justify-between shadow-xl hover:-translate-y-1"
             >
-              <div>
-                <div className="flex items-center justify-between mb-6">
+              <div className="space-y-5">
+                <div className="flex items-center justify-between">
                   <span className="text-xs font-mono uppercase tracking-widest text-accent-solar font-semibold">
                     {prod.tag}
                   </span>
@@ -115,15 +122,25 @@ export default function ProductsPage() {
                   </div>
                 </div>
 
-                <div className="inline-block px-3 py-1 rounded-full bg-accent-solar/10 text-accent-solar font-mono text-xs font-bold mb-3">
+                {/* Product Image Frame */}
+                <div className="relative h-52 w-full rounded-2xl overflow-hidden bg-white/50 border border-line p-4 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500">
+                  <Image
+                    src={prod.image}
+                    alt={prod.title}
+                    fill
+                    className="object-contain p-2"
+                  />
+                </div>
+
+                <div className="inline-block px-3 py-1 rounded-full bg-accent-solar/10 text-accent-solar font-mono text-xs font-bold">
                   {prod.badge}
                 </div>
 
-                <h2 className="font-serif text-3xl font-bold text-text-primary mb-3 group-hover:text-accent-solar transition-colors">
+                <h2 className="font-serif text-3xl font-bold text-text-primary group-hover:text-accent-solar transition-colors">
                   {prod.title}
                 </h2>
 
-                <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                <p className="text-text-secondary text-sm leading-relaxed">
                   {prod.subtitle}
                 </p>
 

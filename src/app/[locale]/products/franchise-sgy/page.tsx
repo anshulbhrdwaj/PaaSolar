@@ -5,6 +5,7 @@ import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
 import { Building2, CheckCircle2, ShieldCheck, Sun, ArrowRight, Store, Truck, Users, Sparkles } from 'lucide-react';
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 
 export default function FranchiseSgyPage() {
@@ -42,6 +43,15 @@ export default function FranchiseSgyPage() {
 
           <div className="lg:col-span-5">
             <div className="rounded-3xl p-8 bg-bg-secondary border border-line shadow-2xl space-y-6">
+              <div className="relative h-48 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+                <Image
+                  src="/products/panel5.png"
+                  alt="Complete PM Surya Ghar Solar Kit Package"
+                  fill
+                  className="object-contain p-2"
+                />
+              </div>
+
               <div className="flex items-center justify-between border-b border-line pb-4">
                 <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">PM SGY KITS</span>
                 <span className="font-serif text-3xl font-bold text-emerald-500">1 kW to 10 kW</span>

@@ -5,6 +5,7 @@ import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
 import { BatteryCharging, CheckCircle2, Download } from 'lucide-react';
+import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 
 export const metadata: Metadata = {
@@ -121,6 +122,16 @@ export default function BatteryPage() {
               </div>
               <span className="px-4 py-1.5 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-xs font-mono font-bold">10,000+ Deep Cycles</span>
             </div>
+
+            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+              <Image
+                src="/products/battery1.png"
+                alt="LiFePO4 Lithium Battery Storage Vault"
+                fill
+                className="object-contain p-2"
+              />
+            </div>
+
             <p className="text-text-secondary text-sm md:text-base leading-relaxed">
               Ultra-safe Lithium Iron Phosphate (LiFePO4) & Lithium-Ion battery modules engineered for maximum thermal stability and zero fire risk. Features AI active cell balancing, 100% usable depth of discharge, integrated smart BMS telemetry, and modular stackable wall-mount or floor-stand enclosures for home rooftop, commercial, and hybrid solar setups.
             </p>
@@ -149,6 +160,16 @@ export default function BatteryPage() {
               </div>
               <span className="px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-mono font-bold">500 kWh - 10 MWh+ Utility Scale</span>
             </div>
+
+            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+              <Image
+                src="/products/battery2.png"
+                alt="Containerized BESS Lithium Battery Rack"
+                fill
+                className="object-contain p-2"
+              />
+            </div>
+
             <p className="text-text-secondary text-sm md:text-base leading-relaxed">
               Turnkey IP65 containerized Battery Energy Storage Systems (BESS) for commercial microgrids, PM-KUSUM agricultural feeders, and utility-scale solar parks. Features liquid-cooled HVAC thermal management, sub-10ms islanding fallback speed, and peak shaving load shifting logic.
             </p>
@@ -166,6 +187,38 @@ export default function BatteryPage() {
                 <span>Peak Load Shaving & Grid Sync</span>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* 4-Battery Hardware Catalogue Grid */}
+        <div className="mt-16 space-y-6">
+          <div className="text-center max-w-xl mx-auto space-y-2">
+            <span className="text-xs uppercase font-mono tracking-widest text-accent-gold font-bold">STORAGE LINEUP</span>
+            <h3 className="font-serif text-3xl font-bold text-text-primary">Battery Storage Models</h3>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { title: 'LiFePO4 Wall Mount 5.12kWh', img: '/products/battery1.png', tag: '10,000+ Cycles' },
+              { title: 'LiFePO4 Server Rack 10.24kWh', img: '/products/battery2.png', tag: 'Smart BMS' },
+              { title: 'High Voltage BESS 100kWh', img: '/products/battery3.png', tag: 'Industrial' },
+              { title: 'High Discharge Li UPS 1250', img: '/products/battery4.png', tag: 'Zero Transfer' },
+            ].map((item, idx) => (
+              <div key={idx} className="group rounded-2xl bg-bg-primary border border-line p-4 shadow-md hover:border-accent-gold transition-all flex flex-col justify-between hover:-translate-y-1">
+                <div className="relative h-40 w-full rounded-xl overflow-hidden bg-white/70 border border-line p-2 flex items-center justify-center">
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    fill
+                    className="object-contain p-1"
+                  />
+                </div>
+                <div className="pt-3 text-center">
+                  <span className="text-[10px] font-mono font-bold text-accent-gold uppercase block">{item.tag}</span>
+                  <h4 className="font-serif text-sm font-bold text-text-primary mt-0.5">{item.title}</h4>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
