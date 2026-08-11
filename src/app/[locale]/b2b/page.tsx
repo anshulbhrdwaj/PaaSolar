@@ -3,7 +3,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
-import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
 import { Building2, CheckCircle2, DollarSign, ShieldCheck, Zap, Layers } from 'lucide-react';
 import { Link } from '@/i18n/routing';
@@ -154,8 +153,6 @@ export default function B2BPage() {
           </div>
         </div>
       </section>
-
-      <SolarCalculator />
       <Footer />
     </main>
   );

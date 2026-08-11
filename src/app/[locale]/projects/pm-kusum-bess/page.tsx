@@ -79,7 +79,7 @@ export default function PMKusumBessPage() {
               <div>
                 <h4 className="font-bold text-sm text-text-primary mb-1">Uninterrupted Agricultural Power</h4>
                 <p className="text-text-secondary leading-relaxed">
-                  Stores surplus daytime TOPCon solar generation to power agricultural pumps during evening discom rationing windows.
+                  Stores surplus daytime TOPCon solar generation to power rural feeder grids during peak evening discom rationing windows.
                 </p>
               </div>
             </div>

@@ -15,6 +15,7 @@ interface ProjectItem {
   offset: string;
   desc: string;
   bgGradient: string;
+  image?: string;
 }
 
 export function CaseStudies() {
@@ -79,36 +80,47 @@ export function CaseStudies() {
               data-cursor="view"
               className="group cursor-pointer rounded-3xl p-8 bg-bg-primary border border-line hover:border-emerald-500 hover:ring-2 hover:ring-emerald-500/20 transition-all duration-500 relative overflow-hidden flex flex-col justify-between aspect-[4/3] shadow-xl"
             >
-              {/* Decorative Gradient Pattern */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${project.bgGradient} opacity-40 group-hover:opacity-80 transition-opacity duration-500`}
-              />
+              {/* Map Embed Background Container */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-85 group-hover:opacity-100 transition-opacity duration-500">
+                <iframe
+                  title={`Map of ${project.location}`}
+                  width="100%"
+                  height="100%"
+                  loading="lazy"
+                  src={`https://maps.google.com/maps?q=${encodeURIComponent(project.location)}&t=m&z=10&output=embed&iwloc=near`}
+                  className="w-full h-full border-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/90 via-bg-primary/30 to-transparent group-hover:from-bg-primary/75 group-hover:via-bg-primary/10 transition-colors duration-500" />
+              </div>
 
               <div className="relative z-10 flex items-center justify-between">
-                <span className="text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full bg-bg-secondary border border-line text-emerald-500 font-bold">
+                <span className="text-xs font-mono uppercase tracking-widest px-3.5 py-1.5 rounded-full bg-bg-primary/90 border border-emerald-500/40 text-emerald-400 font-bold backdrop-blur-md shadow-sm">
                   {t(`filters.${project.category}`) || project.category}
                 </span>
-                <div className="w-10 h-10 rounded-full bg-bg-secondary border border-line flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                <div className="w-10 h-10 rounded-full bg-bg-primary/90 border border-line flex items-center justify-center group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300 backdrop-blur-md shadow-md">
                   <ArrowUpRight className="w-5 h-5" />
                 </div>
               </div>
 
-              <div className="relative z-10">
-                <div className="flex items-center gap-2 text-sm font-semibold text-text-primary mb-2">
-                  <MapPin className="w-4 h-4 text-emerald-500" />
-                  <span>{project.location}</span>
-                </div>
+              {/* Prominent Map Location Pill */}
+              <div className="relative z-10 my-auto flex items-center gap-2.5 px-4 py-2.5 rounded-2xl bg-bg-primary/90 border border-emerald-500/40 backdrop-blur-md shadow-lg w-fit group-hover:border-emerald-500 transition-colors">
+                <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
+                <span className="font-serif text-sm sm:text-base font-bold text-text-primary">
+                  {project.location}
+                </span>
+              </div>
 
-                <h3 className="font-serif text-2xl md:text-3xl font-bold text-text-primary mb-3">
+              <div className="relative z-10">
+                <h3 className="font-serif text-lg md:text-xl font-bold text-text-primary mb-3">
                   {project.title}
                 </h3>
 
-                <div className="flex items-center gap-4 text-sm font-bold pt-4 border-t border-line/60">
-                  <div className="flex items-center gap-1.5 text-emerald-500">
+                <div className="flex items-center justify-between gap-4 text-xs font-bold pt-3 border-t border-line/60">
+                  <div className="flex items-center gap-1.5 text-emerald-400 font-mono">
                     <Zap className="w-4 h-4" />
                     <span>{project.capacity}</span>
                   </div>
-                  <span className="text-text-primary/90">{project.offset}</span>
+                  <span className="text-text-secondary font-mono">{project.offset}</span>
                 </div>
               </div>
             </div>
@@ -139,14 +151,30 @@ export function CaseStudies() {
 
       {/* Case Study Detail Modal Overlay */}
       {selectedProject && (
-        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-6 animate-fade-in">
-          <div className="relative w-full max-w-2xl rounded-3xl p-8 bg-bg-primary border border-line shadow-2xl overflow-hidden">
+        <div className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-6 animate-fade-in">
+          <div className="relative w-full max-w-2xl rounded-3xl p-8 bg-bg-primary border border-line shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
             <button
               onClick={() => setSelectedProject(null)}
-              className="absolute top-6 right-6 p-2 rounded-full border border-line bg-bg-secondary hover:bg-accent-solar hover:text-white transition-colors"
+              className="absolute top-6 right-6 z-20 p-2 rounded-full border border-line bg-bg-secondary hover:bg-accent-solar hover:text-white transition-colors shadow-md"
             >
               <X className="w-5 h-5" />
             </button>
+
+            {/* Interactive Live Map View in Modal */}
+            <div className="w-full h-56 rounded-2xl overflow-hidden mb-6 relative border border-emerald-500/40 shadow-xl group">
+              <iframe
+                title={`Live Map ${selectedProject.location}`}
+                width="100%"
+                height="100%"
+                loading="lazy"
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(selectedProject.location)}&t=m&z=12&output=embed`}
+                className="w-full h-full border-0"
+              />
+              <div className="absolute bottom-3 left-3 px-3 py-1.5 rounded-full bg-bg-primary/90 border border-line text-emerald-400 text-xs font-mono font-bold flex items-center gap-1.5 shadow-md backdrop-blur-md">
+                <MapPin className="w-3.5 h-3.5" />
+                <span>{selectedProject.location}</span>
+              </div>
+            </div>
 
             <span className="text-xs font-mono uppercase tracking-widest text-accent-solar">
               {selectedProject.category} Case Study

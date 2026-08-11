@@ -2,9 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
-import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
-import { Zap, CheckCircle2 } from 'lucide-react';
+import { Zap, CheckCircle2, Download } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 export const metadata: Metadata = {
@@ -59,6 +58,16 @@ export default function InvertersPage() {
               >
                 Inquire Smart Inverters
               </Link>
+              <a
+                href="/Paa_Solar_Product_Catalogue_2026.pdf"
+                download="Paa_Solar_Product_Catalogue_2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-4 rounded-full border border-line bg-bg-secondary hover:bg-bg-secondary/80 text-text-primary text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all shadow-md"
+              >
+                <Download className="w-4 h-4 text-accent-sky" />
+                <span>Download Catalogue (PDF)</span>
+              </a>
             </div>
           </div>
 
@@ -141,7 +150,7 @@ export default function InvertersPage() {
               <span className="px-4 py-1.5 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-xs font-mono font-bold">Integrated MPPT Controller</span>
             </div>
             <p className="text-text-secondary text-sm md:text-base leading-relaxed">
-              Heavy-duty standalone inverters designed for remote locations without grid connectivity. Combines high-voltage MPPT solar charger, pure sine wave power conversion, and automatic diesel generator start logic for agricultural solar pumps, off-grid farmhouses, telecommunication towers, and rural electrification.
+              Heavy-duty standalone inverters designed for remote locations without grid connectivity. Combines high-voltage MPPT solar charger, pure sine wave power conversion, and automatic diesel generator start logic for off-grid farmhouses, telecommunication towers, commercial microgrids, and rural electrification.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-line/60 text-xs font-medium text-text-primary">
               <div className="flex items-center gap-2">
@@ -210,8 +219,6 @@ export default function InvertersPage() {
           </div>
         </div>
       </section>
-
-      <SolarCalculator />
       <Footer />
     </main>
   );

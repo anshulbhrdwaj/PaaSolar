@@ -2,9 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
-import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
-import { BatteryCharging, CheckCircle2 } from 'lucide-react';
+import { BatteryCharging, CheckCircle2, Download } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 export const metadata: Metadata = {
@@ -58,6 +57,16 @@ export default function BatteryPage() {
               >
                 Quote Paa Vault Storage
               </Link>
+              <a
+                href="/Paa_Solar_Product_Catalogue_2026.pdf"
+                download="Paa_Solar_Product_Catalogue_2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-4 rounded-full border border-line bg-bg-secondary hover:bg-bg-secondary/80 text-text-primary text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all shadow-md"
+              >
+                <Download className="w-4 h-4 text-accent-gold" />
+                <span>Download Catalogue (PDF)</span>
+              </a>
             </div>
           </div>
 
@@ -181,8 +190,6 @@ export default function BatteryPage() {
           </div>
         </div>
       </section>
-
-      <SolarCalculator />
       <Footer />
     </main>
   );

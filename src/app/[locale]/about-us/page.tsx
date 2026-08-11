@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import { Navbar } from '@/components/ui/Navbar';
-import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
 import { ShieldCheck, Sparkles, Building2, Users, Target, Lightbulb } from 'lucide-react';
 
@@ -294,7 +293,7 @@ export default function AboutUsPage() {
               </div>
               <h3 className="text-xl font-bold text-text-primary">PM-KUSUM Rural Electrification</h3>
               <p className="text-text-secondary text-xs md:text-sm leading-relaxed">
-                We actively participate in PM-KUSUM and PM-SSY agricultural schemes, providing off-grid & hybrid solar pump systems and BESS storage that grant Indian farmers 24/7 reliable irrigation and energy autonomy.
+                We actively participate in PM-KUSUM feeder solar schemes and BESS storage that grant 24/7 reliable grid feeder power and energy autonomy.
               </p>
             </div>
 
@@ -336,7 +335,6 @@ export default function AboutUsPage() {
       </section>
 
       {/* Get a Quote CTA */}
-      <SolarCalculator />
 
       <Footer />
     </main>

@@ -3,7 +3,6 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
-import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
 import { Wrench, Cpu, Activity, Layers, Compass } from 'lucide-react';
 
@@ -56,8 +55,6 @@ export default function WorkingMethodologyPage() {
           ))}
         </div>
       </section>
-
-      <SolarCalculator />
       <Footer />
     </main>
   );

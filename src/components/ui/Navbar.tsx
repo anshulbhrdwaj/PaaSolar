@@ -17,6 +17,7 @@ import {
   Zap,
   BatteryCharging,
   Cpu,
+  Download,
   Layers,
   Building2,
   Sprout,
@@ -290,14 +291,25 @@ export function Navbar() {
                     </Link>
                   </div>
 
-                  <div className="border-t border-line/60 pt-1 mt-1">
+                  <div className="border-t border-line/60 pt-1.5 mt-1.5 flex flex-col gap-1">
                     <Link
                       href="/products"
-                      className="flex items-center gap-2 px-2.5 py-2 rounded-lg text-xs font-semibold text-accent-solar hover:bg-accent-solar/10 transition-colors"
+                      className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs font-semibold text-accent-solar hover:bg-accent-solar/10 transition-colors"
                     >
                       <Layers className="w-3.5 h-3.5" />
                       <span>{t('productsDropdown.allProducts')}</span>
                     </Link>
+
+                    <a
+                      href="/Paa_Solar_Product_Catalogue_2026.pdf"
+                      download="Paa_Solar_Product_Catalogue_2026.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 px-2.5 py-2 rounded-lg text-xs font-bold text-white bg-accent-solar hover:bg-accent-solar/90 shadow-md transition-all mt-0.5"
+                    >
+                      <Download className="w-3.5 h-3.5" />
+                      <span>Download Catalogue (PDF)</span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -369,21 +381,6 @@ export function Navbar() {
                         {t('projectsDropdown.pmKusumBess')}
                       </p>
                       <p className="text-[10px] text-text-secondary">Solar Energy Storage & Microgrids</p>
-                    </div>
-                  </Link>
-
-                  <Link
-                    href="/projects/pm-ssy"
-                    className="flex items-center gap-3 p-2.5 rounded-xl hover:bg-bg-secondary/70 transition-colors group"
-                  >
-                    <div className="p-2 rounded-lg bg-amber-500/10 text-amber-500 group-hover:scale-110 transition-transform">
-                      <Sun className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
-                        {t('projectsDropdown.pmSsy')}
-                      </p>
-                      <p className="text-[10px] text-text-secondary">Solar Rooftop & State Subsidy</p>
                     </div>
                   </Link>
 
@@ -782,6 +779,18 @@ export function Navbar() {
                   <Layers className="w-4 h-4" />
                   <span>{t('productsDropdown.allProducts')}</span>
                 </Link>
+
+                <a
+                  href="/Paa_Solar_Product_Catalogue_2026.pdf"
+                  download="Paa_Solar_Product_Catalogue_2026.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 text-white bg-accent-solar hover:bg-accent-solar/90 font-bold px-3 py-2 rounded-xl text-xs shadow-sm transition-all mt-1 w-fit"
+                >
+                  <Download className="w-4 h-4" />
+                  <span>Download Catalogue (PDF)</span>
+                </a>
               </div>
             )}
           </div>
@@ -820,14 +829,6 @@ export function Navbar() {
                 >
                   <Sprout className="w-4 h-4 text-emerald-500" />
                   <span>{t('projectsDropdown.pmKusum')}</span>
-                </Link>
-                <Link
-                  href="/projects/pm-ssy"
-                  onClick={() => setMobileOpen(false)}
-                  className="flex items-center gap-2 hover:text-accent-solar transition-colors"
-                >
-                  <Sun className="w-4 h-4 text-amber-500" />
-                  <span>{t('projectsDropdown.pmSsy')}</span>
                 </Link>
                 <Link
                   href="/projects/ipp"

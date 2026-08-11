@@ -85,21 +85,13 @@ export function SolarCalculator() {
     const annualSavings = monthlySavings * 12;
     const lifetimeSavings25Yrs = annualSavings * 25;
 
-    // 5. Turnkey Project Cost & PM Surya Ghar Subsidy
+    // 5. Turnkey Project Cost Calculation
     let grossProjectCost = Math.round(finalSystemKw * 52000); // ₹52k/kW benchmark EPC cost
     if (finalSystemKw <= 3) grossProjectCost = Math.round(finalSystemKw * 58000);
     
-    let pmSgySubsidy = 0;
-    if (finalSystemKw <= 1) {
-      pmSgySubsidy = 30000;
-    } else if (finalSystemKw <= 2) {
-      pmSgySubsidy = 60000;
-    } else if (finalSystemKw >= 3) {
-      pmSgySubsidy = 78000; // Capped max subsidy ₹78,000 under PM Surya Ghar Yojana
-    }
-
-    const netInvestmentCost = Math.max(0, grossProjectCost - pmSgySubsidy);
-    const paybackYears = annualSavings > 0 ? Math.round((netInvestmentCost / annualSavings) * 10) / 10 : 3.5;
+    const pmSgySubsidy = 0;
+    const netInvestmentCost = grossProjectCost;
+    const paybackYears = annualSavings > 0 ? Math.round((grossProjectCost / annualSavings) * 10) / 10 : 3.8;
     const annualCo2OffsetTons = Math.round(finalSystemKw * 1.35 * 10) / 10;
     const equivalentTreesPlanted = Math.round(annualCo2OffsetTons * 45);
 
@@ -697,23 +689,23 @@ export function SolarCalculator() {
 
                     {/* Annual Savings */}
                     <div className="p-4 rounded-2xl bg-bg-secondary border border-line">
-                      <span className="text-[10px] font-mono font-bold text-text-secondary uppercase">{t('subsidyAmt')}</span>
+                      <span className="text-[10px] font-mono font-bold text-text-secondary uppercase">Annual Savings</span>
                       <p className="font-serif text-2xl font-bold text-accent-solar mt-1">
-                        ₹{calc.pmSgySubsidy.toLocaleString('en-IN')}
+                        ₹{calc.annualSavings.toLocaleString('en-IN')}
                       </p>
                     </div>
                   </div>
 
-                  {/* Cost & PM SGY Subsidy Summary */}
+                  {/* Turnkey Investment Cost & 25-Yr Return Summary */}
                   <div className="p-4 rounded-2xl bg-bg-secondary/70 border border-line space-y-3">
                     <div className="flex items-center justify-between text-xs font-semibold">
-                      <span className="text-text-secondary">{t('subsidyAmt')}:</span>
-                      <span className="font-mono text-emerald-500 font-bold">₹{calc.pmSgySubsidy.toLocaleString('en-IN')}</span>
+                      <span className="text-text-secondary">25-Yr Lifetime Return:</span>
+                      <span className="font-mono text-emerald-500 font-bold">₹{calc.lifetimeSavings25Yrs.toLocaleString('en-IN')}</span>
                     </div>
 
                     <div className="pt-2 border-t border-line/60 flex items-center justify-between text-sm font-bold">
-                      <span className="text-text-primary">{t('netCost')}:</span>
-                      <span className="font-mono text-accent-solar text-base">₹{calc.netInvestmentCost.toLocaleString('en-IN')}</span>
+                      <span className="text-text-primary">Turnkey EPC Cost:</span>
+                      <span className="font-mono text-accent-solar text-base">₹{calc.grossProjectCost.toLocaleString('en-IN')}</span>
                     </div>
                   </div>
 

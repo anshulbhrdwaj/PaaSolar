@@ -4,9 +4,8 @@ import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Navbar } from '@/components/ui/Navbar';
-import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
-import { SunMedium, Zap, BatteryCharging, Cpu, ArrowRight, ShieldCheck } from 'lucide-react';
+import { SunMedium, Zap, BatteryCharging, Cpu, ArrowRight, ShieldCheck, Download } from 'lucide-react';
 
 export default function ProductsPage() {
   const t = useTranslations('ProductDetails');
@@ -67,9 +66,22 @@ export default function ProductsPage() {
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-text-primary mt-3 mb-4">
             Next-Gen Solar Technology Catalogue
           </h1>
-          <p className="text-text-secondary text-lg leading-relaxed">
+          <p className="text-text-secondary text-lg leading-relaxed mb-6">
             From government-subsidized rooftop initiatives to high-density TOPCon bifacial panels, smart hybrid inverters, and sovereign LFP energy storage.
           </p>
+
+          <div className="flex items-center justify-center gap-4">
+            <a
+              href="/Paa_Solar_Product_Catalogue_2026.pdf"
+              download="Paa_Solar_Product_Catalogue_2026.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full bg-accent-solar text-white font-bold text-xs uppercase tracking-wider shadow-lg hover:shadow-accent-solar/30 hover:bg-accent-solar/90 transition-all hover:scale-105"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download Product Catalogue (PDF)</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -122,8 +134,6 @@ export default function ProductsPage() {
           ))}
         </div>
       </section>
-
-      <SolarCalculator />
       <Footer />
     </main>
   );

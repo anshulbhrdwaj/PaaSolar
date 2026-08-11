@@ -2,9 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
-import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
-import { Cpu, CheckCircle2, ShieldCheck, Zap } from 'lucide-react';
+import { Cpu, CheckCircle2, ShieldCheck, Zap, Download } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 export const metadata: Metadata = {
@@ -57,6 +56,16 @@ export default function BessPage() {
               >
                 Inquire BESS Storage
               </Link>
+              <a
+                href="/Paa_Solar_Product_Catalogue_2026.pdf"
+                download="Paa_Solar_Product_Catalogue_2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-4 rounded-full border border-line bg-bg-secondary hover:bg-bg-secondary/80 text-text-primary text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all shadow-md"
+              >
+                <Download className="w-4 h-4 text-emerald-500" />
+                <span>Download Catalogue (PDF)</span>
+              </a>
             </div>
           </div>
 
@@ -158,8 +167,6 @@ export default function BessPage() {
           ))}
         </div>
       </section>
-
-      <SolarCalculator />
       <Footer />
     </main>
   );

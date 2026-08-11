@@ -50,8 +50,8 @@ export default function CIPage() {
                 <span className="font-serif text-3xl font-bold text-accent-sky">{t('stat1')}</span>
               </div>
               <div className="flex items-center justify-between border-b border-line pb-4">
-                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">PAYBACK</span>
-                <span className="font-serif text-2xl font-bold text-emerald-500">{t('stat2')}</span>
+                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">PAYBACK PERIOD</span>
+                <span className="font-serif text-xl sm:text-2xl font-bold text-emerald-500">{t('stat2')}</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">FINANCING</span>

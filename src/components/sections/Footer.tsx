@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { SunArcAnimation } from '../ui/SunArcAnimation';
 import { PaaSolarLogo } from '../ui/PaaSolarLogo';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, Download } from 'lucide-react';
 
 export function Footer() {
   const t = useTranslations('Footer');
@@ -124,6 +124,18 @@ export function Footer() {
                 <li><Link href="/products/battery" className="hover:text-accent-solar transition-colors">Lithium Battery</Link></li>
                 <li><Link href="/products/bess" className="hover:text-accent-solar transition-colors">BESS (ESS 3532, Li UPS 1250)</Link></li>
                 <li><Link href="/products" className="hover:text-accent-solar transition-colors">All Products Catalogue</Link></li>
+                <li>
+                  <a
+                    href="/Paa_Solar_Product_Catalogue_2026.pdf"
+                    download="Paa_Solar_Product_Catalogue_2026.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-accent-solar hover:underline font-bold text-xs pt-1"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>Download Catalogue (PDF)</span>
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -136,7 +148,6 @@ export function Footer() {
                 <li><Link href="/projects/ci" className="hover:text-accent-solar transition-colors">C&I Solar</Link></li>
                 <li><Link href="/projects/pm-kusum" className="hover:text-accent-solar transition-colors">PM KUSUM (A&C)</Link></li>
                 <li><Link href="/projects/pm-kusum-bess" className="hover:text-accent-solar transition-colors">PM KUSUM with BESS</Link></li>
-                <li><Link href="/projects/pm-ssy" className="hover:text-accent-solar transition-colors">PM-SSY Scheme</Link></li>
                 <li><Link href="/projects/ipp" className="hover:text-accent-solar transition-colors">IPP Megawatt</Link></li>
                 <li><Link href="/working-methodology" className="hover:text-accent-solar transition-colors">Methodology</Link></li>
               </ul>

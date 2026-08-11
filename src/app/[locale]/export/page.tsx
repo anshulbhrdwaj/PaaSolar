@@ -2,7 +2,6 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
-import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
 import { Globe2, CheckCircle2, Award, ShieldCheck, Ship } from 'lucide-react';
 import { Link } from '@/i18n/routing';
@@ -150,8 +149,6 @@ export default function ExportPage() {
           </div>
         </div>
       </section>
-
-      <SolarCalculator />
       <Footer />
     </main>
   );
