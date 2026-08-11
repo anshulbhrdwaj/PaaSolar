@@ -398,16 +398,16 @@
       "feature4": "কর সুবিধা"
     },
     "pmKusum": {
-      "tag": "কৃষি সোলারাইজেশন",
-      "title": "পিএম কুসুম যোজনা",
-      "subtitle": "কৃষকদের জন্য সোলার পাম্প ও পাওয়ার প্ল্যান্ট।",
-      "stat1": "90% ভর্তুকি",
-      "stat2": "কম্পোনেন্ট A, B, C",
-      "stat3": "দিনের বেলায় বিদ্যুৎ",
-      "feature1": "গ্রাউন্ড সোলা প্ল্যান্ট",
-      "feature2": "অফ-গ্রিড পাম্প",
-      "feature3": "ফিডার সোলারাইজেশন",
-      "feature4": "মাসিক আয়"
+      "tag": "Agricultural Solarization",
+      "title": "PM KUSUM Scheme Solutions",
+      "subtitle": "Empowering farmers and DISCOM feeders with decentralized ground power plants and feeder-level solarization for reliable daytime agricultural power.",
+      "stat1": "Substation Feeder Grid",
+      "stat2": "Components A & C Feeder",
+      "stat3": "Daytime Uninterrupted Power",
+      "feature1": "Component A: Decentralized 500kW to 2MW Ground Solar Power Plants",
+      "feature2": "Component C: Feeder Level Solarization for Agricultural Substation Feeders",
+      "feature3": "High-Efficiency TOPCon Bifacial Solar Module Infrastructure",
+      "feature4": "Guaranteed Long-Term DISCOM PPA Revenue & Feeder Independence"
     },
     "ipp": {
       "tag": "ইউটিলিটি প্রকল্প",

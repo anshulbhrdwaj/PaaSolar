@@ -46,16 +46,16 @@ export default function PMKusumPage() {
           <div className="lg:col-span-5">
             <div className="rounded-3xl p-8 bg-bg-secondary border border-line shadow-2xl space-y-6">
               <div className="flex items-center justify-between border-b border-line pb-4">
-                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">PUMP SUBSIDY</span>
-                <span className="font-serif text-3xl font-bold text-emerald-500">{t('stat1')}</span>
+                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">GRID FEEDER CAPABILITY</span>
+                <span className="font-serif text-xl sm:text-2xl font-bold text-emerald-500">{t('stat1')}</span>
               </div>
               <div className="flex items-center justify-between border-b border-line pb-4">
-                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">COMPONENTS</span>
-                <span className="font-serif text-2xl font-bold text-accent-solar">{t('stat2')}</span>
+                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">SCHEME SCOPE</span>
+                <span className="font-serif text-xl sm:text-2xl font-bold text-accent-solar">{t('stat2')}</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">IRRIGATION POWER</span>
-                <span className="font-serif text-2xl font-bold text-text-primary">{t('stat3')}</span>
+                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">AGRICULTURAL FEEDER</span>
+                <span className="font-serif text-xl sm:text-2xl font-bold text-text-primary">{t('stat3')}</span>
               </div>
             </div>
           </div>

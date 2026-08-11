@@ -398,16 +398,16 @@
       "feature4": "ತೆರಿಗೆ ಸೌಲಭ್ಯ"
     },
     "pmKusum": {
-      "tag": "ಕೃಷಿ ಸೋಲಾರೈಸೇಶನ್",
-      "title": "ಪಿಎಂ ಕುಸುಮ್ ಯೋಜನೆ",
-      "subtitle": "ರೈತರಿಗಾಗಿ ಸೋಲಾರ್ ಪಂಪ್ ಮತ್ತು ಪವರ್ ಪ್ಲಾಂಟ್.",
-      "stat1": "90% ಸಬ್ಸಿಡಿ",
-      "stat2": "ಕಾಂಪೊನೆಂಟ್ A, B, C",
-      "stat3": "ಹಗಲಿನಲ್ಲಿ ವಿದ್ಯುತ್",
-      "feature1": "ಗ್ರೌಂಡ್ ಸೋಲಾರ್ ಪ್ಲಾಂಟ್",
-      "feature2": "ಆಫ್-ಗ್ರಿಡ್ ಪಂಪ್",
-      "feature3": "ಫೀಡರ್ ಸೋಲಾರೈಸೇಶನ್",
-      "feature4": "ಮಾಸಿಕ ಆದಾಯ"
+      "tag": "Agricultural Solarization",
+      "title": "PM KUSUM Scheme Solutions",
+      "subtitle": "Empowering farmers and DISCOM feeders with decentralized ground power plants and feeder-level solarization for reliable daytime agricultural power.",
+      "stat1": "Substation Feeder Grid",
+      "stat2": "Components A & C Feeder",
+      "stat3": "Daytime Uninterrupted Power",
+      "feature1": "Component A: Decentralized 500kW to 2MW Ground Solar Power Plants",
+      "feature2": "Component C: Feeder Level Solarization for Agricultural Substation Feeders",
+      "feature3": "High-Efficiency TOPCon Bifacial Solar Module Infrastructure",
+      "feature4": "Guaranteed Long-Term DISCOM PPA Revenue & Feeder Independence"
     },
     "ipp": {
       "tag": "ಯುಟಿಲಿಟಿ ಪ್ರಾಜೆಕ್ಟ್",

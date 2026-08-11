@@ -398,16 +398,16 @@
       "feature4": "Steuervorteile"
     },
     "pmKusum": {
-      "tag": "Agrar-Photovoltaik",
-      "title": "Agrar-Solarprogramm",
-      "subtitle": "Solarpumpen und Solaranlagen für die Landwirtschaft.",
-      "stat1": "90% Förderung",
-      "stat2": "Komponenten A, B, C",
-      "stat3": "Tagstrom",
-      "feature1": "Freiflächenanlagen",
-      "feature2": "Insel-Pumpen",
-      "feature3": "Netz-Solarisierung",
-      "feature4": "Monatliches Einkommen"
+      "tag": "Agricultural Solarization",
+      "title": "PM KUSUM Scheme Solutions",
+      "subtitle": "Empowering farmers and DISCOM feeders with decentralized ground power plants and feeder-level solarization for reliable daytime agricultural power.",
+      "stat1": "Substation Feeder Grid",
+      "stat2": "Components A & C Feeder",
+      "stat3": "Daytime Uninterrupted Power",
+      "feature1": "Component A: Decentralized 500kW to 2MW Ground Solar Power Plants",
+      "feature2": "Component C: Feeder Level Solarization for Agricultural Substation Feeders",
+      "feature3": "High-Efficiency TOPCon Bifacial Solar Module Infrastructure",
+      "feature4": "Guaranteed Long-Term DISCOM PPA Revenue & Feeder Independence"
     },
     "ipp": {
       "tag": "Solarparks",

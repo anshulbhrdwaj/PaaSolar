@@ -452,14 +452,14 @@
     "pmKusum": {
       "tag": "Agricultural Solarization",
       "title": "PM KUSUM Scheme Solutions",
-      "subtitle": "Empowering farmers and DISCOM feeders with subsidized solar pumps, decentralized ground power plants, and feeder-level solarization.",
-      "stat1": "Up to 90% Pump Subsidy",
-      "stat2": "Components A, B & C",
+      "subtitle": "Empowering farmers and DISCOM feeders with decentralized ground power plants and feeder-level solarization for reliable daytime agricultural power.",
+      "stat1": "Substation Feeder Grid",
+      "stat2": "Components A & C Feeder",
       "stat3": "Daytime Uninterrupted Power",
-      "feature1": "Component A: Decentralized 500kW to 2MW Ground Solar Plants",
-      "feature2": "Component B: Standalone Off-Grid Solar Agricultural Pumps",
-      "feature3": "Component C: Feeder Level Solarization of Agricultural Pumps",
-      "feature4": "Guaranteed Monthly Revenue Selling Excess Power to DISCOM"
+      "feature1": "Component A: Decentralized 500kW to 2MW Ground Solar Power Plants",
+      "feature2": "Component C: Feeder Level Solarization for Agricultural Substation Feeders",
+      "feature3": "High-Efficiency TOPCon Bifacial Solar Module Infrastructure",
+      "feature4": "Guaranteed Long-Term DISCOM PPA Revenue & Feeder Independence"
     },
     "ipp": {
       "tag": "Utility-Scale Energy Parks",
