@@ -116,7 +116,7 @@ export const inverterPartnerBrands: PartnerBrand[] = [
 export const batteryPartnerBrands: PartnerBrand[] = [
   {
     name: 'PAA SOLAR',
-    logoUrl: '/Paa.png',
+    logoUrl: '/logo_transparent.png',
     tagline: 'Flagship Lithium-Ion & LiFePO4 Vault',
     badge: 'DIRECT DISTRIBUTOR',
   },

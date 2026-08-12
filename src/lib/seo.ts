@@ -122,11 +122,11 @@ export function constructMetadata({
         },
     icons: {
       icon: [
-        { url: '/favicon.svg', type: 'image/svg+xml' },
-        { url: '/Paa.png', type: 'image/png' },
+        { url: '/logo_transparent.png', type: 'image/png' },
+        { url: '/favicon.ico', type: 'image/x-icon' },
       ],
-      shortcut: ['/favicon.svg'],
-      apple: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
+      shortcut: ['/logo_transparent.png'],
+      apple: [{ url: '/logo_transparent.png', type: 'image/png' }],
     },
   };
 }
