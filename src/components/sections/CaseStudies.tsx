@@ -52,7 +52,7 @@ export function CaseStudies() {
 
           {/* Sector Filters */}
           <div className="flex items-center gap-2 p-2 rounded-full bg-bg-primary border border-line overflow-x-auto shadow-sm">
-            {['all', 'ci', 'pmKusum', 'utility'].map((cat) => (
+            {['all', 'ci', 'pmKusum', 'pmSsy', 'utility'].map((cat) => (
               <button
                 key={cat}
                 onClick={() => {

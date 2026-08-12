@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/projects/ci',
     '/projects/pm-kusum',
     '/projects/pm-kusum-bess',
+    '/projects/pm-ssy',
     '/projects/ipp',
     '/solutions',
     '/b2b',

@@ -231,6 +231,7 @@
       "all": "All Projects",
       "ci": "C&I",
       "pmKusum": "PM Kusum",
+      "pmSsy": "PM SSY",
       "utility": "Utility Scale"
     },
     "projects": [

@@ -34,7 +34,7 @@ export default function WorkingMethodologyPage() {
   ];
 
   return (
-    <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+    <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-16">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: '/' },
