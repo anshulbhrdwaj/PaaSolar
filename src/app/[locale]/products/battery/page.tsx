@@ -184,7 +184,7 @@ export default function BatteryPage() {
 
             <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white border border-line p-3 flex items-center justify-center shadow-inner">
               <Image
-                src="/products/bess.png"
+                src="/products/bess_ess.png"
                 alt="Containerized BESS Lithium Battery Rack"
                 fill
                 className="object-contain p-2"
@@ -222,8 +222,8 @@ export default function BatteryPage() {
             {[
               { title: 'LiFePO4 Wall Mount 5.12kWh', img: '/products/lithium_battery.png', tag: '10,000+ Cycles' },
               { title: 'LiFePO4 Server Rack 10.24kWh', img: '/products/lithium_battery.png', tag: 'Smart BMS' },
-              { title: 'Containerized BESS 500kWh+', img: '/products/bess.png', tag: 'Industrial' },
-              { title: 'Li UPS 1250 Backup Vault', img: '/products/bess.png', tag: 'Zero Transfer' },
+              { title: 'Containerized BESS 500kWh+', img: '/products/bess_ess.png', tag: 'Industrial' },
+              { title: 'Li UPS 1250 Backup Vault', img: '/products/bess_li_ups.png', tag: 'Zero Transfer' },
             ].map((item, idx) => (
               <div key={idx} className="group rounded-2xl bg-bg-primary border border-line p-4 shadow-md hover:border-accent-gold transition-all flex flex-col justify-between hover:-translate-y-1">
                 <div className="relative h-40 w-full rounded-xl overflow-hidden bg-white border border-line p-2 flex items-center justify-center">

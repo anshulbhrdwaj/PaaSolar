@@ -135,7 +135,7 @@ export default function BessPage() {
 
             <div className="relative h-60 sm:h-72 w-full rounded-2xl overflow-hidden bg-white border border-line p-3 flex items-center justify-center shadow-inner">
               <Image
-                src="/products/bess.png"
+                src="/products/bess_ess.png"
                 alt="ESS 3532 Containerized Battery Energy Storage System"
                 fill
                 className="object-contain p-2"
@@ -173,7 +173,7 @@ export default function BessPage() {
 
             <div className="relative h-60 sm:h-72 w-full rounded-2xl overflow-hidden bg-white border border-line p-3 flex items-center justify-center shadow-inner">
               <Image
-                src="/products/bess.png"
+                src="/products/bess_li_ups.png"
                 alt="Li UPS 1250 High Output Backup System"
                 fill
                 className="object-contain p-2"

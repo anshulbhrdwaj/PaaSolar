@@ -92,7 +92,7 @@ export default function ProductsPage() {
         "Turnkey IP65 containerized ESS 3532 units and Li UPS 1250 high-discharge backup vaults.",
       icon: <Cpu className="w-8 h-8 text-emerald-500" />,
       badge: "3.53 MWh LFP Capacity",
-      image: "/products/bess.png",
+      image: "/products/bess_ess.png",
       specs: [
         "ESS 3532 Container Unit",
         "Li UPS 1250 High Output",
