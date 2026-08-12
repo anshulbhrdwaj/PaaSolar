@@ -44,6 +44,7 @@ export default function ProductsPage() {
         "High-density 24%+ efficiency N-Type TOPCon bifacial modules and DCR subsidy panels made in India.",
       icon: <SunMedium className="w-8 h-8 text-accent-solar" />,
       badge: "22.8%+ Module Efficiency",
+      image: "/products/ntype_topcon_panel.jpg",
       specs: [
         "N-Type TOPCon Technology",
         "DCR Subsidy Compliance",
@@ -59,6 +60,7 @@ export default function ProductsPage() {
         "High-efficiency string inverters with sub-10ms automatic blackout transfer and DISCOM net metering.",
       icon: <Zap className="w-8 h-8 text-accent-sky" />,
       badge: "99.2% MPPT Efficiency",
+      image: "/products/hybrid_inverter.png",
       specs: [
         "On-Grid Net Metering",
         "Off-Grid Generator Sync",
@@ -74,6 +76,7 @@ export default function ProductsPage() {
         "Ultra-safe Lithium Iron Phosphate (LiFePO4) & Lithium-Ion battery banks with 10,000+ deep discharge cycles.",
       icon: <BatteryCharging className="w-8 h-8 text-accent-gold" />,
       badge: "10,000+ Deep Cycles",
+      image: "/products/lithium_battery.png",
       specs: [
         "LiFePO4 Safe Chemistry",
         "AI Active Cell Balancing",
@@ -89,6 +92,7 @@ export default function ProductsPage() {
         "Turnkey IP65 containerized ESS 3532 units and Li UPS 1250 high-discharge backup vaults.",
       icon: <Cpu className="w-8 h-8 text-emerald-500" />,
       badge: "3.53 MWh LFP Capacity",
+      image: "/products/bess.png",
       specs: [
         "ESS 3532 Container Unit",
         "Li UPS 1250 High Output",
@@ -164,7 +168,7 @@ export default function ProductsPage() {
             >
               <div>
                 {prod.image && (
-                  <div className="relative h-48 w-full rounded-2xl overflow-hidden border border-line mb-6 bg-bg-primary">
+                  <div className="relative h-48 w-full rounded-2xl overflow-hidden border border-line mb-6 bg-white">
                     <Image
                       src={prod.image}
                       alt={prod.title}

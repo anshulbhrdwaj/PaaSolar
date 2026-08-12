@@ -145,9 +145,9 @@ export default function InvertersPage() {
               <span className="px-4 py-1.5 rounded-full bg-accent-sky/10 border border-accent-sky/30 text-accent-sky text-xs font-mono font-bold">99.2% MPPT Efficiency</span>
             </div>
 
-            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white border border-line p-3 flex items-center justify-center shadow-inner">
               <Image
-                src="/products/inverter1.png"
+                src="/products/ongrid_inverter.png"
                 alt="On-Grid String Solar Inverter"
                 fill
                 className="object-contain p-2"
@@ -183,9 +183,9 @@ export default function InvertersPage() {
               <span className="px-4 py-1.5 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-xs font-mono font-bold">Integrated MPPT Controller</span>
             </div>
 
-            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white border border-line p-3 flex items-center justify-center shadow-inner">
               <Image
-                src="/products/inverter2.png"
+                src="/products/offgrid_inverter.png"
                 alt="Off-Grid Heavy Duty Solar Inverter"
                 fill
                 className="object-contain p-2"
@@ -221,9 +221,9 @@ export default function InvertersPage() {
               <span className="px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-mono font-bold">&lt; 10ms Blackout Transfer</span>
             </div>
 
-            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white border border-line p-3 flex items-center justify-center shadow-inner">
               <Image
-                src="/products/inverter3.png"
+                src="/products/hybrid_inverter.png"
                 alt="Hybrid Smart Solar Inverter"
                 fill
                 className="object-contain p-2"
@@ -250,25 +250,24 @@ export default function InvertersPage() {
           </div>
         </div>
 
-        {/* 7-Inverter Hardware Catalogue Grid */}
+        {/* Inverter Hardware Catalogue Grid */}
         <div className="mt-16 space-y-6">
           <div className="text-center max-w-xl mx-auto space-y-2">
             <span className="text-xs uppercase font-mono tracking-widest text-accent-sky font-bold">FULL HARDWARE LINEUP</span>
             <h3 className="font-serif text-3xl font-bold text-text-primary">Inverter Models Catalogue</h3>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              { title: 'On-Grid String', img: '/products/inverter1.png', tag: '3kW - 100kW' },
-              { title: 'Off-Grid Heavy', img: '/products/inverter2.png', tag: 'Pure Sine' },
-              { title: 'Hybrid Smart', img: '/products/inverter3.png', tag: 'Sub-10ms' },
-              { title: 'Microinverter', img: '/products/inverter4.png', tag: 'Quad MPPT' },
-              { title: 'Commercial PCU', img: '/products/inverter5.png', tag: '500 kW IPP' },
-              { title: 'High Voltage', img: '/products/inverter6.png', tag: '1500V DC' },
-              { title: 'Modular Inverter', img: '/products/inverter7.png', tag: 'Hot Swap' },
+              { title: 'On-Grid String', img: '/products/ongrid_inverter.png', tag: '3kW - 100kW' },
+              { title: 'Off-Grid Heavy', img: '/products/offgrid_inverter.png', tag: 'Pure Sine' },
+              { title: 'Hybrid Smart', img: '/products/hybrid_inverter.png', tag: 'Sub-10ms' },
+              { title: 'High Voltage', img: '/products/ongrid_inverter.png', tag: '1500V DC' },
+              { title: 'Commercial PCU', img: '/products/hybrid_inverter.png', tag: '500 kW IPP' },
+              { title: 'Modular Inverter', img: '/products/offgrid_inverter.png', tag: 'Hot Swap' },
             ].map((item, idx) => (
               <div key={idx} className="group rounded-2xl bg-bg-primary border border-line p-3 shadow-md hover:border-accent-sky transition-all flex flex-col justify-between hover:-translate-y-1">
-                <div className="relative h-36 w-full rounded-xl overflow-hidden bg-white/70 border border-line p-2 flex items-center justify-center">
+                <div className="relative h-36 w-full rounded-xl overflow-hidden bg-white border border-line p-2 flex items-center justify-center">
                   <Image
                     src={item.img}
                     alt={item.title}

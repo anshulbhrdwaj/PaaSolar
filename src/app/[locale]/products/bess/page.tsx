@@ -133,9 +133,9 @@ export default function BessPage() {
               <span className="px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-mono font-bold">3.53 MWh LFP Capacity</span>
             </div>
 
-            <div className="relative h-60 sm:h-72 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+            <div className="relative h-60 sm:h-72 w-full rounded-2xl overflow-hidden bg-white border border-line p-3 flex items-center justify-center shadow-inner">
               <Image
-                src="/products/bess1.png"
+                src="/products/bess.png"
                 alt="ESS 3532 Containerized Battery Energy Storage System"
                 fill
                 className="object-contain p-2"
@@ -171,9 +171,9 @@ export default function BessPage() {
               <span className="px-4 py-1.5 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-xs font-mono font-bold">1250 kW High-Discharge Power</span>
             </div>
 
-            <div className="relative h-60 sm:h-72 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+            <div className="relative h-60 sm:h-72 w-full rounded-2xl overflow-hidden bg-white border border-line p-3 flex items-center justify-center shadow-inner">
               <Image
-                src="/products/bess2.png"
+                src="/products/bess.png"
                 alt="Li UPS 1250 High Output Backup System"
                 fill
                 className="object-contain p-2"

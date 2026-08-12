@@ -144,9 +144,9 @@ export default function BatteryPage() {
               <span className="px-4 py-1.5 rounded-full bg-accent-gold/10 border border-accent-gold/30 text-accent-gold text-xs font-mono font-bold">10,000+ Deep Cycles</span>
             </div>
 
-            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white border border-line p-3 flex items-center justify-center shadow-inner">
               <Image
-                src="/products/battery1.png"
+                src="/products/lithium_battery.png"
                 alt="LiFePO4 Lithium Battery Storage Vault"
                 fill
                 className="object-contain p-2"
@@ -182,9 +182,9 @@ export default function BatteryPage() {
               <span className="px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-mono font-bold">500 kWh - 10 MWh+ Utility Scale</span>
             </div>
 
-            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+            <div className="relative h-56 sm:h-64 w-full rounded-2xl overflow-hidden bg-white border border-line p-3 flex items-center justify-center shadow-inner">
               <Image
-                src="/products/battery2.png"
+                src="/products/bess.png"
                 alt="Containerized BESS Lithium Battery Rack"
                 fill
                 className="object-contain p-2"
@@ -220,13 +220,13 @@ export default function BatteryPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { title: 'LiFePO4 Wall Mount 5.12kWh', img: '/products/battery1.png', tag: '10,000+ Cycles' },
-              { title: 'LiFePO4 Server Rack 10.24kWh', img: '/products/battery2.png', tag: 'Smart BMS' },
-              { title: 'High Voltage BESS 100kWh', img: '/products/battery3.png', tag: 'Industrial' },
-              { title: 'High Discharge Li UPS 1250', img: '/products/battery4.png', tag: 'Zero Transfer' },
+              { title: 'LiFePO4 Wall Mount 5.12kWh', img: '/products/lithium_battery.png', tag: '10,000+ Cycles' },
+              { title: 'LiFePO4 Server Rack 10.24kWh', img: '/products/lithium_battery.png', tag: 'Smart BMS' },
+              { title: 'Containerized BESS 500kWh+', img: '/products/bess.png', tag: 'Industrial' },
+              { title: 'Li UPS 1250 Backup Vault', img: '/products/bess.png', tag: 'Zero Transfer' },
             ].map((item, idx) => (
               <div key={idx} className="group rounded-2xl bg-bg-primary border border-line p-4 shadow-md hover:border-accent-gold transition-all flex flex-col justify-between hover:-translate-y-1">
-                <div className="relative h-40 w-full rounded-xl overflow-hidden bg-white/70 border border-line p-2 flex items-center justify-center">
+                <div className="relative h-40 w-full rounded-xl overflow-hidden bg-white border border-line p-2 flex items-center justify-center">
                   <Image
                     src={item.img}
                     alt={item.title}

@@ -71,7 +71,7 @@ export default function FranchiseSgyPage() {
 
           <div className="lg:col-span-5">
             <div className="rounded-3xl p-8 bg-bg-secondary border border-line shadow-2xl space-y-6">
-              <div className="relative h-64 sm:h-72 w-full rounded-2xl overflow-hidden border border-line flex items-center justify-center shadow-inner group bg-bg-primary">
+              <div className="relative h-64 sm:h-72 w-full rounded-2xl overflow-hidden border border-line flex items-center justify-center shadow-inner group bg-white">
                 <Image
                   src="/products/group.jpg"
                   alt="Complete PM Surya Ghar Solar Kit & Equipment Group"
@@ -105,7 +105,7 @@ export default function FranchiseSgyPage() {
       {/* Complete Product Group Kit Showcase Section */}
       <section className="py-20 border-b border-line bg-bg-secondary/30">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6 relative h-80 sm:h-[420px] rounded-3xl overflow-hidden border border-line shadow-2xl group bg-bg-primary">
+          <div className="lg:col-span-6 relative h-80 sm:h-[420px] rounded-3xl overflow-hidden border border-line shadow-2xl group bg-white">
             <Image
               src="/products/group.jpg"
               alt="Paa Solar PM Surya Ghar Yojana Complete Product Group Bundle"

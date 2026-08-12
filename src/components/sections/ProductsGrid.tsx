@@ -83,7 +83,7 @@ export function ProductsGrid() {
               {/* Visual Badge Side (Inverted) */}
               <div className="lg:col-span-5 lg:order-1">
                 <div className="p-6 rounded-3xl bg-bg-primary border border-line/80 shadow-2xl flex flex-col items-center justify-center text-center space-y-4 group-hover:border-emerald-500/50 transition-colors overflow-hidden">
-                  <div className="relative h-48 w-full rounded-2xl overflow-hidden border border-line">
+                  <div className="relative h-48 w-full rounded-2xl overflow-hidden border border-line bg-white">
                     <Image
                       src="/products/group.jpg"
                       alt="PM SGY Complete Solar Kit Group Equipment"

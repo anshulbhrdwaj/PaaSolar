@@ -153,12 +153,12 @@ export default function SolarPanelsPage() {
               </div>
 
               {/* Panel Image Showcase */}
-              <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500 shadow-inner">
+              <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden bg-white border border-line p-2 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500 shadow-inner">
                 <Image
-                  src="/products/panel1.png"
+                  src="/products/ntype_topcon_panel.jpg"
                   alt="N-Type TOPCon Solar Panel"
                   fill
-                  className="object-contain p-2"
+                  className="object-cover rounded-xl"
                 />
               </div>
 
@@ -230,12 +230,12 @@ export default function SolarPanelsPage() {
               </div>
 
               {/* DCR Panel Image Showcase */}
-              <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500 shadow-inner">
+              <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden bg-white border border-line p-2 flex items-center justify-center group-hover:scale-[1.02] transition-transform duration-500 shadow-inner">
                 <Image
-                  src="/products/panel2.png"
+                  src="/products/dcr_solar_panel.jpg"
                   alt="DCR Subsidy Solar Panel Made in India"
                   fill
-                  className="object-contain p-2"
+                  className="object-cover rounded-xl"
                 />
               </div>
 
@@ -300,14 +300,14 @@ export default function SolarPanelsPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {[
-              { title: 'TOPCon 650W Bifacial', img: '/products/panel1.png', tag: '22.8%+ Yield' },
-              { title: 'DCR 590W Subsidy', img: '/products/panel2.png', tag: 'MNRE Certified' },
-              { title: 'Mono PERC 550W', img: '/products/panel3.png', tag: 'High-Density Cell' },
-              { title: 'Glass-Glass 580W', img: '/products/panel4.png', tag: 'Dual Tempered' },
-              { title: 'Full Black 540W', img: '/products/panel5.png', tag: 'Luxury Roof' },
+              { title: 'TOPCon 650W Bifacial', img: '/products/ntype_topcon_panel.jpg', tag: '22.8%+ Yield' },
+              { title: 'DCR 590W Subsidy', img: '/products/dcr_solar_panel.jpg', tag: 'MNRE Certified' },
+              { title: 'TOPCon N-Type Module', img: '/products/ntype_topcon_panel.jpg', tag: 'High-Density Cell' },
+              { title: 'Dual-Glass DCR Panel', img: '/products/dcr_solar_panel.jpg', tag: 'Dual Tempered' },
+              { title: 'Full Black 540W', img: '/products/ntype_topcon_panel.jpg', tag: 'Luxury Roof' },
             ].map((p, idx) => (
               <div key={idx} className="group rounded-2xl bg-bg-primary border border-line p-4 shadow-lg hover:border-accent-solar transition-all flex flex-col justify-between hover:-translate-y-1">
-                <div className="relative h-44 w-full rounded-xl overflow-hidden bg-white/70 border border-line p-2 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <div className="relative h-44 w-full rounded-xl overflow-hidden bg-white border border-line p-2 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                   <Image
                     src={p.img}
                     alt={p.title}
