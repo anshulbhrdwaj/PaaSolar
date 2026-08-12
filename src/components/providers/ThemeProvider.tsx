@@ -10,6 +10,7 @@ export function ThemeProvider({ children, ...props }: React.ComponentProps<typeo
       defaultTheme="system"
       enableSystem
       disableTransitionOnChange={false}
+      scriptProps={{ 'data-cfasync': 'false' }}
       {...props}
     >
       {children}

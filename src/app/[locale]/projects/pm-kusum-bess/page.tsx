@@ -2,10 +2,24 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { constructMetadata } from '@/lib/seo';
 import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd';
+import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
-import { BatteryCharging, Zap, ShieldCheck, Sun, ArrowRight } from 'lucide-react';
+import {
+  BatteryCharging,
+  Zap,
+  ShieldCheck,
+  ArrowRight,
+  Cpu,
+  FileSpreadsheet,
+  FileCheck2,
+  HardHat,
+  Network,
+  Activity,
+  Flame,
+  Layers,
+} from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
 export async function generateMetadata({
@@ -15,28 +29,86 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return constructMetadata({
-    title: 'PM-KUSUM with BESS Battery Storage | Rural Feeder Microgrid | PAA SOLAR',
+    title: 'Battery Energy Storage Systems (BESS) & PM-KUSUM | PAA SOLAR',
     description:
-      'Integrating high-capacity LiFePO4 battery energy storage (BESS) into PM KUSUM solar agricultural feeders. 24/7 irrigation power, sub-10ms fallback & DISCOM feeder stabilization.',
+      'Developing and operating Battery Energy Storage Systems (BESS) for grid stability, agricultural feeder solarization, and diesel elimination under policy-aligned frameworks.',
     path: '/projects/pm-kusum-bess',
     locale,
   });
 }
 
 export default function PMKusumBessPage() {
+  const t = useTranslations('ProjectSectors.pmKusumBess');
+
+  const engagementSteps = [
+    {
+      step: '01',
+      title: t('step1Title'),
+      desc: t('step1Desc'),
+      icon: <FileSpreadsheet className="w-5 h-5 text-teal-500" />,
+    },
+    {
+      step: '02',
+      title: t('step2Title'),
+      desc: t('step2Desc'),
+      icon: <FileCheck2 className="w-5 h-5 text-teal-500" />,
+    },
+    {
+      step: '03',
+      title: t('step3Title'),
+      desc: t('step3Desc'),
+      icon: <HardHat className="w-5 h-5 text-teal-500" />,
+    },
+    {
+      step: '04',
+      title: t('step4Title'),
+      desc: t('step4Desc'),
+      icon: <Network className="w-5 h-5 text-teal-500" />,
+    },
+    {
+      step: '05',
+      title: t('step5Title'),
+      desc: t('step5Desc'),
+      icon: <Activity className="w-5 h-5 text-teal-500" />,
+    },
+  ];
+
+  const valuePillars = [
+    {
+      title: 'Dispatch on Demand',
+      desc: 'Stores excess daytime solar PV generation and dispatches electricity instantly during peak demand hours or grid rationing windows.',
+      icon: <Zap className="w-6 h-6 text-teal-500" />,
+    },
+    {
+      title: 'Diesel Backup Elimination',
+      desc: 'Replaces expensive, high-emission diesel generators with zero-carbon LiFePO4 battery vaults, reducing fuel OPEX by up to 90%.',
+      icon: <Flame className="w-6 h-6 text-teal-500" />,
+    },
+    {
+      title: 'DISCOM Feeder Stabilization',
+      desc: 'Suppresses voltage sags, harmonics, and reactive power losses on 11kV/33kV agricultural feeders under PM-KUSUM Component A & C.',
+      icon: <ShieldCheck className="w-6 h-6 text-teal-500" />,
+    },
+    {
+      title: 'Policy-Aligned Frameworks',
+      desc: 'Delivered via government scheme mandates, Viability Gap Funding (VGF), and tariff-based competitive bidding for long-term predictability.',
+      icon: <Layers className="w-6 h-6 text-teal-500" />,
+    },
+  ];
+
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-16">
       <BreadcrumbJsonLd
         items={[
           { name: 'Home', url: '/' },
           { name: 'Projects', url: '/projects' },
-          { name: 'PM-KUSUM BESS', url: '/projects/pm-kusum-bess' },
+          { name: 'PM-KUSUM & BESS', url: '/projects/pm-kusum-bess' },
         ]}
       />
       <ServiceJsonLd
-        name="PM-KUSUM Battery Storage (BESS) Microgrids"
-        description="Containerized LiFePO4 Battery Energy Storage Systems integrated into PM-KUSUM rural agricultural solar feeders."
-        serviceType="Agricultural Solar BESS Storage"
+        name="Battery Energy Storage Systems (BESS) & PM-KUSUM Feeder Solutions"
+        description="Containerized LiFePO4 Battery Energy Storage Systems integrated into utility grids and PM-KUSUM rural solar agricultural feeders."
+        serviceType="BESS Energy Storage Infrastructure"
       />
       <Navbar />
 
@@ -46,23 +118,31 @@ export default function PMKusumBessPage() {
           <div className="lg:col-span-7 flex flex-col items-start gap-6">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-teal-500/30 bg-teal-500/10 text-teal-500 text-xs font-semibold uppercase tracking-wider">
               <BatteryCharging className="w-4 h-4" />
-              <span>AGRICULTURAL BESS MICROGRID SOLUTIONS</span>
+              <span>{t('tag')}</span>
             </div>
 
-            <h1 className="font-serif text-5xl md:text-6xl font-bold text-text-primary leading-tight">
-              PM KUSUM with BESS Storage
+            <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-text-primary leading-tight">
+              {t('title')}
             </h1>
 
-            <p className="text-text-secondary text-lg leading-relaxed max-w-2xl">
-              Integrating high-capacity LiFePO4 battery energy storage (BESS) into PM KUSUM solar agricultural feeders. Provides 24/7 uninterrupted irrigation power, sub-10ms automatic grid fallback, and DISCOM peak load shaving.
+            <p className="text-text-secondary text-base md:text-lg leading-relaxed max-w-2xl">
+              {t('desc1')}
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-4">
+            <p className="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl">
+              {t('desc2')}
+            </p>
+
+            <p className="text-text-secondary text-sm md:text-base leading-relaxed max-w-2xl">
+              {t('desc3')}
+            </p>
+
+            <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
                 href="/contact"
                 className="px-8 py-4 rounded-full bg-teal-500 text-white text-xs font-bold uppercase tracking-wider shadow-lg hover:shadow-teal-500/30 hover:bg-teal-600 transition-all flex items-center gap-2"
               >
-                <span>Apply for PM KUSUM + BESS Project</span>
+                <span>{t('cta')}</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -71,83 +151,115 @@ export default function PMKusumBessPage() {
           <div className="lg:col-span-5">
             <div className="rounded-3xl p-8 bg-bg-secondary border border-line shadow-2xl space-y-6">
               <div className="flex items-center justify-between border-b border-line pb-4">
-                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">SUB-10MS BACKUP</span>
-                <span className="font-serif text-3xl font-bold text-teal-500">100% Autonomy</span>
+                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">{t('stat1Label')}</span>
+                <span className="font-serif text-2xl font-bold text-teal-500">{t('stat1Val')}</span>
               </div>
               <div className="flex items-center justify-between border-b border-line pb-4">
-                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">BATTERY CHEMISTRY</span>
-                <span className="font-serif text-2xl font-bold text-accent-solar">LFP LiFePO4</span>
+                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">{t('stat2Label')}</span>
+                <span className="font-serif text-3xl font-bold text-emerald-500">{t('stat2Val')}</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">DESIGN LIFE</span>
-                <span className="font-serif text-2xl font-bold text-text-primary">25 Years / 6000+ Cycles</span>
+                <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">{t('stat3Label')}</span>
+                <span className="font-serif text-2xl font-bold text-text-primary">{t('stat3Val')}</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Technical BESS Highlights */}
-      <section className="py-24 max-w-7xl mx-auto px-6">
-        <div className="p-8 sm:p-12 rounded-3xl bg-bg-secondary/50 border border-line space-y-8">
-          <div className="max-w-2xl">
-            <h3 className="font-serif text-3xl font-bold text-text-primary mb-2">
-              Key Features of PM KUSUM BESS Storage
-            </h3>
-            <p className="text-text-secondary text-sm font-medium">
-              Turnkey engineering specifications for battery-backed rural feeder solarization.
+      {/* Core Value Pillars of BESS */}
+      <section className="py-24 max-w-7xl mx-auto px-6 space-y-12">
+        <div className="text-center max-w-3xl mx-auto space-y-3">
+          <span className="text-xs uppercase font-mono tracking-widest text-teal-500 font-bold">INFRASTRUCTURE IMPACT</span>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-primary">
+            Key Benefits of BESS Integration
+          </h2>
+          <p className="text-text-secondary text-sm md:text-base">
+            Transforming intermittent solar generation into firm, dispatchable, and resilient energy assets.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {valuePillars.map((pil, idx) => (
+            <div
+              key={idx}
+              className="p-8 rounded-3xl bg-bg-secondary/70 border border-line hover:border-teal-500/60 transition-all shadow-lg flex items-start gap-5 group"
+            >
+              <div className="p-3.5 rounded-2xl bg-teal-500/10 border border-teal-500/20 group-hover:bg-teal-500 group-hover:text-white transition-colors shrink-0">
+                {pil.icon}
+              </div>
+              <div className="space-y-2">
+                <h3 className="font-serif text-xl font-bold text-text-primary group-hover:text-teal-500 transition-colors">
+                  {pil.title}
+                </h3>
+                <p className="text-text-secondary text-xs sm:text-sm leading-relaxed">
+                  {pil.desc}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* How We Engage (5-Stage BESS Workflow) */}
+      <section className="py-24 bg-gradient-to-b from-bg-primary via-bg-secondary/40 to-bg-primary border-y border-line">
+        <div className="max-w-7xl mx-auto px-6 space-y-16">
+          <div className="text-center max-w-3xl mx-auto space-y-3">
+            <span className="text-xs uppercase font-mono tracking-widest text-teal-500 font-bold">FULL ASSET LIFECYCLE</span>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-primary">
+              {t('engageTitle')}
+            </h2>
+            <p className="text-text-secondary text-sm md:text-base">
+              {t('engageSubtitle')}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs font-medium">
-            <div className="p-6 rounded-2xl bg-bg-primary border border-line flex items-start gap-4">
-              <div className="p-3 rounded-xl bg-teal-500/10 text-teal-500 shrink-0">
-                <BatteryCharging className="w-6 h-6" />
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {engagementSteps.map((item, idx) => (
+              <div
+                key={idx}
+                className="relative p-6 rounded-3xl bg-bg-primary border border-line shadow-md space-y-4 flex flex-col justify-between hover:border-teal-500 transition-all"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-2xl font-bold text-teal-500/40">{item.step}</span>
+                    <div className="p-2 rounded-xl bg-teal-500/10">{item.icon}</div>
+                  </div>
+                  <h3 className="font-serif text-base font-bold text-text-primary leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-text-secondary text-xs leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h4 className="font-bold text-sm text-text-primary mb-1">Uninterrupted Agricultural Power</h4>
-                <p className="text-text-secondary leading-relaxed">
-                  Stores surplus daytime TOPCon solar generation to power rural feeder grids during peak evening discom rationing windows.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-bg-primary border border-line flex items-start gap-4">
-              <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-500 shrink-0">
-                <Zap className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-bold text-sm text-text-primary mb-1">DISCOM Feeder Stabilization</h4>
-                <p className="text-text-secondary leading-relaxed">
-                  Suppresses voltage fluctuations and reactive power losses on rural 11kV agricultural feeders.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-bg-primary border border-line flex items-start gap-4">
-              <div className="p-3 rounded-xl bg-amber-500/10 text-amber-500 shrink-0">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-bold text-sm text-text-primary mb-1">IP65 Containerized BESS Design</h4>
-                <p className="text-text-secondary leading-relaxed">
-                  Weatherproof liquid-cooled battery containers with automated aerosol fire suppression and remote AI telemetry.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-bg-primary border border-line flex items-start gap-4">
-              <div className="p-3 rounded-xl bg-accent-sky/10 text-accent-sky shrink-0">
-                <Sun className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="font-bold text-sm text-text-primary mb-1">Hybrid TOPCon Solar & Grid Coupling</h4>
-                <p className="text-text-secondary leading-relaxed">
-                  Dual AC/DC-coupled architecture enabling simultaneous solar generation, grid feedback, and battery storage charging.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* BESS Product & Hardware Showcase Banner */}
+      <section className="py-24 max-w-7xl mx-auto px-6">
+        <div className="p-8 sm:p-12 rounded-3xl bg-bg-secondary border border-line shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="space-y-4 max-w-2xl">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-500 text-xs font-mono font-bold uppercase">
+              <Cpu className="w-4 h-4" />
+              <span>Containerized BESS Hardware</span>
+            </div>
+            <h3 className="font-serif text-3xl font-bold text-text-primary">
+              Explore Our ESS 3532 & Li UPS 1250 Storage Lineup
+            </h3>
+            <p className="text-text-secondary text-sm leading-relaxed">
+              View our complete range of liquid-cooled containerized energy storage units (ESS 3532) and high-discharge backup vaults (Li UPS 1250) engineered for megawatt utility and PM-KUSUM feeder applications.
+            </p>
+          </div>
+          <Link
+            href="/products/bess"
+            className="px-8 py-4 rounded-full bg-teal-500 text-white text-xs font-bold uppercase tracking-wider shadow-lg hover:bg-teal-600 transition-all shrink-0 flex items-center gap-2"
+          >
+            <span>View BESS Products</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 
