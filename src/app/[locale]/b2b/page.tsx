@@ -1,11 +1,27 @@
-'use client';
-
 import React from 'react';
+import type { Metadata } from 'next';
+import { constructMetadata } from '@/lib/seo';
+import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { Building2, CheckCircle2, DollarSign, ShieldCheck, Zap, Layers } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return constructMetadata({
+    title: 'B2B Enterprise Solar Solutions & PPA Contracting | PAA SOLAR',
+    description:
+      'Enterprise B2B solar solutions: Zero-CAPEX OPEX/RESCO models, Group Captive Open Access, and peak tariff shaving for industrial plants and commercial complexes.',
+    path: '/b2b',
+    locale,
+  });
+}
 
 export default function B2BPage() {
   const t = useTranslations('B2BSolutions');
@@ -39,6 +55,17 @@ export default function B2BPage() {
 
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'B2B Solutions', url: '/b2b' },
+        ]}
+      />
+      <ServiceJsonLd
+        name="B2B Enterprise Solar PPA & Open Access"
+        description="Commercial solar PPA contracts, Group Captive open access, and RESCO solar models for enterprises."
+        serviceType="B2B Commercial Solar Contracting"
+      />
       <Navbar />
 
       {/* Hero Header */}

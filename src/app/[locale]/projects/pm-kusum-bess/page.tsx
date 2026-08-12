@@ -1,15 +1,43 @@
-'use client';
-
 import React from 'react';
+import type { Metadata } from 'next';
+import { constructMetadata } from '@/lib/seo';
+import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd';
 import { Navbar } from '@/components/ui/Navbar';
 import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { Footer } from '@/components/sections/Footer';
-import { BatteryCharging, CheckCircle2, Zap, ShieldCheck, Sun, ArrowRight } from 'lucide-react';
+import { BatteryCharging, Zap, ShieldCheck, Sun, ArrowRight } from 'lucide-react';
 import { Link } from '@/i18n/routing';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return constructMetadata({
+    title: 'PM-KUSUM with BESS Battery Storage | Rural Feeder Microgrid | PAA SOLAR',
+    description:
+      'Integrating high-capacity LiFePO4 battery energy storage (BESS) into PM KUSUM solar agricultural feeders. 24/7 irrigation power, sub-10ms fallback & DISCOM feeder stabilization.',
+    path: '/projects/pm-kusum-bess',
+    locale,
+  });
+}
 
 export default function PMKusumBessPage() {
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Projects', url: '/projects' },
+          { name: 'PM-KUSUM BESS', url: '/projects/pm-kusum-bess' },
+        ]}
+      />
+      <ServiceJsonLd
+        name="PM-KUSUM Battery Storage (BESS) Microgrids"
+        description="Containerized LiFePO4 Battery Energy Storage Systems integrated into PM-KUSUM rural agricultural solar feeders."
+        serviceType="Agricultural Solar BESS Storage"
+      />
       <Navbar />
 
       {/* Hero Header */}

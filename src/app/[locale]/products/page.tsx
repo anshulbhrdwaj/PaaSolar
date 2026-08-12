@@ -1,7 +1,7 @@
-"use client";
-
 import React from "react";
-import { useTranslations } from "next-intl";
+import type { Metadata } from "next";
+import { constructMetadata } from "@/lib/seo";
+import { BreadcrumbJsonLd } from "@/components/seo/JsonLd";
 import { Link } from "@/i18n/routing";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/sections/Footer";
@@ -17,9 +17,22 @@ import {
   Store,
 } from "lucide-react";
 
-export default function ProductsPage() {
-  const t = useTranslations("ProductDetails");
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return constructMetadata({
+    title: "Solar Products Catalogue | TOPCon Panels, Inverters & Battery Storage",
+    description:
+      "Explore PAA SOLAR’s high-performance equipment catalogue: 24%+ N-Type TOPCon solar panels, smart string inverters, LiFePO4 battery vaults, and turnkey enterprise BESS.",
+    path: "/products",
+    locale,
+  });
+}
 
+export default function ProductsPage() {
   const productsList = [
     {
       id: "solar-panels",
@@ -100,6 +113,12 @@ export default function ProductsPage() {
 
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Products", url: "/products" },
+        ]}
+      />
       <Navbar />
 
       {/* Hero Header */}

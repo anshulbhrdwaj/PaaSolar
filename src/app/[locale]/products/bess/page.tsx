@@ -8,18 +8,26 @@ import { Cpu, CheckCircle2, ShieldCheck, Zap, Download } from 'lucide-react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 
-export const metadata: Metadata = {
-  title: 'BESS Industrial Energy Storage (ESS 3532 & Li UPS 1250) | PAA SOLAR',
-  description:
-    'Megawatt-scale Battery Energy Storage Systems (BESS). Featuring ESS 3532 containerized storage and Li UPS 1250 high-output backup systems with sub-10ms grid fallback.',
-  openGraph: {
-    title: 'BESS Industrial Energy Storage (ESS 3532 & Li UPS 1250) | PAA SOLAR',
+import { constructMetadata } from '@/lib/seo';
+import { ProductJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return constructMetadata({
+    title: 'BESS Industrial Energy Storage | ESS 3532 & Li UPS 1250',
     description:
-      'Megawatt-scale BESS solutions for commercial microgrids, PM-KUSUM feeder storage, and utility solar farms.',
-  },
-};
+      'Megawatt-scale Battery Energy Storage Systems (BESS). Featuring ESS 3532 containerized storage and Li UPS 1250 high-output backup systems with sub-10ms grid fallback.',
+    path: '/products/bess',
+    locale,
+  });
+}
 
 export default function BessPage() {
+
   const specs = [
     { label: 'Container System', val: 'ESS 3532 (3.53 MWh LFP)' },
     { label: 'High-Output UPS', val: 'Li UPS 1250 (1250 kW)' },
@@ -32,6 +40,19 @@ export default function BessPage() {
 
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Products', url: '/products' },
+          { name: 'BESS Industrial Storage', url: '/products/bess' },
+        ]}
+      />
+      <ProductJsonLd
+        name="PAA SOLAR BESS (ESS 3532 & Li UPS 1250)"
+        description="Megawatt-scale containerized Battery Energy Storage Systems (BESS) for C&I microgrids and utility projects."
+        category="Industrial Energy Storage"
+        url="/products/bess"
+      />
       <Navbar />
 
       {/* Hero Header */}

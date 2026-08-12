@@ -1,27 +1,44 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { constructMetadata } from '@/lib/seo';
+import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { Globe2, CheckCircle2, Award, ShieldCheck, Ship } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
-export const metadata: Metadata = {
-  title: 'Global Solar Exports | 8 International Markets | PAA SOLAR',
-  description:
-    'PAA SOLAR exports high-efficiency TOPCon solar modules, smart inverters & LiFePO4 battery storage through EKCHAKRA International Pvt. Ltd. to Singapore, Oman, South Africa, Morocco, Brazil, New Zealand, Nepal & Bangladesh.',
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return constructMetadata({
     title: 'Global Solar Exports | 8 International Markets | PAA SOLAR',
     description:
-      'Turnkey solar hardware shipping and international EPC distribution to 8 countries across 5 continents.',
-  },
-};
+      'PAA SOLAR exports high-efficiency TOPCon solar modules, smart inverters & LiFePO4 battery storage through EKCHAKRA International Pvt. Ltd. to Singapore, Oman, South Africa, Morocco, Brazil, New Zealand, Nepal & Bangladesh.',
+    path: '/export',
+    locale,
+  });
+}
 
 export default function ExportPage() {
   const t = useTranslations('CorporatePages.export');
 
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Global Solar Exports', url: '/export' },
+        ]}
+      />
+      <ServiceJsonLd
+        name="Global Solar Hardware & Module Export"
+        description="International export and shipping of TOPCon solar modules, smart string inverters, and LFP storage kits to 8 global markets."
+        serviceType="International Solar Module Export"
+      />
       <Navbar />
 
       {/* Hero Header */}

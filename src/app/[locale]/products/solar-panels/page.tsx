@@ -8,19 +8,27 @@ import { SunMedium, CheckCircle2, ShieldCheck, Download } from 'lucide-react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 
-export const metadata: Metadata = {
-  title: 'TOPCon, HJT & Mono Bifacial Solar Panels | PAA SOLAR',
-  description:
-    '24%+ ultra-high efficiency N-Type TOPCon, Heterojunction (HJT), and Mono Bifacial solar modules. Engineered for maximum multi-decade energy yield and zero light-induced degradation.',
-  openGraph: {
-    title: 'TOPCon, HJT & Mono Bifacial Solar Panels | PAA SOLAR',
+import { constructMetadata } from '@/lib/seo';
+import { ProductJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return constructMetadata({
+    title: 'TOPCon, HJT & Mono Bifacial Solar Panels | 24%+ Efficiency',
     description:
-      'Tier-1 24%+ Solar Panels with 30-Year Performance Warranty from PAA SOLAR (EKCHAKRA GROUP).',
-  },
-};
+      '24%+ ultra-high efficiency N-Type TOPCon, Heterojunction (HJT), and Mono Bifacial solar modules. Engineered for maximum multi-decade energy yield and zero light-induced degradation.',
+    path: '/products/solar-panels',
+    locale,
+  });
+}
 
 export default function SolarPanelsPage() {
   const t = useTranslations('ProductDetails.solarPanels');
+
 
   const specs = [
     { label: 'Cell Technology', val: 'Mono Bifacial, TOPCon & HJT Cells' },
@@ -33,6 +41,19 @@ export default function SolarPanelsPage() {
 
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Products', url: '/products' },
+          { name: 'Solar Panels', url: '/products/solar-panels' },
+        ]}
+      />
+      <ProductJsonLd
+        name="PAA SOLAR TOPCon & HJT Mono Bifacial Solar Panels"
+        description="24%+ ultra-high efficiency N-Type TOPCon, Heterojunction (HJT), and Mono Bifacial solar modules with 30-year warranty."
+        category="Solar Panels"
+        url="/products/solar-panels"
+      />
       <Navbar />
 
       {/* Hero Header */}

@@ -8,19 +8,27 @@ import { Zap, CheckCircle2, Download } from 'lucide-react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 
-export const metadata: Metadata = {
-  title: 'On-Grid, Hybrid & Off-Grid Smart Solar Inverters | PAA SOLAR',
-  description:
-    '99.2% MPPT efficiency smart solar inverters with sub-10ms islanding transfer, IP65 weatherproof rating & real-time IoT cloud monitoring.',
-  openGraph: {
-    title: 'On-Grid, Hybrid & Off-Grid Smart Solar Inverters | PAA SOLAR',
+import { constructMetadata } from '@/lib/seo';
+import { ProductJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return constructMetadata({
+    title: 'On-Grid, Hybrid & Off-Grid Smart Solar Inverters | 99.2% MPPT',
     description:
-      'High-efficiency solar inverter solutions for commercial, industrial, and agricultural installations.',
-  },
-};
+      '99.2% MPPT efficiency smart solar inverters with sub-10ms islanding transfer, IP65 weatherproof rating & real-time IoT cloud monitoring.',
+    path: '/products/inverters',
+    locale,
+  });
+}
 
 export default function InvertersPage() {
   const t = useTranslations('ProductDetails.inverters');
+
 
   const specs = [
     { label: 'Inverter Topology', val: 'On-Grid, Hybrid & Off-Grid' },
@@ -34,6 +42,19 @@ export default function InvertersPage() {
 
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Products', url: '/products' },
+          { name: 'Inverters', url: '/products/inverters' },
+        ]}
+      />
+      <ProductJsonLd
+        name="PAA SOLAR Smart Solar Inverters (On-Grid, Hybrid & Off-Grid)"
+        description="99.2% MPPT efficiency smart string inverters with sub-10ms automatic blackout transfer and net metering capability."
+        category="Solar Inverters"
+        url="/products/inverters"
+      />
       <Navbar />
 
       {/* Hero Header */}

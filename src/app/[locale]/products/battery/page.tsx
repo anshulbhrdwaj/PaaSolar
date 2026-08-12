@@ -8,19 +8,27 @@ import { BatteryCharging, CheckCircle2, Download } from 'lucide-react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 
-export const metadata: Metadata = {
-  title: 'LiFePO4 Energy Storage Systems & BESS | PAA SOLAR',
-  description:
-    '10,000+ cycle Lithium Iron Phosphate (LiFePO4) solar battery storage systems. Modular scalability from 5kWh to 1MWh+ with sub-10ms automatic blackout transfer.',
-  openGraph: {
-    title: 'LiFePO4 Energy Storage Systems & BESS | PAA SOLAR',
+import { constructMetadata } from '@/lib/seo';
+import { ProductJsonLd, BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return constructMetadata({
+    title: 'LiFePO4 Energy Storage Systems & Lithium Batteries | 10,000+ Cycles',
     description:
-      'Long-life LFP battery storage ecosystems for residential kits, C&I microgrids, and BESS - smart lithium battery bank.',
-  },
-};
+      '10,000+ cycle Lithium Iron Phosphate (LiFePO4) solar battery storage systems. Modular scalability from 5kWh to 1MWh+ with sub-10ms automatic blackout transfer.',
+    path: '/products/battery',
+    locale,
+  });
+}
 
 export default function BatteryPage() {
   const t = useTranslations('ProductDetails.battery');
+
 
   const specs = [
     { label: 'Chemistry', val: 'LiFePO4 (Lithium Iron Phosphate)' },
@@ -33,6 +41,19 @@ export default function BatteryPage() {
 
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Products', url: '/products' },
+          { name: 'Lithium Battery Storage', url: '/products/battery' },
+        ]}
+      />
+      <ProductJsonLd
+        name="PAA SOLAR LiFePO4 Lithium Solar Battery Storage"
+        description="10,000+ cycle Lithium Iron Phosphate (LiFePO4) energy storage banks with sub-10ms automatic blackout transfer."
+        category="Solar Batteries"
+        url="/products/battery"
+      />
       <Navbar />
 
       {/* Hero Header */}

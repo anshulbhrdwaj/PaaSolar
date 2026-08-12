@@ -1,16 +1,44 @@
-'use client';
-
 import React from 'react';
+import type { Metadata } from 'next';
+import { constructMetadata } from '@/lib/seo';
+import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
-import { Building2, CheckCircle2, ShieldCheck, Sun, ArrowRight, Store, Truck, Users, Sparkles } from 'lucide-react';
+import { Store, ArrowRight, Truck, Users, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return constructMetadata({
+    title: 'Franchise & PM Surya Ghar Yojana Dealer Network | PAA SOLAR',
+    description:
+      'Become an official PAA SOLAR Franchisee or District Distributor for PM Surya Ghar Yojana (PM SGY) solar kits (1kW to 10kW) with TOPCon DCR modules and DISCOM portal support.',
+    path: '/products/franchise-sgy',
+    locale,
+  });
+}
 
 export default function FranchiseSgyPage() {
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Products', url: '/products' },
+          { name: 'Franchise & PM SGY', url: '/products/franchise-sgy' },
+        ]}
+      />
+      <ServiceJsonLd
+        name="PM Surya Ghar Yojana Franchise & Solar Kit Distribution"
+        description="Turnkey PM SGY solar kits (1kW to 10kW) and district dealership distribution network with factory-direct supply."
+        serviceType="Solar Franchise & Distribution"
+      />
       <Navbar />
 
       {/* Hero Header */}

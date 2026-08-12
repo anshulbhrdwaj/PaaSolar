@@ -7,9 +7,9 @@ export function JsonLd() {
     name: 'PAA SOLAR',
     legalName: 'PAA SOLAR (EKCHAKRA GROUP)',
     url: 'https://paasolar.com',
-    logo: 'https://paasolar.com/logo.png',
+    logo: 'https://paasolar.com/Paa.png',
     description:
-      'Fast-growing solar company delivering sustainable and efficient renewable energy solutions across India and international markets. Part of EKCHAKRA GROUP.',
+      'Fast-growing solar EPC company delivering 30-40 year durable clean energy solutions across India and international markets. Part of EKCHAKRA GROUP.',
     foundingDate: '2016',
     founders: [
       {
@@ -22,7 +22,18 @@ export function JsonLd() {
         '@type': 'ContactPoint',
         telephone: '+91-9311922134',
         contactType: 'customer service',
-        availableLanguage: ['English', 'Hindi', 'Gujarati', 'Marathi', 'Bengali', 'Tamil', 'Telugu', 'Kannada', 'German', 'Spanish'],
+        availableLanguage: [
+          'English',
+          'Hindi',
+          'Gujarati',
+          'Marathi',
+          'Bengali',
+          'Tamil',
+          'Telugu',
+          'Kannada',
+          'German',
+          'Spanish',
+        ],
         areaServed: ['IN', 'SG', 'OM', 'ZA', 'MA', 'BR', 'NZ', 'NP', 'BD'],
       },
     ],
@@ -77,7 +88,7 @@ export function JsonLd() {
     url: 'https://paasolar.com',
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://paasolar.com/search?q={search_term_string}',
+      target: 'https://paasolar.com/products?q={search_term_string}',
       'query-input': 'required name=search_term_string',
     },
   };
@@ -97,5 +108,144 @@ export function JsonLd() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
       />
     </>
+  );
+}
+
+export function BreadcrumbJsonLd({
+  items,
+}: {
+  items: { name: string; url: string }[];
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: item.name,
+      item: item.url.startsWith('http') ? item.url : `https://paasolar.com${item.url}`,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function ProductJsonLd({
+  name,
+  description,
+  image,
+  category = 'Solar Equipment',
+  url,
+  brand = 'PAA SOLAR',
+  sku,
+}: {
+  name: string;
+  description: string;
+  image?: string;
+  category?: string;
+  url?: string;
+  brand?: string;
+  sku?: string;
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name,
+    description,
+    category,
+    image: image ? (image.startsWith('http') ? image : `https://paasolar.com${image}`) : 'https://paasolar.com/og-image.jpg',
+    brand: {
+      '@type': 'Brand',
+      name: brand,
+    },
+    sku: sku || name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'INR',
+      highPrice: '5000000',
+      lowPrice: '15000',
+      offerCount: '100',
+      availability: 'https://schema.org/InStock',
+      seller: {
+        '@type': 'Organization',
+        name: 'PAA SOLAR',
+      },
+    },
+    ...(url && { url: url.startsWith('http') ? url : `https://paasolar.com${url}` }),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function FaqJsonLd({
+  faqs,
+}: {
+  faqs: { question: string; answer: string }[];
+}) {
+  if (!faqs || faqs.length === 0) return null;
+
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function ServiceJsonLd({
+  name,
+  description,
+  serviceType = 'Solar EPC Engineering',
+  providerName = 'PAA SOLAR (EKCHAKRA GROUP)',
+  areaServed = 'India & Global Markets',
+}: {
+  name: string;
+  description: string;
+  serviceType?: string;
+  providerName?: string;
+  areaServed?: string;
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name,
+    description,
+    serviceType,
+    provider: {
+      '@type': 'Organization',
+      name: providerName,
+      url: 'https://paasolar.com',
+    },
+    areaServed,
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
   );
 }

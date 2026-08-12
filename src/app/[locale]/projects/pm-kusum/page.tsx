@@ -1,6 +1,7 @@
-'use client';
-
 import React from 'react';
+import type { Metadata } from 'next';
+import { constructMetadata } from '@/lib/seo';
+import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { CaseStudies } from '@/components/sections/CaseStudies';
@@ -9,11 +10,38 @@ import { Footer } from '@/components/sections/Footer';
 import { Sprout, CheckCircle2 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return constructMetadata({
+    title: 'PM-KUSUM Scheme Solar Projects (Component A, B & C) | PAA SOLAR',
+    description:
+      'Turnkey EPC engineering for PM-KUSUM Component A, B, and C feeder solarization. Empowering farmers with solar pumps, grid feeder solar plants, and long-term land income.',
+    path: '/projects/pm-kusum',
+    locale,
+  });
+}
+
 export default function PMKusumPage() {
   const t = useTranslations('ProjectSectors.pmKusum');
 
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Projects', url: '/projects' },
+          { name: 'PM-KUSUM Scheme', url: '/projects/pm-kusum' },
+        ]}
+      />
+      <ServiceJsonLd
+        name="PM-KUSUM Solar Feeder & Agricultural EPC"
+        description="Agricultural feeder solarization and decentralized solar power plants under PM-KUSUM Component A, B, and C."
+        serviceType="PM-KUSUM Agricultural Solar EPC"
+      />
       <Navbar />
 
       {/* Hero Header */}

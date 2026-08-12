@@ -1,10 +1,26 @@
-'use client';
-
 import React from 'react';
+import type { Metadata } from 'next';
+import { constructMetadata } from '@/lib/seo';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { Wrench, Cpu, Activity, Layers, Compass } from 'lucide-react';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return constructMetadata({
+    title: 'EPC Solar Execution Methodology & Engineering Workflow | PAA SOLAR',
+    description:
+      'Explore PAA SOLAR’s 5-stage solar engineering lifecycle: 3D LiDAR site survey, simulation modeling, procurement, commissioning, and 24/7 AI telemetry O&M.',
+    path: '/working-methodology',
+    locale,
+  });
+}
 
 export default function WorkingMethodologyPage() {
   const t = useTranslations('CorporatePages.methodology');
@@ -19,6 +35,12 @@ export default function WorkingMethodologyPage() {
 
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Working Methodology', url: '/working-methodology' },
+        ]}
+      />
       <Navbar />
 
       {/* Hero Header */}

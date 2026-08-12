@@ -1,6 +1,7 @@
-'use client';
-
 import React from 'react';
+import type { Metadata } from 'next';
+import { constructMetadata } from '@/lib/seo';
+import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd';
 import { useTranslations } from 'next-intl';
 import { Navbar } from '@/components/ui/Navbar';
 import { CaseStudies } from '@/components/sections/CaseStudies';
@@ -9,11 +10,38 @@ import { Footer } from '@/components/sections/Footer';
 import { Factory, CheckCircle2 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return constructMetadata({
+    title: 'Independent Power Producer (IPP) & Utility Solar Parks | PAA SOLAR',
+    description:
+      'Utility-scale Independent Power Producer (IPP) solar park development, HT evacuation grid pooling sub-stations, and megawatt solar power plants in India.',
+    path: '/projects/ipp',
+    locale,
+  });
+}
+
 export default function IPPPage() {
   const t = useTranslations('ProjectSectors.ipp');
 
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'Projects', url: '/projects' },
+          { name: 'IPP & Utility Solar', url: '/projects/ipp' },
+        ]}
+      />
+      <ServiceJsonLd
+        name="Utility-Scale IPP Solar Park Development"
+        description="Utility scale Independent Power Producer (IPP) solar engineering, high voltage evacuation sub-stations, and long term PPA execution."
+        serviceType="Utility Scale Solar EPC & IPP"
+      />
       <Navbar />
 
       {/* Hero Header */}

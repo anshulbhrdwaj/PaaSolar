@@ -4,18 +4,26 @@ import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { ShieldCheck, Sparkles, Building2, Users, Target, Lightbulb } from 'lucide-react';
 
-export const metadata: Metadata = {
-  title: 'About PAA SOLAR | EKCHAKRA GROUP | Leadership & CSR Vision',
-  description:
-    'Discover PAA SOLAR (EKCHAKRA GROUP), India’s premier solar EPC developer with a 30-40 year clean energy vision. Meet our executive management team led by MR. Pandey, Dinesh Kumar, Priyanka & Akansha.',
-  openGraph: {
-    title: 'About PAA SOLAR | EKCHAKRA GROUP | Leadership & CSR Vision',
+import { constructMetadata } from '@/lib/seo';
+import { BreadcrumbJsonLd } from '@/components/seo/JsonLd';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return constructMetadata({
+    title: 'About PAA SOLAR | EKCHAKRA GROUP | Leadership & Clean Energy Vision',
     description:
-      'Fast-growing solar company delivering sustainable energy solutions across C&I, PM-KUSUM, PM-SSY, and 8 international export destinations.',
-  },
-};
+      'Discover PAA SOLAR (EKCHAKRA GROUP), India’s premier solar EPC developer with a 30-40 year clean energy vision. Meet our executive management team led by MR. Pandey, Dinesh Kumar, Priyanka & Akansha.',
+    path: '/about-us',
+    locale,
+  });
+}
 
 export default function AboutUsPage() {
+
 
   const teamMembers = [
     {
@@ -62,6 +70,12 @@ export default function AboutUsPage() {
 
   return (
     <main className="relative min-h-screen bg-bg-primary text-text-primary overflow-x-hidden pt-20">
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'Home', url: '/' },
+          { name: 'About Us', url: '/about-us' },
+        ]}
+      />
       <Navbar />
 
       {/* Hero Section */}
