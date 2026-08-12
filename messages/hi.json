@@ -3,15 +3,15 @@
     "brand": "पा सोलर",
     "nav": {
       "whySolar": "सौर ऊर्जा क्यों",
+      "aboutUs": "हमारे बारे में",
       "howItWorks": "यह कैसे काम करता है",
       "solutions": "समाधान",
       "products": "उत्पाद",
       "projects": "परियोजनाएं",
       "b2b": "निर्यात और ओवरसीज",
+      "vendorRegister": "विक्रेता पंजीकरण",
       "impact": "प्रभाव",
       "testimonials": "प्रशंसापत्र",
-      "aboutUs": "हमारे बारे में",
-      "vendorRegister": "विक्रेता पंजीकरण",
       "company": "कंपनी",
       "contact": "संपर्क करें",
       "export": "निर्यात और ओवरसीज"
@@ -69,23 +69,23 @@
     "trustHighlight2": "5 वर्ष की EPC वारंटी",
     "banners": [
       {
-        "title": "पीएम कुसुम (A&C)",
-        "caption": "विकेंद्रीकृत ग्राउंड प्लांट और फीडर स्तर का सौरीकरण",
-        "shortTitle": "पीएम कुसुम"
+        "title": "PM Kusum (A&C)",
+        "caption": "Decentralized Ground Plants & Feeder Level Solarization",
+        "shortTitle": "PM Kusum"
       },
       {
-        "title": "बेस्स एनर्जी (BESS)",
-        "caption": "सब-10ms स्वचालित बैकअप और उच्च-स्तरीय माइक्रोग्रिड",
-        "shortTitle": "बेस्स"
+        "title": "Bess Energy",
+        "caption": "Sub-10ms Automated Backup & High-Scale Microgrids",
+        "shortTitle": "Bess"
       },
       {
-        "title": "फ्लोटिंग आधारित सौर परियोजना",
-        "caption": "नवीन जल-सतह सौर ऊर्जा संयंत्र",
-        "shortTitle": "फ्लोटिंग"
+        "title": "Floating Based Solar Project",
+        "caption": "Innovative Water-Surface Solar Energy Installations",
+        "shortTitle": "Floating"
       },
       {
-        "title": "वाणिज्यिक और औद्योगिक छतें",
-        "caption": "निर्माण संयंत्रों के लिए ऊर्जा लागत में 70% से 90% की कमी",
+        "title": "Commercial & Industrial Rooftops",
+        "caption": "70% to 90% Energy Cost Reduction for Manufacturing Plants",
         "shortTitle": "C&I"
       }
     ]
@@ -121,27 +121,27 @@
     "cards": [
       {
         "num": "01",
-        "title": "बढ़ती ग्रिड लागत",
-        "desc": "बिजली की दरें हर साल 7-12% बढ़ती हैं। सौर ऊर्जा आपकी ऊर्जा दर को हमेशा के लिए सुरक्षित करती है।",
-        "highlight": "+12% वार्षिक वृद्धि"
+        "title": "Escalating Grid Costs",
+        "desc": "Utility rates rise by 7-12% annually. Solar locks in your energy rate forever, insulating your assets from inflation.",
+        "highlight": "+12% annual rate hikes"
       },
       {
         "num": "02",
-        "title": "बिजली कटौती से मुक्ति",
-        "desc": "हमारा स्मार्ट बैटरी स्टोरेज बिना किसी रुकावट के आपकी बिजली चालू रखता है।",
-        "highlight": "शून्य बिजली कटौती"
+        "title": "Fragile Power Grids",
+        "desc": "Extreme weather events and aging infrastructure cause frequent outages. Our smart storage keeps your lights on seamlessy.",
+        "highlight": "Zero blackout vulnerability"
       },
       {
         "num": "03",
-        "title": "पर्यावरण सुरक्षा",
-        "desc": "पारंपरिक बिजली उत्पादन प्रदूषण का बड़ा कारण है। प्रत्यक्ष सौर ऊर्जा जीवाश्म ईंधन पर निर्भरता समाप्त करती है।",
-        "highlight": "100% शून्य उत्सर्जन"
+        "title": "Carbon Imperative",
+        "desc": "Traditional electricity generation is the single largest industrial source of greenhouse gases. Direct solar eliminates your reliance on fossil fuels.",
+        "highlight": "100% Zero direct emissions"
       },
       {
         "num": "04",
-        "title": "सुंदर डिजाइन",
-        "desc": "पा सोलर आपकी छत के लिए आधुनिक, सुरुचिपूर्ण और उच्च-क्षमता वाली सौर ग्लास प्रणाली प्रदान करता है।",
-        "highlight": "विशेष स्वच्छ डिजाइन"
+        "title": "Architectural Harmony",
+        "desc": "Paa Solar replaces ugly roof clutter with sleek, low-profile, high-efficiency solar glass tailored to modern luxury aesthetics.",
+        "highlight": "Bespoke clean design"
       }
     ]
   },
@@ -151,24 +151,24 @@
     "subtitle": "हम टर्नकी ईपीसी विशेषज्ञता, बैंक योग्य गुणवत्ता मानकों और शून्य रुकावट के साथ संपूर्ण सौर परियोजनाओं को निष्पादित करते हैं।",
     "steps": [
       {
-        "number": "01",
-        "title": "साइट ऑडिट और सोलर मैपिंग",
-        "desc": "3D LiDAR छत मैपिंग और सौर विकिरण मॉडलिंग।"
+        "step": "01",
+        "name": "Architectural Audit & Assessment",
+        "desc": "We map your roof's micro-climate using LiDAR, satellite irradiation, and thermal imaging to calculate exact energy potential."
       },
       {
-        "number": "02",
-        "title": "सटीक ईपीसी इंजीनियरिंग",
-        "desc": "सिंगल-लाइन आरेख, ग्रिड सिंक्रोनाइज़ेशन और टियर-1 घटक चयन।"
+        "step": "02",
+        "name": "Bespoke System Engineering",
+        "desc": "Custom electrical topologies, battery chemistry selection, and architectural integration engineered by master energy specialists."
       },
       {
-        "number": "03",
-        "title": "त्वरित फील्ड इंस्टॉलेशन",
-        "desc": "प्रमाणित सुरक्षा मानक, संरचनात्मक माउंटिंग और स्मार्ट इनवर्टर।"
+        "step": "03",
+        "name": "Rapid Precision Deployment",
+        "desc": "Clean, non-intrusive installation executed by certified master technicians with zero structural damage guarantees."
       },
       {
-        "number": "04",
-        "title": "लाइव टेलीमेट्री और ओएंडएम",
-        "desc": "24/7 IoT प्रदर्शन ट्रैकिंग और गारंटीकृत अपटाइम।"
+        "step": "04",
+        "name": "24/7 Grid Intelligence & Care",
+        "desc": "AI-driven real-time power routing, proactive maintenance telemetry, and lifetime performance optimization."
       }
     ]
   },
@@ -179,46 +179,46 @@
     "items": [
       {
         "id": "residential",
-        "title": "लक्जरी आवासीय सौर",
-        "category": "निजी विला और घर",
-        "desc": "अत्याधुनिक वास्तुकला मानकों के लिए डिज़ाइन की गई उच्च-क्षमता वाली सौर टाइलें।",
+        "title": "Luxury Residential Solar",
+        "category": "Private Estates & Villas",
+        "desc": "Seamless high-efficiency solar tiles and ultra-black panels engineered for luxury architectural standards.",
         "specs": [
-          "24kW तक आउटपुट",
-          "अदृश्य वायरिंग",
-          "एकीकृत टाइल प्रणाली"
+          "Up to 24kW Output",
+          "Invisible Conduit Routing",
+          "Integrated Tile Roof Systems"
         ]
       },
       {
         "id": "commercial",
-        "title": "व्यावसायिक माइक्रोग्रिड",
-        "category": "कॉर्पोरेट और ऑफिस",
-        "desc": "परिचालन खर्च को कम करने और पर्यावरण लक्ष्यों को पूरा करने के लिए ऊर्जा स्वतंत्रता।",
+        "title": "Commercial & Corporate Microgrids",
+        "category": "Office Parks & Headquarters",
+        "desc": "Scale energy independence across corporate campuses to slash operational expenditure and fulfill ESG commitments.",
         "specs": [
-          "100kW - 5MW क्षमता",
-          "लागत में भारी बचत",
-          "रीयल-टाइम रिपोर्टिंग"
+          "100kW - 5MW Capacities",
+          "Demand Charge Mitigation",
+          "Real-Time Enterprise Telemetry"
         ]
       },
       {
         "id": "industrial",
-        "title": "औद्योगिक उच्च-मांग सौर",
-        "category": "मैन्युफैक्चरिंग प्लांट",
-        "desc": "निरंतर औद्योगिक भार के लिए निर्मित भारी-भरकम सौर संयंत्र।",
+        "title": "Industrial High-Demand Solar",
+        "category": "Manufacturing & Logistics",
+        "desc": "Heavy-duty solar installations built for continuous industrial loads, automated tracking, and high resilience.",
         "specs": [
-          "मल्टी-मेगावाट एरे",
-          "बाय-फेशियल सेल",
-          "ग्रिड फीड-इन सुविधा"
+          "Multi-Megawatt Arrays",
+          "Bi-facial N-Type Cells",
+          "Grid Feed-In Revenue Routing"
         ]
       },
       {
         "id": "storage",
-        "title": "पा वॉल्ट बैटरी इकोसिस्टम",
-        "category": "स्मार्ट एनर्जी स्टोरेज",
-        "desc": "पावर कट के दौरान मिलीसेकंड में बैकअप देने वाली लिथियम ऊर्जा भंडारण प्रणाली।",
+        "title": "Paa Vault Battery Ecosystems",
+        "category": "Smart Energy Storage",
+        "desc": "Lithium Iron Phosphate (LFP) energy storage systems providing sub-millisecond islanding power during grid dropouts.",
         "specs": [
-          "5kWh से 1MWh क्षमता",
-          "10ms से कम स्विचिंग",
-          "15 साल की सेल वारंटी"
+          "5kWh to 1MWh Scalable",
+          "Sub-10ms Switching Speed",
+          "15-Year Cell Warranty"
         ]
       }
     ]
@@ -237,39 +237,39 @@
     "projects": [
       {
         "id": "project-1",
-        "title": "द ग्लास होराइजन एस्टेट",
+        "title": "The Glass Horizon Estate",
         "category": "residential",
-        "location": "अलीबाग, महाराष्ट्र",
+        "location": "Alibaug, Maharashtra",
         "capacity": "45 kW Solar + 80 kWh Vault",
-        "offset": "98% ग्रिड स्वतंत्रता",
-        "desc": "समुद्र किनारे स्थित विला जो मानसून में पूरी तरह ऑफ-ग्रिड काम करता है।"
+        "offset": "98% Grid Offload",
+        "desc": "A seaside architectural villa operating entirely off-grid during monsoon storm cycles."
       },
       {
         "id": "project-2",
-        "title": "एपेक्स लॉजिस्टिक्स हब",
+        "title": "Apex Logistics Hub",
         "category": "industrial",
-        "location": "भिवंडी, महाराष्ट्र",
-        "capacity": "1.2 MW रूफटॉप एरे",
-        "offset": "1,450 टन CO₂ / वर्ष",
-        "desc": "24/7 कोल्ड स्टोरेज संचालन के लिए 3,000 बाय-फेशियल पैनल।"
+        "location": "Bhiwandi, Maharashtra",
+        "capacity": "1.2 MW Rooftop Array",
+        "offset": "1,450 Tons CO₂ / Year",
+        "desc": "Deploying 3,000 bi-facial panels to power 24/7 cold storage facility operations."
       },
       {
         "id": "project-3",
-        "title": "वेरडैंट कैंपस टावर्स",
+        "title": "Verdant Campus Towers",
         "category": "commercial",
-        "location": "गुरुग्राम, हरियाणा",
-        "capacity": "650 kW आर्किटेक्चरल फसाड",
-        "offset": "74% ऊर्जा लागत में कमी",
-        "desc": "कार्यालय स्थान के लिए स्वच्छ ऊर्जा और छाया प्रदान करने वाला वर्टिकल सोलर ग्लास।"
+        "location": "Gurugram, Haryana",
+        "capacity": "650 kW Architectural Facade",
+        "offset": "74% Energy Cost Reduction",
+        "desc": "Vertical solar glass integration providing clean power and shading for 12 floors of prime office space."
       },
       {
         "id": "project-4",
-        "title": "द हिमालयन इको-रिसॉर्ट",
+        "title": "The Himalayan Eco-Resort",
         "category": "residential",
-        "location": "मनाली, हिमाचल प्रदेश",
-        "capacity": "90 kW माइक्रोग्रिड + थर्मल",
-        "offset": "100% स्वच्छ स्वतंत्रता",
-        "desc": "पहाड़ी रिसॉर्ट को गर्म और रोशन रखने वाला शीतकालीन सौर संयंत्र।"
+        "location": "Manali, Himachal Pradesh",
+        "capacity": "90 kW Microgrid + Thermal",
+        "offset": "100% Clean Autonomy",
+        "desc": "High-altitude winterized solar installation keeping a mountain resort warm and fully powered."
       }
     ]
   },
@@ -293,18 +293,24 @@
     "subtitle": "हमारे वाणिज्यिक और औद्योगिक ग्राहकों की वास्तविक सफलता गाथाएं।",
     "items": [
       {
-        "quote": "पा सोलर के 1.2 मेगावाट छत सौर प्रणाली ने हमारे विनिर्माण संयंत्र के बिजली बिलों में 72% की कमी की है। ईपीसी निष्पादन निष्कलंक था।",
-        "author": "राजेश शर्मा",
-        "role": "प्रबंध निदेशक",
-        "company": "एपेक्स लॉजिस्टिक्स पार्क",
-        "rating": 5
+        "quote": "Paa Solar delivered an architectural masterpiece. Our estate has zero power outages and zero energy bills.",
+        "author": "Rajesh Singhania",
+        "role": "Founder, Singhania Estates"
       },
       {
-        "quote": "सब-10ms पा वॉल्ट बीईएसएस बैटरी स्टोरेज ने ग्रिड आउटेज के दौरान हमारे कोल्ड स्टोरेज में शून्य डाउनटाइम सुनिश्चित किया है।",
-        "author": "विक्रम मेहता",
-        "role": "सीईओ",
-        "company": "वरदान एग्रो फूड्स",
-        "rating": 5
+        "quote": "The ROI on our 1.2MW facility was achieved in 2.8 years. The telemetry platform gives us complete visibility.",
+        "author": "Ananya Sharma",
+        "role": "COO, Apex Logistics"
+      },
+      {
+        "quote": "Incredible attention to detail. The panels blend seamlessly into our slate roof design without any visible wiring.",
+        "author": "Vikramaditya Rao",
+        "role": "Principal Architect, Atelier Studio"
+      },
+      {
+        "quote": "Their team managed permitting, installation, and grid synchronization seamlessly. Paa Solar is in a class of its own.",
+        "author": "Priya Nair",
+        "role": "Sustainability Director, Zenith Group"
       }
     ]
   },
@@ -648,8 +654,20 @@
     },
     "export": {
       "tag": "वैश्विक उपस्थिति और वितरण",
-      "title": "अंतर्राष्ट्रीय सौर हार्डवेयर निर्यात",
-      "subtitle": "अफ्रीका, मध्य पूर्व, दक्षिण पूर्व एशिया और यूरोप के अंतर्राष्ट्रीय बाजारों में उच्च दक्षता वाले TOPCon सौर मॉड्यूल, स्मार्ट इन्वर्टर और पा वॉल्ट बैटरी सिस्टम का निर्यात।",
+      "title": "Solar Product & Project for International Market",
+      "subtitle": "Paa Solar is exporting high-efficiency TOPCon solar modules, smart inverters, and Lithium battery systems to international markets across Africa, Middle East, SE Asia, and Europe, alongside turnkey 500kW–MW industrial project solutions and government consultancy.",
+      "pillar1Title": "International Solar Hardware Export",
+      "pillar1Desc": "Paa Solar is Exporting high-efficiency TOPCon solar modules, smart inverters, and Lithium battery systems to international markets for distribution through exclusive channel partners across Africa, Middle East, SE Asia, and Europe.",
+      "pillar2Title": "Industrial End-User Project Solutions",
+      "pillar2Desc": "We Also Provide Projects solution to the industrial end user clients above on 500KW to MW with turnkey engineering and performance guarantees.",
+      "pillar3Title": "Consultancy for Government Agencies & Entrepreneurs",
+      "pillar3Desc": "We Provide consultancy facility and services to new business entrepreneur and country government agencies on below points:",
+      "consultancy1Title": "1). To Setup Factory & Machinery into Solar Setup",
+      "consultancy1Desc": "End-to-end guidance & technical setup to integrate factory machinery and manufacturing workflows into solar setup.",
+      "consultancy2Title": "2). Projection & Survey for Solar Projects",
+      "consultancy2Desc": "Comprehensive site surveys, solar irradiance mapping, and financial yield projections for large-scale solar projects.",
+      "consultancy3Title": "3). Designing & Drafts",
+      "consultancy3Desc": "Precision 3D CAD structural designing, electrical single-line diagrams, and engineering drafts.",
       "cert1": "IEC 61215 / 61730 प्रमाणित",
       "cert2": "CE और TUV रीनलैंड अनुपालन",
       "cert3": "UL 1973 और UN38.3 बैटरी सुरक्षा",
@@ -659,7 +677,15 @@
       "feature1": "कस्टम OEM और निजी लेबल मॉड्यूल निर्माण",
       "feature2": "उष्णकटिबंधीय तापीय सहिष्णु सौर इन्वर्टर संरचना",
       "feature3": "कंटेनरीकृत प्लग-एंड-प्ले सोलर BESS माइक्रोग्रिड सिस्टम",
-      "feature4": "पूर्ण निर्यात दस्तावेज़ीकरण, सीमा शुल्क निकासी और बंदरगाह रसद सहायता"
+      "feature4": "पूर्ण निर्यात दस्तावेज़ीकरण, सीमा शुल्क निकासी और बंदरगाह रसद सहायता",
+      "heroPoint1": "Exporting high-efficiency TOPCon modules, smart inverters & Lithium battery systems to exclusive partners across Africa, Middle East, SE Asia & Europe.",
+      "heroPoint2": "Providing turnkey project solutions for industrial end-user clients from 500 kW to Multi-MW scale.",
+      "heroPoint3": "Providing consultancy for government agencies & entrepreneurs on factory setup, project surveys & engineering drafts.",
+      "scopeTitle": "Global Operations & Consultancy Services",
+      "scopeSubtitle": "Paa Solar delivers Tier-1 solar hardware, megawatt-scale industrial project solutions, and strategic government consultancy worldwide.",
+      "pillar1Badge": "Global Distribution",
+      "pillar2Badge": "500 kW to MW+ Scale",
+      "pillar3Badge": "Strategic Advisory"
     }
   },
   "B2BSolutions": {
@@ -697,19 +723,19 @@
     "c2": "रखरखाव",
     "q3": "क्या सोलर बादलों या बारिश के दिनों में काम करता है?",
     "a3": "हाँ, सोलर पैनल बिजली उत्पन्न करना जारी रखते हैं, हालांकि उत्पादन थोड़ा कम हो जाता है।",
-    "c4": "स्थापना",
+    "c3": "Performance",
     "q4": "सोलर स्थापना के लिए कितनी जगह की आवश्यकता होती है?",
     "a4": "स्थान की आवश्यकताएं सिस्टम क्षमता, मॉड्यूल प्रकार और लेआउट पर निर्भर करती हैं।",
-    "c5": "रखरखाव",
+    "c4": "स्थापना",
     "q5": "क्या सोलर सिस्टम के लिए रखरखाव आवश्यक है?",
     "a5": "सोलर सिस्टम को न्यूनतम रखरखाव की आवश्यकता होती है—शीर्ष प्रदर्शन और विश्वसनीयता के लिए केवल समय-समय पर सफाई और वार्षिक निरीक्षण।",
-    "c6": "रिटर्न और बचत",
+    "c5": "रखरखाव",
     "q6": "क्या सौर ऊर्जा किफायती है?",
     "a6": "हाँ, सोलर बिजली के बिलों को काफी कम करता है और आकर्षक दीर्घकालिक रिटर्न प्रदान करता है।",
-    "c7": "वारंटी और सहायता",
+    "c6": "रिटर्न और बचत",
     "q7": "क्या पा सोलर वारंटी और O&M सहायता प्रदान करता है?",
     "a7": "हाँ, पा सोलर उत्पाद वारंटी, प्रदर्शन गारंटी और व्यापक O&M सेवाएं प्रदान करता है।",
-    "c3": "Performance"
+    "c7": "वारंटी और सहायता"
   },
   "Calc": {
     "badge": "तुरंत पूर्ण सोलर कोटेशन",

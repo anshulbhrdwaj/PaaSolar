@@ -3,15 +3,15 @@
     "brand": "પા સોલર",
     "nav": {
       "whySolar": "શા માટે સોલર",
+      "aboutUs": "અમારા વિશે",
       "howItWorks": "કેવી રીતે કામ કરે છે",
       "solutions": "સોલ્યુશન્સ",
       "products": "પ્રોડક્ટ્સ",
       "projects": "પ્રોજેક્ટ્સ",
       "b2b": "નિકાસ અને વિદેશ",
+      "vendorRegister": "વેન્ડર રજીસ્ટ્રેશન",
       "impact": "ઇમ્પેક્ટ",
       "testimonials": "ટેસ્ટિમોનિયલ્સ",
-      "aboutUs": "અમારા વિશે",
-      "vendorRegister": "વેન્ડર રજીસ્ટ્રેશન",
       "company": "કંપની",
       "contact": "સંપર્ક કરો",
       "export": "નિકાસ અને વિદેશ"
@@ -69,23 +69,23 @@
     "trustHighlight2": "5 વર્ષની EPC વોરંટી",
     "banners": [
       {
-        "title": "પીએમ કુસુમ (A&C)",
-        "caption": "વિકેન્દ્રીકૃત ગ્રાઉન્ડ પ્લાન્ટ અને ફીડર લેવલ સોલરાઇઝેશન",
-        "shortTitle": "પીએમ કુસુમ"
+        "title": "PM Kusum (A&C)",
+        "caption": "Decentralized Ground Plants & Feeder Level Solarization",
+        "shortTitle": "PM Kusum"
       },
       {
-        "title": "બેસ એનર્જી (BESS)",
-        "caption": "સબ-10ms ઓટોમેટેડ બેકઅપ અને હાઇ-સ્કેલ માઇક્રોગ્રીડ્સ",
-        "shortTitle": "બેસ"
+        "title": "Bess Energy",
+        "caption": "Sub-10ms Automated Backup & High-Scale Microgrids",
+        "shortTitle": "Bess"
       },
       {
-        "title": "ફ્લોટિંગ આધારિત સોલર પ્રોજેક્ટ",
-        "caption": "નવતર જળ-સપાટી સોલર એનર્જી સિસ્ટમ્સ",
-        "shortTitle": "ફ્લોટિંગ"
+        "title": "Floating Based Solar Project",
+        "caption": "Innovative Water-Surface Solar Energy Installations",
+        "shortTitle": "Floating"
       },
       {
-        "title": "વાણિજ્યિક અને ઔદ્યોગિક સોલર",
-        "caption": "ઉત્પાદન પ્લાન્ટ માટે ઊર્જા ખર્ચમાં 70% થી 90% ઘટાડો",
+        "title": "Commercial & Industrial Rooftops",
+        "caption": "70% to 90% Energy Cost Reduction for Manufacturing Plants",
         "shortTitle": "C&I"
       }
     ]
@@ -121,27 +121,54 @@
     "cards": [
       {
         "num": "01",
-        "title": "વધતા વીજ દરો",
-        "desc": "વીજળીના દરો દર વર્ષે વધે છે. સોલર તમારા દરો કાયમ માટે સ્થિર કરે છે.",
-        "highlight": "+12% વાર્ષિક વધારો"
+        "title": "Escalating Grid Costs",
+        "desc": "Utility rates rise by 7-12% annually. Solar locks in your energy rate forever, insulating your assets from inflation.",
+        "highlight": "+12% annual rate hikes"
       },
       {
         "num": "02",
-        "title": "ગ્રીડ પાવર કટ",
-        "desc": "પાવર કટથી તમારા વ્યવસાયને સુરક્ષિત કરો.",
-        "highlight": "<10ms બેકઅપ"
+        "title": "Fragile Power Grids",
+        "desc": "Extreme weather events and aging infrastructure cause frequent outages. Our smart storage keeps your lights on seamlessy.",
+        "highlight": "Zero blackout vulnerability"
       },
       {
         "num": "03",
-        "title": "ઝીરો કાર્બન ઉત્સર્જન",
-        "desc": "સ્વચ્છ ભવિષ્ય માટે ગ્રીન એનર્જી અપનાવો.",
-        "highlight": "100% ક્લીન પાવર"
+        "title": "Carbon Imperative",
+        "desc": "Traditional electricity generation is the single largest industrial source of greenhouse gases. Direct solar eliminates your reliance on fossil fuels.",
+        "highlight": "100% Zero direct emissions"
       },
       {
         "num": "04",
-        "title": "25 વર્ષની વોરંટી",
-        "desc": "લાંબા ગાળાના પરફોર્મન્સની સંપૂર્ણ ખાતરી.",
-        "highlight": "25 વર્ષ વોરંટી"
+        "title": "Architectural Harmony",
+        "desc": "Paa Solar replaces ugly roof clutter with sleek, low-profile, high-efficiency solar glass tailored to modern luxury aesthetics.",
+        "highlight": "Bespoke clean design"
+      }
+    ]
+  },
+  "HowItWorks": {
+    "tag": "ઇજનેરી કાર્યપદ્ધતિ",
+    "title": "4 ચરણોમાં સંપૂર્ણ સોલર એનર્જી સોલ્યુશન",
+    "subtitle": "અમે ગુણવત્તા ધોરણો સાથે સંપૂર્ણ સોલર પ્રોજેક્ટ્સ અમલમાં મૂકીએ છીએ.",
+    "steps": [
+      {
+        "step": "01",
+        "name": "Architectural Audit & Assessment",
+        "desc": "We map your roof's micro-climate using LiDAR, satellite irradiation, and thermal imaging to calculate exact energy potential."
+      },
+      {
+        "step": "02",
+        "name": "Bespoke System Engineering",
+        "desc": "Custom electrical topologies, battery chemistry selection, and architectural integration engineered by master energy specialists."
+      },
+      {
+        "step": "03",
+        "name": "Rapid Precision Deployment",
+        "desc": "Clean, non-intrusive installation executed by certified master technicians with zero structural damage guarantees."
+      },
+      {
+        "step": "04",
+        "name": "24/7 Grid Intelligence & Care",
+        "desc": "AI-driven real-time power routing, proactive maintenance telemetry, and lifetime performance optimization."
       }
     ]
   },
@@ -151,43 +178,47 @@
     "subtitle": "50 kW ઉપરની અમારી ડાયરેક્ટ પ્રોજેક્ટ એક્ઝિક્યુશન ક્ષમતાઓ અને ભાગીદારો માટે સંપૂર્ણ PM SGY કિટ વિતરણનું અન્વેષણ કરો.",
     "items": [
       {
-        "title": "પીએમ સૂર્ય ઘર",
-        "category": "સરકારી યોજના",
-        "desc": "300 યુનિટ મફત વીજળી અને ₹78,000 સુધીની સબસિડી.",
+        "id": "residential",
+        "title": "Luxury Residential Solar",
+        "category": "Private Estates & Villas",
+        "desc": "Seamless high-efficiency solar tiles and ultra-black panels engineered for luxury architectural standards.",
         "specs": [
-          "₹78,000 સબસિડી",
-          "300 યુનિટ મફત",
-          "નેટ-મીટરિંગ"
+          "Up to 24kW Output",
+          "Invisible Conduit Routing",
+          "Integrated Tile Roof Systems"
         ]
       },
       {
-        "title": "સોલર પેનલ",
-        "category": "N-Type TOPCon",
-        "desc": "22.8% ઉચ્ચ કાર્યક્ષમતા ધરાવતી બાયફેસિયલ સોલર પેનલ્સ.",
+        "id": "commercial",
+        "title": "Commercial & Corporate Microgrids",
+        "category": "Office Parks & Headquarters",
+        "desc": "Scale energy independence across corporate campuses to slash operational expenditure and fulfill ESG commitments.",
         "specs": [
-          "22.8% એફિશિયન્સી",
-          "580W-650W",
-          "30 વર્ષ વોરંટી"
+          "100kW - 5MW Capacities",
+          "Demand Charge Mitigation",
+          "Real-Time Enterprise Telemetry"
         ]
       },
       {
-        "title": "સ્માર્ટ ઇન્વર્ટર",
-        "category": "હાઇબ્રિડ ઇન્વર્ટર",
-        "desc": "10ms થી ઓછા સમયમાં ઓટોમેટિક બેકઅપ સ્વિચઓવર.",
+        "id": "industrial",
+        "title": "Industrial High-Demand Solar",
+        "category": "Manufacturing & Logistics",
+        "desc": "Heavy-duty solar installations built for continuous industrial loads, automated tracking, and high resilience.",
         "specs": [
-          "99.2% MPPT",
-          "<10ms બેકઅપ",
-          "IP65 વોટરપ્રૂફ"
+          "Multi-Megawatt Arrays",
+          "Bi-facial N-Type Cells",
+          "Grid Feed-In Revenue Routing"
         ]
       },
       {
-        "title": "પા વોલ્ટ બેટરી",
-        "category": "LFP સ્ટોરેજ",
-        "desc": "10,000+ સાયકલ ક્ષમતા ધરાવતી સુરક્ષિત LiFePO4 બેટરી.",
+        "id": "storage",
+        "title": "Paa Vault Battery Ecosystems",
+        "category": "Smart Energy Storage",
+        "desc": "Lithium Iron Phosphate (LFP) energy storage systems providing sub-millisecond islanding power during grid dropouts.",
         "specs": [
-          "10,000+ સાયકલ્સ",
-          "100% DoD",
-          "5-50kWh સ્કેલ"
+          "5kWh to 1MWh Scalable",
+          "Sub-10ms Switching Speed",
+          "15-Year Cell Warranty"
         ]
       }
     ]
@@ -200,37 +231,45 @@
       "all": "બધા પ્રોજેક્ટ્સ",
       "ci": "C&I (વાણિજ્યિક અને ઔદ્યોગિક)",
       "pmKusum": "પીએમ કુસુમ",
-      "utility": "યુટિલિટી સ્કેલ",
-      "pmSsy": "PM SSY"
+      "pmSsy": "PM SSY",
+      "utility": "યુટિલિટી સ્કેલ"
     },
     "projects": [
       {
-        "title": "સોલારિસ વિલા",
-        "location": "મુંબઈ",
-        "capacity": "25 kW",
-        "offset": "100% આત્મનિર્ભરતા",
-        "desc": "પ્રીમિયમ આર્કિટેક્ચર સોલર ઇન્સ્ટોલેશન."
+        "id": "project-1",
+        "title": "The Glass Horizon Estate",
+        "category": "residential",
+        "location": "Alibaug, Maharashtra",
+        "capacity": "45 kW Solar + 80 kWh Vault",
+        "offset": "98% Grid Offload",
+        "desc": "A seaside architectural villa operating entirely off-grid during monsoon storm cycles."
       },
       {
-        "title": "ટેક પાર્ક માઇક્રોગ્રીડ",
-        "location": "બેંગલુરુ",
-        "capacity": "1.2 MW",
-        "offset": "75% બચત",
-        "desc": "મોટા આઇટી પાર્ક માટે સોલર પાવર."
+        "id": "project-2",
+        "title": "Apex Logistics Hub",
+        "category": "industrial",
+        "location": "Bhiwandi, Maharashtra",
+        "capacity": "1.2 MW Rooftop Array",
+        "offset": "1,450 Tons CO₂ / Year",
+        "desc": "Deploying 3,000 bi-facial panels to power 24/7 cold storage facility operations."
       },
       {
-        "title": "ટેક્સટાઇલ મિલ સોલર",
-        "location": "અમદાવાદ",
-        "capacity": "3.5 MW",
-        "offset": "85% ઘટાડો",
-        "desc": "ટેક્સટાઇલ ઉદ્યોગ માટે સોલર સિસ્ટમ."
+        "id": "project-3",
+        "title": "Verdant Campus Towers",
+        "category": "commercial",
+        "location": "Gurugram, Haryana",
+        "capacity": "650 kW Architectural Facade",
+        "offset": "74% Energy Cost Reduction",
+        "desc": "Vertical solar glass integration providing clean power and shading for 12 floors of prime office space."
       },
       {
-        "title": "એસ્ટેટ સ્ટોરેજ સિસ્ટમ",
-        "location": "પૂણે",
-        "capacity": "40 kW",
-        "offset": "100% ગ્રીડ સ્વતંત્ર",
-        "desc": "સ્માર્ટ બેટરી સ્ટોરેજ સિસ્ટમ."
+        "id": "project-4",
+        "title": "The Himalayan Eco-Resort",
+        "category": "residential",
+        "location": "Manali, Himachal Pradesh",
+        "capacity": "90 kW Microgrid + Thermal",
+        "offset": "100% Clean Autonomy",
+        "desc": "High-altitude winterized solar installation keeping a mountain resort warm and fully powered."
       }
     ]
   },
@@ -254,11 +293,24 @@
     "subtitle": "અમારા વાણિજ્યિક અને ઔદ્યોગિક ગ્રાહકોની સફળતાની વાર્તાઓ.",
     "items": [
       {
-        "quote": "પા સોલારની સોલર સિસ્ટમે અમારા મેન્યુફેક્ચરિંગ પ્લાન્ટના પાવર બિલમાં 70% ઘટાડો કર્યો છે.",
-        "author": "રાજેશ શર્મા",
-        "role": "મેનેજિંગ ડિરેક્ટર",
-        "company": "એપેક્સ લોજિસ્ટિક્સ",
-        "rating": 5
+        "quote": "Paa Solar delivered an architectural masterpiece. Our estate has zero power outages and zero energy bills.",
+        "author": "Rajesh Singhania",
+        "role": "Founder, Singhania Estates"
+      },
+      {
+        "quote": "The ROI on our 1.2MW facility was achieved in 2.8 years. The telemetry platform gives us complete visibility.",
+        "author": "Ananya Sharma",
+        "role": "COO, Apex Logistics"
+      },
+      {
+        "quote": "Incredible attention to detail. The panels blend seamlessly into our slate roof design without any visible wiring.",
+        "author": "Vikramaditya Rao",
+        "role": "Principal Architect, Atelier Studio"
+      },
+      {
+        "quote": "Their team managed permitting, installation, and grid synchronization seamlessly. Paa Solar is in a class of its own.",
+        "author": "Priya Nair",
+        "role": "Sustainability Director, Zenith Group"
       }
     ]
   },
@@ -389,14 +441,6 @@
     "ci": {
       "tag": "ઉદ્યોગો માટે સોલર",
       "title": "C&I સોલર સિસ્ટમ",
-      "subtitle": "વીજ બિલમાં 75% સુધીની બચત.",
-      "stat1": "75% બચત",
-      "stat2": "બેંક ફાઇનાન્સ સાથે પેબેક 5 વર્ષ",
-      "stat3": "OPEX/CAPEX મોડેલ",
-      "feature1": "PPA મોડેલ",
-      "feature2": "ઉચ્ચ એફિશિયન્સી",
-      "feature3": "રોબોટિક ક્લીનિંગ",
-      "feature4": "ટેક્સ બેનિફિટ",
       "desc1": "C&I Solar PV systems are designed for commercial and industrial facilities such as factories, cold storages, institutions, and infrastructure assets. These systems typically range from 100 kW to several MW and are deployed to reduce electricity costs, improve energy reliability, and support sustainability goals.",
       "desc2": "PAA SOLAR delivers customized C&I solar solutions, including on-grid, hybrid, and battery-integrated systems, supported by smart energy management features such as net metering and policy-linked financial benefits.",
       "cta": "Request C&I Energy Audit",
@@ -424,17 +468,37 @@
       "portfolioSubtitle": "Selected commercial and industrial solar PV deployments delivered across major industrial hubs in India.",
       "milestoneBanner": "Installed 100+ small projects (below 100 kW) and currently executing projects with a total capacity of 10 MW+."
     },
+    "ipp": {
+      "tag": "યુટિલિટી પ્રોજેક્ટ",
+      "title": "IPP મેગાવોટ પાર્ક",
+      "desc1": "PAA SOLAR operates as an Independent Power Producer (IPP), developing, owning, and operating power generation assets that deliver dependable electricity and stable long-term returns.",
+      "desc2": "Our IPP platform is designed to support utilities, industries, and commercial consumers with efficient, future-ready energy solutions.",
+      "cta": "Partner With IPP Platform",
+      "stat1Label": "BUSINESS MODEL",
+      "stat1Val": "IPP & Open Access",
+      "stat2Label": "LARGEST SINGLE PLANT",
+      "stat2Val": "26 MW",
+      "stat3Label": "PPA HORIZON",
+      "stat3Val": "25 Year Fixed Returns",
+      "engageTitle": "How We Engage",
+      "engageSubtitle": "Our comprehensive 6-stage operational framework ensuring seamless IPP asset development from land acquisition to 25-year asset management.",
+      "step1Title": "Project Feasibility & Structuring",
+      "step1Desc": "Solar resource assessment, GHI/DNI irradiance mapping, financial yield modelling, and tariff structuring.",
+      "step2Title": "Land, Approvals & Grid Coordination",
+      "step2Desc": "Land acquisition, STU/CTU grid connectivity approvals, CEIG safety permits, and PPA execution.",
+      "step3Title": "Financing Support & Partnerships",
+      "step3Desc": "Debt/equity syndication, non-recourse project finance, green bonds, and co-investment partnerships.",
+      "step4Title": "Complete EPC Execution",
+      "step4Desc": "Turnkey procurement of Tier-1 TOPCon bifacial modules, 1500V central inverters, and automated tracker structures.",
+      "step5Title": "Commissioning & Power Evacuation",
+      "step5Desc": "Switchyard construction, 33kV/132kV pooling sub-stations, transmission line construction, and DISCOM synchronization.",
+      "step6Title": "Operations & Asset Management",
+      "portfolioTitle": "Featured IPP Projects",
+      "portfolioSubtitle": "Strategic utility-scale solar installations generating clean electricity across key state discom networks."
+    },
     "pmKusum": {
       "tag": "કૃષિ સોલરાઇઝેશન",
       "title": "પીએમ કુસુમ યોજના સોલ્યુશન્સ",
-      "subtitle": "વિશ્વસનીય દિવસના કૃષિ વીજળી માટે વિકેન્દ્રિત ગ્રાઉન્ડ સોલર પાવર પ્લાન્ટ અને ફીડર-સ્તરના સોલરાઇઝેશન સાથે ખેડૂતો અને ડિસ્કોમ ફીડર્સને સક્ષમ બનાવવું.",
-      "stat1": "સબસ્ટેશન ફીડર ગ્રીડ",
-      "stat2": "ઘટકો એ અને સી ફીડર",
-      "stat3": "દિવસ દરમિયાન અવિરત વીજળી",
-      "feature1": "ઘટક એ: વિકેન્દ્રિત 500kW થી 2MW ગ્રાઉન્ડ સોલર પાવર પ્લાન્ટ્સ",
-      "feature2": "ઘટક સી: કૃષિ સબસ્ટેશન ફીડર્સ માટે ફીડર લેવલ સોલરાઇઝેશન",
-      "feature3": "ઉચ્ચ કાર્યક્ષમતાવાળા TOPCon બાયફેસિયલ સોલર મોડ્યુલ ઇન્ફ્રાસ્ટ્રક્ચર",
-      "feature4": "ગેરંટીકૃત લાંબા ગાળાના ડિસ્કોમ પીપીએ આવક અને ફીડર સ્વતંત્રતા",
       "desc1": "PAA SOLAR is proud to partner in the Government of India's flagship PM-KUSUM Scheme (Component A & C) — a mission designed to empower farmers, strengthen rural income streams, and rapidly scale solar generation across the country.",
       "desc2": "Under PM-KUSUM, farmers, panchayats, cooperatives, and FPOs can develop solar power plants from 500 kW to 2 MW under Component A & 500 kW to 5 MW under Component C right on their land — turning unproductive space into secure 25-year income assets.",
       "cta": "Apply for PM-KUSUM Project",
@@ -477,53 +541,35 @@
       "step6Title": "Operations & Maintenance (O&M)",
       "step6Desc": "24/7 telemetry monitoring, panel cleaning, preventive upkeep, and revenue assurance."
     },
-    "ipp": {
-      "tag": "યુટિલિટી પ્રોજેક્ટ",
-      "title": "IPP મેગાવોટ પાર્ક",
-      "subtitle": "મોટા પાયાના સોલર પાર્ક્સ.",
-      "stat1": "500+ MW નેટવર્ક",
-      "stat2": "25 વર્ષ PPA",
-      "stat3": "HT ટ્રાન્સમિશન",
-      "feature1": "ટર્નકી EPC",
-      "feature2": "ગ્રીડ સિિંક્રોનાઇઝેશન",
-      "feature3": "24/7 ટેલિમેટ્રી",
-      "feature4": "કાર્બન સર્ટિફિકેટ",
-      "desc1": "PAA SOLAR operates as an Independent Power Producer (IPP), developing, owning, and operating power generation assets that deliver dependable electricity and stable long-term returns.",
-      "desc2": "Our IPP platform is designed to support utilities, industries, and commercial consumers with efficient, future-ready energy solutions.",
-      "cta": "Partner With IPP Platform",
-      "stat1Label": "BUSINESS MODEL",
-      "stat1Val": "IPP & Open Access",
-      "stat2Label": "LARGEST SINGLE PLANT",
-      "stat2Val": "26 MW",
-      "stat3Label": "PPA HORIZON",
-      "stat3Val": "25 Year Fixed Returns",
+    "pmKusumBess": {
+      "tag": "BATTERY ENERGY STORAGE SYSTEMS (BESS)",
+      "title": "Dispatchable Energy Storage & Grid Stability",
+      "desc1": "PAA SOLAR develops and operates Battery Energy Storage Systems (BESS) that store electricity and dispatch it on demand. BESS improves power reliability, enables efficient energy use, and supports grid stability across utility and commercial applications.",
+      "desc2": "By reducing dependence on diesel-based backup and enabling structured power supply to DISCOMs, BESS creates resilient energy infrastructure with predictable, long-term value.",
+      "desc3": "PAA SOLAR delivers BESS projects through policy-aligned frameworks, supported by government schemes, and managed across the full asset lifecycle.",
+      "cta": "Inquire BESS Solutions",
+      "stat1Label": "DISPATCH MODE",
+      "stat1Val": "On-Demand Dispatch",
+      "stat2Label": "DIESEL REDUCTION",
+      "stat2Val": "Up to 90% Less",
+      "stat3Label": "FRAMEWORK",
+      "stat3Val": "Policy-Aligned Schemes",
       "engageTitle": "How We Engage",
-      "engageSubtitle": "Our comprehensive 6-stage operational framework ensuring seamless IPP asset development from land acquisition to 25-year asset management.",
-      "step1Title": "Project Feasibility & Structuring",
-      "step1Desc": "Solar resource assessment, GHI/DNI irradiance mapping, financial yield modelling, and tariff structuring.",
-      "step2Title": "Land, Approvals & Grid Coordination",
-      "step2Desc": "Land acquisition, STU/CTU grid connectivity approvals, CEIG safety permits, and PPA execution.",
-      "step3Title": "Financing Support & Partnerships",
-      "step3Desc": "Debt/equity syndication, non-recourse project finance, green bonds, and co-investment partnerships.",
-      "step4Title": "Complete EPC Execution",
-      "step4Desc": "Turnkey procurement of Tier-1 TOPCon bifacial modules, 1500V central inverters, and automated tracker structures.",
-      "step5Title": "Commissioning & Power Evacuation",
-      "step5Desc": "Switchyard construction, 33kV/132kV pooling sub-stations, transmission line construction, and DISCOM synchronization.",
-      "step6Title": "Operations & Asset Management",
-      "portfolioTitle": "Featured IPP Projects",
-      "portfolioSubtitle": "Strategic utility-scale solar installations generating clean electricity across key state discom networks."
+      "engageSubtitle": "End-to-end BESS project delivery from initial feasibility and regulatory coordination to long-term performance management.",
+      "step1Title": "Project Feasibility and System Design",
+      "step1Desc": "Load profile auditing, duty-cycle profiling, LiFePO4 chemistry selection, and 500 kWh to 10 MWh+ system sizing.",
+      "step2Title": "Regulatory Coordination and Approvals",
+      "step2Desc": "DISCOM interconnection agreements, CEIG safety permits, CEA grid compliance, and government scheme subsidy filings.",
+      "step3Title": "Engineering, Procurement and Construction",
+      "step3Desc": "Tier-1 LFP cell procurement, IP65 liquid-cooled container integration, HVAC climate control, and smart BMS assembly.",
+      "step4Title": "Grid Integration and Commissioning",
+      "step4Desc": "Sub-10ms islanding transfer validation, bi-directional inverter grid sync, relay testing, and SCADA commissioning.",
+      "step5Title": "Long-Term Operations & Performance Management",
+      "step5Desc": "24/7 remote IoT telemetry monitoring, active cell balancing, thermographic maintenance, and long-term yield management."
     },
     "pmSsy": {
       "tag": "સોલર રૂફટોપ અને સબસિડી",
       "title": "પીએમ-એસએસવાય (પીએમ શૌર્ય યોજના)",
-      "subtitle": "ઘરો, સંસ્થાઓ અને સરકારી સુવિધાઓને વિકેન્દ્રીકૃત રૂફટોપ સોલાર અને નાણાકીય સહાયથી સશક્ત બનાવવી.",
-      "stat1": "60% સુધી સબસિડી",
-      "stat2": "ડિસ્કોમ મંજૂર",
-      "stat3": "ઝીરો ડાઉન-પેમેન્ટ EMI",
-      "feature1": "રહેણાંક અને સંસ્થાકીય ગ્રાહકો માટે સબસિડીવાળી રૂફટોપ સોલર સિસ્ટમ",
-      "feature2": "નેટ-મીટરિંગ કનેક્શન અને સ્ટેટ નોડલ એજન્સી મંજૂરીઓ",
-      "feature3": "ઉચ્ચ કાર્યક્ષમતાવાળા એન-ટાઇપ ટોપકોન પેનલ્સ અને સ્માર્ટ ઇનવર્ટર્સ",
-      "feature4": "25-વર્ષની પરફોર્મન્સ ગેરંટી અને ટર્નકી મેન્ટેનન્સ",
       "tagline": "A Step Towards a Sustainable Energy Future",
       "desc1": "The Union Cabinet has officially approved the Pradhan Mantri Surya Sarovar Yojana (PM-SSY) to accelerate the development of Floating Solar Photovoltaic (FPV) projects across India.",
       "desc2": "PAA SOLAR delivers complete EPC, floating pontoon mooring, aquatic structural engineering, and regulatory clearance support for power producers, developers, and DISCOMs under PM-SSY.",
@@ -556,32 +602,6 @@
       "highlightsSubtitle": "Official Union Cabinet benchmarks governing floating solar PV project implementation.",
       "timelineTitle": "PM-SSY Policy Timeline & CFA Disbursement",
       "timelineSubtitle": "Structured multi-year operational window ensuring long-term financial assistance for developers."
-    },
-    "pmKusumBess": {
-      "tag": "BATTERY ENERGY STORAGE SYSTEMS (BESS)",
-      "title": "Dispatchable Energy Storage & Grid Stability",
-      "desc1": "PAA SOLAR develops and operates Battery Energy Storage Systems (BESS) that store electricity and dispatch it on demand. BESS improves power reliability, enables efficient energy use, and supports grid stability across utility and commercial applications.",
-      "desc2": "By reducing dependence on diesel-based backup and enabling structured power supply to DISCOMs, BESS creates resilient energy infrastructure with predictable, long-term value.",
-      "desc3": "PAA SOLAR delivers BESS projects through policy-aligned frameworks, supported by government schemes, and managed across the full asset lifecycle.",
-      "cta": "Inquire BESS Solutions",
-      "stat1Label": "DISPATCH MODE",
-      "stat1Val": "On-Demand Dispatch",
-      "stat2Label": "DIESEL REDUCTION",
-      "stat2Val": "Up to 90% Less",
-      "stat3Label": "FRAMEWORK",
-      "stat3Val": "Policy-Aligned Schemes",
-      "engageTitle": "How We Engage",
-      "engageSubtitle": "End-to-end BESS project delivery from initial feasibility and regulatory coordination to long-term performance management.",
-      "step1Title": "Project Feasibility and System Design",
-      "step1Desc": "Load profile auditing, duty-cycle profiling, LiFePO4 chemistry selection, and 500 kWh to 10 MWh+ system sizing.",
-      "step2Title": "Regulatory Coordination and Approvals",
-      "step2Desc": "DISCOM interconnection agreements, CEIG safety permits, CEA grid compliance, and government scheme subsidy filings.",
-      "step3Title": "Engineering, Procurement and Construction",
-      "step3Desc": "Tier-1 LFP cell procurement, IP65 liquid-cooled container integration, HVAC climate control, and smart BMS assembly.",
-      "step4Title": "Grid Integration and Commissioning",
-      "step4Desc": "Sub-10ms islanding transfer validation, bi-directional inverter grid sync, relay testing, and SCADA commissioning.",
-      "step5Title": "Long-Term Operations & Performance Management",
-      "step5Desc": "24/7 remote IoT telemetry monitoring, active cell balancing, thermographic maintenance, and long-term yield management."
     }
   },
   "CorporatePages": {
@@ -634,8 +654,20 @@
     },
     "export": {
       "tag": "ગ્લોબલ એક્સપોર્ટ",
-      "title": "ઇન્ટરનેશનલ એક્સપોર્ટ",
-      "subtitle": "વિશ્વના દેશોમાં સોલર સાધનોની નિકાસ.",
+      "title": "Solar Product & Project for International Market",
+      "subtitle": "Paa Solar is exporting high-efficiency TOPCon solar modules, smart inverters, and Lithium battery systems to international markets across Africa, Middle East, SE Asia, and Europe, alongside turnkey 500kW–MW industrial project solutions and government consultancy.",
+      "pillar1Title": "International Solar Hardware Export",
+      "pillar1Desc": "Paa Solar is Exporting high-efficiency TOPCon solar modules, smart inverters, and Lithium battery systems to international markets for distribution through exclusive channel partners across Africa, Middle East, SE Asia, and Europe.",
+      "pillar2Title": "Industrial End-User Project Solutions",
+      "pillar2Desc": "We Also Provide Projects solution to the industrial end user clients above on 500KW to MW with turnkey engineering and performance guarantees.",
+      "pillar3Title": "Consultancy for Government Agencies & Entrepreneurs",
+      "pillar3Desc": "We Provide consultancy facility and services to new business entrepreneur and country government agencies on below points:",
+      "consultancy1Title": "1). To Setup Factory & Machinery into Solar Setup",
+      "consultancy1Desc": "End-to-end guidance & technical setup to integrate factory machinery and manufacturing workflows into solar setup.",
+      "consultancy2Title": "2). Projection & Survey for Solar Projects",
+      "consultancy2Desc": "Comprehensive site surveys, solar irradiance mapping, and financial yield projections for large-scale solar projects.",
+      "consultancy3Title": "3). Designing & Drafts",
+      "consultancy3Desc": "Precision 3D CAD structural designing, electrical single-line diagrams, and engineering drafts.",
       "cert1": "IEC પ્રમાણિત",
       "cert2": "CE કમ્પ્લાયન્ટ",
       "cert3": "UL સેફ્ટી",
@@ -645,7 +677,15 @@
       "feature1": "OEM ઉત્પાદન",
       "feature2": "ઉચ્ચ તાપમાન પ્રતિકારક",
       "feature3": "કન્ટેનરાઇઝ્ડ સિસ્ટમ",
-      "feature4": "લોજિસ્ટિક્સ સપોર્ટ"
+      "feature4": "લોજિસ્ટિક્સ સપોર્ટ",
+      "heroPoint1": "Exporting high-efficiency TOPCon modules, smart inverters & Lithium battery systems to exclusive partners across Africa, Middle East, SE Asia & Europe.",
+      "heroPoint2": "Providing turnkey project solutions for industrial end-user clients from 500 kW to Multi-MW scale.",
+      "heroPoint3": "Providing consultancy for government agencies & entrepreneurs on factory setup, project surveys & engineering drafts.",
+      "scopeTitle": "Global Operations & Consultancy Services",
+      "scopeSubtitle": "Paa Solar delivers Tier-1 solar hardware, megawatt-scale industrial project solutions, and strategic government consultancy worldwide.",
+      "pillar1Badge": "Global Distribution",
+      "pillar2Badge": "500 kW to MW+ Scale",
+      "pillar3Badge": "Strategic Advisory"
     }
   },
   "B2BSolutions": {
@@ -668,33 +708,6 @@
     "feature3": "પોર્ટફોલિયો મોનિટરિંગ",
     "feature4": "25 વર્ષ વોરંટી"
   },
-  "HowItWorks": {
-    "tag": "ઇજનેરી કાર્યપદ્ધતિ",
-    "title": "4 ચરણોમાં સંપૂર્ણ સોલર એનર્જી સોલ્યુશન",
-    "subtitle": "અમે ગુણવત્તા ધોરણો સાથે સંપૂર્ણ સોલર પ્રોજેક્ટ્સ અમલમાં મૂકીએ છીએ.",
-    "steps": [
-      {
-        "number": "01",
-        "title": "સાઇટ ઓડિટ અને સોલર મેપિંગ",
-        "desc": "3D LiDAR છત મેપિંગ અને રેડિયેશન મોડેલિંગ."
-      },
-      {
-        "number": "02",
-        "title": "ચોક્કસ EPC ઇજનેરી",
-        "desc": "ગ્રીડ સિંક્રોનાઇઝેશન અને ટિયર-1 ઘટકોની પસંદગી."
-      },
-      {
-        "number": "03",
-        "title": "ઝડપી ઇન્સ્ટોલેશન",
-        "desc": "પ્રમાણિત સલામતી ધોરણો અને સ્માર્ટ ઇન્વર્ટર."
-      },
-      {
-        "number": "04",
-        "title": "લાઇવ ટેલિમેટ્રી અને O&M",
-        "desc": "24/7 IoT પર્ફોર્મન્સ ટ્રેકિંગ અને ગેરંટીડ અપટાઇમ."
-      }
-    ]
-  },
   "FAQ": {
     "badge": "વારંવાર પૂછાતા પ્રશ્નો",
     "title": "શું તમારી પાસે પ્રશ્નો છે? અમારી પાસે જવાબો છે.",
@@ -710,19 +723,19 @@
     "c2": "જાળવણી",
     "q3": "શું વાદળછાયા કે વરસાદના દિવસોમાં સોલર કામ કરે છે?",
     "a3": "હા, સોલર પેનલ્સ વીજળી ઉત્પન્ન કરવાનું ચાલુ રાખે છે, જોકે ઉત્પાદન થોડું ઓછું થાય છે.",
-    "c4": "ઇન્સ્ટોલેશન",
+    "c3": "Performance",
     "q4": "સોલર ઇન્સ્ટોલેશન માટે કેટલી જગ્યા જરૂરી છે?",
     "a4": "જગ્યાની જરૂરિયાતો સિસ્ટમ ક્ષમતા, મોડ્યુલ પ્રકાર અને લેઆઉટ પર આધાર રાખે છે.",
-    "c5": "જાળવણી",
+    "c4": "ઇન્સ્ટોલેશન",
     "q5": "શું સોલર સિસ્ટમ માટે જાળવણી જરૂરી છે?",
     "a5": "સોલર સિસ્ટમ્સને ન્યૂનતમ જાળવણીની જરૂર હોય છે—ફક્ત સમયાંતરે સફાઈ અને વાર્ષિક નિરીક્ષણ.",
-    "c6": "વળતર અને બચત",
+    "c5": "જાળવણી",
     "q6": "શું સોલર પાવર સસ્તું છે?",
     "a6": "હા, સોલર વીજળીના બિલમાં મોટો ઘટાડો કરે છે અને આકર્ષક લાંબા ગાળાના વળતર આપે છે.",
-    "c7": "વોરંટી અને સપોર્ટ",
+    "c6": "વળતર અને બચત",
     "q7": "શું પા સોલર વોરંટી અને O&M સપોર્ટ આપે છે?",
     "a7": "હા, પા સોલર પ્રોડક્ટ વોરંટી, પર્ફોર્મન્સ ગેરંટી અને વ્યાપક O&M સેવાઓ પ્રદાન કરે છે.",
-    "c3": "Performance"
+    "c7": "વોરંટી અને સપોર્ટ"
   },
   "Calc": {
     "badge": "ઇન્સ્ટન્ટ પૂર્ણ સોલર કોટેશન",
