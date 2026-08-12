@@ -1,8 +1,7 @@
-'use client';
-
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { Building2, Truck } from 'lucide-react';
+import Image from 'next/image';
 
 export function ProductsGrid() {
   const t = useTranslations('Products');
@@ -83,9 +82,14 @@ export function ProductsGrid() {
             <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Visual Badge Side (Inverted) */}
               <div className="lg:col-span-5 lg:order-1">
-                <div className="p-8 rounded-3xl bg-bg-primary border border-line/80 shadow-2xl flex flex-col items-center justify-center text-center space-y-4 group-hover:border-emerald-500/50 transition-colors">
-                  <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-500 shadow-[0_0_30px_rgba(16,185,129,0.2)]">
-                    <Truck className="w-8 h-8" />
+                <div className="p-6 rounded-3xl bg-bg-primary border border-line/80 shadow-2xl flex flex-col items-center justify-center text-center space-y-4 group-hover:border-emerald-500/50 transition-colors overflow-hidden">
+                  <div className="relative h-48 w-full rounded-2xl overflow-hidden border border-line">
+                    <Image
+                      src="/products/group.jpg"
+                      alt="PM SGY Complete Solar Kit Group Equipment"
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
                   <h4 className="font-serif text-2xl font-bold text-text-primary">
                     3 kW - 10 kW Complete Kits

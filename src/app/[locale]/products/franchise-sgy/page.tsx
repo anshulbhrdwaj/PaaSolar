@@ -5,7 +5,7 @@ import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
 import { PartnerLogosSection } from '@/components/sections/PartnerLogosSection';
-import { Store, ArrowRight, Truck, Users, Sparkles } from 'lucide-react';
+import { Store, ArrowRight, Truck, Users, Sparkles, CheckCircle2 } from 'lucide-react';
 import Image from 'next/image';
 import { Link } from '@/i18n/routing';
 
@@ -71,13 +71,18 @@ export default function FranchiseSgyPage() {
 
           <div className="lg:col-span-5">
             <div className="rounded-3xl p-8 bg-bg-secondary border border-line shadow-2xl space-y-6">
-              <div className="relative h-48 w-full rounded-2xl overflow-hidden bg-white/60 border border-line p-3 flex items-center justify-center shadow-inner">
+              <div className="relative h-64 sm:h-72 w-full rounded-2xl overflow-hidden border border-line flex items-center justify-center shadow-inner group bg-bg-primary">
                 <Image
-                  src="/products/panel5.png"
-                  alt="Complete PM Surya Ghar Solar Kit Package"
+                  src="/products/group.jpg"
+                  alt="Complete PM Surya Ghar Solar Kit & Equipment Group"
                   fill
-                  className="object-contain p-2"
+                  className="object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
+                  priority
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                <span className="absolute bottom-3 left-3 px-3.5 py-1 rounded-full bg-emerald-500 text-white font-mono text-[11px] font-bold shadow-md">
+                  PM SGY COMPLETE KIT SUITE
+                </span>
               </div>
 
               <div className="flex items-center justify-between border-b border-line pb-4">
@@ -91,6 +96,66 @@ export default function FranchiseSgyPage() {
               <div className="flex items-center justify-between">
                 <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">SUBSIDY PORTAL</span>
                 <span className="font-serif text-2xl font-bold text-text-primary">National Portal Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Complete Product Group Kit Showcase Section */}
+      <section className="py-20 border-b border-line bg-bg-secondary/30">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-6 relative h-80 sm:h-[420px] rounded-3xl overflow-hidden border border-line shadow-2xl group bg-bg-primary">
+            <Image
+              src="/products/group.jpg"
+              alt="Paa Solar PM Surya Ghar Yojana Complete Product Group Bundle"
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/90 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-bg-primary/95 border border-line backdrop-blur-md shadow-lg">
+              <div className="flex items-center justify-between mb-1">
+                <p className="font-serif text-lg font-bold text-text-primary">
+                  Factory-Bundled Solar Kit Suite
+                </p>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-500 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30">
+                  ALL-IN-ONE
+                </span>
+              </div>
+              <p className="text-xs text-text-secondary font-medium leading-relaxed">
+                TOPCon DCR Panels + Smart Hybrid Inverter + LFP Storage + ACDB/DCDB + Earthing Protection & BOS Accessories
+              </p>
+            </div>
+          </div>
+
+          <div className="lg:col-span-6 flex flex-col justify-center gap-6">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-mono font-bold uppercase tracking-wider">
+              <Sparkles className="w-4 h-4" />
+              <span>ALL-IN-ONE PM SGY DEALER PACKAGE</span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-text-primary leading-tight">
+              Complete Solar Equipment Kit for Distributors & Dealers
+            </h2>
+            <p className="text-text-secondary text-base leading-relaxed">
+              Each PAA SOLAR PM Surya Ghar Yojana (PM SGY) kit comes fully pre-assembled and tested for immediate district dispatch. Complete with ALMM-listed 24%+ TOPCon DCR modules, smart net-metering inverters, robust galvanized mounting structures, and certified protection gear.
+            </p>
+
+            <div className="grid grid-cols-2 gap-4 pt-2">
+              <div className="p-4 rounded-2xl bg-bg-secondary border border-line">
+                <span className="text-xs font-mono font-bold uppercase text-emerald-500 block">PANELS</span>
+                <span className="text-sm font-bold text-text-primary">TOPCon DCR 550W+</span>
+              </div>
+              <div className="p-4 rounded-2xl bg-bg-secondary border border-line">
+                <span className="text-xs font-mono font-bold uppercase text-emerald-500 block">INVERTERS</span>
+                <span className="text-sm font-bold text-text-primary">On-Grid & Hybrid 3-10kW</span>
+              </div>
+              <div className="p-4 rounded-2xl bg-bg-secondary border border-line">
+                <span className="text-xs font-mono font-bold uppercase text-emerald-500 block">STORAGE</span>
+                <span className="text-sm font-bold text-text-primary">LiFePO4 Battery Option</span>
+              </div>
+              <div className="p-4 rounded-2xl bg-bg-secondary border border-line">
+                <span className="text-xs font-mono font-bold uppercase text-emerald-500 block">DELIVERY</span>
+                <span className="text-sm font-bold text-text-primary">Direct Warehouse Trucking</span>
               </div>
             </div>
           </div>

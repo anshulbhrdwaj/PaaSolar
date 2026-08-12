@@ -6,6 +6,7 @@ import { Link } from "@/i18n/routing";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/sections/Footer";
 import { PartnerLogosSection } from "@/components/sections/PartnerLogosSection";
+import Image from "next/image";
 import {
   SunMedium,
   Zap,
@@ -103,6 +104,7 @@ export default function ProductsPage() {
         "Complete turnkey solar kits (1kW to 10kW) featuring TOPCon DCR modules, inverters & official PM Surya Ghar dealer franchise packages.",
       icon: <Store className="w-8 h-8 text-emerald-400" />,
       badge: "1 kW to 10 kW Kits & Franchise",
+      image: "/products/group.jpg",
       specs: [
         "Complete Ready-to-Install Kits",
         "PM Surya Ghar Portal Compliant",
@@ -161,6 +163,16 @@ export default function ProductsPage() {
               className="group relative rounded-3xl p-8 bg-bg-secondary/70 border border-line hover:border-accent-solar/60 transition-all duration-500 overflow-hidden flex flex-col justify-between shadow-xl hover:-translate-y-1"
             >
               <div>
+                {prod.image && (
+                  <div className="relative h-48 w-full rounded-2xl overflow-hidden border border-line mb-6 bg-bg-primary">
+                    <Image
+                      src={prod.image}
+                      alt={prod.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                )}
                 <div className="flex items-center justify-between mb-6">
                   <span className="text-xs font-mono uppercase tracking-widest text-accent-solar font-semibold">
                     {prod.tag}
