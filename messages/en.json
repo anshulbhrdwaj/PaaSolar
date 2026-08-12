@@ -447,9 +447,9 @@
       "stat1Label": "SYSTEM RANGE",
       "stat1Val": "100 kW to Several MW",
       "stat2Label": "EXECUTING CAPACITY",
-      "stat2Val": "10 MW+ Pipeline",
-      "stat3Label": "SMALL PROJECTS",
-      "stat3Val": "100+ Completed",
+      "stat2Val": "2 MW+ Pipeline",
+      "stat3Label": "PROJECTS",
+      "stat3Val": "160+ Completed",
       "sectorsTitle": "C&I Solar Applications by Sector",
       "sectorsSubtitle": "Tailored engineering architectures configured specifically for key commercial and industrial energy usage patterns.",
       "engageTitle": "How We Engage",
@@ -466,7 +466,7 @@
       "step5Desc": "IoT telemetry monitoring, preventive maintenance, thermographic audits, and performance guarantees.",
       "portfolioTitle": "Featured C&I Project Portfolio",
       "portfolioSubtitle": "Selected commercial and industrial solar PV deployments delivered across major industrial hubs in India.",
-      "milestoneBanner": "Installed 100+ small projects (below 100 kW) and currently executing projects with a total capacity of 10 MW+."
+      "milestoneBanner": "Installed 160+ projects and currently executing projects with a total capacity of 2 MW+."
     },
     "ipp": {
       "tag": "INDEPENDENT POWER PRODUCER (IPP)",
