@@ -17,11 +17,11 @@ export function Footer() {
           {/* Brand & Sun Arc Bookend Motif */}
           <div className="md:col-span-5 flex flex-col items-start gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 relative">
+              {/* <div className="w-10 h-10 relative">
                 <SunArcAnimation progress={100} animated={true} />
-              </div>
+              </div> */}
               <Link href="/" className="hover:scale-105 transition-transform duration-300">
-                <PaaSolarLogo size="lg" />
+                <PaaSolarLogo size="lg" showImage={false} />
               </Link>
             </div>
 

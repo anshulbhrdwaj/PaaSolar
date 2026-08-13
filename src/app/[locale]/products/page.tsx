@@ -105,9 +105,9 @@ export default function ProductsPage() {
       title: "Complete Solar Kit & PM SGY Franchise Offer",
       tag: "Complete Solar Kits & PM SGY Dealer Network",
       subtitle:
-        "Complete turnkey solar kits (1kW to 10kW) featuring TOPCon DCR modules, inverters & official PM Surya Ghar dealer franchise packages.",
+        "Complete turnkey solar kits (3kW to 10kW) featuring TOPCon DCR modules, inverters & official PM Surya Ghar dealer franchise packages.",
       icon: <Store className="w-8 h-8 text-emerald-400" />,
-      badge: "1 kW to 10 kW Kits & Franchise",
+      badge: "3 kW to 10 kW Kits & Franchise",
       image: "/products/group.jpg",
       specs: [
         "Complete Ready-to-Install Kits",

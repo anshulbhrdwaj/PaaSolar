@@ -36,12 +36,12 @@ export function PaaSolarLogo({
   // Image dimensions based on size prop
   const imgSizeClass =
     size === 'sm'
-      ? 'h-6 sm:h-7 w-auto'
+      ? 'h-10 sm:h-12 w-auto'
       : size === 'hero'
-      ? 'h-14 sm:h-18 md:h-20 w-auto'
+      ? 'h-28 sm:h-36 md:h-44 w-auto'
       : size === 'lg'
-      ? 'h-9 md:h-10 w-auto'
-      : 'h-7 md:h-8 w-auto';
+      ? 'h-20 md:h-24 w-auto'
+      : 'h-14 sm:h-16 md:h-18 w-auto';
 
   // Dimensions based on size prop
   const titleSizeClass =
@@ -63,7 +63,7 @@ export function PaaSolarLogo({
       : 'text-[9px] md:text-[10px]';
 
   return (
-    <div className={`inline-flex items-center gap-2 sm:gap-2.5 shrink-0 whitespace-nowrap ${className}`}>
+    <div className={`inline-flex items-center gap-0.5 sm:gap-0.5 shrink-0 whitespace-nowrap ${className}`}>
       {/* Brand Transparent Logo Emblem */}
       {showImage && (
         <img

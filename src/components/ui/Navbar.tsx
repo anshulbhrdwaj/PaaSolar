@@ -117,12 +117,12 @@ export function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 bg-bg-primary/95 dark:bg-bg-primary/95 backdrop-blur-md border-b border-line shadow-sm ${
-        scrolled || mobileOpen ? 'py-2.5 sm:py-3' : 'py-3 lg:py-3.5'
+        scrolled || mobileOpen ? 'py-2.5 sm:py-3' : 'py-3 sm:py-4 lg:py-4.5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-4">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0 group hover:scale-105 transition-transform duration-300">
+        <Link href="/" className="flex items-center gap-2 shrink-0 group hover:scale-105 transition-transform duration-300 mr-4 sm:mr-6 lg:mr-10 xl:mr-14">
           <PaaSolarLogo size="md" showTagline={false} />
         </Link>
 
@@ -303,7 +303,7 @@ export function Navbar() {
                       <p className="text-xs font-bold text-text-primary group-hover:text-accent-solar">
                         Solar Kit & PM SGY Franchise
                       </p>
-                      <p className="text-[10px] text-text-secondary font-medium">1kW to 10kW Kits & District Dealer Offer</p>
+                      <p className="text-[10px] text-text-secondary font-medium">3kW to 10kW Kits & District Dealer Offer</p>
                     </div>
                   </Link>
 

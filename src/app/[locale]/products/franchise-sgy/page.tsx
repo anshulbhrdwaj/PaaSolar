@@ -18,7 +18,7 @@ export async function generateMetadata({
   return constructMetadata({
     title: 'Franchise & PM Surya Ghar Yojana Dealer Network | PAA SOLAR',
     description:
-      'Become an official PAA SOLAR Franchisee or District Distributor for PM Surya Ghar Yojana (PM SGY) solar kits (1kW to 10kW) with TOPCon DCR modules and DISCOM portal support.',
+      'Become an official PAA SOLAR Franchisee or District Distributor for PM Surya Ghar Yojana (PM SGY) solar kits (3kW to 10kW) with TOPCon DCR modules and DISCOM portal support.',
     path: '/products/franchise-sgy',
     locale,
   });
@@ -36,7 +36,7 @@ export default function FranchiseSgyPage() {
       />
       <ServiceJsonLd
         name="PM Surya Ghar Yojana Franchise & Solar Kit Distribution"
-        description="Turnkey PM SGY solar kits (1kW to 10kW) and district dealership distribution network with factory-direct supply."
+        description="Turnkey PM SGY solar kits (3kW to 10kW) and district dealership distribution network with factory-direct supply."
         serviceType="Solar Franchise & Distribution"
       />
       <Navbar />
@@ -87,7 +87,7 @@ export default function FranchiseSgyPage() {
 
               <div className="flex items-center justify-between border-b border-line pb-4">
                 <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">PM SGY KITS</span>
-                <span className="font-serif text-3xl font-bold text-emerald-500">1 kW to 10 kW</span>
+                <span className="font-serif text-3xl font-bold text-emerald-500">3 kW to 10 kW</span>
               </div>
               <div className="flex items-center justify-between border-b border-line pb-4">
                 <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">MODULE TYPE</span>
