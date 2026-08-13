@@ -36,12 +36,12 @@ export function PaaSolarLogo({
   // Image dimensions based on size prop
   const imgSizeClass =
     size === 'sm'
-      ? 'h-10 sm:h-12 w-auto'
+      ? 'h-7 sm:h-9 w-auto'
       : size === 'hero'
-      ? 'h-28 sm:h-36 md:h-44 w-auto'
+      ? 'h-20 sm:h-32 md:h-44 w-auto'
       : size === 'lg'
-      ? 'h-20 md:h-24 w-auto'
-      : 'h-14 sm:h-16 md:h-18 w-auto';
+      ? 'h-12 sm:h-16 md:h-22 w-auto'
+      : 'h-9 sm:h-12 md:h-16 w-auto';
 
   // Dimensions based on size prop
   const titleSizeClass =
