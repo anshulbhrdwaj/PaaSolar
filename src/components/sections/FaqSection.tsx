@@ -66,8 +66,8 @@ export function FaqSection() {
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-accent-solar/30 bg-accent-solar/10 text-accent-solar text-xs font-mono font-bold uppercase tracking-wider mb-4">
-            <HelpCircle className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2.5 sm:gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-accent-solar/30 bg-accent-solar/10 text-accent-solar text-sm sm:text-base font-bold uppercase tracking-wider mb-4 shadow-md">
+            <HelpCircle className="w-5 h-5 sm:w-6 sm:h-6" />
             <span>{t('badge')}</span>
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-text-primary mt-2">

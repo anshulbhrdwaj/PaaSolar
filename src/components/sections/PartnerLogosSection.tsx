@@ -173,8 +173,8 @@ export function PartnerLogosSection({
       <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-12">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 text-xs font-mono font-bold uppercase tracking-wider">
-            <Award className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2.5 sm:gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 text-sm sm:text-base font-bold uppercase tracking-wider shadow-md">
+            <Award className="w-5 h-5 sm:w-6 sm:h-6" />
             <span>AUTHORISED BRAND & SUPPLY PARTNERS</span>
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-text-primary">

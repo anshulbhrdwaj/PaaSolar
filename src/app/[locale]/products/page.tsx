@@ -130,9 +130,10 @@ export default function ProductsPage() {
       {/* Hero Header */}
       <section className="py-20 bg-gradient-to-b from-bg-secondary/60 to-bg-primary border-b border-line">
         <div className="max-w-7xl mx-auto px-6 text-center max-w-3xl">
-          <span className="text-xs uppercase font-mono tracking-widest text-accent-solar font-semibold">
-            PAA SOLAR SUPPLY
-          </span>
+          <div className="inline-flex items-center gap-2.5 sm:gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-accent-solar/30 bg-accent-solar/10 text-accent-solar text-sm sm:text-base font-bold uppercase tracking-wider shadow-md mb-4">
+            <SunMedium className="w-5 h-5 sm:w-6 sm:h-6" />
+            <span>PAA SOLAR SUPPLY</span>
+          </div>
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-text-primary mt-3 mb-4">
             Paa Solar Supply
           </h1>

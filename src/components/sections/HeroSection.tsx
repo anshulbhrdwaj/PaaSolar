@@ -151,8 +151,8 @@ export function HeroSection() {
       <div className="relative z-30 max-w-7xl mx-auto px-6 w-full my-auto">
         <div className="max-w-4xl flex flex-col items-start gap-6">
           {/* Badge */}
-          <div className="hero-fade inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-accent-solar/30 bg-accent-solar/10 text-accent-solar text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="hero-fade inline-flex items-center gap-2.5 sm:gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-accent-solar/30 bg-accent-solar/10 text-accent-solar text-sm sm:text-base font-bold uppercase tracking-wider backdrop-blur-md shadow-md">
+            <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
             <span>{t('badge')}</span>
           </div>
 

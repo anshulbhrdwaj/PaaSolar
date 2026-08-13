@@ -37,8 +37,8 @@ export default function ContactPage() {
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-bg-secondary/40 border-b border-line overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.08)_0,transparent_60%)] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 text-xs font-bold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2.5 sm:gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-500 text-sm sm:text-base font-bold uppercase tracking-wider shadow-md mb-4">
+            <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
             <span>GLOBAL HEADQUARTERS & EPC INQUIRIES</span>
           </div>
 

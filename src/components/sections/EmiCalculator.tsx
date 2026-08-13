@@ -84,8 +84,8 @@ export function EmiCalculator({ initialSystemCost = 250000 }: EmiCalculatorProps
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-line">
         <div>
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-mono font-bold uppercase mb-2">
-            <Landmark className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2.5 sm:gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-sm sm:text-base font-bold uppercase tracking-wider mb-3 shadow-md">
+            <Landmark className="w-5 h-5 sm:w-6 sm:h-6" />
             <span>SOLAR BANK LOAN & EMI CALCULATOR</span>
           </div>
           <h3 className="font-serif text-2xl sm:text-3xl font-bold text-text-primary">

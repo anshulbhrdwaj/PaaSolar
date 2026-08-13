@@ -57,8 +57,8 @@ export default function ExportPage() {
 
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           <div className="lg:col-span-7 flex flex-col items-start gap-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent-sky/30 bg-accent-sky/10 text-accent-sky text-xs font-semibold uppercase tracking-wider shadow-sm">
-              <Globe2 className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2.5 sm:gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-accent-sky/30 bg-accent-sky/10 text-accent-sky text-sm sm:text-base font-bold uppercase tracking-wider shadow-md">
+              <Globe2 className="w-5 h-5 sm:w-6 sm:h-6" />
               <span>{t('tag')}</span>
             </div>
 

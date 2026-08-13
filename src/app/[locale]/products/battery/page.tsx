@@ -60,8 +60,8 @@ export default function BatteryPage() {
       <section className="py-24 bg-gradient-to-b from-accent-gold/10 via-bg-secondary/50 to-bg-primary border-b border-line">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 flex flex-col items-start gap-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent-gold/30 bg-accent-gold/10 text-accent-gold text-xs font-semibold uppercase tracking-wider">
-              <BatteryCharging className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2.5 sm:gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-accent-gold/30 bg-accent-gold/10 text-accent-gold text-sm sm:text-base font-bold uppercase tracking-wider shadow-md">
+              <BatteryCharging className="w-5 h-5 sm:w-6 sm:h-6" />
               <span>{t('tag')}</span>
             </div>
 

@@ -83,8 +83,8 @@ export default function AboutUsPage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,var(--accent-solar-soft)_0%,transparent_60%)] opacity-15 pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="max-w-3xl space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent-solar/30 bg-accent-solar/10 text-accent-solar text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2.5 sm:gap-3 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full border border-accent-solar/30 bg-accent-solar/10 text-accent-solar text-sm sm:text-base font-bold uppercase tracking-wider backdrop-blur-md shadow-md">
+              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
               <span>Part of EKCHAKRA GROUP</span>
             </div>
 
