@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { Navbar } from '@/components/ui/Navbar';
 import { Footer } from '@/components/sections/Footer';
+import { ExportPartnerBenefits } from '@/components/sections/ExportPartnerBenefits';
 import {
   Globe2,
   CheckCircle2,
@@ -298,8 +299,13 @@ export default function ExportPage() {
             </div>
           </div>
         </div>
+      </section>
 
-        {/* 8 Global Export Markets Section */}
+      {/* Circular Partner Benefits Section */}
+      <ExportPartnerBenefits />
+
+      {/* 8 Global Export Markets Section */}
+      <section className="py-16 max-w-7xl mx-auto px-6">
         <div className="mb-16 space-y-8">
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <h3 className="font-serif text-3xl md:text-4xl font-bold text-text-primary">
