@@ -11,7 +11,6 @@ import {
   Zap,
   ShieldCheck,
   ArrowRight,
-  Cpu,
   FileSpreadsheet,
   FileCheck2,
   HardHat,
@@ -19,6 +18,7 @@ import {
   Activity,
   Flame,
   Layers,
+  TrendingUp,
 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 
@@ -80,9 +80,9 @@ export default function PMKusumBessPage() {
       icon: <Zap className="w-6 h-6 text-teal-500" />,
     },
     {
-      title: 'Diesel Backup Elimination',
-      desc: 'Replaces expensive, high-emission diesel generators with zero-carbon LiFePO4 battery vaults, reducing fuel OPEX by up to 90%.',
-      icon: <Flame className="w-6 h-6 text-teal-500" />,
+      title: 'Higher Profits',
+      desc: 'Replaces expensive, high-emission diesel generators with zero-carbon LiFePO4 battery vaults, reducing fuel OPEX by up to 90% to deliver higher profits.',
+      icon: <TrendingUp className="w-6 h-6 text-teal-500" />,
     },
     {
       title: 'DISCOM Feeder Stabilization',
@@ -235,31 +235,6 @@ export default function PMKusumBessPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* BESS Product & Hardware Showcase Banner */}
-      <section className="py-24 max-w-7xl mx-auto px-6">
-        <div className="p-8 sm:p-12 rounded-3xl bg-bg-secondary border border-line shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-500 text-xs font-mono font-bold uppercase">
-              <Cpu className="w-4 h-4" />
-              <span>Containerized BESS Hardware</span>
-            </div>
-            <h3 className="font-serif text-3xl font-bold text-text-primary">
-              Explore Our ESS 3532 & Li UPS 1250 Storage Lineup
-            </h3>
-            <p className="text-text-secondary text-sm leading-relaxed">
-              View our complete range of liquid-cooled containerized energy storage units (ESS 3532) and high-discharge backup vaults (Li UPS 1250) engineered for megawatt utility and PM-KUSUM feeder applications.
-            </p>
-          </div>
-          <Link
-            href="/products/bess"
-            className="px-8 py-4 rounded-full bg-teal-500 text-white text-xs font-bold uppercase tracking-wider shadow-lg hover:bg-teal-600 transition-all shrink-0 flex items-center gap-2"
-          >
-            <span>View BESS Products</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
       </section>
 

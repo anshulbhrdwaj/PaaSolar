@@ -8,13 +8,13 @@
       "solutions": "Solutions",
       "products": "Products",
       "projects": "Projects",
-      "b2b": "Exports & Overseas",
+      "b2b": "Exports / Overseas",
       "vendorRegister": "Vendor Register",
       "impact": "Impact",
       "testimonials": "Testimonials",
       "company": "Company",
       "contact": "Contact Us",
-      "export": "Exports & Overseas"
+      "export": "Exports / Overseas"
     },
     "productsDropdown": {
       "pmSuryaGhar": "PM Surya Ghar Yojana",
@@ -659,8 +659,8 @@
       "cert1": "IEC 61215 / 61730 Certified",
       "cert2": "CE & TUV Rheinland Compliant",
       "cert3": "UL 1973 & UN38.3 Battery Safety",
-      "stat1": "15+ Export Nations",
-      "stat2": "20+ MW Export Volume",
+      "stat1": "8+ Export Nations",
+      "stat2": "2+ MW Export Volume",
       "stat3": "Global Logistics Network",
       "feature1": "Custom OEM & Private Label Module Manufacturing",
       "feature2": "Tropicalized Thermal Tolerant Solar Inverter Architecture",

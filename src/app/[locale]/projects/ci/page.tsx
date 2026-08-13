@@ -24,7 +24,6 @@ import {
   HardHat,
   Network,
   Wrench,
-  Award,
   ArrowRight,
 } from 'lucide-react';
 import { Link } from '@/i18n/routing';
@@ -126,15 +125,6 @@ export default function CIPage() {
       desc: t('step5Desc'),
       icon: <Wrench className="w-5 h-5 text-accent-sky" />,
     },
-  ];
-
-  const featuredProjects = [
-    { capacity: '1 MW', location: 'Bemetara, Chhattisgarh', type: 'Industrial Park Ground & Roof PV' },
-    { capacity: '998 kW', location: 'Dadri, Uttar Pradesh', type: 'Manufacturing Facility Solar Plant' },
-    { capacity: '500 kW', location: 'Aurangabad, Maharashtra', type: 'Commercial Engineering Complex' },
-    { capacity: '495 kW', location: 'Gurgaon, Haryana', type: 'Corporate IT Park Rooftop PV' },
-    { capacity: '400 kW', location: 'Hissar, Haryana', type: 'Cold Storage & Agro Processing' },
-    { capacity: '250 kW', location: 'Chittorgarh, Rajasthan', type: 'Textile & Processing Facility' },
   ];
 
   return (
@@ -276,64 +266,6 @@ export default function CIPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Featured Projects Portfolio & Milestone Banner */}
-      <section className="py-24 max-w-7xl mx-auto px-6 space-y-16">
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <span className="text-xs uppercase font-mono tracking-widest text-emerald-500 font-bold">PROVEN TRACK RECORD</span>
-          <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-primary">
-            {t('portfolioTitle')}
-          </h2>
-          <p className="text-text-secondary text-sm md:text-base">
-            {t('portfolioSubtitle')}
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredProjects.map((proj, idx) => (
-            <div
-              key={idx}
-              className="p-8 rounded-3xl bg-bg-secondary border border-line shadow-xl space-y-4 hover:border-accent-sky transition-all flex flex-col justify-between"
-            >
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <span className="font-serif text-3xl font-bold text-accent-sky">{proj.capacity}</span>
-                  <span className="px-3 py-1 rounded-full bg-accent-sky/10 border border-accent-sky/30 text-accent-sky text-[11px] font-mono font-bold">
-                    C&I SOLAR
-                  </span>
-                </div>
-                <h3 className="font-serif text-xl font-bold text-text-primary">{proj.location}</h3>
-                <p className="text-text-secondary text-xs">{proj.type}</p>
-              </div>
-              <div className="pt-4 border-t border-line/60 flex items-center justify-between text-xs font-mono text-text-secondary">
-                <span>Status: Fully Operational</span>
-                <CheckCircle2 className="w-4 h-4 text-emerald-500" />
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Total Capacity Executed Banner */}
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-accent-sky/15 via-bg-secondary to-emerald-500/15 border border-accent-sky/40 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="p-4 rounded-2xl bg-accent-sky text-white shrink-0">
-              <Award className="w-8 h-8" />
-            </div>
-            <div>
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-accent-sky block">NATIONAL EXECUTION FOOTPRINT</span>
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-text-primary mt-1">
-                {t('milestoneBanner')}
-              </h3>
-            </div>
-          </div>
-          <Link
-            href="/get-a-quote"
-            className="px-8 py-4 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider shadow-lg hover:bg-accent-solar/90 transition-all shrink-0"
-          >
-            Partner With Us
-          </Link>
         </div>
       </section>
 
