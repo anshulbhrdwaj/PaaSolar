@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { constructMetadata } from '@/lib/seo';
 import { BreadcrumbJsonLd, ServiceJsonLd } from '@/components/seo/JsonLd';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { Navbar } from '@/components/ui/Navbar';
 import { CaseStudies } from '@/components/sections/CaseStudies';
 import { SolarCalculator } from '@/components/sections/SolarCalculator';
@@ -136,7 +137,30 @@ export default function IPPPage() {
             </div>
           </div>
 
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 space-y-6">
+            {/* Hero Image Card */}
+            <div className="relative rounded-3xl overflow-hidden border border-accent-gold/30 shadow-2xl group">
+              <Image
+                src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80&auto=format&fit=crop"
+                alt="Utility-Scale Solar Power Plant - IPP Asset"
+                width={800}
+                height={500}
+                className="w-full h-64 sm:h-72 object-cover transform group-hover:scale-105 transition-transform duration-700"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+                <span className="px-3.5 py-1.5 rounded-full bg-accent-gold/90 text-white text-xs font-mono font-bold uppercase tracking-wider backdrop-blur-md shadow-lg flex items-center gap-1.5">
+                  <Globe className="w-4 h-4" />
+                  <span>Utility-Scale Solar IPP</span>
+                </span>
+                <span className="text-xs font-mono font-bold text-amber-200 bg-black/60 px-3 py-1 rounded-full backdrop-blur-md border border-accent-gold/30">
+                  3 MW – 50 MW
+                </span>
+              </div>
+            </div>
+
+            {/* Stats Card */}
             <div className="rounded-3xl p-8 bg-bg-secondary border border-line shadow-2xl space-y-6">
               <div className="flex items-center justify-between border-b border-line pb-4">
                 <span className="font-mono text-xs uppercase tracking-widest text-text-secondary">{t('stat1Label')}</span>
