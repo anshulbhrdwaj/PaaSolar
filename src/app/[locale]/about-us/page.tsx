@@ -31,24 +31,28 @@ export default function AboutUsPage() {
       role: 'CGM – Channel & Project',
       bio: '27+ years of experience in the EPC sector and solar module manufacturing. Deep expertise managing large-scale solar projects from planning to commissioning and lifecycle performance.',
       avatarBg: 'bg-emerald-500/10 text-emerald-500',
+      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&h=600&q=80',
     },
     {
       name: 'Dinesh Kumar',
       role: 'General Manager – Sales',
       bio: '10+ years of sales leadership in the power & energy sector (Exide, Luminous, UTL). Expert in channel development, corporate sales, dealer networks, and battery power systems.',
       avatarBg: 'bg-accent-sky/10 text-accent-sky',
+      image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&h=600&q=80',
     },
     {
       name: 'Priyanka',
       role: 'Manager – Human Resources',
       bio: '15+ years of HR leadership in EPC enterprises. Specialist in talent management, organizational development, workforce planning, and performance-driven workplace culture.',
       avatarBg: 'bg-accent-gold/10 text-accent-gold',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&h=600&q=80',
     },
     {
       name: 'Akansha',
       role: 'Marketing Manager',
       bio: '7+ years of experience leading ATL, BTL, and digital marketing campaigns. Drives nationwide brand visibility, product launches, and dealer engagement strategies.',
       avatarBg: 'bg-emerald-500/10 text-emerald-500',
+      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&h=600&q=80',
     },
   ];
 
@@ -220,21 +224,39 @@ export default function AboutUsPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-3xl border border-line bg-bg-primary hover:border-accent-solar/50 transition-all shadow-lg flex flex-col justify-between"
+                className="group rounded-3xl border border-line bg-bg-primary hover:border-accent-solar/50 transition-all duration-300 shadow-lg hover:shadow-2xl overflow-hidden flex flex-col justify-between"
               >
-                <div className="space-y-4">
-                  <div className={`w-12 h-12 rounded-2xl flex items-center justify-center font-bold text-lg ${member.avatarBg}`}>
-                    {member.name.charAt(0)}
-                  </div>
+                {/* Team Member Portrait */}
+                <div className="relative aspect-[4/3] sm:aspect-square w-full overflow-hidden bg-bg-secondary">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-transparent opacity-60" />
+                  
+                  <span className="absolute bottom-3 left-3 text-[10px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-bg-primary/90 backdrop-blur-md border border-line text-accent-solar shadow-sm">
+                    {member.role.split('–')[0].trim()}
+                  </span>
+                </div>
+
+                {/* Member Details */}
+                <div className="p-5 sm:p-6 space-y-3 flex-1 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-lg font-bold text-text-primary">{member.name}</h3>
-                    <p className="text-xs font-semibold text-accent-solar mt-0.5">{member.role}</p>
+                    <h3 className="text-lg font-bold text-text-primary group-hover:text-accent-solar transition-colors">
+                      {member.name}
+                    </h3>
+                    <p className="text-xs font-semibold text-text-secondary mt-0.5">
+                      {member.role}
+                    </p>
                   </div>
-                  <p className="text-xs text-text-secondary leading-relaxed pt-2 border-t border-line/60">
+                  
+                  <p className="text-xs text-text-secondary/90 leading-relaxed pt-3 border-t border-line/60">
                     {member.bio}
                   </p>
                 </div>
