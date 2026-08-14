@@ -635,7 +635,13 @@
       "gst": "জিএসটি নম্বর",
       "experience": "অভিজ্ঞতা (বছর)",
       "submit": "জমা দিন",
-      "successMsg": "রেজিস্ট্রেশন সফল হয়েছে!"
+      "successMsg": "রেজিস্ট্রেশন সফল হয়েছে!",
+      "briefAbout": "Brief About You / Company Overview",
+      "briefPlaceholder": "Briefly describe your company, products, EPC capabilities, or services...",
+      "attachment": "Attach Company Profile / Credentials (PDF, DOC, Images)",
+      "uploadText": "Click or drag file here to upload (Max 15MB)",
+      "address": "Registered Office / Factory Address",
+      "addressPlaceholder": "e.g. Building / Street, Industrial Area, City, State, PIN"
     },
     "careers": {
       "tag": "ক্যারিয়ার",

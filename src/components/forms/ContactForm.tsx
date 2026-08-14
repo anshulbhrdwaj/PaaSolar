@@ -158,7 +158,7 @@ export function ContactForm() {
         <div className="flex items-center justify-between mb-8 pb-6 border-b border-line/60">
           <div>
             <h2 className="font-serif text-2xl sm:text-3xl font-bold text-text-primary">
-              Send Us a Project Inquiry
+              Contact Us
             </h2>
             <p className="text-text-primary/70 text-sm font-medium mt-1">
               Fill out the details below and an EPC specialist will contact you within 24 hours.
@@ -371,13 +371,14 @@ export function ContactForm() {
                   <option value="PM-SSY Floating Solar Project">PM-SSY Floating Solar Project</option>
                   <option value="Utility IPP Solar Park">Utility IPP Solar Park</option>
                   <option value="Franchise & Distribution for PM SGY">Franchise & Distribution for Solar Product into PM SGY</option>
+                  <option value="Export Distribution">Export Distribution</option>
                 </select>
               </div>
             </div>
 
             <div>
               <label className="block text-xs font-mono font-bold uppercase tracking-wider text-text-primary mb-2">
-                Estimated System Capacity (kW / MW)
+                Subject: Estimated System Capacity (kW / MW)
               </label>
               <input
                 type="text"
@@ -446,7 +447,7 @@ export function ContactForm() {
 
             <div className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-emerald-500 shrink-0" />
-              <span>+91 9311922134</span>
+              <span>+91 93119XXXXX</span>
             </div>
 
             <div className="flex items-center gap-3">
@@ -456,7 +457,7 @@ export function ContactForm() {
 
             <div className="flex items-center gap-3">
               <Clock className="w-5 h-5 text-emerald-500 shrink-0" />
-              <span>Mon - Fri: 9:00 AM - 5:00 PM IST</span>
+              <span>Mon - Fri: 10:00 AM - 6:00 PM IST</span>
             </div>
           </div>
 
