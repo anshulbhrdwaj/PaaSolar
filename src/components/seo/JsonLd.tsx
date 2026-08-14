@@ -50,7 +50,7 @@ export function JsonLd() {
       { '@type': 'Organization', name: 'RJ Travel Junction' },
       { '@type': 'Organization', name: 'Shilp Craft' },
       { '@type': 'Organization', name: 'Delight Apparel' },
-      { '@type': 'Organization', name: 'Pareshaanho' },
+      { '@type': 'Organization', name: 'Aapka Haq' },
     ],
   };
 

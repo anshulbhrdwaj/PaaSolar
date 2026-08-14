@@ -21,7 +21,7 @@ export function Footer() {
                 <SunArcAnimation progress={100} animated={true} />
               </div> */}
               <Link href="/" className="hover:scale-105 transition-transform duration-300">
-                <PaaSolarLogo size="lg" showImage={false} />
+                <PaaSolarLogo size="lg" showImage={true} layout="col" />
               </Link>
             </div>
 

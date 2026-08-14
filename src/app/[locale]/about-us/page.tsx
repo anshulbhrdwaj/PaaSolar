@@ -58,7 +58,7 @@ export default function AboutUsPage() {
     { name: 'RJ Travel Junction', sector: 'Tour & Travel Services', desc: 'End-to-end corporate and leisure travel logistics and mobility management.' },
     { name: 'Shilp Craft', sector: 'National & Global E-Commerce', desc: 'Curated craft business supplying traditional and modern artisanal products worldwide.' },
     { name: 'Delight Apparel', sector: 'Apparel E-Commerce', desc: 'National and international e-commerce platform for high-quality garments.' },
-    { name: 'Pareshaanho', sector: 'Legal & Genuine Advisory', desc: 'Digital advisory platform providing verified legal and genuine problem-solving advice.' },
+    { name: 'Aapka Haq', sector: 'Legal & Genuine Advisory', desc: 'Digital advisory platform providing verified legal and genuine problem-solving advice.' },
   ];
 
   const milestones = [
@@ -244,7 +244,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* EKCHAKRA GROUP Associate Companies */}
+      {/* Our Associate Companies */}
       <section className="py-20 md:py-24 border-b border-line bg-bg-primary">
         <div className="max-w-7xl mx-auto px-6 space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
@@ -253,10 +253,10 @@ export default function AboutUsPage() {
               <span>Group Lineage</span>
             </div>
             <h2 className="font-serif text-3xl md:text-4xl font-bold text-text-primary">
-              EKCHAKRA GROUP Associate Companies
+              Our Associate Companies
             </h2>
             <p className="text-text-secondary text-xs md:text-sm">
-              Synergistic business divisions across international export, manufacturing, logistics, and digital services.
+              Synergistic business divisions across international export, trading, distribution into FMCG, Solar, Tour & Travel, wooden/metal craft, apparel, legal, and many more.
             </p>
           </div>
 
@@ -315,9 +315,9 @@ export default function AboutUsPage() {
               <div className="p-3 rounded-2xl bg-accent-sky/10 text-accent-sky w-fit">
                 <Lightbulb className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold text-text-primary">30-40 Year Livelihood Support</h3>
+              <h3 className="text-xl font-bold text-text-primary">25-30 Year Livelihood Support</h3>
               <p className="text-text-secondary text-xs md:text-sm leading-relaxed">
-                We design energy assets engineered to deliver 30 to 40 years of continuous performance, backing every project with dedicated technical training, local maintenance jobs, and long-term community support.
+                We design energy assets engineered to deliver 25 to 30 years of continuous performance, backing every project with dedicated technical training, local maintenance jobs, and long-term community support.
               </p>
             </div>
           </div>

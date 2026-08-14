@@ -10,6 +10,7 @@ interface PaaSolarLogoProps {
   align?: 'left' | 'center';
   customTagline?: string;
   showImage?: boolean;
+  layout?: 'row' | 'col';
 }
 
 export function PaaSolarLogo({
@@ -19,6 +20,7 @@ export function PaaSolarLogo({
   align = 'left',
   customTagline,
   showImage = true,
+  layout = 'row',
 }: PaaSolarLogoProps) {
   let taglineText = customTagline;
   
@@ -62,8 +64,18 @@ export function PaaSolarLogo({
       ? 'text-[10px] md:text-xs'
       : 'text-[9px] md:text-[10px]';
 
+  const isCol = layout === 'col';
+
   return (
-    <div className={`inline-flex items-center gap-0.5 sm:gap-0.5 shrink-0 whitespace-nowrap ${className}`}>
+    <div
+      className={`inline-flex ${
+        isCol
+          ? align === 'center'
+            ? 'flex-col items-center gap-3'
+            : 'flex-col items-start gap-3'
+          : 'items-center gap-0.5 sm:gap-0.5'
+      } shrink-0 whitespace-nowrap ${className}`}
+    >
       {/* Brand Transparent Logo Emblem */}
       {showImage && (
         <img
