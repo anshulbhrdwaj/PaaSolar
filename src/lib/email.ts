@@ -23,25 +23,18 @@ export interface SendInquiryEmailParams {
 }
 
 /**
- * Creates and returns a Nodemailer transporter configured for Zoho Mail SMTP.
+ * Creates and returns a Nodemailer transporter configured for Gmail SMTP.
  */
-function getZohoTransporter() {
-  const host =
-    process.env.ZOHO_SMTP_HOST ||
-    process.env.SMTP_HOST ||
-    'smtppro.zoho.in'; // Supports Zoho India (smtppro.zoho.in / smtp.zoho.in) and global (smtp.zoho.com)
-  const port = parseInt(process.env.ZOHO_SMTP_PORT || process.env.SMTP_PORT || '465', 10);
-  const user = process.env.ZOHO_EMAIL || process.env.SMTP_USER || 'info@paasolar.com';
-  const pass = process.env.ZOHO_PASSWORD || process.env.SMTP_PASSWORD || '';
+function getGmailTransporter() {
+  const user = process.env.GMAIL_USER || process.env.SMTP_USER || 'paasolar@gmail.com';
+  const pass = process.env.GMAIL_APP_PASSWORD || process.env.GMAIL_PASSWORD || process.env.SMTP_PASSWORD || '';
 
   if (!pass) {
     return null;
   }
 
   return nodemailer.createTransport({
-    host,
-    port,
-    secure: port === 465, // true for 465, false for 587
+    service: 'gmail',
     auth: {
       user,
       pass,
@@ -53,7 +46,7 @@ function getZohoTransporter() {
 }
 
 /**
- * Sends an email via Zoho SMTP or falls back to Resend / logging.
+ * Sends an email via Gmail SMTP or falls back to Resend / logging.
  */
 export async function sendEmail({
   to,
@@ -68,14 +61,14 @@ export async function sendEmail({
   attachments?: EmailAttachment[];
   replyTo?: string;
 }): Promise<{ success: boolean; provider: string; error?: string }> {
-  const zohoTransporter = getZohoTransporter();
-  const fromAddress = process.env.ZOHO_EMAIL || 'info@paasolar.com';
+  const gmailTransporter = getGmailTransporter();
+  const fromAddress = process.env.GMAIL_USER || 'paasolar@gmail.com';
   const fromHeader = `PAA SOLAR <${fromAddress}>`;
 
-  // 1. Try Zoho Mail SMTP if configured
-  if (zohoTransporter) {
+  // 1. Try Gmail SMTP if configured
+  if (gmailTransporter) {
     try {
-      await zohoTransporter.sendMail({
+      await gmailTransporter.sendMail({
         from: fromHeader,
         to: Array.isArray(to) ? to.join(', ') : to,
         replyTo: replyTo || fromAddress,
@@ -87,9 +80,9 @@ export async function sendEmail({
           contentType: att.contentType,
         })),
       });
-      return { success: true, provider: 'zoho' };
-    } catch (zohoErr: any) {
-      console.error('Zoho SMTP send failed, attempting fallback:', zohoErr.message);
+      return { success: true, provider: 'gmail' };
+    } catch (gmailErr: any) {
+      console.error('Gmail SMTP send failed, attempting fallback:', gmailErr.message);
     }
   }
 
@@ -98,7 +91,7 @@ export async function sendEmail({
   if (resendApiKey) {
     try {
       const resend = new Resend(resendApiKey);
-      const customFrom = process.env.RESEND_FROM_EMAIL || 'PAA SOLAR <info@paasolar.com>';
+      const customFrom = process.env.RESEND_FROM_EMAIL || `PAA SOLAR <onboarding@resend.dev>`;
 
       const resendAttachments = attachments?.map((att) => ({
         filename: att.filename,
@@ -115,7 +108,6 @@ export async function sendEmail({
       });
 
       if (res.error) {
-        // Fallback for unverified domains in development
         if (res.error.message.includes('domain')) {
           await resend.emails.send({
             from: 'PAA SOLAR <onboarding@resend.dev>',
@@ -133,7 +125,7 @@ export async function sendEmail({
     }
   }
 
-  console.warn('No active email transport configured (Zoho password or Resend key missing). Email payload generated successfully.');
+  console.warn('No active email transport configured (Gmail App Password or Resend key missing). Email payload generated successfully.');
   return { success: true, provider: 'mock' };
 }
 
@@ -158,7 +150,7 @@ export async function sendInquiryWorkflows(params: SendInquiryEmailParams) {
     publicFileUrl,
   } = params;
 
-  const adminEmail = process.env.NOTIFICATION_EMAIL || 'info@paasolar.com';
+  const adminEmail = process.env.NOTIFICATION_EMAIL || 'paasolar@gmail.com, info@paasolar.com';
   const locationStr = district ? `${city}, ${district}` : city;
 
   // Form type labels & badge colors
