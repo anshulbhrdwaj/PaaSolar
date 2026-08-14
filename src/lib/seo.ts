@@ -30,7 +30,7 @@ export function constructMetadata({
   path = '',
   locale = 'en',
   keywords = [
-    'Paa Solar',
+    'PAA SOLAR',
     'Solar EPC Company India',
     'TOPCon Solar Panels',
     'HJT Solar Panels',
@@ -49,8 +49,8 @@ export function constructMetadata({
   noIndex = false,
 }: ConstructMetadataOptions = {}): Metadata {
   const pageTitle = title
-    ? `${title} | Paa Solar - EKCHAKRA GROUP`
-    : 'Paa Solar | Leading Solar EPC Company | C&I, PM-KUSUM & TOPCon Solar';
+    ? `${title} | PAA SOLAR - EKCHAKRA GROUP`
+    : 'PAA SOLAR | Leading Solar EPC Company | C&I, PM-KUSUM & TOPCon Solar';
 
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   const canonicalUrl = `${SITE_URL}/${locale}${cleanPath === '/' ? '' : cleanPath}`;
@@ -67,8 +67,8 @@ export function constructMetadata({
     title: pageTitle,
     description,
     keywords,
-    authors: [{ name: 'Paa Solar Engineering Team', url: SITE_URL }],
-    creator: 'Paa Solar • EKCHAKRA GROUP',
+    authors: [{ name: 'PAA SOLAR Engineering Team', url: SITE_URL }],
+    creator: 'PAA SOLAR • EKCHAKRA GROUP',
     publisher: 'PAA SOLAR',
     alternates: {
       canonical: canonicalUrl,

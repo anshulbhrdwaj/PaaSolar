@@ -62,14 +62,20 @@ export function VendorForm() {
 
     try {
       const bodyData = new FormData();
+      bodyData.append('formType', 'vendor');
       bodyData.append('fullName', formData.companyName);
       bodyData.append('email', formData.email);
       bodyData.append('phone', formData.phone);
       bodyData.append('city', formData.experience || 'Vendor Partner');
       bodyData.append('district', formData.address || formData.gst || 'GST Registered');
+      bodyData.append('category', formData.category);
+      bodyData.append('address', formData.address);
+      bodyData.append('gst', formData.gst);
+      bodyData.append('experience', formData.experience);
+      bodyData.append('message', formData.briefAbout);
       bodyData.append(
         'roofType',
-        `Vendor Registration [${formData.category}] | GST: ${formData.gst} | Address: ${formData.address} | Brief: ${formData.briefAbout || 'N/A'}`
+        `Vendor Registration [${formData.category}] | GST: ${formData.gst || 'N/A'} | Address: ${formData.address}`
       );
 
       if (attachedFile) {

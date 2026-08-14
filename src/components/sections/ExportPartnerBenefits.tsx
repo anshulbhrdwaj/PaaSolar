@@ -47,11 +47,11 @@ export function ExportPartnerBenefits() {
     },
     {
       id: 'operate-as-paa',
-      title: 'Operate as Paa Solar',
+      title: 'Operate as PAA SOLAR',
       shortTitle: 'Operate as Paa',
       badge: 'Brand Identity',
       tagline: 'Global Goodwill',
-      desc: 'Full operational backing to run your distribution ecosystem as an official Paa Solar global partner, leveraging our global brand trust.',
+      desc: 'Full operational backing to run your distribution ecosystem as an official PAA SOLAR global partner, leveraging our global brand trust.',
       icon: <Award className="w-5 h-5 text-accent-solar" />,
       color: 'from-amber-500/20 via-amber-500/10 to-transparent',
       borderColor: 'border-amber-500/40',
@@ -90,7 +90,7 @@ export function ExportPartnerBenefits() {
       shortTitle: 'Lead Routing',
       badge: 'Direct Buyer Leads',
       tagline: 'High-Intent Pipeline',
-      desc: 'Direct dispatch of incoming international buyer inquiries, EPC RFQs, and commercial solar leads for your territory from Paa Solar head office.',
+      desc: 'Direct dispatch of incoming international buyer inquiries, EPC RFQs, and commercial solar leads for your territory from PAA SOLAR head office.',
       icon: <Headphones className="w-5 h-5 text-cyan-400" />,
       color: 'from-cyan-500/20 via-cyan-500/10 to-transparent',
       borderColor: 'border-cyan-500/40',
@@ -103,7 +103,7 @@ export function ExportPartnerBenefits() {
       shortTitle: 'IT & Software',
       badge: 'Cloud CRM & IoT',
       tagline: 'Digital Infrastructure',
-      desc: 'Free access to Paa Solar cloud telemetry monitoring apps, technical CAD design tools, digital sales kits, and CRM management portal.',
+      desc: 'Free access to PAA SOLAR cloud telemetry monitoring apps, technical CAD design tools, digital sales kits, and CRM management portal.',
       icon: <Monitor className="w-5 h-5 text-purple-400" />,
       color: 'from-purple-500/20 via-purple-500/10 to-transparent',
       borderColor: 'border-purple-500/40',
@@ -140,7 +140,7 @@ export function ExportPartnerBenefits() {
             <span>PARTNER ADVANTAGE & BENEFITS</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary leading-tight">
-            Why Partner With Paa Solar?
+            Why Partner With PAA SOLAR?
           </h2>
           <p className="text-text-secondary text-base sm:text-lg leading-relaxed font-medium">
             Join our global export network as an authorized distributor or channel partner with unmatched 360-degree commercial, technical, and operational backing.

@@ -56,7 +56,7 @@ export function Preloader({ onComplete }: { onComplete?: () => void }) {
 
           <div className="flex flex-col items-center gap-2">
             <span className="font-serif italic text-3xl text-text-primary tracking-wide">
-              Paa Solar
+              PAA SOLAR
             </span>
             <div className="flex items-center gap-3">
               <div className="h-[2px] w-12 bg-line overflow-hidden rounded-full">

@@ -24,6 +24,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
+import { GlobalTranslator } from '@/components/ui/GlobalTranslator';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export async function generateMetadata({
@@ -43,13 +44,13 @@ export async function generateMetadata({
   return {
     metadataBase: new URL(baseUrl),
     title: {
-      default: 'Paa Solar | Leading Solar EPC Company | C&I, PM-KUSUM & TOPCon Solar',
-      template: '%s | Paa Solar - EKCHAKRA GROUP',
+      default: 'PAA SOLAR | Leading Solar EPC Company | C&I, PM-KUSUM & TOPCon Solar',
+      template: '%s | PAA SOLAR - EKCHAKRA GROUP',
     },
     description:
       'PAA SOLAR (EKCHAKRA GROUP) is India’s fast-growing solar EPC company delivering 30-40 year durable clean energy solutions. Specialist in 24%+ TOPCon & HJT solar panels, smart inverters, LFP battery storage, C&I rooftop solar, PM-KUSUM, PM-SSY, and international solar exports across 8 countries.',
     keywords: [
-      'Paa Solar',
+      'PAA SOLAR',
       'Solar EPC Company India',
       'TOPCon Solar Panels',
       'HJT Solar Panels',
@@ -64,15 +65,15 @@ export async function generateMetadata({
       'Solar Panel Export India',
       'EKCHAKRA GROUP',
     ],
-    authors: [{ name: 'Paa Solar Engineering Team', url: baseUrl }],
-    creator: 'Paa Solar • EKCHAKRA GROUP',
+    authors: [{ name: 'PAA SOLAR Engineering Team', url: baseUrl }],
+    creator: 'PAA SOLAR • EKCHAKRA GROUP',
     publisher: 'PAA SOLAR',
     alternates: {
       canonical: `${baseUrl}/${locale}`,
       languages: languageAlternates,
     },
     openGraph: {
-      title: 'Paa Solar | Leading Solar EPC Company | C&I, PM-KUSUM & TOPCon Solar',
+      title: 'PAA SOLAR | Leading Solar EPC Company | C&I, PM-KUSUM & TOPCon Solar',
       description:
         '30-40 Year Durable Renewable Energy Solutions across Commercial, Industrial, Utility Parks & Global Exports. Blessing from this generation to next generation.',
       url: `${baseUrl}/${locale}`,
@@ -90,7 +91,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Paa Solar | Leading Solar EPC Company',
+      title: 'PAA SOLAR | Leading Solar EPC Company',
       description:
         'Turnkey EPC execution for 50 kW+ solar projects, TOPCon solar modules & global exports.',
       images: [`${baseUrl}/og-image.jpg`],
@@ -150,6 +151,7 @@ export default async function LocaleLayout({
             <SmoothScrollProvider>
               <CustomCursor />
               <WhatsAppButton />
+              <GlobalTranslator />
               {children}
             </SmoothScrollProvider>
           </ThemeProvider>

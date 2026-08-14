@@ -335,7 +335,7 @@ export function EmiCalculator({ initialSystemCost = 250000 }: EmiCalculatorProps
                   <span className="font-mono text-text-primary">~12.0% p.a.</span>
                 </div>
                 <div className="flex justify-between items-center text-emerald-500 font-bold pt-1 border-t border-line/60">
-                  <span>Solar Asset Yield (Paa Solar):</span>
+                  <span>Solar Asset Yield (PAA SOLAR):</span>
                   <span className="font-mono text-emerald-500 text-sm">~{calc.annualRoiPct}% p.a. 🔥</span>
                 </div>
               </div>

@@ -13,15 +13,10 @@ import {
   Sun,
   ChevronDown,
   Search,
-  Loader2,
 } from 'lucide-react';
-import { ALL_COUNTRIES, ALL_CITIES_BY_COUNTRY, CountryItem } from '@/data/countriesAndCities';
+import { ALL_COUNTRIES, ALL_CITIES_BY_COUNTRY } from '@/data/countriesAndCities';
 
 export function ContactForm() {
-  const [countriesList, setCountriesList] = useState<CountryItem[]>(ALL_COUNTRIES);
-  const [apiCitiesMap, setApiCitiesMap] = useState<Record<string, string[]>>(ALL_CITIES_BY_COUNTRY);
-  const [loadingCities, setLoadingCities] = useState(false);
-
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -45,61 +40,6 @@ export function ContactForm() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    async function fetchLiveCountries() {
-      try {
-        const res = await fetch('https://restcountries.com/v3.1/all?fields=name,flag,idd').catch(() => null);
-        if (res && res.ok) {
-          const data = await res.json();
-          const parsed: CountryItem[] = data
-            .map((item: any) => {
-              const root = item.idd?.root || '';
-              const suffix = item.idd?.suffixes?.[0] || '';
-              return {
-                name: item.name?.common || '',
-                flag: item.flag || '🌐',
-                code: `${root}${suffix}`,
-              };
-            })
-            .filter((c: CountryItem) => c.name)
-            .sort((a: CountryItem, b: CountryItem) => a.name.localeCompare(b.name));
-
-          if (parsed.length > 50) {
-            setCountriesList(parsed);
-          }
-        }
-      } catch (err) {
-        // Fallback to local
-      }
-    }
-    fetchLiveCountries();
-  }, []);
-
-  const fetchCitiesForCountry = async (countryName: string) => {
-    if (apiCitiesMap[countryName] && apiCitiesMap[countryName].length > 0) {
-      return;
-    }
-    setLoadingCities(true);
-    try {
-      const res = await fetch('https://countriesnow.space/api/v0.1/countries/cities', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ country: countryName }),
-      }).catch(() => null);
-      if (res && res.ok) {
-        const data = await res.json();
-        if (data.data && Array.isArray(data.data) && data.data.length > 0) {
-          setApiCitiesMap((prev) => ({ ...prev, [countryName]: data.data }));
-          setFormData((prev) => ({ ...prev, city: data.data[0] }));
-        }
-      }
-    } catch (err) {
-      // Fallback
-    } finally {
-      setLoadingCities(false);
-    }
-  };
-
-  useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (countryDropdownRef.current && !countryDropdownRef.current.contains(e.target as Node)) {
         setCountryOpen(false);
@@ -114,11 +54,11 @@ export function ContactForm() {
 
   const selectedCountryName = formData.country.split(' ')[0];
   const availableCities =
-    apiCitiesMap[selectedCountryName] ||
     ALL_CITIES_BY_COUNTRY[selectedCountryName] ||
+    ALL_CITIES_BY_COUNTRY['India'] ||
     ['Capital / Major Hub', 'Other City'];
 
-  const filteredCountries = countriesList.filter((c) =>
+  const filteredCountries = ALL_COUNTRIES.filter((c) =>
     c.name.toLowerCase().includes(countrySearch.toLowerCase())
   );
 
@@ -132,12 +72,16 @@ export function ContactForm() {
 
     try {
       const bodyData = new FormData();
+      bodyData.append('formType', 'contact');
       bodyData.append('fullName', formData.fullName);
       bodyData.append('email', formData.email);
       bodyData.append('phone', formData.phone);
       bodyData.append('city', formData.city || 'Jaipur');
       bodyData.append('district', formData.country || 'India');
-      bodyData.append('roofType', formData.category || 'Direct Contact');
+      bodyData.append('category', formData.category);
+      bodyData.append('capacity', formData.capacity);
+      bodyData.append('message', formData.message);
+      bodyData.append('roofType', `${formData.category}${formData.capacity ? ` (${formData.capacity})` : ''}`);
 
       await fetch('/api/inquiries', {
         method: 'POST',
@@ -178,7 +122,7 @@ export function ContactForm() {
               Inquiry Submitted Successfully!
             </h3>
             <p className="text-text-primary/80 text-base max-w-md mt-2 leading-relaxed">
-              Thank you for reaching out to Paa Solar. Our engineering team is evaluating your details and will call you shortly.
+              Thank you for reaching out to PAA SOLAR. A confirmation has been sent to your email, and our engineering team will contact you within 48 hours.
             </p>
             <button
               onClick={() => {
@@ -265,10 +209,14 @@ export function ContactForm() {
                             key={c.name}
                             type="button"
                             onClick={() => {
-                              setFormData({ ...formData, country: `${c.name} ${c.flag}`, city: (apiCitiesMap[c.name] || ALL_CITIES_BY_COUNTRY[c.name])?.[0] || '' });
+                              const nextCities = ALL_CITIES_BY_COUNTRY[c.name] || ['Capital / Major Hub', 'Other City'];
+                              setFormData({
+                                ...formData,
+                                country: `${c.name} ${c.flag}`,
+                                city: nextCities[0] || 'Capital / Major Hub',
+                              });
                               setCountryOpen(false);
                               setCountrySearch('');
-                              fetchCitiesForCountry(c.name);
                             }}
                             className="w-full px-3 py-2 rounded-lg text-left text-xs font-semibold hover:bg-emerald-500/10 hover:text-emerald-500 transition-colors flex items-center justify-between"
                           >
@@ -293,9 +241,8 @@ export function ContactForm() {
                   onClick={() => setCityOpen(!cityOpen)}
                   className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-line focus:border-emerald-500 text-left text-text-primary flex items-center justify-between font-medium"
                 >
-                  <span className="truncate flex items-center gap-2">
-                    {loadingCities ? <Loader2 className="w-3.5 h-3.5 animate-spin text-emerald-500" /> : null}
-                    <span>{formData.city || 'Select / Type City'}</span>
+                  <span className="truncate">
+                    {formData.city || 'Select / Type City'}
                   </span>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-300 text-emerald-500 ${cityOpen ? 'rotate-180' : ''}`} />
                 </button>
@@ -450,9 +397,16 @@ export function ContactForm() {
               <span>+91 93119XXXXX</span>
             </div>
 
-            <div className="flex items-center gap-3">
-              <Mail className="w-5 h-5 text-emerald-500 shrink-0" />
-              <span>info@paasolar.com</span>
+            <div className="flex items-start gap-3">
+              <Mail className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+              <div className="flex flex-col gap-1">
+                <a href="mailto:info@paasolar.com" className="hover:text-emerald-500 transition-colors">
+                  info@paasolar.com
+                </a>
+                <a href="mailto:paasolar@gmail.com" className="hover:text-emerald-500 transition-colors">
+                  paasolar@gmail.com
+                </a>
+              </div>
             </div>
 
             <div className="flex items-center gap-3">
@@ -463,7 +417,7 @@ export function ContactForm() {
 
           <div className="mt-8 pt-6 border-t border-line/60 grid grid-cols-1 sm:grid-cols-2 gap-3">
             <a
-              href="https://wa.me/919311922134"
+              href="https://wa.me/?text=Hello%20Paa%20Solar"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#25D366] hover:text-white transition-all shadow-sm"
@@ -473,7 +427,7 @@ export function ContactForm() {
             </a>
 
             <a
-              href="mailto:info@paasolar.com"
+              href="mailto:info@paasolar.com,paasolar@gmail.com"
               className="p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-emerald-500 hover:text-white transition-all shadow-sm"
             >
               <Mail className="w-4 h-4" />

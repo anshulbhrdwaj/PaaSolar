@@ -53,7 +53,7 @@
       "export": "Export & Overseas",
       "exportSub": "Global Energy Projects",
       "careers": "Careers",
-      "careersSub": "Join Paa Solar Team"
+      "careersSub": "Join PAA SOLAR Team"
     },
     "tagline": "Blessing from this generation to next generation"
   },
@@ -106,7 +106,7 @@
     "stat3": {
       "value": 500,
       "unit": "+",
-      "label": "PM-SSY & Rooftop Kits"
+      "label": "PM-SGY & Rooftop Kits"
     },
     "stat4": {
       "value": 2,
@@ -117,7 +117,7 @@
   "WhySolar": {
     "tag": "The Energy Imperative",
     "title": "Why Transition to Solar Today?",
-    "subtitle": "The legacy grid is fragile, costly, and carbon-heavy. Paa Solar provides continuous, independent power.",
+    "subtitle": "The legacy grid is fragile, costly, and carbon-heavy. PAA SOLAR provides continuous, independent power.",
     "cards": [
       {
         "num": "01",
@@ -140,7 +140,7 @@
       {
         "num": "04",
         "title": "Architectural Harmony",
-        "desc": "Paa Solar replaces ugly roof clutter with sleek, low-profile, high-efficiency solar glass tailored to modern luxury aesthetics.",
+        "desc": "PAA SOLAR replaces ugly roof clutter with sleek, low-profile, high-efficiency solar glass tailored to modern luxury aesthetics.",
         "highlight": "Bespoke clean design"
       }
     ]
@@ -174,7 +174,7 @@
   },
   "Products": {
     "tag": "PAA SOLAR SUPPLY",
-    "title": "Paa Solar Supply",
+    "title": "PAA SOLAR Supply",
     "subtitle": "Explore our direct project execution capabilities above 50 kW and complete PM SGY kit distribution for partners.",
     "items": [
       {
@@ -226,7 +226,7 @@
   "CaseStudies": {
     "tag": "Portfolio of Excellence",
     "title": "Featured Installations",
-    "subtitle": "Discover how Paa Solar transforms commercial complexes, manufacturing plants, and utility infrastructure into self-sustaining clean power stations.",
+    "subtitle": "Discover how PAA SOLAR transforms commercial complexes, manufacturing plants, and utility infrastructure into self-sustaining clean power stations.",
     "filters": {
       "all": "All Projects",
       "ci": "C&I",
@@ -290,10 +290,10 @@
   "Testimonials": {
     "tag": "Client Stories",
     "title": "Trusted by Visionaries",
-    "subtitle": "Hear from leaders, estate owners, and facility directors who chose Paa Solar.",
+    "subtitle": "Hear from leaders, estate owners, and facility directors who chose PAA SOLAR.",
     "items": [
       {
-        "quote": "Paa Solar delivered an architectural masterpiece. Our estate has zero power outages and zero energy bills.",
+        "quote": "PAA SOLAR delivered an architectural masterpiece. Our estate has zero power outages and zero energy bills.",
         "author": "Rajesh Singhania",
         "role": "Founder, Singhania Estates"
       },
@@ -308,7 +308,7 @@
         "role": "Principal Architect, Atelier Studio"
       },
       {
-        "quote": "Their team managed permitting, installation, and grid synchronization seamlessly. Paa Solar is in a class of its own.",
+        "quote": "Their team managed permitting, installation, and grid synchronization seamlessly. PAA SOLAR is in a class of its own.",
         "author": "Priya Nair",
         "role": "Sustainability Director, Zenith Group"
       }
@@ -356,7 +356,7 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookies": "Cookie Preferences",
-    "copyright": "© 2026 Paa Solar. All rights reserved."
+    "copyright": "© 2026 PAA SOLAR. All rights reserved."
   },
   "ProductDetails": {
     "pmSuryaGhar": {
@@ -366,7 +366,7 @@
       "subsidy1": "₹30,000 Subsidy for 1 kW Rooftop System",
       "subsidy2": "₹60,000 Subsidy for 2 kW Rooftop System",
       "subsidy3": "₹78,000 Max Subsidy for 3 kW+ Systems",
-      "featuresTitle": "Why Install PM Surya Ghar with Paa Solar",
+      "featuresTitle": "Why Install PM Surya Ghar with PAA SOLAR",
       "feature1": "300 Units Monthly Free Power Generation",
       "feature2": "Direct Central Financial Assistance (CFA) Bank Deposit",
       "feature3": "Seamless Net-Metering DISCOM Approval Handled by Us",
@@ -388,7 +388,7 @@
         "subtitle": "Tunnel Oxide Passivated Contact Technology (580W – 650W)",
         "badge": "FLAGSHIP HIGH-YIELD",
         "eff": "Up to 22.8%+ Efficiency",
-        "desc": "Paa Solar supply N-Type TOPCon (Tunnel Oxide Passivated Contact) modules represent the pinnacle of photovoltaic efficiency. Featuring ultra-low temperature coefficients (-0.29%/°C), zero Light-Induced Degradation (LID), and dual-glass bifacial architecture, TOPCon panels capture ambient light from both front and rear surfaces to deliver +10% to +30% higher lifetime generation.",
+        "desc": "PAA SOLAR supply N-Type TOPCon (Tunnel Oxide Passivated Contact) modules represent the pinnacle of photovoltaic efficiency. Featuring ultra-low temperature coefficients (-0.29%/°C), zero Light-Induced Degradation (LID), and dual-glass bifacial architecture, TOPCon panels capture ambient light from both front and rear surfaces to deliver +10% to +30% higher lifetime generation.",
         "spec1": "22.8%+ Peak Efficiency",
         "spec2": "80%±5% Bifaciality Factor",
         "spec3": "30-Year Performance Warranty",
@@ -402,7 +402,7 @@
         "subtitle": "Domestic Content Requirement Certified Modules (540W – 590W)",
         "badge": "MNRE & ALMM APPROVED",
         "eff": "PM Surya Ghar Eligible",
-        "desc": "Paa Solar Supply DCR (Domestic Content Requirement) modules feature 100% indigenous Indian solar cells and wafers in strict compliance with MNRE and ALMM guidelines, fully approved for government subsidy schemes.",
+        "desc": "PAA SOLAR Supply DCR (Domestic Content Requirement) modules feature 100% indigenous Indian solar cells and wafers in strict compliance with MNRE and ALMM guidelines, fully approved for government subsidy schemes.",
         "spec1": "100% Indian Cell & Wafer DCR",
         "spec2": "Direct PM Surya Ghar Subsidy",
         "spec3": "ALMM List-1 Certified",
@@ -608,7 +608,7 @@
     "methodology": {
       "tag": "Engineering Precision Roadmap",
       "title": "Our 5-Stage EPC Working Methodology",
-      "subtitle": "How Paa Solar delivers zero-defect, highly reliable clean energy infrastructure from initial GIS audit to 25-year commissioning.",
+      "subtitle": "How PAA SOLAR delivers zero-defect, highly reliable clean energy infrastructure from initial GIS audit to 25-year commissioning.",
       "step1Title": "1. LiDAR & Solar GIS Site Audit",
       "step1Desc": "3D digital twin modeling of roof structure, shading patterns, and irradiance metrics.",
       "step2Title": "2. Custom Electrical & Structural Design",
@@ -623,7 +623,7 @@
     "vendor": {
       "tag": "Supply Chain & Partner Ecosystem",
       "title": "Vendor & EPC Partner Registration Portal",
-      "subtitle": "Join Paa Solar's elite network of certified component suppliers, installation partners, and civil contractors.",
+      "subtitle": "Join PAA SOLAR's elite network of certified component suppliers, installation partners, and civil contractors.",
       "formTitle": "Partner Application Form",
       "companyName": "Company / Firm Name",
       "category": "Vendor Category",
@@ -647,7 +647,7 @@
       "tag": "Join the Clean Energy Revolution",
       "title": "Build the Future of Clean Energy Architecture",
       "subtitle": "We are hiring passionate engineers, architects, project managers, and sustainability pioneers to build sovereign power independence.",
-      "cultureTitle": "Why Work at Paa Solar",
+      "cultureTitle": "Why Work at PAA SOLAR",
       "benefit1": "Cutting-edge hardware R&D in solar architecture & battery storage",
       "benefit2": "Competitive equity incentives & performance bonuses",
       "benefit3": "Hybrid work options & nationwide project mobility",
@@ -679,7 +679,7 @@
     "export": {
       "tag": "Global Footprint & Distribution",
       "title": "Solar Product & Project for International Market",
-      "subtitle": "Paa Solar is exporting high-efficiency TOPCon solar modules, smart inverters, and Lithium battery systems to international markets across Africa, Middle East, SE Asia, and Europe, alongside turnkey 500kW–MW industrial project solutions and government consultancy.",
+      "subtitle": "PAA SOLAR is exporting high-efficiency TOPCon solar modules, smart inverters, and Lithium battery systems to international markets across Africa, Middle East, SE Asia, and Europe, alongside turnkey 500kW–MW industrial project solutions and government consultancy.",
       "cert1": "IEC 61215 / 61730 Certified",
       "cert2": "CE & TUV Rheinland Compliant",
       "cert3": "UL 1973 & UN38.3 Battery Safety",
@@ -694,10 +694,10 @@
       "heroPoint2": "Providing turnkey project solutions for industrial end-user clients from 500 kW to Multi-MW scale.",
       "heroPoint3": "Providing consultancy for government agencies & entrepreneurs on factory setup, project surveys & engineering drafts.",
       "scopeTitle": "Global Operations & Consultancy Services",
-      "scopeSubtitle": "Paa Solar delivers Tier-1 solar hardware, megawatt-scale industrial project solutions, and strategic government consultancy worldwide.",
+      "scopeSubtitle": "PAA SOLAR delivers Tier-1 solar hardware, megawatt-scale industrial project solutions, and strategic government consultancy worldwide.",
       "pillar1Badge": "Global Distribution",
       "pillar1Title": "International Solar Hardware Export",
-      "pillar1Desc": "Paa Solar is Exporting high-efficiency TOPCon solar modules, smart inverters, and Lithium battery systems to international markets for distribution through exclusive channel partners across Africa, Middle East, SE Asia, and Europe.",
+      "pillar1Desc": "PAA SOLAR is Exporting high-efficiency TOPCon solar modules, smart inverters, and Lithium battery systems to international markets for distribution through exclusive channel partners across Africa, Middle East, SE Asia, and Europe.",
       "pillar2Badge": "500 kW to MW+ Scale",
       "pillar2Title": "Industrial End-User Project Solutions",
       "pillar2Desc": "We Also Provide Projects solution to the industrial end user clients above on 500KW to MW with turnkey engineering and performance guarantees.",
@@ -717,7 +717,7 @@
     "title": "Serving B2B & Enterprise Infrastructure",
     "subtitle": "Decarbonizing industrial manufacturing, commercial real estate, data centers, and multi-facility enterprises with guaranteed energy savings.",
     "model1Title": "Power Purchase Agreement (PPA)",
-    "model1Desc": "Zero-CAPEX off-take model where Paa Solar funds, builds, and maintains the solar system while you pay a discounted per-kWh electricity rate.",
+    "model1Desc": "Zero-CAPEX off-take model where PAA SOLAR funds, builds, and maintains the solar system while you pay a discounted per-kWh electricity rate.",
     "model2Title": "Group Captive Open Access",
     "model2Desc": "Off-site MW-scale solar energy wheeling through state power grids to power multiple corporate facilities with 100% renewable energy.",
     "model3Title": "RESCO & BOOT Frameworks",
@@ -735,7 +735,7 @@
   "FAQ": {
     "badge": "FREQUENTLY ASKED QUESTIONS",
     "title": "Got Questions? We Have Answers.",
-    "subtitle": "Everything you need to know about solar installation, performance, maintenance, and Paa Solar long-term service commitments.",
+    "subtitle": "Everything you need to know about solar installation, performance, maintenance, and PAA SOLAR long-term service commitments.",
     "askEngineer": "Ask Solar Engineer",
     "moreQuestions": "Have More Questions?",
     "moreQuestionsSub": "Our EPC solar engineers are ready to assist with custom engineering sizing & DISCOM guidelines.",
@@ -757,8 +757,8 @@
     "q6": "Is solar power cost-effective?",
     "a6": "Yes, Solar significantly reduces electricity bills and offers attractive long-term returns.",
     "c6": "ROI & Savings",
-    "q7": "Does Paa Solar provide warranties and O&M support?",
-    "a7": "Yes, Paa Solar offers product warranties, performance guarantees, and comprehensive O&M services.",
+    "q7": "Does PAA SOLAR provide warranties and O&M support?",
+    "a7": "Yes, PAA SOLAR offers product warranties, performance guarantees, and comprehensive O&M services.",
     "c7": "Warranties & Support"
   },
   "Calc": {

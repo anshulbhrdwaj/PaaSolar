@@ -140,7 +140,7 @@
       {
         "num": "04",
         "title": "Architectural Harmony",
-        "desc": "Paa Solar replaces ugly roof clutter with sleek, low-profile, high-efficiency solar glass tailored to modern luxury aesthetics.",
+        "desc": "PAA SOLAR replaces ugly roof clutter with sleek, low-profile, high-efficiency solar glass tailored to modern luxury aesthetics.",
         "highlight": "Bespoke clean design"
       }
     ]
@@ -174,7 +174,7 @@
   },
   "Products": {
     "tag": "PAA SOLAR SUPPLY",
-    "title": "Paa Solar Supply",
+    "title": "PAA SOLAR Supply",
     "subtitle": "50 kW ಗಿಂತ ಹೆಚ್ಚಿನ ನಮ್ಮ ನೇರ ಯೋಜನೆ ಜಾರಿ ಸಾಮರ್ಥ್ಯಗಳು ಮತ್ತು ಪಾಲುದಾರರಿಗಾಗಿ ಪೂರ್ಣ PM SGY ಕಿಟ್ ವಿತರಣೆಯನ್ನು ಅನ್ವೇಷಿಸಿ.",
     "items": [
       {
@@ -293,7 +293,7 @@
     "subtitle": "ನಮ್ಮ ವಾಣಿಜ್ಯ ಗ್ರಾಹಕರ ಯಶಸ್ಸಿನ ಕಥೆಗಳು.",
     "items": [
       {
-        "quote": "Paa Solar delivered an architectural masterpiece. Our estate has zero power outages and zero energy bills.",
+        "quote": "PAA SOLAR delivered an architectural masterpiece. Our estate has zero power outages and zero energy bills.",
         "author": "Rajesh Singhania",
         "role": "Founder, Singhania Estates"
       },
@@ -308,7 +308,7 @@
         "role": "Principal Architect, Atelier Studio"
       },
       {
-        "quote": "Their team managed permitting, installation, and grid synchronization seamlessly. Paa Solar is in a class of its own.",
+        "quote": "Their team managed permitting, installation, and grid synchronization seamlessly. PAA SOLAR is in a class of its own.",
         "author": "Priya Nair",
         "role": "Sustainability Director, Zenith Group"
       }
@@ -388,7 +388,7 @@
         "subtitle": "ಟನಲ್ ಆಕ್ಸೈಡ್ ಪಾಸಿವೇಟೆಡ್ ಕಾಂಟ್ಯಾಕ್ಟ್ ತಂತ್ರಜ್ಞಾನ (580W – 650W)",
         "badge": "ಅತ್ಯುತ್ತಮ ವಿದ್ಯುತ್ ಉತ್ಪಾದನೆ",
         "eff": "22.8%+ ವರೆಗೆ ದಕ್ಷತೆ",
-        "desc": "Paa Solar supply N-Type TOPCon (Tunnel Oxide Passivated Contact) modules represent the pinnacle of photovoltaic efficiency. Featuring ultra-low temperature coefficients (-0.29%/°C), zero Light-Induced Degradation (LID), and dual-glass bifacial architecture, TOPCon panels capture ambient light from both front and rear surfaces to deliver +10% to +30% higher lifetime generation.",
+        "desc": "PAA SOLAR supply N-Type TOPCon (Tunnel Oxide Passivated Contact) modules represent the pinnacle of photovoltaic efficiency. Featuring ultra-low temperature coefficients (-0.29%/°C), zero Light-Induced Degradation (LID), and dual-glass bifacial architecture, TOPCon panels capture ambient light from both front and rear surfaces to deliver +10% to +30% higher lifetime generation.",
         "spec1": "22.8%+ ಗರಿಷ್ಠ ದಕ್ಷತೆ",
         "spec2": "80%±5% ಬಯೋಫೇಷಿಯಾಲಿಟಿ ಅಪವರ್ತನ",
         "spec3": "30 ವರ್ಷಗಳ ಕಾರ್ಯಕ್ಷಮತೆ ವಾರಂಟಿ",
@@ -402,7 +402,7 @@
         "subtitle": "ಡೊಮೆಸ್ಟಿಕ್ ಕಂಟೆಂಟ್ ರಿಕ್ವೈರ್ ಮೆಂಟ್ ಪ್ರಮಾಣೀಕೃತ ಮಾಡ್ಯೂಲ್‌ಗಳು (540W – 590W)",
         "badge": "MNRE ಮತ್ತು ALMM ಅನುಮೋದಿತ",
         "eff": "PM ಸೂರ್ಯ ಘರ್ ಅರ್ಹತೆ ಪಡೆದಿದೆ",
-        "desc": "Paa Solar Supply DCR (Domestic Content Requirement) modules feature 100% indigenous Indian solar cells and wafers in strict compliance with MNRE and ALMM guidelines, fully approved for government subsidy schemes.",
+        "desc": "PAA SOLAR Supply DCR (Domestic Content Requirement) modules feature 100% indigenous Indian solar cells and wafers in strict compliance with MNRE and ALMM guidelines, fully approved for government subsidy schemes.",
         "spec1": "100% ಭಾರತೀಯ ಸೆಲ್ ಮತ್ತು ವೇಫರ್ DCR",
         "spec2": "ನೇರ PM ಸೂರ್ಯ ಘರ್ ಸಬ್ಸಿಡಿ",
         "spec3": "ALMM ಲಿಸ್ಟ್-1 ಪ್ರಮಾಣೀಕೃತ",
@@ -683,7 +683,7 @@
     "export": {
       "tag": "ಜಾಗತಿಕ ರಫ್ತು",
       "title": "Solar Product & Project for International Market",
-      "subtitle": "Paa Solar is exporting high-efficiency TOPCon solar modules, smart inverters, and Lithium battery systems to international markets across Africa, Middle East, SE Asia, and Europe, alongside turnkey 500kW–MW industrial project solutions and government consultancy.",
+      "subtitle": "PAA SOLAR is exporting high-efficiency TOPCon solar modules, smart inverters, and Lithium battery systems to international markets across Africa, Middle East, SE Asia, and Europe, alongside turnkey 500kW–MW industrial project solutions and government consultancy.",
       "cert1": "IEC ಪ್ರಮಾಣೀಕೃತ",
       "cert2": "CE ಅನುಸರಣೆ",
       "cert3": "UL ಸುರಕ್ಷತೆ",
@@ -698,10 +698,10 @@
       "heroPoint2": "Providing turnkey project solutions for industrial end-user clients from 500 kW to Multi-MW scale.",
       "heroPoint3": "Providing consultancy for government agencies & entrepreneurs on factory setup, project surveys & engineering drafts.",
       "scopeTitle": "Global Operations & Consultancy Services",
-      "scopeSubtitle": "Paa Solar delivers Tier-1 solar hardware, megawatt-scale industrial project solutions, and strategic government consultancy worldwide.",
+      "scopeSubtitle": "PAA SOLAR delivers Tier-1 solar hardware, megawatt-scale industrial project solutions, and strategic government consultancy worldwide.",
       "pillar1Badge": "Global Distribution",
       "pillar1Title": "International Solar Hardware Export",
-      "pillar1Desc": "Paa Solar is Exporting high-efficiency TOPCon solar modules, smart inverters, and Lithium battery systems to international markets for distribution through exclusive channel partners across Africa, Middle East, SE Asia, and Europe.",
+      "pillar1Desc": "PAA SOLAR is Exporting high-efficiency TOPCon solar modules, smart inverters, and Lithium battery systems to international markets for distribution through exclusive channel partners across Africa, Middle East, SE Asia, and Europe.",
       "pillar2Badge": "500 kW to MW+ Scale",
       "pillar2Title": "Industrial End-User Project Solutions",
       "pillar2Desc": "We Also Provide Projects solution to the industrial end user clients above on 500KW to MW with turnkey engineering and performance guarantees.",

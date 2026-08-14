@@ -99,7 +99,7 @@ const INITIAL_MOCK_QUERIES: Inquiry[] = [
     city: 'Dubai',
     category: 'PM Kusum With BESS Battery',
     capacity: '500 kW / 2 MWh BESS',
-    message: 'Inquiring about Paa Solar BESS battery microgrid for our logistics warehouse in JAFZA Free Zone, Dubai.',
+    message: 'Inquiring about PAA SOLAR BESS battery microgrid for our logistics warehouse in JAFZA Free Zone, Dubai.',
     date: '2026-08-07 14:15',
     status: 'Quoted',
     notes: 'Quotation sent for 500kW TOPCon + 2MWh LFP Vault Storage.',
@@ -331,7 +331,7 @@ export default function AdminQueriesPage() {
                 Admin Control Portal
               </h1>
               <p className="text-text-primary/70 text-xs font-medium mt-1">
-                Enter your credentials to access Paa Solar queries & lead management desk.
+                Enter your credentials to access PAA SOLAR queries & lead management desk.
               </p>
             </div>
 

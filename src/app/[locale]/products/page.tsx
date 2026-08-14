@@ -135,7 +135,7 @@ export default function ProductsPage() {
             <span>PAA SOLAR SUPPLY</span>
           </div>
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-text-primary mt-3 mb-4">
-            Paa Solar Supply
+            PAA SOLAR Supply
           </h1>
           <p className="text-text-secondary text-lg leading-relaxed mb-6">
             From government-subsidized rooftop initiatives to high-density

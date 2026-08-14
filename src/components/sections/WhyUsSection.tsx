@@ -29,7 +29,7 @@ export function WhyUsSection() {
       id: 'group-company',
       badge: 'Parent Group Backing',
       title: 'Backed by Established Group Company',
-      desc: 'PAA Solar operates under a premier group company enterprise, ensuring strong financial stability, corporate governance, and nationwide execution strength.',
+      desc: 'PAA SOLAR operates under a premier group company enterprise, ensuring strong financial stability, corporate governance, and nationwide execution strength.',
       icon: <Building2 className="w-6 h-6 text-sky-400" />,
       accentColor: 'text-sky-400',
       borderColor: 'border-sky-400/40',
@@ -112,7 +112,7 @@ export function WhyUsSection() {
             <span>Why Choose PAA SOLAR</span>
           </div>
           <h2 className="font-serif text-4xl sm:text-5xl font-bold text-text-primary mt-2">
-            Why Choose Paa Solar?
+            Why Choose PAA SOLAR?
           </h2>
         </div>
 
@@ -372,7 +372,7 @@ export function WhyUsSection() {
         <div className="p-8 sm:p-10 rounded-3xl bg-bg-primary border border-line shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="space-y-1">
             <h4 className="font-serif text-2xl font-bold text-text-primary">
-              Ready to Partner with Paa Solar?
+              Ready to Partner with PAA SOLAR?
             </h4>
             <p className="text-text-secondary text-sm font-medium">
               Get in touch with our solar EPC engineers or district distribution team today.

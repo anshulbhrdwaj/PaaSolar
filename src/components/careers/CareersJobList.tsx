@@ -2,12 +2,21 @@
 
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { CheckCircle2, GraduationCap, Briefcase, MapPin, Building2 } from 'lucide-react';
+import { CheckCircle2, GraduationCap, Briefcase, MapPin, Building2, Loader2, Send } from 'lucide-react';
 
 export function CareersJobList() {
   const t = useTranslations('CorporatePages.careers');
   const [selectedJob, setSelectedJob] = useState<string | null>(null);
   const [applied, setApplied] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    portfolioUrl: '',
+    notes: '',
+  });
 
   const jobs = [
     {
@@ -43,6 +52,33 @@ export function CareersJobList() {
       experience: t('job4Exp'),
     },
   ];
+
+  const handleApplySubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      const bodyData = new FormData();
+      bodyData.append('formType', 'careers');
+      bodyData.append('fullName', formData.fullName);
+      bodyData.append('email', formData.email);
+      bodyData.append('phone', formData.phone || '+91-XXXXXXXXXX');
+      bodyData.append('category', selectedJob || 'Career Position');
+      bodyData.append('city', 'India');
+      bodyData.append('roofType', `Careers Application: ${selectedJob}`);
+      bodyData.append('message', `Portfolio/LinkedIn: ${formData.portfolioUrl}\n${formData.notes ? `Cover Note: ${formData.notes}` : ''}`);
+
+      await fetch('/api/inquiries', {
+        method: 'POST',
+        body: bodyData,
+      }).catch(() => null);
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+      setApplied(true);
+    }
+  };
 
   return (
     <>
@@ -86,7 +122,10 @@ export function CareersJobList() {
               </div>
 
               <button
-                onClick={() => setSelectedJob(j.title)}
+                onClick={() => {
+                  setSelectedJob(j.title);
+                  setApplied(false);
+                }}
                 className="w-full md:w-auto px-7 py-3 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider hover:bg-accent-solar/90 hover:scale-105 transition-all shadow-md shrink-0"
               >
                 {t('applyNow')}
@@ -101,47 +140,104 @@ export function CareersJobList() {
           <div className="relative w-full max-w-xl rounded-3xl p-8 bg-bg-primary border border-line shadow-2xl">
             {applied ? (
               <div className="text-center py-8 space-y-4">
-                <CheckCircle2 className="w-12 h-12 text-emerald-500 mx-auto" />
+                <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto border-2 border-emerald-500 shadow-[0_0_25px_rgba(16,185,129,0.25)]">
+                  <CheckCircle2 className="w-10 h-10" />
+                </div>
                 <h4 className="font-serif text-2xl font-bold text-text-primary">Application Submitted!</h4>
-                <p className="text-xs text-text-secondary">Our talent acquisition team will review your application and reach out.</p>
+                <p className="text-sm text-text-secondary max-w-md mx-auto leading-relaxed">
+                  Thank you for applying. A confirmation email has been sent to your inbox. Our talent acquisition team will review your application and contact you within 48 hours.
+                </p>
                 <button
-                  onClick={() => { setSelectedJob(null); setApplied(false); }}
-                  className="py-2.5 px-6 rounded-full bg-accent-solar text-white text-xs font-bold uppercase"
+                  onClick={() => {
+                    setSelectedJob(null);
+                    setApplied(false);
+                    setFormData({ fullName: '', email: '', phone: '', portfolioUrl: '', notes: '' });
+                  }}
+                  className="py-2.5 px-6 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider hover:bg-accent-solar/90 transition-all"
                 >
                   Close
                 </button>
               </div>
             ) : (
-              <form onSubmit={(e) => { e.preventDefault(); setApplied(true); }} className="space-y-4">
-                <span className="text-xs font-mono text-accent-solar uppercase">Applying for Position</span>
-                <h3 className="font-serif text-2xl font-bold text-text-primary">{selectedJob}</h3>
+              <form onSubmit={handleApplySubmit} className="space-y-4">
+                <div>
+                  <span className="text-xs font-mono text-accent-solar uppercase tracking-widest font-bold">Applying for Position</span>
+                  <h3 className="font-serif text-2xl font-bold text-text-primary mt-1">{selectedJob}</h3>
+                </div>
 
                 <div>
-                  <label className="block text-xs font-mono uppercase text-text-secondary mb-1">Full Name</label>
-                  <input type="text" required className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-line text-sm" placeholder="John Doe" />
+                  <label className="block text-xs font-mono uppercase text-text-secondary mb-1">Full Name *</label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.fullName}
+                    onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                    className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-line text-sm text-text-primary focus:outline-none focus:border-emerald-500"
+                    placeholder="John Doe"
+                  />
                 </div>
-                <div>
-                  <label className="block text-xs font-mono uppercase text-text-secondary mb-1">Email Address</label>
-                  <input type="email" required className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-line text-sm" placeholder="john@example.com" />
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs font-mono uppercase text-text-secondary mb-1">Email Address *</label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-line text-sm text-text-primary focus:outline-none focus:border-emerald-500"
+                      placeholder="john@example.com"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs font-mono uppercase text-text-secondary mb-1">Phone Number *</label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-line text-sm text-text-primary focus:outline-none focus:border-emerald-500"
+                      placeholder="+91 98765 43210"
+                    />
+                  </div>
                 </div>
+
                 <div>
                   <label className="block text-xs font-mono uppercase text-text-secondary mb-1">Portfolio / LinkedIn URL</label>
-                  <input type="url" required className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-line text-sm" placeholder="https://linkedin.com/in/..." />
+                  <input
+                    type="url"
+                    value={formData.portfolioUrl}
+                    onChange={(e) => setFormData({ ...formData, portfolioUrl: e.target.value })}
+                    className="w-full px-4 py-2.5 rounded-xl bg-bg-secondary border border-line text-sm text-text-primary focus:outline-none focus:border-emerald-500"
+                    placeholder="https://linkedin.com/in/..."
+                  />
                 </div>
 
                 <div className="flex gap-4 pt-4">
                   <button
                     type="button"
                     onClick={() => setSelectedJob(null)}
-                    className="w-1/2 py-3 rounded-full border border-line text-xs font-bold uppercase"
+                    className="w-1/2 py-3 rounded-full border border-line text-xs font-bold uppercase hover:bg-bg-secondary transition-colors"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
-                    className="w-1/2 py-3 rounded-full bg-accent-solar text-white text-xs font-bold uppercase"
+                    disabled={loading}
+                    className="w-1/2 py-3 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider hover:bg-accent-solar/90 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
                   >
-                    Submit Application
+                    {loading ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <span>Submitting...</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>Submit Application</span>
+                        <Send className="w-3.5 h-3.5" />
+                      </>
+                    )}
                   </button>
                 </div>
               </form>

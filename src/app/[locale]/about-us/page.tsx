@@ -132,7 +132,7 @@ export default function AboutUsPage() {
               </div>
               <div>
                 <p className="text-sm font-bold text-text-primary">Director&apos;s Desk</p>
-                <p className="text-xs text-text-secondary">Paa Solar • EKCHAKRA GROUP</p>
+                <p className="text-xs text-text-secondary">PAA SOLAR • EKCHAKRA GROUP</p>
               </div>
             </div>
           </div>

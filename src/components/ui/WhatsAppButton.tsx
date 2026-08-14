@@ -12,7 +12,7 @@ export function WhatsAppButton() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Chat with Paa Solar Expert on WhatsApp"
+      aria-label="Chat with PAA SOLAR Expert on WhatsApp"
       className="fixed bottom-6 right-6 z-50 flex items-center gap-3 group"
     >
       {/* Tooltip on hover */}

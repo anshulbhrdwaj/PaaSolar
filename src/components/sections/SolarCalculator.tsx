@@ -173,6 +173,7 @@ export function SolarCalculator() {
 
     try {
       const formData = new FormData();
+      formData.append('formType', 'quote');
       formData.append('fullName', name.trim());
       formData.append('email', email.trim());
       formData.append('phone', phone.trim());

@@ -8,7 +8,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return constructMetadata({
-    title: 'Admin Portal | Paa Solar Internal Control Desk',
+    title: 'Admin Portal | PAA SOLAR Internal Control Desk',
     description: 'Internal admin portal for query management and lead processing.',
     path: '/admin',
     locale,

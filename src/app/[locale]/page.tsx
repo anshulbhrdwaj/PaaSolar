@@ -23,7 +23,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   return constructMetadata({
-    title: 'Paa Solar | Leading Solar EPC Company | C&I, PM-KUSUM & TOPCon Solar',
+    title: 'PAA SOLAR | Leading Solar EPC Company | C&I, PM-KUSUM & TOPCon Solar',
     description:
       'PAA SOLAR (EKCHAKRA GROUP) is India’s fast-growing solar EPC company delivering 30-40 year durable clean energy solutions. Specialist in 24%+ TOPCon & HJT solar panels, smart inverters, LFP battery storage, C&I rooftop solar, PM-KUSUM, and international solar exports.',
     path: '',

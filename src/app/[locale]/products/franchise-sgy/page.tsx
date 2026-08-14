@@ -108,7 +108,7 @@ export default function FranchiseSgyPage() {
           <div className="lg:col-span-6 relative h-80 sm:h-[420px] rounded-3xl overflow-hidden border border-line shadow-2xl group bg-white">
             <Image
               src="/products/group.jpg"
-              alt="Paa Solar PM Surya Ghar Yojana Complete Product Group Bundle"
+              alt="PAA SOLAR PM Surya Ghar Yojana Complete Product Group Bundle"
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-700"
             />

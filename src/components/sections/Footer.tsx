@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { SunArcAnimation } from '../ui/SunArcAnimation';
 import { PaaSolarLogo } from '../ui/PaaSolarLogo';
-import { MessageCircle, Download } from 'lucide-react';
+import { MessageCircle, Download, Globe } from 'lucide-react';
 
 export function Footer() {
   const t = useTranslations('Footer');
@@ -25,9 +25,20 @@ export function Footer() {
               </Link>
             </div>
 
-            <div className="flex items-center gap-3 text-xs md:text-sm font-bold text-text-primary">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
-              <span>HEADQUARTERS: JAIPUR</span>
+            <div className="flex flex-wrap items-center gap-4">
+              <div className="flex items-center gap-2.5 text-xs md:text-sm font-bold text-text-primary">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
+                <span>HEADQUARTERS: JAIPUR</span>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => window.dispatchEvent(new CustomEvent('open-global-translator'))}
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-line bg-bg-primary hover:border-accent-solar text-xs font-semibold text-text-primary hover:text-accent-solar transition-all shadow-sm group"
+              >
+                <Globe className="w-3.5 h-3.5 text-accent-solar group-hover:rotate-45 transition-transform" />
+                <span>Translate Site (130+)</span>
+              </button>
             </div>
 
             {/* Social Media & WhatsApp Quick Links */}
