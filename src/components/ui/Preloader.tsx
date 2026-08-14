@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { SunArcAnimation } from './SunArcAnimation';
+import { PaaSolarLogo } from './PaaSolarLogo';
 
 export function Preloader({ onComplete }: { onComplete?: () => void }) {
   const [progress, setProgress] = useState(0);
@@ -49,23 +49,34 @@ export function Preloader({ onComplete }: { onComplete?: () => void }) {
         ref={curtainRef}
         className="preloader-curtain absolute inset-0 bg-bg-primary flex flex-col items-center justify-center z-10 border-b border-line"
       >
-        <div className="flex flex-col items-center gap-6">
-          <div className="w-28 h-28 relative">
-            <SunArcAnimation progress={progress} animated={true} />
+        <div className="flex flex-col items-center gap-7 px-6 text-center">
+          {/* PAA SOLAR Logo Presentation */}
+          <div className="relative flex flex-col items-center group">
+            {/* Ambient solar glow backdrop */}
+            <div className="absolute -inset-6 bg-gradient-to-r from-emerald-500/20 via-sky-500/20 to-orange-500/20 rounded-full blur-2xl opacity-70 animate-pulse pointer-events-none" />
+
+            <img
+              src="/logo_transparent.png"
+              alt="PAA SOLAR Logo"
+              className="h-24 sm:h-28 md:h-32 w-auto object-contain filter drop-shadow-xl relative z-10 mb-2 transition-transform duration-500 hover:scale-105"
+            />
+
+            <div className="relative z-10">
+              <PaaSolarLogo size="lg" showImage={false} align="center" showTagline={true} />
+            </div>
           </div>
 
-          <div className="flex flex-col items-center gap-2">
-            <span className="font-serif italic text-3xl text-text-primary tracking-wide">
-              PAA SOLAR
-            </span>
-            <div className="flex items-center gap-3">
-              <div className="h-[2px] w-12 bg-line overflow-hidden rounded-full">
-                <div
-                  className="h-full bg-accent-solar transition-all duration-150"
-                  style={{ width: `${progress}%` }}
-                />
-              </div>
-              <span className="text-sm font-mono text-text-secondary tracking-widest min-w-[40px]">
+          {/* Progress Bar & Percentage */}
+          <div className="flex flex-col items-center gap-2.5 w-60 max-w-xs">
+            <div className="h-1.5 w-full bg-line overflow-hidden rounded-full p-[1px]">
+              <div
+                className="h-full bg-gradient-to-r from-emerald-500 via-sky-500 to-accent-solar rounded-full transition-all duration-150 shadow-sm"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+            <div className="flex items-center justify-between w-full text-xs font-mono text-text-secondary tracking-widest px-0.5">
+              <span className="uppercase text-[10px] text-text-secondary/70">Energizing</span>
+              <span className="font-bold text-accent-solar">
                 {progress.toString().padStart(3, '0')}%
               </span>
             </div>
