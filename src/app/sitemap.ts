@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/contact-us',
     '/telemetry',
+    '/logo',
   ];
 
   const sitemapEntries: MetadataRoute.Sitemap = [];
@@ -47,8 +48,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority = 0.9;
       else if (route.startsWith('/products/') || route.startsWith('/projects/'))
         priority = 0.8;
+      else if (route === '/logo')
+        priority = 0.8;
 
-      const languageAlternates: Record<string, string> = {};
+      const languageAlternates: Record<string, string> = {
+        'x-default': `${SITE_URL}/en${route}`,
+      };
       SUPPORTED_LOCALES.forEach((l) => {
         languageAlternates[l] = `${SITE_URL}/${l}${route}`;
       });

@@ -5,12 +5,32 @@ export function JsonLd() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: 'PAA SOLAR',
-    legalName: 'PAA SOLAR (EKCHAKRA GROUP)',
+    legalName: 'PAA SOLAR PRIVATE LIMITED (EKCHAKRA GROUP)',
+    alternateName: [
+      'Paa Solar',
+      'PAA Solar EPC',
+      'PAA Solar Energy',
+      'Paa Solar Panels',
+      'PAA SOLAR Official Website',
+      'PAA SOLAR (EKCHAKRA GROUP)',
+      'PAA SOLAR India',
+    ],
     url: 'https://paasolar.com',
-    logo: 'https://paasolar.com/Paa.png',
+    logo: 'https://paasolar.com/paa_solar_logo.svg',
+    image: 'https://paasolar.com/og-image.jpg',
     description:
-      'Fast-growing solar EPC company delivering 30-40 year durable clean energy solutions across India and international markets. Part of EKCHAKRA GROUP.',
+      'India’s fast-growing solar EPC company delivering 30-40 year durable clean energy solutions, TOPCon & HJT solar panels, smart solar inverters, LFP battery storage, and C&I rooftop solar projects across India and 8+ international export countries. Part of EKCHAKRA GROUP.',
     foundingDate: '2016',
+    slogan: 'Blessing from this generation to next generation',
+    knowsAbout: [
+      'Solar EPC Engineering & Turnkey Installation',
+      'TOPCon & HJT Solar Modules',
+      'LiFePO4 Containerized BESS Battery Storage',
+      'Commercial & Industrial (C&I) Rooftop Solar',
+      'PM-KUSUM Component A, B, C & PM-SSY Schemes',
+      'PM Surya Ghar Muft Bijli Yojana',
+      'International Solar Equipment Exports',
+    ],
     founders: [
       {
         '@type': 'Person',
@@ -22,6 +42,7 @@ export function JsonLd() {
         '@type': 'ContactPoint',
         telephone: '+91-9311922134',
         contactType: 'customer service',
+        email: 'contact@paasolar.com',
         availableLanguage: [
           'English',
           'Hindi',
@@ -54,10 +75,21 @@ export function JsonLd() {
     ],
   };
 
+  const brandSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Brand',
+    name: 'PAA SOLAR',
+    alternateName: 'Paa Solar',
+    logo: 'https://paasolar.com/paa_solar_logo.svg',
+    url: 'https://paasolar.com',
+    description: 'Premier Solar EPC & Renewable Clean Energy Solutions',
+  };
+
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'SolarEnergySystemInstaller',
     name: 'PAA SOLAR',
+    alternateName: 'Paa Solar EPC',
     image: 'https://paasolar.com/og-image.jpg',
     '@id': 'https://paasolar.com/#business',
     url: 'https://paasolar.com',
@@ -65,7 +97,7 @@ export function JsonLd() {
     priceRange: '₹₹₹',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Mumbai, Bengaluru, Gurugram',
+      addressLocality: 'Mumbai, Bengaluru, Gurugram, Delhi NCR, Ahmedabad',
       addressCountry: 'IN',
     },
     geo: {
@@ -85,7 +117,12 @@ export function JsonLd() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'PAA SOLAR',
+    alternateName: 'Paa Solar Official Website',
     url: 'https://paasolar.com',
+    publisher: {
+      '@type': 'Organization',
+      name: 'PAA SOLAR',
+    },
     potentialAction: {
       '@type': 'SearchAction',
       target: 'https://paasolar.com/products?q={search_term_string}',
@@ -98,6 +135,10 @@ export function JsonLd() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(brandSchema) }}
       />
       <script
         type="application/ld+json"

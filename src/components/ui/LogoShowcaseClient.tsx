@@ -12,7 +12,26 @@ export function LogoShowcaseClient() {
   const [showTagline, setShowTagline] = useState(true);
   const [showImage, setShowImage] = useState(true);
   const [customTagline, setCustomTagline] = useState('');
+  const [bgColor, setBgColor] = useState<'black' | 'dark-solar' | 'emerald' | 'white' | 'slate' | 'grid'>('black');
   const [copied, setCopied] = useState(false);
+
+  const getBgStyle = () => {
+    switch (bgColor) {
+      case 'dark-solar':
+        return 'bg-[#021814] text-white';
+      case 'emerald':
+        return 'bg-[#044e3a] text-white';
+      case 'white':
+        return 'bg-white text-slate-900';
+      case 'slate':
+        return 'bg-slate-900 text-white';
+      case 'grid':
+        return 'bg-[#020d0a] text-white bg-[radial-gradient(#10b981_1px,transparent_1px)] [background-size:24px_24px]';
+      case 'black':
+      default:
+        return 'bg-black text-white';
+    }
+  };
 
   const handleDownload = async (url: string, filename: string) => {
     try {
@@ -122,7 +141,7 @@ export function LogoShowcaseClient() {
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col justify-between overflow-x-hidden select-none bg-black text-white">
+    <div className={`relative min-h-screen w-full flex flex-col justify-between overflow-x-hidden select-none transition-colors duration-300 ${getBgStyle()}`}>
       {/* Top Header Bar */}
       <header className="relative z-20 w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
         <Link
@@ -161,6 +180,61 @@ export function LogoShowcaseClient() {
           
           {/* Control Group 1: Configuration Toggles */}
           <div className="flex flex-wrap items-center justify-center gap-4 text-xs">
+            {/* Background Color Selector Swatches */}
+            <div className="flex items-center gap-1.5 bg-white/5 p-1 rounded-xl border border-white/10">
+              <span className="text-[10px] uppercase font-bold text-white/50 px-2">Background</span>
+              <button
+                type="button"
+                onClick={() => setBgColor('black')}
+                title="Pure Black (#000000)"
+                className={`w-6 h-6 rounded-lg bg-black border transition-all cursor-pointer ${
+                  bgColor === 'black' ? 'border-emerald-400 ring-2 ring-emerald-400/50 scale-110' : 'border-white/20 opacity-70 hover:opacity-100'
+                }`}
+              />
+              <button
+                type="button"
+                onClick={() => setBgColor('dark-solar')}
+                title="Dark Solar Green (#021814)"
+                className={`w-6 h-6 rounded-lg bg-[#021814] border transition-all cursor-pointer ${
+                  bgColor === 'dark-solar' ? 'border-emerald-400 ring-2 ring-emerald-400/50 scale-110' : 'border-white/20 opacity-70 hover:opacity-100'
+                }`}
+              />
+              <button
+                type="button"
+                onClick={() => setBgColor('emerald')}
+                title="Deep Emerald (#044e3a)"
+                className={`w-6 h-6 rounded-lg bg-[#044e3a] border transition-all cursor-pointer ${
+                  bgColor === 'emerald' ? 'border-emerald-400 ring-2 ring-emerald-400/50 scale-110' : 'border-white/20 opacity-70 hover:opacity-100'
+                }`}
+              />
+              <button
+                type="button"
+                onClick={() => setBgColor('slate')}
+                title="Dark Slate (#0f172a)"
+                className={`w-6 h-6 rounded-lg bg-slate-900 border transition-all cursor-pointer ${
+                  bgColor === 'slate' ? 'border-emerald-400 ring-2 ring-emerald-400/50 scale-110' : 'border-white/20 opacity-70 hover:opacity-100'
+                }`}
+              />
+              <button
+                type="button"
+                onClick={() => setBgColor('white')}
+                title="Clean White (#ffffff)"
+                className={`w-6 h-6 rounded-lg bg-white border transition-all cursor-pointer ${
+                  bgColor === 'white' ? 'border-emerald-400 ring-2 ring-emerald-400/50 scale-110' : 'border-slate-300 opacity-70 hover:opacity-100'
+                }`}
+              />
+              <button
+                type="button"
+                onClick={() => setBgColor('grid')}
+                title="Solar Grid Pattern"
+                className={`w-6 h-6 rounded-lg bg-[#020d0a] border flex items-center justify-center transition-all cursor-pointer ${
+                  bgColor === 'grid' ? 'border-emerald-400 ring-2 ring-emerald-400/50 scale-110' : 'border-white/20 opacity-70 hover:opacity-100'
+                }`}
+              >
+                <Grid className="w-3.5 h-3.5 text-emerald-400" />
+              </button>
+            </div>
+
             {/* Size Selector */}
             <div className="flex items-center gap-1 bg-white/5 p-1 rounded-xl border border-white/10">
               <span className="text-[10px] uppercase font-bold text-white/50 px-2">Size</span>

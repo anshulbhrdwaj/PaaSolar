@@ -27,97 +27,17 @@ import { WhatsAppButton } from '@/components/ui/WhatsAppButton';
 import { GlobalTranslator } from '@/components/ui/GlobalTranslator';
 import { JsonLd } from '@/components/seo/JsonLd';
 
+import { constructMetadata } from '@/lib/seo';
+
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const baseUrl = 'https://paasolar.com';
-
-  const locales = ['en', 'hi', 'gu', 'mr', 'bn', 'ta', 'te', 'kn', 'de', 'es'];
-  const languageAlternates: Record<string, string> = {};
-  locales.forEach((l) => {
-    languageAlternates[l] = `${baseUrl}/${l}`;
+  return constructMetadata({
+    locale,
   });
-
-  return {
-    metadataBase: new URL(baseUrl),
-    title: {
-      default: 'PAA SOLAR | Leading Solar EPC Company | C&I, PM-KUSUM & TOPCon Solar',
-      template: '%s | PAA SOLAR - EKCHAKRA GROUP',
-    },
-    description:
-      'PAA SOLAR (EKCHAKRA GROUP) is India’s fast-growing solar EPC company delivering 30-40 year durable clean energy solutions. Specialist in 24%+ TOPCon & HJT solar panels, smart inverters, LFP battery storage, C&I rooftop solar, PM-KUSUM, PM-SSY, and international solar exports across 8 countries.',
-    keywords: [
-      'PAA SOLAR',
-      'Solar EPC Company India',
-      'TOPCon Solar Panels',
-      'HJT Solar Panels',
-      'Mono Bifacial Solar Modules',
-      'Smart Solar Inverters',
-      'LiFePO4 Solar Battery',
-      'PM-KUSUM Solar Scheme',
-      'PM-KUSUM BESS',
-      'PM Surya Ghar Yojana',
-      'Commercial Rooftop Solar',
-      'Industrial Solar Projects',
-      'Solar Panel Export India',
-      'EKCHAKRA GROUP',
-    ],
-    authors: [{ name: 'PAA SOLAR Engineering Team', url: baseUrl }],
-    creator: 'PAA SOLAR • EKCHAKRA GROUP',
-    publisher: 'PAA SOLAR',
-    alternates: {
-      canonical: `${baseUrl}/${locale}`,
-      languages: languageAlternates,
-    },
-    openGraph: {
-      title: 'PAA SOLAR | Leading Solar EPC Company | C&I, PM-KUSUM & TOPCon Solar',
-      description:
-        '30-40 Year Durable Renewable Energy Solutions across Commercial, Industrial, Utility Parks & Global Exports. Blessing from this generation to next generation.',
-      url: `${baseUrl}/${locale}`,
-      siteName: 'PAA SOLAR',
-      images: [
-        {
-          url: `${baseUrl}/og-image.jpg`,
-          width: 1200,
-          height: 630,
-          alt: 'PAA SOLAR - EKCHAKRA GROUP Solar EPC Infrastructure',
-        },
-      ],
-      locale: locale,
-      type: 'website',
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: 'PAA SOLAR | Leading Solar EPC Company',
-      description:
-        'Turnkey EPC execution for 50 kW+ solar projects, TOPCon solar modules & global exports.',
-      images: [`${baseUrl}/og-image.jpg`],
-    },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
-    icons: {
-      icon: [
-        { url: '/logo_transparent.png', type: 'image/png' },
-        { url: '/favicon.ico', type: 'image/x-icon' },
-      ],
-      shortcut: ['/logo_transparent.png'],
-      apple: [
-        { url: '/logo_transparent.png', type: 'image/png' },
-      ],
-    },
-  };
 }
 
 export default async function LocaleLayout({

@@ -26,22 +26,34 @@ export interface ConstructMetadataOptions {
 
 export function constructMetadata({
   title,
-  description = 'PAA SOLAR (EKCHAKRA GROUP) is India’s fast-growing solar EPC company delivering 30-40 year durable clean energy solutions. Specialist in TOPCon & HJT solar panels, smart inverters, LFP battery storage, C&I rooftop solar, PM-KUSUM, and international solar exports.',
+  description = 'PAA SOLAR (EKCHAKRA GROUP) is India’s fast-growing solar EPC company delivering 30-40 year durable clean energy solutions. Official manufacturer & EPC provider for TOPCon & HJT solar panels, smart solar inverters, LFP battery storage, C&I rooftop solar, PM-KUSUM, and international solar exports.',
   path = '',
   locale = 'en',
   keywords = [
     'PAA SOLAR',
+    'Paa Solar',
+    'Paa Solar EPC',
+    'PAA SOLAR Official Website',
+    'Paa Solar Energy',
+    'Paa Solar Panels',
+    'Paa Solar Inverters',
+    'PAA SOLAR EKCHAKRA GROUP',
+    'PAA SOLAR India',
+    'Paa Solar Rooftop Solutions',
+    'Paa Solar Products',
+    'Paa Solar Projects',
+    'Paa Solar Contact',
     'Solar EPC Company India',
     'TOPCon Solar Panels',
-    'HJT Solar Panels',
+    'HJT Solar Modules',
     'Mono Bifacial Solar Modules',
     'Smart Solar Inverters',
-    'LiFePO4 Solar Battery',
+    'LiFePO4 Solar Battery Storage',
     'PM-KUSUM Solar Scheme',
     'PM-KUSUM BESS',
-    'PM Surya Ghar Yojana',
-    'Commercial Rooftop Solar',
-    'Industrial Solar Projects',
+    'PM Surya Ghar Muft Bijli Yojana',
+    'Commercial Rooftop Solar EPC',
+    'Industrial Solar Energy Projects',
     'Solar Panel Export India',
     'EKCHAKRA GROUP',
   ],
@@ -49,13 +61,15 @@ export function constructMetadata({
   noIndex = false,
 }: ConstructMetadataOptions = {}): Metadata {
   const pageTitle = title
-    ? `${title} | PAA SOLAR - EKCHAKRA GROUP`
-    : 'PAA SOLAR | Leading Solar EPC Company | C&I, PM-KUSUM & TOPCon Solar';
+    ? `${title} | PAA SOLAR™ - EKCHAKRA GROUP`
+    : 'PAA SOLAR™ | Official Website | India\'s Premier Solar EPC Company';
 
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   const canonicalUrl = `${SITE_URL}/${locale}${cleanPath === '/' ? '' : cleanPath}`;
 
-  const languageAlternates: Record<string, string> = {};
+  const languageAlternates: Record<string, string> = {
+    'x-default': `${SITE_URL}/en${cleanPath === '/' ? '' : cleanPath}`,
+  };
   SUPPORTED_LOCALES.forEach((loc) => {
     languageAlternates[loc] = `${SITE_URL}/${loc}${cleanPath === '/' ? '' : cleanPath}`;
   });
@@ -70,6 +84,7 @@ export function constructMetadata({
     authors: [{ name: 'PAA SOLAR Engineering Team', url: SITE_URL }],
     creator: 'PAA SOLAR • EKCHAKRA GROUP',
     publisher: 'PAA SOLAR',
+    category: 'Energy & Utility / Solar EPC',
     alternates: {
       canonical: canonicalUrl,
       languages: languageAlternates,
@@ -84,7 +99,7 @@ export function constructMetadata({
           url: fullImageUrl,
           width: 1200,
           height: 630,
-          alt: `${title || 'PAA SOLAR'} - Solar Infrastructure & Energy Solutions`,
+          alt: `${title || 'PAA SOLAR'} - Official Solar EPC & Clean Energy Solutions`,
         },
       ],
       locale,
@@ -95,6 +110,8 @@ export function constructMetadata({
       title: pageTitle,
       description,
       images: [fullImageUrl],
+      creator: '@paasolar',
+      site: '@paasolar',
     },
     robots: noIndex
       ? {
@@ -112,6 +129,7 @@ export function constructMetadata({
       : {
           index: true,
           follow: true,
+          nocache: false,
           googleBot: {
             index: true,
             follow: true,
@@ -122,10 +140,11 @@ export function constructMetadata({
         },
     icons: {
       icon: [
+        { url: '/paa_solar_logo.svg', type: 'image/svg+xml' },
         { url: '/logo_transparent.png', type: 'image/png' },
         { url: '/favicon.ico', type: 'image/x-icon' },
       ],
-      shortcut: ['/logo_transparent.png'],
+      shortcut: ['/paa_solar_logo.svg'],
       apple: [{ url: '/logo_transparent.png', type: 'image/png' }],
     },
   };
