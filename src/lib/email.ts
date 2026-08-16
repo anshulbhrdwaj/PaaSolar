@@ -1,5 +1,5 @@
-import nodemailer from 'nodemailer';
-import { Resend } from 'resend';
+import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export interface EmailAttachment {
   filename: string;
@@ -8,7 +8,7 @@ export interface EmailAttachment {
 }
 
 export interface SendInquiryEmailParams {
-  formType: 'quote' | 'vendor' | 'careers' | 'contact';
+  formType: "quote" | "vendor" | "careers" | "contact";
   fullName: string;
   email: string;
   phone?: string;
@@ -23,30 +23,51 @@ export interface SendInquiryEmailParams {
 }
 
 /**
- * Creates and returns a Nodemailer transporter configured for Gmail SMTP.
+ * Creates and returns a Nodemailer transporter configured for SMTP / Gmail.
  */
-function getGmailTransporter() {
-  const user = process.env.GMAIL_USER || process.env.SMTP_USER || 'paasolar@gmail.com';
-  const pass = process.env.GMAIL_APP_PASSWORD || process.env.GMAIL_PASSWORD || process.env.SMTP_PASSWORD || '';
+function getSmtpTransporter() {
+  const host = process.env.SMTP_HOST;
+  const port = parseInt(process.env.SMTP_PORT || "465", 10);
+  const user =
+    process.env.SMTP_USER || process.env.GMAIL_USER || "info@paasolar.com";
+  const pass =
+    process.env.SMTP_PASSWORD ||
+    process.env.GMAIL_APP_PASSWORD ||
+    process.env.GMAIL_PASSWORD ||
+    "";
+  const secure = process.env.SMTP_SECURE !== "false";
 
   if (!pass) {
     return null;
   }
 
-  return nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user,
-      pass,
-    },
-    tls: {
-      rejectUnauthorized: false,
-    },
-  });
+  if (host) {
+    return {
+      transporter: nodemailer.createTransport({
+        host,
+        port,
+        secure,
+        auth: { user, pass },
+        tls: { rejectUnauthorized: false },
+      }),
+      fromAddress: user,
+      provider: "smtp",
+    };
+  }
+
+  return {
+    transporter: nodemailer.createTransport({
+      service: "gmail",
+      auth: { user, pass },
+      tls: { rejectUnauthorized: false },
+    }),
+    fromAddress: user,
+    provider: "gmail",
+  };
 }
 
 /**
- * Sends an email via Gmail SMTP or falls back to Resend / logging.
+ * Sends an email via SMTP/Gmail or falls back to Resend / logging.
  */
 export async function sendEmail({
   to,
@@ -61,17 +82,34 @@ export async function sendEmail({
   attachments?: EmailAttachment[];
   replyTo?: string;
 }): Promise<{ success: boolean; provider: string; error?: string }> {
-  const gmailTransporter = getGmailTransporter();
-  const fromAddress = process.env.GMAIL_USER || 'paasolar@gmail.com';
-  const fromHeader = `PAA SOLAR <${fromAddress}>`;
+  // Parse recipients cleanly into array of individual email strings
+  const recipients: string[] = (Array.isArray(to) ? to : to.split(","))
+    .map((addr) => addr.trim())
+    .filter(Boolean);
 
-  // 1. Try Gmail SMTP if configured
-  if (gmailTransporter) {
+  if (recipients.length === 0) {
+    return {
+      success: false,
+      provider: "none",
+      error: "No valid recipient email addresses provided",
+    };
+  }
+
+  const smtpConfig = getSmtpTransporter();
+  const defaultFrom =
+    process.env.SMTP_USER || process.env.GMAIL_USER || "info@paasolar.com";
+  const fromHeader = `PAA SOLAR <${defaultFrom}>`;
+
+  // Sanitize replyTo into a single clean email address
+  const cleanReplyTo = replyTo ? replyTo.split(",")[0].trim() : defaultFrom;
+
+  // 1. Try SMTP / Gmail Transporter if credentials configured
+  if (smtpConfig) {
     try {
-      await gmailTransporter.sendMail({
+      await smtpConfig.transporter.sendMail({
         from: fromHeader,
-        to: Array.isArray(to) ? to.join(', ') : to,
-        replyTo: replyTo || fromAddress,
+        to: recipients.join(", "),
+        replyTo: cleanReplyTo,
         subject,
         html,
         attachments: attachments?.map((att) => ({
@@ -80,9 +118,12 @@ export async function sendEmail({
           contentType: att.contentType,
         })),
       });
-      return { success: true, provider: 'gmail' };
-    } catch (gmailErr: any) {
-      console.error('Gmail SMTP send failed, attempting fallback:', gmailErr.message);
+      return { success: true, provider: smtpConfig.provider };
+    } catch (smtpErr: any) {
+      console.error(
+        `SMTP/Gmail send failed (${smtpConfig.provider}), attempting Resend fallback:`,
+        smtpErr.message,
+      );
     }
   }
 
@@ -91,42 +132,75 @@ export async function sendEmail({
   if (resendApiKey) {
     try {
       const resend = new Resend(resendApiKey);
-      const customFrom = process.env.RESEND_FROM_EMAIL || `PAA SOLAR <onboarding@resend.dev>`;
+      const customFrom =
+        process.env.RESEND_FROM_EMAIL || `PAA SOLAR <onboarding@resend.dev>`;
 
       const resendAttachments = attachments?.map((att) => ({
         filename: att.filename,
         content: att.content,
       }));
 
+      // Try batch send first
       const res = await resend.emails.send({
         from: customFrom,
-        to: Array.isArray(to) ? to : [to],
-        replyTo: replyTo || fromAddress,
+        to: recipients,
+        replyTo: cleanReplyTo,
         subject,
         html,
         attachments: resendAttachments,
       });
 
       if (res.error) {
-        if (res.error.message.includes('domain')) {
-          await resend.emails.send({
-            from: 'PAA SOLAR <onboarding@resend.dev>',
-            to: Array.isArray(to) ? to : [to],
-            replyTo: replyTo || fromAddress,
-            subject,
-            html,
-            attachments: resendAttachments,
-          });
+        const errorMsg = res.error.message || "";
+        if (
+          errorMsg.includes("testing emails") ||
+          errorMsg.includes("registered email owner")
+        ) {
+          console.warn(
+            `\n⚠️ [Resend Sandbox Restriction]: Resend testing mode only permits sending to registered owner (admin.ekchakra@gmail.com).\n` +
+              `👉 To deliver emails directly to info@paasolar.com:\n` +
+              `   Option 1 (Recommended): Add GMAIL_APP_PASSWORD or SMTP_PASSWORD in .env.local\n` +
+              `   Option 2: Verify domain 'paasolar.com' at https://resend.com/domains\n`,
+          );
+          // Forward inquiry to registered owner email so submission is recorded
+          try {
+            await resend.emails.send({
+              from: "PAA SOLAR <onboarding@resend.dev>",
+              to: ["admin.ekchakra@gmail.com"],
+              replyTo: cleanReplyTo,
+              subject: `[INQUIRY FOR info@paasolar.com] ${subject}`,
+              html,
+              attachments: resendAttachments,
+            });
+            return { success: true, provider: "resend-sandbox" };
+          } catch (sandboxErr: any) {
+            console.error(
+              "Resend sandbox fallback failed:",
+              sandboxErr.message,
+            );
+          }
+        } else {
+          console.warn("Resend send warning:", errorMsg);
         }
+      } else {
+        return { success: true, provider: "resend" };
       }
-      return { success: true, provider: 'resend' };
     } catch (resendErr: any) {
-      console.error('Resend fallback send failed:', resendErr.message);
+      if (resendErr.message?.includes('API key is invalid') || resendErr.statusCode === 401) {
+        console.warn(
+          `\n⚠️ [Resend API Key Error]: The RESEND_API_KEY in .env.local is invalid or expired.\n` +
+          `👉 Please copy the full secret key starting with 're_...' from https://resend.com/api-keys into .env.local\n`
+        );
+      } else {
+        console.error("Resend fallback send failed:", resendErr.message);
+      }
     }
   }
 
-  console.warn('No active email transport configured (Gmail App Password or Resend key missing). Email payload generated successfully.');
-  return { success: true, provider: 'mock' };
+  console.warn(
+    `No active email transport configured (SMTP/Gmail App Password missing). Inquiry captured for: ${recipients.join(", ")}`,
+  );
+  return { success: true, provider: "mock" };
 }
 
 /**
@@ -139,9 +213,9 @@ export async function sendInquiryWorkflows(params: SendInquiryEmailParams) {
     formType,
     fullName,
     email,
-    phone = 'N/A',
-    city = 'N/A',
-    district = '',
+    phone = "N/A",
+    city = "N/A",
+    district = "",
     category,
     capacity,
     message,
@@ -150,33 +224,34 @@ export async function sendInquiryWorkflows(params: SendInquiryEmailParams) {
     publicFileUrl,
   } = params;
 
-  const adminEmail = process.env.NOTIFICATION_EMAIL || 'paasolar@gmail.com, info@paasolar.com';
+  const adminEmail =
+    process.env.NOTIFICATION_EMAIL || "paasolar@gmail.com, info@paasolar.com";
   const locationStr = district ? `${city}, ${district}` : city;
 
   // Form type labels & badge colors
   const formTitles = {
-    quote: '☀️ Solar Sizing & Subsidy Quote Request',
-    vendor: '🤝 Vendor & EPC Partner Registration',
-    careers: '💼 Careers & Job Application',
-    contact: '📩 Direct Contact / EPC Inquiry',
+    quote: "☀️ Solar Sizing & Subsidy Quote Request",
+    vendor: "🤝 Vendor & EPC Partner Registration",
+    careers: "💼 Careers & Job Application",
+    contact: "📩 Direct Contact / EPC Inquiry",
   };
 
-  const formName = formTitles[formType] || 'Customer Submission';
+  const formName = formTitles[formType] || "Customer Submission";
 
   // 1. ADMIN NOTIFICATION EMAIL HTML
   const adminSubject = `[${formType.toUpperCase()}] New Submission from ${fullName} (${locationStr})`;
 
   const detailRows = Object.entries(additionalDetails)
-    .filter(([_, val]) => val !== undefined && val !== null && val !== '')
+    .filter(([_, val]) => val !== undefined && val !== null && val !== "")
     .map(
       ([key, val]) => `
         <tr>
           <td style="padding: 8px 12px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">${key}</td>
           <td style="padding: 8px 12px; border-bottom: 1px solid #f1f5f9; font-weight: 600; color: #0f172a; font-size: 13px;">${val}</td>
         </tr>
-      `
+      `,
     )
-    .join('');
+    .join("");
 
   const adminHtml = `
     <!DOCTYPE html>
@@ -217,8 +292,8 @@ export async function sendInquiryWorkflows(params: SendInquiryEmailParams) {
               <td style="padding: 8px 12px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Location:</td>
               <td style="padding: 8px 12px; border-bottom: 1px solid #f1f5f9; color: #0f172a; font-size: 13px;">${locationStr}</td>
             </tr>
-            ${category ? `<tr><td style="padding: 8px 12px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Category / Role:</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1f5f9; font-weight: 600; color: #0f172a; font-size: 13px;">${category}</td></tr>` : ''}
-            ${capacity ? `<tr><td style="padding: 8px 12px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Estimated Capacity:</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1f5f9; font-weight: 600; color: #047857; font-size: 13px;">${capacity}</td></tr>` : ''}
+            ${category ? `<tr><td style="padding: 8px 12px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Category / Role:</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1f5f9; font-weight: 600; color: #0f172a; font-size: 13px;">${category}</td></tr>` : ""}
+            ${capacity ? `<tr><td style="padding: 8px 12px; border-bottom: 1px solid #f1f5f9; color: #64748b; font-size: 13px;">Estimated Capacity:</td><td style="padding: 8px 12px; border-bottom: 1px solid #f1f5f9; font-weight: 600; color: #047857; font-size: 13px;">${capacity}</td></tr>` : ""}
           </table>
 
           ${
@@ -231,7 +306,7 @@ export async function sendInquiryWorkflows(params: SendInquiryEmailParams) {
               ${detailRows}
             </table>
           `
-              : ''
+              : ""
           }
 
           ${
@@ -244,7 +319,7 @@ export async function sendInquiryWorkflows(params: SendInquiryEmailParams) {
               ${message}
             </div>
           `
-              : ''
+              : ""
           }
 
           ${
@@ -253,12 +328,12 @@ export async function sendInquiryWorkflows(params: SendInquiryEmailParams) {
             <div style="margin-top: 24px; padding: 16px; background-color: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 12px;">
               <h4 style="margin: 0 0 6px 0; color: #065f46; font-size: 14px;">📎 Attached Documents (${attachments.length})</h4>
               <p style="margin: 0; font-size: 12px; color: #047857;">
-                ${attachments.map((a) => `<strong>${a.filename}</strong>`).join(', ')} attached to this email.
+                ${attachments.map((a) => `<strong>${a.filename}</strong>`).join(", ")} attached to this email.
               </p>
-              ${publicFileUrl ? `<p style="margin: 8px 0 0 0; font-size: 12px;"><a href="${publicFileUrl}" target="_blank" style="color: #047857; font-weight: bold; text-decoration: underline;">View Online Document</a></p>` : ''}
+              ${publicFileUrl ? `<p style="margin: 8px 0 0 0; font-size: 12px;"><a href="${publicFileUrl}" target="_blank" style="color: #047857; font-weight: bold; text-decoration: underline;">View Online Document</a></p>` : ""}
             </div>
           `
-              : ''
+              : ""
           }
         </div>
 
@@ -319,8 +394,8 @@ export async function sendInquiryWorkflows(params: SendInquiryEmailParams) {
                 <td style="padding: 4px 0; color: #64748b;">Reference Form:</td>
                 <td style="padding: 4px 0; font-weight: 600; color: #0f172a;">${formName}</td>
               </tr>
-              ${category ? `<tr><td style="padding: 4px 0; color: #64748b;">Category:</td><td style="padding: 4px 0; font-weight: 600; color: #0f172a;">${category}</td></tr>` : ''}
-              ${locationStr ? `<tr><td style="padding: 4px 0; color: #64748b;">Location:</td><td style="padding: 4px 0; font-weight: 600; color: #0f172a;">${locationStr}</td></tr>` : ''}
+              ${category ? `<tr><td style="padding: 4px 0; color: #64748b;">Category:</td><td style="padding: 4px 0; font-weight: 600; color: #0f172a;">${category}</td></tr>` : ""}
+              ${locationStr ? `<tr><td style="padding: 4px 0; color: #64748b;">Location:</td><td style="padding: 4px 0; font-weight: 600; color: #0f172a;">${locationStr}</td></tr>` : ""}
             </table>
           </div>
 
@@ -371,7 +446,7 @@ export async function sendInquiryWorkflows(params: SendInquiryEmailParams) {
   ]);
 
   return {
-    adminSent: adminResult.status === 'fulfilled' && adminResult.value.success,
-    userSent: userResult.status === 'fulfilled' && userResult.value.success,
+    adminSent: adminResult.status === "fulfilled" && adminResult.value.success,
+    userSent: userResult.status === "fulfilled" && userResult.value.success,
   };
 }

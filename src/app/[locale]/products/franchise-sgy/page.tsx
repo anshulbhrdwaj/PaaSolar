@@ -76,6 +76,7 @@ export default function FranchiseSgyPage() {
                   src="/products/group.jpg"
                   alt="Complete PM Surya Ghar Solar Kit & Equipment Group"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 500px"
                   className="object-cover rounded-xl group-hover:scale-105 transition-transform duration-500"
                   priority
                 />

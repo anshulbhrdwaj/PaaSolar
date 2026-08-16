@@ -89,6 +89,7 @@ export function ProductsGrid() {
                       src="/products/group.jpg"
                       alt="PM SGY Complete Solar Kit Group Equipment"
                       fill
+                      sizes="(max-width: 1024px) 100vw, 400px"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
