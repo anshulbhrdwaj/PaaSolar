@@ -133,7 +133,7 @@ export function WhySolar() {
             onMouseEnter={() => setIsAutoRotating(false)}
             onMouseLeave={() => setIsAutoRotating(true)}
           >
-            <div className="relative w-[270px] h-[270px] sm:w-[360px] sm:h-[360px] md:w-[420px] md:h-[420px] flex items-center justify-center">
+            <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[320px] lg:h-[320px] xl:w-[400px] xl:h-[400px] flex items-center justify-center">
               {/* Outer Orbit Rings */}
               <div className="absolute inset-0 rounded-full border border-dashed border-emerald-500/30 animate-[spin_40s_linear_infinite]" />
               <div className="absolute inset-4 sm:inset-6 rounded-full border border-line/60" />
@@ -163,7 +163,7 @@ export function WhySolar() {
                 // Node 3 (Left): y = 0, x = -r
                 const positionClasses = [
                   '-top-4 sm:-top-5 left-1/2 -translate-x-1/2', // Top
-                  '-right-4 sm:-right-5 top-1/2 -translate-y-1/2', // Right
+                  '-right-4  sm:-right-5 top-1/2 -translate-y-1/2', // Right
                   '-bottom-4 sm:-bottom-5 left-1/2 -translate-x-1/2', // Bottom
                   '-left-4 sm:-left-5 top-1/2 -translate-y-1/2', // Left
                 ];
@@ -186,16 +186,16 @@ export function WhySolar() {
                   >
                     {node.icon}
 
-                    {/* Node Badge - Cleanly positioned inside orbit bounds */}
+                    {/* Node Badge - Positioned safely within orbit bounds */}
                     <span
                       className={`hidden sm:inline-block absolute whitespace-nowrap text-[10px] sm:text-[11px] font-bold px-2 py-0.5 rounded-full border transition-all duration-300 pointer-events-none ${
                         idx === 0
                           ? '-top-7 left-1/2 -translate-x-1/2'
                           : idx === 1
-                          ? 'left-full ml-2 top-1/2 -translate-y-1/2'
+                          ? '-bottom-6 left-1/2 -translate-x-1/2 xl:left-full xl:ml-2 xl:top-1/2 xl:-translate-y-1/2 xl:bottom-auto'
                           : idx === 2
                           ? '-bottom-7 left-1/2 -translate-x-1/2'
-                          : 'right-full mr-2 top-1/2 -translate-y-1/2'
+                          : '-bottom-6 left-1/2 -translate-x-1/2 xl:right-full xl:mr-2 xl:top-1/2 xl:-translate-y-1/2 xl:bottom-auto'
                       } ${
                         isActive
                           ? 'bg-emerald-500 text-white border-emerald-400 shadow-md scale-105 opacity-100 z-40'

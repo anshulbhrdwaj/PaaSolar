@@ -509,7 +509,7 @@ export function Navbar() {
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-global-translator'))}
             data-cursor="pointer"
-            className="flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full border border-line hover:border-accent-solar bg-bg-secondary text-xs font-bold text-text-primary hover:text-accent-solar transition-all duration-300 shadow-sm group shrink-0"
+            className="hidden sm:flex lg:hidden xl:flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full border border-line hover:border-accent-solar bg-bg-secondary text-xs font-bold text-text-primary hover:text-accent-solar transition-all duration-300 shadow-sm group shrink-0"
             aria-label="Translate Website into Any Language"
           >
             <Globe className="w-3.5 h-3.5 text-accent-solar group-hover:rotate-45 transition-transform duration-300" />
