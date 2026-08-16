@@ -719,7 +719,7 @@ export default function AdminQueriesPage() {
                 <span>Email Customer</span>
               </a>
               <a
-                href={`https://wa.me/?text=Hello%20${encodeURIComponent(selectedQuery.fullName)}`}
+                href={`https://wa.me/${selectedQuery.phone.replace(/[^0-9]/g, '')}?text=Hello%20${encodeURIComponent(selectedQuery.fullName)}%2C%20this%20is%20PAA%20SOLAR%20Engineering%20Desk.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 py-3 rounded-xl bg-[#25D366]/10 border border-[#25D366]/30 text-center text-xs font-bold text-[#25D366] hover:bg-[#25D366] hover:text-white transition-all flex items-center justify-center gap-2"

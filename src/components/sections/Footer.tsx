@@ -28,7 +28,10 @@ export function Footer() {
             <div className="flex flex-wrap items-center gap-4">
               <div className="flex items-center gap-2.5 text-xs md:text-sm font-bold text-text-primary">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
-                <span>HEADQUARTERS: JAIPUR</span>
+                <span>JAIPUR HQ:</span>
+                <a href="tel:+917357169795" className="hover:text-emerald-500 transition-colors">
+                  +91-7357-169-795
+                </a>
               </div>
 
               <button
@@ -44,7 +47,7 @@ export function Footer() {
             {/* Social Media & WhatsApp Quick Links */}
             <div className="flex items-center gap-3 pt-2">
               <a
-                href="https://wa.me/?text=Hello%20Paa%20Solar"
+                href="https://wa.me/917357169795?text=Hello%20Paa%20Solar"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Contact on WhatsApp"

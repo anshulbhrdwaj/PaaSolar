@@ -394,7 +394,9 @@ export function ContactForm() {
 
             <div className="flex items-center gap-3">
               <Phone className="w-5 h-5 text-emerald-500 shrink-0" />
-              <span>+91 93119XXXXX</span>
+              <a href="tel:+917357169795" className="hover:text-emerald-500 transition-colors font-bold">
+                +91-7357-169-795
+              </a>
             </div>
 
             <div className="flex items-start gap-3">
@@ -417,7 +419,7 @@ export function ContactForm() {
 
           <div className="mt-8 pt-6 border-t border-line/60 grid grid-cols-1 sm:grid-cols-2 gap-3">
             <a
-              href="https://wa.me/?text=Hello%20Paa%20Solar"
+              href="https://wa.me/917357169795?text=Hello%20Paa%20Solar"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 rounded-2xl bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#25D366] hover:text-white transition-all shadow-sm"

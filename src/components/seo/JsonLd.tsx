@@ -40,9 +40,9 @@ export function JsonLd() {
     contactPoint: [
       {
         '@type': 'ContactPoint',
-        telephone: '+91-9311922134',
+        telephone: '+91-7357169795',
         contactType: 'customer service',
-        email: 'contact@paasolar.com',
+        email: 'info@paasolar.com',
         availableLanguage: [
           'English',
           'Hindi',
@@ -59,7 +59,7 @@ export function JsonLd() {
       },
     ],
     sameAs: [
-      'https://wa.me/919311922134',
+      'https://wa.me/917357169795',
       'https://linkedin.com/company/paasolar',
       'https://twitter.com/paasolar',
       'https://instagram.com/paasolar',
@@ -93,7 +93,7 @@ export function JsonLd() {
     image: 'https://paasolar.com/og-image.jpg',
     '@id': 'https://paasolar.com/#business',
     url: 'https://paasolar.com',
-    telephone: '+91-9311922134',
+    telephone: '+91-7357169795',
     priceRange: '₹₹₹',
     address: {
       '@type': 'PostalAddress',

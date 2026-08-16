@@ -103,12 +103,12 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-3.5 sm:px-6 flex items-center justify-between gap-2 sm:gap-4">
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-2 shrink-0 group hover:scale-105 transition-transform duration-300 mr-2 sm:mr-4 lg:mr-8 xl:mr-12">
+        <Link href="/" className="flex items-center gap-2 shrink-0 group hover:scale-105 transition-transform duration-300 mr-2 lg:mr-4 xl:mr-8">
           <PaaSolarLogo size="md" showTagline={false} />
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6 text-xs xl:text-sm font-bold text-text-primary whitespace-nowrap">
+        <nav className="hidden lg:flex items-center gap-2.5 xl:gap-5 text-xs xl:text-sm font-bold text-text-primary whitespace-nowrap">
           <Link
             href="/about-us"
             className={`whitespace-nowrap hover:text-accent-solar transition-colors duration-200 font-bold ${
@@ -402,7 +402,7 @@ export function Navbar() {
               pathname === '/calculator' ? 'text-accent-solar' : 'text-text-primary'
             }`}
           >
-            Get Full Quotation
+            Calculator
           </Link>
 
           <Link
@@ -504,17 +504,17 @@ export function Navbar() {
         </nav>
 
         {/* Right Utility Buttons */}
-        <div className="hidden lg:flex items-center gap-2.5 xl:gap-3.5 shrink-0">
+        <div className="hidden lg:flex items-center gap-2 xl:gap-3.5 shrink-0 ml-auto">
           {/* Global Website Translator Trigger */}
           <button
             onClick={() => window.dispatchEvent(new CustomEvent('open-global-translator'))}
             data-cursor="pointer"
-            className="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-line hover:border-accent-solar bg-bg-secondary text-xs font-bold text-text-primary hover:text-accent-solar transition-all duration-300 shadow-sm group"
+            className="flex items-center gap-1.5 sm:gap-2 px-3 py-1.5 rounded-full border border-line hover:border-accent-solar bg-bg-secondary text-xs font-bold text-text-primary hover:text-accent-solar transition-all duration-300 shadow-sm group shrink-0"
             aria-label="Translate Website into Any Language"
           >
             <Globe className="w-3.5 h-3.5 text-accent-solar group-hover:rotate-45 transition-transform duration-300" />
             <span className="font-mono text-xs tracking-wider uppercase font-bold">Translate</span>
-            <span className="text-[10px] text-accent-solar font-bold bg-accent-solar/15 px-1.5 py-0.5 rounded-md border border-accent-solar/20">
+            <span className="hidden xl:inline-block text-[10px] text-accent-solar font-bold bg-accent-solar/15 px-1.5 py-0.5 rounded-md border border-accent-solar/20">
               130+
             </span>
           </button>
@@ -525,7 +525,7 @@ export function Navbar() {
               onClick={toggleTheme}
               data-cursor="pointer"
               aria-label={t('themeToggle')}
-              className="p-2 rounded-full border border-line hover:border-accent-solar bg-bg-secondary text-text-primary hover:text-accent-solar transition-all duration-300 relative overflow-hidden shadow-sm"
+              className="p-2 rounded-full border border-line hover:border-accent-solar bg-bg-secondary text-text-primary hover:text-accent-solar transition-all duration-300 relative overflow-hidden shadow-sm shrink-0"
             >
               <div className="transition-transform duration-500 rotate-0 dark:rotate-180">
                 {isDark ? (
@@ -541,10 +541,10 @@ export function Navbar() {
           <Link
             href="/get-a-quote"
             data-cursor="explore"
-            className="relative group overflow-hidden px-4 xl:px-5 py-2 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-md hover:shadow-lg transition-all duration-300 shrink-0"
+            className="relative group overflow-hidden px-3.5 xl:px-5 py-2 rounded-full bg-accent-solar text-white text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-md hover:shadow-lg transition-all duration-300 shrink-0 whitespace-nowrap"
           >
-            <span className="relative z-10">{t('getQuote')}</span>
-            <ArrowUpRight className="w-3.5 h-3.5 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            <span className="relative z-10 whitespace-nowrap">{t('getQuote')}</span>
+            <ArrowUpRight className="w-3.5 h-3.5 shrink-0 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             <div className="absolute inset-0 bg-accent-sky translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
           </Link>
         </div>
