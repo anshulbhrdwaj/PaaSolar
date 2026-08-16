@@ -13,6 +13,7 @@ import { WhyUsSection } from '@/components/sections/WhyUsSection';
 import { CaseStudies } from '@/components/sections/CaseStudies';
 import { SolarCalculator } from '@/components/sections/SolarCalculator';
 import { TestimonialsMarquee } from '@/components/sections/TestimonialsMarquee';
+import { VideoShowcase } from '@/components/sections/VideoShowcase';
 import { FaqSection } from '@/components/sections/FaqSection';
 import { Footer } from '@/components/sections/Footer';
 
@@ -68,6 +69,7 @@ export default function HomePage() {
       <CaseStudies />
       <TestimonialsMarquee />
       <SolarCalculator />
+      <VideoShowcase />
       <FaqSection />
       <Footer />
     </main>

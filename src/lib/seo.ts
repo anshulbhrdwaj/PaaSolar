@@ -140,12 +140,11 @@ export function constructMetadata({
         },
     icons: {
       icon: [
-        { url: '/paa_solar_logo.svg', type: 'image/svg+xml' },
-        { url: '/logo_transparent.png', type: 'image/png' },
-        { url: '/favicon.ico', type: 'image/x-icon' },
+        { url: '/icon.svg', type: 'image/svg+xml' },
+        { url: '/favicon.svg', type: 'image/svg+xml' },
       ],
-      shortcut: ['/paa_solar_logo.svg'],
-      apple: [{ url: '/logo_transparent.png', type: 'image/png' }],
+      shortcut: ['/icon.svg'],
+      apple: [{ url: '/icon.svg', type: 'image/svg+xml' }],
     },
   };
 }
