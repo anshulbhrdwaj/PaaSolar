@@ -67,7 +67,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/paa-solar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -78,7 +78,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/paasolar"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Twitter X"
@@ -89,7 +89,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/paasolar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -100,7 +100,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@PaaSolar"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"

@@ -60,10 +60,10 @@ export function JsonLd() {
     ],
     sameAs: [
       'https://wa.me/917357169795',
-      'https://linkedin.com/company/paasolar',
-      'https://twitter.com/paasolar',
-      'https://instagram.com/paasolar',
-      'https://youtube.com/paasolar',
+      'https://www.linkedin.com/in/paa-solar/',
+      'https://x.com/paasolar',
+      'https://www.instagram.com/paasolar/',
+      'https://www.youtube.com/@PaaSolar',
     ],
     subOrganization: [
       { '@type': 'Organization', name: 'EKCHAKRA International Pvt. Ltd.' },
