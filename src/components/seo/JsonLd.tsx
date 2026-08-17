@@ -60,6 +60,7 @@ export function JsonLd() {
     ],
     sameAs: [
       'https://wa.me/917357169795',
+      'https://www.facebook.com/profile.php?id=61593648471171',
       'https://www.linkedin.com/in/paa-solar/',
       'https://x.com/paasolar',
       'https://www.instagram.com/paasolar/',

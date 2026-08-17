@@ -56,7 +56,7 @@ export function Footer() {
                 <MessageCircle className="w-4 h-4 fill-[#25D366] stroke-none" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61593648471171"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
