@@ -30,10 +30,13 @@ export function constructMetadata({
   path = '',
   locale = 'en',
   keywords = [
+    'paa solar',
+    'paasolar',
     'PAA SOLAR',
-    'Paa Solar',
+    'PAA SOLAR PRIVATE LIMITED',
     'Paa Solar EPC',
     'PAA SOLAR Official Website',
+    'paasolar.com',
     'Paa Solar Energy',
     'Paa Solar Panels',
     'Paa Solar Inverters',
@@ -43,26 +46,32 @@ export function constructMetadata({
     'Paa Solar Products',
     'Paa Solar Projects',
     'Paa Solar Contact',
+    'Paa Solar Calculator',
     'Solar EPC Company India',
-    'TOPCon Solar Panels',
-    'HJT Solar Modules',
-    'Mono Bifacial Solar Modules',
-    'Smart Solar Inverters',
+    'Solar EPC Company Jaipur Rajasthan',
+    'Best Solar Company in India',
+    'TOPCon Solar Panels 585W',
+    'N-Type TOPCon Solar Modules',
+    'DCR Subsidy Solar Panels India',
+    'HJT Bifacial Solar Panels',
+    'Smart Hybrid Solar Inverter',
+    'On-Grid Net Metering Inverter',
     'LiFePO4 Solar Battery Storage',
-    'PM-KUSUM Solar Scheme',
-    'PM-KUSUM BESS',
-    'PM Surya Ghar Muft Bijli Yojana',
-    'Commercial Rooftop Solar EPC',
-    'Industrial Solar Energy Projects',
-    'Solar Panel Export India',
+    'Containerized BESS Solar System',
+    'PM-KUSUM Solar Scheme Component A B C',
+    'PM-KUSUM BESS Solar Parks',
+    'PM Surya Ghar Muft Bijli Yojana Franchise',
+    'Commercial Rooftop Solar EPC Installer',
+    'Industrial Solar Park EPC Contractor',
+    'Solar Equipment Exporter India',
     'EKCHAKRA GROUP',
   ],
   image = '/og-image.jpg',
   noIndex = false,
 }: ConstructMetadataOptions = {}): Metadata {
   const pageTitle = title
-    ? `${title} | PAA SOLAR™ - EKCHAKRA GROUP`
-    : 'PAA SOLAR™ | Official Website | India\'s Premier Solar EPC Company';
+    ? `${title} | PAA SOLAR™`
+    : 'PAA SOLAR™ | Official Website | Premier Solar EPC & Energy Solutions India';
 
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
   const canonicalUrl = `${SITE_URL}/${locale}${cleanPath === '/' ? '' : cleanPath}`;
@@ -81,10 +90,23 @@ export function constructMetadata({
     title: pageTitle,
     description,
     keywords,
+    applicationName: 'PAA SOLAR',
     authors: [{ name: 'PAA SOLAR Engineering Team', url: SITE_URL }],
     creator: 'PAA SOLAR • EKCHAKRA GROUP',
-    publisher: 'PAA SOLAR',
+    publisher: 'PAA SOLAR PRIVATE LIMITED',
     category: 'Energy & Utility / Solar EPC',
+    formatDetection: {
+      telephone: true,
+      address: true,
+      email: true,
+    },
+    verification: {
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || 'google-site-verification-paasolar',
+      yandex: 'yandex-verification-paasolar',
+      other: {
+        'msvalidate.01': ['msvalidate-paasolar'],
+      },
+    },
     alternates: {
       canonical: canonicalUrl,
       languages: languageAlternates,
@@ -99,7 +121,7 @@ export function constructMetadata({
           url: fullImageUrl,
           width: 1200,
           height: 630,
-          alt: `${title || 'PAA SOLAR'} - Official Solar EPC & Clean Energy Solutions`,
+          alt: `${title || 'PAA SOLAR'} - Premier Solar EPC & Renewable Energy Solutions`,
         },
       ],
       locale,
