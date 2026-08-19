@@ -190,7 +190,7 @@ export function Footer() {
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs md:text-sm font-semibold text-text-primary">
           <p>{t('copyright')}</p>
           <a
-            href="https://auralytics-f6zh-git-main-anshulbhrdwajs-projects.vercel.app"
+            href="https://www.elitempire.in"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-emerald-500 transition-colors flex items-center gap-1.5"
@@ -198,7 +198,7 @@ export function Footer() {
             <span>Designed with</span>
             <span className="text-red-500">❤️</span>
             <span>by</span>
-            <span className="font-bold text-emerald-500 hover:underline underline-offset-4">Auralytics</span>
+            <span className="font-bold text-emerald-500 hover:underline underline-offset-4">Elitempire</span>
           </a>
         </div>
       </div>
