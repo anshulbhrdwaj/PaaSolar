@@ -9,10 +9,10 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --solar: #f97316;
-      --solar-dark: #ea580c;
-      --solar-glow: rgba(249, 115, 22, 0.15);
-      --em: #10b981;
+      --solar: #10b981;
+      --solar-dark: #047857;
+      --solar-glow: rgba(16, 185, 129, 0.2);
+      --em: #34d399;
       --sky: #0ea5e9;
       --gold: #f59e0b;
       --bg: #0a0f0d;
@@ -55,22 +55,22 @@
     .printbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 12px 32px; background: rgba(10, 15, 13, 0.95);
+      padding: 10px 32px; background: rgba(10, 15, 13, 0.95);
       backdrop-filter: blur(20px); border-bottom: 1px solid var(--line2);
     }
-    .printbrand { font-family: 'DM Serif Display', serif; font-size: 18px; color: #fff; }
-    .printbrand span { color: var(--solar); }
+    .printbrand-img { height: 28px; width: auto; object-fit: contain; }
+    .printbrand-text { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--txt2); letter-spacing: 0.05em; }
     .printbtn {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 24px; background: linear-gradient(135deg, var(--solar), var(--solar-dark));
+      padding: 9px 22px; background: linear-gradient(135deg, var(--solar), var(--solar-dark));
       border: none; border-radius: 100px; color: #fff;
       font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 700;
       letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;
-      box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35); transition: transform 0.2s;
+      box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35); transition: transform 0.2s;
     }
     .printbtn:hover { transform: scale(1.04); }
 
-    .cat { padding-top: 54px; }
+    .cat { padding-top: 50px; }
 
     /* Page container setup for A4 ratio */
     .page {
@@ -94,31 +94,27 @@
     }
     .covgrid {
       position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(249, 115, 22, 0.04) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(249, 115, 22, 0.04) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
       background-size: 40px 40px;
     }
     .covglow {
       position: absolute; top: -150px; right: -150px; width: 600px; height: 600px;
-      border-radius: 50%; background: radial-gradient(ellipse, rgba(249, 115, 22, 0.16) 0%, transparent 70%);
+      border-radius: 50%; background: radial-gradient(ellipse, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
     }
     .covglow2 {
       position: absolute; bottom: -100px; left: -100px; width: 450px; height: 450px;
-      border-radius: 50%; background: radial-gradient(ellipse, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+      border-radius: 50%; background: radial-gradient(ellipse, rgba(52, 211, 153, 0.12) 0%, transparent 70%);
     }
     
-    .covcont { position: relative; z-index: 2; padding: 60px 54px 0; }
+    .covcont { position: relative; z-index: 2; padding: 50px 54px 0; }
     
-    .covlogo { display: flex; align-items: center; gap: 16px; margin-bottom: 40px; }
-    .covlogo img { width: 56px; height: 56px; object-fit: contain; }
-    .covbrand { font-family: 'DM Serif Display', serif; font-size: 26px; color: var(--txt); }
-    .covbrand span { color: var(--solar); }
-    .covgroup { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--txt3); letter-spacing: 0.1em; text-transform: uppercase; }
+    .covlogo-img { height: 68px; width: auto; max-width: 380px; object-fit: contain; margin-bottom: 32px; filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.25)); }
 
     .covbadge {
       display: inline-flex; align-items: center; gap: 8px; padding: 6px 16px;
-      border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 100px;
-      background: rgba(249, 115, 22, 0.08); font-family: 'JetBrains Mono', monospace;
+      border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 100px;
+      background: rgba(16, 185, 129, 0.1); font-family: 'JetBrains Mono', monospace;
       font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
       color: var(--solar); margin-bottom: 24px;
     }
@@ -129,12 +125,12 @@
       letter-spacing: -0.03em; color: var(--txt); margin-bottom: 12px;
     }
     .covh1 em {
-      font-style: italic; background: linear-gradient(90deg, var(--solar), #fb923c);
+      font-style: italic; background: linear-gradient(90deg, var(--solar), #34d399);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
     .covyr {
       font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
-      letter-spacing: 0.2em; text-transform: uppercase; color: var(--txt3); margin-bottom: 32px;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--txt3); margin-bottom: 28px;
     }
     .covdiv { width: 70px; height: 3px; background: linear-gradient(90deg, var(--solar), transparent); margin-bottom: 28px; }
     .covdesc { font-size: 14px; color: var(--txt2); max-width: 540px; line-height: 1.7; margin-bottom: 36px; }
@@ -142,7 +138,7 @@
     .covstats {
       display: grid; grid-template-columns: repeat(3, 1fr);
       border: 1px solid var(--line2); border-radius: 16px; overflow: hidden;
-      background: rgba(255, 255, 255, 0.02); margin-bottom: 40px; max-width: 540px;
+      background: rgba(255, 255, 255, 0.02); margin-bottom: 32px; max-width: 540px;
     }
     .covstat { padding: 18px 20px; border-right: 1px solid var(--line2); }
     .covstat:last-child { border-right: none; }
@@ -150,30 +146,30 @@
     .covslab { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--txt3); }
 
     .covfoot {
-      position: relative; z-index: 2; padding: 24px 54px; border-top: 1px solid var(--line);
-      display: flex; align-items: center; justify-content: space-between; background: rgba(10, 15, 13, 0.8);
+      position: relative; z-index: 2; padding: 22px 54px; border-top: 1px solid var(--line);
+      display: flex; align-items: center; justify-content: space-between; background: rgba(10, 15, 13, 0.85);
     }
     .covfootl { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--txt3); text-transform: uppercase; letter-spacing: 0.1em; }
     .covfootr { display: flex; align-items: center; gap: 10px; }
     .covftag {
-      padding: 4px 12px; border: 1px solid var(--line2); border-radius: 100px;
+      padding: 4px 12px; border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 100px;
       font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.08em; color: var(--txt2);
+      text-transform: uppercase; letter-spacing: 0.08em; color: var(--solar);
+      background: rgba(16, 185, 129, 0.06);
     }
 
     /* INNER PAGES COMMON HEADERS & FOOTERS */
     .inner-header {
-      padding: 32px 54px 16px; display: flex; align-items: center; justify-content: space-between;
+      padding: 24px 54px 14px; display: flex; align-items: center; justify-content: space-between;
       border-bottom: 1px solid var(--line);
     }
-    .ih-brand { font-family: 'DM Serif Display', serif; font-size: 18px; color: var(--txt); }
-    .ih-brand span { color: var(--solar); }
+    .ih-logo-img { height: 32px; width: auto; object-fit: contain; }
     .ih-tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.14em; color: var(--solar); }
 
-    .inner-content { padding: 36px 54px; flex-grow: 1; }
+    .inner-content { padding: 30px 54px; flex-grow: 1; }
 
     .inner-footer {
-      padding: 16px 54px; border-top: 1px solid var(--line);
+      padding: 14px 54px; border-top: 1px solid var(--line);
       display: flex; align-items: center; justify-content: space-between;
       font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--txt3); text-transform: uppercase; letter-spacing: 0.1em;
     }
@@ -182,38 +178,38 @@
     .slabel {
       display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 700;
       text-transform: uppercase; letter-spacing: 0.18em; color: var(--solar);
-      border: 1px solid rgba(249, 115, 22, 0.25); background: rgba(249, 115, 22, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.3); background: rgba(16, 185, 129, 0.08);
       padding: 4px 12px; border-radius: 100px; margin-bottom: 10px;
     }
-    .slabel.g { color: var(--em); border-color: rgba(16, 185, 129, 0.25); background: rgba(16, 185, 129, 0.08); }
-    .slabel.s { color: var(--sky); border-color: rgba(14, 165, 233, 0.25); background: rgba(14, 165, 233, 0.08); }
-    .slabel.a { color: var(--gold); border-color: rgba(245, 158, 11, 0.25); background: rgba(245, 158, 11, 0.08); }
+    .slabel.g { color: var(--em); border-color: rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.08); }
+    .slabel.s { color: var(--sky); border-color: rgba(14, 165, 233, 0.3); background: rgba(14, 165, 233, 0.08); }
+    .slabel.a { color: var(--gold); border-color: rgba(245, 158, 11, 0.3); background: rgba(245, 158, 11, 0.08); }
 
-    .sh { font-family: 'DM Serif Display', serif; font-size: 32px; color: var(--txt); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 8px; }
-    .ssub { font-size: 13px; color: var(--txt2); line-height: 1.6; margin-bottom: 24px; max-width: 650px; }
+    .sh { font-family: 'DM Serif Display', serif; font-size: 30px; color: var(--txt); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 6px; }
+    .ssub { font-size: 12px; color: var(--txt2); line-height: 1.5; margin-bottom: 20px; max-width: 680px; }
 
     /* CARDS & TABLES */
     .pcard {
-      background: var(--bg2); border: 1px solid var(--line2); border-radius: 16px;
-      overflow: hidden; margin-bottom: 24px;
+      background: var(--bg2); border: 1px solid var(--line2); border-radius: 14px;
+      overflow: hidden; margin-bottom: 20px;
     }
-    .pchdr { display: grid; grid-template-columns: 200px 1fr; min-height: 180px; }
-    .pcimg { background: #fff; display: flex; align-items: center; justify-content: center; padding: 14px; }
-    .pcimg img { max-width: 100%; max-height: 140px; object-fit: contain; }
-    .pcmeta { padding: 20px 24px; display: flex; flex-direction: column; justify-content: center; }
+    .pchdr { display: grid; grid-template-columns: 190px 1fr; min-height: 165px; }
+    .pcimg { background: #fff; display: flex; align-items: center; justify-content: center; padding: 12px; }
+    .pcimg img { max-width: 100%; max-height: 130px; object-fit: contain; }
+    .pcmeta { padding: 16px 20px; display: flex; flex-direction: column; justify-content: center; }
 
     .pbdg {
       display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 100px;
       font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; width: fit-content;
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; width: fit-content;
     }
-    .bs { background: rgba(249, 115, 22, 0.12); color: var(--solar); border: 1px solid rgba(249, 115, 22, 0.25); }
-    .be { background: rgba(16, 185, 129, 0.12); color: var(--em); border: 1px solid rgba(16, 185, 129, 0.25); }
-    .bk { background: rgba(14, 165, 233, 0.12); color: var(--sky); border: 1px solid rgba(14, 165, 233, 0.25); }
-    .bg { background: rgba(245, 158, 11, 0.12); color: var(--gold); border: 1px solid rgba(245, 158, 11, 0.25); }
+    .bs { background: rgba(16, 185, 129, 0.12); color: var(--solar); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .be { background: rgba(52, 211, 153, 0.12); color: var(--em); border: 1px solid rgba(52, 211, 153, 0.3); }
+    .bk { background: rgba(14, 165, 233, 0.12); color: var(--sky); border: 1px solid rgba(14, 165, 233, 0.3); }
+    .bg { background: rgba(245, 158, 11, 0.12); color: var(--gold); border: 1px solid rgba(245, 158, 11, 0.3); }
 
-    .pname { font-family: 'DM Serif Display', serif; font-size: 20px; color: var(--txt); line-height: 1.2; margin-bottom: 6px; }
-    .pdesc { font-size: 11px; color: var(--txt2); line-height: 1.6; margin-bottom: 12px; }
+    .pname { font-family: 'DM Serif Display', serif; font-size: 19px; color: var(--txt); line-height: 1.2; margin-bottom: 5px; }
+    .pdesc { font-size: 11px; color: var(--txt2); line-height: 1.5; margin-bottom: 10px; }
 
     .pkv { display: flex; gap: 6px; flex-wrap: wrap; }
     .pill {
@@ -225,75 +221,79 @@
     .dot.g { background: var(--em); } .dot.s { background: var(--sky); } .dot.a { background: var(--gold); }
 
     .pspec { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
-    .sc { padding: 10px 18px; border-right: 1px solid var(--line); }
+    .sc { padding: 8px 16px; border-right: 1px solid var(--line); }
     .sc:last-child { border-right: none; }
     .scl { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--txt3); margin-bottom: 2px; }
-    .scv { font-size: 11px; font-weight: 700; color: var(--txt); }
+    .scv { font-size: 10px; font-weight: 700; color: var(--txt); }
     .scv.hs { color: var(--solar); } .scv.he { color: var(--em); } .scv.hk { color: var(--sky); } .scv.ha { color: var(--gold); }
 
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 
     .box {
-      background: var(--bg2); border: 1px solid var(--line2); border-radius: 14px; padding: 18px;
+      background: var(--bg2); border: 1px solid var(--line2); border-radius: 12px; padding: 16px;
     }
-    .boxtitle { font-family: 'DM Serif Display', serif; font-size: 16px; color: var(--txt); margin-bottom: 6px; }
-    .boxdesc { font-size: 11px; color: var(--txt2); line-height: 1.6; }
+    .boxtitle { font-family: 'DM Serif Display', serif; font-size: 16px; color: var(--txt); margin-bottom: 4px; }
+    .boxdesc { font-size: 11px; color: var(--txt2); line-height: 1.5; }
 
     /* TABLE STYLES */
-    .table-custom { width: 100%; border-collapse: collapse; font-size: 11px; margin-top: 10px; }
+    .table-custom { width: 100%; border-collapse: collapse; font-size: 10px; margin-top: 8px; }
     .table-custom th {
-      background: rgba(249, 115, 22, 0.08); color: var(--solar);
+      background: rgba(16, 185, 129, 0.1); color: var(--solar);
       font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 700;
-      text-transform: uppercase; letter-spacing: 0.1em; padding: 8px 12px; text-align: left;
-      border: 1px solid rgba(249, 115, 22, 0.15);
+      text-transform: uppercase; letter-spacing: 0.1em; padding: 7px 10px; text-align: left;
+      border: 1px solid rgba(16, 185, 129, 0.2);
     }
     .table-custom td {
-      padding: 8px 12px; border: 1px solid var(--line); color: var(--txt2); vertical-align: top;
+      padding: 7px 10px; border: 1px solid var(--line); color: var(--txt2); vertical-align: top;
     }
-    .table-custom td:first-child { color: var(--txt); font-weight: 600; background: rgba(255, 255, 255, 0.02); font-size: 10px; }
+    .table-custom td:first-child { color: var(--txt); font-weight: 600; background: rgba(255, 255, 255, 0.02); font-size: 9.5px; }
     .table-custom tr:nth-child(even) td { background: rgba(255, 255, 255, 0.01); }
 
-    /* PROJECT PORTFOLIO CARDS */
-    .prj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    /* PROJECT PORTFOLIO CARDS GRID (Compact layout for multi-project pages) */
+    .prj-grid-6 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .prj-grid-8 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
     .prj-card {
-      background: var(--bg2); border: 1px solid var(--line2); border-radius: 14px; padding: 14px;
+      background: var(--bg2); border: 1px solid var(--line2); border-radius: 12px; padding: 12px;
       display: flex; flex-direction: column; justify-content: space-between; overflow: hidden;
     }
     .prj-img {
-      width: 100%; height: 86px; object-fit: cover; border-radius: 8px; margin-bottom: 10px;
+      width: 100%; height: 78px; object-fit: cover; border-radius: 8px; margin-bottom: 8px;
       border: 1px solid var(--line2);
     }
-    .prj-hdr { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
-    .prj-title { font-family: 'DM Serif Display', serif; font-size: 14px; color: var(--txt); line-height: 1.2; }
-    .prj-loc { font-family: 'JetBrains Mono', monospace; font-size: 8px; font-weight: 600; color: var(--solar); text-transform: uppercase; }
+    .prj-hdr { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; gap: 8px; }
+    .prj-title { font-family: 'DM Serif Display', serif; font-size: 13.5px; color: var(--txt); line-height: 1.2; }
+    .prj-loc { font-family: 'JetBrains Mono', monospace; font-size: 7.5px; font-weight: 600; color: var(--solar); text-transform: uppercase; white-space: nowrap; }
     .prj-metrics {
-      display: flex; gap: 10px; padding: 6px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-      margin: 6px 0;
+      display: flex; gap: 10px; padding: 5px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+      margin: 5px 0;
     }
-    .prj-mval { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700; color: var(--txt); }
-    .prj-mlab { font-family: 'JetBrains Mono', monospace; font-size: 7px; color: var(--txt3); text-transform: uppercase; }
-    .prj-desc { font-size: 10px; color: var(--txt2); line-height: 1.45; }
+    .prj-mval { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 700; color: var(--txt); }
+    .prj-mlab { font-family: 'JetBrains Mono', monospace; font-size: 6.5px; color: var(--txt3); text-transform: uppercase; }
+    .prj-desc { font-size: 9.5px; color: var(--txt2); line-height: 1.4; }
     .prj-tag {
       display: inline-block; padding: 2px 8px; border-radius: 100px; font-family: 'JetBrains Mono', monospace;
-      font-size: 7px; font-weight: 700; text-transform: uppercase; background: rgba(255, 255, 255, 0.04);
-      color: var(--txt3); border: 1px solid var(--line); margin-top: 6px; width: fit-content;
+      font-size: 7px; font-weight: 700; text-transform: uppercase; background: rgba(16, 185, 129, 0.08);
+      color: var(--solar); border: 1px solid rgba(16, 185, 129, 0.25); margin-top: 5px; width: fit-content;
     }
 
     /* PARTNER LOGOS */
-    .partner-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 16px; }
+    .partner-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 14px; }
     .partner-item {
-      background: #ffffff; border-radius: 8px; padding: 10px; display: flex;
-      align-items: center; justify-content: center; height: 44px;
+      background: #ffffff; border-radius: 8px; padding: 8px; display: flex;
+      align-items: center; justify-content: center; height: 40px;
     }
-    .partner-item img { max-width: 100%; max-height: 28px; object-fit: contain; }
+    .partner-item img { max-width: 100%; max-height: 26px; object-fit: contain; }
 
   </style>
 </head>
 <body>
 
 <div class="printbar">
-  <div class="printbrand">PAA <span>SOLAR</span> — Product &amp; Project Catalogue 2026</div>
+  <div style="display: flex; align-items: center; gap: 12px;">
+    <img src="./logo-text.png" alt="PAA SOLAR" class="printbrand-img"/>
+    <span class="printbrand-text">| Product &amp; Project Catalogue 2026</span>
+  </div>
   <button class="printbtn" onclick="window.print()">&#x1F5B6; Save / Print as PDF</button>
 </div>
 
@@ -303,20 +303,14 @@
   <div class="page">
     <div class="cover-bg"></div><div class="covgrid"></div><div class="covglow"></div><div class="covglow2"></div>
     <div class="covcont">
-      <div class="covlogo">
-        <img src="./logo_transparent.png" alt="PAA SOLAR"/>
-        <div>
-          <div class="covbrand">PAA <span>SOLAR</span></div>
-          <div class="covgroup">EKCHAKRA GROUP · Solar EPC Developer</div>
-        </div>
-      </div>
+      <img src="./logo-text.png" alt="PAA SOLAR" class="covlogo-img"/>
       
       <div class="covbadge"><div class="covdot"></div>Turnkey EPC &amp; Equipment Supply</div>
       <h1 class="covh1">Product &amp; Project<br/><em>Catalogue</em></h1>
       <p class="covyr">Edition 2026 · Jaipur, Rajasthan, India</p>
       <div class="covdiv"></div>
       
-      <p class="covdesc">Official catalogue of PAA SOLAR's high-performance N-Type TOPCon modules, smart hybrid inverters, LiFePO4 battery vaults, containerized BESS, PM Surya Ghar franchise kits, and 21+ utility &amp; enterprise project showcase.</p>
+      <p class="covdesc">Official catalogue of PAA SOLAR's high-performance N-Type TOPCon modules, smart hybrid inverters, LiFePO4 battery vaults, containerized BESS, PM Surya Ghar franchise kits, and complete 21+ utility &amp; enterprise project showcase.</p>
       
       <div class="covstats">
         <div class="covstat"><div class="covsval">500+</div><div class="covslab">PM-SGY &amp; Rooftop Kits</div></div>
@@ -337,7 +331,7 @@
   <!-- PAGE 2: EXECUTIVE & EPC OVERVIEW -->
   <div class="page">
     <div class="inner-header">
-      <div class="ih-brand">PAA <span>SOLAR</span></div>
+      <img src="./logo-text.png" alt="PAA SOLAR" class="ih-logo-img"/>
       <div class="ih-tag">Company &amp; EPC Capability</div>
     </div>
     <div class="inner-content">
@@ -345,7 +339,7 @@
       <h2 class="sh">India's Leading Solar EPC Developer</h2>
       <p class="ssub">Headquartered in Jaipur, Rajasthan, PAA SOLAR (EKCHAKRA GROUP) brings over 27+ years of engineering leadership into clean energy infrastructure, providing end-to-end solar development for utility grids, enterprise commercial hubs, and domestic households.</p>
 
-      <div class="grid-2" style="margin-bottom: 24px;">
+      <div class="grid-2" style="margin-bottom: 20px;">
         <div class="box">
           <div class="boxtitle" style="color: var(--solar);">30–40 Year Vision</div>
           <div class="boxdesc">Our projects are engineered with structural wind ratings up to 170 km/h, dual-glass TOPCon anti-degradation, and tier-1 electrical components designed for maximum lifetime yield.</div>
@@ -356,8 +350,8 @@
         </div>
       </div>
 
-      <div class="slabel g" style="margin-top: 10px;">Turnkey EPC Workflow</div>
-      <h3 style="font-family: 'DM Serif Display', serif; font-size: 22px; margin-bottom: 14px;">End-to-End Engineering Execution</h3>
+      <div class="slabel g" style="margin-top: 6px;">Turnkey EPC Workflow</div>
+      <h3 style="font-family: 'DM Serif Display', serif; font-size: 20px; margin-bottom: 12px;">End-to-End Engineering Execution</h3>
       
       <table class="table-custom">
         <thead>
@@ -405,7 +399,7 @@
   <!-- PAGE 3: SOLAR PANELS (TOPCon & DCR) -->
   <div class="page">
     <div class="inner-header">
-      <div class="ih-brand">PAA <span>SOLAR</span></div>
+      <img src="./logo-text.png" alt="PAA SOLAR" class="ih-logo-img"/>
       <div class="ih-tag">Category 01 — Solar Panels</div>
     </div>
     <div class="inner-content">
@@ -474,7 +468,7 @@
   <!-- PAGE 4: INVERTERS & BATTERY STORAGE -->
   <div class="page">
     <div class="inner-header">
-      <div class="ih-brand">PAA <span>SOLAR</span></div>
+      <img src="./logo-text.png" alt="PAA SOLAR" class="ih-logo-img"/>
       <div class="ih-tag">Category 02 &amp; 03 — Inverters &amp; Battery Storage</div>
     </div>
     <div class="inner-content">
@@ -543,7 +537,7 @@
   <!-- PAGE 5: ENTERPRISE BESS & SOLAR KITS -->
   <div class="page">
     <div class="inner-header">
-      <div class="ih-brand">PAA <span>SOLAR</span></div>
+      <img src="./logo-text.png" alt="PAA SOLAR" class="ih-logo-img"/>
       <div class="ih-tag">Category 04 &amp; 05 — BESS &amp; Turnkey Kits</div>
     </div>
     <div class="inner-content">
@@ -609,47 +603,24 @@
     </div>
   </div>
 
-  <!-- PAGE 6: PROJECT PORTFOLIO SHOWCASE 1 -->
+  <!-- PAGE 6: ALL PROJECTS SHOWCASE — PART 1 (UTILITY & MEGA SOLAR PLANTS) -->
   <div class="page">
     <div class="inner-header">
-      <div class="ih-brand">PAA <span>SOLAR</span></div>
-      <div class="ih-tag">Project Showcase — Utility &amp; Mega Plants</div>
+      <img src="./logo-text.png" alt="PAA SOLAR" class="ih-logo-img"/>
+      <div class="ih-tag">Project Showcase — Utility &amp; Mega Solar Plants (1 / 3)</div>
     </div>
     <div class="inner-content">
-      <div class="slabel">Track Record</div>
-      <h2 class="sh">Featured Utility &amp; Mega Projects</h2>
-      <p class="ssub">Highlights from PAA SOLAR's multi-megawatt ground-mounted and utility-scale solar projects installed across North India.</p>
+      <div class="slabel">Portfolio Showcase</div>
+      <h2 class="sh">Utility-Scale &amp; Mega Solar Plants</h2>
+      <p class="ssub">High-irradiance ground-mounted solar power infrastructure engineered for multi-megawatt grid feeder synchronization.</p>
 
-      <div class="prj-grid">
-        <!-- Project 8 -->
-        <div class="prj-card">
-          <div>
-            <img src="./hero-banners/hero-banner-1.jpg" alt="9.16 MW Bhiwani Mega Project" class="prj-img"/>
-            <div class="prj-hdr">
-              <div class="prj-title">9.16 MW DC Mega Project</div>
-              <div class="prj-loc">Bhiwani, Haryana</div>
-            </div>
-            <div class="prj-metrics">
-              <div>
-                <div class="prj-mval" style="color: var(--solar);">9.16 MWp</div>
-                <div class="prj-mlab">Capacity</div>
-              </div>
-              <div style="border-left: 1px solid var(--line); padding-left: 10px;">
-                <div class="prj-mval" style="color: var(--em);">70,000 Tons</div>
-                <div class="prj-mlab">CO2 Offset / Yr</div>
-              </div>
-            </div>
-            <div class="prj-desc">Flagship industrial ground-mounted mega solar power plant for BTM Bhiwani, synchronised with state grid substation.</div>
-          </div>
-          <div class="prj-tag">Utility Scale · Ground Mount</div>
-        </div>
-
+      <div class="prj-grid-6">
         <!-- Project 1 -->
         <div class="prj-card">
           <div>
             <img src="./solar-topcon-banner.png" alt="2.5 MW Pahari Mandir Solar Plant" class="prj-img"/>
             <div class="prj-hdr">
-              <div class="prj-title">2.5 MW DC Solar Plant</div>
+              <div class="prj-title">2.5 MW DC / 2 MW AC Solar Plant</div>
               <div class="prj-loc">Pahari Mandir, Haryana</div>
             </div>
             <div class="prj-metrics">
@@ -657,14 +628,14 @@
                 <div class="prj-mval" style="color: var(--solar);">2.5 MWp</div>
                 <div class="prj-mlab">Capacity</div>
               </div>
-              <div style="border-left: 1px solid var(--line); padding-left: 10px;">
+              <div style="border-left: 1px solid var(--line); padding-left: 8px;">
                 <div class="prj-mval" style="color: var(--em);">20,000 Tons</div>
                 <div class="prj-mlab">CO2 Offset / Yr</div>
               </div>
             </div>
-            <div class="prj-desc">Utility-scale ground solar plant delivering high-yield clean power directly to Haryana state DISCOM grid infrastructure.</div>
+            <div class="prj-desc">Ground-mounted solar power plant delivering clean renewable power to Haryana DISCOM grid infrastructure.</div>
           </div>
-          <div class="prj-tag">Ground Mount · Grid Tied</div>
+          <div class="prj-tag">Utility Scale · Ground Mount</div>
         </div>
 
         <!-- Project 2 -->
@@ -672,7 +643,7 @@
           <div>
             <img src="./hero-banners/hero-banner-2.png" alt="2.5 MW Digawan Solar Plant" class="prj-img"/>
             <div class="prj-hdr">
-              <div class="prj-title">2.5 MW DC Solar Plant</div>
+              <div class="prj-title">2.5 MW DC / 2 MW AC Solar Plant</div>
               <div class="prj-loc">Digawan, Haryana</div>
             </div>
             <div class="prj-metrics">
@@ -680,7 +651,7 @@
                 <div class="prj-mval" style="color: var(--solar);">2.5 MWp</div>
                 <div class="prj-mlab">Capacity</div>
               </div>
-              <div style="border-left: 1px solid var(--line); padding-left: 10px;">
+              <div style="border-left: 1px solid var(--line); padding-left: 8px;">
                 <div class="prj-mval" style="color: var(--em);">20,000 Tons</div>
                 <div class="prj-mlab">CO2 Offset / Yr</div>
               </div>
@@ -690,25 +661,48 @@
           <div class="prj-tag">Utility Ground Solar</div>
         </div>
 
-        <!-- Project 4 -->
+        <!-- Project 3 -->
         <div class="prj-card">
           <div>
-            <img src="./hero-banners/hero-banner-4.jpg" alt="2.5 MW Bikaner Solar Project" class="prj-img"/>
+            <img src="./hero-banners/hero-banner-1.jpg" alt="2.5 MW Loharu Solar Plant" class="prj-img"/>
             <div class="prj-hdr">
-              <div class="prj-title">2.5 MW Desert Solar</div>
-              <div class="prj-loc">Bikaner, Rajasthan</div>
+              <div class="prj-title">2.5 MW DC / 2 MW AC Solar Plant</div>
+              <div class="prj-loc">Loharu, Haryana</div>
             </div>
             <div class="prj-metrics">
               <div>
                 <div class="prj-mval" style="color: var(--solar);">2.5 MWp</div>
                 <div class="prj-mlab">Capacity</div>
               </div>
-              <div style="border-left: 1px solid var(--line); padding-left: 10px;">
+              <div style="border-left: 1px solid var(--line); padding-left: 8px;">
                 <div class="prj-mval" style="color: var(--em);">20,000 Tons</div>
                 <div class="prj-mlab">CO2 Offset / Yr</div>
               </div>
             </div>
-            <div class="prj-desc">High-irradiance desert ground solar project at Hemra, Bikaner featuring real-time automated SCADA monitoring.</div>
+            <div class="prj-desc">Large-scale grid-tied solar infrastructure generating high-yield clean energy for state transmission lines.</div>
+          </div>
+          <div class="prj-tag">Grid-Tied Ground Solar</div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="prj-card">
+          <div>
+            <img src="./hero-banners/hero-banner-4.jpg" alt="2.5 MW Bikaner Solar Project" class="prj-img"/>
+            <div class="prj-hdr">
+              <div class="prj-title">2.5 MW Desert Solar Project</div>
+              <div class="prj-loc">Hemra, Bikaner, RJ</div>
+            </div>
+            <div class="prj-metrics">
+              <div>
+                <div class="prj-mval" style="color: var(--solar);">2.5 MWp</div>
+                <div class="prj-mlab">Capacity</div>
+              </div>
+              <div style="border-left: 1px solid var(--line); padding-left: 8px;">
+                <div class="prj-mval" style="color: var(--em);">20,000 Tons</div>
+                <div class="prj-mlab">CO2 Offset / Yr</div>
+              </div>
+            </div>
+            <div class="prj-desc">Desert ground-mounted solar installation with automated SCADA telemetry and high temperature anti-PID modules.</div>
           </div>
           <div class="prj-tag">Desert Solar · SCADA</div>
         </div>
@@ -718,45 +712,45 @@
           <div>
             <img src="./solar-bess-banner.png" alt="2.5 MW Hanumangarh Project" class="prj-img"/>
             <div class="prj-hdr">
-              <div class="prj-title">2.5 MW Ground Solar</div>
-              <div class="prj-loc">Hanumangarh, Rajasthan</div>
+              <div class="prj-title">2.5 MW DC / 2 MW AC Ground Solar</div>
+              <div class="prj-loc">Hanumangarh, RJ</div>
             </div>
             <div class="prj-metrics">
               <div>
                 <div class="prj-mval" style="color: var(--solar);">2.5 MWp</div>
                 <div class="prj-mlab">Capacity</div>
               </div>
-              <div style="border-left: 1px solid var(--line); padding-left: 10px;">
+              <div style="border-left: 1px solid var(--line); padding-left: 8px;">
                 <div class="prj-mval" style="color: var(--em);">20,000 Tons</div>
                 <div class="prj-mlab">CO2 Offset / Yr</div>
               </div>
             </div>
-            <div class="prj-desc">Turnkey ground solar project at Karpoorisar featuring high-efficiency bifacial TOPCon technology.</div>
+            <div class="prj-desc">Utility-scale ground solar plant at Karpoorisar featuring high-irradiance bifacial TOPCon technology.</div>
           </div>
           <div class="prj-tag">Bifacial Ground Solar</div>
         </div>
 
-        <!-- Project 19 -->
+        <!-- Project 8 -->
         <div class="prj-card">
           <div>
-            <img src="./floating-solar.png" alt="1.3 MW Beri Distillery Solar" class="prj-img"/>
+            <img src="./hero-banners/hero-banner-3.jpg" alt="9.16 MW Bhiwani Mega Project" class="prj-img"/>
             <div class="prj-hdr">
-              <div class="prj-title">1.3 MW Distillery Solar</div>
-              <div class="prj-loc">Beri, Haryana</div>
+              <div class="prj-title">9.16 MW DC Mega Plant</div>
+              <div class="prj-loc">BTM Bhiwani, Haryana</div>
             </div>
             <div class="prj-metrics">
               <div>
-                <div class="prj-mval" style="color: var(--solar);">1.3 MWp</div>
+                <div class="prj-mval" style="color: var(--solar);">9.16 MWp</div>
                 <div class="prj-mlab">Capacity</div>
               </div>
-              <div style="border-left: 1px solid var(--line); padding-left: 10px;">
-                <div class="prj-mval" style="color: var(--em);">10,300 Tons</div>
+              <div style="border-left: 1px solid var(--line); padding-left: 8px;">
+                <div class="prj-mval" style="color: var(--em);">70,000 Tons</div>
                 <div class="prj-mlab">CO2 Offset / Yr</div>
               </div>
             </div>
-            <div class="prj-desc">Dual 500kW grid export &amp; 500kW captive tin-shed industrial solar project for ADS Spirits Pvt Ltd.</div>
+            <div class="prj-desc">Flagship industrial ground-mounted mega solar power plant synchronised with state grid substation.</div>
           </div>
-          <div class="prj-tag">Industrial Tin-Shed · Captive</div>
+          <div class="prj-tag">Flagship Mega Project</div>
         </div>
       </div>
     </div>
@@ -766,32 +760,32 @@
     </div>
   </div>
 
-  <!-- PAGE 7: PROJECT PORTFOLIO SHOWCASE 2 -->
+  <!-- PAGE 7: ALL PROJECTS SHOWCASE — PART 2 (INDUSTRIAL & CAPTIVE SOLAR) -->
   <div class="page">
     <div class="inner-header">
-      <div class="ih-brand">PAA <span>SOLAR</span></div>
-      <div class="ih-tag">Project Showcase — Commercial &amp; Industrial</div>
+      <img src="./logo-text.png" alt="PAA SOLAR" class="ih-logo-img"/>
+      <div class="ih-tag">Project Showcase — Industrial &amp; Captive Solar (2 / 3)</div>
     </div>
     <div class="inner-content">
-      <div class="slabel s">Industrial Track Record</div>
-      <h2 class="sh">C&amp;I Solar Installations</h2>
-      <p class="ssub">Turnkey captive and grid-tied solar systems installed on factories, breweries, glass works, and agro-processing facilities.</p>
+      <div class="slabel g">C&amp;I Portfolio</div>
+      <h2 class="sh">Industrial &amp; Captive Solar Systems</h2>
+      <p class="ssub">Turnkey captive rooftop and ground-mounted solar installations for factories, breweries, distilleries, and logistics hubs.</p>
 
-      <div class="prj-grid">
+      <div class="prj-grid-6">
         <!-- Project 7 -->
         <div class="prj-card">
           <div>
             <img src="./paa-team.png" alt="1.3 MW Reni Alwar Industrial Solar" class="prj-img"/>
             <div class="prj-hdr">
-              <div class="prj-title">1.3 MW Industrial Solar</div>
-              <div class="prj-loc">Reni, Alwar, Rajasthan</div>
+              <div class="prj-title">1.3 MW DC Industrial Solar</div>
+              <div class="prj-loc">Reni, Alwar, RJ</div>
             </div>
             <div class="prj-metrics">
               <div>
                 <div class="prj-mval" style="color: var(--solar);">1.3 MWp</div>
                 <div class="prj-mlab">Capacity</div>
               </div>
-              <div style="border-left: 1px solid var(--line); padding-left: 10px;">
+              <div style="border-left: 1px solid var(--line); padding-left: 8px;">
                 <div class="prj-mval" style="color: var(--em);">10,000 Tons</div>
                 <div class="prj-mlab">CO2 Offset</div>
               </div>
@@ -801,12 +795,58 @@
           <div class="prj-tag">Industrial Solar</div>
         </div>
 
+        <!-- Project 19 -->
+        <div class="prj-card">
+          <div>
+            <img src="./floating-solar.png" alt="1.3 MW Beri Distillery Solar" class="prj-img"/>
+            <div class="prj-hdr">
+              <div class="prj-title">1.3 MW DC Distillery Solar</div>
+              <div class="prj-loc">Beri, Haryana</div>
+            </div>
+            <div class="prj-metrics">
+              <div>
+                <div class="prj-mval" style="color: var(--solar);">1.3 MWp</div>
+                <div class="prj-mlab">Capacity</div>
+              </div>
+              <div style="border-left: 1px solid var(--line); padding-left: 8px;">
+                <div class="prj-mval" style="color: var(--em);">10,300 Tons</div>
+                <div class="prj-mlab">CO2 Offset</div>
+              </div>
+            </div>
+            <div class="prj-desc">Dual 500kW grid export &amp; 500kW captive tin-shed industrial solar array for ADS Spirits Pvt Ltd.</div>
+          </div>
+          <div class="prj-tag">Captive Distillery</div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="prj-card">
+          <div>
+            <img src="./hero-banners/hero-banner-2.png" alt="1.1 MW Govindgarh Solar" class="prj-img"/>
+            <div class="prj-hdr">
+              <div class="prj-title">1.1 MW DC Commercial Solar</div>
+              <div class="prj-loc">Govindgarh, Alwar, RJ</div>
+            </div>
+            <div class="prj-metrics">
+              <div>
+                <div class="prj-mval" style="color: var(--solar);">1.1 MWp</div>
+                <div class="prj-mlab">Capacity</div>
+              </div>
+              <div style="border-left: 1px solid var(--line); padding-left: 8px;">
+                <div class="prj-mval" style="color: var(--em);">8,000 Tons</div>
+                <div class="prj-mlab">CO2 Offset</div>
+              </div>
+            </div>
+            <div class="prj-desc">Commercial solar project empowering regional distribution feeders with stable clean power.</div>
+          </div>
+          <div class="prj-tag">Commercial Solar</div>
+        </div>
+
         <!-- Project 11 -->
         <div class="prj-card">
           <div>
             <img src="./global-export-shipping.png" alt="900 kW Sirsa Tin Shed Solar" class="prj-img"/>
             <div class="prj-hdr">
-              <div class="prj-title">900 kW Industrial Shed</div>
+              <div class="prj-title">900 kW Industrial Tin Shed</div>
               <div class="prj-loc">Sirsa, Haryana</div>
             </div>
             <div class="prj-metrics">
@@ -814,7 +854,7 @@
                 <div class="prj-mval" style="color: var(--solar);">900 kW</div>
                 <div class="prj-mlab">Capacity</div>
               </div>
-              <div style="border-left: 1px solid var(--line); padding-left: 10px;">
+              <div style="border-left: 1px solid var(--line); padding-left: 8px;">
                 <div class="prj-mval" style="color: var(--em);">7,000 Tons</div>
                 <div class="prj-mlab">CO2 Offset</div>
               </div>
@@ -829,7 +869,7 @@
           <div>
             <img src="./pmssy.jpeg" alt="500 kW Bazpur Solar Project" class="prj-img"/>
             <div class="prj-hdr">
-              <div class="prj-title">500 kW Ground Solar</div>
+              <div class="prj-title">500 kW Ground Solar Project</div>
               <div class="prj-loc">Bazpur, Uttarakhand</div>
             </div>
             <div class="prj-metrics">
@@ -837,12 +877,12 @@
                 <div class="prj-mval" style="color: var(--solar);">500 kW</div>
                 <div class="prj-mlab">Capacity</div>
               </div>
-              <div style="border-left: 1px solid var(--line); padding-left: 10px;">
+              <div style="border-left: 1px solid var(--line); padding-left: 8px;">
                 <div class="prj-mval" style="color: var(--em);">4,000 Tons</div>
                 <div class="prj-mlab">CO2 Offset</div>
               </div>
             </div>
-            <div class="prj-desc">Ground-mounted solar project for Prem Ganga Infotech featuring high-voltage net-metering synchronization.</div>
+            <div class="prj-desc">Ground-mounted solar project for Prem Ganga Infotech featuring high-voltage net-metering.</div>
           </div>
           <div class="prj-tag">C&amp;I Ground Solar</div>
         </div>
@@ -852,7 +892,7 @@
           <div>
             <img src="./hero-banners/hero-banner-3.jpg" alt="500 kW Rudrapur Solar" class="prj-img"/>
             <div class="prj-hdr">
-              <div class="prj-title">500 kW Stone Crusher Solar</div>
+              <div class="prj-title">500 kW Heavy Industry Solar</div>
               <div class="prj-loc">Rudrapur, Uttarakhand</div>
             </div>
             <div class="prj-metrics">
@@ -860,7 +900,7 @@
                 <div class="prj-mval" style="color: var(--solar);">500 kW</div>
                 <div class="prj-mlab">Capacity</div>
               </div>
-              <div style="border-left: 1px solid var(--line); padding-left: 10px;">
+              <div style="border-left: 1px solid var(--line); padding-left: 8px;">
                 <div class="prj-mval" style="color: var(--em);">4,000 Tons</div>
                 <div class="prj-mlab">CO2 Offset</div>
               </div>
@@ -868,52 +908,6 @@
             <div class="prj-desc">Ground solar project for Maa Bhagwati Stones powering heavy stone processing equipment.</div>
           </div>
           <div class="prj-tag">Heavy Industry Solar</div>
-        </div>
-
-        <!-- Project 12 -->
-        <div class="prj-card">
-          <div>
-            <img src="./hero-banners/hero-banner-1.jpg" alt="350 kW Captive Brewery Solar" class="prj-img"/>
-            <div class="prj-hdr">
-              <div class="prj-title">350 kW Brewery Solar</div>
-              <div class="prj-loc">Khatima, Uttarakhand</div>
-            </div>
-            <div class="prj-metrics">
-              <div>
-                <div class="prj-mval" style="color: var(--solar);">350 kW</div>
-                <div class="prj-mlab">Capacity</div>
-              </div>
-              <div style="border-left: 1px solid var(--line); padding-left: 10px;">
-                <div class="prj-mval" style="color: var(--em);">2,400 Tons</div>
-                <div class="prj-mlab">CO2 Offset</div>
-              </div>
-            </div>
-            <div class="prj-desc">Tin-shed captive rooftop solar plant powering Sukas Breweries &amp; Beverages production lines.</div>
-          </div>
-          <div class="prj-tag">Captive Brewery Solar</div>
-        </div>
-
-        <!-- Project 15 -->
-        <div class="prj-card">
-          <div>
-            <img src="./hero-banners/hero-banner-2.png" alt="330 kW Dairy Industry Solar" class="prj-img"/>
-            <div class="prj-hdr">
-              <div class="prj-title">330 kW Dairy Plant Solar</div>
-              <div class="prj-loc">Jaipur, Rajasthan</div>
-            </div>
-            <div class="prj-metrics">
-              <div>
-                <div class="prj-mval" style="color: var(--solar);">330 kW</div>
-                <div class="prj-mlab">Capacity</div>
-              </div>
-              <div style="border-left: 1px solid var(--line); padding-left: 10px;">
-                <div class="prj-mval" style="color: var(--em);">2,400 Tons</div>
-                <div class="prj-mlab">CO2 Offset</div>
-              </div>
-            </div>
-            <div class="prj-desc">Tin-shed industrial solar installation powering Dev Milk Foods Pvt Ltd milk processing plant.</div>
-          </div>
-          <div class="prj-tag">Food &amp; Dairy Industry</div>
         </div>
       </div>
     </div>
@@ -923,10 +917,174 @@
     </div>
   </div>
 
-  <!-- PAGE 8: OEM PARTNERS & CONTACT -->
+  <!-- PAGE 8: ALL PROJECTS SHOWCASE — PART 3 (MANUFACTURING, AGRO & HOSPITALITY) -->
   <div class="page">
     <div class="inner-header">
-      <div class="ih-brand">PAA <span>SOLAR</span></div>
+      <img src="./logo-text.png" alt="PAA SOLAR" class="ih-logo-img"/>
+      <div class="ih-tag">Project Showcase — Manufacturing &amp; Enterprises (3 / 3)</div>
+    </div>
+    <div class="inner-content">
+      <div class="slabel s">Specialized Installations</div>
+      <h2 class="sh">Manufacturing, Dairy, Agro &amp; Hospitality</h2>
+      <p class="ssub">Complete portfolio of specialized solar installations across glass works, food processing, hospitality resorts, and oil mills.</p>
+
+      <div class="prj-grid-8">
+        <!-- Project 16 -->
+        <div class="prj-card">
+          <div>
+            <div class="prj-hdr">
+              <div class="prj-title">500 kW Stone Crusher Ground Solar</div>
+              <div class="prj-loc">Udaipur, Rajasthan</div>
+            </div>
+            <div class="prj-metrics">
+              <div><div class="prj-mval" style="color: var(--solar);">500 kW</div><div class="prj-mlab">Capacity</div></div>
+              <div style="border-left: 1px solid var(--line); padding-left: 6px;"><div class="prj-mval" style="color: var(--em);">4,400 T</div><div class="prj-mlab">CO2 Offset</div></div>
+            </div>
+            <div class="prj-desc">Heavy-duty ground solar plant powering New Ekling Nath Crusher operations.</div>
+          </div>
+          <div class="prj-tag">Heavy Industry</div>
+        </div>
+
+        <!-- Project 21 -->
+        <div class="prj-card">
+          <div>
+            <div class="prj-hdr">
+              <div class="prj-title">400 kW Industrial Glass Solar</div>
+              <div class="prj-loc">Dehradun, Uttarakhand</div>
+            </div>
+            <div class="prj-metrics">
+              <div><div class="prj-mval" style="color: var(--solar);">400 kW</div><div class="prj-mlab">Capacity</div></div>
+              <div style="border-left: 1px solid var(--line); padding-left: 6px;"><div class="prj-mval" style="color: var(--em);">3,200 T</div><div class="prj-mlab">CO2 Offset</div></div>
+            </div>
+            <div class="prj-desc">Rooftop solar system powering Verma Toughened Glass Pvt Ltd plant.</div>
+          </div>
+          <div class="prj-tag">Glass Manufacturing</div>
+        </div>
+
+        <!-- Project 12 -->
+        <div class="prj-card">
+          <div>
+            <div class="prj-hdr">
+              <div class="prj-title">350 kW Captive Brewery Solar</div>
+              <div class="prj-loc">Khatima, Uttarakhand</div>
+            </div>
+            <div class="prj-metrics">
+              <div><div class="prj-mval" style="color: var(--solar);">350 kW</div><div class="prj-mlab">Capacity</div></div>
+              <div style="border-left: 1px solid var(--line); padding-left: 6px;"><div class="prj-mval" style="color: var(--em);">2,400 T</div><div class="prj-mlab">CO2 Offset</div></div>
+            </div>
+            <div class="prj-desc">Tin-shed captive rooftop solar plant powering Sukas Breweries &amp; Beverages.</div>
+          </div>
+          <div class="prj-tag">Captive Brewery</div>
+        </div>
+
+        <!-- Project 15 -->
+        <div class="prj-card">
+          <div>
+            <div class="prj-hdr">
+              <div class="prj-title">330 kW Dairy Industry Solar</div>
+              <div class="prj-loc">Jaipur, Rajasthan</div>
+            </div>
+            <div class="prj-metrics">
+              <div><div class="prj-mval" style="color: var(--solar);">330 kW</div><div class="prj-mlab">Capacity</div></div>
+              <div style="border-left: 1px solid var(--line); padding-left: 6px;"><div class="prj-mval" style="color: var(--em);">2,400 T</div><div class="prj-mlab">CO2 Offset</div></div>
+            </div>
+            <div class="prj-desc">Tin-shed industrial solar installation powering Dev Milk Foods Pvt Ltd processing plant.</div>
+          </div>
+          <div class="prj-tag">Food &amp; Dairy Industry</div>
+        </div>
+
+        <!-- Project 20 -->
+        <div class="prj-card">
+          <div>
+            <div class="prj-hdr">
+              <div class="prj-title">180 kW Resort Hospitality Solar</div>
+              <div class="prj-loc">Nainital, Uttarakhand</div>
+            </div>
+            <div class="prj-metrics">
+              <div><div class="prj-mval" style="color: var(--solar);">180 kW</div><div class="prj-mlab">Capacity</div></div>
+              <div style="border-left: 1px solid var(--line); padding-left: 6px;"><div class="prj-mval" style="color: var(--em);">1,500 T</div><div class="prj-mlab">CO2 Offset</div></div>
+            </div>
+            <div class="prj-desc">Rooftop solar installation powering luxury Trinantara Resort &amp; Spa.</div>
+          </div>
+          <div class="prj-tag">Hospitality &amp; Resort</div>
+        </div>
+
+        <!-- Project 13 -->
+        <div class="prj-card">
+          <div>
+            <div class="prj-hdr">
+              <div class="prj-title">160 kW Industrial Oil Mill Solar</div>
+              <div class="prj-loc">Nohar, Rajasthan</div>
+            </div>
+            <div class="prj-metrics">
+              <div><div class="prj-mval" style="color: var(--solar);">160 kW</div><div class="prj-mlab">Capacity</div></div>
+              <div style="border-left: 1px solid var(--line); padding-left: 6px;"><div class="prj-mval" style="color: var(--em);">1,200 T</div><div class="prj-mlab">CO2 Offset</div></div>
+            </div>
+            <div class="prj-desc">Tin-shed rooftop solar installation powering V.G Oil Mill production lines.</div>
+          </div>
+          <div class="prj-tag">Oil Mill Industry</div>
+        </div>
+
+        <!-- Project 17 -->
+        <div class="prj-card">
+          <div>
+            <div class="prj-hdr">
+              <div class="prj-title">110 kW Agro Industrial Solar</div>
+              <div class="prj-loc">Pallu, Rajasthan</div>
+            </div>
+            <div class="prj-metrics">
+              <div><div class="prj-mval" style="color: var(--solar);">110 kW</div><div class="prj-mlab">Capacity</div></div>
+              <div style="border-left: 1px solid var(--line); padding-left: 6px;"><div class="prj-mval" style="color: var(--em);">800 T</div><div class="prj-mlab">CO2 Offset</div></div>
+            </div>
+            <div class="prj-desc">Tin-shed solar system for Vikas Agro Industries with net-metering grid export.</div>
+          </div>
+          <div class="prj-tag">Agro Processing</div>
+        </div>
+
+        <!-- Project 18 -->
+        <div class="prj-card">
+          <div>
+            <div class="prj-hdr">
+              <div class="prj-title">100 kW Industrial Enterprise Solar</div>
+              <div class="prj-loc">Udaipur, Rajasthan</div>
+            </div>
+            <div class="prj-metrics">
+              <div><div class="prj-mval" style="color: var(--solar);">100 kW</div><div class="prj-mlab">Capacity</div></div>
+              <div style="border-left: 1px solid var(--line); padding-left: 6px;"><div class="prj-mval" style="color: var(--em);">800 T</div><div class="prj-mlab">CO2 Offset</div></div>
+            </div>
+            <div class="prj-desc">Industrial tin-shed solar installation for Mahendra Singhvi Enterprise.</div>
+          </div>
+          <div class="prj-tag">Enterprise Rooftop</div>
+        </div>
+
+        <!-- Project 14 -->
+        <div class="prj-card" style="grid-column: span 2;">
+          <div>
+            <div class="prj-hdr">
+              <div class="prj-title">50 kW DC Glass Manufacturing Solar</div>
+              <div class="prj-loc">Firozabad, Uttar Pradesh</div>
+            </div>
+            <div class="prj-metrics">
+              <div><div class="prj-mval" style="color: var(--solar);">50 kW DC</div><div class="prj-mlab">Capacity</div></div>
+              <div style="border-left: 1px solid var(--line); padding-left: 12px;"><div class="prj-mval" style="color: var(--em);">400 Tons</div><div class="prj-mlab">CO2 Offset</div></div>
+              <div style="border-left: 1px solid var(--line); padding-left: 12px;"><div class="prj-mval" style="color: var(--sky);">100% Captive</div><div class="prj-mlab">Grid Status</div></div>
+            </div>
+            <div class="prj-desc">Rooftop solar installation powering Tirupati Glass manufacturing facility in Firozabad glass cluster.</div>
+          </div>
+          <div class="prj-tag">Glass Manufacturing</div>
+        </div>
+      </div>
+    </div>
+    <div class="inner-footer">
+      <div>PAA SOLAR — Product &amp; Project Catalogue 2026</div>
+      <div>Page 08</div>
+    </div>
+  </div>
+
+  <!-- PAGE 9: OEM PARTNERS & CONTACT -->
+  <div class="page">
+    <div class="inner-header">
+      <img src="./logo-text.png" alt="PAA SOLAR" class="ih-logo-img"/>
       <div class="ih-tag">OEM Partners &amp; Corporate Contact</div>
     </div>
     <div class="inner-content">
@@ -947,7 +1105,7 @@
         <div class="partner-item"><img src="./partner-logos/genus.svg" alt="Genus"/></div>
       </div>
 
-      <div style="margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--line);">
+      <div style="margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line);">
         <div class="slabel">Get In Touch</div>
         <h2 class="sh">Connect with PAA SOLAR</h2>
         <p class="ssub">Reach out for utility PPA proposals, industrial EPC solar quotes, equipment procurement, or PM Surya Ghar dealer franchise opportunities.</p>
@@ -955,7 +1113,7 @@
         <div class="grid-2">
           <div class="box">
             <div class="boxtitle" style="color: var(--solar);">Headquarters &amp; Office</div>
-            <div class="boxdesc" style="font-size: 12px; line-height: 1.8;">
+            <div class="boxdesc" style="font-size: 11.5px; line-height: 1.7;">
               <strong>PAA SOLAR (EKCHAKRA GROUP)</strong><br/>
               Jaipur, Rajasthan, India — 302012<br/>
               Email: paasolar@gmail.com | info@paasolar.com<br/>
@@ -965,7 +1123,7 @@
           </div>
           <div class="box">
             <div class="boxtitle" style="color: var(--em);">Certifications &amp; Approvals</div>
-            <div class="boxdesc" style="font-size: 12px; line-height: 1.8;">
+            <div class="boxdesc" style="font-size: 11.5px; line-height: 1.7;">
               ✓ MNRE Approved Solar Developer<br/>
               ✓ PM Surya Ghar Portal Registered Vendor<br/>
               ✓ ALMM Listed Tier-1 Module Supply<br/>
@@ -978,7 +1136,7 @@
     </div>
     <div class="inner-footer">
       <div>PAA SOLAR — Product &amp; Project Catalogue 2026</div>
-      <div>Page 08</div>
+      <div>Page 09</div>
     </div>
   </div>
 
