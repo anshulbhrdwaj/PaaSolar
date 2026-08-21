@@ -52,14 +52,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
         priority = 0.8;
 
       const languageAlternates: Record<string, string> = {
-        'x-default': `${SITE_URL}/en${route}`,
+        'x-default': `${SITE_URL}${route}`,
       };
       SUPPORTED_LOCALES.forEach((l) => {
-        languageAlternates[l] = `${SITE_URL}/${l}${route}`;
+        languageAlternates[l] = l === 'en' ? `${SITE_URL}${route}` : `${SITE_URL}/${l}${route}`;
       });
 
+      const entryUrl = locale === 'en' ? `${SITE_URL}${route}` : `${SITE_URL}/${locale}${route}`;
+
       sitemapEntries.push({
-        url: `${SITE_URL}/${locale}${route}`,
+        url: entryUrl || SITE_URL,
         lastModified: new Date(),
         changeFrequency: route === '' ? 'daily' : 'weekly',
         priority,

@@ -74,13 +74,14 @@ export function constructMetadata({
     : 'PAA SOLAR™ | Official Website | Premier Solar EPC & Energy Solutions India';
 
   const cleanPath = path.startsWith('/') ? path : `/${path}`;
-  const canonicalUrl = `${SITE_URL}/${locale}${cleanPath === '/' ? '' : cleanPath}`;
+  const pathSuffix = cleanPath === '/' ? '' : cleanPath;
+  const canonicalUrl = locale === 'en' ? `${SITE_URL}${pathSuffix}` : `${SITE_URL}/${locale}${pathSuffix}`;
 
   const languageAlternates: Record<string, string> = {
-    'x-default': `${SITE_URL}/en${cleanPath === '/' ? '' : cleanPath}`,
+    'x-default': `${SITE_URL}${pathSuffix}`,
   };
   SUPPORTED_LOCALES.forEach((loc) => {
-    languageAlternates[loc] = `${SITE_URL}/${loc}${cleanPath === '/' ? '' : cleanPath}`;
+    languageAlternates[loc] = loc === 'en' ? `${SITE_URL}${pathSuffix}` : `${SITE_URL}/${loc}${pathSuffix}`;
   });
 
   const fullImageUrl = image.startsWith('http') ? image : `${SITE_URL}${image}`;
